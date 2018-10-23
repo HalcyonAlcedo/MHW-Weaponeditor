@@ -1,0 +1,49 @@
+{
+    "Weapon": "太刀",
+    "Data": [
+        {
+            "name": "熔山龍太刀 Ⅰ",
+            "Weapon_Number": 77
+        },
+        {
+            "name": "熔山龍太刀 Ⅱ",
+            "Weapon_Number": 78
+        },
+        {
+            "name": "黑鋼太刀 Ⅰ",
+            "Weapon_Number": 79
+        },
+        {
+            "name": "黑鋼太刀 Ⅱ",
+            "Weapon_Number": 80
+        },
+        {
+            "name": "帝王刀",
+            "Weapon_Number": 81
+        },
+        {
+            "name": "帝王刀【陽炎】",
+            "Weapon_Number": 82
+        },
+        {
+            "name": "冥燈龍太刀",
+            "Weapon_Number": 83
+        },
+        {
+            "name": "天下無雙刀",
+            "Weapon_Number": 84
+        },
+        {
+            "name": "天上天下無雙刀",
+            "Weapon_Number": 85
+        },
+        {
+            "name": "殘酷痛苦太刀",
+            "Weapon_Number": 86
+        },
+        {
+            "name": "悲慘痛苦太刀",
+            "Weapon_Number": 86
+        }
+    ]
+}
