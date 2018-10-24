@@ -2,14 +2,32 @@
   <div id="wrapper">
     <main>
       <v-app id="inspire">
+        <v-autocomplete
+          v-model="search"
+          :items="filteritem"
+          item-text="wp_Name"
+          persistent-hint
+          prepend-icon="search"
+          no-data-text="无可用数据"
+        >
+          <v-slide-x-reverse-transition
+            slot="append-outer"
+            mode="out-in"
+          >
+          <v-icon
+            @click="search = null"
+          >clear</v-icon>
+          </v-slide-x-reverse-transition>
+        </v-autocomplete>
         <v-container fluid grid-list-md>
           <v-data-iterator
-            :items="items"
+            :items="filteritem"
             :rows-per-page-items="rowsPerPageItems"
             :pagination.sync="pagination"
             content-tag="v-layout"
             row
             wrap
+            :search="search"
           >
             <v-flex
               slot="item"
@@ -21,8 +39,8 @@
             >
               <v-card>
                 <v-card-title>
-                  <h4>{{ props.item.wp_Name }}</h4>
-                  <h5><span class="red--text">{{ str_pad(props.item.wp_Hex) }}</span></h5>
+                  <h4>{{ props.item.wp_Name }}</h4><v-spacer></v-spacer>
+                  <h5>地址：<span class="red--text">{{ str_pad(props.item.wp_Hex) }}</span></h5>
                 </v-card-title>
                 <v-divider></v-divider>
                 <v-list dense>
@@ -70,7 +88,7 @@
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Heart_value !== false">
                     <v-list-tile-content>会心值:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Heart_value }}</v-list-tile-content>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Heart_value <= 100 ? props.item.wp_Heart_value : '-' + (256 - props.item.wp_Heart_value) }}%</v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Visible_attributes !== false">
                     <v-list-tile-content>可见属性:</v-list-tile-content>
@@ -78,7 +96,7 @@
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Visible_attribute_values !== false">
                     <v-list-tile-content>可见属性数值:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Visible_attribute_values }}</v-list-tile-content>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Visible_attribute_values * 10 }}</v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Hidden_attribute !== false">
                     <v-list-tile-content>隐藏属性:</v-list-tile-content>
@@ -86,7 +104,7 @@
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Hidden_attribute_values !== false">
                     <v-list-tile-content>隐藏属性数值:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Hidden_attribute_values }}</v-list-tile-content>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Hidden_attribute_values * 10 }}</v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Cartridge_matching !== false">
                     <v-list-tile-content>子弹匹配:</v-list-tile-content>
@@ -138,6 +156,7 @@ export default {
     pagination: {
       rowsPerPage: 4
     },
+    search: null,
     items: [
       {
         wp_Name: '未知武器',
@@ -171,12 +190,27 @@ export default {
     },
     weapon () {
       return this.$store.getters.donefilename
+    },
+    excludeunknown () {
+      return this.$store.getters.doneexcludeunknown
+    },
+    filteritem () {
+      let _items = this.items
+      if (this.excludeunknown) {
+        let itemsarr = []
+        for (let i = 0, l = _items.length; i < l; i++) {
+          if (_items[i].wp_Name !== '未知武器') {
+            itemsarr.push(_items[i])
+          }
+        }
+        return itemsarr
+      } else {
+        return _items
+      }
     }
   },
   watch: {
     getfile: function () {
-      console.log(this.getfile)
-      console.log(this.weapon)
       this.loadfile(this.getfile)
     }
   },
@@ -309,15 +343,15 @@ export default {
               'wp_Number': [6, 1], // 6
               'wp_Money': [28, 4], // 25~28
               'wp_Rarity': [29, 1], // 29
-              'wp_Damage_value': [32, 2], // 31~32
-              'wp_Defense_value': [34, 2], // 33~34
-              'wp_Heart_value': [35, 1], // 35
-              'wp_Cartridge_matching': [59, 1], // 59
-              'wp_Offset_size': [61, 1], // 61
-              'wp_Slot_grade_Number': [62, 1], // 62
-              'wp_Slot_grade_1': [63, 1], // 63
-              'wp_Slot_grade_2': [64, 1], // 64
-              'wp_Slot_grade_3': [65, 1], // 65
+              'wp_Damage_value': [31, 2], // 30~31
+              'wp_Defense_value': [33, 2], // 32~33
+              'wp_Heart_value': [34, 1], // 34
+              'wp_Cartridge_matching': [42, 1], // 42
+              'wp_Offset_size': [44, 1], // 44
+              'wp_Slot_grade_Number': [45, 1], // 45
+              'wp_Slot_grade_1': [46, 1], // 46
+              'wp_Slot_grade_2': [47, 1], // 47
+              'wp_Slot_grade_3': [48, 1], // 48
               'wp_Weapon_skills': [(HexRuler + 2), 1] // HexRuler(下一行) + 2
             }
           }

@@ -1,0 +1,400 @@
+<template>
+  <div id="wrapper">
+    <main>
+      <v-app id="inspire">
+        <v-container fluid grid-list-md>
+          <v-data-iterator
+            :items="items"
+            content-tag="v-layout"
+            hide-actions
+            row
+            wrap
+          >
+            <v-flex
+              slot="item"
+              slot-scope="props"
+            >
+            <v-card height="50" width="50" :color="props.item.wp_Colour">
+              <v-card-title primary-title class="text-xs-center">
+                  {{props.item.wp_Hex}}
+              </v-card-title>
+            </v-card>
+            </v-flex>
+          </v-data-iterator>
+        </v-container>
+      </v-app>
+    </main>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'wpfile',
+  data: () => ({
+    items: [
+      {
+        wp_Hex: 0,
+        wp_Describe: '',
+        wp_Colour: ''
+      }
+    ],
+    data: []
+  }),
+  computed: {
+    getfile () {
+      return this.$store.getters.donefile
+    },
+    weapon () {
+      return this.$store.getters.donefilename
+    }
+  },
+  watch: {
+    getfile: function () {
+      this.loadfile(this.getfile)
+    }
+  },
+  methods: {
+    str_pad (hex) {
+      var zero = '00000000'
+      var tmp = 8 - hex.length
+      return zero.substr(0, tmp) + hex
+    },
+    weapon_damage (file) {
+      let weapondamage = 0
+      switch (file) {
+        case 'l_sword.wp_dat':
+          weapondamage = 4.8
+          break
+        case 'sword.wp_dat':
+          weapondamage = 1.4
+          break
+        case 'hammer.wp_dat':
+          weapondamage = 5.2
+          break
+        case 'lance.wp_dat':
+          weapondamage = 2.3
+          break
+        case 's_axe.wp_dat':
+          weapondamage = 3.5
+          break
+        case 'rod.wp_dat':
+          weapondamage = 3.1
+          break
+        case 'lbg.wp_dat_g':
+          weapondamage = 1.3
+          break
+        case 'tachi.wp_dat':
+          weapondamage = 3.3
+          break
+        case 'w_sword.wp_dat':
+          weapondamage = 1.4
+          break
+        case 'whistle.wp_dat':
+          weapondamage = 4.2
+          break
+        case 'g_lance.wp_dat':
+          weapondamage = 2.3
+          break
+        case 'c_axe.wp_dat':
+          weapondamage = 3.6
+          break
+        case 'bow.wp_dat_g':
+          weapondamage = 1.2
+          break
+        case 'hbg.wp_dat_g':
+          weapondamage = 1.5
+          break
+        default:
+          weapondamage = 1
+      }
+      return weapondamage
+    },
+    attribute (attribute) {
+      let attributetext = '无'
+      switch (attribute) {
+        case 0:
+          attributetext = '无'
+          break
+        case 1:
+          attributetext = '火'
+          break
+        case 2:
+          attributetext = '水'
+          break
+        case 3:
+          attributetext = '冰'
+          break
+        case 4:
+          attributetext = '电'
+          break
+        case 5:
+          attributetext = '龙'
+          break
+        case 6:
+          attributetext = '毒'
+          break
+        case 7:
+          attributetext = '麻'
+          break
+        case 8:
+          attributetext = '眠'
+          break
+        default:
+          attributetext = '爆'
+      }
+      return attributetext
+    },
+    loadfile (f) {
+      var fs = require('fs')
+      let _this = this
+      fs.readFile(f, function (err, data) {
+        if (err) {
+          console.log(err)
+        } else {
+          _this.data = data
+          let HexRuler
+          let HexPointer
+          if (data[7] === 0 && data[71] === 1 && data[136] === 2) {
+            HexRuler = 16 * 4 + 1 // 近程武器
+            HexPointer = {
+              'wp_Number': [6, 1], // 6
+              'wp_Money': [24, 4], // 21~24
+              'wp_Rarity': [25, 1], // 25
+              'wp_Chopping_value': [26, 1], // 26
+              'wp_Chopping_grade': [27, 1], // 27
+              'wp_Damage_value': [29, 2], // 28~29
+              'wp_Defense_value': [31, 2], // 30~31
+              'wp_Heart_value': [32, 1], // 32
+              'wp_Visible_attributes': [33, 1], // 33
+              'wp_Visible_attribute_values': [35, 2], // 34~35
+              'wp_Hidden_attribute': [36, 1], // 36
+              'wp_Hidden_attribute_values': [38, 2], // 37~38
+              'wp_Slot_grade_Number': [40, 1], // 40
+              'wp_Slot_grade_1': [41, 1], // 41
+              'wp_Slot_grade_2': [42, 1], // 42
+              'wp_Slot_grade_3': [43, 1], // 43
+              'wp_Special_attributes': [44, 1], // 44
+              'wp_Weapon_skills': [(HexRuler + 2), 1] // HexRuler(下一行) + 2
+            }
+          } else {
+            HexRuler = 16 * 4 + 4 // 远程武器
+            HexPointer = {
+              'wp_Number': [6, 1], // 6
+              'wp_Money': [28, 4], // 25~28
+              'wp_Rarity': [29, 1], // 29
+              'wp_Damage_value': [31, 2], // 30~31
+              'wp_Defense_value': [33, 2], // 32~33
+              'wp_Heart_value': [34, 1], // 34
+              'wp_Cartridge_matching': [42, 1], // 42
+              'wp_Offset_size': [44, 1], // 44
+              'wp_Slot_grade_Number': [45, 1], // 45
+              'wp_Slot_grade_1': [46, 1], // 46
+              'wp_Slot_grade_2': [47, 1], // 47
+              'wp_Slot_grade_3': [48, 1], // 48
+              'wp_Weapon_skills': [(HexRuler + 2), 1] // HexRuler(下一行) + 2
+            }
+          }
+          let wplist = []
+          for (let l = data.length, i = 0; i < l; i++) {
+            wplist[i] = {
+              wp_Hex: data[i].toString(16),
+              wp_Describe: '',
+              wp_Colour: ''
+            }
+          }
+          for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+            for (let s = HexPointer.wp_Number[1], r = 0; r < s; r++) {
+              wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Describe = '编码'
+              wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'blue'
+            }
+          }
+          for (let l = data.length / (HexRuler + HexPointer.wp_Money[0]), i = 0; i < l; i++) {
+            for (let s = HexPointer.wp_Money[1], r = 0; r < s; r++) {
+              wplist[(HexRuler * i) + HexPointer.wp_Money[0] + r].wp_Describe = '金钱'
+              wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'amber'
+            }
+          }
+          for (let l = data.length / (HexRuler + HexPointer.wp_Rarity[0]), i = 0; i < l; i++) {
+            for (let s = HexPointer.wp_Rarity[1], r = 0; r < s; r++) {
+              wplist[(HexRuler * i) + HexPointer.wp_Rarity[0] + r].wp_Describe = '稀有度'
+              wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'deep-purple'
+            }
+          }
+          if (HexPointer.wp_Chopping_value !== undefined) {
+            for (let l = data.length / (HexRuler + HexPointer.wp_Chopping_value[0]), i = 0; i < l; i++) {
+              for (let s = HexPointer.wp_Chopping_value[1], r = 0; r < s; r++) {
+                wplist[(HexRuler * i) + HexPointer.wp_Chopping_value[0] + r].wp_Describe = '斩味值'
+                wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'cyan'
+              }
+            }
+          }
+          if (HexPointer.wp_Chopping_grade !== undefined) {
+            for (let l = data.length / (HexRuler + HexPointer.wp_Chopping_grade[0]), i = 0; i < l; i++) {
+              for (let s = HexPointer.wp_Chopping_grade[1], r = 0; r < s; r++) {
+                wplist[(HexRuler * i) + HexPointer.wp_Chopping_grade[0] + r].wp_Describe = '斩味等级'
+                wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'light-blue'
+              }
+            }
+          }
+          for (let l = data.length / (HexRuler + HexPointer.wp_Damage_value[0]), i = 0; i < l; i++) {
+            for (let s = HexPointer.wp_Damage_value[1], r = 0; r < s; r++) {
+              wplist[(HexRuler * i) + HexPointer.wp_Damage_value[0] + r].wp_Describe = '伤害'
+              wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'red'
+            }
+          }
+          for (let l = data.length / (HexRuler + HexPointer.wp_Defense_value[0]), i = 0; i < l; i++) {
+            for (let s = HexPointer.wp_Defense_value[1], r = 0; r < s; r++) {
+              wplist[(HexRuler * i) + HexPointer.wp_Defense_value[0] + r].wp_Describe = '防御'
+              wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'green'
+            }
+          }
+          for (let l = data.length / (HexRuler + HexPointer.wp_Heart_value[0]), i = 0; i < l; i++) {
+            for (let s = HexPointer.wp_Heart_value[1], r = 0; r < s; r++) {
+              wplist[(HexRuler * i) + HexPointer.wp_Heart_value[0] + r].wp_Describe = '会心'
+              wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'purple'
+            }
+          }
+          if (HexPointer.wp_Visible_attributes !== undefined) {
+            for (let l = data.length / (HexRuler + HexPointer.wp_Visible_attributes[0]), i = 0; i < l; i++) {
+              for (let s = HexPointer.wp_Visible_attributes[1], r = 0; r < s; r++) {
+                wplist[(HexRuler * i) + HexPointer.wp_Visible_attributes[0] + r].wp_Describe = '可见属性'
+                wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'brown'
+              }
+            }
+          }
+          if (HexPointer.wp_Visible_attribute_values !== undefined) {
+            for (let l = data.length / (HexRuler + HexPointer.wp_Visible_attribute_values[0]), i = 0; i < l; i++) {
+              for (let s = HexPointer.wp_Visible_attribute_values[1], r = 0; r < s; r++) {
+                wplist[(HexRuler * i) + HexPointer.wp_Visible_attribute_values[0] + r].wp_Describe = '可见属性值'
+                wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'brown darken-4'
+              }
+            }
+          }
+          if (HexPointer.wp_Hidden_attribute !== undefined) {
+            for (let l = data.length / (HexRuler + HexPointer.wp_Hidden_attribute[0]), i = 0; i < l; i++) {
+              for (let s = HexPointer.wp_Hidden_attribute[1], r = 0; r < s; r++) {
+                wplist[(HexRuler * i) + HexPointer.wp_Hidden_attribute[0] + r].wp_Describe = '隐藏属性'
+                wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'blue-grey'
+              }
+            }
+          }
+          if (HexPointer.wp_Hidden_attribute_values !== undefined) {
+            for (let l = data.length / (HexRuler + HexPointer.wp_Hidden_attribute_values[0]), i = 0; i < l; i++) {
+              for (let s = HexPointer.wp_Hidden_attribute_values[1], r = 0; r < s; r++) {
+                wplist[(HexRuler * i) + HexPointer.wp_Hidden_attribute_values[0] + r].wp_Describe = '隐藏属性值'
+                wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'blue-grey darken-4'
+              }
+            }
+          }
+          if (HexPointer.wp_Cartridge_matching !== undefined) {
+            for (let l = data.length / (HexRuler + HexPointer.wp_Cartridge_matching[0]), i = 0; i < l; i++) {
+              for (let s = HexPointer.wp_Cartridge_matching[1], r = 0; r < s; r++) {
+                wplist[(HexRuler * i) + HexPointer.wp_Cartridge_matching[0] + r].wp_Describe = '弹种匹配'
+                wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'grey'
+              }
+            }
+          }
+          if (HexPointer.wp_Offset_size !== undefined) {
+            for (let l = data.length / (HexRuler + HexPointer.wp_Offset_size[0]), i = 0; i < l; i++) {
+              for (let s = HexPointer.wp_Offset_size[1], r = 0; r < s; r++) {
+                wplist[(HexRuler * i) + HexPointer.wp_Offset_size[0] + r].wp_Describe = '偏移值'
+                wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'light-green'
+              }
+            }
+          }
+          for (let l = data.length / (HexRuler + HexPointer.wp_Slot_grade_Number[0]), i = 0; i < l; i++) {
+            for (let s = HexPointer.wp_Slot_grade_Number[1], r = 0; r < s; r++) {
+              wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_Number[0] + r].wp_Describe = '孔槽数'
+              wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'teal'
+            }
+          }
+          for (let l = data.length / (HexRuler + HexPointer.wp_Slot_grade_1[0]), i = 0; i < l; i++) {
+            for (let s = HexPointer.wp_Slot_grade_1[1], r = 0; r < s; r++) {
+              wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_1[0] + r].wp_Describe = '孔槽1等级'
+              wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'indigo'
+            }
+          }
+          for (let l = data.length / (HexRuler + HexPointer.wp_Slot_grade_2[0]), i = 0; i < l; i++) {
+            for (let s = HexPointer.wp_Slot_grade_2[1], r = 0; r < s; r++) {
+              wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_2[0] + r].wp_Describe = '孔槽2等级'
+              wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'indigo'
+            }
+          }
+          for (let l = data.length / (HexRuler + HexPointer.wp_Slot_grade_3[0]), i = 0; i < l; i++) {
+            for (let s = HexPointer.wp_Slot_grade_3[1], r = 0; r < s; r++) {
+              wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_3[0] + r].wp_Describe = '孔槽3等级'
+              wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'indigo'
+            }
+          }
+          if (HexPointer.wp_Special_attributes !== undefined) {
+            for (let l = data.length / (HexRuler + HexPointer.wp_Special_attributes[0]), i = 0; i < l; i++) {
+              for (let s = HexPointer.wp_Special_attributes[1], r = 0; r < s; r++) {
+                wplist[(HexRuler * i) + HexPointer.wp_Special_attributes[0] + r].wp_Describe = '特殊属性'
+                wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'lime'
+              }
+            }
+          }
+          if (HexPointer.wp_Weapon_skills !== undefined) {
+            for (let l = data.length / (HexRuler + HexPointer.wp_Weapon_skills[0]), i = 0; i < l; i++) {
+              for (let s = HexPointer.wp_Weapon_skills[1], r = 0; r < s; r++) {
+                wplist[(HexRuler * i) + HexPointer.wp_Weapon_skills[0] + r].wp_Describe = '特殊技能'
+                wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'orange'
+              }
+            }
+          }
+          _this.items = wplist
+          console.log(_this.items)
+        }
+      })
+    }
+  },
+  mounted () {
+    let _this = this
+    document.addEventListener('drop', function (e) {
+      e.preventDefault()
+      e.stopPropagation()
+      for (let f of e.dataTransfer.files) {
+        _this.$store.dispatch('setfile', f.path)
+      }
+    })
+    document.addEventListener('dragover', function (e) {
+      e.preventDefault()
+      e.stopPropagation()
+    })
+  }
+}
+</script>
+
+<style>
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+#wrapper {
+  background: radial-gradient(
+    ellipse at top left,
+    rgba(255, 255, 255, 1) 40%,
+    rgba(229, 229, 229, 0.9) 100%
+  );
+  height: 100vh;
+  padding: 0px 0px;
+  width: 100vw;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+}
+
+main > div {
+  flex-basis: 100%;
+}
+</style>

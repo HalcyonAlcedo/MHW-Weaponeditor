@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app id="inspire">
+    <v-app id="inspire" :dark="appdark">
       <v-navigation-drawer
         clipped
         fixed
@@ -33,6 +33,65 @@
             </v-list-tile-content>
           </v-list-tile>
         </v-list>
+        <v-divider></v-divider>
+        <v-list
+          subheader
+          three-line
+        >
+          <v-subheader>设置</v-subheader>
+          <v-list-tile @click="">
+            <v-list-tile-action>
+              <v-checkbox
+                v-model="excludeunknown"
+              ></v-checkbox>
+            </v-list-tile-action>
+
+            <v-list-tile-content @click.prevent="excludeunknown = !excludeunknown">
+              <v-list-tile-title>排除未知武器</v-list-tile-title>
+              <v-list-tile-sub-title>武器信息列表中排除掉未被记载的武器数据</v-list-tile-sub-title>
+            </v-list-tile-content>
+          </v-list-tile>
+
+          <v-list-tile @click="">
+            <v-list-tile-action>
+              <v-checkbox
+                readonly
+                v-model="sound"
+              ></v-checkbox>
+            </v-list-tile-action>
+
+            <v-list-tile-content @click.prevent="sound = !sound">
+              <v-list-tile-title>原始数据对比</v-list-tile-title>
+              <v-list-tile-sub-title>与系统中记载的原始武器信息进行对比</v-list-tile-sub-title>
+            </v-list-tile-content>
+          </v-list-tile>
+
+          <v-list-tile @click="">
+            <v-list-tile-action>
+              <v-checkbox
+                v-model="sourcemod"
+              ></v-checkbox>
+            </v-list-tile-action>
+
+            <v-list-tile-content @click.prevent="sourcemod = !sourcemod">
+              <v-list-tile-title>源码查看模式</v-list-tile-title>
+              <v-list-tile-sub-title>显示文件二进制数据的文件模式，二进制数据根据武器类型进行辅助显示</v-list-tile-sub-title>
+            </v-list-tile-content>
+          </v-list-tile>
+
+          <v-list-tile @click="">
+            <v-list-tile-action>
+              <v-checkbox
+                v-model="appdark"
+              ></v-checkbox>
+            </v-list-tile-action>
+
+            <v-list-tile-content @click.prevent="appdark = !appdark">
+              <v-list-tile-title>暗黑主题</v-list-tile-title>
+              <v-list-tile-sub-title>切换软件主色调至暗黑模式。</v-list-tile-sub-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </v-list>
       </v-navigation-drawer>
       <v-toolbar app fixed clipped-left style="-webkit-app-region: drag">
         <v-toolbar-side-icon @click.stop="drawer = !drawer" style="-webkit-app-region: no-drag"></v-toolbar-side-icon>
@@ -47,25 +106,8 @@
       </v-toolbar>
       <v-content>
         <v-container fluid fill-height>
-          <Editor></Editor>
-          <!--
-          <v-layout justify-center align-center>
-            <v-flex shrink>
-              <v-tooltip right>
-                <v-btn
-                  icon
-                  large
-                  :href="source"
-                  target="_blank"
-                  slot="activator"
-                >
-                  <v-icon large>code</v-icon>
-                </v-btn>
-                <span>Source</span>
-              </v-tooltip>
-            </v-flex>
-          </v-layout>
-          -->
+          <Editor v-if="!sourcemod"></Editor>
+          <EditorSource v-else></EditorSource>
         </v-container>
       </v-content>
       <v-footer app fixed>
@@ -101,19 +143,29 @@
 
 <script>
 import Editor from './Editor'
+import EditorSource from './EditorSource'
 
 export default {
   data: () => ({
     drawer: true,
     dialog: false,
+    appdark: false,
+    sourcemod: false,
+    excludeunknown: true,
     ipc: require('electron').ipcRenderer
   }),
   components: {
-    Editor
+    Editor,
+    EditorSource
   },
   computed: {
     weapon () {
       return this.$store.getters.donefilename
+    }
+  },
+  watch: {
+    excludeunknown: function () {
+      this.$store.dispatch('excludeUnknown', this.excludeunknown)
     }
   },
   props: {
