@@ -95,7 +95,7 @@
       </v-navigation-drawer>
       <v-toolbar app fixed clipped-left style="-webkit-app-region: drag">
         <v-toolbar-side-icon @click.stop="drawer = !drawer" style="-webkit-app-region: no-drag"></v-toolbar-side-icon>
-        <v-toolbar-title>MHW-WeaponEditor - {{weapon ? weapon : '未打开文件'}}</v-toolbar-title>
+        <v-toolbar-title>MHW-WeaponEditor - {{file}}</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn @click="ipc.send('hide-window')" icon style="-webkit-app-region: no-drag">
           <v-icon>remove</v-icon>
@@ -111,7 +111,7 @@
         </v-container>
       </v-content>
       <v-footer app fixed>
-        <span>&copy;Alcedo 2018</span>
+        <span>By Alcedo 2018  -  | 数据版本 1.0.0 | 原始文件版本 1.0.0 | 当前文件 {{file}}（{{weaponfilename}}）|</span>
       </v-footer>
       <v-dialog
         v-model="dialog"
@@ -137,6 +137,26 @@
           </v-card-actions>
         </v-card>
       </v-dialog>
+      <v-dialog
+        v-model="loaddialog"
+        hide-overlay
+        persistent
+        width="300"
+      >
+        <v-card
+          color="primary"
+          dark
+        >
+          <v-card-text>
+            加载中，请稍等
+            <v-progress-linear
+              indeterminate
+              color="white"
+              class="mb-0"
+            ></v-progress-linear>
+          </v-card-text>
+        </v-card>
+      </v-dialog>
     </v-app>
   </div>
 </template>
@@ -152,6 +172,9 @@ export default {
     appdark: false,
     sourcemod: false,
     excludeunknown: true,
+    loaddialog: false,
+    sound: false,
+    file: '未打开文件',
     ipc: require('electron').ipcRenderer
   }),
   components: {
@@ -161,6 +184,40 @@ export default {
   computed: {
     weapon () {
       return this.$store.getters.donefilename
+    },
+    weaponfilename () {
+      switch (this.weapon) {
+        case 'l_sword.wp_dat':
+          return '大剑'
+        case 'sword.wp_dat':
+          return '片手'
+        case 'hammer.wp_dat':
+          return '大锤'
+        case 'lance.wp_dat':
+          return '长枪'
+        case 's_axe.wp_dat':
+          return '斩斧'
+        case 'rod.wp_dat':
+          return '虫棍'
+        case 'lbg.wp_dat_g':
+          return '轻弩'
+        case 'tachi.wp_dat':
+          return '太刀'
+        case 'w_sword.wp_dat':
+          return '双刀'
+        case 'whistle.wp_dat':
+          return '猎笛'
+        case 'g_lance.wp_dat':
+          return '铳枪'
+        case 'c_axe.wp_dat':
+          return '盾斧'
+        case 'bow.wp_dat_g':
+          return '弓'
+        case 'hbg.wp_dat_g':
+          return '重弩'
+        default:
+          return '未知文件'
+      }
     }
   },
   watch: {
@@ -174,8 +231,39 @@ export default {
   methods: {
     openfile () {
       const {dialog} = require('electron').remote
-      this.$store.dispatch('setfile', dialog.showOpenDialog({properties: ['openFile']})[0])
+      let filepath = dialog.showOpenDialog({properties: ['openFile']})[0]
+      this.file = filepath.substring(filepath.lastIndexOf('\\') + 1)
+      this.loadfile(filepath)
+    },
+    loadfile (f) {
+      var fs = require('fs')
+      let _this = this
+      this.loaddialog = true
+      fs.readFile(f, function (err, data) {
+        if (err) {
+          console.log(err)
+        } else {
+          _this.$store.dispatch('setdata', data)
+          _this.$store.dispatch('setfile', f)
+        }
+        _this.loaddialog = false
+      })
     }
+  },
+  mounted () {
+    let _this = this
+    document.addEventListener('drop', function (e) {
+      e.preventDefault()
+      e.stopPropagation()
+      for (let f of e.dataTransfer.files) {
+        _this.file = f.name
+        _this.loadfile(f.path)
+      }
+    })
+    document.addEventListener('dragover', function (e) {
+      e.preventDefault()
+      e.stopPropagation()
+    })
   }
 }
 </script>

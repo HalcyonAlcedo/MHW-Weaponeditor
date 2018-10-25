@@ -181,12 +181,14 @@ export default {
         wp_Special_attributes: false,
         wp_Weapon_skills: 0
       }
-    ],
-    data: []
+    ]
   }),
   computed: {
     getfile () {
       return this.$store.getters.donefile
+    },
+    data () {
+      return this.$store.getters.donefiledata
     },
     weapon () {
       return this.$store.getters.donefilename
@@ -210,9 +212,12 @@ export default {
     }
   },
   watch: {
-    getfile: function () {
-      this.loadfile(this.getfile)
+    data: function () {
+      this.hexdata(this.data)
     }
+  },
+  mounted () {
+    this.hexdata(this.data)
   },
   methods: {
     str_pad (hex) {
@@ -305,126 +310,104 @@ export default {
       }
       return attributetext
     },
-    loadfile (f) {
-      var fs = require('fs')
+    hexdata (data) {
       let _this = this
-      fs.readFile(f, function (err, data) {
-        if (err) {
-          console.log(err)
-        } else {
-          _this.data = data
-          let HexRuler
-          let HexPointer
-          if (data[7] === 0 && data[71] === 1 && data[136] === 2) {
-            HexRuler = 16 * 4 + 1 // 近程武器
-            HexPointer = {
-              'wp_Number': [6, 1], // 6
-              'wp_Money': [24, 4], // 21~24
-              'wp_Rarity': [25, 1], // 25
-              'wp_Chopping_value': [26, 1], // 26
-              'wp_Chopping_grade': [27, 1], // 27
-              'wp_Damage_value': [29, 2], // 28~29
-              'wp_Defense_value': [31, 2], // 30~31
-              'wp_Heart_value': [32, 1], // 32
-              'wp_Visible_attributes': [33, 1], // 33
-              'wp_Visible_attribute_values': [35, 2], // 34~35
-              'wp_Hidden_attribute': [36, 1], // 36
-              'wp_Hidden_attribute_values': [38, 2], // 37~38
-              'wp_Slot_grade_Number': [40, 1], // 40
-              'wp_Slot_grade_1': [41, 1], // 41
-              'wp_Slot_grade_2': [42, 1], // 42
-              'wp_Slot_grade_3': [43, 1], // 43
-              'wp_Special_attributes': [44, 1], // 44
-              'wp_Weapon_skills': [(HexRuler + 2), 1] // HexRuler(下一行) + 2
-            }
-          } else {
-            HexRuler = 16 * 4 + 4 // 远程武器
-            HexPointer = {
-              'wp_Number': [6, 1], // 6
-              'wp_Money': [28, 4], // 25~28
-              'wp_Rarity': [29, 1], // 29
-              'wp_Damage_value': [31, 2], // 30~31
-              'wp_Defense_value': [33, 2], // 32~33
-              'wp_Heart_value': [34, 1], // 34
-              'wp_Cartridge_matching': [42, 1], // 42
-              'wp_Offset_size': [44, 1], // 44
-              'wp_Slot_grade_Number': [45, 1], // 45
-              'wp_Slot_grade_1': [46, 1], // 46
-              'wp_Slot_grade_2': [47, 1], // 47
-              'wp_Slot_grade_3': [48, 1], // 48
-              'wp_Weapon_skills': [(HexRuler + 2), 1] // HexRuler(下一行) + 2
-            }
-          }
-          let wplist = []
-          let HexFunction = function (data, Hexpointer, HexRuler, i) {
-            let ret = ''
-            if (Hexpointer === undefined) {
-              return false
-            }
-            for (let p = 0; p < Hexpointer[1]; p++) {
-              let Hex16 = data[(HexRuler * i) + Hexpointer[0] - p]
-              if (Hex16 !== undefined) {
-                ret += Hex16.toString(16)
-              } else {
-                ret = 0
-              }
-            }
-            return parseInt(ret, 16)
-          }
-          let wpname = function (id) {
-            let wpnamelist = require('./Weaponinfo/' + _this.weapon + '.json')
-            let namedata = wpnamelist.Data
-            for (let i = 0; i < namedata.length; i++) {
-              if (namedata[i].Weapon_Number === id) {
-                return namedata[i].name
-              }
-            }
-            return '未知武器'
-          }
-          for (let l = data.length / HexRuler, i = 0; i < l; i++) {
-            wplist[i] = {
-              'wp_Hex': (HexRuler * i).toString(16),
-              'wp_Name': wpname(HexFunction(data, HexPointer.wp_Number, HexRuler, i)),
-              'wp_Number': HexFunction(data, HexPointer.wp_Number, HexRuler, i),
-              'wp_Money': HexFunction(data, HexPointer.wp_Money, HexRuler, i),
-              'wp_Rarity': HexFunction(data, HexPointer.wp_Rarity, HexRuler, i),
-              'wp_Chopping_value': HexFunction(data, HexPointer.wp_Chopping_value, HexRuler, i),
-              'wp_Chopping_grade': HexFunction(data, HexPointer.wp_Chopping_grade, HexRuler, i),
-              'wp_Damage_value': _this.weapon_damage(_this.weapon) * HexFunction(data, HexPointer.wp_Damage_value, HexRuler, i),
-              'wp_Defense_value': HexFunction(data, HexPointer.wp_Defense_value, HexRuler, i),
-              'wp_Heart_value': HexFunction(data, HexPointer.wp_Heart_value, HexRuler, i),
-              'wp_Visible_attributes': HexFunction(data, HexPointer.wp_Visible_attributes, HexRuler, i),
-              'wp_Visible_attribute_values': HexFunction(data, HexPointer.wp_Visible_attribute_values, HexRuler, i),
-              'wp_Hidden_attribute': HexFunction(data, HexPointer.wp_Hidden_attribute, HexRuler, i),
-              'wp_Hidden_attribute_values': HexFunction(data, HexPointer.wp_Hidden_attribute_values, HexRuler, i),
-              'wp_Cartridge_matching': HexFunction(data, HexPointer.wp_Cartridge_matching, HexRuler, i),
-              'wp_Offset_size': HexFunction(data, HexPointer.wp_Offset_size, HexRuler, i),
-              'wp_Slot_grade_Number': HexFunction(data, HexPointer.wp_Slot_grade_Number, HexRuler, i),
-              'wp_Slot_grade_1': HexFunction(data, HexPointer.wp_Slot_grade_1, HexRuler, i),
-              'wp_Slot_grade_2': HexFunction(data, HexPointer.wp_Slot_grade_2, HexRuler, i),
-              'wp_Slot_grade_3': HexFunction(data, HexPointer.wp_Slot_grade_3, HexRuler, i),
-              'wp_Special_attributes': HexFunction(data, HexPointer.wp_Special_attributes, HexRuler, i),
-              'wp_Weapon_skills': HexFunction(data, HexPointer.wp_Weapon_skills, HexRuler, i)
-            }
-          }
-          _this.items = wplist
+      let HexRuler
+      let HexPointer
+      if (data[7] === 0 && data[71] === 1 && data[136] === 2) {
+        HexRuler = 16 * 4 + 1 // 近程武器
+        HexPointer = {
+          'wp_Number': [6, 1], // 6
+          'wp_Money': [24, 4], // 21~24
+          'wp_Rarity': [25, 1], // 25
+          'wp_Chopping_value': [26, 1], // 26
+          'wp_Chopping_grade': [27, 1], // 27
+          'wp_Damage_value': [29, 2], // 28~29
+          'wp_Defense_value': [31, 2], // 30~31
+          'wp_Heart_value': [32, 1], // 32
+          'wp_Visible_attributes': [33, 1], // 33
+          'wp_Visible_attribute_values': [35, 2], // 34~35
+          'wp_Hidden_attribute': [36, 1], // 36
+          'wp_Hidden_attribute_values': [38, 2], // 37~38
+          'wp_Slot_grade_Number': [40, 1], // 40
+          'wp_Slot_grade_1': [41, 1], // 41
+          'wp_Slot_grade_2': [42, 1], // 42
+          'wp_Slot_grade_3': [43, 1], // 43
+          'wp_Special_attributes': [44, 1], // 44
+          'wp_Weapon_skills': [(HexRuler + 2), 1] // HexRuler(下一行) + 2
         }
-      })
-    }
-  },
-  mounted () {
-    let _this = this
-    document.addEventListener('drop', function (e) {
-      e.preventDefault()
-      e.stopPropagation()
-      for (let f of e.dataTransfer.files) {
-        _this.$store.dispatch('setfile', f.path)
+      } else {
+        HexRuler = 16 * 4 + 4 // 远程武器
+        HexPointer = {
+          'wp_Number': [6, 1], // 6
+          'wp_Money': [28, 4], // 25~28
+          'wp_Rarity': [29, 1], // 29
+          'wp_Damage_value': [31, 2], // 30~31
+          'wp_Defense_value': [33, 2], // 32~33
+          'wp_Heart_value': [34, 1], // 34
+          'wp_Cartridge_matching': [42, 1], // 42
+          'wp_Offset_size': [44, 1], // 44
+          'wp_Slot_grade_Number': [45, 1], // 45
+          'wp_Slot_grade_1': [46, 1], // 46
+          'wp_Slot_grade_2': [47, 1], // 47
+          'wp_Slot_grade_3': [48, 1], // 48
+          'wp_Weapon_skills': [(HexRuler + 2), 1] // HexRuler(下一行) + 2
+        }
       }
-    })
-    document.addEventListener('dragover', function (e) {
-      e.preventDefault()
-      e.stopPropagation()
-    })
+      let wplist = []
+      let HexFunction = function (data, Hexpointer, HexRuler, i) {
+        let ret = ''
+        if (Hexpointer === undefined) {
+          return false
+        }
+        for (let p = 0; p < Hexpointer[1]; p++) {
+          let Hex16 = data[(HexRuler * i) + Hexpointer[0] - p]
+          if (Hex16 !== undefined) {
+            ret += Hex16.toString(16)
+          } else {
+            ret = 0
+          }
+        }
+        return parseInt(ret, 16)
+      }
+      let wpname = function (id) {
+        let wpnamelist = require('./Weaponinfo/' + _this.weapon + '.json')
+        let namedata = wpnamelist.Data
+        for (let i = 0; i < namedata.length; i++) {
+          if (namedata[i].Weapon_Number === id) {
+            return namedata[i].name
+          }
+        }
+        return '未知武器'
+      }
+      for (let l = data.length / HexRuler, i = 0; i < l; i++) {
+        wplist[i] = {
+          'wp_Hex': (HexRuler * i).toString(16),
+          'wp_Name': wpname(HexFunction(data, HexPointer.wp_Number, HexRuler, i)),
+          'wp_Number': HexFunction(data, HexPointer.wp_Number, HexRuler, i),
+          'wp_Money': HexFunction(data, HexPointer.wp_Money, HexRuler, i),
+          'wp_Rarity': HexFunction(data, HexPointer.wp_Rarity, HexRuler, i),
+          'wp_Chopping_value': HexFunction(data, HexPointer.wp_Chopping_value, HexRuler, i),
+          'wp_Chopping_grade': HexFunction(data, HexPointer.wp_Chopping_grade, HexRuler, i),
+          'wp_Damage_value': _this.weapon_damage(_this.weapon) * HexFunction(data, HexPointer.wp_Damage_value, HexRuler, i),
+          'wp_Defense_value': HexFunction(data, HexPointer.wp_Defense_value, HexRuler, i),
+          'wp_Heart_value': HexFunction(data, HexPointer.wp_Heart_value, HexRuler, i),
+          'wp_Visible_attributes': HexFunction(data, HexPointer.wp_Visible_attributes, HexRuler, i),
+          'wp_Visible_attribute_values': HexFunction(data, HexPointer.wp_Visible_attribute_values, HexRuler, i),
+          'wp_Hidden_attribute': HexFunction(data, HexPointer.wp_Hidden_attribute, HexRuler, i),
+          'wp_Hidden_attribute_values': HexFunction(data, HexPointer.wp_Hidden_attribute_values, HexRuler, i),
+          'wp_Cartridge_matching': HexFunction(data, HexPointer.wp_Cartridge_matching, HexRuler, i),
+          'wp_Offset_size': HexFunction(data, HexPointer.wp_Offset_size, HexRuler, i),
+          'wp_Slot_grade_Number': HexFunction(data, HexPointer.wp_Slot_grade_Number, HexRuler, i),
+          'wp_Slot_grade_1': HexFunction(data, HexPointer.wp_Slot_grade_1, HexRuler, i),
+          'wp_Slot_grade_2': HexFunction(data, HexPointer.wp_Slot_grade_2, HexRuler, i),
+          'wp_Slot_grade_3': HexFunction(data, HexPointer.wp_Slot_grade_3, HexRuler, i),
+          'wp_Special_attributes': HexFunction(data, HexPointer.wp_Special_attributes, HexRuler, i),
+          'wp_Weapon_skills': HexFunction(data, HexPointer.wp_Weapon_skills, HexRuler, i)
+        }
+      }
+      _this.items = wplist
+    }
   }
 }
 </script>
