@@ -110,18 +110,17 @@
         </v-container>
       </v-content>
       <v-footer app fixed>
-        <span>&nbsp;&nbsp;&nbsp;By Alcedo 2018 &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | 数据版本 1.0.0 | 原始文件版本 1.0.0 (2018-9-2)| 当前文件 {{file}}（{{weaponfilename}}）|</span>
+        <span>&nbsp;&nbsp;&nbsp;By Alcedo 2018 &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | 数据版本 154766 | 原始文件版本 154766 (提取自2018-10-14)| 当前文件 {{file}}（{{weaponfilename}}）|</span>
       </v-footer>
       <v-dialog
         v-model="dialog"
         max-width="490"
       >
         <v-card>
-          <v-card-title class="headline">说明</v-card-title>
+          <v-card-title class="headline">关于</v-card-title>
   
           <v-card-text>
-            将数据文件拖拽到程序窗口中，MHW-WeapinEditor将自动读取并分析数据，根据内建的资料表匹配数据文件信息。
-            修改数据后点击保存将生成新的数据文件。
+            本软件可针对《怪物猎人世界》中武器数据魔改文件进行查看和修改，修改后文件放置在Monster Hunter World\nativePC\common\equip下即可生效。修改后文件将影响游戏平衡性，请勿用于联机使用。注：目前仅支持查看。
           </v-card-text>
   
           <v-card-actions>
