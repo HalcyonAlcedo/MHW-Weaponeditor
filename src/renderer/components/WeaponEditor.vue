@@ -55,7 +55,6 @@
           <v-list-tile @click="">
             <v-list-tile-action>
               <v-checkbox
-                readonly
                 v-model="sound"
               ></v-checkbox>
             </v-list-tile-action>
@@ -111,7 +110,7 @@
         </v-container>
       </v-content>
       <v-footer app fixed>
-        <span>By Alcedo 2018  -  | 数据版本 1.0.0 | 原始文件版本 1.0.0 | 当前文件 {{file}}（{{weaponfilename}}）|</span>
+        <span>&nbsp;&nbsp;&nbsp;By Alcedo 2018 &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | 数据版本 1.0.0 | 原始文件版本 1.0.0 (2018-9-2)| 当前文件 {{file}}（{{weaponfilename}}）|</span>
       </v-footer>
       <v-dialog
         v-model="dialog"
@@ -164,6 +163,8 @@
 <script>
 import Editor from './Editor'
 import EditorSource from './EditorSource'
+import fs from 'fs'
+import path from 'path'
 
 export default {
   data: () => ({
@@ -223,6 +224,12 @@ export default {
   watch: {
     excludeunknown: function () {
       this.$store.dispatch('excludeUnknown', this.excludeunknown)
+    },
+    weapon: function () {
+      this.contrastdata()
+    },
+    sound: function () {
+      this.contrastdata()
     }
   },
   props: {
@@ -235,8 +242,22 @@ export default {
       this.file = filepath.substring(filepath.lastIndexOf('\\') + 1)
       this.loadfile(filepath)
     },
+    contrastdata () {
+      let _this = this
+      if (this.weapon !== 'Unknown' && this.sound) {
+        fs.readFile(path.join(__static, '/Sourceweapon/' + this.weapon), function (err, data) {
+          if (err) {
+            console.log(err)
+          } else {
+            _this.$store.dispatch('setsourcedata', data)
+          }
+          _this.loaddialog = false
+        })
+      } else {
+        this.$store.dispatch('setsourcedata', false)
+      }
+    },
     loadfile (f) {
-      var fs = require('fs')
       let _this = this
       this.loaddialog = true
       fs.readFile(f, function (err, data) {

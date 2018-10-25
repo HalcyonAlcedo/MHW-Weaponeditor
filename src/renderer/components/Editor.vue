@@ -50,11 +50,15 @@
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Money !== false">
                     <v-list-tile-content>金币:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Money }}</v-list-tile-content>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Money }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Money !== props.item.wp_sourcedata.wp_Money ? '(' + props.item.wp_sourcedata.wp_Money + ')' : ''}}</Contrast>
+                    </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Rarity !== false">
                     <v-list-tile-content>稀有度:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">Rank{{ props.item.wp_Rarity + 1 }}</v-list-tile-content>
+                    <v-list-tile-content class="align-end">Rank{{ props.item.wp_Rarity + 1 }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Rarity !== props.item.wp_sourcedata.wp_Rarity ? '(' + props.item.wp_sourcedata.wp_Rarity + ')' : ''}}</Contrast>
+                    </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Chopping_value !== false">
                     <v-list-tile-content>斩味值:</v-list-tile-content>
@@ -64,6 +68,7 @@
                           max=76
                         ></v-slider>
                         {{ props.item.wp_Chopping_value }}
+                        <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Chopping_value !== props.item.wp_sourcedata.wp_Chopping_value ? '(' + props.item.wp_sourcedata.wp_Chopping_value + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Chopping_grade !== false">
@@ -76,67 +81,98 @@
                           tick-size="2"
                         ></v-slider>
                         {{ props.item.wp_Chopping_grade }}
+                        <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Chopping_grade !== props.item.wp_sourcedata.wp_Chopping_grade ? '(' + props.item.wp_sourcedata.wp_Chopping_grade + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Damage_value !== false">
                     <v-list-tile-content>伤害值:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Damage_value }}</v-list-tile-content>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Damage_value }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Damage_value !== props.item.wp_sourcedata.wp_Damage_value ? '(' + props.item.wp_sourcedata.wp_Damage_value + ')' : ''}}</Contrast>
+                    </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Defense_value !== false">
                     <v-list-tile-content>防御值:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Defense_value }}</v-list-tile-content>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Defense_value }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Defense_value !== props.item.wp_sourcedata.wp_Defense_value ? '(' + props.item.wp_sourcedata.wp_Defense_value + ')' : ''}}</Contrast>
+                    </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Heart_value !== false">
                     <v-list-tile-content>会心值:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Heart_value <= 100 ? props.item.wp_Heart_value : '-' + (256 - props.item.wp_Heart_value) }}%</v-list-tile-content>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Heart_value <= 100 ? props.item.wp_Heart_value : '-' + (256 - props.item.wp_Heart_value) }}%
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Heart_value !== props.item.wp_sourcedata.wp_Heart_value ? '(' + props.item.wp_sourcedata.wp_Heart_value <= 100 ? props.item.wp_sourcedata.wp_Heart_value : '-' + (256 - props.item.wp_sourcedata.wp_Heart_value) + ')' : ''}}</Contrast>
+                    </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Visible_attributes !== false">
                     <v-list-tile-content>可见属性:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ attribute(props.item.wp_Visible_attributes) }}</v-list-tile-content>
+                    <v-list-tile-content class="align-end">{{ attribute(props.item.wp_Visible_attributes) }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Visible_attributes !== props.item.wp_sourcedata.wp_Visible_attributes ? '(' + attribute(props.item.wp_sourcedata.wp_Visible_attributes) + ')' : ''}}</Contrast>
+                    </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Visible_attribute_values !== false">
                     <v-list-tile-content>可见属性数值:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Visible_attribute_values * 10 }}</v-list-tile-content>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Visible_attribute_values * 10 }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Visible_attribute_values !== props.item.wp_sourcedata.wp_Visible_attribute_values ? '(' + props.item.wp_sourcedata.wp_Visible_attribute_values * 10 + ')' : ''}}</Contrast>
+                    </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Hidden_attribute !== false">
                     <v-list-tile-content>隐藏属性:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ attribute(props.item.wp_Hidden_attribute) }}</v-list-tile-content>
+                    <v-list-tile-content class="align-end">{{ attribute(props.item.wp_Hidden_attribute) }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Hidden_attribute !== props.item.wp_sourcedata.wp_Hidden_attribute ? '(' + attribute(props.item.wp_sourcedata.wp_Hidden_attribute) + ')' : ''}}</Contrast>
+                    </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Hidden_attribute_values !== false">
                     <v-list-tile-content>隐藏属性数值:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Hidden_attribute_values * 10 }}</v-list-tile-content>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Hidden_attribute_values * 10 }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Hidden_attribute_values !== props.item.wp_sourcedata.wp_Hidden_attribute_values ? '(' + props.item.wp_sourcedata.wp_Hidden_attribute_values + ')' : ''}}</Contrast>
+                    </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Cartridge_matching !== false">
                     <v-list-tile-content>子弹匹配:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Cartridge_matching }}</v-list-tile-content>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Cartridge_matching }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Cartridge_matching !== props.item.wp_sourcedata.wp_Cartridge_matching ? '(' + props.item.wp_sourcedata.wp_Cartridge_matching + ')' : ''}}</Contrast>
+                    </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Offset_size !== false">
                     <v-list-tile-content>偏移大小:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Offset_size }}</v-list-tile-content>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Offset_size }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Offset_size !== props.item.wp_sourcedata.wp_Offset_size ? '(' + props.item.wp_sourcedata.wp_Offset_size + ')' : ''}}</Contrast>
+                    </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_Number !== false">
                     <v-list-tile-content>镶孔数量:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Slot_grade_Number }}</v-list-tile-content>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Slot_grade_Number }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_Number !== props.item.wp_sourcedata.wp_Slot_grade_Number ? '(' + props.item.wp_sourcedata.wp_Slot_grade_Number + ')' : ''}}</Contrast>
+                    </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_1 !== false">
                     <v-list-tile-content>1孔等级:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Slot_grade_1 }}</v-list-tile-content>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Slot_grade_1 }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_1 !== props.item.wp_sourcedata.wp_Slot_grade_1 ? '(' + props.item.wp_sourcedata.wp_Slot_grade_1 + ')' : ''}}</Contrast>
+                    </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_2 !== false">
                     <v-list-tile-content>2孔等级:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Slot_grade_2 }}</v-list-tile-content>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Slot_grade_2 }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_2 !== props.item.wp_sourcedata.wp_Slot_grade_2 ? '(' + props.item.wp_sourcedata.wp_Slot_grade_2 + ')' : ''}}</Contrast>
+                    </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_3 !== false">
                     <v-list-tile-content>3孔等级:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Slot_grade_3 }}</v-list-tile-content>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Slot_grade_3 }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_3 !== props.item.wp_sourcedata.wp_Slot_grade_3 ? '(' + props.item.wp_sourcedata.wp_Slot_grade_3 + ')' : ''}}</Contrast>
+                    </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Special_attributes !== false">
                     <v-list-tile-content>特殊属性:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Special_attributes }}</v-list-tile-content>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Special_attributes }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Special_attributes !== props.item.wp_sourcedata.wp_Special_attributes ? '(' + props.item.wp_sourcedata.wp_Special_attributes + ')' : ''}}</Contrast>
+                    </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Weapon_skills !== false">
                     <v-list-tile-content>武器技能:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Weapon_skills }}</v-list-tile-content>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Weapon_skills }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Weapon_skills !== props.item.wp_sourcedata.wp_Weapon_skills ? '(' + props.item.wp_sourcedata.wp_Weapon_skills + ')' : ''}}</Contrast>
+                    </v-list-tile-content>
                   </v-list-tile>
                 </v-list>
               </v-card>
@@ -181,7 +217,8 @@ export default {
         wp_Special_attributes: false,
         wp_Weapon_skills: 0
       }
-    ]
+    ],
+    sourceitems: false
   }),
   computed: {
     getfile () {
@@ -189,6 +226,9 @@ export default {
     },
     data () {
       return this.$store.getters.donefiledata
+    },
+    sourcedata () {
+      return this.$store.getters.donefilesourcedata
     },
     weapon () {
       return this.$store.getters.donefilename
@@ -213,11 +253,22 @@ export default {
   },
   watch: {
     data: function () {
-      this.hexdata(this.data)
+      this.items = this.hexdata(this.data)
+    },
+    sourcedata: function () {
+      if (this.sourcedata) {
+        this.sourceitems = this.hexdata(this.sourcedata)
+        this.items = this.hexdata(this.data)
+      } else {
+        this.sourceitems = false
+      }
     }
   },
   mounted () {
-    this.hexdata(this.data)
+    if (this.sourcedata) {
+      this.sourceitems = this.hexdata(this.sourcedata)
+    }
+    this.items = this.hexdata(this.data)
   },
   methods: {
     str_pad (hex) {
@@ -310,7 +361,7 @@ export default {
       }
       return attributetext
     },
-    hexdata (data) {
+    hexdata (data, setsourcedata = false) {
       let _this = this
       let HexRuler
       let HexPointer
@@ -405,8 +456,11 @@ export default {
           'wp_Special_attributes': HexFunction(data, HexPointer.wp_Special_attributes, HexRuler, i),
           'wp_Weapon_skills': HexFunction(data, HexPointer.wp_Weapon_skills, HexRuler, i)
         }
+        if (this.sourceitems) {
+          wplist[i].wp_sourcedata = this.sourceitems[i]
+        }
       }
-      _this.items = wplist
+      return wplist
     }
   }
 }
