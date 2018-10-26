@@ -66,7 +66,7 @@ export default {
         wp_Colour: ''
       }
     ],
-    hexrules: (v) => console.log(new RegExp(v).test('/^[0-9a-fA-F]$//^[0-9a-fA-F]{1,2}$/'))
+    hexrules: (v) => /^[0-9a-fA-F]{1,2}$/.test(v)
   }),
   computed: {
     getfile () {
@@ -88,13 +88,15 @@ export default {
     str_pad (hex, digits = 8) {
       var zero = new Array(digits + 1).join('0')
       var tmp = digits - hex.length
-      return zero.substr(0, tmp) + hex
+      return zero.substr(0, tmp) + hex.toLocaleUpperCase()
     },
     save (address, data) {
-      this.$store.dispatch('editdata', {
-        address: address,
-        value: parseInt(data, 16)
-      })
+      if (/^[0-9a-fA-F]{1,2}$/.test(data)) {
+        this.$store.dispatch('editdata', {
+          address: address,
+          value: parseInt(data, 16)
+        })
+      }
     },
     hexdata (data) {
       let _this = this
