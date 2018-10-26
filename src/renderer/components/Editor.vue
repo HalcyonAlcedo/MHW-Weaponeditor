@@ -65,7 +65,8 @@
                     <v-list-tile-content class="align-end">
                         <v-slider
                           v-model="props.item.wp_Chopping_value"
-                          max=76
+                          max=118
+                          readonly
                         ></v-slider>
                         {{ props.item.wp_Chopping_value }}
                         <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Chopping_value !== props.item.wp_sourcedata.wp_Chopping_value ? '(' + props.item.wp_sourcedata.wp_Chopping_value + ')' : ''}}</Contrast>
@@ -79,6 +80,7 @@
                           max=8
                           ticks="always"
                           tick-size="2"
+                          readonly
                         ></v-slider>
                         {{ props.item.wp_Chopping_grade }}
                         <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Chopping_grade !== props.item.wp_sourcedata.wp_Chopping_grade ? '(' + props.item.wp_sourcedata.wp_Chopping_grade + ')' : ''}}</Contrast>

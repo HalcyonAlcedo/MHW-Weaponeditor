@@ -20,21 +20,22 @@
               large
               lazy
               persistent
+              @save="save(props.item.wp_address, props.item.wp_Hex)"
             >
               <v-tooltip bottom>
                 <v-card slot="activator" height="50" width="50" :color="props.item.wp_Colour">
                   <v-card-text class="text-xs-center">
-                      {{props.item.wp_Hex}}
+                      {{ str_pad(props.item.wp_Hex, 2) }}
                   </v-card-text>
                 </v-card>
-                <span>描述：{{props.item.wp_Describe}}</span>
-                <span>地址：{{props.item.wp_address}}</span>
+                <span>描述：{{ props.item.wp_Describe }}</span>
+                <span>地址：{{ str_pad(props.item.wp_address.toString(16)).toLocaleUpperCase() }}</span>
               </v-tooltip>
               <div slot="input" class="mt-3 title">修改数据</div>
               <v-text-field
                 slot="input"
                 v-model="props.item.wp_Hex"
-                rules="/^[0-9a-fA-F]{2}$/"
+                :rules="[hexrules]"
                 label="Edit"
                 single-line
                 counter
@@ -64,7 +65,8 @@ export default {
         wp_address: '',
         wp_Colour: ''
       }
-    ]
+    ],
+    hexrules: (v) => console.log(new RegExp(v).test('/^[0-9a-fA-F]$//^[0-9a-fA-F]{1,2}$/'))
   }),
   computed: {
     getfile () {
@@ -83,95 +85,16 @@ export default {
     }
   },
   methods: {
-    str_pad (hex) {
-      var zero = '00000000'
-      var tmp = 8 - hex.length
+    str_pad (hex, digits = 8) {
+      var zero = new Array(digits + 1).join('0')
+      var tmp = digits - hex.length
       return zero.substr(0, tmp) + hex
     },
-    weapon_damage (file) {
-      let weapondamage = 0
-      switch (file) {
-        case 'l_sword.wp_dat':
-          weapondamage = 4.8
-          break
-        case 'sword.wp_dat':
-          weapondamage = 1.4
-          break
-        case 'hammer.wp_dat':
-          weapondamage = 5.2
-          break
-        case 'lance.wp_dat':
-          weapondamage = 2.3
-          break
-        case 's_axe.wp_dat':
-          weapondamage = 3.5
-          break
-        case 'rod.wp_dat':
-          weapondamage = 3.1
-          break
-        case 'lbg.wp_dat_g':
-          weapondamage = 1.3
-          break
-        case 'tachi.wp_dat':
-          weapondamage = 3.3
-          break
-        case 'w_sword.wp_dat':
-          weapondamage = 1.4
-          break
-        case 'whistle.wp_dat':
-          weapondamage = 4.2
-          break
-        case 'g_lance.wp_dat':
-          weapondamage = 2.3
-          break
-        case 'c_axe.wp_dat':
-          weapondamage = 3.6
-          break
-        case 'bow.wp_dat_g':
-          weapondamage = 1.2
-          break
-        case 'hbg.wp_dat_g':
-          weapondamage = 1.5
-          break
-        default:
-          weapondamage = 1
-      }
-      return weapondamage
-    },
-    attribute (attribute) {
-      let attributetext = '无'
-      switch (attribute) {
-        case 0:
-          attributetext = '无'
-          break
-        case 1:
-          attributetext = '火'
-          break
-        case 2:
-          attributetext = '水'
-          break
-        case 3:
-          attributetext = '冰'
-          break
-        case 4:
-          attributetext = '电'
-          break
-        case 5:
-          attributetext = '龙'
-          break
-        case 6:
-          attributetext = '毒'
-          break
-        case 7:
-          attributetext = '麻'
-          break
-        case 8:
-          attributetext = '眠'
-          break
-        default:
-          attributetext = '爆'
-      }
-      return attributetext
+    save (address, data) {
+      this.$store.dispatch('editdata', {
+        address: address,
+        value: parseInt(data, 16)
+      })
     },
     hexdata (data) {
       let _this = this
@@ -224,7 +147,7 @@ export default {
         wplist[i] = {
           wp_Hex: data[i].toString(16).toLocaleUpperCase(),
           wp_Describe: '未知',
-          wp_address: this.str_pad(i.toString(16)).toLocaleUpperCase(),
+          wp_address: i,
           wp_Colour: ''
         }
       }

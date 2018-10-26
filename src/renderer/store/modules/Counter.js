@@ -67,6 +67,9 @@ const mutations = {
   SOURCE_DATA_SET (state, filesourcedata) {
     state.filesourcedata = filesourcedata
   },
+  DATA_EDIT (state, data) {
+    state.filedata[data.address] = data.value
+  },
   EXCLUDE_UKNOWN (state, excludeunknown) {
     state.excludeunknown = excludeunknown
   }
@@ -97,6 +100,9 @@ const actions = {
   setdata ({ commit }, filedata) {
     commit('FILE_SET_NAME', filedata)
     commit('DATA_SET', filedata)
+  },
+  editdata ({ commit }, data) {
+    commit('DATA_EDIT', data)
   },
   setsourcedata ({ commit }, filedata) {
     commit('SOURCE_DATA_SET', filedata)

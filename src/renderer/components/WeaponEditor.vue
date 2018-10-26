@@ -8,6 +8,30 @@
         app
       >
         <v-list dense>
+          <v-menu
+            transition="slide-x-transition"
+            bottom
+            right
+            offset-x
+          >
+            <v-list-tile slot="activator">
+              <v-list-tile-action>
+                <v-icon>insert_drive_file</v-icon>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>新建</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+            <v-list>
+              <v-list-tile
+                v-for="(item, i) in newfile"
+                :key="i"
+                @click="openfile(item.file)"
+              >
+                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+              </v-list-tile>
+            </v-list>
+          </v-menu>
           <v-list-tile @click="openfile()">
             <v-list-tile-action>
               <v-icon>folder_open</v-icon>
@@ -16,7 +40,7 @@
               <v-list-tile-title>打开</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
-          <v-list-tile>
+          <v-list-tile @click="savefile()">
             <v-list-tile-action>
               <v-icon>save</v-icon>
             </v-list-tile-action>
@@ -73,7 +97,7 @@
             </v-list-tile-action>
 
             <v-list-tile-content @click.prevent="sourcemod = !sourcemod">
-              <v-list-tile-title>源码查看模式</v-list-tile-title>
+              <v-list-tile-title>二进制模式</v-list-tile-title>
               <v-list-tile-sub-title>显示文件二进制数据的文件模式，二进制数据根据武器类型进行辅助显示</v-list-tile-sub-title>
             </v-list-tile-content>
           </v-list-tile>
@@ -110,7 +134,7 @@
         </v-container>
       </v-content>
       <v-footer app fixed>
-        <span>&nbsp;&nbsp;&nbsp;By Alcedo 2018 &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | 数据版本 154766 | 原始文件版本 154766 (提取自2018-10-14)| 当前文件 {{file}}（{{weaponfilename}}）|</span>
+        <span>&nbsp;&nbsp;&nbsp;By Alcedo 2018 &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | 数据版本 154766 | 原始文件版本 154766 （提取自2018-10-14） | 当前文件 {{file}}（{{weaponfilename}}）|</span>
       </v-footer>
       <v-dialog
         v-model="dialog"
@@ -120,7 +144,7 @@
           <v-card-title class="headline">关于</v-card-title>
   
           <v-card-text>
-            本软件可针对《怪物猎人世界》中武器数据魔改文件进行查看和修改，修改后文件放置在Monster Hunter World\nativePC\common\equip下即可生效。修改后文件将影响游戏平衡性，请勿用于联机使用。注：目前仅支持查看。
+            本软件可针对《怪物猎人世界》中武器数据魔改文件进行查看和修改，修改后文件放置在Monster Hunter World\nativePC\common\equip下即可生效。修改后文件将影响游戏平衡性，请勿用于联机使用。
           </v-card-text>
   
           <v-card-actions>
@@ -155,6 +179,25 @@
           </v-card-text>
         </v-card>
       </v-dialog>
+      <v-snackbar
+        v-model="snackbar.snackbar"
+        :bottom="snackbar.y === 'bottom'"
+        :left="snackbar.x === 'left'"
+        :multi-line="snackbar.mode === 'multi-line'"
+        :right="snackbar.x === 'right'"
+        :timeout="snackbar.timeout"
+        :top="snackbar.y === 'top'"
+        :vertical="snackbar.mode === 'vertical'"
+      >
+        {{ snackbar.text }}
+        <v-btn
+          color="pink"
+          flat
+          @click="snackbar.snackbar = false"
+        >
+          Close
+        </v-btn>
+      </v-snackbar>
     </v-app>
   </div>
 </template>
@@ -164,6 +207,8 @@ import Editor from './Editor'
 import EditorSource from './EditorSource'
 import fs from 'fs'
 import path from 'path'
+
+const {dialog} = require('electron').remote
 
 export default {
   data: () => ({
@@ -175,6 +220,30 @@ export default {
     loaddialog: false,
     sound: false,
     file: '未打开文件',
+    newfile: [
+      { title: '大剑', file: 'l_sword.wp_dat' },
+      { title: '片手', file: 'sword.wp_dat' },
+      { title: '大锤', file: 'hammer.wp_dat' },
+      { title: '长枪', file: 'lance.wp_dat' },
+      { title: '斩斧', file: 's_axe.wp_dat' },
+      { title: '虫棍', file: 'rod.wp_dat' },
+      { title: '轻弩', file: 'lbg.wp_dat_g' },
+      { title: '重弩', file: 'hbg.wp_dat_g' },
+      { title: '太刀', file: 'tachi.wp_dat' },
+      { title: '双刀', file: 'w_sword.wp_dat' },
+      { title: '猎笛', file: 'whistle.wp_dat' },
+      { title: '铳枪', file: 'g_lance.wp_dat' },
+      { title: '盾斧', file: 'c_axe.wp_dat' },
+      { title: '弓', file: 'bow.wp_dat_g' }
+    ],
+    snackbar: {
+      snackbar: false,
+      y: 'top',
+      x: null,
+      mode: '',
+      timeout: 6000,
+      text: ''
+    },
     ipc: require('electron').ipcRenderer
   }),
   components: {
@@ -184,6 +253,9 @@ export default {
   computed: {
     weapon () {
       return this.$store.getters.donefilename
+    },
+    filedata () {
+      return this.$store.getters.donefiledata
     },
     weaponfilename () {
       switch (this.weapon) {
@@ -235,11 +307,32 @@ export default {
     source: String
   },
   methods: {
-    openfile () {
-      const {dialog} = require('electron').remote
-      let filepath = dialog.showOpenDialog({properties: ['openFile']})[0]
+    openfile (file = null) {
+      let filepath
+      if (file === null) {
+        filepath = dialog.showOpenDialog({properties: ['openFile']})[0]
+      } else {
+        filepath = path.join(__static, '/Sourceweapon/' + file)
+      }
       this.file = filepath.substring(filepath.lastIndexOf('\\') + 1)
       this.loadfile(filepath)
+    },
+    savefile () {
+      let _this = this
+      if (this.file !== '未打开文件') {
+        let filepath = dialog.showSaveDialog({ title: '保存', defaultPath: this.weapon })
+        fs.writeFile(filepath, this.filedata, { flag: 'w' }, function (err) {
+          if (err) {
+            _this.snackbar.text = '保存失败'
+          } else {
+            _this.snackbar.text = '保存成功'
+          }
+          _this.snackbar.snackbar = true
+        })
+      } else {
+        this.snackbar.text = '未打开文件'
+        this.snackbar.snackbar = true
+      }
     },
     contrastdata () {
       let _this = this
@@ -261,10 +354,14 @@ export default {
       this.loaddialog = true
       fs.readFile(f, function (err, data) {
         if (err) {
+          _this.snackbar.text = '文件打开失败'
+          _this.snackbar.snackbar = true
           console.log(err)
         } else {
           _this.$store.dispatch('setdata', data)
           _this.$store.dispatch('setfile', f)
+          _this.snackbar.text = '文件已打开'
+          _this.snackbar.snackbar = true
         }
         _this.loaddialog = false
       })
