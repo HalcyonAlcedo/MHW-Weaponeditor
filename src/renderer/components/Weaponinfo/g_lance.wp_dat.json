@@ -1,4 +1,329 @@
 {
     "Weapon": "铳枪",
-    "Data": []
+    "Data": [
+        {
+            "name": "铁铳枪 Ⅰ",
+            "Weapon_Number": 6
+        },
+        {
+            "name": "铁铳枪 Ⅱ",
+            "Weapon_Number": 7
+        },
+        {
+            "name": "铁铳枪 Ⅲ",
+            "Weapon_Number": 8
+        },
+        {
+            "name": "钢铁铳枪 Ⅰ",
+            "Weapon_Number": 9
+        },
+        {
+            "name": "钢铁铳枪 Ⅱ",
+            "Weapon_Number": 10
+        },
+        {
+            "name": "钢铁铳枪 Ⅲ",
+            "Weapon_Number": 11
+        },
+        {
+            "name": "铬钢铳枪 Ⅰ",
+            "Weapon_Number": 12
+        },
+        {
+            "name": "铬钢铳枪 Ⅱ",
+            "Weapon_Number": 13
+        },
+        {
+            "name": "灭尽龙的颤抖",
+            "Weapon_Number": 14
+        },
+        {
+            "name": "烧灭种火",
+            "Weapon_Number": 15
+        },
+        {
+            "name": "脉冲铳枪 Ⅰ",
+            "Weapon_Number": 16
+        },
+        {
+            "name": "脉冲铳枪 Ⅱ",
+            "Weapon_Number": 17
+        },
+        {
+            "name": "脉冲铳枪 Ⅲ",
+            "Weapon_Number": 18
+        },
+        {
+            "name": "飞雷铳枪铁飞蛇",
+            "Weapon_Number": 19
+        },
+        {
+            "name": "飞雷铳枪铁飞蛇改",
+            "Weapon_Number": 20
+        },
+        {
+            "name": "飞雷铳枪【蜻蜓切】",
+            "Weapon_Number": 21
+        },
+        {
+            "name": "火龙铳枪 Ⅰ",
+            "Weapon_Number": 22
+        },
+        {
+            "name": "火龙铳枪 Ⅱ",
+            "Weapon_Number": 23
+        },
+        {
+            "name": "红色城塔",
+            "Weapon_Number": 24
+        },
+        {
+            "name": "蓝色城塔",
+            "Weapon_Number": 25
+        },
+        {
+            "name": "蓝色战车",
+            "Weapon_Number": 26
+        },
+        {
+            "name": "公主铳枪",
+            "Weapon_Number": 27
+        },
+        {
+            "name": "公主铳枪改",
+            "Weapon_Number": 28
+        },
+        {
+            "name": "蔷薇铳枪",
+            "Weapon_Number": 29
+        },
+        {
+            "name": "皇家铳枪",
+            "Weapon_Number": 30
+        },
+        {
+            "name": "泥岩铳枪 Ⅰ",
+            "Weapon_Number": 31
+        },
+        {
+            "name": "泥岩铳枪 Ⅱ",
+            "Weapon_Number": 32
+        },
+        {
+            "name": "泥岩铳枪 Ⅲ",
+            "Weapon_Number": 33
+        },
+        {
+            "name": "泥鱼龙铳枪 Ⅰ",
+            "Weapon_Number": 34
+        },
+        {
+            "name": "泥鱼龙铳枪 Ⅱ",
+            "Weapon_Number": 35
+        },
+        {
+            "name": "泥鱼龙铳枪 Ⅲ",
+            "Weapon_Number": 36
+        },
+        {
+            "name": "优雅铳枪 Ⅰ",
+            "Weapon_Number": 37
+        },
+        {
+            "name": "优雅铳枪 Ⅱ",
+            "Weapon_Number": 38
+        },
+        {
+            "name": "风漂龙加农炮 Ⅰ",
+            "Weapon_Number": 39
+        },
+        {
+            "name": "风漂龙加农炮 Ⅱ",
+            "Weapon_Number": 40
+        },
+        {
+            "name": "骨铳枪 Ⅰ",
+            "Weapon_Number": 41
+        },
+        {
+            "name": "骨铳枪 Ⅱ",
+            "Weapon_Number": 42
+        },
+        {
+            "name": "骨铳枪 Ⅲ",
+            "Weapon_Number": 43
+        },
+        {
+            "name": "大骨铳枪 Ⅰ",
+            "Weapon_Number": 44
+        },
+        {
+            "name": "大骨铳枪 Ⅱ",
+            "Weapon_Number": 45
+        },
+        {
+            "name": "大骨铳枪 Ⅲ",
+            "Weapon_Number": 46
+        },
+        {
+            "name": "大骨铳枪【龙尾】 Ⅰ",
+            "Weapon_Number": 47
+        },
+        {
+            "name": "大骨铳枪【龙尾】 Ⅱ",
+            "Weapon_Number": 48
+        },
+        {
+            "name": "爆鳞龙铳枪 Ⅰ",
+            "Weapon_Number": 49
+        },
+        {
+            "name": "爆鳞龙铳枪 Ⅱ",
+            "Weapon_Number": 50
+        },
+        {
+            "name": "牙龙铳枪 Ⅰ",
+            "Weapon_Number": 51
+        },
+        {
+            "name": "牙龙铳枪 Ⅱ",
+            "Weapon_Number": 52
+        },
+        {
+            "name": "牙龙铳枪 Ⅲ",
+            "Weapon_Number": 53
+        },
+        {
+            "name": "牙龙铳枪【大喰】 Ⅰ",
+            "Weapon_Number": 54
+        },
+        {
+            "name": "牙龙铳枪【大喰】 Ⅱ",
+            "Weapon_Number": 55
+        },
+        {
+            "name": "牙龙铳枪【大喰】 Ⅲ",
+            "Weapon_Number": 56
+        },
+        {
+            "name": "牙龙铳枪【黄牙】 Ⅰ",
+            "Weapon_Number": 57
+        },
+        {
+            "name": "牙龙铳枪【黄牙】 Ⅱ",
+            "Weapon_Number": 58
+        },
+        {
+            "name": "牙龙铳枪【黑头巾】 Ⅰ",
+            "Weapon_Number": 59
+        },
+        {
+            "name": "牙龙铳枪【黑头巾】 Ⅱ",
+            "Weapon_Number": 60
+        },
+        {
+            "name": "牙龙铳枪【黑头巾】 Ⅲ",
+            "Weapon_Number": 61
+        },
+        {
+            "name": "尸套龙火枪 Ⅰ",
+            "Weapon_Number": 62
+        },
+        {
+            "name": "尸套龙火枪 Ⅱ",
+            "Weapon_Number": 63
+        },
+        {
+            "name": "土砂龙铳枪 Ⅰ",
+            "Weapon_Number": 64
+        },
+        {
+            "name": "土砂龙铳枪 Ⅱ",
+            "Weapon_Number": 65
+        },
+        {
+            "name": "土砂龙铳枪 Ⅲ",
+            "Weapon_Number": 66
+        },
+        {
+            "name": "土砂龙破坏炮 Ⅰ",
+            "Weapon_Number": 67
+        },
+        {
+            "name": "土砂龙破坏炮 Ⅱ",
+            "Weapon_Number": 68
+        },
+        {
+            "name": "土砂龙破坏炮 Ⅲ",
+            "Weapon_Number": 69
+        },
+        {
+            "name": "火炎铳枪 Ⅰ",
+            "Weapon_Number": 70
+        },
+        {
+            "name": "火炎铳枪 Ⅱ",
+            "Weapon_Number": 71
+        },
+        {
+            "name": "蛮颚龙加农炮 Ⅰ",
+            "Weapon_Number": 72
+        },
+        {
+            "name": "蛮颚龙加农炮 Ⅱ",
+            "Weapon_Number": 73
+        },
+        {
+            "name": "蛮颚龙加农炮 Ⅲ",
+            "Weapon_Number": 74
+        },
+        {
+            "name": "龙骨铳枪 Ⅰ",
+            "Weapon_Number": 75
+        },
+        {
+            "name": "龙骨铳枪 Ⅱ",
+            "Weapon_Number": 76
+        },
+        {
+            "name": "龙骨铳枪 Ⅲ",
+            "Weapon_Number": 77
+        },
+        {
+            "name": "熔山龙铳枪",
+            "Weapon_Number": 78
+        },
+        {
+            "name": "惊天动地熔山龙铳枪",
+            "Weapon_Number": 79
+        },
+        {
+            "name": "黑钢铳枪 Ⅰ",
+            "Weapon_Number": 80
+        },
+        {
+            "name": "黑钢铳枪 Ⅱ",
+            "Weapon_Number": 81
+        },
+        {
+            "name": "钢冰铳枪",
+            "Weapon_Number": 82
+        },
+        {
+            "name": "钢龙爪铳枪",
+            "Weapon_Number": 83
+        },
+        {
+            "name": "冥灯龙铳枪",
+            "Weapon_Number": 84
+        },
+        {
+            "name": "愚欲铳枪",
+            "Weapon_Number": 85
+        },
+        {
+            "name": "暴铳枪格拉古利德",
+            "Weapon_Number": 86
+        }
+    ]
 }

@@ -1,4 +1,349 @@
 {
     "Weapon": "轻弩",
-    "Data": []
+    "Data": [
+        {
+            "name": "迅击炼弩 Ⅰ",
+            "Weapon_Number": 8
+        },
+        {
+            "name": "迅击炼弩 Ⅱ",
+            "Weapon_Number": 9
+        },
+        {
+            "name": "迅击炼弩 Ⅲ",
+            "Weapon_Number": 10
+        },
+        {
+            "name": "高能迅击炼弩 Ⅰ",
+            "Weapon_Number": 11
+        },
+        {
+            "name": "高能迅击炼弩 Ⅱ",
+            "Weapon_Number": 12
+        },
+        {
+            "name": "高能迅击炼弩 Ⅲ",
+            "Weapon_Number": 13
+        },
+        {
+            "name": "铬钢迅击弩 Ⅰ",
+            "Weapon_Number": 14
+        },
+        {
+            "name": "铬钢迅击弩 Ⅱ",
+            "Weapon_Number": 15
+        },
+        {
+            "name": "灭尽龙轻弩炮",
+            "Weapon_Number": 16
+        },
+        {
+            "name": "毁灭的契机",
+            "Weapon_Number": 17
+        },
+        {
+            "name": "浮空龙迅击弩 Ⅰ",
+            "Weapon_Number": 18
+        },
+        {
+            "name": "浮空龙迅击弩 Ⅱ",
+            "Weapon_Number": 19
+        },
+        {
+            "name": "浮空龙飓风炮 Ⅰ",
+            "Weapon_Number": 20
+        },
+        {
+            "name": "浮空龙飓风炮 Ⅱ",
+            "Weapon_Number": 21
+        },
+        {
+            "name": "浮空龙飓风炮 Ⅲ",
+            "Weapon_Number": 22
+        },
+        {
+            "name": "爆鳞龙台风炮 Ⅰ",
+            "Weapon_Number": 23
+        },
+        {
+            "name": "爆鳞龙台风炮 Ⅱ",
+            "Weapon_Number": 24
+        },
+        {
+            "name": "贼龙迅击弩 Ⅰ",
+            "Weapon_Number": 25
+        },
+        {
+            "name": "贼龙迅击弩 Ⅱ",
+            "Weapon_Number": 26
+        },
+        {
+            "name": "贼龙迅击弩 Ⅲ",
+            "Weapon_Number": 27
+        },
+        {
+            "name": "贼龙火炮 Ⅰ",
+            "Weapon_Number": 28
+        },
+        {
+            "name": "贼龙火炮 Ⅱ",
+            "Weapon_Number": 29
+        },
+        {
+            "name": "贼龙火炮 Ⅲ",
+            "Weapon_Number": 30
+        },
+        {
+            "name": "火炎迅击弩 Ⅰ",
+            "Weapon_Number": 31
+        },
+        {
+            "name": "火炎迅击弩 Ⅱ",
+            "Weapon_Number": 32
+        },
+        {
+            "name": "火龙破坏炮 Ⅰ",
+            "Weapon_Number": 33
+        },
+        {
+            "name": "火龙破坏炮 Ⅱ",
+            "Weapon_Number": 34
+        },
+        {
+            "name": "闪电迅击弩 Ⅰ",
+            "Weapon_Number": 35
+        },
+        {
+            "name": "闪电迅击弩 Ⅱ",
+            "Weapon_Number": 36
+        },
+        {
+            "name": "雷光迅击弩 Ⅰ",
+            "Weapon_Number": 37
+        },
+        {
+            "name": "雷光迅击弩 Ⅱ",
+            "Weapon_Number": 38
+        },
+        {
+            "name": "雷光迅击弩 Ⅲ",
+            "Weapon_Number": 39
+        },
+        {
+            "name": "冰雪迅击弩 Ⅰ",
+            "Weapon_Number": 40
+        },
+        {
+            "name": "冰雪迅击弩 Ⅱ",
+            "Weapon_Number": 41
+        },
+        {
+            "name": "寒霜迅击弩 Ⅰ",
+            "Weapon_Number": 42
+        },
+        {
+            "name": "寒霜迅击弩 Ⅱ",
+            "Weapon_Number": 43
+        },
+        {
+            "name": "猎人步枪 Ⅰ",
+            "Weapon_Number": 44
+        },
+        {
+            "name": "猎人步枪 Ⅱ",
+            "Weapon_Number": 45
+        },
+        {
+            "name": "猎人步枪 Ⅲ",
+            "Weapon_Number": 46
+        },
+        {
+            "name": "能量步枪 Ⅰ",
+            "Weapon_Number": 47
+        },
+        {
+            "name": "能量步枪 Ⅱ",
+            "Weapon_Number": 48
+        },
+        {
+            "name": "能量步枪 Ⅲ",
+            "Weapon_Number": 49
+        },
+        {
+            "name": "狙击射手Ⅰ",
+            "Weapon_Number": 50
+        },
+        {
+            "name": "狙击射手 Ⅱ",
+            "Weapon_Number": 51
+        },
+        {
+            "name": "尸套龙轻弩",
+            "Weapon_Number": 52
+        },
+        {
+            "name": "骷髅的呐喊",
+            "Weapon_Number": 53
+        },
+        {
+            "name": "火炎步枪 Ⅰ",
+            "Weapon_Number": 54
+        },
+        {
+            "name": "火炎步枪 Ⅱ",
+            "Weapon_Number": 55
+        },
+        {
+            "name": "蛮颚龙破坏炮 Ⅰ",
+            "Weapon_Number": 56
+        },
+        {
+            "name": "蛮颚龙破坏炮 Ⅱ",
+            "Weapon_Number": 57
+        },
+        {
+            "name": "蛮颚龙破坏炮 Ⅲ",
+            "Weapon_Number": 58
+        },
+        {
+            "name": "泥岩步枪 Ⅰ",
+            "Weapon_Number": 59
+        },
+        {
+            "name": "泥岩步枪 Ⅱ",
+            "Weapon_Number": 60
+        },
+        {
+            "name": "泥岩步枪 Ⅲ",
+            "Weapon_Number": 61
+        },
+        {
+            "name": "泥鱼龙子弹弩 Ⅰ",
+            "Weapon_Number": 62
+        },
+        {
+            "name": "泥鱼龙子弹弩 Ⅱ",
+            "Weapon_Number": 63
+        },
+        {
+            "name": "泥鱼龙子弹弩 Ⅲ",
+            "Weapon_Number": 64
+        },
+        {
+            "name": "熔岩子弹弩 Ⅰ",
+            "Weapon_Number": 65
+        },
+        {
+            "name": "熔岩子弹弩 Ⅱ",
+            "Weapon_Number": 66
+        },
+        {
+            "name": "土砂龙步枪 Ⅰ",
+            "Weapon_Number": 67
+        },
+        {
+            "name": "土砂龙步枪 Ⅱ",
+            "Weapon_Number": 68
+        },
+        {
+            "name": "土砂龙步枪 Ⅲ",
+            "Weapon_Number": 69
+        },
+        {
+            "name": "土砂龙射手 Ⅰ",
+            "Weapon_Number": 70
+        },
+        {
+            "name": "土砂龙射手 Ⅱ",
+            "Weapon_Number": 71
+        },
+        {
+            "name": "土砂龙射手 Ⅲ",
+            "Weapon_Number": 72
+        },
+        {
+            "name": "惨爪步枪 Ⅰ",
+            "Weapon_Number": 73
+        },
+        {
+            "name": "惨爪步枪 Ⅱ",
+            "Weapon_Number": 74
+        },
+        {
+            "name": "宿命之火",
+            "Weapon_Number": 75
+        },
+        {
+            "name": "业【羯磨】",
+            "Weapon_Number": 76
+        },
+        {
+            "name": "龙骨弩 Ⅰ",
+            "Weapon_Number": 77
+        },
+        {
+            "name": "龙骨弩 Ⅱ",
+            "Weapon_Number": 78
+        },
+        {
+            "name": "龙骨弩 Ⅲ",
+            "Weapon_Number": 79
+        },
+        {
+            "name": "鬼岛",
+            "Weapon_Number": 80
+        },
+        {
+            "name": "大鬼岛",
+            "Weapon_Number": 81
+        },
+        {
+            "name": "幻兽筒",
+            "Weapon_Number": 82
+        },
+        {
+            "name": "幻兽筒改",
+            "Weapon_Number": 83
+        },
+        {
+            "name": "幻兽筒【三角】",
+            "Weapon_Number": 84
+        },
+        {
+            "name": "黑钢弩 Ⅰ",
+            "Weapon_Number": 85
+        },
+        {
+            "name": "黑钢弩 Ⅱ",
+            "Weapon_Number": 86
+        },
+        {
+            "name": "钢冰蜂弩",
+            "Weapon_Number": 87
+        },
+        {
+            "name": "钢龙冰蜂弩",
+            "Weapon_Number": 88
+        },
+        {
+            "name": "冥灯龙轻弩炮",
+            "Weapon_Number": 89
+        },
+        {
+            "name": "十字弩炮",
+            "Weapon_Number": 90
+        },
+        {
+            "name": "巨型十字弩炮",
+            "Weapon_Number": 91
+        },
+        {
+            "name": "恐怖机械",
+            "Weapon_Number": 92
+        },
+        {
+            "name": "疯狂悲叹",
+            "Weapon_Number": 93
+        }
+    ]
 }

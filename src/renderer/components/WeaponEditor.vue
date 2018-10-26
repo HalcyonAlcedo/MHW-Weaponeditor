@@ -13,8 +13,9 @@
             bottom
             right
             offset-x
+            full-width
           >
-            <v-list-tile slot="activator">
+            <v-list-tile @click="" style="width: 100%" slot="activator">
               <v-list-tile-action>
                 <v-icon>insert_drive_file</v-icon>
               </v-list-tile-action>
@@ -133,7 +134,7 @@
           <EditorSource v-else></EditorSource>
         </v-container>
       </v-content>
-      <v-footer app fixed>
+      <v-footer app fixed style="-webkit-app-region: drag">
         <span>&nbsp;&nbsp;&nbsp;By Alcedo 2018 &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | 数据版本 154766 | 原始文件版本 154766 （提取自2018-10-14） | 当前文件 {{file}}（{{weaponfilename}}）|</span>
       </v-footer>
       <v-dialog
@@ -144,7 +145,13 @@
           <v-card-title class="headline">关于</v-card-title>
   
           <v-card-text>
-            本软件可针对《怪物猎人世界》中武器数据魔改文件进行查看和修改，修改后文件放置在Monster Hunter World\nativePC\common\equip下即可生效。修改后文件将影响游戏平衡性，请勿用于联机使用。
+            <div>
+              <p>本软件可针对《怪物猎人世界》中武器数据魔改文件进行查看和修改，修改后文件放置在Monster Hunter World\nativePC\common\equip\下即可生效。修改后文件将影响游戏平衡性，请勿用于联机使用。</p>
+              <v-divider></v-divider>
+              <p>软件版本：0.6.2</p>
+              <p><a>https://github.com/HalcyonAlcedo/MHW-Weaponeditor</a></p>
+              <v-divider></v-divider>
+            </div>
           </v-card-text>
   
           <v-card-actions>
@@ -188,6 +195,7 @@
         :timeout="snackbar.timeout"
         :top="snackbar.y === 'top'"
         :vertical="snackbar.mode === 'vertical'"
+        style="-webkit-app-region: no-drag"
       >
         {{ snackbar.text }}
         <v-btn
@@ -195,7 +203,7 @@
           flat
           @click="snackbar.snackbar = false"
         >
-          Close
+          <v-icon>close</v-icon>
         </v-btn>
       </v-snackbar>
     </v-app>

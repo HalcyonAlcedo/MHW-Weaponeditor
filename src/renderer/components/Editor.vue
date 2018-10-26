@@ -88,8 +88,8 @@
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Damage_value !== false">
                     <v-list-tile-content>伤害值:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Damage_value }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Damage_value !== props.item.wp_sourcedata.wp_Damage_value ? '(' + props.item.wp_sourcedata.wp_Damage_value + ')' : ''}}</Contrast>
+                    <v-list-tile-content class="align-end">{{ Math.ceil(props.item.wp_Damage_value) }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Damage_value !== props.item.wp_sourcedata.wp_Damage_value ? '(' + Math.ceil(props.item.wp_sourcedata.wp_Damage_value) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Defense_value !== false">
