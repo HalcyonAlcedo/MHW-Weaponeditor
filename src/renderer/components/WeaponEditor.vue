@@ -148,7 +148,7 @@
             <div>
               <p>本软件可针对《怪物猎人世界》中武器数据魔改文件进行查看和修改，修改后文件放置在Monster Hunter World\nativePC\common\equip\下即可生效。修改后文件将影响游戏平衡性，请勿用于联机使用。</p>
               <v-divider></v-divider>
-              <p>软件版本：0.6.2</p>
+              <p>软件版本：0.6.5</p>
               <p><a>https://github.com/HalcyonAlcedo/MHW-Weaponeditor</a></p>
               <v-divider></v-divider>
             </div>
