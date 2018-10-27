@@ -49,7 +49,7 @@
                     <v-list-tile-content class="align-end">{{ props.item.wp_Number }}</v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Money !== false">
-                    <v-list-tile-content>金币:</v-list-tile-content>
+                    <v-list-tile-content>制造费用:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ props.item.wp_Money }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Money !== props.item.wp_sourcedata.wp_Money ? '(' + props.item.wp_sourcedata.wp_Money + ')' : ''}}</Contrast>
                     </v-list-tile-content>
@@ -57,7 +57,7 @@
                   <v-list-tile v-if="props.item.wp_Rarity !== false">
                     <v-list-tile-content>稀有度:</v-list-tile-content>
                     <v-list-tile-content class="align-end">Rank{{ props.item.wp_Rarity + 1 }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Rarity !== props.item.wp_sourcedata.wp_Rarity ? '(' + props.item.wp_sourcedata.wp_Rarity + ')' : ''}}</Contrast>
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Rarity !== props.item.wp_sourcedata.wp_Rarity ? '(Rank' + props.item.wp_sourcedata.wp_Rarity + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Chopping_value !== false">
@@ -94,8 +94,8 @@
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Defense_value !== false">
                     <v-list-tile-content>防御值:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Defense_value }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Defense_value !== props.item.wp_sourcedata.wp_Defense_value ? '(' + props.item.wp_sourcedata.wp_Defense_value + ')' : ''}}</Contrast>
+                    <v-list-tile-content class="align-end">{{ Math.ceil(props.item.wp_Defense_value) }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Defense_value !== props.item.wp_sourcedata.wp_Defense_value ? '(' + Math.ceil(props.item.wp_sourcedata.wp_Defense_value) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Heart_value !== false">
@@ -135,33 +135,40 @@
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Offset_size !== false">
-                    <v-list-tile-content>偏移大小:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Offset_size }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Offset_size !== props.item.wp_sourcedata.wp_Offset_size ? '(' + props.item.wp_sourcedata.wp_Offset_size + ')' : ''}}</Contrast>
+                    <v-list-tile-content>偏移:</v-list-tile-content>
+                    <v-list-tile-content class="align-end">{{ generalsize(props.item.wp_Offset_size) }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Offset_size !== props.item.wp_sourcedata.wp_Offset_size ? '(' + generalsize(props.item.wp_sourcedata.wp_Offset_size) + ')' : ''}}</Contrast>
+                    </v-list-tile-content>
+                  </v-list-tile>
+                  <v-list-tile v-if="props.item.wp_Seal_Dragon !== false">
+                    <v-list-tile-content>封龙力:</v-list-tile-content>
+                    <v-list-tile-content class="align-end">
+                      {{ generalsize(props.item.wp_Seal_Dragon) }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Seal_Dragon !== props.item.wp_sourcedata.wp_Seal_Dragon ? '(' + sealdragon(props.item.wp_sourcedata.wp_Seal_Dragon) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_Number !== false">
                     <v-list-tile-content>镶孔数量:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Slot_grade_Number }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_Number !== props.item.wp_sourcedata.wp_Slot_grade_Number ? '(' + props.item.wp_sourcedata.wp_Slot_grade_Number + ')' : ''}}</Contrast>
+                    <v-list-tile-content class="align-end">{{ groove(props.item.wp_Slot_grade_Number) }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_Number !== props.item.wp_sourcedata.wp_Slot_grade_Number ? '(' + groove(props.item.wp_sourcedata.wp_Slot_grade_Number) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_1 !== false">
                     <v-list-tile-content>1孔等级:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Slot_grade_1 }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_1 !== props.item.wp_sourcedata.wp_Slot_grade_1 ? '(' + props.item.wp_sourcedata.wp_Slot_grade_1 + ')' : ''}}</Contrast>
+                    <v-list-tile-content class="align-end">{{ grade(props.item.wp_Slot_grade_1) }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_1 !== props.item.wp_sourcedata.wp_Slot_grade_1 ? '(' + grade(props.item.wp_sourcedata.wp_Slot_grade_1) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_2 !== false">
                     <v-list-tile-content>2孔等级:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Slot_grade_2 }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_2 !== props.item.wp_sourcedata.wp_Slot_grade_2 ? '(' + props.item.wp_sourcedata.wp_Slot_grade_2 + ')' : ''}}</Contrast>
+                    <v-list-tile-content class="align-end">{{ grade(props.item.wp_Slot_grade_2) }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_2 !== props.item.wp_sourcedata.wp_Slot_grade_2 ? '(' + grade(props.item.wp_sourcedata.wp_Slot_grade_2) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_3 !== false">
                     <v-list-tile-content>3孔等级:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Slot_grade_3 }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_3 !== props.item.wp_sourcedata.wp_Slot_grade_3 ? '(' + props.item.wp_sourcedata.wp_Slot_grade_3 + ')' : ''}}</Contrast>
+                    <v-list-tile-content class="align-end">{{ grade(props.item.wp_Slot_grade_3) }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_3 !== props.item.wp_sourcedata.wp_Slot_grade_3 ? '(' + grade(props.item.wp_sourcedata.wp_Slot_grade_3) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Special_attributes !== false">
@@ -212,6 +219,7 @@ export default {
         wp_Hidden_attribute_values: false,
         wp_Cartridge_matching: false,
         wp_Offset_size: false,
+        wp_Seal_Dragon: false,
         wp_Slot_grade_Number: 0,
         wp_Slot_grade_1: 0,
         wp_Slot_grade_2: 0,
@@ -363,6 +371,66 @@ export default {
       }
       return attributetext
     },
+    groove (groove) {
+      let groovetext = '无孔槽'
+      switch (groove) {
+        case 0:
+          groovetext = '无孔槽'
+          break
+        case 1:
+          groovetext = '一个孔槽'
+          break
+        case 2:
+          groovetext = '二个孔槽'
+          break
+        case 3:
+          groovetext = '三个孔槽'
+          break
+        default:
+          groovetext = '错误'
+      }
+      return groovetext
+    },
+    grade (grade) {
+      let gradetext = '无孔槽'
+      switch (grade) {
+        case 0:
+          gradetext = '无孔槽'
+          break
+        case 1:
+          gradetext = '一级孔槽'
+          break
+        case 2:
+          gradetext = '一级孔槽'
+          break
+        case 3:
+          gradetext = '一级孔槽'
+          break
+        default:
+          gradetext = '错误'
+      }
+      return gradetext
+    },
+    generalsize (generalsize) {
+      let generalsizetext = '无'
+      switch (generalsize) {
+        case 0:
+          generalsizetext = '无'
+          break
+        case 1:
+          generalsizetext = '小'
+          break
+        case 2:
+          generalsizetext = '中'
+          break
+        case 3:
+          generalsizetext = '大'
+          break
+        default:
+          generalsizetext = '错误'
+      }
+      return generalsizetext
+    },
     hexdata (data, setsourcedata = false) {
       let _this = this
       let HexRuler
@@ -382,6 +450,7 @@ export default {
           'wp_Visible_attribute_values': [35, 2], // 34~35
           'wp_Hidden_attribute': [36, 1], // 36
           'wp_Hidden_attribute_values': [38, 2], // 37~38
+          'wp_Seal_Dragon': [39, 1], // 39
           'wp_Slot_grade_Number': [40, 1], // 40
           'wp_Slot_grade_1': [41, 1], // 41
           'wp_Slot_grade_2': [42, 1], // 42
@@ -395,9 +464,14 @@ export default {
           'wp_Number': [6, 1], // 6
           'wp_Money': [28, 4], // 25~28
           'wp_Rarity': [29, 1], // 29
-          'wp_Damage_value': [31, 2], // 30~31
+          'wp_Damage_value': [30, 2], // 30~31
           'wp_Defense_value': [33, 2], // 32~33
           'wp_Heart_value': [34, 1], // 34
+          'wp_Visible_attributes': [35, 1], // 35
+          'wp_Visible_attribute_values': [37, 2], // 36~37
+          'wp_Hidden_attribute': [38, 1], // 38
+          'wp_Hidden_attribute_values': [40, 2], // 39~40
+          'wp_Seal_Dragon': [41, 1], // 41
           'wp_Cartridge_matching': [42, 1], // 42
           'wp_Offset_size': [44, 1], // 44
           'wp_Slot_grade_Number': [45, 1], // 45
@@ -451,6 +525,7 @@ export default {
           'wp_Hidden_attribute_values': HexFunction(data, HexPointer.wp_Hidden_attribute_values, HexRuler, i),
           'wp_Cartridge_matching': HexFunction(data, HexPointer.wp_Cartridge_matching, HexRuler, i),
           'wp_Offset_size': HexFunction(data, HexPointer.wp_Offset_size, HexRuler, i),
+          'wp_Seal_Dragon': HexFunction(data, HexPointer.wp_Seal_Dragon, HexRuler, i),
           'wp_Slot_grade_Number': HexFunction(data, HexPointer.wp_Slot_grade_Number, HexRuler, i),
           'wp_Slot_grade_1': HexFunction(data, HexPointer.wp_Slot_grade_1, HexRuler, i),
           'wp_Slot_grade_2': HexFunction(data, HexPointer.wp_Slot_grade_2, HexRuler, i),

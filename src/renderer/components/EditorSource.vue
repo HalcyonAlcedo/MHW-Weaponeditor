@@ -117,6 +117,7 @@ export default {
           'wp_Visible_attribute_values': [34, 2], // 34~35
           'wp_Hidden_attribute': [36, 1], // 36
           'wp_Hidden_attribute_values': [37, 2], // 37~38
+          'wp_Seal_Dragon': [39, 1], // 39
           'wp_Slot_grade_Number': [40, 1], // 40
           'wp_Slot_grade_1': [41, 1], // 41
           'wp_Slot_grade_2': [42, 1], // 42
@@ -133,6 +134,11 @@ export default {
           'wp_Damage_value': [30, 2], // 30~31
           'wp_Defense_value': [32, 2], // 32~33
           'wp_Heart_value': [34, 1], // 34
+          'wp_Visible_attributes': [35, 1], // 35
+          'wp_Visible_attribute_values': [36, 2], // 36~37
+          'wp_Hidden_attribute': [38, 1], // 38
+          'wp_Hidden_attribute_values': [39, 2], // 39~40
+          'wp_Seal_Dragon': [41, 1], // 41
           'wp_Cartridge_matching': [42, 1], // 42
           'wp_Offset_size': [44, 1], // 44
           'wp_Slot_grade_Number': [45, 1], // 45
@@ -159,20 +165,20 @@ export default {
           wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'blue'
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Money[0]), i = 0; i < l; i++) {
+      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
         for (let s = HexPointer.wp_Money[1], r = 0; r < s; r++) {
           wplist[(HexRuler * i) + HexPointer.wp_Money[0] + r].wp_Describe = '金钱'
           wplist[(HexRuler * i) + HexPointer.wp_Money[0] + r].wp_Colour = 'amber'
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Rarity[0]), i = 0; i < l; i++) {
+      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
         for (let s = HexPointer.wp_Rarity[1], r = 0; r < s; r++) {
           wplist[(HexRuler * i) + HexPointer.wp_Rarity[0] + r].wp_Describe = '稀有度'
           wplist[(HexRuler * i) + HexPointer.wp_Rarity[0] + r].wp_Colour = 'deep-purple'
         }
       }
       if (HexPointer.wp_Chopping_value !== undefined) {
-        for (let l = data.length / (HexRuler + HexPointer.wp_Chopping_value[0]), i = 0; i < l; i++) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
           for (let s = HexPointer.wp_Chopping_value[1], r = 0; r < s; r++) {
             wplist[(HexRuler * i) + HexPointer.wp_Chopping_value[0] + r].wp_Describe = '斩味值'
             wplist[(HexRuler * i) + HexPointer.wp_Chopping_value[0] + r].wp_Colour = 'cyan'
@@ -180,65 +186,57 @@ export default {
         }
       }
       if (HexPointer.wp_Chopping_grade !== undefined) {
-        for (let l = data.length / (HexRuler + HexPointer.wp_Chopping_grade[0]), i = 0; i < l; i++) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
           for (let s = HexPointer.wp_Chopping_grade[1], r = 0; r < s; r++) {
             wplist[(HexRuler * i) + HexPointer.wp_Chopping_grade[0] + r].wp_Describe = '斩味等级'
             wplist[(HexRuler * i) + HexPointer.wp_Chopping_grade[0] + r].wp_Colour = 'light-blue'
           }
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Damage_value[0]), i = 0; i < l; i++) {
+      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
         for (let s = HexPointer.wp_Damage_value[1], r = 0; r < s; r++) {
           wplist[(HexRuler * i) + HexPointer.wp_Damage_value[0] + r].wp_Describe = '伤害'
           wplist[(HexRuler * i) + HexPointer.wp_Damage_value[0] + r].wp_Colour = 'red'
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Defense_value[0]), i = 0; i < l; i++) {
+      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
         for (let s = HexPointer.wp_Defense_value[1], r = 0; r < s; r++) {
           wplist[(HexRuler * i) + HexPointer.wp_Defense_value[0] + r].wp_Describe = '防御'
           wplist[(HexRuler * i) + HexPointer.wp_Defense_value[0] + r].wp_Colour = 'green'
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Heart_value[0]), i = 0; i < l; i++) {
+      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
         for (let s = HexPointer.wp_Heart_value[1], r = 0; r < s; r++) {
           wplist[(HexRuler * i) + HexPointer.wp_Heart_value[0] + r].wp_Describe = '会心'
           wplist[(HexRuler * i) + HexPointer.wp_Heart_value[0] + r].wp_Colour = 'purple'
         }
       }
-      if (HexPointer.wp_Visible_attributes !== undefined) {
-        for (let l = data.length / (HexRuler + HexPointer.wp_Visible_attributes[0]), i = 0; i < l; i++) {
-          for (let s = HexPointer.wp_Visible_attributes[1], r = 0; r < s; r++) {
-            wplist[(HexRuler * i) + HexPointer.wp_Visible_attributes[0] + r].wp_Describe = '可见属性'
-            wplist[(HexRuler * i) + HexPointer.wp_Visible_attributes[0] + r].wp_Colour = 'brown'
-          }
+      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+        for (let s = HexPointer.wp_Visible_attributes[1], r = 0; r < s; r++) {
+          wplist[(HexRuler * i) + HexPointer.wp_Visible_attributes[0] + r].wp_Describe = '可见属性'
+          wplist[(HexRuler * i) + HexPointer.wp_Visible_attributes[0] + r].wp_Colour = 'brown'
         }
       }
-      if (HexPointer.wp_Visible_attribute_values !== undefined) {
-        for (let l = data.length / (HexRuler + HexPointer.wp_Visible_attribute_values[0]), i = 0; i < l; i++) {
-          for (let s = HexPointer.wp_Visible_attribute_values[1], r = 0; r < s; r++) {
-            wplist[(HexRuler * i) + HexPointer.wp_Visible_attribute_values[0] + r].wp_Describe = '可见属性值'
-            wplist[(HexRuler * i) + HexPointer.wp_Visible_attribute_values[0] + r].wp_Colour = 'brown darken-4'
-          }
+      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+        for (let s = HexPointer.wp_Visible_attribute_values[1], r = 0; r < s; r++) {
+          wplist[(HexRuler * i) + HexPointer.wp_Visible_attribute_values[0] + r].wp_Describe = '可见属性值'
+          wplist[(HexRuler * i) + HexPointer.wp_Visible_attribute_values[0] + r].wp_Colour = 'brown darken-4'
         }
       }
-      if (HexPointer.wp_Hidden_attribute !== undefined) {
-        for (let l = data.length / (HexRuler + HexPointer.wp_Hidden_attribute[0]), i = 0; i < l; i++) {
-          for (let s = HexPointer.wp_Hidden_attribute[1], r = 0; r < s; r++) {
-            wplist[(HexRuler * i) + HexPointer.wp_Hidden_attribute[0] + r].wp_Describe = '隐藏属性'
-            wplist[(HexRuler * i) + HexPointer.wp_Hidden_attribute[0] + r].wp_Colour = 'blue-grey'
-          }
+      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+        for (let s = HexPointer.wp_Hidden_attribute[1], r = 0; r < s; r++) {
+          wplist[(HexRuler * i) + HexPointer.wp_Hidden_attribute[0] + r].wp_Describe = '隐藏属性'
+          wplist[(HexRuler * i) + HexPointer.wp_Hidden_attribute[0] + r].wp_Colour = 'blue-grey'
         }
       }
-      if (HexPointer.wp_Hidden_attribute_values !== undefined) {
-        for (let l = data.length / (HexRuler + HexPointer.wp_Hidden_attribute_values[0]), i = 0; i < l; i++) {
-          for (let s = HexPointer.wp_Hidden_attribute_values[1], r = 0; r < s; r++) {
-            wplist[(HexRuler * i) + HexPointer.wp_Hidden_attribute_values[0] + r].wp_Describe = '隐藏属性值'
-            wplist[(HexRuler * i) + HexPointer.wp_Hidden_attribute_values[0] + r].wp_Colour = 'blue-grey darken-4'
-          }
+      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+        for (let s = HexPointer.wp_Hidden_attribute_values[1], r = 0; r < s; r++) {
+          wplist[(HexRuler * i) + HexPointer.wp_Hidden_attribute_values[0] + r].wp_Describe = '隐藏属性值'
+          wplist[(HexRuler * i) + HexPointer.wp_Hidden_attribute_values[0] + r].wp_Colour = 'blue-grey darken-4'
         }
       }
       if (HexPointer.wp_Cartridge_matching !== undefined) {
-        for (let l = data.length / (HexRuler + HexPointer.wp_Cartridge_matching[0]), i = 0; i < l; i++) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
           for (let s = HexPointer.wp_Cartridge_matching[1], r = 0; r < s; r++) {
             wplist[(HexRuler * i) + HexPointer.wp_Cartridge_matching[0] + r].wp_Describe = '弹种匹配'
             wplist[(HexRuler * i) + HexPointer.wp_Cartridge_matching[0] + r].wp_Colour = 'grey'
@@ -246,39 +244,45 @@ export default {
         }
       }
       if (HexPointer.wp_Offset_size !== undefined) {
-        for (let l = data.length / (HexRuler + HexPointer.wp_Offset_size[0]), i = 0; i < l; i++) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
           for (let s = HexPointer.wp_Offset_size[1], r = 0; r < s; r++) {
-            wplist[(HexRuler * i) + HexPointer.wp_Offset_size[0] + r].wp_Describe = '偏移值'
+            wplist[(HexRuler * i) + HexPointer.wp_Offset_size[0] + r].wp_Describe = '偏移'
             wplist[(HexRuler * i) + HexPointer.wp_Offset_size[0] + r].wp_Colour = 'light-green'
           }
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Slot_grade_Number[0]), i = 0; i < l; i++) {
+      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+        for (let s = HexPointer.wp_Seal_Dragon[1], r = 0; r < s; r++) {
+          wplist[(HexRuler * i) + HexPointer.wp_Seal_Dragon[0] + r].wp_Describe = '封龙力'
+          wplist[(HexRuler * i) + HexPointer.wp_Seal_Dragon[0] + r].wp_Colour = 'deep-purple accent-1'
+        }
+      }
+      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
         for (let s = HexPointer.wp_Slot_grade_Number[1], r = 0; r < s; r++) {
           wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_Number[0] + r].wp_Describe = '孔槽数'
           wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_Number[0] + r].wp_Colour = 'teal'
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Slot_grade_1[0]), i = 0; i < l; i++) {
+      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
         for (let s = HexPointer.wp_Slot_grade_1[1], r = 0; r < s; r++) {
           wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_1[0] + r].wp_Describe = '孔槽1等级'
           wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_1[0] + r].wp_Colour = 'indigo'
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Slot_grade_2[0]), i = 0; i < l; i++) {
+      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
         for (let s = HexPointer.wp_Slot_grade_2[1], r = 0; r < s; r++) {
           wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_2[0] + r].wp_Describe = '孔槽2等级'
           wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_2[0] + r].wp_Colour = 'indigo'
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Slot_grade_3[0]), i = 0; i < l; i++) {
+      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
         for (let s = HexPointer.wp_Slot_grade_3[1], r = 0; r < s; r++) {
           wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_3[0] + r].wp_Describe = '孔槽3等级'
           wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_3[0] + r].wp_Colour = 'indigo'
         }
       }
       if (HexPointer.wp_Special_attributes !== undefined) {
-        for (let l = data.length / (HexRuler + HexPointer.wp_Special_attributes[0]), i = 0; i < l; i++) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
           for (let s = HexPointer.wp_Special_attributes[1], r = 0; r < s; r++) {
             wplist[(HexRuler * i) + HexPointer.wp_Special_attributes[0] + r].wp_Describe = '特殊属性'
             wplist[(HexRuler * i) + HexPointer.wp_Special_attributes[0] + r].wp_Colour = 'lime'
@@ -286,7 +290,7 @@ export default {
         }
       }
       if (HexPointer.wp_Weapon_skills !== undefined) {
-        for (let l = data.length / (HexRuler + HexPointer.wp_Weapon_skills[0]), i = 0; i < l; i++) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
           for (let s = HexPointer.wp_Weapon_skills[1], r = 0; r < s; r++) {
             wplist[(HexRuler * i) + HexPointer.wp_Weapon_skills[0] + r].wp_Describe = '特殊技能'
             wplist[(HexRuler * i) + HexPointer.wp_Weapon_skills[0] + r].wp_Colour = 'orange'
