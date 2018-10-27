@@ -161,13 +161,13 @@ export default {
       }
       for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
         for (let s = HexPointer.wp_Number[1], r = 0; r < s; r++) {
-          wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Describe = '编码'
+          wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Describe = '序号'
           wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'blue'
         }
       }
       for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
         for (let s = HexPointer.wp_Money[1], r = 0; r < s; r++) {
-          wplist[(HexRuler * i) + HexPointer.wp_Money[0] + r].wp_Describe = '金钱'
+          wplist[(HexRuler * i) + HexPointer.wp_Money[0] + r].wp_Describe = '制造费用'
           wplist[(HexRuler * i) + HexPointer.wp_Money[0] + r].wp_Colour = 'amber'
         }
       }

@@ -186,6 +186,17 @@
           </v-card-text>
         </v-card>
       </v-dialog>
+      <v-dialog v-model="Explain" persistent max-width="690">
+        <v-card>
+          <v-card-title class="headline">使用说明</v-card-title>
+          <v-card-text>普通模式只供查看数据，不提供修改功能，二进制模式可以修改数据，地址可以参考普通模式地址或武器序号进行查找。修改后的文件请勿用于联机使用。</v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="green darken-1" flat @click.native="ipc.send('window-all-closed')">拒绝</v-btn>
+            <v-btn color="green darken-1" flat @click.native="Explain = false">了解</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
       <v-snackbar
         v-model="snackbar.snackbar"
         :bottom="snackbar.y === 'bottom'"
@@ -222,6 +233,7 @@ export default {
   data: () => ({
     drawer: true,
     dialog: false,
+    Explain: false,
     appdark: false,
     sourcemod: false,
     excludeunknown: true,
@@ -389,6 +401,7 @@ export default {
       e.preventDefault()
       e.stopPropagation()
     })
+    this.Explain = true
   }
 }
 </script>
