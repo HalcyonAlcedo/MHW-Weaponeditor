@@ -189,7 +189,7 @@
       <v-dialog v-model="Explain" persistent max-width="690">
         <v-card>
           <v-card-title class="headline">使用说明</v-card-title>
-          <v-card-text>普通模式只供查看数据，不提供修改功能，二进制模式可以修改数据，地址可以参考普通模式地址或武器序号进行查找。修改后的文件请勿用于联机使用。</v-card-text>
+          <v-card-text>普通模式只供查看数据，不提供修改功能，二进制模式可以修改数据，地址可以参考普通模式地址或武器序号进行查找。武器信息为手动录入，可能存在差异。修改后的文件请勿用于联机使用。</v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn color="green darken-1" flat @click.native="ipc.send('window-all-closed')">拒绝</v-btn>

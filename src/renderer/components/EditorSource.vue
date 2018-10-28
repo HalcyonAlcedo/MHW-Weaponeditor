@@ -106,6 +106,8 @@ export default {
         HexRuler = 16 * 4 + 1 // 近程武器
         HexPointer = {
           'wp_Number': [6, 1], // 6
+          'wp_Model': [14, 2], // 14~15
+          'wp_Minor_Model': [16, 2], // 14~15
           'wp_Money': [21, 4], // 21~24
           'wp_Rarity': [25, 1], // 25
           'wp_Chopping_value': [26, 1], // 26
@@ -129,6 +131,8 @@ export default {
         HexRuler = 16 * 4 + 4 // 远程武器
         HexPointer = {
           'wp_Number': [6, 1], // 6
+          'wp_Model': [16, 4], // 16~19
+          'wp_Minor_Model': [21, 3], // 21~23
           'wp_Money': [25, 4], // 25~28
           'wp_Rarity': [29, 1], // 29
           'wp_Damage_value': [30, 2], // 30~31
@@ -163,6 +167,18 @@ export default {
         for (let s = HexPointer.wp_Number[1], r = 0; r < s; r++) {
           wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Describe = '序号'
           wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'blue'
+        }
+      }
+      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+        for (let s = HexPointer.wp_Model[1], r = 0; r < s; r++) {
+          wplist[(HexRuler * i) + HexPointer.wp_Model[0] + r].wp_Describe = '武器模型'
+          wplist[(HexRuler * i) + HexPointer.wp_Model[0] + r].wp_Colour = 'green darken-4'
+        }
+      }
+      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+        for (let s = HexPointer.wp_Minor_Model[1], r = 0; r < s; r++) {
+          wplist[(HexRuler * i) + HexPointer.wp_Minor_Model[0] + r].wp_Describe = '次要模型'
+          wplist[(HexRuler * i) + HexPointer.wp_Minor_Model[0] + r].wp_Colour = 'lime darken-4'
         }
       }
       for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
