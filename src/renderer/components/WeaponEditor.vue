@@ -20,7 +20,7 @@
                 <v-icon>insert_drive_file</v-icon>
               </v-list-tile-action>
               <v-list-tile-content>
-                <v-list-tile-title>新建</v-list-tile-title>
+                <v-list-tile-title>{{$t("Interface.New_file")}}</v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
             <v-list>
@@ -38,7 +38,7 @@
               <v-icon>folder_open</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
-              <v-list-tile-title>打开</v-list-tile-title>
+              <v-list-tile-title>{{$t("Interface.Open_file")}}</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
           <v-list-tile @click="savefile()">
@@ -46,7 +46,7 @@
               <v-icon>save</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
-              <v-list-tile-title>保存</v-list-tile-title>
+              <v-list-tile-title>{{$t("Interface.Save_file")}}</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
           <v-list-tile @click="dialog = true">
@@ -54,7 +54,7 @@
               <v-icon>info</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
-              <v-list-tile-title>关于</v-list-tile-title>
+              <v-list-tile-title>{{$t("Interface.About")}}</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
         </v-list>
@@ -63,7 +63,7 @@
           subheader
           three-line
         >
-          <v-subheader>设置</v-subheader>
+          <v-subheader>{{$t("Interface.Setting")}}</v-subheader>
           <v-list-tile @click="">
             <v-list-tile-action>
               <v-checkbox
@@ -72,8 +72,8 @@
             </v-list-tile-action>
 
             <v-list-tile-content @click.prevent="excludeunknown = !excludeunknown">
-              <v-list-tile-title>排除未知武器</v-list-tile-title>
-              <v-list-tile-sub-title>武器信息列表中排除掉未被记载的武器数据</v-list-tile-sub-title>
+              <v-list-tile-title>{{$t("Interface.Elimination_unknown_weapons")}}</v-list-tile-title>
+              <v-list-tile-sub-title>{{$t("Explanatory.Elimination_unknown_weapons")}}</v-list-tile-sub-title>
             </v-list-tile-content>
           </v-list-tile>
 
@@ -85,8 +85,8 @@
             </v-list-tile-action>
 
             <v-list-tile-content @click.prevent="sound = !sound">
-              <v-list-tile-title>原始数据对比</v-list-tile-title>
-              <v-list-tile-sub-title>与系统中记载的原始武器信息进行对比</v-list-tile-sub-title>
+              <v-list-tile-title>{{$t("Interface.Raw_data_comparison")}}</v-list-tile-title>
+              <v-list-tile-sub-title>{{$t("Explanatory.Raw_data_comparison")}}</v-list-tile-sub-title>
             </v-list-tile-content>
           </v-list-tile>
 
@@ -98,8 +98,8 @@
             </v-list-tile-action>
 
             <v-list-tile-content @click.prevent="sourcemod = !sourcemod">
-              <v-list-tile-title>二进制模式</v-list-tile-title>
-              <v-list-tile-sub-title>显示文件二进制数据的文件模式，二进制数据根据武器类型进行辅助显示</v-list-tile-sub-title>
+              <v-list-tile-title>{{$t("Interface.Binary_mode")}}</v-list-tile-title>
+              <v-list-tile-sub-title>{{$t("Explanatory.Binary_mode")}}</v-list-tile-sub-title>
             </v-list-tile-content>
           </v-list-tile>
 
@@ -111,9 +111,24 @@
             </v-list-tile-action>
 
             <v-list-tile-content @click.prevent="appdark = !appdark">
-              <v-list-tile-title>暗黑主题</v-list-tile-title>
-              <v-list-tile-sub-title>切换软件主色调至暗黑模式。</v-list-tile-sub-title>
+              <v-list-tile-title>{{$t("Interface.Dark_theme")}}</v-list-tile-title>
+              <v-list-tile-sub-title>{{$t("Explanatory.Dark_theme")}}</v-list-tile-sub-title>
             </v-list-tile-content>
+          </v-list-tile>
+        </v-list>
+        <v-divider></v-divider>
+        <v-list
+          subheader
+          three-line>
+          <v-list-tile @click="">
+          <v-select
+            v-model="lang"
+            :items="langlist"
+            item-text="text"
+            item-value="value"
+            :label="$t('Interface.lang')"
+            return-object
+          ></v-select>
           </v-list-tile>
         </v-list>
       </v-navigation-drawer>
@@ -135,20 +150,20 @@
         </v-container>
       </v-content>
       <v-footer app fixed style="-webkit-app-region: drag">
-        <span>&nbsp;&nbsp;&nbsp;By Alcedo 2018 &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | 数据版本 154766 | 原始文件版本 154766 （提取自2018-10-14） | 当前文件 {{file}}（{{weaponfilename}}）|</span>
+        <span>&nbsp;&nbsp;&nbsp;By Alcedo 2018 &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | {{$t("Interface.Data_version")}} 154766 | {{$t("Interface.Original_file_version")}} 154766 （{{$t("Interface.Extract_from")}} 2018-10-14） | {{$t("Interface.Current_file")}} {{file}}（{{weaponfilename}}）|</span>
       </v-footer>
       <v-dialog
         v-model="dialog"
         max-width="490"
       >
         <v-card>
-          <v-card-title class="headline">关于</v-card-title>
+          <v-card-title class="headline">{{$t("Interface.About")}}</v-card-title>
   
           <v-card-text>
             <div>
-              <p>本软件可针对《怪物猎人世界》中武器数据魔改文件进行查看和修改，修改后文件放置在Monster Hunter World\nativePC\common\equip\下即可生效。修改后文件将影响游戏平衡性，请勿用于联机使用。</p>
+              <p>{{$t("Explanatory.About_content")}}</p>
               <v-divider></v-divider>
-              <p>软件版本：0.6.5</p>
+              <p>{{$t("Explanatory.About_edition")}}</p>
               <p><a>https://github.com/HalcyonAlcedo/MHW-Weaponeditor</a></p>
               <v-divider></v-divider>
             </div>
@@ -161,7 +176,7 @@
               flat="flat"
               @click="dialog = false"
             >
-              已读
+              {{$t("Interface.Read")}}
             </v-btn>
           </v-card-actions>
         </v-card>
@@ -177,7 +192,7 @@
           dark
         >
           <v-card-text>
-            加载中，请稍等
+            {{$t("Interface.Loading")}}
             <v-progress-linear
               indeterminate
               color="white"
@@ -188,12 +203,12 @@
       </v-dialog>
       <v-dialog v-model="Explain" persistent max-width="690">
         <v-card>
-          <v-card-title class="headline">使用说明</v-card-title>
-          <v-card-text>普通模式只供查看数据，不提供修改功能，二进制模式可以修改数据，地址可以参考普通模式地址或武器序号进行查找。武器信息为手动录入，可能存在差异。修改后的文件请勿用于联机使用。</v-card-text>
+          <v-card-title class="headline">{{$t("Interface.Instructions")}}</v-card-title>
+          <v-card-text>{{$t("Explanatory.Instructions")}}</v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="green darken-1" flat @click.native="ipc.send('window-all-closed')">拒绝</v-btn>
-            <v-btn color="green darken-1" flat @click.native="Explain = false">了解</v-btn>
+            <v-btn color="green darken-1" flat @click.native="ipc.send('window-all-closed')">{{$t("Interface.Refuse")}}</v-btn>
+            <v-btn color="green darken-1" flat @click.native="Explain = false">{{$t("Interface.Read")}}</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -231,6 +246,11 @@ const {dialog} = require('electron').remote
 
 export default {
   data: () => ({
+    lang: 'en',
+    langlist: [
+      {text: '中文', value: 'zh'},
+      {text: 'English', value: 'en'}
+    ],
     drawer: true,
     dialog: false,
     Explain: false,
@@ -239,23 +259,7 @@ export default {
     excludeunknown: true,
     loaddialog: false,
     sound: false,
-    file: '未打开文件',
-    newfile: [
-      { title: '大剑', file: 'l_sword.wp_dat' },
-      { title: '片手', file: 'sword.wp_dat' },
-      { title: '大锤', file: 'hammer.wp_dat' },
-      { title: '长枪', file: 'lance.wp_dat' },
-      { title: '斩斧', file: 's_axe.wp_dat' },
-      { title: '虫棍', file: 'rod.wp_dat' },
-      { title: '轻弩', file: 'lbg.wp_dat_g' },
-      { title: '重弩', file: 'hbg.wp_dat_g' },
-      { title: '太刀', file: 'tachi.wp_dat' },
-      { title: '双刀', file: 'w_sword.wp_dat' },
-      { title: '猎笛', file: 'whistle.wp_dat' },
-      { title: '铳枪', file: 'g_lance.wp_dat' },
-      { title: '盾斧', file: 'c_axe.wp_dat' },
-      { title: '弓', file: 'bow.wp_dat_g' }
-    ],
+    file: '',
     snackbar: {
       snackbar: false,
       y: 'top',
@@ -271,6 +275,24 @@ export default {
     EditorSource
   },
   computed: {
+    newfile () {
+      return [
+        { title: this.$t('Weapon.greatsword'), file: 'l_sword.wp_dat' },
+        { title: this.$t('Weapon.blade'), file: 'sword.wp_dat' },
+        { title: this.$t('Weapon.hammer'), file: 'hammer.wp_dat' },
+        { title: this.$t('Weapon.lance'), file: 'lance.wp_dat' },
+        { title: this.$t('Weapon.switch_axe'), file: 's_axe.wp_dat' },
+        { title: this.$t('Weapon.insect_glaive'), file: 'rod.wp_dat' },
+        { title: this.$t('Weapon.Light_crossbow'), file: 'lbg.wp_dat_g' },
+        { title: this.$t('Weapon.Heavy_crossbow'), file: 'hbg.wp_dat_g' },
+        { title: this.$t('Weapon.longsword'), file: 'tachi.wp_dat' },
+        { title: this.$t('Weapon.dual_blade'), file: 'w_sword.wp_dat' },
+        { title: this.$t('Weapon.hunting_horn'), file: 'whistle.wp_dat' },
+        { title: this.$t('Weapon.gunlance'), file: 'g_lance.wp_dat' },
+        { title: this.$t('Weapon.charge_blade'), file: 'c_axe.wp_dat' },
+        { title: this.$t('Weapon.Hunting_bow'), file: 'bow.wp_dat_g' }
+      ]
+    },
     weapon () {
       return this.$store.getters.donefilename
     },
@@ -280,35 +302,35 @@ export default {
     weaponfilename () {
       switch (this.weapon) {
         case 'l_sword.wp_dat':
-          return '大剑'
+          return this.$t('Weapon.greatsword')
         case 'sword.wp_dat':
-          return '片手'
+          return this.$t('Weapon.blade')
         case 'hammer.wp_dat':
-          return '大锤'
+          return this.$t('Weapon.hammer')
         case 'lance.wp_dat':
-          return '长枪'
+          return this.$t('Weapon.lance')
         case 's_axe.wp_dat':
-          return '斩斧'
+          return this.$t('Weapon.switch_axe')
         case 'rod.wp_dat':
-          return '虫棍'
+          return this.$t('Weapon.insect_glaive')
         case 'lbg.wp_dat_g':
-          return '轻弩'
+          return this.$t('Weapon.Light_crossbow')
         case 'tachi.wp_dat':
-          return '太刀'
+          return this.$t('Weapon.longsword')
         case 'w_sword.wp_dat':
-          return '双刀'
+          return this.$t('Weapon.dual_blade')
         case 'whistle.wp_dat':
-          return '猎笛'
+          return this.$t('Weapon.hunting_horn')
         case 'g_lance.wp_dat':
-          return '铳枪'
+          return this.$t('Weapon.gunlance')
         case 'c_axe.wp_dat':
-          return '盾斧'
+          return this.$t('Weapon.charge_blade')
         case 'bow.wp_dat_g':
-          return '弓'
+          return this.$t('Weapon.Hunting_bow')
         case 'hbg.wp_dat_g':
-          return '重弩'
+          return this.$t('Weapon.Heavy_crossbow')
         default:
-          return '未知文件'
+          return this.$t('Weapon.Unknown')
       }
     }
   },
@@ -321,6 +343,9 @@ export default {
     },
     sound: function () {
       this.contrastdata()
+    },
+    lang: function () {
+      this.$i18n.locale = this.lang.value
     }
   },
   props: {
@@ -339,18 +364,18 @@ export default {
     },
     savefile () {
       let _this = this
-      if (this.file !== '未打开文件') {
-        let filepath = dialog.showSaveDialog({ title: '保存', defaultPath: this.weapon })
+      if (this.file !== this.$t('Interface.No_file_opened')) {
+        let filepath = dialog.showSaveDialog({ title: this.$t('Interface.Save_file'), defaultPath: this.weapon })
         fs.writeFile(filepath, this.filedata, { flag: 'w' }, function (err) {
           if (err) {
-            _this.snackbar.text = '保存失败'
+            _this.snackbar.text = _this.$t('Interface.Save_Failure')
           } else {
-            _this.snackbar.text = '保存成功'
+            _this.snackbar.text = _this.$t('Interface.Save_Success')
           }
           _this.snackbar.snackbar = true
         })
       } else {
-        this.snackbar.text = '未打开文件'
+        this.snackbar.text = this.$t('Interface.No_file_opened')
         this.snackbar.snackbar = true
       }
     },
@@ -374,13 +399,13 @@ export default {
       this.loaddialog = true
       fs.readFile(f, function (err, data) {
         if (err) {
-          _this.snackbar.text = '文件打开失败'
+          _this.snackbar.text = _this.$t('Interface.Open_Failure')
           _this.snackbar.snackbar = true
           console.log(err)
         } else {
           _this.$store.dispatch('setdata', data)
           _this.$store.dispatch('setfile', f)
-          _this.snackbar.text = '文件已打开'
+          _this.snackbar.text = _this.$t('Interface.Open_Success')
           _this.snackbar.snackbar = true
         }
         _this.loaddialog = false
@@ -389,6 +414,7 @@ export default {
   },
   mounted () {
     let _this = this
+    this.file = this.$t('Interface.No_file_opened')
     document.addEventListener('drop', function (e) {
       e.preventDefault()
       e.stopPropagation()
