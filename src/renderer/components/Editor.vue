@@ -8,7 +8,7 @@
           item-text="wp_Name"
           persistent-hint
           prepend-icon="search"
-          no-data-text="无可用数据"
+          :no-data-text="$t('Interface.No_data')"
         >
           <v-slide-x-reverse-transition
             slot="append-outer"
@@ -40,28 +40,28 @@
               <v-card>
                 <v-card-title>
                   <h4>{{ props.item.wp_Name }}</h4><v-spacer></v-spacer>
-                  <h5>地址：<span class="red--text">{{ str_pad(props.item.wp_Hex) }}</span></h5>
+                  <h5>{{ $t('WeaponExplain.Address') }}：<span class="red--text">{{ str_pad(props.item.wp_Hex) }}</span></h5>
                 </v-card-title>
                 <v-divider></v-divider>
                 <v-list dense>
                   <v-list-tile v-if="props.item.wp_Number !== false">
-                    <v-list-tile-content>武器序号:</v-list-tile-content>
+                    <v-list-tile-content>{{ $t('WeaponExplain.Sequence_number') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ props.item.wp_Number }}</v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Money !== false">
-                    <v-list-tile-content>制造费用:</v-list-tile-content>
+                    <v-list-tile-content>{{ $t('WeaponExplain.Manufacturing_costs') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ props.item.wp_Money }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Money !== props.item.wp_sourcedata.wp_Money ? '(' + props.item.wp_sourcedata.wp_Money + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Rarity !== false">
-                    <v-list-tile-content>稀有度:</v-list-tile-content>
+                    <v-list-tile-content>{{ $t('WeaponExplain.Production_expenses') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">Rank{{ props.item.wp_Rarity + 1 }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Rarity !== props.item.wp_sourcedata.wp_Rarity ? '(Rank' + props.item.wp_sourcedata.wp_Rarity + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Chopping_value !== false">
-                    <v-list-tile-content>斩味值:</v-list-tile-content>
+                    <v-list-tile-content>{{ $t('WeaponExplain.Chopping_value') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">
                         <v-slider
                           v-model="props.item.wp_Chopping_value"
@@ -73,7 +73,7 @@
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Chopping_grade !== false">
-                    <v-list-tile-content>斩味等级:</v-list-tile-content>
+                    <v-list-tile-content>{{ $t('WeaponExplain.Chopping_grade') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">
                         <v-slider
                           v-model="props.item.wp_Chopping_grade"
@@ -87,98 +87,98 @@
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Damage_value !== false">
-                    <v-list-tile-content>伤害值:</v-list-tile-content>
+                    <v-list-tile-content>{{ $t('WeaponExplain.Damage') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ Math.ceil(props.item.wp_Damage_value) }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Damage_value !== props.item.wp_sourcedata.wp_Damage_value ? '(' + Math.ceil(props.item.wp_sourcedata.wp_Damage_value) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Defense_value !== false">
-                    <v-list-tile-content>防御值:</v-list-tile-content>
+                    <v-list-tile-content>{{ $t('WeaponExplain.Defense') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ Math.ceil(props.item.wp_Defense_value) }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Defense_value !== props.item.wp_sourcedata.wp_Defense_value ? '(' + Math.ceil(props.item.wp_sourcedata.wp_Defense_value) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Heart_value !== false">
-                    <v-list-tile-content>会心值:</v-list-tile-content>
+                    <v-list-tile-content>{{ $t('WeaponExplain.Heart') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ props.item.wp_Heart_value <= 100 ? props.item.wp_Heart_value : '-' + (256 - props.item.wp_Heart_value) }}%
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Heart_value !== props.item.wp_sourcedata.wp_Heart_value ? '(' + props.item.wp_sourcedata.wp_Heart_value <= 100 ? props.item.wp_sourcedata.wp_Heart_value : '-' + (256 - props.item.wp_sourcedata.wp_Heart_value) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Visible_attributes !== false">
-                    <v-list-tile-content>可见属性:</v-list-tile-content>
+                    <v-list-tile-content>{{ $t('WeaponExplain.Visible_attributes') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ attribute(props.item.wp_Visible_attributes) }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Visible_attributes !== props.item.wp_sourcedata.wp_Visible_attributes ? '(' + attribute(props.item.wp_sourcedata.wp_Visible_attributes) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Visible_attribute_values !== false">
-                    <v-list-tile-content>可见属性数值:</v-list-tile-content>
+                    <v-list-tile-content>{{ $t('WeaponExplain.Visible_attribute_values') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ props.item.wp_Visible_attribute_values * 10 }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Visible_attribute_values !== props.item.wp_sourcedata.wp_Visible_attribute_values ? '(' + props.item.wp_sourcedata.wp_Visible_attribute_values * 10 + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Hidden_attribute !== false">
-                    <v-list-tile-content>隐藏属性:</v-list-tile-content>
+                    <v-list-tile-content>{{ $t('WeaponExplain.Hidden_attributes') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ attribute(props.item.wp_Hidden_attribute) }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Hidden_attribute !== props.item.wp_sourcedata.wp_Hidden_attribute ? '(' + attribute(props.item.wp_sourcedata.wp_Hidden_attribute) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Hidden_attribute_values !== false">
-                    <v-list-tile-content>隐藏属性数值:</v-list-tile-content>
+                    <v-list-tile-content>{{ $t('WeaponExplain.Hidden_attribute_values') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ props.item.wp_Hidden_attribute_values * 10 }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Hidden_attribute_values !== props.item.wp_sourcedata.wp_Hidden_attribute_values ? '(' + props.item.wp_sourcedata.wp_Hidden_attribute_values + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Cartridge_matching !== false">
-                    <v-list-tile-content>子弹匹配:</v-list-tile-content>
+                    <v-list-tile-content>{{ $t('WeaponExplain.Match_projectile') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ props.item.wp_Cartridge_matching }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Cartridge_matching !== props.item.wp_sourcedata.wp_Cartridge_matching ? '(' + props.item.wp_sourcedata.wp_Cartridge_matching + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Offset_size !== false">
-                    <v-list-tile-content>偏移:</v-list-tile-content>
+                    <v-list-tile-content>{{ $t('WeaponExplain.Ballistic_offset') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ generalsize(props.item.wp_Offset_size) }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Offset_size !== props.item.wp_sourcedata.wp_Offset_size ? '(' + generalsize(props.item.wp_sourcedata.wp_Offset_size) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Seal_Dragon !== false">
-                    <v-list-tile-content>封龙力:</v-list-tile-content>
+                    <v-list-tile-content>{{ $t('WeaponExplain.Seal_Dragon') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">
                       {{ generalsize(props.item.wp_Seal_Dragon) }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Seal_Dragon !== props.item.wp_sourcedata.wp_Seal_Dragon ? '(' + sealdragon(props.item.wp_sourcedata.wp_Seal_Dragon) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_Number !== false">
-                    <v-list-tile-content>镶孔数量:</v-list-tile-content>
+                    <v-list-tile-content>{{ $t('WeaponExplain.Slot_grade_Number') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ groove(props.item.wp_Slot_grade_Number) }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_Number !== props.item.wp_sourcedata.wp_Slot_grade_Number ? '(' + groove(props.item.wp_sourcedata.wp_Slot_grade_Number) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_1 !== false">
-                    <v-list-tile-content>1孔等级:</v-list-tile-content>
+                    <v-list-tile-content>{{ $t('WeaponExplain.Slot_grade_Number1') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ grade(props.item.wp_Slot_grade_1) }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_1 !== props.item.wp_sourcedata.wp_Slot_grade_1 ? '(' + grade(props.item.wp_sourcedata.wp_Slot_grade_1) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_2 !== false">
-                    <v-list-tile-content>2孔等级:</v-list-tile-content>
+                    <v-list-tile-content>{{ $t('WeaponExplain.Slot_grade_Number2') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ grade(props.item.wp_Slot_grade_2) }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_2 !== props.item.wp_sourcedata.wp_Slot_grade_2 ? '(' + grade(props.item.wp_sourcedata.wp_Slot_grade_2) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_3 !== false">
-                    <v-list-tile-content>3孔等级:</v-list-tile-content>
+                    <v-list-tile-content>{{ $t('WeaponExplain.Slot_grade_Number3') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ grade(props.item.wp_Slot_grade_3) }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_3 !== props.item.wp_sourcedata.wp_Slot_grade_3 ? '(' + grade(props.item.wp_sourcedata.wp_Slot_grade_3) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Special_attributes !== false">
-                    <v-list-tile-content>特殊属性:</v-list-tile-content>
+                    <v-list-tile-content>{{ $t('WeaponExplain.Special_attributes') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ props.item.wp_Special_attributes }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Special_attributes !== props.item.wp_sourcedata.wp_Special_attributes ? '(' + props.item.wp_sourcedata.wp_Special_attributes + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Weapon_skills !== false">
-                    <v-list-tile-content>武器技能:</v-list-tile-content>
+                    <v-list-tile-content>{{ $t('WeaponExplain.Weapon_skills') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ props.item.wp_Weapon_skills }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Weapon_skills !== props.item.wp_sourcedata.wp_Weapon_skills ? '(' + props.item.wp_sourcedata.wp_Weapon_skills + ')' : ''}}</Contrast>
                     </v-list-tile-content>
@@ -204,7 +204,7 @@ export default {
     search: null,
     items: [
       {
-        wp_Name: '未知武器',
+        wp_Name: '',
         wp_Number: 0,
         wp_Money: 0,
         wp_Rarity: 0,
@@ -251,7 +251,7 @@ export default {
       if (this.excludeunknown) {
         let itemsarr = []
         for (let i = 0, l = _items.length; i < l; i++) {
-          if (_items[i].wp_Name !== '未知武器') {
+          if (_items[i].wp_Name !== this.$t('WeaponExplain.Unknown') && _items[i].wp_Name !== 'Unknown') {
             itemsarr.push(_items[i])
           }
         }
@@ -337,97 +337,97 @@ export default {
       return weapondamage
     },
     attribute (attribute) {
-      let attributetext = '无'
+      let attributetext = this.$t('WeaponExplain.Nothing')
       switch (attribute) {
         case 0:
-          attributetext = '无'
+          attributetext = this.$t('WeaponExplain.Nothing')
           break
         case 1:
-          attributetext = '火'
+          attributetext = this.$t('WeaponExplain.Fire')
           break
         case 2:
-          attributetext = '水'
+          attributetext = this.$t('WeaponExplain.Water')
           break
         case 3:
-          attributetext = '冰'
+          attributetext = this.$t('WeaponExplain.Ice')
           break
         case 4:
-          attributetext = '电'
+          attributetext = this.$t('WeaponExplain.Electricity')
           break
         case 5:
-          attributetext = '龙'
+          attributetext = this.$t('WeaponExplain.Dragon')
           break
         case 6:
-          attributetext = '毒'
+          attributetext = this.$t('WeaponExplain.Poison')
           break
         case 7:
-          attributetext = '麻'
+          attributetext = this.$t('WeaponExplain.Hemp')
           break
         case 8:
-          attributetext = '眠'
+          attributetext = this.$t('WeaponExplain.Sleep')
           break
         default:
-          attributetext = '爆'
+          attributetext = this.$t('WeaponExplain.Burst')
       }
       return attributetext
     },
     groove (groove) {
-      let groovetext = '无孔槽'
+      let groovetext = this.$t('WeaponExplain.NoGroove')
       switch (groove) {
         case 0:
-          groovetext = '无孔槽'
+          groovetext = this.$t('WeaponExplain.NoGroove')
           break
         case 1:
-          groovetext = '一个孔槽'
+          groovetext = this.$t('WeaponExplain.OneGroove')
           break
         case 2:
-          groovetext = '二个孔槽'
+          groovetext = this.$t('WeaponExplain.TwoGroove')
           break
         case 3:
-          groovetext = '三个孔槽'
+          groovetext = this.$t('WeaponExplain.ThreeGroove')
           break
         default:
-          groovetext = '错误'
+          groovetext = this.$t('WeaponExplain.Error')
       }
       return groovetext
     },
     grade (grade) {
-      let gradetext = '无孔槽'
+      let gradetext = this.$t('WeaponExplain.NoGroove')
       switch (grade) {
         case 0:
-          gradetext = '无孔槽'
+          gradetext = this.$t('WeaponExplain.NoGroove')
           break
         case 1:
-          gradetext = '一级孔槽'
+          gradetext = this.$t('WeaponExplain.OneGroovel')
           break
         case 2:
-          gradetext = '一级孔槽'
+          gradetext = this.$t('WeaponExplain.TwoGroovel')
           break
         case 3:
-          gradetext = '一级孔槽'
+          gradetext = this.$t('WeaponExplain.ThreeGroovel')
           break
         default:
-          gradetext = '错误'
+          gradetext = this.$t('WeaponExplain.Error')
       }
       return gradetext
     },
     generalsize (generalsize) {
-      let generalsizetext = '无'
+      let generalsizetext = this.$t('WeaponExplain.Nothing')
       switch (generalsize) {
         case 0:
-          generalsizetext = '无'
+          generalsizetext = this.$t('WeaponExplain.Nothing')
           break
         case 1:
-          generalsizetext = '小'
+          generalsizetext = this.$t('WeaponExplain.Small')
           break
         case 2:
-          generalsizetext = '中'
+          generalsizetext = this.$t('WeaponExplain.Inside')
           break
         case 3:
-          generalsizetext = '大'
+          generalsizetext = this.$t('WeaponExplain.Big')
           break
         default:
-          generalsizetext = '错误'
+          generalsizetext = this.$t('WeaponExplain.Error')
       }
       return generalsizetext
     },
@@ -505,7 +505,7 @@ export default {
             return namedata[i].name
           }
         }
-        return '未知武器'
+        return _this.$t('WeaponExplain.Unknown')
       }
       for (let l = data.length / HexRuler, i = 0; i < l; i++) {
         wplist[i] = {
