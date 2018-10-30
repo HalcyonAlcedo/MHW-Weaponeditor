@@ -126,7 +126,7 @@
             :items="langlist"
             item-text="text"
             item-value="value"
-            :label="$t('Interface.lang')"
+            :label="$t('Interface.Lang')"
             return-object
           ></v-select>
           </v-list-tile>
@@ -277,20 +277,20 @@ export default {
   computed: {
     newfile () {
       return [
-        { title: this.$t('Weapon.greatsword'), file: 'l_sword.wp_dat' },
-        { title: this.$t('Weapon.blade'), file: 'sword.wp_dat' },
-        { title: this.$t('Weapon.hammer'), file: 'hammer.wp_dat' },
-        { title: this.$t('Weapon.lance'), file: 'lance.wp_dat' },
-        { title: this.$t('Weapon.switch_axe'), file: 's_axe.wp_dat' },
-        { title: this.$t('Weapon.insect_glaive'), file: 'rod.wp_dat' },
-        { title: this.$t('Weapon.Light_crossbow'), file: 'lbg.wp_dat_g' },
-        { title: this.$t('Weapon.Heavy_crossbow'), file: 'hbg.wp_dat_g' },
-        { title: this.$t('Weapon.longsword'), file: 'tachi.wp_dat' },
-        { title: this.$t('Weapon.dual_blade'), file: 'w_sword.wp_dat' },
-        { title: this.$t('Weapon.hunting_horn'), file: 'whistle.wp_dat' },
-        { title: this.$t('Weapon.gunlance'), file: 'g_lance.wp_dat' },
-        { title: this.$t('Weapon.charge_blade'), file: 'c_axe.wp_dat' },
-        { title: this.$t('Weapon.Hunting_bow'), file: 'bow.wp_dat_g' }
+        { title: this.$t('Weapon.Greatsword') + ' (l_sword)', file: 'l_sword.wp_dat' },
+        { title: this.$t('Weapon.Blade') + ' (sword)', file: 'sword.wp_dat' },
+        { title: this.$t('Weapon.Hammer') + ' (hammer)', file: 'hammer.wp_dat' },
+        { title: this.$t('Weapon.Lance') + ' (lance)', file: 'lance.wp_dat' },
+        { title: this.$t('Weapon.Switch_axe') + ' (s_axe)', file: 's_axe.wp_dat' },
+        { title: this.$t('Weapon.Insect_glaive') + ' (rod)', file: 'rod.wp_dat' },
+        { title: this.$t('Weapon.Light_crossbow') + ' (lbg)', file: 'lbg.wp_dat_g' },
+        { title: this.$t('Weapon.Heavy_crossbow') + ' (hbg)', file: 'hbg.wp_dat_g' },
+        { title: this.$t('Weapon.Longsword') + ' (tachi)', file: 'tachi.wp_dat' },
+        { title: this.$t('Weapon.Dual_blade') + ' (w_sword)', file: 'w_sword.wp_dat' },
+        { title: this.$t('Weapon.Hunting_horn') + ' (whistle)', file: 'whistle.wp_dat' },
+        { title: this.$t('Weapon.Gunlance') + ' (g_lance)', file: 'g_lance.wp_dat' },
+        { title: this.$t('Weapon.Charge_blade') + ' (c_axe)', file: 'c_axe.wp_dat' },
+        { title: this.$t('Weapon.Hunting_bow') + ' (bow)', file: 'bow.wp_dat_g' }
       ]
     },
     weapon () {
@@ -302,29 +302,29 @@ export default {
     weaponfilename () {
       switch (this.weapon) {
         case 'l_sword.wp_dat':
-          return this.$t('Weapon.greatsword')
+          return this.$t('Weapon.Greatsword')
         case 'sword.wp_dat':
-          return this.$t('Weapon.blade')
+          return this.$t('Weapon.Blade')
         case 'hammer.wp_dat':
-          return this.$t('Weapon.hammer')
+          return this.$t('Weapon.Hammer')
         case 'lance.wp_dat':
-          return this.$t('Weapon.lance')
+          return this.$t('Weapon.Lance')
         case 's_axe.wp_dat':
-          return this.$t('Weapon.switch_axe')
+          return this.$t('Weapon.Switch_axe')
         case 'rod.wp_dat':
-          return this.$t('Weapon.insect_glaive')
+          return this.$t('Weapon.Insect_glaive')
         case 'lbg.wp_dat_g':
           return this.$t('Weapon.Light_crossbow')
         case 'tachi.wp_dat':
-          return this.$t('Weapon.longsword')
+          return this.$t('Weapon.Longsword')
         case 'w_sword.wp_dat':
-          return this.$t('Weapon.dual_blade')
+          return this.$t('Weapon.Dual_blade')
         case 'whistle.wp_dat':
-          return this.$t('Weapon.hunting_horn')
+          return this.$t('Weapon.Hunting_horn')
         case 'g_lance.wp_dat':
-          return this.$t('Weapon.gunlance')
+          return this.$t('Weapon.Gunlance')
         case 'c_axe.wp_dat':
-          return this.$t('Weapon.charge_blade')
+          return this.$t('Weapon.Charge_blade')
         case 'bow.wp_dat_g':
           return this.$t('Weapon.Hunting_bow')
         case 'hbg.wp_dat_g':

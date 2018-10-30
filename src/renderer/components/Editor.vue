@@ -39,148 +39,148 @@
             >
               <v-card>
                 <v-card-title>
-                  <h4>{{ props.item.wp_Name }}</h4><v-spacer></v-spacer>
+                  <h4>{{ wpname(props.item.wp_Name.vul) }}</h4><v-spacer></v-spacer>
                   <h5>{{ $t('WeaponExplain.Address') }}：<span class="red--text">{{ str_pad(props.item.wp_Hex) }}</span></h5>
                 </v-card-title>
                 <v-divider></v-divider>
                 <v-list dense>
                   <v-list-tile v-if="props.item.wp_Number !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Sequence_number') }}:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Number }}</v-list-tile-content>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Number.vul }}</v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Money !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Manufacturing_costs') }}:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Money }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Money !== props.item.wp_sourcedata.wp_Money ? '(' + props.item.wp_sourcedata.wp_Money + ')' : ''}}</Contrast>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Money.vul }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Money.vul !== props.item.wp_sourcedata.wp_Money.vul ? '(' + props.item.wp_sourcedata.wp_Money.vul + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Rarity !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Production_expenses') }}:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">Rank{{ props.item.wp_Rarity + 1 }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Rarity !== props.item.wp_sourcedata.wp_Rarity ? '(Rank' + props.item.wp_sourcedata.wp_Rarity + ')' : ''}}</Contrast>
+                    <v-list-tile-content class="align-end">Rank{{ props.item.wp_Rarity.vul + 1 }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Rarity.vul !== props.item.wp_sourcedata.wp_Rarity.vul ? '(Rank' + (props.item.wp_sourcedata.wp_Rarity.vul + 1) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Chopping_value !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Chopping_value') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">
                         <v-slider
-                          v-model="props.item.wp_Chopping_value"
+                          v-model="props.item.wp_Chopping_value.vul"
                           max=118
                           readonly
                         ></v-slider>
-                        {{ props.item.wp_Chopping_value }}
-                        <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Chopping_value !== props.item.wp_sourcedata.wp_Chopping_value ? '(' + props.item.wp_sourcedata.wp_Chopping_value + ')' : ''}}</Contrast>
+                        {{ props.item.wp_Chopping_value.vul }}
+                        <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Chopping_value.vul !== props.item.wp_sourcedata.wp_Chopping_value.vul ? '(' + props.item.wp_sourcedata.wp_Chopping_value.vul + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Chopping_grade !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Chopping_grade') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">
                         <v-slider
-                          v-model="props.item.wp_Chopping_grade"
+                          v-model="props.item.wp_Chopping_grade.vul"
                           max=8
                           ticks="always"
                           tick-size="2"
                           readonly
                         ></v-slider>
-                        {{ props.item.wp_Chopping_grade }}
-                        <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Chopping_grade !== props.item.wp_sourcedata.wp_Chopping_grade ? '(' + props.item.wp_sourcedata.wp_Chopping_grade + ')' : ''}}</Contrast>
+                        {{ props.item.wp_Chopping_grade.vul }}
+                        <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Chopping_grade.vul !== props.item.wp_sourcedata.wp_Chopping_grade.vul ? '(' + props.item.wp_sourcedata.wp_Chopping_grade.vul + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Damage_value !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Damage') }}:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ Math.ceil(props.item.wp_Damage_value) }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Damage_value !== props.item.wp_sourcedata.wp_Damage_value ? '(' + Math.ceil(props.item.wp_sourcedata.wp_Damage_value) + ')' : ''}}</Contrast>
+                    <v-list-tile-content class="align-end">{{ Math.ceil(props.item.wp_Damage_value.vul * weapon_damage(weapon)) }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Damage_valuevul !== props.item.wp_sourcedata.wp_Damage_valuevul ? '(' + Math.ceil(props.item.wp_sourcedata.wp_Damage_value * weapon_damage(weapon)) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Defense_value !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Defense') }}:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ Math.ceil(props.item.wp_Defense_value) }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Defense_value !== props.item.wp_sourcedata.wp_Defense_value ? '(' + Math.ceil(props.item.wp_sourcedata.wp_Defense_value) + ')' : ''}}</Contrast>
+                    <v-list-tile-content class="align-end">{{ Math.ceil(props.item.wp_Defense_value.vul) }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Defense_value.vul !== props.item.wp_sourcedata.wp_Defense_value.vul ? '(' + Math.ceil(props.item.wp_sourcedata.wp_Defense_value.vul) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Heart_value !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Heart') }}:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Heart_value <= 100 ? props.item.wp_Heart_value : '-' + (256 - props.item.wp_Heart_value) }}%
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Heart_value !== props.item.wp_sourcedata.wp_Heart_value ? '(' + props.item.wp_sourcedata.wp_Heart_value <= 100 ? props.item.wp_sourcedata.wp_Heart_value : '-' + (256 - props.item.wp_sourcedata.wp_Heart_value) + ')' : ''}}</Contrast>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Heart_value.vul <= 100 ? props.item.wp_Heart_value.vul : '-' + (256 - props.item.wp_Heart_value.vul) }}%
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Heart_value.vul !== props.item.wp_sourcedata.wp_Heart_value.vul ? '(' + props.item.wp_sourcedata.wp_Heart_value.vul <= 100 ? props.item.wp_sourcedata.wp_Heart_value.vul : '-' + (256 - props.item.wp_sourcedata.wp_Heart_value.vul) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Visible_attributes !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Visible_attributes') }}:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ attribute(props.item.wp_Visible_attributes) }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Visible_attributes !== props.item.wp_sourcedata.wp_Visible_attributes ? '(' + attribute(props.item.wp_sourcedata.wp_Visible_attributes) + ')' : ''}}</Contrast>
+                    <v-list-tile-content class="align-end">{{ attribute(props.item.wp_Visible_attributes.vul) }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Visible_attributes.vul !== props.item.wp_sourcedata.wp_Visible_attributes.vul ? '(' + attribute(props.item.wp_sourcedata.wp_Visible_attributes) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Visible_attribute_values !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Visible_attribute_values') }}:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Visible_attribute_values * 10 }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Visible_attribute_values !== props.item.wp_sourcedata.wp_Visible_attribute_values ? '(' + props.item.wp_sourcedata.wp_Visible_attribute_values * 10 + ')' : ''}}</Contrast>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Visible_attribute_values.vul * 10 }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Visible_attribute_values.vul !== props.item.wp_sourcedata.wp_Visible_attribute_values.vul ? '(' + props.item.wp_sourcedata.wp_Visible_attribute_values.vul * 10 + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Hidden_attribute !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Hidden_attributes') }}:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ attribute(props.item.wp_Hidden_attribute) }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Hidden_attribute !== props.item.wp_sourcedata.wp_Hidden_attribute ? '(' + attribute(props.item.wp_sourcedata.wp_Hidden_attribute) + ')' : ''}}</Contrast>
+                    <v-list-tile-content class="align-end">{{ attribute(props.item.wp_Hidden_attribute.vul) }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Hidden_attribute.vul !== props.item.wp_sourcedata.wp_Hidden_attribute.vul ? '(' + attribute(props.item.wp_sourcedata.wp_Hidden_attribute.vul) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Hidden_attribute_values !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Hidden_attribute_values') }}:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Hidden_attribute_values * 10 }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Hidden_attribute_values !== props.item.wp_sourcedata.wp_Hidden_attribute_values ? '(' + props.item.wp_sourcedata.wp_Hidden_attribute_values + ')' : ''}}</Contrast>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Hidden_attribute_values.vul * 10 }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Hidden_attribute_values.vul !== props.item.wp_sourcedata.wp_Hidden_attribute_values.vul ? '(' + props.item.wp_sourcedata.wp_Hidden_attribute_values.vul + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Cartridge_matching !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Match_projectile') }}:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Cartridge_matching }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Cartridge_matching !== props.item.wp_sourcedata.wp_Cartridge_matching ? '(' + props.item.wp_sourcedata.wp_Cartridge_matching + ')' : ''}}</Contrast>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Cartridge_matching.vul }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Cartridge_matching.vul !== props.item.wp_sourcedata.wp_Cartridge_matching.vul ? '(' + props.item.wp_sourcedata.wp_Cartridge_matching.vul + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Offset_size !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Ballistic_offset') }}:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ generalsize(props.item.wp_Offset_size) }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Offset_size !== props.item.wp_sourcedata.wp_Offset_size ? '(' + generalsize(props.item.wp_sourcedata.wp_Offset_size) + ')' : ''}}</Contrast>
+                    <v-list-tile-content class="align-end">{{ generalsize(props.item.wp_Offset_size.vul) }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Offset_size.vul !== props.item.wp_sourcedata.wp_Offset_size.vul ? '(' + generalsize(props.item.wp_sourcedata.wp_Offset_size.vul) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Seal_Dragon !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Seal_Dragon') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">
-                      {{ generalsize(props.item.wp_Seal_Dragon) }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Seal_Dragon !== props.item.wp_sourcedata.wp_Seal_Dragon ? '(' + sealdragon(props.item.wp_sourcedata.wp_Seal_Dragon) + ')' : ''}}</Contrast>
+                      {{ generalsize(props.item.wp_Seal_Dragon.vul) }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Seal_Dragon.vul !== props.item.wp_sourcedata.wp_Seal_Dragon.vul ? '(' + sealdragon(props.item.wp_sourcedata.wp_Seal_Dragon.vul) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_Number !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Slot_grade_Number') }}:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ groove(props.item.wp_Slot_grade_Number) }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_Number !== props.item.wp_sourcedata.wp_Slot_grade_Number ? '(' + groove(props.item.wp_sourcedata.wp_Slot_grade_Number) + ')' : ''}}</Contrast>
+                    <v-list-tile-content class="align-end">{{ groove(props.item.wp_Slot_grade_Number.vul) }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_Number.vul !== props.item.wp_sourcedata.wp_Slot_grade_Number.vul ? '(' + groove(props.item.wp_sourcedata.wp_Slot_grade_Number.vul) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_1 !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Slot_grade_Number1') }}:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ grade(props.item.wp_Slot_grade_1) }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_1 !== props.item.wp_sourcedata.wp_Slot_grade_1 ? '(' + grade(props.item.wp_sourcedata.wp_Slot_grade_1) + ')' : ''}}</Contrast>
+                    <v-list-tile-content class="align-end">{{ grade(props.item.wp_Slot_grade_1.vul) }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_1.vul !== props.item.wp_sourcedata.wp_Slot_grade_1.vul ? '(' + grade(props.item.wp_sourcedata.wp_Slot_grade_1.vul) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_2 !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Slot_grade_Number2') }}:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ grade(props.item.wp_Slot_grade_2) }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_2 !== props.item.wp_sourcedata.wp_Slot_grade_2 ? '(' + grade(props.item.wp_sourcedata.wp_Slot_grade_2) + ')' : ''}}</Contrast>
+                    <v-list-tile-content class="align-end">{{ grade(props.item.wp_Slot_grade_2.vul) }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_2.vul !== props.item.wp_sourcedata.wp_Slot_grade_2.vul ? '(' + grade(props.item.wp_sourcedata.wp_Slot_grade_2.vul) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_3 !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Slot_grade_Number3') }}:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ grade(props.item.wp_Slot_grade_3) }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_3 !== props.item.wp_sourcedata.wp_Slot_grade_3 ? '(' + grade(props.item.wp_sourcedata.wp_Slot_grade_3) + ')' : ''}}</Contrast>
+                    <v-list-tile-content class="align-end">{{ grade(props.item.wp_Slot_grade_3.vul) }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_3.vul !== props.item.wp_sourcedata.wp_Slot_grade_3.vul ? '(' + grade(props.item.wp_sourcedata.wp_Slot_grade_3.vul) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Special_attributes !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Special_attributes') }}:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Special_attributes }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Special_attributes !== props.item.wp_sourcedata.wp_Special_attributes ? '(' + props.item.wp_sourcedata.wp_Special_attributes + ')' : ''}}</Contrast>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Special_attributes.vul }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Special_attributes.vul !== props.item.wp_sourcedata.wp_Special_attributes.vul ? '(' + props.item.wp_sourcedata.wp_Special_attributes.vul + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Weapon_skills !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Weapon_skills') }}:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">{{ props.item.wp_Weapon_skills }}
-                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Weapon_skills !== props.item.wp_sourcedata.wp_Weapon_skills ? '(' + props.item.wp_sourcedata.wp_Weapon_skills + ')' : ''}}</Contrast>
+                    <v-list-tile-content class="align-end">{{ props.item.wp_Weapon_skills.vul }}
+                      <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Weapon_skills.vul !== props.item.wp_sourcedata.wp_Weapon_skills.vul ? '(' + props.item.wp_sourcedata.wp_Weapon_skills.vul + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
                 </v-list>
@@ -251,7 +251,7 @@ export default {
       if (this.excludeunknown) {
         let itemsarr = []
         for (let i = 0, l = _items.length; i < l; i++) {
-          if (_items[i].wp_Name !== this.$t('WeaponExplain.Unknown') && _items[i].wp_Name !== 'Unknown') {
+          if (this.wpname(_items[i].wp_Name.vul) !== this.$t('WeaponExplain.Unknown') && this.wpname(_items[i].wp_Name.vul) !== 'Unknown') {
             itemsarr.push(_items[i])
           }
         }
@@ -431,6 +431,36 @@ export default {
       }
       return generalsizetext
     },
+    HexFunction (data, Hexpointer, HexRuler, i) {
+      let ret = ''
+      if (Hexpointer === undefined) {
+        return false
+      }
+      for (let p = 0; p < Hexpointer[1]; p++) {
+        let Hex16 = data[(HexRuler * i) + Hexpointer[0] - p]
+        if (Hex16 !== undefined) {
+          ret += Hex16.toString(16)
+        } else {
+          ret = 0
+        }
+      }
+      return {vul: parseInt(ret, 16), hex: (HexRuler * i) + Hexpointer[0], hexL: Hexpointer[1]}
+    },
+    wpname (id) {
+      let wpnamelist
+      if (this.weapon) {
+        wpnamelist = require('./Weaponinfo/' + this.weapon + '.json')
+      } else {
+        return this.$t('WeaponExplain.Unknown')
+      }
+      let namedata = wpnamelist.Data
+      for (let i = 0; i < namedata.length; i++) {
+        if (namedata[i].Weapon_Number === id) {
+          return namedata[i].name
+        }
+      }
+      return this.$t('WeaponExplain.Unknown')
+    },
     hexdata (data, setsourcedata = false) {
       let _this = this
       let HexRuler
@@ -464,7 +494,7 @@ export default {
           'wp_Number': [6, 1], // 6
           'wp_Money': [28, 4], // 25~28
           'wp_Rarity': [29, 1], // 29
-          'wp_Damage_value': [30, 2], // 30~31
+          'wp_Damage_value': [31, 2], // 30~31
           'wp_Defense_value': [33, 2], // 32~33
           'wp_Heart_value': [34, 1], // 34
           'wp_Visible_attributes': [35, 1], // 35
@@ -482,56 +512,31 @@ export default {
         }
       }
       let wplist = []
-      let HexFunction = function (data, Hexpointer, HexRuler, i) {
-        let ret = ''
-        if (Hexpointer === undefined) {
-          return false
-        }
-        for (let p = 0; p < Hexpointer[1]; p++) {
-          let Hex16 = data[(HexRuler * i) + Hexpointer[0] - p]
-          if (Hex16 !== undefined) {
-            ret += Hex16.toString(16)
-          } else {
-            ret = 0
-          }
-        }
-        return parseInt(ret, 16)
-      }
-      let wpname = function (id) {
-        let wpnamelist = require('./Weaponinfo/' + _this.weapon + '.json')
-        let namedata = wpnamelist.Data
-        for (let i = 0; i < namedata.length; i++) {
-          if (namedata[i].Weapon_Number === id) {
-            return namedata[i].name
-          }
-        }
-        return _this.$t('WeaponExplain.Unknown')
-      }
       for (let l = data.length / HexRuler, i = 0; i < l; i++) {
         wplist[i] = {
           'wp_Hex': (HexRuler * i).toString(16),
-          'wp_Name': wpname(HexFunction(data, HexPointer.wp_Number, HexRuler, i)),
-          'wp_Number': HexFunction(data, HexPointer.wp_Number, HexRuler, i),
-          'wp_Money': HexFunction(data, HexPointer.wp_Money, HexRuler, i),
-          'wp_Rarity': HexFunction(data, HexPointer.wp_Rarity, HexRuler, i),
-          'wp_Chopping_value': HexFunction(data, HexPointer.wp_Chopping_value, HexRuler, i),
-          'wp_Chopping_grade': HexFunction(data, HexPointer.wp_Chopping_grade, HexRuler, i),
-          'wp_Damage_value': _this.weapon_damage(_this.weapon) * HexFunction(data, HexPointer.wp_Damage_value, HexRuler, i),
-          'wp_Defense_value': HexFunction(data, HexPointer.wp_Defense_value, HexRuler, i),
-          'wp_Heart_value': HexFunction(data, HexPointer.wp_Heart_value, HexRuler, i),
-          'wp_Visible_attributes': HexFunction(data, HexPointer.wp_Visible_attributes, HexRuler, i),
-          'wp_Visible_attribute_values': HexFunction(data, HexPointer.wp_Visible_attribute_values, HexRuler, i),
-          'wp_Hidden_attribute': HexFunction(data, HexPointer.wp_Hidden_attribute, HexRuler, i),
-          'wp_Hidden_attribute_values': HexFunction(data, HexPointer.wp_Hidden_attribute_values, HexRuler, i),
-          'wp_Cartridge_matching': HexFunction(data, HexPointer.wp_Cartridge_matching, HexRuler, i),
-          'wp_Offset_size': HexFunction(data, HexPointer.wp_Offset_size, HexRuler, i),
-          'wp_Seal_Dragon': HexFunction(data, HexPointer.wp_Seal_Dragon, HexRuler, i),
-          'wp_Slot_grade_Number': HexFunction(data, HexPointer.wp_Slot_grade_Number, HexRuler, i),
-          'wp_Slot_grade_1': HexFunction(data, HexPointer.wp_Slot_grade_1, HexRuler, i),
-          'wp_Slot_grade_2': HexFunction(data, HexPointer.wp_Slot_grade_2, HexRuler, i),
-          'wp_Slot_grade_3': HexFunction(data, HexPointer.wp_Slot_grade_3, HexRuler, i),
-          'wp_Special_attributes': HexFunction(data, HexPointer.wp_Special_attributes, HexRuler, i),
-          'wp_Weapon_skills': HexFunction(data, HexPointer.wp_Weapon_skills, HexRuler, i)
+          'wp_Name': _this.HexFunction(data, HexPointer.wp_Number, HexRuler, i),
+          'wp_Number': _this.HexFunction(data, HexPointer.wp_Number, HexRuler, i),
+          'wp_Money': _this.HexFunction(data, HexPointer.wp_Money, HexRuler, i),
+          'wp_Rarity': _this.HexFunction(data, HexPointer.wp_Rarity, HexRuler, i),
+          'wp_Chopping_value': _this.HexFunction(data, HexPointer.wp_Chopping_value, HexRuler, i),
+          'wp_Chopping_grade': _this.HexFunction(data, HexPointer.wp_Chopping_grade, HexRuler, i),
+          'wp_Damage_value': _this.HexFunction(data, HexPointer.wp_Damage_value, HexRuler, i),
+          'wp_Defense_value': _this.HexFunction(data, HexPointer.wp_Defense_value, HexRuler, i),
+          'wp_Heart_value': _this.HexFunction(data, HexPointer.wp_Heart_value, HexRuler, i),
+          'wp_Visible_attributes': _this.HexFunction(data, HexPointer.wp_Visible_attributes, HexRuler, i),
+          'wp_Visible_attribute_values': _this.HexFunction(data, HexPointer.wp_Visible_attribute_values, HexRuler, i),
+          'wp_Hidden_attribute': _this.HexFunction(data, HexPointer.wp_Hidden_attribute, HexRuler, i),
+          'wp_Hidden_attribute_values': _this.HexFunction(data, HexPointer.wp_Hidden_attribute_values, HexRuler, i),
+          'wp_Cartridge_matching': _this.HexFunction(data, HexPointer.wp_Cartridge_matching, HexRuler, i),
+          'wp_Offset_size': _this.HexFunction(data, HexPointer.wp_Offset_size, HexRuler, i),
+          'wp_Seal_Dragon': _this.HexFunction(data, HexPointer.wp_Seal_Dragon, HexRuler, i),
+          'wp_Slot_grade_Number': _this.HexFunction(data, HexPointer.wp_Slot_grade_Number, HexRuler, i),
+          'wp_Slot_grade_1': _this.HexFunction(data, HexPointer.wp_Slot_grade_1, HexRuler, i),
+          'wp_Slot_grade_2': _this.HexFunction(data, HexPointer.wp_Slot_grade_2, HexRuler, i),
+          'wp_Slot_grade_3': _this.HexFunction(data, HexPointer.wp_Slot_grade_3, HexRuler, i),
+          'wp_Special_attributes': _this.HexFunction(data, HexPointer.wp_Special_attributes, HexRuler, i),
+          'wp_Weapon_skills': _this.HexFunction(data, HexPointer.wp_Weapon_skills, HexRuler, i)
         }
         if (this.sourceitems) {
           wplist[i].wp_sourcedata = this.sourceitems[i]

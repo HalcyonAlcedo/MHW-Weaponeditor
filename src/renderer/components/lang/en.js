@@ -1,6 +1,9 @@
 module.exports = {
+  Config: {
+    Language: 'English'
+  },
   Interface: {
-    lang: 'Language 语言',
+    Lang: 'Language 语言',
     New_file: 'New',
     Open_file: 'Open',
     Open_Success: 'File is open',

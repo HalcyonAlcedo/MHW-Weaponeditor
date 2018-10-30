@@ -1,6 +1,9 @@
 module.exports = {
+  Config: {
+    Language: '中文'
+  },
   Interface: {
-    lang: '语言 Language',
+    Lang: '语言 Language',
     New_file: '新建',
     Open_file: '打开',
     Open_Success: '文件已打开',
@@ -35,17 +38,17 @@ module.exports = {
     Instructions: '普通模式只供查看数据，不提供修改功能，二进制模式可以修改数据，地址可以参考普通模式地址或武器序号进行查找。武器信息为手动录入，可能存在差异。修改后的文件请勿用于联机使用。'
   },
   Weapon: {
-    charge_blade: '盾斧',
-    gunlance: '铳枪',
-    hammer: '大锤',
-    greatsword: '大剑',
-    lance: '长枪',
-    insect_glaive: '虫棍',
-    switch_axe: '斩斧',
-    blade: '片手',
-    longsword: '太刀',
-    dual_blade: '双刀',
-    hunting_horn: '猎笛',
+    Charge_blade: '盾斧',
+    Gunlance: '铳枪',
+    Hammer: '大锤',
+    Greatsword: '大剑',
+    Lance: '长枪',
+    Insect_glaive: '虫棍',
+    Switch_axe: '斩斧',
+    Blade: '片手',
+    Longsword: '太刀',
+    Dual_blade: '双刀',
+    Hunting_horn: '猎笛',
     Light_crossbow: '轻弩',
     Heavy_crossbow: '重弩',
     Hunting_bow: '弓',
