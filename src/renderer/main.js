@@ -21,7 +21,7 @@ let fs = require('fs')
 let langdir = './lang/'
 let lang = []
 for (let file = fs.readdirSync(langdir), i = 0; i < file.length; i++) {
-  lang.pudh(file[i])
+  lang.push(file[i])
 }
 console.log(lang)
 const i18n = new VueI18n({
