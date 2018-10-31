@@ -34,25 +34,38 @@
               slot-scope="props"
               xs12
               sm6
-              md4
-              lg3
+              md6
+              lg6
             >
               <v-card>
                 <v-card-title>
-                  <h4>{{ wpname(props.item.wp_Name.vul) }}</h4><v-spacer></v-spacer>
+                  <h4>{{ props.item.wp_Name }}</h4><v-spacer></v-spacer>
                   <h5>{{ $t('WeaponExplain.Address') }}：<span class="red--text">{{ str_pad(props.item.wp_Hex) }}</span></h5>
                 </v-card-title>
                 <v-divider></v-divider>
-                <v-list two-line>
+                <v-layout row wrap>
+                <v-flex xs12 sm6>
+                  <v-list two-line>
                   <v-list-tile v-if="props.item.wp_Number !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Sequence_number') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ props.item.wp_Number.vul }}</v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Money !== false">
+                    <v-text-field
+                      :label="$t('WeaponExplain.Manufacturing_costs')"
+                      @change="save(props.item.wp_Money)"
+                      v-model="props.item.wp_Money.vul"
+                      full-width
+                      box
+                      disabled
+                      :hint="sourceitems && (props.item.wp_Money.vul !== props.item.wp_sourcedata.wp_Money.vul) ? '(' + props.item.wp_sourcedata.wp_Money.vul + ')' : ''"
+                    ></v-text-field>
+                    <!--
                     <v-list-tile-content>{{ $t('WeaponExplain.Manufacturing_costs') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ props.item.wp_Money.vul }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Money.vul !== props.item.wp_sourcedata.wp_Money.vul ? '(' + props.item.wp_sourcedata.wp_Money.vul + ')' : ''}}</Contrast>
                     </v-list-tile-content>
+                    -->
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Rarity !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Production_expenses') }}:</v-list-tile-content>
@@ -95,9 +108,10 @@
                   <v-list-tile v-if="props.item.wp_Defense_value !== false">
                     <v-text-field
                       :label="$t('WeaponExplain.Defense')"
-                      @change="save(props.item.wp_Defense_value)"
+                      @change="Defense_treatment(props.item.wp_Defense_value)"
                       v-model="props.item.wp_Defense_value.vul"
                       full-width
+                      box
                       :hint="sourceitems && (props.item.wp_Defense_value.vul !== props.item.wp_sourcedata.wp_Defense_value.vul) ? '(' + props.item.wp_sourcedata.wp_Defense_value.vul + ')' : ''"
                     ></v-text-field>
                     <!--
@@ -114,9 +128,11 @@
                       @change="Heart_treatment(props.item.wp_Heart_value)"
                       v-model="props.item.wp_Heart_value.vul"
                       full-width
-                      :hint="sourceitems && (props.item.wp_Heart_value.vul !== props.item.wp_sourcedata.wp_Heart_value.vul) ? '(' + props.item.wp_sourcedata.wp_Heart_value.vul + ')' : ''"
+                      box
+                      hint="12345"
                     ></v-text-field>
                     <!--
+                      :hint="sourceitems && (props.item.wp_Heart_value.vul !== props.item.wp_sourcedata.wp_Heart_value.vul) ? '(' + props.item.wp_sourcedata.wp_Heart_value.vul + ')' : ''"
                     <v-list-tile-content>{{ $t('WeaponExplain.Heart') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ props.item.wp_Heart_value.vul <= 100 ? props.item.wp_Heart_value.vul : '-' + (256 - props.item.wp_Heart_value.vul) }}%
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Heart_value.vul !== props.item.wp_sourcedata.wp_Heart_value.vul ? '(' + props.item.wp_sourcedata.wp_Heart_value.vul <= 100 ? props.item.wp_sourcedata.wp_Heart_value.vul : '-' + (256 - props.item.wp_sourcedata.wp_Heart_value.vul) + ')' : ''}}</Contrast>
@@ -132,9 +148,10 @@
                   <v-list-tile v-if="props.item.wp_Visible_attribute_values !== false">
                     <v-text-field
                       :label="$t('WeaponExplain.Visible_attribute_values')"
-                      @change="save(props.item.wp_Visible_attribute_values)"
+                      @change="Attribute_treatment(props.item.wp_Visible_attribute_values)"
                       v-model="props.item.wp_Visible_attribute_values.vul"
                       full-width
+                      box
                       :hint="sourceitems && (props.item.wp_Visible_attribute_values.vul !== props.item.wp_sourcedata.wp_Visible_attribute_values.vul) ? '(' + props.item.wp_sourcedata.wp_Visible_attribute_values.vul + ')' : ''"
                     ></v-text-field>
                     <!--
@@ -151,16 +168,40 @@
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Hidden_attribute_values !== false">
+                    <v-text-field
+                      :label="$t('WeaponExplain.Hidden_attribute_values')"
+                      @change="Attribute_treatment(props.item.wp_Hidden_attribute_values)"
+                      v-model="props.item.wp_Hidden_attribute_values.vul"
+                      full-width
+                      box
+                      :hint="sourceitems && (props.item.wp_Hidden_attribute_values.vul !== props.item.wp_sourcedata.wp_Hidden_attribute_values.vul) ? '(' + props.item.wp_sourcedata.wp_Hidden_attribute_values.vul + ')' : ''"
+                    ></v-text-field>
+                    <!--
                     <v-list-tile-content>{{ $t('WeaponExplain.Hidden_attribute_values') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ props.item.wp_Hidden_attribute_values.vul * 10 }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Hidden_attribute_values.vul !== props.item.wp_sourcedata.wp_Hidden_attribute_values.vul ? '(' + props.item.wp_sourcedata.wp_Hidden_attribute_values.vul + ')' : ''}}</Contrast>
                     </v-list-tile-content>
+                    -->
                   </v-list-tile>
+                  </v-list>
+                </v-flex>
+                <v-flex xs12 sm6>
+                  <v-list two-line>
                   <v-list-tile v-if="props.item.wp_Cartridge_matching !== false">
+                    <v-text-field
+                      :label="$t('WeaponExplain.Match_projectile')"
+                      @change="save(props.item.wp_Cartridge_matching)"
+                      v-model="props.item.wp_Cartridge_matching.vul"
+                      full-width
+                      box
+                      :hint="sourceitems && (props.item.wp_Cartridge_matching.vul !== props.item.wp_sourcedata.wp_Cartridge_matching.vul) ? '(' + props.item.wp_sourcedata.wp_Cartridge_matching.vul + ')' : ''"
+                    ></v-text-field>
+                    <!--
                     <v-list-tile-content>{{ $t('WeaponExplain.Match_projectile') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ props.item.wp_Cartridge_matching.vul }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Cartridge_matching.vul !== props.item.wp_sourcedata.wp_Cartridge_matching.vul ? '(' + props.item.wp_sourcedata.wp_Cartridge_matching.vul + ')' : ''}}</Contrast>
                     </v-list-tile-content>
+                    -->
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Offset_size !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Ballistic_offset') }}:</v-list-tile-content>
@@ -200,18 +241,40 @@
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Special_attributes !== false">
+                    <v-text-field
+                      :label="$t('WeaponExplain.Special_attributes')"
+                      @change="save(props.item.wp_Special_attributes)"
+                      v-model="props.item.wp_Special_attributes.vul"
+                      full-width
+                      box
+                      :hint="sourceitems && (props.item.wp_Special_attributes.vul !== props.item.wp_sourcedata.wp_Special_attributes.vul) ? '(' + props.item.wp_sourcedata.wp_Special_attributes.vul + ')' : ''"
+                    ></v-text-field>
+                    <!--
                     <v-list-tile-content>{{ $t('WeaponExplain.Special_attributes') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ props.item.wp_Special_attributes.vul }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Special_attributes.vul !== props.item.wp_sourcedata.wp_Special_attributes.vul ? '(' + props.item.wp_sourcedata.wp_Special_attributes.vul + ')' : ''}}</Contrast>
                     </v-list-tile-content>
+                    -->
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Weapon_skills !== false">
+                    <v-text-field
+                      :label="$t('WeaponExplain.Weapon_skills')"
+                      @change="save(props.item.wp_Weapon_skills)"
+                      v-model="props.item.wp_Weapon_skills.vul"
+                      full-width
+                      box
+                      :hint="sourceitems && (props.item.wp_Weapon_skills.vul !== props.item.wp_sourcedata.wp_Weapon_skills.vul) ? '(' + props.item.wp_sourcedata.wp_Weapon_skills.vul + ')' : ''"
+                    ></v-text-field>
+                    <!--
                     <v-list-tile-content>{{ $t('WeaponExplain.Weapon_skills') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ props.item.wp_Weapon_skills.vul }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Weapon_skills.vul !== props.item.wp_sourcedata.wp_Weapon_skills.vul ? '(' + props.item.wp_sourcedata.wp_Weapon_skills.vul + ')' : ''}}</Contrast>
                     </v-list-tile-content>
+                    -->
                   </v-list-tile>
-                </v-list>
+                  </v-list>
+                </v-flex>
+                </v-layout>
               </v-card>
             </v-flex>
           </v-data-iterator>
@@ -225,9 +288,9 @@
 export default {
   name: 'wpfile',
   data: () => ({
-    rowsPerPageItems: [4, 8],
+    rowsPerPageItems: [2, 4],
     pagination: {
-      rowsPerPage: 4
+      rowsPerPage: 2
     },
     search: null,
     items: [
@@ -279,7 +342,7 @@ export default {
       if (this.excludeunknown) {
         let itemsarr = []
         for (let i = 0, l = _items.length; i < l; i++) {
-          if (this.wpname(_items[i].wp_Name.vul) !== this.$t('WeaponExplain.Unknown') && this.wpname(_items[i].wp_Name.vul) !== 'Unknown') {
+          if (this.wpname(_items[i].wp_Number.vul) !== this.$t('WeaponExplain.Unknown') && this.wpname(_items[i].wp_Number.vul) !== 'Unknown') {
             itemsarr.push(_items[i])
           }
         }
@@ -317,16 +380,31 @@ export default {
     save (val) {
       let data = this.str_pad(val.vul.toString(16), Math.ceil(val.vul.toString(16).length / 2) * 2)
       for (let i = 0; i < val.hexL; i++) {
+        let setvul
+        if (i + 1 <= (data.length / 2)) {
+          setvul = parseInt(data.substr(-2 - (i * 2), 2), 16)
+        } else {
+          setvul = '00'
+        }
         console.log(val.hex - i)
-        console.log(data.substr(-2 - (i * 2), 2))
+        console.log(this.data[val.hex - i])
+        console.log(setvul)
         this.$store.dispatch('editdata', {
           address: val.hex - i,
-          value: parseInt(data.substr(-2 - (i * 2), 2), 16)
+          value: setvul
         })
       }
     },
     Heart_treatment (val) {
       val.vul = Number(val.vul) >= 0 ? Number(val.vul) : 256 - Math.abs(Math.abs(Number(val.vul)) + 256)
+      this.save(val)
+    },
+    Attribute_treatment (val) {
+      val.vul = Math.ceil(val.vul / 10)
+      this.save(val)
+    },
+    Defense_treatment (val) {
+      val.vul = Math.ceil(val.vul)
       this.save(val)
     },
     weapon_damage (file) {
@@ -504,8 +582,16 @@ export default {
       }
       return this.$t('WeaponExplain.Unknown')
     },
+    wpdefense (HexFunction) {
+      HexFunction.vul = Math.ceil(HexFunction.vul)
+      return HexFunction
+    },
     wpheart (HexFunction) {
       HexFunction.vul = HexFunction.vul <= 100 ? HexFunction.vul : '-' + (256 - HexFunction.vul)
+      return HexFunction
+    },
+    wpattribute (HexFunction) {
+      HexFunction.vul = HexFunction.vul * 10
       return HexFunction
     },
     hexdata (data, setsourcedata = false) {
@@ -562,19 +648,19 @@ export default {
       for (let l = data.length / HexRuler, i = 0; i < l; i++) {
         wplist[i] = {
           'wp_Hex': (HexRuler * i).toString(16),
-          'wp_Name': _this.HexFunction(data, HexPointer.wp_Number, HexRuler, i),
+          'wp_Name': _this.wpname(_this.HexFunction(data, HexPointer.wp_Number, HexRuler, i).vul),
           'wp_Number': _this.HexFunction(data, HexPointer.wp_Number, HexRuler, i),
           'wp_Money': _this.HexFunction(data, HexPointer.wp_Money, HexRuler, i),
           'wp_Rarity': _this.HexFunction(data, HexPointer.wp_Rarity, HexRuler, i),
           'wp_Chopping_value': _this.HexFunction(data, HexPointer.wp_Chopping_value, HexRuler, i),
           'wp_Chopping_grade': _this.HexFunction(data, HexPointer.wp_Chopping_grade, HexRuler, i),
           'wp_Damage_value': _this.HexFunction(data, HexPointer.wp_Damage_value, HexRuler, i),
-          'wp_Defense_value': _this.HexFunction(data, HexPointer.wp_Defense_value, HexRuler, i),
+          'wp_Defense_value': _this.wpdefense(_this.HexFunction(data, HexPointer.wp_Defense_value, HexRuler, i)),
           'wp_Heart_value': _this.wpheart(_this.HexFunction(data, HexPointer.wp_Heart_value, HexRuler, i)),
           'wp_Visible_attributes': _this.HexFunction(data, HexPointer.wp_Visible_attributes, HexRuler, i),
-          'wp_Visible_attribute_values': _this.HexFunction(data, HexPointer.wp_Visible_attribute_values, HexRuler, i),
+          'wp_Visible_attribute_values': _this.wpattribute(_this.HexFunction(data, HexPointer.wp_Visible_attribute_values, HexRuler, i)),
           'wp_Hidden_attribute': _this.HexFunction(data, HexPointer.wp_Hidden_attribute, HexRuler, i),
-          'wp_Hidden_attribute_values': _this.HexFunction(data, HexPointer.wp_Hidden_attribute_values, HexRuler, i),
+          'wp_Hidden_attribute_values': _this.wpattribute(_this.HexFunction(data, HexPointer.wp_Hidden_attribute_values, HexRuler, i)),
           'wp_Cartridge_matching': _this.HexFunction(data, HexPointer.wp_Cartridge_matching, HexRuler, i),
           'wp_Offset_size': _this.HexFunction(data, HexPointer.wp_Offset_size, HexRuler, i),
           'wp_Seal_Dragon': _this.HexFunction(data, HexPointer.wp_Seal_Dragon, HexRuler, i),
@@ -595,36 +681,3 @@ export default {
 }
 </script>
 
-<style>
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Source Sans Pro", sans-serif;
-}
-
-#wrapper {
-  background: radial-gradient(
-    ellipse at top left,
-    rgba(255, 255, 255, 1) 40%,
-    rgba(229, 229, 229, 0.9) 100%
-  );
-  height: 100vh;
-  padding: 0px 0px;
-  width: 100vw;
-}
-
-main {
-  display: flex;
-  justify-content: space-between;
-}
-
-main > div {
-  flex-basis: 100%;
-}
-</style>

@@ -150,7 +150,7 @@
         </v-container>
       </v-content>
       <v-footer app fixed style="-webkit-app-region: drag">
-        <span>&nbsp;&nbsp;&nbsp;By Alcedo 2018 &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | {{$t("Interface.Data_version")}} 154766 | {{$t("Interface.Original_file_version")}} 154766 （{{$t("Interface.Extract_from")}} 2018-10-14） | {{$t("Interface.Current_file")}} {{file}}（{{weaponfilename}}）|</span>
+        <span>&nbsp;&nbsp;&nbsp;By Alcedo  &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | {{$t("Interface.Data_version")}} 154766 | {{$t("Interface.Original_file_version")}} 154766 （{{$t("Interface.Extract_from")}} 2018-10-31） | {{$t("Interface.Current_file")}} {{file}}（{{weaponfilename}}）|</span>
       </v-footer>
       <v-dialog
         v-model="dialog"

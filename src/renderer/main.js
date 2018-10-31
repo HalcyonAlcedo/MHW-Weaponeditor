@@ -17,6 +17,8 @@ Vue.use(Vuetify)
 Vue.use(VueI18n)
 
 /* i18n */
+
+/*
 let fs = require('fs')
 let langdir = './lang/'
 let lang = []
@@ -24,6 +26,8 @@ for (let file = fs.readdirSync(langdir), i = 0; i < file.length; i++) {
   lang.push(file[i])
 }
 console.log(lang)
+*/
+
 const i18n = new VueI18n({
   locale: 'en',
   messages: {
