@@ -150,7 +150,7 @@
         </v-container>
       </v-content>
       <v-footer app fixed style="-webkit-app-region: drag">
-        <span>&nbsp;&nbsp;&nbsp;By Alcedo  &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | {{$t("Interface.Data_version")}} 154766 | {{$t("Interface.Original_file_version")}} 154766 （{{$t("Interface.Extract_from")}} 2018-10-31） | {{$t("Interface.Current_file")}} {{file}}（{{weaponfilename}}）|</span>
+        <span>&nbsp;&nbsp;&nbsp;By Alcedo  &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | {{$t("Interface.Data_version")}} 154766 | {{$t("Interface.Original_file_version")}} 157749 （{{$t("Interface.Extract_from")}} 2018-10-31） | {{$t("Interface.Current_file")}} {{file}}（{{weaponfilename}}）|</span>
       </v-footer>
       <v-dialog
         v-model="dialog"
@@ -204,10 +204,10 @@
       <v-dialog v-model="Explain" persistent max-width="690">
         <v-card>
           <v-card-title class="headline">{{$t("Interface.Instructions")}}</v-card-title>
-          <v-card-text>{{$t("Explanatory.Instructions")}}</v-card-text>
+          <v-divider></v-divider>
+          <v-card-title><div v-html="$t('Explanatory.Instructions')"></div></v-card-title>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="green darken-1" flat @click.native="ipc.send('window-all-closed')">{{$t("Interface.Refuse")}}</v-btn>
             <v-btn color="green darken-1" flat @click.native="Explain = false">{{$t("Interface.Read")}}</v-btn>
           </v-card-actions>
         </v-card>
@@ -245,31 +245,34 @@ import path from 'path'
 const {dialog} = require('electron').remote
 
 export default {
-  data: () => ({
-    lang: 'en',
-    langlist: [
-      {text: '中文', value: 'zh'},
-      {text: 'English', value: 'en'}
-    ],
-    drawer: true,
-    dialog: false,
-    Explain: false,
-    appdark: false,
-    sourcemod: false,
-    excludeunknown: true,
-    loaddialog: false,
-    sound: false,
-    file: '',
-    snackbar: {
-      snackbar: false,
-      y: 'top',
-      x: null,
-      mode: '',
-      timeout: 6000,
-      text: ''
-    },
-    ipc: require('electron').ipcRenderer
-  }),
+  data () {
+    let Language = this.$i18n.locale
+    return {
+      lang: Language,
+      langlist: [
+        {text: '中文', value: 'zh'},
+        {text: 'English', value: 'en'}
+      ],
+      drawer: true,
+      dialog: false,
+      Explain: false,
+      appdark: false,
+      sourcemod: false,
+      excludeunknown: true,
+      loaddialog: false,
+      sound: false,
+      file: '',
+      snackbar: {
+        snackbar: false,
+        y: 'top',
+        x: null,
+        mode: '',
+        timeout: 6000,
+        text: ''
+      },
+      ipc: require('electron').ipcRenderer
+    }
+  },
   components: {
     Editor,
     EditorSource

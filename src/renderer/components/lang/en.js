@@ -26,7 +26,8 @@ module.exports = {
     Loading: 'Loading, please wait a moment',
     Instructions: 'Instructions for use',
     No_file_opened: 'Unopened file',
-    No_data: 'No data available'
+    No_data: 'No data available',
+    Original: 'Original'
   },
   Explanatory: {
     Elimination_unknown_weapons: 'Exclude undocumented weapon data from the weapon information list',
@@ -34,8 +35,8 @@ module.exports = {
     Binary_mode: 'Display the file mode of the binary data of the file, the binary data is auxiliary display according to the weapon type',
     Dark_theme: 'Switch software main color to dark mode',
     About_content: 'This software can view and modify the weapon data magic file in Monster Hunter World. The modified file will be placed under Monster Hunter World\\nativePC\\common\\equip\\. Modified files will affect game balance and should not be used online. ',
-    About_edition: 'Software version: 0.6.8',
-    Instructions: 'Normal mode is only for viewing data, no modification function is provided, binary mode can modify data, and address can be searched by referring to normal mode address or weapon serial number. Weapon information is manually entered and there may be differences. Do not use the modified file for online use. '
+    About_edition: 'Software version: 0.7.5 Bate',
+    Instructions: '<h3>The tool can read the unwrapped weapon data, built in the current version of the weapon data file, and directly create a new mod file. Partial value modification will be automatically corrected according to the inherent coefficient. The weapon information is manually entered, which may be different from the current version data. Do not use the modified file for online use.</h3><br><h4>Usage:</h4><br><span>&nbsp;&nbsp;1. Open the unpacked mod file or click New to select the desired weapon file.</span><br><span>&nbsp;&nbsp;2, search or manually find the weapon to be modified.</span><br><span>&nbsp;&nbsp;3. Change the corresponding attribute to the value you want.</span><br><span>&nbsp;&nbsp;4.Click Save to save the file to the (Your game\\nativePC\\common\\equip\\).</span><br><br><h4>The tool source code is posted on Github: https://github.com/HalcyonAlcedo/MHW-Weaponeditor</h4>'
   },
   Weapon: {
     Charge_blade: 'Shield Axe',

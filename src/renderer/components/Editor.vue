@@ -47,18 +47,35 @@
                 <v-flex xs12 sm6>
                   <v-list two-line>
                   <v-list-tile v-if="props.item.wp_Number !== false">
+                    <v-text-field
+                      :label="$t('WeaponExplain.Sequence_number')"
+                      v-model="props.item.wp_Number.vul"
+                      full-width
+                      box
+                      disabled
+                    ></v-text-field>
+                    <!--
                     <v-list-tile-content>{{ $t('WeaponExplain.Sequence_number') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ props.item.wp_Number.vul }}</v-list-tile-content>
+                    -->
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Money !== false">
                     <v-text-field
                       :label="$t('WeaponExplain.Manufacturing_costs')"
-                      @change="save(props.item.wp_Money)"
+                      @change="input_interchangeable(props.item.wp_Money)"
                       v-model="props.item.wp_Money.vul"
                       full-width
                       box
                       disabled
-                      :hint="sourceitems && (props.item.wp_Money.vul !== props.item.wp_sourcedata.wp_Money.vul) ? '(' + props.item.wp_sourcedata.wp_Money.vul + ')' : ''"
+                    ></v-text-field>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.wp_Money.vul !== props.item.wp_sourcedata.wp_Money.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Manufacturing_costs')"
+                      v-model="props.item.wp_sourcedata.wp_Money.vul"
+                      full-width
+                      box
+                      color="red"
+                      disabled
                     ></v-text-field>
                     <!--
                     <v-list-tile-content>{{ $t('WeaponExplain.Manufacturing_costs') }}:</v-list-tile-content>
@@ -68,11 +85,33 @@
                     -->
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Rarity !== false">
+                    <v-select
+                      v-model="props.item.wp_Rarity.vul"
+                      :items="rankitem"
+                      @change="Select_interchangeable(props.item.wp_Rarity)"
+                      box
+                      :label="$t('WeaponExplain.Production_expenses')"
+                      item-text="text"
+                      item-value="value"
+                      return-object
+                    ></v-select>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.wp_Rarity.vul !== props.item.wp_sourcedata.wp_Rarity.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Production_expenses')"
+                      :value="'Rank' + Number(props.item.wp_sourcedata.wp_Rarity.vul + 1)"
+                      full-width
+                      box
+                      color="red"
+                      disabled
+                    ></v-text-field>
+                    <!--
                     <v-list-tile-content>{{ $t('WeaponExplain.Production_expenses') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">Rank{{ props.item.wp_Rarity.vul + 1 }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Rarity.vul !== props.item.wp_sourcedata.wp_Rarity.vul ? '(Rank' + (props.item.wp_sourcedata.wp_Rarity.vul + 1) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
+                    -->
                   </v-list-tile>
+                  <!-- 暂时关闭
                   <v-list-tile v-if="props.item.wp_Chopping_value !== false">
                     <v-list-tile-content>{{ $t('WeaponExplain.Chopping_value') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">
@@ -99,11 +138,30 @@
                         <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Chopping_grade.vul !== props.item.wp_sourcedata.wp_Chopping_grade.vul ? '(' + props.item.wp_sourcedata.wp_Chopping_grade.vul + ')' : ''}}</Contrast>
                     </v-list-tile-content>
                   </v-list-tile>
+                  -->
                   <v-list-tile v-if="props.item.wp_Damage_value !== false">
+                    <v-text-field
+                      :label="$t('WeaponExplain.Damage')"
+                      @change="Damage_treatment(props.item.wp_Damage_value)"
+                      v-model="props.item.wp_Damage_value.vul"
+                      full-width
+                      box
+                    ></v-text-field>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.wp_Damage_value.vul !== props.item.wp_sourcedata.wp_Damage_value.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Damage')"
+                      v-model="props.item.wp_sourcedata.wp_Damage_value.vul"
+                      full-width
+                      box
+                      color="red"
+                      disabled
+                    ></v-text-field>
+                    <!--
                     <v-list-tile-content>{{ $t('WeaponExplain.Damage') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ Math.ceil(props.item.wp_Damage_value.vul * weapon_damage(weapon)) }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Damage_valuevul !== props.item.wp_sourcedata.wp_Damage_valuevul ? '(' + Math.ceil(props.item.wp_sourcedata.wp_Damage_value * weapon_damage(weapon)) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
+                    -->
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Defense_value !== false">
                     <v-text-field
@@ -112,7 +170,15 @@
                       v-model="props.item.wp_Defense_value.vul"
                       full-width
                       box
-                      :hint="sourceitems && (props.item.wp_Defense_value.vul !== props.item.wp_sourcedata.wp_Defense_value.vul) ? '(' + props.item.wp_sourcedata.wp_Defense_value.vul + ')' : ''"
+                    ></v-text-field>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.wp_Defense_value.vul !== props.item.wp_sourcedata.wp_Defense_value.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Defense')"
+                      v-model="props.item.wp_sourcedata.wp_Defense_value.vul"
+                      full-width
+                      box
+                      color="red"
+                      disabled
                     ></v-text-field>
                     <!--
                     <v-list-tile-content>{{ $t('WeaponExplain.Defense') }}:</v-list-tile-content>
@@ -129,7 +195,16 @@
                       v-model="props.item.wp_Heart_value.vul"
                       full-width
                       box
-                      hint="12345"
+                    ></v-text-field>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.wp_Heart_value.vul !== props.item.wp_sourcedata.wp_Heart_value.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Heart')"
+                      suffix="%"
+                      v-model="props.item.wp_sourcedata.wp_Heart_value.vul"
+                      full-width
+                      box
+                      color="red"
+                      disabled
                     ></v-text-field>
                     <!--
                       :hint="sourceitems && (props.item.wp_Heart_value.vul !== props.item.wp_sourcedata.wp_Heart_value.vul) ? '(' + props.item.wp_sourcedata.wp_Heart_value.vul + ')' : ''"
@@ -140,10 +215,31 @@
                     -->
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Visible_attributes !== false">
+                    <v-select
+                      v-model="props.item.wp_Visible_attributes.vul"
+                      :items="attributeitem"
+                      @change="Select_interchangeable(props.item.wp_Visible_attributes)"
+                      box
+                      :label="$t('WeaponExplain.Visible_attributes')"
+                      item-text="text"
+                      item-value="value"
+                      return-object
+                    ></v-select>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.wp_Visible_attributes.vul !== props.item.wp_sourcedata.wp_Visible_attributes.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Visible_attributes')"
+                      :value="attribute(props.item.wp_sourcedata.wp_Visible_attributes.vul)"
+                      full-width
+                      box
+                      color="red"
+                      disabled
+                    ></v-text-field>
+                    <!--
                     <v-list-tile-content>{{ $t('WeaponExplain.Visible_attributes') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ attribute(props.item.wp_Visible_attributes.vul) }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Visible_attributes.vul !== props.item.wp_sourcedata.wp_Visible_attributes.vul ? '(' + attribute(props.item.wp_sourcedata.wp_Visible_attributes) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
+                    -->
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Visible_attribute_values !== false">
                     <v-text-field
@@ -152,7 +248,15 @@
                       v-model="props.item.wp_Visible_attribute_values.vul"
                       full-width
                       box
-                      :hint="sourceitems && (props.item.wp_Visible_attribute_values.vul !== props.item.wp_sourcedata.wp_Visible_attribute_values.vul) ? '(' + props.item.wp_sourcedata.wp_Visible_attribute_values.vul + ')' : ''"
+                    ></v-text-field>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.wp_Visible_attribute_values.vul !== props.item.wp_sourcedata.wp_Visible_attribute_values.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Visible_attribute_values')"
+                      v-model="props.item.wp_sourcedata.wp_Visible_attribute_values.vul"
+                      full-width
+                      box
+                      color="red"
+                      disabled
                     ></v-text-field>
                     <!--
                     <v-list-tile-content>{{ $t('WeaponExplain.Visible_attribute_values') }}:</v-list-tile-content>
@@ -162,10 +266,31 @@
                     -->
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Hidden_attribute !== false">
+                    <v-select
+                      v-model="props.item.wp_Hidden_attribute.vul"
+                      :items="attributeitem"
+                      @change="Select_interchangeable(props.item.wp_Hidden_attribute)"
+                      box
+                      :label="$t('WeaponExplain.Hidden_attributes')"
+                      item-text="text"
+                      item-value="value"
+                      return-object
+                    ></v-select>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.wp_Hidden_attribute.vul !== props.item.wp_sourcedata.wp_Hidden_attribute.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Hidden_attributes')"
+                      :value="attribute(props.item.wp_sourcedata.wp_Hidden_attribute.vul)"
+                      full-width
+                      box
+                      color="red"
+                      disabled
+                    ></v-text-field>
+                    <!--
                     <v-list-tile-content>{{ $t('WeaponExplain.Hidden_attributes') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ attribute(props.item.wp_Hidden_attribute.vul) }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Hidden_attribute.vul !== props.item.wp_sourcedata.wp_Hidden_attribute.vul ? '(' + attribute(props.item.wp_sourcedata.wp_Hidden_attribute.vul) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
+                    -->
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Hidden_attribute_values !== false">
                     <v-text-field
@@ -174,7 +299,15 @@
                       v-model="props.item.wp_Hidden_attribute_values.vul"
                       full-width
                       box
-                      :hint="sourceitems && (props.item.wp_Hidden_attribute_values.vul !== props.item.wp_sourcedata.wp_Hidden_attribute_values.vul) ? '(' + props.item.wp_sourcedata.wp_Hidden_attribute_values.vul + ')' : ''"
+                    ></v-text-field>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.wp_Hidden_attribute_values.vul !== props.item.wp_sourcedata.wp_Hidden_attribute_values.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Hidden_attribute_values')"
+                      v-model="props.item.wp_sourcedata.wp_Hidden_attribute_values.vul"
+                      full-width
+                      box
+                      color="red"
+                      disabled
                     ></v-text-field>
                     <!--
                     <v-list-tile-content>{{ $t('WeaponExplain.Hidden_attribute_values') }}:</v-list-tile-content>
@@ -190,11 +323,19 @@
                   <v-list-tile v-if="props.item.wp_Cartridge_matching !== false">
                     <v-text-field
                       :label="$t('WeaponExplain.Match_projectile')"
-                      @change="save(props.item.wp_Cartridge_matching)"
+                      @change="input_interchangeable(props.item.wp_Cartridge_matching)"
                       v-model="props.item.wp_Cartridge_matching.vul"
                       full-width
                       box
-                      :hint="sourceitems && (props.item.wp_Cartridge_matching.vul !== props.item.wp_sourcedata.wp_Cartridge_matching.vul) ? '(' + props.item.wp_sourcedata.wp_Cartridge_matching.vul + ')' : ''"
+                    ></v-text-field>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.wp_Cartridge_matching.vul !== props.item.wp_sourcedata.wp_Cartridge_matching.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Match_projectile')"
+                      v-model="props.item.wp_sourcedata.wp_Cartridge_matching.vul"
+                      full-width
+                      box
+                      color="red"
+                      disabled
                     ></v-text-field>
                     <!--
                     <v-list-tile-content>{{ $t('WeaponExplain.Match_projectile') }}:</v-list-tile-content>
@@ -204,50 +345,184 @@
                     -->
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Offset_size !== false">
+                    <v-select
+                      v-model="props.item.wp_Offset_size.vul"
+                      :items="generalsizeitem"
+                      @change="Select_interchangeable(props.item.wp_Offset_size)"
+                      box
+                      :label="$t('WeaponExplain.Ballistic_offset')"
+                      item-text="text"
+                      item-value="value"
+                      return-object
+                    ></v-select>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.wp_Offset_size.vul !== props.item.wp_sourcedata.wp_Offset_size.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Ballistic_offset')"
+                      :value="generalsize(props.item.wp_sourcedata.wp_Offset_size.vul)"
+                      full-width
+                      box
+                      color="red"
+                      disabled
+                    ></v-text-field>
+                    <!--
                     <v-list-tile-content>{{ $t('WeaponExplain.Ballistic_offset') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ generalsize(props.item.wp_Offset_size.vul) }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Offset_size.vul !== props.item.wp_sourcedata.wp_Offset_size.vul ? '(' + generalsize(props.item.wp_sourcedata.wp_Offset_size.vul) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
+                    -->
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Seal_Dragon !== false">
+                    <v-select
+                      v-model="props.item.wp_Seal_Dragon.vul"
+                      :items="generalsizeitem"
+                      @change="Select_interchangeable(props.item.wp_Seal_Dragon)"
+                      box
+                      :label="$t('WeaponExplain.Seal_Dragon')"
+                      item-text="text"
+                      item-value="value"
+                      return-object
+                    ></v-select>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.wp_Seal_Dragon.vul !== props.item.wp_sourcedata.wp_Seal_Dragon.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Seal_Dragon')"
+                      :value="generalsize(props.item.wp_sourcedata.wp_Seal_Dragon.vul)"
+                      full-width
+                      box
+                      color="red"
+                      disabled
+                    ></v-text-field>
+                    <!--
                     <v-list-tile-content>{{ $t('WeaponExplain.Seal_Dragon') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">
                       {{ generalsize(props.item.wp_Seal_Dragon.vul) }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Seal_Dragon.vul !== props.item.wp_sourcedata.wp_Seal_Dragon.vul ? '(' + sealdragon(props.item.wp_sourcedata.wp_Seal_Dragon.vul) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
+                    -->
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_Number !== false">
+                    <v-select
+                      v-model="props.item.wp_Slot_grade_Number.vul"
+                      :items="grooveitem"
+                      @change="Select_interchangeable(props.item.wp_Slot_grade_Number)"
+                      box
+                      :label="$t('WeaponExplain.Slot_grade_Number')"
+                      item-text="text"
+                      item-value="value"
+                      return-object
+                    ></v-select>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.wp_Slot_grade_Number.vul !== props.item.wp_sourcedata.wp_Slot_grade_Number.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Slot_grade_Number')"
+                      :value="groove(props.item.wp_sourcedata.wp_Slot_grade_Number.vul)"
+                      full-width
+                      box
+                      color="red"
+                      disabled
+                    ></v-text-field>
+                    <!--
                     <v-list-tile-content>{{ $t('WeaponExplain.Slot_grade_Number') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ groove(props.item.wp_Slot_grade_Number.vul) }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_Number.vul !== props.item.wp_sourcedata.wp_Slot_grade_Number.vul ? '(' + groove(props.item.wp_sourcedata.wp_Slot_grade_Number.vul) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
+                    -->
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_1 !== false">
+                    <v-select
+                      v-model="props.item.wp_Slot_grade_1.vul"
+                      :items="gradeitem"
+                      @change="Select_interchangeable(props.item.wp_Slot_grade_1)"
+                      box
+                      :label="$t('WeaponExplain.Slot_grade_Number1')"
+                      item-text="text"
+                      item-value="value"
+                      return-object
+                    ></v-select>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.wp_Slot_grade_1.vul !== props.item.wp_sourcedata.wp_Slot_grade_1.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Slot_grade_Number1')"
+                      :value="grade(props.item.wp_sourcedata.wp_Slot_grade_1.vul)"
+                      full-width
+                      box
+                      color="red"
+                      disabled
+                    ></v-text-field>
+                    <!--
                     <v-list-tile-content>{{ $t('WeaponExplain.Slot_grade_Number1') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ grade(props.item.wp_Slot_grade_1.vul) }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_1.vul !== props.item.wp_sourcedata.wp_Slot_grade_1.vul ? '(' + grade(props.item.wp_sourcedata.wp_Slot_grade_1.vul) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
+                    -->
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_2 !== false">
+                    <v-select
+                      v-model="props.item.wp_Slot_grade_2.vul"
+                      :items="gradeitem"
+                      @change="Select_interchangeable(props.item.wp_Slot_grade_2)"
+                      box
+                      :label="$t('WeaponExplain.Slot_grade_Number2')"
+                      item-text="text"
+                      item-value="value"
+                      return-object
+                    ></v-select>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.wp_Slot_grade_2.vul !== props.item.wp_sourcedata.wp_Slot_grade_2.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Slot_grade_Number2')"
+                      :value="grade(props.item.wp_sourcedata.wp_Slot_grade_2.vul)"
+                      full-width
+                      box
+                      color="red"
+                      disabled
+                    ></v-text-field>
+                    <!--
                     <v-list-tile-content>{{ $t('WeaponExplain.Slot_grade_Number2') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ grade(props.item.wp_Slot_grade_2.vul) }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_2.vul !== props.item.wp_sourcedata.wp_Slot_grade_2.vul ? '(' + grade(props.item.wp_sourcedata.wp_Slot_grade_2.vul) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
+                    -->
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_3 !== false">
+                    <v-select
+                      v-model="props.item.wp_Slot_grade_3.vul"
+                      :items="gradeitem"
+                      @change="Select_interchangeable(props.item.wp_Slot_grade_3)"
+                      box
+                      :label="$t('WeaponExplain.Slot_grade_Number3')"
+                      item-text="text"
+                      item-value="value"
+                      return-object
+                    ></v-select>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.wp_Slot_grade_3.vul !== props.item.wp_sourcedata.wp_Slot_grade_3.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Slot_grade_Number3')"
+                      :value="grade(props.item.wp_sourcedata.wp_Slot_grade_3.vul)"
+                      full-width
+                      box
+                      color="red"
+                      disabled
+                    ></v-text-field>
+                    <!--
                     <v-list-tile-content>{{ $t('WeaponExplain.Slot_grade_Number3') }}:</v-list-tile-content>
                     <v-list-tile-content class="align-end">{{ grade(props.item.wp_Slot_grade_3.vul) }}
                       <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Slot_grade_3.vul !== props.item.wp_sourcedata.wp_Slot_grade_3.vul ? '(' + grade(props.item.wp_sourcedata.wp_Slot_grade_3.vul) + ')' : ''}}</Contrast>
                     </v-list-tile-content>
+                    -->
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Special_attributes !== false">
                     <v-text-field
                       :label="$t('WeaponExplain.Special_attributes')"
-                      @change="save(props.item.wp_Special_attributes)"
+                      @change="input_interchangeable(props.item.wp_Special_attributes)"
                       v-model="props.item.wp_Special_attributes.vul"
                       full-width
                       box
-                      :hint="sourceitems && (props.item.wp_Special_attributes.vul !== props.item.wp_sourcedata.wp_Special_attributes.vul) ? '(' + props.item.wp_sourcedata.wp_Special_attributes.vul + ')' : ''"
+                    ></v-text-field>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.wp_Special_attributes.vul !== props.item.wp_sourcedata.wp_Special_attributes.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Special_attributes')"
+                      v-model="props.item.wp_sourcedata.wp_Special_attributes.vul"
+                      full-width
+                      box
+                      color="red"
+                      disabled
                     ></v-text-field>
                     <!--
                     <v-list-tile-content>{{ $t('WeaponExplain.Special_attributes') }}:</v-list-tile-content>
@@ -259,11 +534,19 @@
                   <v-list-tile v-if="props.item.wp_Weapon_skills !== false">
                     <v-text-field
                       :label="$t('WeaponExplain.Weapon_skills')"
-                      @change="save(props.item.wp_Weapon_skills)"
+                      @change="input_interchangeable(props.item.wp_Weapon_skills)"
                       v-model="props.item.wp_Weapon_skills.vul"
                       full-width
                       box
-                      :hint="sourceitems && (props.item.wp_Weapon_skills.vul !== props.item.wp_sourcedata.wp_Weapon_skills.vul) ? '(' + props.item.wp_sourcedata.wp_Weapon_skills.vul + ')' : ''"
+                    ></v-text-field>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.wp_Weapon_skills.vul !== props.item.wp_sourcedata.wp_Weapon_skills.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Weapon_skills')"
+                      v-model="props.item.wp_sourcedata.wp_Weapon_skills.vul"
+                      full-width
+                      box
+                      color="red"
+                      disabled
                     ></v-text-field>
                     <!--
                     <v-list-tile-content>{{ $t('WeaponExplain.Weapon_skills') }}:</v-list-tile-content>
@@ -350,6 +633,56 @@ export default {
       } else {
         return _items
       }
+    },
+    attributeitem () {
+      return [
+        {value: 0, text: this.$t('WeaponExplain.Nothing')},
+        {value: 1, text: this.$t('WeaponExplain.Fire')},
+        {value: 2, text: this.$t('WeaponExplain.Water')},
+        {value: 3, text: this.$t('WeaponExplain.Ice')},
+        {value: 4, text: this.$t('WeaponExplain.Electricity')},
+        {value: 5, text: this.$t('WeaponExplain.Dragon')},
+        {value: 6, text: this.$t('WeaponExplain.Poison')},
+        {value: 7, text: this.$t('WeaponExplain.Hemp')},
+        {value: 8, text: this.$t('WeaponExplain.Sleep')},
+        {value: 9, text: this.$t('WeaponExplain.Burst')}
+      ]
+    },
+    generalsizeitem () {
+      return [
+        {value: 0, text: this.$t('WeaponExplain.Nothing')},
+        {value: 1, text: this.$t('WeaponExplain.Small')},
+        {value: 2, text: this.$t('WeaponExplain.Inside')},
+        {value: 3, text: this.$t('WeaponExplain.Big')}
+      ]
+    },
+    grooveitem () {
+      return [
+        {value: 0, text: this.$t('WeaponExplain.NoGroove')},
+        {value: 1, text: this.$t('WeaponExplain.OneGroove')},
+        {value: 2, text: this.$t('WeaponExplain.TwoGroove')},
+        {value: 3, text: this.$t('WeaponExplain.ThreeGroove')}
+      ]
+    },
+    gradeitem () {
+      return [
+        {value: 0, text: this.$t('WeaponExplain.NoGroove')},
+        {value: 1, text: this.$t('WeaponExplain.OneGroovel')},
+        {value: 2, text: this.$t('WeaponExplain.TwoGroovel')},
+        {value: 3, text: this.$t('WeaponExplain.ThreeGroovel')}
+      ]
+    },
+    rankitem () {
+      return [
+        {value: 0, text: 'Rank1'},
+        {value: 1, text: 'Rank2'},
+        {value: 2, text: 'Rank3'},
+        {value: 3, text: 'Rank4'},
+        {value: 4, text: 'Rank5'},
+        {value: 5, text: 'Rank6'},
+        {value: 6, text: 'Rank7'},
+        {value: 7, text: 'Rank8'}
+      ]
     }
   },
   watch: {
@@ -381,14 +714,11 @@ export default {
       let data = this.str_pad(val.vul.toString(16), Math.ceil(val.vul.toString(16).length / 2) * 2)
       for (let i = 0; i < val.hexL; i++) {
         let setvul
-        if (i + 1 <= (data.length / 2)) {
-          setvul = parseInt(data.substr(-2 - (i * 2), 2), 16)
+        if (val.hexL - i <= (data.length / 2)) {
+          setvul = parseInt(data.substr(-2 - (val.hexL - (i * 2)), 2), 16)
         } else {
           setvul = '00'
         }
-        console.log(val.hex - i)
-        console.log(this.data[val.hex - i])
-        console.log(setvul)
         this.$store.dispatch('editdata', {
           address: val.hex - i,
           value: setvul
@@ -396,16 +726,38 @@ export default {
       }
     },
     Heart_treatment (val) {
-      val.vul = Number(val.vul) >= 0 ? Number(val.vul) : 256 - Math.abs(Math.abs(Number(val.vul)) + 256)
-      this.save(val)
+      let valsave = val
+      if (Math.abs(Number(valsave.vul)) > 100) {
+        valsave.vul = Number(valsave.vul) >= 0 ? 100 : -100
+      }
+      valsave.vul = Number(valsave.vul) >= 0 ? Number(valsave.vul) : 256 - Math.abs(Math.abs(Number(valsave.vul)) + 256)
+      this.save(valsave)
     },
     Attribute_treatment (val) {
-      val.vul = Math.ceil(val.vul / 10)
-      this.save(val)
+      let valsave = val
+      valsave.vul = Math.ceil(val.vul / 10)
+      this.save(valsave)
+      valsave.vul = Math.ceil(val.vul * 10) // 回显有问题，好像还原处理就好了，不影响save时数据，不知道啥原因喵″
+    },
+    Damage_treatment (val) {
+      let valsave = val
+      valsave.vul = Math.ceil(val.vul / this.weapon_damage(this.weapon))
+      this.save(valsave)
+      valsave.vul = Math.ceil(val.vul * this.weapon_damage(this.weapon)) // 同上喵″
+    },
+    input_interchangeable (val) {
+      let valsave = val
+      this.save(valsave)
+    },
+    Select_interchangeable (val) {
+      let valsave = val
+      valsave.vul = valsave.vul.value
+      this.save(valsave)
     },
     Defense_treatment (val) {
-      val.vul = Math.ceil(val.vul)
-      this.save(val)
+      let valsave = val
+      valsave.vul = Math.ceil(valsave.vul)
+      this.save(valsave)
     },
     weapon_damage (file) {
       let weapondamage = 0
@@ -594,6 +946,10 @@ export default {
       HexFunction.vul = HexFunction.vul * 10
       return HexFunction
     },
+    wpdamage (HexFunction) {
+      HexFunction.vul = Math.ceil(HexFunction.vul * this.weapon_damage(this.weapon))
+      return HexFunction
+    },
     hexdata (data, setsourcedata = false) {
       let _this = this
       let HexRuler
@@ -654,7 +1010,7 @@ export default {
           'wp_Rarity': _this.HexFunction(data, HexPointer.wp_Rarity, HexRuler, i),
           'wp_Chopping_value': _this.HexFunction(data, HexPointer.wp_Chopping_value, HexRuler, i),
           'wp_Chopping_grade': _this.HexFunction(data, HexPointer.wp_Chopping_grade, HexRuler, i),
-          'wp_Damage_value': _this.HexFunction(data, HexPointer.wp_Damage_value, HexRuler, i),
+          'wp_Damage_value': _this.wpdamage(_this.HexFunction(data, HexPointer.wp_Damage_value, HexRuler, i)),
           'wp_Defense_value': _this.wpdefense(_this.HexFunction(data, HexPointer.wp_Defense_value, HexRuler, i)),
           'wp_Heart_value': _this.wpheart(_this.HexFunction(data, HexPointer.wp_Heart_value, HexRuler, i)),
           'wp_Visible_attributes': _this.HexFunction(data, HexPointer.wp_Visible_attributes, HexRuler, i),
