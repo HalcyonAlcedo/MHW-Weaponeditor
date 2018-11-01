@@ -128,7 +128,7 @@ export default {
           'wp_Special_attributes': [44, 1], // 44
           'wp_Weapon_skills': [(HexRuler + 2), 1] // HexRuler(下一行) + 2
         }
-      } else {
+      } else if (data[6] === 0 && data[74] === 1 && data[142] === 2) {
         HexRuler = 16 * 4 + 4 // 远程武器
         HexPointer = {
           'wp_Number': [6, 1], // 6
@@ -153,6 +153,11 @@ export default {
           'wp_Slot_grade_3': [48, 1], // 48
           'wp_Weapon_skills': [(HexRuler + 2), 1] // HexRuler(下一行) + 2
         }
+      } else {
+        HexRuler = 1024 // 未知文件
+        HexPointer = {
+          Unknown: [0, 0]
+        }
       }
       this.rowsPerPageItems = [HexRuler * 2, HexRuler * 4, HexRuler * 6]
       this.pagination.rowsPerPage = HexRuler * 4
@@ -165,46 +170,58 @@ export default {
           wp_Colour: ''
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
-        for (let s = HexPointer.wp_Number[1], r = 0; r < s; r++) {
-          wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Describe = this.$t('WeaponExplain.Sequence_number')
-          wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'blue'
-        }
-      }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
-        for (let s = HexPointer.wp_Unprefixed_Model[1], r = 0; r < s; r++) {
-          if (wplist[(HexRuler * i) + HexPointer.wp_Unprefixed_Model[0] + r].wp_Hex !== 'FF') {
-            wplist[(HexRuler * i) + HexPointer.wp_Unprefixed_Model[0] + r].wp_Describe = this.$t('WeaponExplain.Independent_model')
-            wplist[(HexRuler * i) + HexPointer.wp_Unprefixed_Model[0] + r].wp_Colour = 'green darken-4'
+      if (HexPointer.wp_Number !== undefined) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+          for (let s = HexPointer.wp_Number[1], r = 0; r < s; r++) {
+            wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Describe = this.$t('WeaponExplain.Sequence_number')
+            wplist[(HexRuler * i) + HexPointer.wp_Number[0] + r].wp_Colour = 'blue'
           }
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
-        for (let s = HexPointer.wp_Model[1], r = 0; r < s; r++) {
-          if (wplist[(HexRuler * i) + HexPointer.wp_Model[0] + r].wp_Hex !== 'FF') {
-            wplist[(HexRuler * i) + HexPointer.wp_Model[0] + r].wp_Describe = this.$t('WeaponExplain.Weapon_model')
-            wplist[(HexRuler * i) + HexPointer.wp_Model[0] + r].wp_Colour = 'green darken-4'
+      if (HexPointer.wp_Unprefixed_Model !== undefined) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+          for (let s = HexPointer.wp_Unprefixed_Model[1], r = 0; r < s; r++) {
+            if (wplist[(HexRuler * i) + HexPointer.wp_Unprefixed_Model[0] + r].wp_Hex !== 'FF') {
+              wplist[(HexRuler * i) + HexPointer.wp_Unprefixed_Model[0] + r].wp_Describe = this.$t('WeaponExplain.Independent_model')
+              wplist[(HexRuler * i) + HexPointer.wp_Unprefixed_Model[0] + r].wp_Colour = 'green darken-4'
+            }
           }
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
-        for (let s = HexPointer.wp_Minor_Model[1], r = 0; r < s; r++) {
-          if (wplist[(HexRuler * i) + HexPointer.wp_Minor_Model[0] + r].wp_Hex !== 'FF') {
-            wplist[(HexRuler * i) + HexPointer.wp_Minor_Model[0] + r].wp_Describe = this.$t('WeaponExplain.Weapon_secondary_model')
-            wplist[(HexRuler * i) + HexPointer.wp_Minor_Model[0] + r].wp_Colour = 'lime darken-4'
+      if (HexPointer.wp_Model !== undefined) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+          for (let s = HexPointer.wp_Model[1], r = 0; r < s; r++) {
+            if (wplist[(HexRuler * i) + HexPointer.wp_Model[0] + r].wp_Hex !== 'FF') {
+              wplist[(HexRuler * i) + HexPointer.wp_Model[0] + r].wp_Describe = this.$t('WeaponExplain.Weapon_model')
+              wplist[(HexRuler * i) + HexPointer.wp_Model[0] + r].wp_Colour = 'green darken-4'
+            }
           }
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
-        for (let s = HexPointer.wp_Money[1], r = 0; r < s; r++) {
-          wplist[(HexRuler * i) + HexPointer.wp_Money[0] + r].wp_Describe = this.$t('WeaponExplain.Manufacturing_costs')
-          wplist[(HexRuler * i) + HexPointer.wp_Money[0] + r].wp_Colour = 'amber'
+      if (HexPointer.wp_Minor_Model !== undefined) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+          for (let s = HexPointer.wp_Minor_Model[1], r = 0; r < s; r++) {
+            if (wplist[(HexRuler * i) + HexPointer.wp_Minor_Model[0] + r].wp_Hex !== 'FF') {
+              wplist[(HexRuler * i) + HexPointer.wp_Minor_Model[0] + r].wp_Describe = this.$t('WeaponExplain.Weapon_secondary_model')
+              wplist[(HexRuler * i) + HexPointer.wp_Minor_Model[0] + r].wp_Colour = 'lime darken-4'
+            }
+          }
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
-        for (let s = HexPointer.wp_Rarity[1], r = 0; r < s; r++) {
-          wplist[(HexRuler * i) + HexPointer.wp_Rarity[0] + r].wp_Describe = this.$t('WeaponExplain.Production_expenses')
-          wplist[(HexRuler * i) + HexPointer.wp_Rarity[0] + r].wp_Colour = 'deep-purple'
+      if (HexPointer.wp_Money !== undefined) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+          for (let s = HexPointer.wp_Money[1], r = 0; r < s; r++) {
+            wplist[(HexRuler * i) + HexPointer.wp_Money[0] + r].wp_Describe = this.$t('WeaponExplain.Manufacturing_costs')
+            wplist[(HexRuler * i) + HexPointer.wp_Money[0] + r].wp_Colour = 'amber'
+          }
+        }
+      }
+      if (HexPointer.wp_Rarity !== undefined) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+          for (let s = HexPointer.wp_Rarity[1], r = 0; r < s; r++) {
+            wplist[(HexRuler * i) + HexPointer.wp_Rarity[0] + r].wp_Describe = this.$t('WeaponExplain.Production_expenses')
+            wplist[(HexRuler * i) + HexPointer.wp_Rarity[0] + r].wp_Colour = 'deep-purple'
+          }
         }
       }
       if (HexPointer.wp_Chopping_value !== undefined) {
@@ -223,46 +240,60 @@ export default {
           }
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
-        for (let s = HexPointer.wp_Damage_value[1], r = 0; r < s; r++) {
-          wplist[(HexRuler * i) + HexPointer.wp_Damage_value[0] + r].wp_Describe = this.$t('WeaponExplain.Damage')
-          wplist[(HexRuler * i) + HexPointer.wp_Damage_value[0] + r].wp_Colour = 'red'
+      if (HexPointer.wp_Damage_value !== undefined) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+          for (let s = HexPointer.wp_Damage_value[1], r = 0; r < s; r++) {
+            wplist[(HexRuler * i) + HexPointer.wp_Damage_value[0] + r].wp_Describe = this.$t('WeaponExplain.Damage')
+            wplist[(HexRuler * i) + HexPointer.wp_Damage_value[0] + r].wp_Colour = 'red'
+          }
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
-        for (let s = HexPointer.wp_Defense_value[1], r = 0; r < s; r++) {
-          wplist[(HexRuler * i) + HexPointer.wp_Defense_value[0] + r].wp_Describe = this.$t('WeaponExplain.Defense')
-          wplist[(HexRuler * i) + HexPointer.wp_Defense_value[0] + r].wp_Colour = 'green'
+      if (HexPointer.wp_Defense_value !== undefined) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+          for (let s = HexPointer.wp_Defense_value[1], r = 0; r < s; r++) {
+            wplist[(HexRuler * i) + HexPointer.wp_Defense_value[0] + r].wp_Describe = this.$t('WeaponExplain.Defense')
+            wplist[(HexRuler * i) + HexPointer.wp_Defense_value[0] + r].wp_Colour = 'green'
+          }
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
-        for (let s = HexPointer.wp_Heart_value[1], r = 0; r < s; r++) {
-          wplist[(HexRuler * i) + HexPointer.wp_Heart_value[0] + r].wp_Describe = this.$t('WeaponExplain.Heart')
-          wplist[(HexRuler * i) + HexPointer.wp_Heart_value[0] + r].wp_Colour = 'purple'
+      if (HexPointer.wp_Heart_value !== undefined) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+          for (let s = HexPointer.wp_Heart_value[1], r = 0; r < s; r++) {
+            wplist[(HexRuler * i) + HexPointer.wp_Heart_value[0] + r].wp_Describe = this.$t('WeaponExplain.Heart')
+            wplist[(HexRuler * i) + HexPointer.wp_Heart_value[0] + r].wp_Colour = 'purple'
+          }
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
-        for (let s = HexPointer.wp_Visible_attributes[1], r = 0; r < s; r++) {
-          wplist[(HexRuler * i) + HexPointer.wp_Visible_attributes[0] + r].wp_Describe = this.$t('WeaponExplain.Visible_attributes')
-          wplist[(HexRuler * i) + HexPointer.wp_Visible_attributes[0] + r].wp_Colour = 'brown'
+      if (HexPointer.wp_Visible_attributes !== undefined) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+          for (let s = HexPointer.wp_Visible_attributes[1], r = 0; r < s; r++) {
+            wplist[(HexRuler * i) + HexPointer.wp_Visible_attributes[0] + r].wp_Describe = this.$t('WeaponExplain.Visible_attributes')
+            wplist[(HexRuler * i) + HexPointer.wp_Visible_attributes[0] + r].wp_Colour = 'brown'
+          }
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
-        for (let s = HexPointer.wp_Visible_attribute_values[1], r = 0; r < s; r++) {
-          wplist[(HexRuler * i) + HexPointer.wp_Visible_attribute_values[0] + r].wp_Describe = this.$t('WeaponExplain.Visible_attribute_values')
-          wplist[(HexRuler * i) + HexPointer.wp_Visible_attribute_values[0] + r].wp_Colour = 'brown darken-4'
+      if (HexPointer.wp_Visible_attribute_values !== undefined) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+          for (let s = HexPointer.wp_Visible_attribute_values[1], r = 0; r < s; r++) {
+            wplist[(HexRuler * i) + HexPointer.wp_Visible_attribute_values[0] + r].wp_Describe = this.$t('WeaponExplain.Visible_attribute_values')
+            wplist[(HexRuler * i) + HexPointer.wp_Visible_attribute_values[0] + r].wp_Colour = 'brown darken-4'
+          }
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
-        for (let s = HexPointer.wp_Hidden_attribute[1], r = 0; r < s; r++) {
-          wplist[(HexRuler * i) + HexPointer.wp_Hidden_attribute[0] + r].wp_Describe = this.$t('WeaponExplain.Hidden_attributes')
-          wplist[(HexRuler * i) + HexPointer.wp_Hidden_attribute[0] + r].wp_Colour = 'blue-grey'
+      if (HexPointer.wp_Hidden_attribute !== undefined) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+          for (let s = HexPointer.wp_Hidden_attribute[1], r = 0; r < s; r++) {
+            wplist[(HexRuler * i) + HexPointer.wp_Hidden_attribute[0] + r].wp_Describe = this.$t('WeaponExplain.Hidden_attributes')
+            wplist[(HexRuler * i) + HexPointer.wp_Hidden_attribute[0] + r].wp_Colour = 'blue-grey'
+          }
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
-        for (let s = HexPointer.wp_Hidden_attribute_values[1], r = 0; r < s; r++) {
-          wplist[(HexRuler * i) + HexPointer.wp_Hidden_attribute_values[0] + r].wp_Describe = this.$t('WeaponExplain.Hidden_attribute_values')
-          wplist[(HexRuler * i) + HexPointer.wp_Hidden_attribute_values[0] + r].wp_Colour = 'blue-grey darken-4'
+      if (HexPointer.wp_Hidden_attribute_values !== undefined) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+          for (let s = HexPointer.wp_Hidden_attribute_values[1], r = 0; r < s; r++) {
+            wplist[(HexRuler * i) + HexPointer.wp_Hidden_attribute_values[0] + r].wp_Describe = this.$t('WeaponExplain.Hidden_attribute_values')
+            wplist[(HexRuler * i) + HexPointer.wp_Hidden_attribute_values[0] + r].wp_Colour = 'blue-grey darken-4'
+          }
         }
       }
       if (HexPointer.wp_Cartridge_matching !== undefined) {
@@ -281,34 +312,44 @@ export default {
           }
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
-        for (let s = HexPointer.wp_Seal_Dragon[1], r = 0; r < s; r++) {
-          wplist[(HexRuler * i) + HexPointer.wp_Seal_Dragon[0] + r].wp_Describe = this.$t('WeaponExplain.Seal_Dragon')
-          wplist[(HexRuler * i) + HexPointer.wp_Seal_Dragon[0] + r].wp_Colour = 'deep-purple accent-1'
+      if (HexPointer.wp_Seal_Dragon !== undefined) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+          for (let s = HexPointer.wp_Seal_Dragon[1], r = 0; r < s; r++) {
+            wplist[(HexRuler * i) + HexPointer.wp_Seal_Dragon[0] + r].wp_Describe = this.$t('WeaponExplain.Seal_Dragon')
+            wplist[(HexRuler * i) + HexPointer.wp_Seal_Dragon[0] + r].wp_Colour = 'deep-purple accent-1'
+          }
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
-        for (let s = HexPointer.wp_Slot_grade_Number[1], r = 0; r < s; r++) {
-          wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_Number[0] + r].wp_Describe = this.$t('WeaponExplain.Slot_grade_Number')
-          wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_Number[0] + r].wp_Colour = 'teal'
+      if (HexPointer.wp_Slot_grade_Number !== undefined) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+          for (let s = HexPointer.wp_Slot_grade_Number[1], r = 0; r < s; r++) {
+            wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_Number[0] + r].wp_Describe = this.$t('WeaponExplain.Slot_grade_Number')
+            wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_Number[0] + r].wp_Colour = 'teal'
+          }
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
-        for (let s = HexPointer.wp_Slot_grade_1[1], r = 0; r < s; r++) {
-          wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_1[0] + r].wp_Describe = this.$t('WeaponExplain.Slot_grade_Number1')
-          wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_1[0] + r].wp_Colour = 'indigo'
+      if (HexPointer.wp_Slot_grade_1 !== undefined) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+          for (let s = HexPointer.wp_Slot_grade_1[1], r = 0; r < s; r++) {
+            wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_1[0] + r].wp_Describe = this.$t('WeaponExplain.Slot_grade_Number1')
+            wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_1[0] + r].wp_Colour = 'indigo'
+          }
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
-        for (let s = HexPointer.wp_Slot_grade_2[1], r = 0; r < s; r++) {
-          wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_2[0] + r].wp_Describe = this.$t('WeaponExplain.Slot_grade_Number2')
-          wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_2[0] + r].wp_Colour = 'indigo'
+      if (HexPointer.wp_Slot_grade_2 !== undefined) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+          for (let s = HexPointer.wp_Slot_grade_2[1], r = 0; r < s; r++) {
+            wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_2[0] + r].wp_Describe = this.$t('WeaponExplain.Slot_grade_Number2')
+            wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_2[0] + r].wp_Colour = 'indigo'
+          }
         }
       }
-      for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
-        for (let s = HexPointer.wp_Slot_grade_3[1], r = 0; r < s; r++) {
-          wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_3[0] + r].wp_Describe = this.$t('WeaponExplain.Slot_grade_Number3')
-          wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_3[0] + r].wp_Colour = 'indigo'
+      if (HexPointer.wp_Slot_grade_3 !== undefined) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+          for (let s = HexPointer.wp_Slot_grade_3[1], r = 0; r < s; r++) {
+            wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_3[0] + r].wp_Describe = this.$t('WeaponExplain.Slot_grade_Number3')
+            wplist[(HexRuler * i) + HexPointer.wp_Slot_grade_3[0] + r].wp_Colour = 'indigo'
+          }
         }
       }
       if (HexPointer.wp_Special_attributes !== undefined) {

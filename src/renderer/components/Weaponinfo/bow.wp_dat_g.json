@@ -307,6 +307,54 @@
         {
             "name": "惡棍之弓",
             "Weapon_Number": 84
+        },
+        {
+            "name": "金色的弓‧水",
+            "Weapon_Number": 86
+        },
+        {
+            "name": "金色的弓‧雷",
+            "Weapon_Number": 87
+        },
+        {
+            "name": "金色的弓‧爆破",
+            "Weapon_Number": 88
+        },
+        {
+            "name": "金色的弓‧搔",
+            "Weapon_Number": 89
+        },
+        {
+            "name": "金色的弓‧毒妖",
+            "Weapon_Number": 90
+        },
+        {
+            "name": "金色的弓‧飛雷",
+            "Weapon_Number": 91
+        },
+        {
+            "name": "金色的弓‧蠻顎",
+            "Weapon_Number": 92
+        },
+        {
+            "name": "金色的弓‧女王",
+            "Weapon_Number": 93
+        },
+        {
+            "name": "金色的弓‧風漂",
+            "Weapon_Number": 94
+        },
+        {
+            "name": "金色的弓‧屍套",
+            "Weapon_Number": 95
+        },
+        {
+            "name": "金色的弓‧王",
+            "Weapon_Number": 96
+        },
+        {
+            "name": "金色的弓‧角",
+            "Weapon_Number": 97
         }
     ],
     "Model": {

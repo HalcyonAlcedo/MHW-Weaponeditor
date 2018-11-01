@@ -62,7 +62,7 @@
                       v-model="props.item.wp_Money.vul"
                       full-width
                       box
-                      disabled
+                      readonly
                     ></v-text-field>
                     <v-text-field
                       v-if="sourceitems && (props.item.wp_Money.vul !== props.item.wp_sourcedata.wp_Money.vul)"
@@ -71,7 +71,7 @@
                       full-width
                       box
                       color="red"
-                      disabled
+                      readonly
                     ></v-text-field>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Rarity !== false">
@@ -92,10 +92,9 @@
                       full-width
                       box
                       color="red"
-                      disabled
+                      readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <!-- 新斩味 -->
                   <v-list-tile v-if="props.item.wp_Chopping_value !== false">
                     <v-menu
                       v-model="props.menu"
@@ -116,13 +115,26 @@
                           <v-list-tile avatar justify-space-around>
                             <v-layout justify-space-around>
                             <v-list-tile-avatar>
-                                <v-btn small @click="props.item.wp_Chopping_value.vul = 33,props.item.wp_Chopping_grade.vul = 8">{{$t('WeaponExplain.Chopping_grade_quick1')}}</v-btn>
+                                <v-btn small @click="props.item.wp_Chopping_value.vul = 33,
+                                  props.item.wp_Chopping_grade.vul = 8,
+                                  input_interchangeable(props.item.wp_Chopping_value),
+                                  input_interchangeable(props.item.wp_Chopping_grade)">
+                                  {{$t('WeaponExplain.Chopping_grade_quick1')}}
+                                </v-btn>
                             </v-list-tile-avatar>
                             <v-list-tile-avatar>
-                                <v-btn small @click="props.item.wp_Chopping_value.vul = 38,props.item.wp_Chopping_grade.vul = 8">{{$t('WeaponExplain.Chopping_grade_quick2')}}</v-btn>
+                                <v-btn small @click="props.item.wp_Chopping_value.vul = 38,
+                                  props.item.wp_Chopping_grade.vul = 8,
+                                  input_interchangeable(props.item.wp_Chopping_value),
+                                  input_interchangeable(props.item.wp_Chopping_grade)">
+                                  {{$t('WeaponExplain.Chopping_grade_quick2')}}</v-btn>
                             </v-list-tile-avatar>
                             <v-list-tile-avatar>
-                                <v-btn small @click="props.item.wp_Chopping_value.vul = 39,props.item.wp_Chopping_grade.vul = 8">{{$t('WeaponExplain.Chopping_grade_quick3')}}</v-btn>
+                                <v-btn small @click="props.item.wp_Chopping_value.vul = 39,
+                                  props.item.wp_Chopping_grade.vul = 8,
+                                  input_interchangeable(props.item.wp_Chopping_value),
+                                  input_interchangeable(props.item.wp_Chopping_grade)">
+                                  {{$t('WeaponExplain.Chopping_grade_quick3')}}</v-btn>
                             </v-list-tile-avatar>
                             </v-layout>
                           </v-list-tile>
@@ -130,12 +142,12 @@
                         <v-divider></v-divider>
                         <v-list>
                           <v-list-tile>
-                            <v-list-tile-title>
-                            <v-layout row wrap>
-                              <v-flex xs3>
+                            <v-list-tile-title pa-2 ma-2>
+                            <v-layout align-center justify-center row>
+                              <v-flex xs5>
                                 {{$t('WeaponExplain.Chopping_value')}}
                               </v-flex>
-                              <v-flex xs9>
+                              <v-flex xs7>
                                 <v-slider
                                   full-width
                                   @change="input_interchangeable(props.item.wp_Chopping_value)"
@@ -148,7 +160,7 @@
                           </v-list-tile>
                           <v-list-tile>
                             <v-list-tile-title>
-                            <v-layout row wrap>
+                            <v-layout align-center justify-center row>
                               <v-flex xs3>
                                 {{$t('WeaponExplain.Chopping_grade')}}
                               </v-flex>
@@ -169,34 +181,6 @@
                       </v-card>
                     </v-menu>
                   </v-list-tile>
-                  <!-- 暂时关闭
-                  <v-list-tile v-if="props.item.wp_Chopping_value !== false">
-                    <v-list-tile-content>{{ $t('WeaponExplain.Chopping_value') }}:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">
-                        <v-slider
-                          v-model="props.item.wp_Chopping_value.vul"
-                          max=118
-                          readonly
-                        ></v-slider>
-                        {{ props.item.wp_Chopping_value.vul }}
-                        <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Chopping_value.vul !== props.item.wp_sourcedata.wp_Chopping_value.vul ? '(' + props.item.wp_sourcedata.wp_Chopping_value.vul + ')' : ''}}</Contrast>
-                    </v-list-tile-content>
-                  </v-list-tile>
-                  <v-list-tile v-if="props.item.wp_Chopping_grade !== false">
-                    <v-list-tile-content>{{ $t('WeaponExplain.Chopping_grade') }}:</v-list-tile-content>
-                    <v-list-tile-content class="align-end">
-                        <v-slider
-                          v-model="props.item.wp_Chopping_grade.vul"
-                          max=8
-                          ticks="always"
-                          tick-size="2"
-                          readonly
-                        ></v-slider>
-                        {{ props.item.wp_Chopping_grade.vul }}
-                        <Contrast v-if="sourceitems" class="red--text">{{ props.item.wp_Chopping_grade.vul !== props.item.wp_sourcedata.wp_Chopping_grade.vul ? '(' + props.item.wp_sourcedata.wp_Chopping_grade.vul + ')' : ''}}</Contrast>
-                    </v-list-tile-content>
-                  </v-list-tile>
-                  -->
                   <v-list-tile v-if="props.item.wp_Damage_value !== false">
                     <v-text-field
                       :label="$t('WeaponExplain.Damage')"
@@ -212,7 +196,7 @@
                       full-width
                       box
                       color="red"
-                      disabled
+                      readonly
                     ></v-text-field>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Defense_value !== false">
@@ -230,7 +214,7 @@
                       full-width
                       box
                       color="red"
-                      disabled
+                      readonly
                     ></v-text-field>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Heart_value !== false">
@@ -250,7 +234,7 @@
                       full-width
                       box
                       color="red"
-                      disabled
+                      readonly
                     ></v-text-field>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Visible_attributes !== false">
@@ -271,7 +255,7 @@
                       full-width
                       box
                       color="red"
-                      disabled
+                      readonly
                     ></v-text-field>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Visible_attribute_values !== false">
@@ -289,7 +273,7 @@
                       full-width
                       box
                       color="red"
-                      disabled
+                      readonly
                     ></v-text-field>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Hidden_attribute !== false">
@@ -310,7 +294,7 @@
                       full-width
                       box
                       color="red"
-                      disabled
+                      readonly
                     ></v-text-field>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Hidden_attribute_values !== false">
@@ -328,7 +312,7 @@
                       full-width
                       box
                       color="red"
-                      disabled
+                      readonly
                     ></v-text-field>
                   </v-list-tile>
                   </v-list>
@@ -350,7 +334,7 @@
                       full-width
                       box
                       color="red"
-                      disabled
+                      readonly
                     ></v-text-field>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Offset_size !== false">
@@ -371,7 +355,7 @@
                       full-width
                       box
                       color="red"
-                      disabled
+                      readonly
                     ></v-text-field>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Seal_Dragon !== false">
@@ -392,7 +376,7 @@
                       full-width
                       box
                       color="red"
-                      disabled
+                      readonly
                     ></v-text-field>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_Number !== false">
@@ -413,7 +397,7 @@
                       full-width
                       box
                       color="red"
-                      disabled
+                      readonly
                     ></v-text-field>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_1 !== false">
@@ -434,7 +418,7 @@
                       full-width
                       box
                       color="red"
-                      disabled
+                      readonly
                     ></v-text-field>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_2 !== false">
@@ -455,7 +439,7 @@
                       full-width
                       box
                       color="red"
-                      disabled
+                      readonly
                     ></v-text-field>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Slot_grade_3 !== false">
@@ -476,7 +460,7 @@
                       full-width
                       box
                       color="red"
-                      disabled
+                      readonly
                     ></v-text-field>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Special_attributes !== false">
@@ -494,7 +478,7 @@
                       full-width
                       box
                       color="red"
-                      disabled
+                      readonly
                     ></v-text-field>
                   </v-list-tile>
                   <!-- model -->
@@ -513,7 +497,7 @@
                       full-width
                       box
                       color="red"
-                      disabled
+                      readonly
                     ></v-text-field>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Model.vul !== 65535">
@@ -531,7 +515,7 @@
                       full-width
                       box
                       color="red"
-                      disabled
+                      readonly
                     ></v-text-field>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Minor_Model.vul !== 65535">
@@ -549,7 +533,7 @@
                       full-width
                       box
                       color="red"
-                      disabled
+                      readonly
                     ></v-text-field>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Weapon_skills !== false">
@@ -567,7 +551,7 @@
                       full-width
                       box
                       color="red"
-                      disabled
+                      readonly
                     ></v-text-field>
                   </v-list-tile>
                   </v-list>
@@ -745,7 +729,7 @@ export default {
       if (Math.abs(Number(valsave.vul)) > 100) {
         valsave.vul = Number(valsave.vul) >= 0 ? 100 : -100
       }
-      valsave.vul = Number(valsave.vul) >= 0 ? Number(valsave.vul) : 256 - Math.abs(Math.abs(Number(valsave.vul)) + 256)
+      valsave.vul = Number(valsave.vul) >= 0 ? Number(valsave.vul) : 256 - Math.abs(Number(valsave.vul))
       this.save(valsave)
     },
     Attribute_treatment (val) {
@@ -762,6 +746,7 @@ export default {
     },
     input_interchangeable (val) {
       let valsave = val
+      console.log(valsave)
       this.save(valsave)
     },
     Select_interchangeable (val) {
