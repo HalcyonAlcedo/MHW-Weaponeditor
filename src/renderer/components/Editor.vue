@@ -597,13 +597,16 @@
                     ></v-text-field>
                   </v-list-tile>
                   <v-list-tile v-if="props.item.wp_Weapon_skills !== false">
-                    <v-text-field
+                    <v-autocomplete
                       :label="$t('WeaponExplain.Weapon_skills')"
-                      @change="input_interchangeable(props.item.wp_Weapon_skills)"
                       v-model="props.item.wp_Weapon_skills.vul"
-                      full-width
+                      :items="skillitem"
+                      item-text="text"
+                      persistent-hint
                       box
-                    ></v-text-field>
+                      :no-data-text="$t('Interface.No_data')"
+                    >
+                    </v-autocomplete>
                     <v-text-field
                       v-if="sourceitems && (props.item.wp_Weapon_skills.vul !== props.item.wp_sourcedata.wp_Weapon_skills.vul)"
                       :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Weapon_skills')"
@@ -800,6 +803,20 @@ export default {
         {value: 6, text: 'Rank7'},
         {value: 7, text: 'Rank8'}
       ]
+    },
+    skillitem () {
+      let skill = []
+      for (let i = 0; i < 149; i++) {
+        if (this.$te('Skill.' + i)) {
+          skill.push(
+            {
+              text: this.$t('Skill.' + i),
+              value: i
+            }
+          )
+        }
+      }
+      return skill
     }
   },
   watch: {

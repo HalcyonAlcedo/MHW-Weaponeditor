@@ -229,7 +229,22 @@
       </v-dialog>
       <v-dialog v-model="Explain" persistent max-width="690">
         <v-card>
-          <v-card-title class="headline">{{$t("Interface.Instructions")}}</v-card-title>
+          <v-layout row wrap>
+            <v-flex xs3>
+              <v-card-title class="headline">{{$t("Interface.Instructions")}}</v-card-title>
+            </v-flex>
+              <v-spacer></v-spacer>
+            <v-flex xs3>
+              <v-select
+                v-model="lang"
+                :items="langlist"
+                item-text="text"
+                item-value="value"
+                :label="$t('Interface.Lang')"
+                return-object
+              ></v-select>
+            </v-flex>
+          </v-layout>
           <v-divider></v-divider>
           <v-card-title><div v-html="$t('Explanatory.Instructions')"></div></v-card-title>
           <v-card-actions>
@@ -276,7 +291,7 @@ export default {
     return {
       lang: Language,
       langlist: [
-        {text: '简体中文', value: 'zh_ch'},
+        {text: '简体中文', value: 'zh_cn'},
         {text: '繁體中文', value: 'zh_tw'},
         {text: 'English', value: 'en'}
       ],
