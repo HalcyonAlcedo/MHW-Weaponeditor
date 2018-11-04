@@ -310,119 +310,119 @@
         },
         {
             "name": "金色的弓‧水",
-            "Weapon_Number": 86
-        },
-        {
-            "name": "金色的弓‧雷",
             "Weapon_Number": 87
         },
         {
-            "name": "金色的弓‧爆破",
+            "name": "金色的弓‧雷",
             "Weapon_Number": 88
         },
         {
-            "name": "金色的弓‧搔",
+            "name": "金色的弓‧爆破",
             "Weapon_Number": 89
         },
         {
-            "name": "金色的弓‧毒妖",
+            "name": "金色的弓‧搔",
             "Weapon_Number": 90
         },
         {
-            "name": "金色的弓‧飛雷",
+            "name": "金色的弓‧毒妖",
             "Weapon_Number": 91
         },
         {
-            "name": "金色的弓‧蠻顎",
+            "name": "金色的弓‧飛雷",
             "Weapon_Number": 92
         },
         {
-            "name": "金色的弓‧女王",
+            "name": "金色的弓‧蠻顎",
             "Weapon_Number": 93
         },
         {
-            "name": "金色的弓‧風漂",
+            "name": "金色的弓‧女王",
             "Weapon_Number": 94
         },
         {
-            "name": "金色的弓‧屍套",
+            "name": "金色的弓‧風漂",
             "Weapon_Number": 95
         },
         {
-            "name": "金色的弓‧王",
+            "name": "金色的弓‧屍套",
             "Weapon_Number": 96
         },
         {
-            "name": "金色的弓‧角",
+            "name": "金色的弓‧王",
             "Weapon_Number": 97
         },
         {
-            "name": "鎧羅弓‧搔",
+            "name": "金色的弓‧角",
             "Weapon_Number": 98
         },
         {
-            "name": "鎧羅弓‧毒妖",
+            "name": "鎧羅弓‧搔",
             "Weapon_Number": 99
         },
         {
-            "name": "鎧羅弓‧飛雷",
+            "name": "鎧羅弓‧毒妖",
             "Weapon_Number": 100
         },
         {
-            "name": "鎧羅弓‧蠻顎",
+            "name": "鎧羅弓‧飛雷",
             "Weapon_Number": 101
         },
         {
-            "name": "鎧羅弓‧女王",
+            "name": "鎧羅弓‧蠻顎",
             "Weapon_Number": 102
         },
         {
-            "name": "鎧羅弓‧風漂",
+            "name": "鎧羅弓‧女王",
             "Weapon_Number": 103
         },
         {
-            "name": "鎧羅弓‧屍套",
+            "name": "鎧羅弓‧風漂",
             "Weapon_Number": 104
         },
         {
-            "name": "鎧羅弓‧王",
+            "name": "鎧羅弓‧屍套",
             "Weapon_Number": 105
         },
         {
-            "name": "鎧羅弓‧角",
+            "name": "鎧羅弓‧王",
             "Weapon_Number": 106
         },
         {
-            "name": "鎧羅弓‧水",
+            "name": "鎧羅弓‧角",
             "Weapon_Number": 107
         },
         {
-            "name": "鎧羅弓‧雷",
+            "name": "鎧羅弓‧水",
             "Weapon_Number": 108
         },
         {
-            "name": "鎧羅弓‧爆破",
+            "name": "鎧羅弓‧雷",
             "Weapon_Number": 109
         },
         {
-            "name": "皇后弓",
+            "name": "鎧羅弓‧爆破",
             "Weapon_Number": 110
         },
         {
-            "name": "皇后弓‧炎妃",
+            "name": "皇后弓",
             "Weapon_Number": 111
         },
         {
-            "name": "皇后弓‧滅盡",
+            "name": "皇后弓‧炎妃",
             "Weapon_Number": 112
         },
         {
-            "name": "皇后弓‧冥燈",
+            "name": "皇后弓‧滅盡",
             "Weapon_Number": 113
         },
         {
-            "name": "鎧羅弓‧火",
+            "name": "皇后弓‧冥燈",
             "Weapon_Number": 114
+        },
+        {
+            "name": "鎧羅弓‧火",
+            "Weapon_Number": 115
         }
     ],
     "Model": {

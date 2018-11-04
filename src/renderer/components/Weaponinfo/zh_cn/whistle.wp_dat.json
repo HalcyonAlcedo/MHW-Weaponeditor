@@ -2,35 +2,35 @@
     "Weapon": "猎笛",
     "Data": [
         {
-            "name": "金属风笛 Ⅰ",
+            "name": "金属风笛Ⅰ",
             "Weapon_Number": 6
         },
         {
-            "name": "金属风笛 Ⅱ",
+            "name": "金属风笛Ⅱ",
             "Weapon_Number": 7
         },
         {
-            "name": "金属风笛 Ⅲ",
+            "name": "金属风笛Ⅲ",
             "Weapon_Number": 8
         },
         {
-            "name": "巨型风笛 Ⅰ",
+            "name": "巨型风笛Ⅰ",
             "Weapon_Number": 9
         },
         {
-            "name": "巨型风笛 Ⅱ",
+            "name": "巨型风笛Ⅱ",
             "Weapon_Number": 10
         },
         {
-            "name": "巨型风笛 Ⅲ",
+            "name": "巨型风笛Ⅲ",
             "Weapon_Number": 11
         },
         {
-            "name": "威猛风笛 Ⅰ",
+            "name": "威猛风笛Ⅰ",
             "Weapon_Number": 12
         },
         {
-            "name": "威猛风笛 Ⅱ",
+            "name": "威猛风笛Ⅱ",
             "Weapon_Number": 13
         },
         {
@@ -42,47 +42,47 @@
             "Weapon_Number": 15
         },
         {
-            "name": "闪电风笛 Ⅰ",
+            "name": "闪电风笛Ⅰ",
             "Weapon_Number": 16
         },
         {
-            "name": "闪电风笛 Ⅱ",
+            "name": "闪电风笛Ⅱ",
             "Weapon_Number": 17
         },
         {
-            "name": "雷鼓 Ⅰ",
+            "name": "雷鼓Ⅰ",
             "Weapon_Number": 18
         },
         {
-            "name": "雷鼓 Ⅱ",
+            "name": "雷鼓Ⅱ",
             "Weapon_Number": 19
         },
         {
-            "name": "雷鼓 Ⅲ",
+            "name": "雷鼓Ⅲ",
             "Weapon_Number": 20
         },
         {
-            "name": "搔鸟风笛 Ⅰ",
+            "name": "搔鸟风笛Ⅰ",
             "Weapon_Number": 21
         },
         {
-            "name": "搔鸟风笛 Ⅱ",
+            "name": "搔鸟风笛Ⅱ",
             "Weapon_Number": 22
         },
         {
-            "name": "搔鸟风笛 Ⅲ",
+            "name": "搔鸟风笛Ⅲ",
             "Weapon_Number": 23
         },
         {
-            "name": "星空皮鼓 Ⅰ",
+            "name": "星空皮鼓Ⅰ",
             "Weapon_Number": 24
         },
         {
-            "name": "星空皮鼓 Ⅱ",
+            "name": "星空皮鼓Ⅱ",
             "Weapon_Number": 25
         },
         {
-            "name": "星空皮鼓 Ⅲ",
+            "name": "星空皮鼓Ⅲ",
             "Weapon_Number": 26
         },
         {
@@ -102,35 +102,35 @@
             "Weapon_Number": 30
         },
         {
-            "name": "水流风笛 Ⅰ",
+            "name": "水流风笛Ⅰ",
             "Weapon_Number": 31
         },
         {
-            "name": "水流风笛 Ⅱ",
+            "name": "水流风笛Ⅱ",
             "Weapon_Number": 32
         },
         {
-            "name": "水流风笛 Ⅲ",
+            "name": "水流风笛Ⅲ",
             "Weapon_Number": 33
         },
         {
-            "name": "激流铜锣 Ⅰ",
+            "name": "激流铜锣Ⅰ",
             "Weapon_Number": 34
         },
         {
-            "name": "激流铜锣 Ⅱ",
+            "name": "激流铜锣Ⅱ",
             "Weapon_Number": 35
         },
         {
-            "name": "激流铜锣 Ⅲ",
+            "name": "激流铜锣Ⅲ",
             "Weapon_Number": 36
         },
         {
-            "name": "优雅风笛 Ⅰ",
+            "name": "优雅风笛Ⅰ",
             "Weapon_Number": 37
         },
         {
-            "name": "优雅风笛 Ⅱ",
+            "name": "优雅风笛Ⅱ",
             "Weapon_Number": 38
         },
         {
@@ -142,107 +142,107 @@
             "Weapon_Number": 40
         },
         {
-            "name": "骨制号角 Ⅰ",
+            "name": "骨制号角Ⅰ",
             "Weapon_Number": 41
         },
         {
-            "name": "骨制号角 Ⅱ",
+            "name": "骨制号角Ⅱ",
             "Weapon_Number": 42
         },
         {
-            "name": "骨制号角 Ⅲ",
+            "name": "骨制号角Ⅲ",
             "Weapon_Number": 43
         },
         {
-            "name": "硬骨号角 Ⅰ",
+            "name": "硬骨号角Ⅰ",
             "Weapon_Number": 44
         },
         {
-            "name": "硬骨号角 Ⅱ",
+            "name": "硬骨号角Ⅱ",
             "Weapon_Number": 45
         },
         {
-            "name": "硬骨号角 Ⅲ",
+            "name": "硬骨号角Ⅲ",
             "Weapon_Number": 46
         },
         {
-            "name": "坚骨号角 Ⅰ",
+            "name": "坚骨号角Ⅰ",
             "Weapon_Number": 47
         },
         {
-            "name": "坚骨号角 Ⅱ",
+            "name": "坚骨号角Ⅱ",
             "Weapon_Number": 48
         },
         {
-            "name": "岩贼龙号角 Ⅰ",
+            "name": "岩贼龙号角Ⅰ",
             "Weapon_Number": 49
         },
         {
-            "name": "岩贼龙号角 Ⅱ",
+            "name": "岩贼龙号角Ⅱ",
             "Weapon_Number": 50
         },
         {
-            "name": "火炎号角 Ⅰ",
+            "name": "火炎号角Ⅰ",
             "Weapon_Number": 51
         },
         {
-            "name": "火炎号角 Ⅱ",
+            "name": "火炎号角Ⅱ",
             "Weapon_Number": 52
         },
         {
-            "name": "蛮颚龙长号 Ⅰ",
+            "name": "蛮颚龙长号Ⅰ",
             "Weapon_Number": 53
         },
         {
-            "name": "蛮颚龙长号 Ⅱ",
+            "name": "蛮颚龙长号Ⅱ",
             "Weapon_Number": 54
         },
         {
-            "name": "蛮颚龙长号 Ⅲ",
+            "name": "蛮颚龙长号Ⅲ",
             "Weapon_Number": 55
         },
         {
-            "name": "花朵号角 Ⅰ",
+            "name": "花朵号角Ⅰ",
             "Weapon_Number": 56
         },
         {
-            "name": "花朵号角 Ⅱ",
+            "name": "花朵号角Ⅱ",
             "Weapon_Number": 57
         },
         {
-            "name": "花朵号角 Ⅲ",
+            "name": "花朵号角Ⅲ",
             "Weapon_Number": 58
         },
         {
-            "name": "曼陀罗号角 Ⅰ",
+            "name": "曼陀罗号角Ⅰ",
             "Weapon_Number": 59
         },
         {
-            "name": "曼陀罗号角 Ⅱ",
+            "name": "曼陀罗号角Ⅱ",
             "Weapon_Number": 60
         },
         {
-            "name": "曼陀罗号角 Ⅲ",
+            "name": "曼陀罗号角Ⅲ",
             "Weapon_Number": 61
         },
         {
-            "name": "浮空龙号角 Ⅰ",
+            "name": "浮空龙号角Ⅰ",
             "Weapon_Number": 62
         },
         {
-            "name": "浮空龙号角 Ⅱ",
+            "name": "浮空龙号角Ⅱ",
             "Weapon_Number": 63
         },
         {
-            "name": "浮空龙长号 Ⅰ",
+            "name": "浮空龙长号Ⅰ",
             "Weapon_Number": 64
         },
         {
-            "name": "浮空龙长号 Ⅱ",
+            "name": "浮空龙长号Ⅱ",
             "Weapon_Number": 65
         },
         {
-            "name": "浮空龙长号 Ⅲ",
+            "name": "浮空龙长号Ⅲ",
             "Weapon_Number": 66
         },
         {
@@ -254,15 +254,15 @@
             "Weapon_Number": 68
         },
         {
-            "name": "音速号角 Ⅰ",
+            "name": "音速号角Ⅰ",
             "Weapon_Number": 69
         },
         {
-            "name": "音速号角 Ⅱ",
+            "name": "音速号角Ⅱ",
             "Weapon_Number": 70
         },
         {
-            "name": "音速号角 Ⅲ",
+            "name": "音速号角Ⅲ",
             "Weapon_Number": 71
         },
         {
@@ -278,35 +278,35 @@
             "Weapon_Number": 74
         },
         {
-            "name": "尖刺号角 Ⅰ",
+            "name": "尖刺号角Ⅰ",
             "Weapon_Number": 75
         },
         {
-            "name": "尖刺号角 Ⅱ",
+            "name": "尖刺号角Ⅱ",
             "Weapon_Number": 76
         },
         {
-            "name": "骨锤龙号角 Ⅰ",
+            "name": "骨锤龙号角Ⅰ",
             "Weapon_Number": 77
         },
         {
-            "name": "骨锤龙号角 Ⅱ",
+            "name": "骨锤龙号角Ⅱ",
             "Weapon_Number": 78
         },
         {
-            "name": "骨锤龙号角 Ⅲ",
+            "name": "骨锤龙号角Ⅲ",
             "Weapon_Number": 79
         },
         {
-            "name": "龙骨古笛 Ⅰ",
+            "name": "龙骨古笛Ⅰ",
             "Weapon_Number": 80
         },
         {
-            "name": "龙骨古笛 Ⅱ",
+            "name": "龙骨古笛Ⅱ",
             "Weapon_Number": 81
         },
         {
-            "name": "龙骨古笛 Ⅲ",
+            "name": "龙骨古笛Ⅲ",
             "Weapon_Number": 82
         },
         {
@@ -314,19 +314,19 @@
             "Weapon_Number": 83
         },
         {
-            "name": "雷光笛 Ⅰ",
+            "name": "雷光笛Ⅰ",
             "Weapon_Number": 84
         },
         {
-            "name": "雷光笛 Ⅱ",
+            "name": "雷光笛Ⅱ",
             "Weapon_Number": 85
         },
         {
-            "name": "黒钢龙笛 Ⅰ",
+            "name": "黒钢龙笛Ⅰ",
             "Weapon_Number": 86
         },
         {
-            "name": "黑钢龙笛 Ⅱ",
+            "name": "黑钢龙笛Ⅱ",
             "Weapon_Number": 87
         },
         {
@@ -348,6 +348,122 @@
         {
             "name": "深邃之锁",
             "Weapon_Number": 92
+        },
+        {
+            "name": "金色的龙笛‧水",
+            "Weapon_Number": 93
+        },
+        {
+            "name": "金色的龙笛‧龙",
+            "Weapon_Number": 94
+        },
+        {
+            "name": "金色的龙笛‧麻痹",
+            "Weapon_Number": 95
+        },
+        {
+            "name": "金色的龙笛‧飞甲",
+            "Weapon_Number": 96
+        },
+        {
+            "name": "金色的龙笛‧搔",
+            "Weapon_Number": 97
+        },
+        {
+            "name": "金色的龙笛‧毒妖",
+            "Weapon_Number": 98
+        },
+        {
+            "name": "金色的龙笛‧蛮颚",
+            "Weapon_Number": 99
+        },
+        {
+            "name": "金色的龙笛‧浮空",
+            "Weapon_Number": 100
+        },
+        {
+            "name": "金色的龙笛‧风漂",
+            "Weapon_Number": 101
+        },
+        {
+            "name": "金色的龙笛‧骨锤",
+            "Weapon_Number": 102
+        },
+        {
+            "name": "金色的龙笛‧幻",
+            "Weapon_Number": 103
+        },
+        {
+            "name": "金色的龙笛‧岩贼",
+            "Weapon_Number": 104
+        },
+        {
+            "name": "铠罗风笛‧飞甲",
+            "Weapon_Number": 115
+        },
+        {
+            "name": "铠罗风笛‧搔",
+            "Weapon_Number": 116
+        },
+        {
+            "name": "铠罗风笛‧毒妖",
+            "Weapon_Number": 117
+        },
+        {
+            "name": "铠罗风笛‧蛮颚",
+            "Weapon_Number": 118
+        },
+        {
+            "name": "铠罗风笛‧浮空",
+            "Weapon_Number": 119
+        },
+        {
+            "name": "铠罗风笛‧风漂",
+            "Weapon_Number": 120
+        },
+        {
+            "name": "铠罗风笛‧骨锤",
+            "Weapon_Number": 121
+        },
+        {
+            "name": "铠罗风笛‧幻",
+            "Weapon_Number": 122
+        },
+        {
+            "name": "铠罗风笛‧岩贼",
+            "Weapon_Number": 123
+        },
+        {
+            "name": "铠罗风笛‧水",
+            "Weapon_Number": 125
+        },
+        {
+            "name": "铠罗风笛‧龙",
+            "Weapon_Number": 126
+        },
+        {
+            "name": "铠罗风笛‧麻痹",
+            "Weapon_Number": 127
+        },
+        {
+            "name": "皇后鼓",
+            "Weapon_Number": 128
+        },
+        {
+            "name": "皇后鼓‧炎妃",
+            "Weapon_Number": 129
+        },
+        {
+            "name": "皇后鼓‧灭尽",
+            "Weapon_Number": 130
+        },
+        {
+            "name": "皇后鼓‧冥灯",
+            "Weapon_Number": 131
+        },
+        {
+            "name": "铠罗风笛‧睡眠",
+            "Weapon_Number": 132
         }
     ]
 }

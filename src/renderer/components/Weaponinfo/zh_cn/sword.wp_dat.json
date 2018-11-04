@@ -2,35 +2,35 @@
     "Weapon": "片手",
     "Data": [
         {
-            "name": "猎人匕首 Ⅰ",
+            "name": "猎人匕首Ⅰ",
             "Weapon_Number": 8
         },
         {
-            "name": "猎人匕首 Ⅱ",
+            "name": "猎人匕首Ⅱ",
             "Weapon_Number": 9
         },
         {
-            "name": "猎人匕首 Ⅲ",
+            "name": "猎人匕首Ⅲ",
             "Weapon_Number": 10
         },
         {
-            "name": "钢铁匕首 Ⅰ",
+            "name": "钢铁匕首Ⅰ",
             "Weapon_Number": 11
         },
         {
-            "name": "钢铁匕首 Ⅱ",
+            "name": "钢铁匕首Ⅱ",
             "Weapon_Number": 12
         },
         {
-            "name": "钢铁匕首 Ⅲ",
+            "name": "钢铁匕首Ⅲ",
             "Weapon_Number": 13
         },
         {
-            "name": "铬钢切刀 Ⅰ",
+            "name": "铬钢切刀Ⅰ",
             "Weapon_Number": 14
         },
         {
-            "name": "铬钢切刀 Ⅱ",
+            "name": "铬钢切刀Ⅱ",
             "Weapon_Number": 15
         },
         {
@@ -42,11 +42,11 @@
             "Weapon_Number": 17
         },
         {
-            "name": "火炎匕首 Ⅰ",
+            "name": "火炎匕首Ⅰ",
             "Weapon_Number": 18
         },
         {
-            "name": "火炎匕首 Ⅱ",
+            "name": "火炎匕首Ⅱ",
             "Weapon_Number": 19
         },
         {
@@ -70,35 +70,35 @@
             "Weapon_Number": 24
         },
         {
-            "name": "水流小刀 Ⅰ",
+            "name": "水流小刀Ⅰ",
             "Weapon_Number": 25
         },
         {
-            "name": "水流小刀 Ⅱ",
+            "name": "水流小刀Ⅱ",
             "Weapon_Number": 26
         },
         {
-            "name": "水流小刀 Ⅲ",
+            "name": "水流小刀Ⅲ",
             "Weapon_Number": 27
         },
         {
-            "name": "汹涌奔流 Ⅰ",
+            "name": "汹涌奔流Ⅰ",
             "Weapon_Number": 28
         },
         {
-            "name": "汹涌奔流 Ⅱ",
+            "name": "汹涌奔流Ⅱ",
             "Weapon_Number": 29
         },
         {
-            "name": "汹涌奔流 Ⅲ",
+            "name": "汹涌奔流Ⅲ",
             "Weapon_Number": 30
         },
         {
-            "name": "优雅斗士 Ⅰ",
+            "name": "优雅斗士Ⅰ",
             "Weapon_Number": 31
         },
         {
-            "name": "优雅斗士 Ⅱ",
+            "name": "优雅斗士Ⅱ",
             "Weapon_Number": 32
         },
         {
@@ -126,195 +126,195 @@
             "Weapon_Number": 38
         },
         {
-            "name": "浮空龙匕首 Ⅰ",
+            "name": "浮空龙匕首Ⅰ",
             "Weapon_Number": 39
         },
         {
-            "name": "浮空龙匕首 Ⅱ",
+            "name": "浮空龙匕首Ⅱ",
             "Weapon_Number": 40
         },
         {
-            "name": "浮空龙战斧 Ⅰ",
+            "name": "浮空龙战斧Ⅰ",
             "Weapon_Number": 41
         },
         {
-            "name": "浮空龙战斧 Ⅱ",
+            "name": "浮空龙战斧Ⅱ",
             "Weapon_Number": 42
         },
         {
-            "name": "浮空龙战斧 Ⅲ",
+            "name": "浮空龙战斧Ⅲ",
             "Weapon_Number": 43
         },
         {
-            "name": "鲜花匕首 Ⅰ",
+            "name": "鲜花匕首Ⅰ",
             "Weapon_Number": 44
         },
         {
-            "name": "鲜花匕首 Ⅱ",
+            "name": "鲜花匕首Ⅱ",
             "Weapon_Number": 45
         },
         {
-            "name": "鲜花匕首 Ⅲ",
+            "name": "鲜花匕首Ⅲ",
             "Weapon_Number": 46
         },
         {
-            "name": "盛开曼陀罗 Ⅰ",
+            "name": "盛开曼陀罗Ⅰ",
             "Weapon_Number": 47
         },
         {
-            "name": "盛开曼陀罗 Ⅱ",
+            "name": "盛开曼陀罗Ⅱ",
             "Weapon_Number": 48
         },
         {
-            "name": "盛开曼陀罗 Ⅲ",
+            "name": "盛开曼陀罗Ⅲ",
             "Weapon_Number": 49
         },
         {
-            "name": "痹贼龙匕首 Ⅰ",
+            "name": "痹贼龙匕首Ⅰ",
             "Weapon_Number": 50
         },
         {
-            "name": "痹贼龙匕首 Ⅱ",
+            "name": "痹贼龙匕首Ⅱ",
             "Weapon_Number": 51
         },
         {
-            "name": "马拉多战斧 Ⅰ",
+            "name": "马拉多战斧Ⅰ",
             "Weapon_Number": 52
         },
         {
-            "name": "马拉多战斧 Ⅱ",
+            "name": "马拉多战斧Ⅱ",
             "Weapon_Number": 53
         },
         {
-            "name": "马拉多战斧 Ⅲ",
+            "name": "马拉多战斧Ⅲ",
             "Weapon_Number": 54
         },
         {
-            "name": "骨制曲刀 Ⅰ",
+            "name": "骨制曲刀Ⅰ",
             "Weapon_Number": 55
         },
         {
-            "name": "骨制曲刀 Ⅱ",
+            "name": "骨制曲刀Ⅱ",
             "Weapon_Number": 56
         },
         {
-            "name": "骨制曲刀 Ⅲ",
+            "name": "骨制曲刀Ⅲ",
             "Weapon_Number": 57
         },
         {
-            "name": "酋长曲刀 Ⅰ",
+            "name": "酋长曲刀Ⅰ",
             "Weapon_Number": 58
         },
         {
-            "name": "酋长曲刀 Ⅱ",
+            "name": "酋长曲刀Ⅱ",
             "Weapon_Number": 59
         },
         {
-            "name": "酋长曲刀 Ⅲ",
+            "name": "酋长曲刀Ⅲ",
             "Weapon_Number": 60
         },
         {
-            "name": "大地巴龙刀 Ⅰ",
+            "name": "大地巴龙刀Ⅰ",
             "Weapon_Number": 61
         },
         {
-            "name": "大地巴龙刀 Ⅱ",
+            "name": "大地巴龙刀Ⅱ",
             "Weapon_Number": 62
         },
         {
-            "name": "尖刺锐剑 Ⅰ",
+            "name": "尖刺锐剑Ⅰ",
             "Weapon_Number": 63
         },
         {
-            "name": "尖刺锐剑 Ⅱ",
+            "name": "尖刺锐剑Ⅱ",
             "Weapon_Number": 64
         },
         {
-            "name": "骨锤龙棍棒 Ⅰ",
+            "name": "骨锤龙棍棒Ⅰ",
             "Weapon_Number": 65
         },
         {
-            "name": "骨锤龙棍棒 Ⅱ",
+            "name": "骨锤龙棍棒Ⅱ",
             "Weapon_Number": 66
         },
         {
-            "name": "骨锤龙棍棒 Ⅲ",
+            "name": "骨锤龙棍棒Ⅲ",
             "Weapon_Number": 67
         },
         {
-            "name": "贼龙锐剑 Ⅰ",
+            "name": "贼龙锐剑Ⅰ",
             "Weapon_Number": 68
         },
         {
-            "name": "贼龙锐剑 Ⅱ",
+            "name": "贼龙锐剑Ⅱ",
             "Weapon_Number": 69
         },
         {
-            "name": "贼龙锐剑 Ⅲ",
+            "name": "贼龙锐剑Ⅲ",
             "Weapon_Number": 70
         },
         {
-            "name": "贼龙棍棒 Ⅰ",
+            "name": "贼龙棍棒Ⅰ",
             "Weapon_Number": 71
         },
         {
-            "name": "贼龙棍棒 Ⅱ",
+            "name": "贼龙棍棒Ⅱ",
             "Weapon_Number": 72
         },
         {
-            "name": "贼龙棍棒 Ⅲ",
+            "name": "贼龙棍棒Ⅲ",
             "Weapon_Number": 73
         },
         {
-            "name": "闪雷锐剑 Ⅰ",
+            "name": "闪雷锐剑Ⅰ",
             "Weapon_Number": 74
         },
         {
-            "name": "闪雷锐剑 Ⅱ",
+            "name": "闪雷锐剑Ⅱ",
             "Weapon_Number": 75
         },
         {
-            "name": "雷光战狂 Ⅰ",
+            "name": "雷光战狂Ⅰ",
             "Weapon_Number": 76
         },
         {
-            "name": "雷光战狂 Ⅱ",
+            "name": "雷光战狂Ⅱ",
             "Weapon_Number": 77
         },
         {
-            "name": "雷光战狂 Ⅲ",
+            "name": "雷光战狂Ⅲ",
             "Weapon_Number": 78
         },
         {
-            "name": "土砂龙锐剑 Ⅰ",
+            "name": "土砂龙锐剑Ⅰ",
             "Weapon_Number": 79
         },
         {
-            "name": "土砂龙锐剑 Ⅱ",
+            "name": "土砂龙锐剑Ⅱ",
             "Weapon_Number": 80
         },
         {
-            "name": "土砂龙锐剑 Ⅲ",
+            "name": "土砂龙锐剑Ⅲ",
             "Weapon_Number": 81
         },
         {
-            "name": "土砂龙棍棒 Ⅰ",
+            "name": "土砂龙棍棒Ⅰ",
             "Weapon_Number": 82
         },
         {
-            "name": "土砂龙棍棒 Ⅱ",
+            "name": "土砂龙棍棒Ⅱ",
             "Weapon_Number": 83
         },
         {
-            "name": "土砂龙棍棒 Ⅲ",
+            "name": "土砂龙棍棒Ⅲ",
             "Weapon_Number": 84
         },
         {
-            "name": "火炎锐剑 Ⅰ",
+            "name": "火炎锐剑Ⅰ",
             "Weapon_Number": 85
         },
         {
-            "name": "火炎锐剑 Ⅱ",
+            "name": "火炎锐剑Ⅱ",
             "Weapon_Number": 86
         },
         {
@@ -326,15 +326,15 @@
             "Weapon_Number": 88
         },
         {
-            "name": "龙骨剑 Ⅰ",
+            "name": "龙骨剑Ⅰ",
             "Weapon_Number": 89
         },
         {
-            "name": "龙骨剑 Ⅱ",
+            "name": "龙骨剑Ⅱ",
             "Weapon_Number": 90
         },
         {
-            "name": "龙骨剑 Ⅲ",
+            "name": "龙骨剑Ⅲ",
             "Weapon_Number": 91
         },
         {
@@ -342,19 +342,19 @@
             "Weapon_Number": 92
         },
         {
-            "name": "雷光刀 Ⅰ",
+            "name": "雷光刀Ⅰ",
             "Weapon_Number": 93
         },
         {
-            "name": "雷光刀 Ⅱ",
+            "name": "雷光刀Ⅱ",
             "Weapon_Number": 94
         },
         {
-            "name": "黑钢剑 Ⅰ",
+            "name": "黑钢剑Ⅰ",
             "Weapon_Number": 95
         },
         {
-            "name": "黑钢剑 Ⅱ",
+            "name": "黑钢剑Ⅱ",
             "Weapon_Number": 96
         },
         {
@@ -376,6 +376,130 @@
         {
             "name": "致命宽剑",
             "Weapon_Number": 101
+        },
+        {
+            "name": "金色的剑‧水",
+            "Weapon_Number": 102
+        },
+        {
+            "name": "金色的剑‧龙",
+            "Weapon_Number": 103
+        },
+        {
+            "name": "金色的剑‧爆破",
+            "Weapon_Number": 104
+        },
+        {
+            "name": "金色的剑‧贼",
+            "Weapon_Number": 105
+        },
+        {
+            "name": "金色的剑‧毒妖",
+            "Weapon_Number": 106
+        },
+        {
+            "name": "金色的剑‧土砂",
+            "Weapon_Number": 107
+        },
+        {
+            "name": "金色的剑‧蛮颚",
+            "Weapon_Number": 108
+        },
+        {
+            "name": "金色的剑‧痹贼",
+            "Weapon_Number": 109
+        },
+        {
+            "name": "金色的剑‧浮空",
+            "Weapon_Number": 110
+        },
+        {
+            "name": "金色的剑‧风漂",
+            "Weapon_Number": 111
+        },
+        {
+            "name": "金色的剑‧骨锤",
+            "Weapon_Number": 112
+        },
+        {
+            "name": "金色的剑‧王",
+            "Weapon_Number": 113
+        },
+        {
+            "name": "金色的剑‧幻",
+            "Weapon_Number": 114
+        },
+        {
+            "name": "铠罗切刀‧贼",
+            "Weapon_Number": 115
+        },
+        {
+            "name": "铠罗切刀‧毒妖",
+            "Weapon_Number": 116
+        },
+        {
+            "name": "铠罗切刀‧土砂",
+            "Weapon_Number": 117
+        },
+        {
+            "name": "铠罗切刀‧蛮颚",
+            "Weapon_Number": 118
+        },
+        {
+            "name": "铠罗切刀‧痹贼",
+            "Weapon_Number": 119
+        },
+        {
+            "name": "铠罗切刀‧浮空",
+            "Weapon_Number": 120
+        },
+        {
+            "name": "铠罗切刀‧风漂",
+            "Weapon_Number": 121
+        },
+        {
+            "name": "铠罗切刀‧骨锤",
+            "Weapon_Number": 122
+        },
+        {
+            "name": "铠罗切刀‧王",
+            "Weapon_Number": 123
+        },
+        {
+            "name": "铠罗切刀‧幻",
+            "Weapon_Number": 124
+        },
+        {
+            "name": "铠罗切刀‧水",
+            "Weapon_Number": 125
+        },
+        {
+            "name": "铠罗切刀‧龙",
+            "Weapon_Number": 126
+        },
+        {
+            "name": "铠罗切刀‧爆破",
+            "Weapon_Number": 127
+        },
+        {
+            "name": "皇后锐剑",
+            "Weapon_Number": 128
+        },
+        {
+            "name": "皇后锐剑‧炎妃",
+            "Weapon_Number": 129
+        },
+        {
+            "name": "皇后锐剑‧灭尽",
+            "Weapon_Number": 130
+        },
+        {
+            "name": "皇后锐剑‧冥灯",
+            "Weapon_Number": 131
+        },
+        {
+            "name": "铠罗切刀‧火",
+            "Weapon_Number": 132
         }
     ]
 }
