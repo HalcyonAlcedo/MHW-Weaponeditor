@@ -115,6 +115,32 @@
               <v-list-tile-sub-title>{{$t("Explanatory.Dark_theme")}}</v-list-tile-sub-title>
             </v-list-tile-content>
           </v-list-tile>
+
+          <v-list-tile @click="">
+            <v-list-tile-action>
+              <v-checkbox
+                v-model="Old_version"
+              ></v-checkbox>
+            </v-list-tile-action>
+
+            <v-list-tile-content @click.prevent="Old_version = !Old_version">
+              <v-list-tile-title>{{$t("Interface.Old_version")}}</v-list-tile-title>
+              <v-list-tile-sub-title>{{$t("Explanatory.Old_version")}}</v-list-tile-sub-title>
+            </v-list-tile-content>
+          </v-list-tile>
+
+          <v-list-tile @click="" v-if="Old_version">
+                <v-btn
+                  :loading="update"
+                  :disabled="update"
+                  color="secondary"
+                  @click.native="versionupdate"
+                >
+                  {{$t("Interface.Version_update")}}
+                </v-btn>
+
+            <v-list-tile-sub-title>{{$t("Explanatory.Version_update")}}</v-list-tile-sub-title>
+          </v-list-tile>
         </v-list>
         <v-divider></v-divider>
         <v-list
@@ -150,7 +176,7 @@
         </v-container>
       </v-content>
       <v-footer app fixed style="-webkit-app-region: drag">
-        <span>&nbsp;&nbsp;&nbsp;By Alcedo  &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | {{$t("Interface.Data_version")}} 154766 | {{$t("Interface.Original_file_version")}} 157749 （{{$t("Interface.Extract_from")}} 2018-10-31） | {{$t("Interface.Current_file")}} {{file}}（{{weaponfilename}}）|</span>
+        <span>&nbsp;&nbsp;&nbsp;By Alcedo  &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | {{$t("Interface.Data_version")}} 157749 | {{$t("Interface.Original_file_version")}} 157749 （{{$t("Interface.Extract_from")}} 2018-10-31） | {{$t("Interface.Current_file")}} {{file}}（{{weaponfilename}}）|</span>
       </v-footer>
       <v-dialog
         v-model="dialog"
@@ -259,6 +285,8 @@ export default {
       appdark: false,
       sourcemod: false,
       excludeunknown: true,
+      Old_version: false,
+      update: false,
       loaddialog: false,
       sound: false,
       file: '',
@@ -347,6 +375,11 @@ export default {
     sound: function () {
       this.contrastdata()
     },
+    Old_version: function () {
+      this.snackbar.text = this.Old_version ? this.$t('Explanatory.Old_version_open') : this.$t('Explanatory.Old_version_close')
+      this.snackbar.snackbar = true
+      this.$store.dispatch('setOldversion', this.Old_version)
+    },
     lang: function () {
       this.$i18n.locale = this.lang.value
     }
@@ -360,6 +393,8 @@ export default {
       if (file === null) {
         filepath = dialog.showOpenDialog({properties: ['openFile']})[0]
       } else {
+        this.$store.dispatch('setOldversion', false)
+        this.Old_version = false
         filepath = path.join(__static, '/Sourceweapon/' + file)
       }
       this.file = filepath.substring(filepath.lastIndexOf('\\') + 1)
@@ -369,6 +404,7 @@ export default {
       let _this = this
       if (this.file !== this.$t('Interface.No_file_opened')) {
         let filepath = dialog.showSaveDialog({ title: this.$t('Interface.Save_file'), defaultPath: this.weapon })
+        console.log(this.filedata)
         fs.writeFile(filepath, this.filedata, { flag: 'w' }, function (err) {
           if (err) {
             _this.snackbar.text = _this.$t('Interface.Save_Failure')
@@ -413,6 +449,14 @@ export default {
         }
         _this.loaddialog = false
       })
+    },
+    versionupdate () {
+      this.$store.dispatch('updateversion', true)
+      this.sound = true
+      this.contrastdata()
+      this.Old_version = false
+      this.snackbar.text = this.$t('Explanatory.Version_update_true')
+      this.snackbar.snackbar = true
     }
   },
   mounted () {

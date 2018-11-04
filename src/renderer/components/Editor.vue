@@ -463,7 +463,67 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.wp_Special_attributes !== false">
+                  <v-list-tile v-if="props.item.wp_Special_projectile !== false && specialprojectileitem[props.item.wp_Special_projectile.vul] !== undefined">
+                    <v-select
+                      v-model="props.item.wp_Special_projectile.vul"
+                      :items="specialprojectileitem"
+                      @change="Select_interchangeable(props.item.wp_Special_projectile)"
+                      box
+                      :label="$t('WeaponExplain.Specialprojectile')"
+                      item-text="text"
+                      item-value="value"
+                      return-object
+                    ></v-select>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.wp_Special_projectile.vul !== props.item.wp_sourcedata.wp_Special_projectile.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Specialprojectile')"
+                      :value="specialprojectile(props.item.wp_sourcedata.wp_Special_projectile.vul)"
+                      full-width
+                      box
+                      color="red"
+                      readonly
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-else-if="props.item.wp_Special_projectile !== false">
+                    <v-text-field
+                      :label="$t('WeaponExplain.Specialprojectile')"
+                      @change="input_interchangeable(props.item.wp_Special_projectile)"
+                      v-model="props.item.wp_Special_projectile.vul"
+                      full-width
+                      box
+                    ></v-text-field>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.wp_Special_projectile.vul !== props.item.wp_sourcedata.wp_Special_projectile.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Specialprojectile')"
+                      v-model="props.item.wp_sourcedata.wp_Special_projectile.vul"
+                      full-width
+                      box
+                      color="red"
+                      readonly
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="props.item.wp_Special_attributes !== false && specialattributesitem[props.item.wp_Special_attributes.vul] !== undefined">
+                    <v-select
+                      v-model="props.item.wp_Special_attributes.vul"
+                      :items="specialattributesitem"
+                      @change="Select_interchangeable(props.item.wp_Special_attributes)"
+                      box
+                      :label="$t('WeaponExplain.Special_attributes')"
+                      item-text="text"
+                      item-value="value"
+                      return-object
+                    ></v-select>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.wp_Special_attributes.vul !== props.item.wp_sourcedata.wp_Special_attributes.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Special_attributes')"
+                      :value="specialattributes(props.item.wp_sourcedata.wp_Special_attributes.vul)"
+                      full-width
+                      box
+                      color="red"
+                      readonly
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-else-if="props.item.wp_Special_attributes !== false">
                     <v-text-field
                       :label="$t('WeaponExplain.Special_attributes')"
                       @change="input_interchangeable(props.item.wp_Special_attributes)"
@@ -597,6 +657,7 @@ export default {
         wp_Slot_grade_1: 0,
         wp_Slot_grade_2: 0,
         wp_Slot_grade_3: 0,
+        wp_Special_projectile: false,
         wp_Special_attributes: false,
         wp_Weapon_skills: 0
       }
@@ -671,6 +732,63 @@ export default {
         {value: 3, text: this.$t('WeaponExplain.ThreeGroovel')}
       ]
     },
+    specialprojectileitem () {
+      if (this.weapon === 'lbg.wp_dat_g') {
+        return [
+          {value: 0, text: this.$t('WeaponExplain.Setbomb')}
+        ]
+      } else if (this.weapon === 'hbg.wp_dat_g') {
+        return [
+          {value: 1, text: this.$t('WeaponExplain.Gatling')},
+          {value: 2, text: this.$t('WeaponExplain.Snipe')}
+        ]
+      } else {
+        return [
+          {value: 0, text: this.$t('WeaponExplain.Nothing')}
+        ]
+      }
+    },
+    specialattributesitem () {
+      if (this.weapon === 'rod.wp_dat') {
+        return [
+          {value: 0, text: this.$t('WeaponExplain.Cut')},
+          {value: 1, text: this.$t('WeaponExplain.Strike')},
+          {value: 2, text: this.$t('WeaponExplain.Attribute')},
+          {value: 3, text: this.$t('WeaponExplain.Speed')},
+          {value: 4, text: this.$t('WeaponExplain.Endurance')},
+          {value: 5, text: this.$t('WeaponExplain.Restores')}
+        ]
+      } else if (this.weapon === 'c_axe.wp_dat') {
+        return [
+          {value: 0, text: this.$t('WeaponExplain.Strong_exocet_bottle')},
+          {value: 1, text: this.$t('WeaponExplain.Strong_attribute_bottle')}
+        ]
+      } else if (this.weapon === 's_axe.wp_dat') {
+        let saxebottle = []
+        saxebottle.push({value: 0, text: this.$t('WeaponExplain.Strong_exocet_bottle')})
+        saxebottle.push({value: 1, text: this.$t('WeaponExplain.Strong_attribute_bottle')})
+        for (let i = 2; i <= 41; i++) {
+          if (i < 10) {
+            saxebottle.push({value: i, text: this.$t('WeaponExplain.Extinguish_dragon') + '(' + ((i - 1) * 6) * 10 + ')'})
+          } else if (i < 12 && i >= 10) {
+            saxebottle.push({value: i, text: this.$t('WeaponExplain.Extinguish_dragon') + '(' + (52 + ((i - 10) * 6)) * 10 + ')'})
+          } else if (i < 22 && i >= 12) {
+            saxebottle.push({value: i, text: this.$t('WeaponExplain.Reduce_breath') + '(' + (6 + ((i - 11) * 3)) * 10 + ')'})
+          } else if (i < 32 && i >= 22) {
+            saxebottle.push({value: i, text: this.$t('WeaponExplain.Hemp') + '(' + (12 + ((i - 21) * 3)) * 10 + ')'})
+          } else if (i < 40 && i >= 22) {
+            saxebottle.push({value: i, text: this.$t('WeaponExplain.Poison') + '(' + ((i - 31) * 6) * 10 + ')'})
+          } else if (i < 42 && i >= 40) {
+            saxebottle.push({value: i, text: this.$t('WeaponExplain.Poison') + '(' + (52 + ((i - 40) * 6)) * 10 + ')'})
+          }
+        }
+        return saxebottle
+      } else {
+        return [
+          {value: 0, text: this.$t('WeaponExplain.Nothing')}
+        ]
+      }
+    },
     rankitem () {
       return [
         {value: 0, text: 'Rank1'},
@@ -731,12 +849,13 @@ export default {
       }
       valsave.vul = Number(valsave.vul) >= 0 ? Number(valsave.vul) : 256 - Math.abs(Number(valsave.vul))
       this.save(valsave)
+      valsave.vul = this.wpheart(valsave.vul) // 回显有问题，好像还原处理就好了，不影响save时数据，不知道啥原因喵″
     },
     Attribute_treatment (val) {
       let valsave = val
       valsave.vul = Math.ceil(val.vul / 10)
       this.save(valsave)
-      valsave.vul = Math.ceil(val.vul * 10) // 回显有问题，好像还原处理就好了，不影响save时数据，不知道啥原因喵″
+      valsave.vul = Math.ceil(val.vul * 10) // 同上喵″
     },
     Damage_treatment (val) {
       let valsave = val
@@ -904,6 +1023,68 @@ export default {
       }
       return generalsizetext
     },
+    specialprojectile (specialprojectile) {
+      let specialprojectiletext = this.$t('WeaponExplain.Nothing')
+      switch (specialprojectile) {
+        case 0:
+          specialprojectiletext = this.$t('WeaponExplain.Setbomb')
+          break
+        case 1:
+          specialprojectiletext = this.$t('WeaponExplain.Gatling')
+          break
+        case 2:
+          specialprojectiletext = this.$t('WeaponExplain.Snipe')
+          break
+        default:
+          specialprojectiletext = this.$t('WeaponExplain.Error')
+      }
+      return specialprojectiletext
+    },
+    specialattributes (specialattributes) {
+      let specialattributestext = this.$t('WeaponExplain.Nothing')
+      if (this.weapon === 'rod.wp_dat') {
+        switch (specialattributes) {
+          case 0:
+            specialattributestext = this.$t('WeaponExplain.Cut')
+            break
+          case 1:
+            specialattributestext = this.$t('WeaponExplain.Strike')
+            break
+          case 2:
+            specialattributestext = this.$t('WeaponExplain.Attribute')
+            break
+          case 3:
+            specialattributestext = this.$t('WeaponExplain.Speed')
+            break
+          case 4:
+            specialattributestext = this.$t('WeaponExplain.Endurance')
+            break
+          case 5:
+            specialattributestext = this.$t('WeaponExplain.Restores')
+            break
+          default:
+            specialattributestext = this.$t('WeaponExplain.Error')
+        }
+      } else if (this.weapon === 'c_axe.wp_dat') {
+        switch (specialattributes) {
+          case 0:
+            specialattributestext = this.$t('WeaponExplain.Strong_exocet_bottle')
+            break
+          case 1:
+            specialattributestext = this.$t('WeaponExplain.Strike')
+            break
+          default:
+            specialattributestext = this.$t('WeaponExplain.Strong_attribute_bottle')
+        }
+      } else if (this.weapon === 's_axe.wp_dat') {
+        specialattributestext = this.specialattributesitem.find(function (v) {
+          return v.value === specialattributes
+        }).text
+      } else {
+        specialattributestext = this.$t('WeaponExplain.Nothing')
+      }
+      return specialattributestext
+    },
     HexFunction (data, Hexpointer, HexRuler, i) {
       let ret = ''
       if (Hexpointer === undefined) {
@@ -922,7 +1103,7 @@ export default {
     wpname (id) {
       let wpnamelist
       if (this.weapon) {
-        wpnamelist = require('./Weaponinfo/' + this.weapon + '.json')
+        wpnamelist = require('./Weaponinfo/' + this.$i18n.locale + '/' + this.weapon + '.json')
       } else {
         return this.$t('WeaponExplain.Unknown')
       }
@@ -1003,6 +1184,7 @@ export default {
           'wp_Slot_grade_1': [46, 1], // 46
           'wp_Slot_grade_2': [47, 1], // 47
           'wp_Slot_grade_3': [48, 1], // 48
+          'wp_Special_projectile': [62, 1], // 62
           'wp_Weapon_skills': [(HexRuler + 2), 1] // HexRuler(下一行) + 2
         }
       }
@@ -1033,6 +1215,7 @@ export default {
           'wp_Slot_grade_1': _this.HexFunction(data, HexPointer.wp_Slot_grade_1, HexRuler, i),
           'wp_Slot_grade_2': _this.HexFunction(data, HexPointer.wp_Slot_grade_2, HexRuler, i),
           'wp_Slot_grade_3': _this.HexFunction(data, HexPointer.wp_Slot_grade_3, HexRuler, i),
+          'wp_Special_projectile': _this.HexFunction(data, HexPointer.wp_Special_projectile, HexRuler, i),
           'wp_Special_attributes': _this.HexFunction(data, HexPointer.wp_Special_attributes, HexRuler, i),
           'wp_Weapon_skills': _this.HexFunction(data, HexPointer.wp_Weapon_skills, HexRuler, i)
         }
@@ -1045,4 +1228,3 @@ export default {
   }
 }
 </script>
-

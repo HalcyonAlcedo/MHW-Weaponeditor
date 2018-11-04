@@ -1,0 +1,548 @@
+{
+    "Weapon": "弓",
+    "Data": [{
+            "name": "鐵弓Ⅰ",
+            "Weapon_Number": 8
+        },
+        {
+            "name": "鐵弓Ⅱ",
+            "Weapon_Number": 9
+        },
+        {
+            "name": "鐵弓Ⅲ",
+            "Weapon_Number": 10
+        },
+        {
+            "name": "鋼鐵弓Ⅰ",
+            "Weapon_Number": 11
+        },
+        {
+            "name": "鋼鐵弓Ⅱ",
+            "Weapon_Number": 12
+        },
+        {
+            "name": "鋼鐵弓Ⅲ",
+            "Weapon_Number": 13
+        },
+        {
+            "name": "合金弓Ⅰ",
+            "Weapon_Number": 14
+        },
+        {
+            "name": "合金弓Ⅱ",
+            "Weapon_Number": 15
+        },
+        {
+            "name": "滅盡龍大弓",
+            "Weapon_Number": 16
+        },
+        {
+            "name": "必滅一矢",
+            "Weapon_Number": 17
+        },
+        {
+            "name": "搔鳥弓Ⅰ",
+            "Weapon_Number": 18
+        },
+        {
+            "name": "搔鳥弓Ⅱ",
+            "Weapon_Number": 19
+        },
+        {
+            "name": "搔鳥弓Ⅲ",
+            "Weapon_Number": 20
+        },
+        {
+            "name": "星空迅擊弓Ⅰ",
+            "Weapon_Number": 21
+        },
+        {
+            "name": "星空迅擊弓Ⅱ",
+            "Weapon_Number": 22
+        },
+        {
+            "name": "星空迅擊弓Ⅲ",
+            "Weapon_Number": 23
+        },
+        {
+            "name": "爆鎚震弓",
+            "Weapon_Number": 24
+        },
+        {
+            "name": "重弓巨靈勇士",
+            "Weapon_Number": 25
+        },
+        {
+            "name": "公主弓矢Ⅰ",
+            "Weapon_Number": 26
+        },
+        {
+            "name": "公主弓矢Ⅱ",
+            "Weapon_Number": 27
+        },
+        {
+            "name": "公主弓矢Ⅲ",
+            "Weapon_Number": 28
+        },
+        {
+            "name": "火龍強弓Ⅰ",
+            "Weapon_Number": 29
+        },
+        {
+            "name": "火龍強弓Ⅱ",
+            "Weapon_Number": 30
+        },
+        {
+            "name": "火龍強弓Ⅲ",
+            "Weapon_Number": 31
+        },
+        {
+            "name": "水流弓Ⅰ",
+            "Weapon_Number": 32
+        },
+        {
+            "name": "水流弓Ⅱ",
+            "Weapon_Number": 33
+        },
+        {
+            "name": "水流弓Ⅲ",
+            "Weapon_Number": 34
+        },
+        {
+            "name": "激流射手Ⅰ",
+            "Weapon_Number": 35
+        },
+        {
+            "name": "激流射手Ⅱ",
+            "Weapon_Number": 36
+        },
+        {
+            "name": "激流射手Ⅲ",
+            "Weapon_Number": 37
+        },
+        {
+            "name": "優雅長弓Ⅰ",
+            "Weapon_Number": 38
+        },
+        {
+            "name": "優雅長弓Ⅱ",
+            "Weapon_Number": 39
+        },
+        {
+            "name": "銀蕨",
+            "Weapon_Number": 40
+        },
+        {
+            "name": "冰凌銀蕨",
+            "Weapon_Number": 41
+        },
+        {
+            "name": "獵弓Ⅰ",
+            "Weapon_Number": 42
+        },
+        {
+            "name": "獵弓Ⅱ",
+            "Weapon_Number": 43
+        },
+        {
+            "name": "獵弓Ⅲ",
+            "Weapon_Number": 44
+        },
+        {
+            "name": "能量獵弓Ⅰ",
+            "Weapon_Number": 45
+        },
+        {
+            "name": "能量獵弓Ⅱ",
+            "Weapon_Number": 46
+        },
+        {
+            "name": "能量獵弓Ⅲ",
+            "Weapon_Number": 47
+        },
+        {
+            "name": "勇氣獵弓Ⅰ",
+            "Weapon_Number": 48
+        },
+        {
+            "name": "勇氣獵弓Ⅱ",
+            "Weapon_Number": 49
+        },
+        {
+            "name": "屍套龍弓Ⅰ",
+            "Weapon_Number": 50
+        },
+        {
+            "name": "屍套龍弓Ⅱ",
+            "Weapon_Number": 51
+        },
+        {
+            "name": "爆鎚大弓Ⅰ",
+            "Weapon_Number": 52
+        },
+        {
+            "name": "爆鎚大弓Ⅱ",
+            "Weapon_Number": 53
+        },
+        {
+            "name": "爆鎚角弓",
+            "Weapon_Number": 54
+        },
+        {
+            "name": "疾風角弓",
+            "Weapon_Number": 55
+        },
+        {
+            "name": "角王弓疾風",
+            "Weapon_Number": 56
+        },
+        {
+            "name": "花朵弓Ｉ",
+            "Weapon_Number": 57
+        },
+        {
+            "name": "花朵弓Ⅱ",
+            "Weapon_Number": 58
+        },
+        {
+            "name": "花朵弓Ⅲ",
+            "Weapon_Number": 59
+        },
+        {
+            "name": "曼陀羅弓Ｉ",
+            "Weapon_Number": 60
+        },
+        {
+            "name": "曼陀羅弓Ⅱ",
+            "Weapon_Number": 61
+        },
+        {
+            "name": "曼陀羅弓Ⅲ",
+            "Weapon_Number": 62
+        },
+        {
+            "name": "火焰弓Ⅰ",
+            "Weapon_Number": 63
+        },
+        {
+            "name": "火焰弓Ⅱ",
+            "Weapon_Number": 64
+        },
+        {
+            "name": "蠻顎龍射手Ⅰ",
+            "Weapon_Number": 65
+        },
+        {
+            "name": "蠻顎龍射手Ⅱ",
+            "Weapon_Number": 66
+        },
+        {
+            "name": "蠻顎龍射手Ⅲ",
+            "Weapon_Number": 67
+        },
+        {
+            "name": "脈衝弓Ⅰ",
+            "Weapon_Number": 68
+        },
+        {
+            "name": "脈衝弓Ⅱ",
+            "Weapon_Number": 69
+        },
+        {
+            "name": "脈衝弓Ⅲ",
+            "Weapon_Number": 70
+        },
+        {
+            "name": "飛雷弓射手大蛇",
+            "Weapon_Number": 71
+        },
+        {
+            "name": "飛雷弓【羽羽矢】",
+            "Weapon_Number": 72
+        },
+        {
+            "name": "龍骨弓Ⅰ",
+            "Weapon_Number": 73
+        },
+        {
+            "name": "龍骨弓Ⅱ",
+            "Weapon_Number": 74
+        },
+        {
+            "name": "龍骨弓Ⅲ",
+            "Weapon_Number": 75
+        },
+        {
+            "name": "黑鋼弓Ⅰ",
+            "Weapon_Number": 76
+        },
+        {
+            "name": "黑鋼弓Ⅱ",
+            "Weapon_Number": 77
+        },
+        {
+            "name": "鋼冰馬弓",
+            "Weapon_Number": 78
+        },
+        {
+            "name": "鋼龍強弓",
+            "Weapon_Number": 79
+        },
+        {
+            "name": "冥燈龍大弓",
+            "Weapon_Number": 80
+        },
+        {
+            "name": "十字獵弓",
+            "Weapon_Number": 81
+        },
+        {
+            "name": "巨型獵弓",
+            "Weapon_Number": 82
+        },
+        {
+            "name": "暴徒的凶弓",
+            "Weapon_Number": 83
+        },
+        {
+            "name": "惡棍之弓",
+            "Weapon_Number": 84
+        },
+        {
+            "name": "金色的弓‧水",
+            "Weapon_Number": 86
+        },
+        {
+            "name": "金色的弓‧雷",
+            "Weapon_Number": 87
+        },
+        {
+            "name": "金色的弓‧爆破",
+            "Weapon_Number": 88
+        },
+        {
+            "name": "金色的弓‧搔",
+            "Weapon_Number": 89
+        },
+        {
+            "name": "金色的弓‧毒妖",
+            "Weapon_Number": 90
+        },
+        {
+            "name": "金色的弓‧飛雷",
+            "Weapon_Number": 91
+        },
+        {
+            "name": "金色的弓‧蠻顎",
+            "Weapon_Number": 92
+        },
+        {
+            "name": "金色的弓‧女王",
+            "Weapon_Number": 93
+        },
+        {
+            "name": "金色的弓‧風漂",
+            "Weapon_Number": 94
+        },
+        {
+            "name": "金色的弓‧屍套",
+            "Weapon_Number": 95
+        },
+        {
+            "name": "金色的弓‧王",
+            "Weapon_Number": 96
+        },
+        {
+            "name": "金色的弓‧角",
+            "Weapon_Number": 97
+        },
+        {
+            "name": "鎧羅弓‧搔",
+            "Weapon_Number": 98
+        },
+        {
+            "name": "鎧羅弓‧毒妖",
+            "Weapon_Number": 99
+        },
+        {
+            "name": "鎧羅弓‧飛雷",
+            "Weapon_Number": 100
+        },
+        {
+            "name": "鎧羅弓‧蠻顎",
+            "Weapon_Number": 101
+        },
+        {
+            "name": "鎧羅弓‧女王",
+            "Weapon_Number": 102
+        },
+        {
+            "name": "鎧羅弓‧風漂",
+            "Weapon_Number": 103
+        },
+        {
+            "name": "鎧羅弓‧屍套",
+            "Weapon_Number": 104
+        },
+        {
+            "name": "鎧羅弓‧王",
+            "Weapon_Number": 105
+        },
+        {
+            "name": "鎧羅弓‧角",
+            "Weapon_Number": 106
+        },
+        {
+            "name": "鎧羅弓‧水",
+            "Weapon_Number": 107
+        },
+        {
+            "name": "鎧羅弓‧雷",
+            "Weapon_Number": 108
+        },
+        {
+            "name": "鎧羅弓‧爆破",
+            "Weapon_Number": 109
+        },
+        {
+            "name": "皇后弓",
+            "Weapon_Number": 110
+        },
+        {
+            "name": "皇后弓‧炎妃",
+            "Weapon_Number": 111
+        },
+        {
+            "name": "皇后弓‧滅盡",
+            "Weapon_Number": 112
+        },
+        {
+            "name": "皇后弓‧冥燈",
+            "Weapon_Number": 113
+        },
+        {
+            "name": "鎧羅弓‧火",
+            "Weapon_Number": 114
+        }
+    ],
+    "Model": {
+        "principal": [{
+                "id": 1,
+                "path": "wp/bow/bs_bow001",
+                "name": "鐵弓"
+            },
+            {
+                "id": 2,
+                "path": "wp/bow/bs_bow002",
+                "name": "鐵弓2"
+            },
+            {
+                "id": 3,
+                "path": "wp/bow/bs_bow003",
+                "name": "獵弓"
+            },
+            {
+                "id": 4,
+                "path": "wp/bow/bs_bow004",
+                "name": "獵弓2"
+            }
+        ],
+        "parts": [{
+                "id": 1,
+                "path": "wp/bow/parts/op_bow001",
+                "name": "滅盡龍大弓"
+            },
+            {
+                "id": 5,
+                "path": "wp/bow/parts/op_bow005",
+                "name": "鳥弓"
+            },
+            {
+                "id": 9,
+                "path": "wp/bow/parts/op_bow009",
+                "name": "公主弓"
+            },
+            {
+                "id": 4,
+                "path": "wp/bow/parts/op_bow004",
+                "name": "火龍弓"
+            },
+            {
+                "id": 6,
+                "path": "wp/bow/parts/op_bow006",
+                "name": "優雅弓"
+            },
+            {
+                "id": 2,
+                "path": "wp/bow/parts/op_bow002",
+                "name": "屍套弓"
+            },
+            {
+                "id": 7,
+                "path": "wp/bow/parts/op_bow007",
+                "name": "爆鎚弓"
+            },
+            {
+                "id": 8,
+                "path": "wp/bow/parts/op_bow008",
+                "name": "花朵弓"
+            },
+            {
+                "id": 11,
+                "path": "wp/bow/parts/op_bow011",
+                "name": "火焰弓"
+            },
+            {
+                "id": 10,
+                "path": "wp/bow/parts/op_bow010",
+                "name": "脈衝弓"
+            },
+            {
+                "id": 3,
+                "path": "wp/bow/parts/op_bow003",
+                "name": "冥燈弓"
+            }
+        ],
+        "independent": [{
+                "id": 4,
+                "path": "wp/bow/bow004",
+                "name": "必滅一矢"
+            },
+            {
+                "id": 3,
+                "path": "wp/bow/bow003",
+                "name": "震弓、重弓"
+            },
+            {
+                "id": 2,
+                "path": "wp/bow/bow002",
+                "name": "爆鎚角弓"
+            },
+            {
+                "id": 8,
+                "path": "wp/bow/bow008",
+                "name": "疾風弓"
+            },
+            {
+                "id": 6,
+                "path": "wp/bow/bow006",
+                "name": "飛雷弓"
+            },
+            {
+                "id": 1,
+                "path": "wp/bow/bow001",
+                "name": "鋼龍弓"
+            },
+            {
+                "id": 7,
+                "path": "wp/bow/bow007",
+                "name": "巨型獵弓"
+            },
+            {
+                "id": 9,
+                "path": "wp/bow/bow009",
+                "name": "凶弓"
+            }
+        ]
+    }
+}

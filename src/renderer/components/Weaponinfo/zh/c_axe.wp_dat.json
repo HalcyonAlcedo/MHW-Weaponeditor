@@ -1,0 +1,433 @@
+{
+    "Weapon": "盾斧",
+    "Data": [
+        {
+            "name": "調查團試作盾斧Ⅰ",
+            "Weapon_Number": 6
+        },
+        {
+            "name": "調查團試作盾斧Ⅱ",
+            "Weapon_Number": 7
+        },
+        {
+            "name": "調查團試作盾斧Ⅲ",
+            "Weapon_Number": 8
+        },
+        {
+            "name": "精銳調查團盾斧Ⅰ",
+            "Weapon_Number": 9
+        },
+        {
+            "name": "精銳調查團盾斧Ⅱ",
+            "Weapon_Number": 10
+        },
+        {
+            "name": "精銳調查團盾斧Ⅲ",
+            "Weapon_Number": 11
+        },
+        {
+            "name": "鉻鐵守護者Ⅰ",
+            "Weapon_Number": 12
+        },
+        {
+            "name": "鉻鐵守護者Ⅱ",
+            "Weapon_Number": 13
+        },
+        {
+            "name": "滅盡龍的揮擊",
+            "Weapon_Number": 14
+        },
+        {
+            "name": "壞滅一束",
+            "Weapon_Number": 15
+        },
+        {
+            "name": "火龍盾斧Ⅰ",
+            "Weapon_Number": 16
+        },
+        {
+            "name": "火龍盾斧Ⅱ",
+            "Weapon_Number": 17
+        },
+        {
+            "name": "炎斧蛇王",
+            "Weapon_Number": 18
+        },
+        {
+            "name": "焰斧鶴王",
+            "Weapon_Number": 19
+        },
+        {
+            "name": "泥流盾斧Ⅰ",
+            "Weapon_Number": 20
+        },
+        {
+            "name": "泥流盾斧Ⅱ",
+            "Weapon_Number": 21
+        },
+        {
+            "name": "泥流盾斧Ⅲ",
+            "Weapon_Number": 22
+        },
+        {
+            "name": "深沉泥岩Ⅰ",
+            "Weapon_Number": 23
+        },
+        {
+            "name": "深沉泥岩Ⅱ",
+            "Weapon_Number": 24
+        },
+        {
+            "name": "深沉泥岩Ⅲ",
+            "Weapon_Number": 25
+        },
+        {
+            "name": "冰結盾斧Ⅰ",
+            "Weapon_Number": 26
+        },
+        {
+            "name": "冰結盾斧Ⅱ",
+            "Weapon_Number": 27
+        },
+        {
+            "name": "寒霜巨人Ⅰ",
+            "Weapon_Number": 28
+        },
+        {
+            "name": "寒霜巨人Ⅱ",
+            "Weapon_Number": 29
+        },
+        {
+            "name": "焰火盾斧",
+            "Weapon_Number": 30
+        },
+        {
+            "name": "雌火盾斧",
+            "Weapon_Number": 31
+        },
+        {
+            "name": "櫻火盾斧",
+            "Weapon_Number": 32
+        },
+        {
+            "name": "火鎧盾斧",
+            "Weapon_Number": 33
+        },
+        {
+            "name": "骨製兵裝Ⅰ",
+            "Weapon_Number": 34
+        },
+        {
+            "name": "骨製兵裝Ⅱ",
+            "Weapon_Number": 35
+        },
+        {
+            "name": "骨製兵裝Ⅲ",
+            "Weapon_Number": 36
+        },
+        {
+            "name": "硬骨兵裝Ⅰ",
+            "Weapon_Number": 37
+        },
+        {
+            "name": "硬骨兵裝Ⅱ",
+            "Weapon_Number": 38
+        },
+        {
+            "name": "硬骨兵裝Ⅲ",
+            "Weapon_Number": 39
+        },
+        {
+            "name": "強骨兵裝Ⅰ",
+            "Weapon_Number": 40
+        },
+        {
+            "name": "強骨兵裝Ⅱ",
+            "Weapon_Number": 41
+        },
+        {
+            "name": "爆鎚盾牆Ⅰ",
+            "Weapon_Number": 42
+        },
+        {
+            "name": "爆鎚盾牆Ⅱ",
+            "Weapon_Number": 43
+        },
+        {
+            "name": "暴君銅盾Ⅰ",
+            "Weapon_Number": 44
+        },
+        {
+            "name": "暴君銅盾Ⅱ",
+            "Weapon_Number": 45
+        },
+        {
+            "name": "凶豺龍兵裝Ⅰ",
+            "Weapon_Number": 46
+        },
+        {
+            "name": "凶豺龍兵裝Ⅱ",
+            "Weapon_Number": 47
+        },
+        {
+            "name": "凶豺龍兵裝Ⅲ",
+            "Weapon_Number": 48
+        },
+        {
+            "name": "凶豺龍盾斧Ⅰ",
+            "Weapon_Number": 49
+        },
+        {
+            "name": "凶豺龍盾斧Ⅱ",
+            "Weapon_Number": 50
+        },
+        {
+            "name": "凶豺龍盾斧Ⅲ",
+            "Weapon_Number": 51
+        },
+        {
+            "name": "岩賊龍盾Ⅰ",
+            "Weapon_Number": 52
+        },
+        {
+            "name": "岩賊龍盾Ⅱ",
+            "Weapon_Number": 53
+        },
+        {
+            "name": "凶顎龍兵裝Ⅰ",
+            "Weapon_Number": 54
+        },
+        {
+            "name": "凶顎龍兵裝Ⅱ",
+            "Weapon_Number": 55
+        },
+        {
+            "name": "凶顎龍盾斧Ⅰ",
+            "Weapon_Number": 56
+        },
+        {
+            "name": "凶顎龍盾斧Ⅱ",
+            "Weapon_Number": 57
+        },
+        {
+            "name": "凶顎龍盾斧Ⅲ",
+            "Weapon_Number": 58
+        },
+        {
+            "name": "屍套龍盾斧Ⅰ",
+            "Weapon_Number": 59
+        },
+        {
+            "name": "屍套龍盾斧Ⅱ",
+            "Weapon_Number": 60
+        },
+        {
+            "name": "脈衝兵裝Ⅰ",
+            "Weapon_Number": 61
+        },
+        {
+            "name": "脈衝兵裝Ⅱ",
+            "Weapon_Number": 62
+        },
+        {
+            "name": "脈衝兵裝Ⅲ",
+            "Weapon_Number": 63
+        },
+        {
+            "name": "飛雷龍之腕Ⅰ",
+            "Weapon_Number": 64
+        },
+        {
+            "name": "飛雷龍之腕Ⅱ",
+            "Weapon_Number": 65
+        },
+        {
+            "name": "飛雷龍之腕Ⅲ",
+            "Weapon_Number": 66
+        },
+        {
+            "name": "慘爪兵裝 Ⅰ",
+            "Weapon_Number": 67
+        },
+        {
+            "name": "慘爪兵裝 Ⅱ",
+            "Weapon_Number": 68
+        },
+        {
+            "name": "憎恨的火炎",
+            "Weapon_Number": 69
+        },
+        {
+            "name": "憎【忿恨】",
+            "Weapon_Number": 70
+        },
+        {
+            "name": "龍骨盾斧Ⅰ",
+            "Weapon_Number": 71
+        },
+        {
+            "name": "龍骨盾斧Ⅱ",
+            "Weapon_Number": 72
+        },
+        {
+            "name": "龍骨盾斧Ⅲ",
+            "Weapon_Number": 73
+        },
+        {
+            "name": "熔山龍盾斧",
+            "Weapon_Number": 74
+        },
+        {
+            "name": "捲土重來熔山龍盾斧",
+            "Weapon_Number": 75
+        },
+        {
+            "name": "黑鋼盾斧Ⅰ",
+            "Weapon_Number": 76
+        },
+        {
+            "name": "黑鋼盾斧Ⅱ",
+            "Weapon_Number": 77
+        },
+        {
+            "name": "鋼龍冰盾",
+            "Weapon_Number": 78
+        },
+        {
+            "name": "鋼龍幻夢",
+            "Weapon_Number": 79
+        },
+        {
+            "name": "冥燈龍盾斧",
+            "Weapon_Number": 80
+        },
+        {
+            "name": "暴虐的盾斧",
+            "Weapon_Number": 81
+        },
+        {
+            "name": "德斯特涅塔",
+            "Weapon_Number": 82
+        },
+        {
+            "name": "但丁的魔劍",
+            "Weapon_Number": 83
+        },
+        {
+            "name": "金色的盾斧‧冰",
+            "Weapon_Number": 85
+        },
+        {
+            "name": "金色的盾斧‧雷",
+            "Weapon_Number": 86
+        },
+        {
+            "name": "金色的盾斧‧睡眠",
+            "Weapon_Number": 87
+        },
+        {
+            "name": "金色的盾斧‧賊",
+            "Weapon_Number": 88
+        },
+        {
+            "name": "金色的盾斧‧泥魚",
+            "Weapon_Number": 89
+        },
+        {
+            "name": "金色的盾斧‧飛雷",
+            "Weapon_Number": 90
+        },
+        {
+            "name": "金色的盾斧‧痺賊",
+            "Weapon_Number": 91
+        },
+        {
+            "name": "金色的盾斧‧慘爪",
+            "Weapon_Number": 92
+        },
+        {
+            "name": "金色的盾斧‧屍套",
+            "Weapon_Number": 93
+        },
+        {
+            "name": "金色的盾斧‧王",
+            "Weapon_Number": 94
+        },
+        {
+            "name": "金色的盾斧‧角",
+            "Weapon_Number": 95
+        },
+        {
+            "name": "金色的盾斧‧岩賊",
+            "Weapon_Number": 96
+        },
+        {
+            "name": "鎧羅兵裝‧賊",
+            "Weapon_Number": 97
+        },
+        {
+            "name": "鎧羅兵裝‧泥魚",
+            "Weapon_Number": 98
+        },
+        {
+            "name": "鎧羅兵裝‧飛雷",
+            "Weapon_Number": 99
+        },
+        {
+            "name": "鎧羅兵裝‧痺賊",
+            "Weapon_Number": 100
+        },
+        {
+            "name": "鎧羅兵裝‧慘爪",
+            "Weapon_Number": 101
+        },
+        {
+            "name": "鎧羅兵裝‧屍套",
+            "Weapon_Number": 102
+        },
+        {
+            "name": "鎧羅兵裝‧王",
+            "Weapon_Number": 103
+        },
+        {
+            "name": "鎧羅兵裝‧角",
+            "Weapon_Number": 104
+        },
+        {
+            "name": "鎧羅兵裝‧岩賊",
+            "Weapon_Number": 105
+        },
+        {
+            "name": "鎧羅兵裝‧冰",
+            "Weapon_Number": 106
+        },
+        {
+            "name": "鎧羅兵裝‧雷",
+            "Weapon_Number": 107
+        },
+        {
+            "name": "鎧羅兵裝‧睡眠",
+            "Weapon_Number": 108
+        },
+        {
+            "name": "皇后武器",
+            "Weapon_Number": 109
+        },
+        {
+            "name": "皇后武器‧炎妃",
+            "Weapon_Number": 110
+        },
+        {
+            "name": "皇后武器‧滅盡",
+            "Weapon_Number": 111
+        },
+        {
+            "name": "皇后武器‧冥燈",
+            "Weapon_Number": 112
+        },
+        {
+            "name": "鎧羅兵裝‧水",
+            "Weapon_Number": 113
+        }
+    ]
+}

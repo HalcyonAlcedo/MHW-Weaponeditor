@@ -1,0 +1,504 @@
+{
+    "Weapon": "片手",
+    "Data": [{
+            "name": "獵人小刀Ⅰ",
+            "Weapon_Number": 8
+        },
+        {
+            "name": "獵人小刀Ⅱ",
+            "Weapon_Number": 9
+        },
+        {
+            "name": "獵人小刀Ⅲ",
+            "Weapon_Number": 10
+        },
+        {
+            "name": "鋼鐵小刀Ⅰ",
+            "Weapon_Number": 11
+        },
+        {
+            "name": "鋼鐵小刀Ⅱ",
+            "Weapon_Number": 12
+        },
+        {
+            "name": "鋼鐵小刀Ⅲ",
+            "Weapon_Number": 13
+        },
+        {
+            "name": "鉻鋼切刀",
+            "Weapon_Number": 14
+        },
+        {
+            "name": "鉻鋼切刀Ⅱ",
+            "Weapon_Number": 15
+        },
+        {
+            "name": "滅盡龍單手劍",
+            "Weapon_Number": 16
+        },
+        {
+            "name": "殲滅之尖兵",
+            "Weapon_Number": 17
+        },
+        {
+            "name": "火炎小刀Ⅰ",
+            "Weapon_Number": 18
+        },
+        {
+            "name": "火炎小刀Ⅱ",
+            "Weapon_Number": 19
+        },
+        {
+            "name": "炙熱銳劍",
+            "Weapon_Number": 20
+        },
+        {
+            "name": "日冕短劍",
+            "Weapon_Number": 21
+        },
+        {
+            "name": "重鐵劍",
+            "Weapon_Number": 22
+        },
+        {
+            "name": "重鐵劍改",
+            "Weapon_Number": 23
+        },
+        {
+            "name": "至尊劍",
+            "Weapon_Number": 24
+        },
+        {
+            "name": "水流小刀Ⅰ",
+            "Weapon_Number": 25
+        },
+        {
+            "name": "水流小刀Ⅱ",
+            "Weapon_Number": 26
+        },
+        {
+            "name": "水流小刀Ⅲ",
+            "Weapon_Number": 27
+        },
+        {
+            "name": "洶湧奔流Ⅰ",
+            "Weapon_Number": 28
+        },
+        {
+            "name": "洶湧奔流Ⅱ",
+            "Weapon_Number": 29
+        },
+        {
+            "name": "洶湧奔流Ⅲ",
+            "Weapon_Number": 30
+        },
+        {
+            "name": "優雅鬥士Ⅰ",
+            "Weapon_Number": 31
+        },
+        {
+            "name": "優雅鬥士Ⅱ",
+            "Weapon_Number": 32
+        },
+        {
+            "name": "三星劍",
+            "Weapon_Number": 33
+        },
+        {
+            "name": "冰凌三星劍",
+            "Weapon_Number": 34
+        },
+        {
+            "name": "公主細劍",
+            "Weapon_Number": 35
+        },
+        {
+            "name": "女王細劍",
+            "Weapon_Number": 36
+        },
+        {
+            "name": "女王薔薇",
+            "Weapon_Number": 37
+        },
+        {
+            "name": "皇家薔薇",
+            "Weapon_Number": 38
+        },
+        {
+            "name": "浮空龍小刀Ⅰ",
+            "Weapon_Number": 39
+        },
+        {
+            "name": "浮空龍小刀Ⅱ",
+            "Weapon_Number": 40
+        },
+        {
+            "name": "浮空龍戰斧Ⅰ",
+            "Weapon_Number": 41
+        },
+        {
+            "name": "浮空龍戰斧Ⅱ",
+            "Weapon_Number": 42
+        },
+        {
+            "name": "浮空龍戰斧Ⅲ",
+            "Weapon_Number": 43
+        },
+        {
+            "name": "花朵小刀Ⅰ",
+            "Weapon_Number": 44
+        },
+        {
+            "name": "花朵小刀Ⅱ",
+            "Weapon_Number": 45
+        },
+        {
+            "name": "花朵小刀Ⅲ",
+            "Weapon_Number": 46
+        },
+        {
+            "name": "盛開曼陀羅Ⅰ",
+            "Weapon_Number": 47
+        },
+        {
+            "name": "盛開曼陀羅Ⅱ",
+            "Weapon_Number": 48
+        },
+        {
+            "name": "盛開曼陀羅Ⅲ",
+            "Weapon_Number": 49
+        },
+        {
+            "name": "凶顎龍小刀Ⅰ",
+            "Weapon_Number": 50
+        },
+        {
+            "name": "凶顎龍小刀Ⅱ",
+            "Weapon_Number": 51
+        },
+        {
+            "name": "馬拉多戰斧Ⅰ",
+            "Weapon_Number": 52
+        },
+        {
+            "name": "馬拉多戰斧Ⅱ",
+            "Weapon_Number": 53
+        },
+        {
+            "name": "馬拉多戰斧Ⅲ",
+            "Weapon_Number": 54
+        },
+        {
+            "name": "骨製曲刀Ⅰ",
+            "Weapon_Number": 55
+        },
+        {
+            "name": "骨製曲刀Ⅱ",
+            "Weapon_Number": 56
+        },
+        {
+            "name": "骨製曲刀Ⅲ",
+            "Weapon_Number": 57
+        },
+        {
+            "name": "酋長曲刀Ⅰ",
+            "Weapon_Number": 58
+        },
+        {
+            "name": "酋長曲刀Ⅱ",
+            "Weapon_Number": 59
+        },
+        {
+            "name": "酋長曲刀Ⅲ",
+            "Weapon_Number": 60
+        },
+        {
+            "name": "大地巴龍刀Ⅰ",
+            "Weapon_Number": 61
+        },
+        {
+            "name": "大地巴龍刀Ⅱ",
+            "Weapon_Number": 62
+        },
+        {
+            "name": "尖刺銳劍Ⅰ",
+            "Weapon_Number": 63
+        },
+        {
+            "name": "尖刺銳劍Ⅱ",
+            "Weapon_Number": 64
+        },
+        {
+            "name": "骨鎚龍棍棒Ⅰ",
+            "Weapon_Number": 65
+        },
+        {
+            "name": "骨鎚龍棍棒Ⅱ",
+            "Weapon_Number": 66
+        },
+        {
+            "name": "骨鎚龍棍棒Ⅲ",
+            "Weapon_Number": 67
+        },
+        {
+            "name": "凶豺龍銳劍Ⅰ",
+            "Weapon_Number": 68
+        },
+        {
+            "name": "凶豺龍銳劍Ⅱ",
+            "Weapon_Number": 69
+        },
+        {
+            "name": "凶豺龍銳劍Ⅲ",
+            "Weapon_Number": 70
+        },
+        {
+            "name": "凶豺龍棍棒Ⅰ",
+            "Weapon_Number": 71
+        },
+        {
+            "name": "凶豺龍棍棒Ⅱ",
+            "Weapon_Number": 72
+        },
+        {
+            "name": "凶豺龍棍棒Ⅲ",
+            "Weapon_Number": 73
+        },
+        {
+            "name": "閃雷銳劍Ⅰ",
+            "Weapon_Number": 74
+        },
+        {
+            "name": "閃雷銳劍Ⅱ",
+            "Weapon_Number": 75
+        },
+        {
+            "name": "雷光戰狂Ⅰ",
+            "Weapon_Number": 76
+        },
+        {
+            "name": "雷光戰狂Ⅱ",
+            "Weapon_Number": 77
+        },
+        {
+            "name": "雷光戰狂Ⅲ",
+            "Weapon_Number": 78
+        },
+        {
+            "name": "土砂龍銳劍Ⅰ",
+            "Weapon_Number": 79
+        },
+        {
+            "name": "土砂龍銳劍Ⅱ",
+            "Weapon_Number": 80
+        },
+        {
+            "name": "土砂龍銳劍Ⅲ",
+            "Weapon_Number": 81
+        },
+        {
+            "name": "土砂龍棍棒Ⅰ",
+            "Weapon_Number": 82
+        },
+        {
+            "name": "土砂龍棍棒Ⅱ",
+            "Weapon_Number": 83
+        },
+        {
+            "name": "土砂龍棍棒Ⅲ",
+            "Weapon_Number": 84
+        },
+        {
+            "name": "火焰銳劍Ⅰ",
+            "Weapon_Number": 85
+        },
+        {
+            "name": "火焰銳劍Ⅱ",
+            "Weapon_Number": 86
+        },
+        {
+            "name": "蠻顎龍劍",
+            "Weapon_Number": 87
+        },
+        {
+            "name": "蠻顎劍追尋者",
+            "Weapon_Number": 88
+        },
+        {
+            "name": "龍骨劍Ⅰ",
+            "Weapon_Number": 89
+        },
+        {
+            "name": "龍骨劍Ⅱ",
+            "Weapon_Number": 90
+        },
+        {
+            "name": "龍骨劍Ⅲ",
+            "Weapon_Number": 91
+        },
+        {
+            "name": "雷刀",
+            "Weapon_Number": 92
+        },
+        {
+            "name": "雷光刀Ⅰ",
+            "Weapon_Number": 93
+        },
+        {
+            "name": "雷光刀Ⅱ",
+            "Weapon_Number": 94
+        },
+        {
+            "name": "黑鋼劍Ⅰ",
+            "Weapon_Number": 95
+        },
+        {
+            "name": "黑鋼劍Ⅱ",
+            "Weapon_Number": 96
+        },
+        {
+            "name": "炎王之劍",
+            "Weapon_Number": 97
+        },
+        {
+            "name": "炎王紋章",
+            "Weapon_Number": 98
+        },
+        {
+            "name": "冥燈龍劍",
+            "Weapon_Number": 99
+        },
+        {
+            "name": "致命暴龍",
+            "Weapon_Number": 100
+        },
+        {
+            "name": "致命寬劍",
+            "Weapon_Number": 101
+        },
+        {
+            "name": "金色的劍‧水",
+            "Weapon_Number": 102
+        },
+        {
+            "name": "金色的劍‧龍",
+            "Weapon_Number": 103
+        },
+        {
+            "name": "金色的劍‧爆破",
+            "Weapon_Number": 104
+        },
+        {
+            "name": "金色的劍‧賊",
+            "Weapon_Number": 105
+        },
+        {
+            "name": "金色的劍‧毒妖",
+            "Weapon_Number": 106
+        },
+        {
+            "name": "金色的劍‧土砂",
+            "Weapon_Number": 107
+        },
+        {
+            "name": "金色的劍‧蠻顎",
+            "Weapon_Number": 108
+        },
+        {
+            "name": "金色的劍‧痺賊",
+            "Weapon_Number": 109
+        },
+        {
+            "name": "金色的劍‧浮空",
+            "Weapon_Number": 110
+        },
+        {
+            "name": "金色的劍‧風漂",
+            "Weapon_Number": 111
+        },
+        {
+            "name": "金色的劍‧骨鎚",
+            "Weapon_Number": 112
+        },
+        {
+            "name": "金色的劍‧王",
+            "Weapon_Number": 113
+        },
+        {
+            "name": "金色的劍‧幻",
+            "Weapon_Number": 114
+        },
+        {
+            "name": "鎧羅切刀‧賊",
+            "Weapon_Number": 115
+        },
+        {
+            "name": "鎧羅切刀‧毒妖",
+            "Weapon_Number": 116
+        },
+        {
+            "name": "鎧羅切刀‧土砂",
+            "Weapon_Number": 117
+        },
+        {
+            "name": "鎧羅切刀‧蠻顎",
+            "Weapon_Number": 118
+        },
+        {
+            "name": "鎧羅切刀‧痺賊",
+            "Weapon_Number": 119
+        },
+        {
+            "name": "鎧羅切刀‧浮空",
+            "Weapon_Number": 120
+        },
+        {
+            "name": "鎧羅切刀‧風漂",
+            "Weapon_Number": 121
+        },
+        {
+            "name": "鎧羅切刀‧骨鎚",
+            "Weapon_Number": 122
+        },
+        {
+            "name": "鎧羅切刀‧王",
+            "Weapon_Number": 123
+        },
+        {
+            "name": "鎧羅切刀‧幻",
+            "Weapon_Number": 124
+        },
+        {
+            "name": "鎧羅切刀‧水",
+            "Weapon_Number": 125
+        },
+        {
+            "name": "鎧羅切刀‧龍",
+            "Weapon_Number": 126
+        },
+        {
+            "name": "鎧羅切刀‧爆破",
+            "Weapon_Number": 127
+        },
+        {
+            "name": "皇后銳劍",
+            "Weapon_Number": 128
+        },
+        {
+            "name": "皇后銳劍‧炎妃",
+            "Weapon_Number": 129
+        },
+        {
+            "name": "皇后銳劍‧滅盡",
+            "Weapon_Number": 130
+        },
+        {
+            "name": "皇后銳劍‧冥燈",
+            "Weapon_Number": 131
+        },
+        {
+            "name": "鎧羅切刀‧火",
+            "Weapon_Number": 132
+        }
+    ]
+}

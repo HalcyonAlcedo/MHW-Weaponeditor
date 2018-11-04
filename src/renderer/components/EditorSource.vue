@@ -151,6 +151,7 @@ export default {
           'wp_Slot_grade_1': [46, 1], // 46
           'wp_Slot_grade_2': [47, 1], // 47
           'wp_Slot_grade_3': [48, 1], // 48
+          'wp_Special_projectile': [62, 1], // 62
           'wp_Weapon_skills': [(HexRuler + 2), 1] // HexRuler(下一行) + 2
         }
       } else {
@@ -357,6 +358,14 @@ export default {
           for (let s = HexPointer.wp_Special_attributes[1], r = 0; r < s; r++) {
             wplist[(HexRuler * i) + HexPointer.wp_Special_attributes[0] + r].wp_Describe = this.$t('WeaponExplain.Special_attributes')
             wplist[(HexRuler * i) + HexPointer.wp_Special_attributes[0] + r].wp_Colour = 'lime'
+          }
+        }
+      }
+      if (HexPointer.wp_Special_projectile !== undefined) {
+        for (let l = data.length / (HexRuler + HexPointer.wp_Number[0]), i = 0; i < l; i++) {
+          for (let s = HexPointer.wp_Special_projectile[1], r = 0; r < s; r++) {
+            wplist[(HexRuler * i) + HexPointer.wp_Special_projectile[0] + r].wp_Describe = this.$t('WeaponExplain.Specialprojectile')
+            wplist[(HexRuler * i) + HexPointer.wp_Special_projectile[0] + r].wp_Colour = 'deep-purple accent-1'
           }
         }
       }

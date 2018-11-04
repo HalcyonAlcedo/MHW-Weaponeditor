@@ -1,0 +1,472 @@
+{
+    "Weapon": "轻弩",
+    "Data": [{
+            "name": "迅擊鍊弩Ⅰ",
+            "Weapon_Number": 8
+        },
+        {
+            "name": "迅擊鍊弩Ⅱ",
+            "Weapon_Number": 9
+        },
+        {
+            "name": "迅擊鍊弩Ⅲ",
+            "Weapon_Number": 10
+        },
+        {
+            "name": "高能迅擊鍊弩Ⅰ",
+            "Weapon_Number": 11
+        },
+        {
+            "name": "高能迅擊鍊弩Ⅱ",
+            "Weapon_Number": 12
+        },
+        {
+            "name": "高能迅擊鍊弩Ⅲ",
+            "Weapon_Number": 13
+        },
+        {
+            "name": "鉻鋼迅擊弩Ⅰ",
+            "Weapon_Number": 14
+        },
+        {
+            "name": "鉻鋼迅擊弩Ⅱ",
+            "Weapon_Number": 15
+        },
+        {
+            "name": "滅盡龍輕弩",
+            "Weapon_Number": 16
+        },
+        {
+            "name": "毀滅的契機",
+            "Weapon_Number": 17
+        },
+        {
+            "name": "浮空龍迅擊弩",
+            "Weapon_Number": 18
+        },
+        {
+            "name": "浮空龍迅擊弩Ⅱ",
+            "Weapon_Number": 19
+        },
+        {
+            "name": "浮空龍颶風砲Ⅰ",
+            "Weapon_Number": 20
+        },
+        {
+            "name": "浮空龍颶風砲Ⅱ",
+            "Weapon_Number": 21
+        },
+        {
+            "name": "浮空龍颶風砲Ⅲ",
+            "Weapon_Number": 22
+        },
+        {
+            "name": "爆鱗龍颱風砲Ⅰ",
+            "Weapon_Number": 23
+        },
+        {
+            "name": "爆鱗龍颱風砲Ⅱ",
+            "Weapon_Number": 24
+        },
+        {
+            "name": "凶豺龍迅擊弩Ⅰ",
+            "Weapon_Number": 25
+        },
+        {
+            "name": "凶豺龍迅擊弩Ⅱ",
+            "Weapon_Number": 26
+        },
+        {
+            "name": "凶豺龍迅擊弩Ⅲ",
+            "Weapon_Number": 27
+        },
+        {
+            "name": "凶豺龍火砲Ⅰ",
+            "Weapon_Number": 28
+        },
+        {
+            "name": "凶豺龍火砲Ⅱ",
+            "Weapon_Number": 29
+        },
+        {
+            "name": "凶豺龍火砲Ⅲ",
+            "Weapon_Number": 30
+        },
+        {
+            "name": "火焰迅擊弩Ⅰ",
+            "Weapon_Number": 31
+        },
+        {
+            "name": "火焰迅擊弩Ⅱ",
+            "Weapon_Number": 32
+        },
+        {
+            "name": "火龍破壞砲Ⅰ",
+            "Weapon_Number": 33
+        },
+        {
+            "name": "火龍破壞砲Ⅱ",
+            "Weapon_Number": 34
+        },
+        {
+            "name": "閃電迅擊弩Ⅰ",
+            "Weapon_Number": 35
+        },
+        {
+            "name": "閃電迅擊弩Ⅱ",
+            "Weapon_Number": 36
+        },
+        {
+            "name": "雷光迅擊弩Ⅰ",
+            "Weapon_Number": 37
+        },
+        {
+            "name": "雷光迅擊弩Ⅱ",
+            "Weapon_Number": 38
+        },
+        {
+            "name": "雷光迅擊弩Ⅲ",
+            "Weapon_Number": 39
+        },
+        {
+            "name": "冰雪迅擊弩Ⅰ",
+            "Weapon_Number": 40
+        },
+        {
+            "name": "冰雪迅擊弩Ⅱ",
+            "Weapon_Number": 41
+        },
+        {
+            "name": "寒霜迅擊弩Ⅰ",
+            "Weapon_Number": 42
+        },
+        {
+            "name": "寒霜迅擊弩Ⅱ",
+            "Weapon_Number": 43
+        },
+        {
+            "name": "獵人步槍Ⅰ",
+            "Weapon_Number": 44
+        },
+        {
+            "name": "獵人步槍Ⅱ",
+            "Weapon_Number": 45
+        },
+        {
+            "name": "獵人步槍Ⅲ",
+            "Weapon_Number": 46
+        },
+        {
+            "name": "能量步槍Ⅰ",
+            "Weapon_Number": 47
+        },
+        {
+            "name": "能量步槍Ⅱ",
+            "Weapon_Number": 48
+        },
+        {
+            "name": "能量步槍Ⅲ",
+            "Weapon_Number": 49
+        },
+        {
+            "name": "狙擊射手Ⅰ",
+            "Weapon_Number": 50
+        },
+        {
+            "name": "狙擊射手Ⅱ",
+            "Weapon_Number": 51
+        },
+        {
+            "name": "屍套龍輕弩",
+            "Weapon_Number": 52
+        },
+        {
+            "name": "髑髏的吶喊",
+            "Weapon_Number": 53
+        },
+        {
+            "name": "火焰步槍Ⅰ",
+            "Weapon_Number": 54
+        },
+        {
+            "name": "火焰步槍Ⅱ",
+            "Weapon_Number": 55
+        },
+        {
+            "name": "蠻顎龍破壞砲Ⅰ",
+            "Weapon_Number": 56
+        },
+        {
+            "name": "蠻顎龍破壞砲Ⅱ",
+            "Weapon_Number": 57
+        },
+        {
+            "name": "蠻顎龍破壞砲Ⅲ",
+            "Weapon_Number": 58
+        },
+        {
+            "name": "泥岩步槍Ⅰ",
+            "Weapon_Number": 59
+        },
+        {
+            "name": "泥岩步槍Ⅱ",
+            "Weapon_Number": 60
+        },
+        {
+            "name": "泥岩步槍Ⅲ",
+            "Weapon_Number": 61
+        },
+        {
+            "name": "泥岩龍輕弩Ⅰ",
+            "Weapon_Number": 62
+        },
+        {
+            "name": "泥岩龍輕弩Ⅱ",
+            "Weapon_Number": 63
+        },
+        {
+            "name": "泥岩龍輕弩Ⅲ",
+            "Weapon_Number": 64
+        },
+        {
+            "name": "熔岩輕弩Ⅰ",
+            "Weapon_Number": 65
+        },
+        {
+            "name": "熔岩輕弩Ⅱ",
+            "Weapon_Number": 66
+        },
+        {
+            "name": "土砂龍步槍Ⅰ",
+            "Weapon_Number": 67
+        },
+        {
+            "name": "土砂龍步槍Ⅱ",
+            "Weapon_Number": 68
+        },
+        {
+            "name": "土砂龍步槍Ⅲ",
+            "Weapon_Number": 69
+        },
+        {
+            "name": "土砂龍射手Ⅰ",
+            "Weapon_Number": 70
+        },
+        {
+            "name": "土砂龍射手Ⅱ",
+            "Weapon_Number": 71
+        },
+        {
+            "name": "土砂龍射手Ⅲ",
+            "Weapon_Number": 72
+        },
+        {
+            "name": "慘爪步槍Ⅰ",
+            "Weapon_Number": 73
+        },
+        {
+            "name": "慘爪步槍Ⅱ",
+            "Weapon_Number": 74
+        },
+        {
+            "name": "宿命之火",
+            "Weapon_Number": 75
+        },
+        {
+            "name": "業【羯磨】",
+            "Weapon_Number": 76
+        },
+        {
+            "name": "龍骨弩Ⅰ",
+            "Weapon_Number": 77
+        },
+        {
+            "name": "龍骨弩Ⅱ",
+            "Weapon_Number": 78
+        },
+        {
+            "name": "龍骨弩Ⅲ",
+            "Weapon_Number": 79
+        },
+        {
+            "name": "鬼島",
+            "Weapon_Number": 80
+        },
+        {
+            "name": "大鬼島",
+            "Weapon_Number": 81
+        },
+        {
+            "name": "麒麟筒",
+            "Weapon_Number": 82
+        },
+        {
+            "name": "麒麟筒改",
+            "Weapon_Number": 83
+        },
+        {
+            "name": "麒麟筒【三角】",
+            "Weapon_Number": 84
+        },
+        {
+            "name": "黑鋼弩Ⅰ",
+            "Weapon_Number": 85
+        },
+        {
+            "name": "黑鋼弩Ⅱ",
+            "Weapon_Number": 86
+        },
+        {
+            "name": "鋼冰蜂弩",
+            "Weapon_Number": 87
+        },
+        {
+            "name": "鋼龍冰蜂弩",
+            "Weapon_Number": 88
+        },
+        {
+            "name": "冥燈龍輕弩槍",
+            "Weapon_Number": 89
+        },
+        {
+            "name": "十字弩槍",
+            "Weapon_Number": 90
+        },
+        {
+            "name": "巨型十字槍",
+            "Weapon_Number": 91
+        },
+        {
+            "name": "恐怖機械",
+            "Weapon_Number": 92
+        },
+        {
+            "name": "瘋狂的悲嘆",
+            "Weapon_Number": 93
+        },
+        {
+            "name": "金色的弩‧狙擊",
+            "Weapon_Number": 94
+        },
+        {
+            "name": "金色的弩‧迫擊",
+            "Weapon_Number": 95
+        },
+        {
+            "name": "金色的弩‧射擊",
+            "Weapon_Number": 96
+        },
+        {
+            "name": "金色的弩‧賊",
+            "Weapon_Number": 97
+        },
+        {
+            "name": "金色的弩‧泥魚",
+            "Weapon_Number": 98
+        },
+        {
+            "name": "金色的弩‧土砂",
+            "Weapon_Number": 99
+        },
+        {
+            "name": "金色的弩‧蠻顎",
+            "Weapon_Number": 100
+        },
+        {
+            "name": "金色的弩‧浮空",
+            "Weapon_Number": 101
+        },
+        {
+            "name": "金色的弩‧慘爪",
+            "Weapon_Number": 102
+        },
+        {
+            "name": "金色的弩‧屍套",
+            "Weapon_Number": 103
+        },
+        {
+            "name": "金色的弩‧王",
+            "Weapon_Number": 104
+        },
+        {
+            "name": "金色的弩‧熔岩",
+            "Weapon_Number": 105
+        },
+        {
+            "name": "金色的弩‧爆鱗",
+            "Weapon_Number": 106
+        },
+        {
+            "name": "鎧羅迅擊弩‧賊",
+            "Weapon_Number": 107
+        },
+        {
+            "name": "鎧羅迅擊弩‧泥魚",
+            "Weapon_Number": 108
+        },
+        {
+            "name": "鎧羅迅擊弩‧土砂",
+            "Weapon_Number": 109
+        },
+        {
+            "name": "鎧羅迅擊弩‧蠻顎",
+            "Weapon_Number": 110
+        },
+        {
+            "name": "鎧羅迅擊弩‧浮空",
+            "Weapon_Number": 111
+        },
+        {
+            "name": "鎧羅迅擊弩‧慘爪",
+            "Weapon_Number": 112
+        },
+        {
+            "name": "鎧羅迅擊弩‧屍套",
+            "Weapon_Number": 113
+        },
+        {
+            "name": "鎧羅迅擊弩‧王",
+            "Weapon_Number": 114
+        },
+        {
+            "name": "鎧羅迅擊弩‧熔岩",
+            "Weapon_Number": 115
+        },
+        {
+            "name": "鎧羅迅擊弩‧爆鱗",
+            "Weapon_Number": 116
+        },
+        {
+            "name": "鎧羅迅擊弩‧狙擊",
+            "Weapon_Number": 117
+        },
+        {
+            "name": "鎧羅迅擊弩‧迫擊",
+            "Weapon_Number": 118
+        },
+        {
+            "name": "鎧羅迅擊弩‧射擊",
+            "Weapon_Number": 119
+        },
+        {
+            "name": "皇后甲殼",
+            "Weapon_Number": 120
+        },
+        {
+            "name": "皇后甲殼‧炎妃",
+            "Weapon_Number": 121
+        },
+        {
+            "name": "皇后甲殼‧滅盡",
+            "Weapon_Number": 122
+        },
+        {
+            "name": "皇后甲殼‧冥燈",
+            "Weapon_Number": 123
+        },
+        {
+            "name": "鎧羅迅擊弩‧援擊",
+            "Weapon_Number": 124
+        }
+    ]
+}

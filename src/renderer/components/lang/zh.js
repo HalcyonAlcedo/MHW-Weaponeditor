@@ -4,6 +4,7 @@ module.exports = {
   },
   Interface: {
     Lang: '语言 Language',
+    Menu: '菜单',
     New_file: '新建',
     Open_file: '打开',
     Open_Success: '文件已打开',
@@ -27,7 +28,9 @@ module.exports = {
     Instructions: '使用说明',
     No_file_opened: '未打开文件',
     No_data: '无可用数据',
-    Original: '原始'
+    Original: '原始',
+    Old_version: '兼容模式',
+    Version_update: '版本更新'
   },
   Explanatory: {
     Elimination_unknown_weapons: '武器信息列表中排除掉未被记载的武器数据',
@@ -35,8 +38,13 @@ module.exports = {
     Binary_mode: '显示文件二进制数据的文件模式，二进制数据根据武器类型进行辅助显示',
     Dark_theme: '切换软件主色调至暗黑模式',
     About_content: '本软件可针对《怪物猎人世界》中武器数据魔改文件进行查看和修改，修改后文件放置在Monster Hunter World\\nativePC\\common\\equip\\下即可生效。修改后文件将影响游戏平衡性，请勿用于联机使用。',
-    About_edition: '软件版本：0.8.0',
-    Instructions: '<h3>该工具可以读取解包后的武器数据，内置了当前版本的武器数据文件，可以直接新建mod文件。部分数值修改会根据固有系数自动修正，武器信息为手动录入，可能与现版本数据存在差异。修改后的文件请勿用于联机使用。</h3><br><h4>用法：</h4><br><span>&nbsp;&nbsp;1、打开解包后的mod文件或点击新建选择需要的武器文件</span><br><span>&nbsp;&nbsp;2、搜索或手动找到要修改的武器</span><br><span>&nbsp;&nbsp;3、将相应属性改成你希望的数值</span><br><span>&nbsp;&nbsp;4、点击保存将文件保存至 游戏目录\\nativePC\\common\\equip\\</span><br><br><h4>工具源代码发布在Github上：https://github.com/HalcyonAlcedo/MHW-Weaponeditor</h4>'
+    About_edition: '软件版本：0.9.1',
+    Instructions: '<h3>该工具可以读取解包后的武器数据，内置了当前版本的武器数据文件，可以直接新建mod文件。部分数值修改会根据固有系数自动修正，武器信息为手动录入，可能与现版本数据存在差异。修改后的文件请勿用于联机使用。</h3><br><h4>用法：</h4><br><span>&nbsp;&nbsp;1、打开解包后的mod文件或点击新建选择需要的武器文件</span><br><span>&nbsp;&nbsp;2、搜索或手动找到要修改的武器</span><br><span>&nbsp;&nbsp;3、将相应属性改成你希望的数值</span><br><span>&nbsp;&nbsp;4、点击保存将文件保存至 游戏目录\\nativePC\\common\\equip\\</span><br><br><h4>工具源代码发布在Github上：https://github.com/HalcyonAlcedo/MHW-Weaponeditor</h4>',
+    Old_version: '将以154766版本文件格式打开数据文件，建议使用新版本数据文件进行魔改。',
+    Old_version_open: '兼容模式已启动，请重新打开数据文件',
+    Old_version_close: '兼容模式已关闭，请重新打开数据文件',
+    Version_update: '将目前打开的文件更新到新版本',
+    Version_update_true: '版本数据更新完成，请勿忘记保存数据文件'
   },
   Weapon: {
     Charge_blade: '盾斧',
@@ -65,8 +73,8 @@ module.exports = {
     Weapon_secondary_model: '次要模型',
     Manufacturing_costs: '制造费用',
     Production_expenses: '稀有度',
-    Chopping_value: '锋利度匹配',
-    Chopping_grade: '锋利度',
+    Chopping_value: '斩味匹配',
+    Chopping_grade: '斩味',
     Chopping_grade_quick1: '短白',
     Chopping_grade_quick2: '中白',
     Chopping_grade_quick3: '长白',
@@ -98,6 +106,10 @@ module.exports = {
     OneGroovel: '一级孔槽',
     TwoGroovel: '二级孔槽',
     ThreeGroovel: '三级孔槽',
+    Specialprojectile: '特殊弹种',
+    Setbomb: '起爆龙弹',
+    Gatling: '机关龙弹',
+    Snipe: '狙击龙弹',
     Error: '错误',
     Fire: '火',
     Water: '水',
@@ -107,6 +119,16 @@ module.exports = {
     Poison: '毒',
     Hemp: '麻',
     Sleep: '眠',
-    Burst: '爆'
+    Burst: '爆',
+    Cut: '切断',
+    Strike: '打击',
+    Attribute: '属性',
+    Speed: '速度',
+    Endurance: '耐力',
+    Restores: '回复',
+    Extinguish_dragon: '灭龙',
+    Reduce_breath: '减气',
+    Strong_exocet_bottle: '强击瓶',
+    Strong_attribute_bottle: '强属性瓶'
   }
 }

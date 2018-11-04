@@ -1,0 +1,468 @@
+{
+    "Weapon": "猎笛",
+    "Data": [{
+            "name": "金屬風笛Ⅰ",
+            "Weapon_Number": 6
+        },
+        {
+            "name": "金屬風笛Ⅱ",
+            "Weapon_Number": 7
+        },
+        {
+            "name": "金屬風笛Ⅲ",
+            "Weapon_Number": 8
+        },
+        {
+            "name": "巨型風笛Ⅰ",
+            "Weapon_Number": 9
+        },
+        {
+            "name": "巨型風笛Ⅱ",
+            "Weapon_Number": 10
+        },
+        {
+            "name": "巨型風笛Ⅲ",
+            "Weapon_Number": 11
+        },
+        {
+            "name": "威猛風笛Ⅰ",
+            "Weapon_Number": 12
+        },
+        {
+            "name": "威猛風笛Ⅱ",
+            "Weapon_Number": 13
+        },
+        {
+            "name": "滅盡龍旋律",
+            "Weapon_Number": 14
+        },
+        {
+            "name": "寂滅的章節",
+            "Weapon_Number": 15
+        },
+        {
+            "name": "閃電風笛Ⅰ",
+            "Weapon_Number": 16
+        },
+        {
+            "name": "閃電風笛Ⅱ",
+            "Weapon_Number": 17
+        },
+        {
+            "name": "雷鼓Ⅰ",
+            "Weapon_Number": 18
+        },
+        {
+            "name": "雷鼓Ⅱ",
+            "Weapon_Number": 19
+        },
+        {
+            "name": "雷鼓Ⅲ",
+            "Weapon_Number": 20
+        },
+        {
+            "name": "搔鳥風笛Ⅰ",
+            "Weapon_Number": 21
+        },
+        {
+            "name": "搔鳥風笛Ⅱ",
+            "Weapon_Number": 22
+        },
+        {
+            "name": "搔鳥風笛Ⅲ",
+            "Weapon_Number": 23
+        },
+        {
+            "name": "星空皮鼓Ⅰ",
+            "Weapon_Number": 24
+        },
+        {
+            "name": "星空皮鼓Ⅱ",
+            "Weapon_Number": 25
+        },
+        {
+            "name": "星空皮鼓Ⅲ",
+            "Weapon_Number": 26
+        },
+        {
+            "name": "女武神戰鈴",
+            "Weapon_Number": 27
+        },
+        {
+            "name": "女武神之笛",
+            "Weapon_Number": 28
+        },
+        {
+            "name": "櫻戰鈴",
+            "Weapon_Number": 29
+        },
+        {
+            "name": "皇家戰笛",
+            "Weapon_Number": 30
+        },
+        {
+            "name": "水流風笛",
+            "Weapon_Number": 31
+        },
+        {
+            "name": "水流風笛Ⅱ",
+            "Weapon_Number": 32
+        },
+        {
+            "name": "水流風笛Ⅲ",
+            "Weapon_Number": 33
+        },
+        {
+            "name": "激流銅鑼Ⅰ",
+            "Weapon_Number": 34
+        },
+        {
+            "name": "激流銅鑼Ⅱ",
+            "Weapon_Number": 35
+        },
+        {
+            "name": "激流銅鑼Ⅲ",
+            "Weapon_Number": 36
+        },
+        {
+            "name": "優雅風笛Ⅰ",
+            "Weapon_Number": 37
+        },
+        {
+            "name": "優雅風笛Ⅱ",
+            "Weapon_Number": 38
+        },
+        {
+            "name": "琴弦",
+            "Weapon_Number": 39
+        },
+        {
+            "name": "冰凌琴弦",
+            "Weapon_Number": 40
+        },
+        {
+            "name": "骨製號角Ⅰ",
+            "Weapon_Number": 41
+        },
+        {
+            "name": "骨製號角Ⅱ",
+            "Weapon_Number": 42
+        },
+        {
+            "name": "骨製號角Ⅲ",
+            "Weapon_Number": 43
+        },
+        {
+            "name": "硬骨號角Ⅰ",
+            "Weapon_Number": 44
+        },
+        {
+            "name": "硬骨號角Ⅱ",
+            "Weapon_Number": 45
+        },
+        {
+            "name": "硬骨號角Ⅲ",
+            "Weapon_Number": 46
+        },
+        {
+            "name": "堅骨號角Ⅰ",
+            "Weapon_Number": 47
+        },
+        {
+            "name": "堅骨號角Ⅱ",
+            "Weapon_Number": 48
+        },
+        {
+            "name": "岩賊龍號角Ⅰ",
+            "Weapon_Number": 49
+        },
+        {
+            "name": "岩賊龍號角Ⅱ",
+            "Weapon_Number": 50
+        },
+        {
+            "name": "火焰號角Ⅰ",
+            "Weapon_Number": 51
+        },
+        {
+            "name": "火焰號角Ⅱ",
+            "Weapon_Number": 52
+        },
+        {
+            "name": "蠻顎龍長號Ⅰ",
+            "Weapon_Number": 53
+        },
+        {
+            "name": "蠻顎龍長號Ⅱ",
+            "Weapon_Number": 54
+        },
+        {
+            "name": "蠻顎龍長號Ⅲ",
+            "Weapon_Number": 55
+        },
+        {
+            "name": "花朵號角Ⅰ",
+            "Weapon_Number": 56
+        },
+        {
+            "name": "花朵號角Ⅱ",
+            "Weapon_Number": 57
+        },
+        {
+            "name": "花朵號角Ⅲ",
+            "Weapon_Number": 58
+        },
+        {
+            "name": "曼陀羅號角Ⅰ",
+            "Weapon_Number": 59
+        },
+        {
+            "name": "曼陀羅號角Ⅱ",
+            "Weapon_Number": 60
+        },
+        {
+            "name": "曼陀羅號角Ⅲ",
+            "Weapon_Number": 61
+        },
+        {
+            "name": "浮空龍號角Ⅰ",
+            "Weapon_Number": 62
+        },
+        {
+            "name": "浮空龍號角Ⅱ",
+            "Weapon_Number": 63
+        },
+        {
+            "name": "浮空龍長號Ⅰ",
+            "Weapon_Number": 64
+        },
+        {
+            "name": "浮空龍長號Ⅱ",
+            "Weapon_Number": 65
+        },
+        {
+            "name": "浮空龍長號Ⅲ",
+            "Weapon_Number": 66
+        },
+        {
+            "name": "爆鱗太鼓",
+            "Weapon_Number": 67
+        },
+        {
+            "name": "爆鱗鼓赤紅星光",
+            "Weapon_Number": 68
+        },
+        {
+            "name": "音速號角Ⅰ",
+            "Weapon_Number": 69
+        },
+        {
+            "name": "音速號角Ⅱ",
+            "Weapon_Number": 70
+        },
+        {
+            "name": "音速號角Ⅲ",
+            "Weapon_Number": 71
+        },
+        {
+            "name": "皇家琉璃鈴",
+            "Weapon_Number": 72
+        },
+        {
+            "name": "皇家琉璃鈴改",
+            "Weapon_Number": 73
+        },
+        {
+            "name": "女王笛巨蜂",
+            "Weapon_Number": 74
+        },
+        {
+            "name": "尖刺號角Ⅰ",
+            "Weapon_Number": 75
+        },
+        {
+            "name": "尖刺號角Ⅱ",
+            "Weapon_Number": 76
+        },
+        {
+            "name": "骨鎚龍號角Ⅰ",
+            "Weapon_Number": 77
+        },
+        {
+            "name": "骨鎚龍號角Ⅱ",
+            "Weapon_Number": 78
+        },
+        {
+            "name": "骨鎚龍號角Ⅲ",
+            "Weapon_Number": 79
+        },
+        {
+            "name": "龍骨古笛Ⅰ",
+            "Weapon_Number": 80
+        },
+        {
+            "name": "龍骨古笛Ⅱ",
+            "Weapon_Number": 81
+        },
+        {
+            "name": "龍骨古笛Ⅲ",
+            "Weapon_Number": 82
+        },
+        {
+            "name": "雷鳴笛",
+            "Weapon_Number": 83
+        },
+        {
+            "name": "雷光笛Ⅰ",
+            "Weapon_Number": 84
+        },
+        {
+            "name": "雷光笛Ⅱ",
+            "Weapon_Number": 85
+        },
+        {
+            "name": "黑鋼龍笛Ⅰ",
+            "Weapon_Number": 86
+        },
+        {
+            "name": "黑鋼龍笛Ⅱ",
+            "Weapon_Number": 87
+        },
+        {
+            "name": "炎王琴",
+            "Weapon_Number": 88
+        },
+        {
+            "name": "炎王豎琴",
+            "Weapon_Number": 89
+        },
+        {
+            "name": "冥燈龍狩獵笛",
+            "Weapon_Number": 90
+        },
+        {
+            "name": "鎖縛的暴龍",
+            "Weapon_Number": 91
+        },
+        {
+            "name": "深邃之鎖",
+            "Weapon_Number": 92
+        },
+        {
+            "name": "金色的龍笛‧水",
+            "Weapon_Number": 93
+        },
+        {
+            "name": "金色的龍笛‧龍",
+            "Weapon_Number": 94
+        },
+        {
+            "name": "金色的龍笛‧麻痺",
+            "Weapon_Number": 95
+        },
+        {
+            "name": "金色的龍笛‧飛甲",
+            "Weapon_Number": 96
+        },
+        {
+            "name": "金色的龍笛‧搔",
+            "Weapon_Number": 97
+        },
+        {
+            "name": "金色的龍笛‧毒妖",
+            "Weapon_Number": 98
+        },
+        {
+            "name": "金色的龍笛‧蠻顎",
+            "Weapon_Number": 99
+        },
+        {
+            "name": "金色的龍笛‧浮空",
+            "Weapon_Number": 100
+        },
+        {
+            "name": "金色的龍笛‧風漂",
+            "Weapon_Number": 101
+        },
+        {
+            "name": "金色的龍笛‧骨鎚",
+            "Weapon_Number": 102
+        },
+        {
+            "name": "金色的龍笛‧幻",
+            "Weapon_Number": 103
+        },
+        {
+            "name": "金色的龍笛‧岩賊",
+            "Weapon_Number": 104
+        },
+        {
+            "name": "鎧羅風笛‧飛甲",
+            "Weapon_Number": 115
+        },
+        {
+            "name": "鎧羅風笛‧搔",
+            "Weapon_Number": 116
+        },
+        {
+            "name": "鎧羅風笛‧毒妖",
+            "Weapon_Number": 117
+        },
+        {
+            "name": "鎧羅風笛‧蠻顎",
+            "Weapon_Number": 118
+        },
+        {
+            "name": "鎧羅風笛‧浮空",
+            "Weapon_Number": 119
+        },
+        {
+            "name": "鎧羅風笛‧風漂",
+            "Weapon_Number": 120
+        },
+        {
+            "name": "鎧羅風笛‧骨鎚",
+            "Weapon_Number": 121
+        },
+        {
+            "name": "鎧羅風笛‧幻",
+            "Weapon_Number": 122
+        },
+        {
+            "name": "鎧羅風笛‧岩賊",
+            "Weapon_Number": 123
+        },
+        {
+            "name": "鎧羅風笛‧水",
+            "Weapon_Number": 125
+        },
+        {
+            "name": "鎧羅風笛‧龍",
+            "Weapon_Number": 126
+        },
+        {
+            "name": "鎧羅風笛‧麻痺",
+            "Weapon_Number": 127
+        },
+        {
+            "name": "皇后鼓",
+            "Weapon_Number": 128
+        },
+        {
+            "name": "皇后鼓‧炎妃",
+            "Weapon_Number": 129
+        },
+        {
+            "name": "皇后鼓‧滅盡",
+            "Weapon_Number": 130
+        },
+        {
+            "name": "皇后鼓‧冥燈",
+            "Weapon_Number": 131
+        },
+        {
+            "name": "鎧羅風笛‧睡眠",
+            "Weapon_Number": 132
+        }
+    ]
+}

@@ -20,9 +20,12 @@ function createWindow () {
    * Initial window options
    */
   mainWindow = new BrowserWindow({
+    // 小屏版
+    // height: 600,
+    // width: 800,
     height: 1080,
-    useContentSize: true,
     width: 1600,
+    useContentSize: true,
     frame: false
   })
 

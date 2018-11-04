@@ -1,0 +1,473 @@
+{
+    "Weapon": "长枪",
+    "Data": [
+        {
+            "name": "鐵槍Ⅰ",
+            "Weapon_Number": 7
+        },
+        {
+            "name": "鐵槍Ⅱ",
+            "Weapon_Number": 8
+        },
+        {
+            "name": "鐵槍Ⅲ",
+            "Weapon_Number": 9
+        },
+        {
+            "name": "鋼鐵槍Ⅰ",
+            "Weapon_Number": 10
+        },
+        {
+            "name": "鋼鐵槍Ⅱ",
+            "Weapon_Number": 11
+        },
+        {
+            "name": "鋼鐵槍Ⅲ",
+            "Weapon_Number": 12
+        },
+        {
+            "name": "鉻鋼長槍Ⅰ",
+            "Weapon_Number": 13
+        },
+        {
+            "name": "鉻鋼長槍Ⅱ",
+            "Weapon_Number": 14
+        },
+        {
+            "name": "滅盡龍長槍",
+            "Weapon_Number": 15
+        },
+        {
+            "name": "亡滅之腕",
+            "Weapon_Number": 16
+        },
+        {
+            "name": "優雅長槍Ⅰ",
+            "Weapon_Number": 17
+        },
+        {
+            "name": "優雅長槍Ⅱ",
+            "Weapon_Number": 18
+        },
+        {
+            "name": "風漂龍斧槍Ⅰ",
+            "Weapon_Number": 19
+        },
+        {
+            "name": "風漂龍斧槍Ⅱ",
+            "Weapon_Number": 20
+        },
+        {
+            "name": "搔鳥長槍Ⅰ",
+            "Weapon_Number": 21
+        },
+        {
+            "name": "搔鳥長槍Ⅱ",
+            "Weapon_Number": 22
+        },
+        {
+            "name": "搔鳥長槍Ⅲ",
+            "Weapon_Number": 23
+        },
+        {
+            "name": "搔鳥尖槍Ⅰ",
+            "Weapon_Number": 24
+        },
+        {
+            "name": "搔鳥尖槍Ⅱ",
+            "Weapon_Number": 25
+        },
+        {
+            "name": "搔鳥尖槍Ⅲ",
+            "Weapon_Number": 26
+        },
+        {
+            "name": "岩賊龍刺針Ⅰ",
+            "Weapon_Number": 27
+        },
+        {
+            "name": "岩賊龍刺針Ⅱ",
+            "Weapon_Number": 28
+        },
+        {
+            "name": "閃電長槍Ⅰ",
+            "Weapon_Number": 29
+        },
+        {
+            "name": "閃電長槍Ⅱ",
+            "Weapon_Number": 30
+        },
+        {
+            "name": "雷光長槍Ⅰ",
+            "Weapon_Number": 31
+        },
+        {
+            "name": "雷光長槍Ⅱ",
+            "Weapon_Number": 32
+        },
+        {
+            "name": "雷光長槍Ⅲ",
+            "Weapon_Number": 33
+        },
+        {
+            "name": "花朵長槍Ⅰ",
+            "Weapon_Number": 34
+        },
+        {
+            "name": "花朵長槍Ⅱ",
+            "Weapon_Number": 35
+        },
+        {
+            "name": "花朵長槍Ⅲ",
+            "Weapon_Number": 36
+        },
+        {
+            "name": "曼陀羅長矛Ⅰ",
+            "Weapon_Number": 37
+        },
+        {
+            "name": "曼陀羅長矛Ⅱ",
+            "Weapon_Number": 38
+        },
+        {
+            "name": "曼陀羅長矛Ⅲ",
+            "Weapon_Number": 39
+        },
+        {
+            "name": "火焰長槍Ⅰ",
+            "Weapon_Number": 40
+        },
+        {
+            "name": "火焰長槍Ⅱ",
+            "Weapon_Number": 41
+        },
+        {
+            "name": "赤尾長槍",
+            "Weapon_Number": 42
+        },
+        {
+            "name": "蒼尾長槍",
+            "Weapon_Number": 43
+        },
+        {
+            "name": "蒼色日珥",
+            "Weapon_Number": 44
+        },
+        {
+            "name": "骨槍Ⅰ",
+            "Weapon_Number": 45
+        },
+        {
+            "name": "骨槍Ⅱ",
+            "Weapon_Number": 46
+        },
+        {
+            "name": "骨槍Ⅲ",
+            "Weapon_Number": 47
+        },
+        {
+            "name": "硬骨長槍Ⅰ",
+            "Weapon_Number": 48
+        },
+        {
+            "name": "硬骨長槍Ⅱ",
+            "Weapon_Number": 49
+        },
+        {
+            "name": "硬骨長槍Ⅲ",
+            "Weapon_Number": 50
+        },
+        {
+            "name": "堅骨槍Ⅰ",
+            "Weapon_Number": 51
+        },
+        {
+            "name": "堅骨槍Ⅱ",
+            "Weapon_Number": 52
+        },
+        {
+            "name": "屍套龍長槍",
+            "Weapon_Number": 53
+        },
+        {
+            "name": "死神的哀愁",
+            "Weapon_Number": 54
+        },
+        {
+            "name": "巨甲蟲長槍Ⅰ",
+            "Weapon_Number": 55
+        },
+        {
+            "name": "巨甲蟲長槍Ⅱ",
+            "Weapon_Number": 56
+        },
+        {
+            "name": "黑色刺針Ⅰ",
+            "Weapon_Number": 57
+        },
+        {
+            "name": "黑色刺針Ⅱ",
+            "Weapon_Number": 58
+        },
+        {
+            "name": "黑色刺針Ⅲ",
+            "Weapon_Number": 59
+        },
+        {
+            "name": "土砂龍長槍Ⅰ",
+            "Weapon_Number": 60
+        },
+        {
+            "name": "土砂龍長槍Ⅱ",
+            "Weapon_Number": 61
+        },
+        {
+            "name": "土砂龍長槍Ⅲ",
+            "Weapon_Number": 62
+        },
+        {
+            "name": "土砂龍刺針Ⅰ",
+            "Weapon_Number": 63
+        },
+        {
+            "name": "土砂龍刺針Ⅱ",
+            "Weapon_Number": 64
+        },
+        {
+            "name": "土砂龍刺針Ⅲ",
+            "Weapon_Number": 65
+        },
+        {
+            "name": "慘爪長槍Ⅰ",
+            "Weapon_Number": 66
+        },
+        {
+            "name": "慘爪長槍Ⅱ",
+            "Weapon_Number": 67
+        },
+        {
+            "name": "慘爪刺針Ⅰ",
+            "Weapon_Number": 68
+        },
+        {
+            "name": "慘爪刺針Ⅱ",
+            "Weapon_Number": 69
+        },
+        {
+            "name": "水流骨槍Ⅰ",
+            "Weapon_Number": 70
+        },
+        {
+            "name": "水流骨槍Ⅱ",
+            "Weapon_Number": 71
+        },
+        {
+            "name": "水流骨槍Ⅲ",
+            "Weapon_Number": 72
+        },
+        {
+            "name": "激流尖刺Ⅰ",
+            "Weapon_Number": 73
+        },
+        {
+            "name": "激流尖刺Ⅱ",
+            "Weapon_Number": 74
+        },
+        {
+            "name": "激流尖刺Ⅲ",
+            "Weapon_Number": 75
+        },
+        {
+            "name": "龍骨槍Ⅰ",
+            "Weapon_Number": 76
+        },
+        {
+            "name": "龍骨槍Ⅱ",
+            "Weapon_Number": 77
+        },
+        {
+            "name": "龍骨槍Ⅲ",
+            "Weapon_Number": 78
+        },
+        {
+            "name": "爆鱗突擊槍",
+            "Weapon_Number": 79
+        },
+        {
+            "name": "爆鱗槍赤紅巨星",
+            "Weapon_Number": 80
+        },
+        {
+            "name": "雷槍",
+            "Weapon_Number": 81
+        },
+        {
+            "name": "雷槍【霆】",
+            "Weapon_Number": 82
+        },
+        {
+            "name": "雷槍【建御雷】",
+            "Weapon_Number": 83
+        },
+        {
+            "name": "黑鋼槍Ⅰ",
+            "Weapon_Number": 84
+        },
+        {
+            "name": "黑鋼槍Ⅱ",
+            "Weapon_Number": 85
+        },
+        {
+            "name": "鋼冰槍",
+            "Weapon_Number": 86
+        },
+        {
+            "name": "祈願鋼龍槍",
+            "Weapon_Number": 87
+        },
+        {
+            "name": "冥燈龍長槍",
+            "Weapon_Number": 88
+        },
+        {
+            "name": "巴別塔",
+            "Weapon_Number": 89
+        },
+        {
+            "name": "遠古巴別塔",
+            "Weapon_Number": 90
+        },
+        {
+            "name": "悲哀的重槍",
+            "Weapon_Number": 91
+        },
+        {
+            "name": "亞特羅西斯塔",
+            "Weapon_Number": 92
+        },
+        {
+            "name": "金色的長槍‧水",
+            "Weapon_Number": 93
+        },
+        {
+            "name": "金色的長槍‧雷",
+            "Weapon_Number": 94
+        },
+        {
+            "name": "金色的長槍‧睡眠",
+            "Weapon_Number": 95
+        },
+        {
+            "name": "金色的長槍‧搔",
+            "Weapon_Number": 96
+        },
+        {
+            "name": "金色的長槍‧毒妖",
+            "Weapon_Number": 97
+        },
+        {
+            "name": "金色的長槍‧土砂",
+            "Weapon_Number": 98
+        },
+        {
+            "name": "金色的長槍‧黑甲",
+            "Weapon_Number": 99
+        },
+        {
+            "name": "金色的長槍‧風漂",
+            "Weapon_Number": 100
+        },
+        {
+            "name": "金色的長槍‧慘爪",
+            "Weapon_Number": 101
+        },
+        {
+            "name": "金色的長槍‧屍套",
+            "Weapon_Number": 102
+        },
+        {
+            "name": "金色的長槍‧王",
+            "Weapon_Number": 103
+        },
+        {
+            "name": "金色的長槍‧岩賊",
+            "Weapon_Number": 104
+        },
+        {
+            "name": "鎧羅之尖‧搔",
+            "Weapon_Number": 105
+        },
+        {
+            "name": "鎧羅之尖‧毒妖",
+            "Weapon_Number": 106
+        },
+        {
+            "name": "鎧羅之尖‧土砂",
+            "Weapon_Number": 107
+        },
+        {
+            "name": "鎧羅之尖‧黑甲",
+            "Weapon_Number": 108
+        },
+        {
+            "name": "鎧羅之尖‧風漂",
+            "Weapon_Number": 109
+        },
+        {
+            "name": "鎧羅之尖‧慘爪",
+            "Weapon_Number": 110
+        },
+        {
+            "name": "鎧羅之尖‧屍套",
+            "Weapon_Number": 111
+        },
+        {
+            "name": "鎧羅之尖‧王",
+            "Weapon_Number": 112
+        },
+        {
+            "name": "鎧羅之尖‧岩賊",
+            "Weapon_Number": 113
+        },
+        {
+            "name": "鎧羅之尖‧水",
+            "Weapon_Number": 114
+        },
+        {
+            "name": "鎧羅之尖‧雷",
+            "Weapon_Number": 115
+        },
+        {
+            "name": "鎧羅之尖‧睡眠",
+            "Weapon_Number": 116
+        },
+        {
+            "name": "皇后長槍",
+            "Weapon_Number": 117
+        },
+        {
+            "name": "皇后長槍‧炎妃",
+            "Weapon_Number": 118
+        },
+        {
+            "name": "皇后長槍‧滅盡",
+            "Weapon_Number": 119
+        },
+        {
+            "name": "皇后長槍‧冥燈",
+            "Weapon_Number": 120
+        },
+        {
+            "name": "團旗長槍【流星】",
+            "Weapon_Number": 121
+        },
+        {
+            "name": "團旗長槍【指引之星】",
+            "Weapon_Number": 122
+        },
+        {
+            "name": "鎧羅之尖‧毒",
+            "Weapon_Number": 125
+        }
+    ]
+}
