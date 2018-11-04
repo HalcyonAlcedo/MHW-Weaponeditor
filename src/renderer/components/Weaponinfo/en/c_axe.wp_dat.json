@@ -2,311 +2,311 @@
     "Weapon": "盾斧",
     "Data": [
         {
-            "name": "調查團試作盾斧Ⅰ",
+            "name": "Proto Commission Axe I",
             "Weapon_Number": 6
         },
         {
-            "name": "調查團試作盾斧Ⅱ",
+            "name": "Proto Commission Axe II",
             "Weapon_Number": 7
         },
         {
-            "name": "調查團試作盾斧Ⅲ",
+            "name": "Proto Commission Axe III",
             "Weapon_Number": 8
         },
         {
-            "name": "精銳調查團盾斧Ⅰ",
+            "name": "Elite Commission Axe I",
             "Weapon_Number": 9
         },
         {
-            "name": "精銳調查團盾斧Ⅱ",
+            "name": "Elite Commission Axe II",
             "Weapon_Number": 10
         },
         {
-            "name": "精銳調查團盾斧Ⅲ",
+            "name": "Elite Commission Axe III",
             "Weapon_Number": 11
         },
         {
-            "name": "鉻鐵守護者Ⅰ",
+            "name": "Chrome Guardian I",
             "Weapon_Number": 12
         },
         {
-            "name": "鉻鐵守護者Ⅱ",
+            "name": "Chrome Guardian II",
             "Weapon_Number": 13
         },
         {
-            "name": "滅盡龍的揮擊",
+            "name": "Nergal Lacerator",
             "Weapon_Number": 14
         },
         {
-            "name": "壞滅一束",
+            "name": "Devastation's Thorns",
             "Weapon_Number": 15
         },
         {
-            "name": "火龍盾斧Ⅰ",
+            "name": "Rathsblade I",
             "Weapon_Number": 16
         },
         {
-            "name": "火龍盾斧Ⅱ",
+            "name": "Rathsblade II",
             "Weapon_Number": 17
         },
         {
-            "name": "炎斧蛇王",
+            "name": "Axelion Blade",
             "Weapon_Number": 18
         },
         {
-            "name": "焰斧鶴王",
+            "name": "Halberion Blade",
             "Weapon_Number": 19
         },
         {
-            "name": "泥流盾斧Ⅰ",
+            "name": "Mudslide Blade I",
             "Weapon_Number": 20
         },
         {
-            "name": "泥流盾斧Ⅱ",
+            "name": "Mudslide Blade II",
             "Weapon_Number": 21
         },
         {
-            "name": "泥流盾斧Ⅲ",
+            "name": "Mudslide Blade III",
             "Weapon_Number": 22
         },
         {
-            "name": "深沉泥岩Ⅰ",
+            "name": "Jyura Depth I",
             "Weapon_Number": 23
         },
         {
-            "name": "深沉泥岩Ⅱ",
+            "name": "Jyura Depth II",
             "Weapon_Number": 24
         },
         {
-            "name": "深沉泥岩Ⅲ",
+            "name": "Jyura Depth III",
             "Weapon_Number": 25
         },
         {
-            "name": "冰結盾斧Ⅰ",
+            "name": "Everfrost Blade I",
             "Weapon_Number": 26
         },
         {
-            "name": "冰結盾斧Ⅱ",
+            "name": "Everfrost Blade II",
             "Weapon_Number": 27
         },
         {
-            "name": "寒霜巨人Ⅰ",
+            "name": "Gigafrost I",
             "Weapon_Number": 28
         },
         {
-            "name": "寒霜巨人Ⅱ",
+            "name": "Gigafrost II",
             "Weapon_Number": 29
         },
         {
-            "name": "焰火盾斧",
+            "name": "Dear Lutemis",
             "Weapon_Number": 30
         },
         {
-            "name": "雌火盾斧",
+            "name": "Dear Lutemia",
             "Weapon_Number": 31
         },
         {
-            "name": "櫻火盾斧",
+            "name": "Dear Hecatel",
             "Weapon_Number": 32
         },
         {
-            "name": "火鎧盾斧",
+            "name": "Dear Hecatelia",
             "Weapon_Number": 33
         },
         {
-            "name": "骨製兵裝Ⅰ",
+            "name": "Bone Strongarm I",
             "Weapon_Number": 34
         },
         {
-            "name": "骨製兵裝Ⅱ",
+            "name": "Bone Strongarm II",
             "Weapon_Number": 35
         },
         {
-            "name": "骨製兵裝Ⅲ",
+            "name": "Bone Strongarm III",
             "Weapon_Number": 36
         },
         {
-            "name": "硬骨兵裝Ⅰ",
+            "name": "Hard Bone Strongarm I",
             "Weapon_Number": 37
         },
         {
-            "name": "硬骨兵裝Ⅱ",
+            "name": "Hard Bone Strongarm II",
             "Weapon_Number": 38
         },
         {
-            "name": "硬骨兵裝Ⅲ",
+            "name": "Hard Bone Strongarm III",
             "Weapon_Number": 39
         },
         {
-            "name": "強骨兵裝Ⅰ",
+            "name": "Mighty Strongarm I",
             "Weapon_Number": 40
         },
         {
-            "name": "強骨兵裝Ⅱ",
+            "name": "Mighty Strongarm II",
             "Weapon_Number": 41
         },
         {
-            "name": "爆鎚盾牆Ⅰ",
+            "name": "Diablos Wall I",
             "Weapon_Number": 42
         },
         {
-            "name": "爆鎚盾牆Ⅱ",
+            "name": "Diablos Wall II",
             "Weapon_Number": 43
         },
         {
-            "name": "暴君銅盾Ⅰ",
+            "name": "Diablo Tyrannis I",
             "Weapon_Number": 44
         },
         {
-            "name": "暴君銅盾Ⅱ",
+            "name": "Diablo Tyrannis II",
             "Weapon_Number": 45
         },
         {
-            "name": "凶豺龍兵裝Ⅰ",
+            "name": "Jagras Strongarm I",
             "Weapon_Number": 46
         },
         {
-            "name": "凶豺龍兵裝Ⅱ",
+            "name": "Jagras Strongarm II",
             "Weapon_Number": 47
         },
         {
-            "name": "凶豺龍兵裝Ⅲ",
+            "name": "Jagras Strongarm III",
             "Weapon_Number": 48
         },
         {
-            "name": "凶豺龍盾斧Ⅰ",
+            "name": "Jagras Escudo I",
             "Weapon_Number": 49
         },
         {
-            "name": "凶豺龍盾斧Ⅱ",
+            "name": "Jagras Escudo III",
             "Weapon_Number": 50
         },
         {
-            "name": "凶豺龍盾斧Ⅲ",
+            "name": "Jagras Escudo III",
             "Weapon_Number": 51
         },
         {
-            "name": "岩賊龍盾Ⅰ",
+            "name": "Gama Silt I",
             "Weapon_Number": 52
         },
         {
-            "name": "岩賊龍盾Ⅱ",
+            "name": "Gama Silt II",
             "Weapon_Number": 53
         },
         {
-            "name": "凶顎龍兵裝Ⅰ",
+            "name": "Girros Strongarm I",
             "Weapon_Number": 54
         },
         {
-            "name": "凶顎龍兵裝Ⅱ",
+            "name": "Girros Strongarm II",
             "Weapon_Number": 55
         },
         {
-            "name": "凶顎龍盾斧Ⅰ",
+            "name": "Girros Nadja I",
             "Weapon_Number": 56
         },
         {
-            "name": "凶顎龍盾斧Ⅱ",
+            "name": "Girros Nadja II",
             "Weapon_Number": 57
         },
         {
-            "name": "凶顎龍盾斧Ⅲ",
+            "name": "Girros Nadja III",
             "Weapon_Number": 58
         },
         {
-            "name": "屍套龍盾斧Ⅰ",
+            "name": "Hazak Aspida I",
             "Weapon_Number": 59
         },
         {
-            "name": "屍套龍盾斧Ⅱ",
+            "name": "Hazak Aspida II",
             "Weapon_Number": 60
         },
         {
-            "name": "脈衝兵裝Ⅰ",
+            "name": "Pulsar Strongarm I",
             "Weapon_Number": 61
         },
         {
-            "name": "脈衝兵裝Ⅱ",
+            "name": "Pulsar Strongarm II",
             "Weapon_Number": 62
         },
         {
-            "name": "脈衝兵裝Ⅲ",
+            "name": "Pulsar Strongarm III",
             "Weapon_Number": 63
         },
         {
-            "name": "飛雷龍之腕Ⅰ",
+            "name": "Kadachi Kaina I",
             "Weapon_Number": 64
         },
         {
-            "name": "飛雷龍之腕Ⅱ",
+            "name": "Kadachi Kaina II",
             "Weapon_Number": 65
         },
         {
-            "name": "飛雷龍之腕Ⅲ",
+            "name": "Kadachi Kaina III",
             "Weapon_Number": 66
         },
         {
-            "name": "慘爪兵裝 Ⅰ",
+            "name": "Garon Strongarm I",
             "Weapon_Number": 67
         },
         {
-            "name": "慘爪兵裝 Ⅱ",
+            "name": "Garon Strongarm II",
             "Weapon_Number": 68
         },
         {
-            "name": "憎恨的火炎",
+            "name": "Hate's Undying Flame",
             "Weapon_Number": 69
         },
         {
-            "name": "憎【忿恨】",
+            "name": "Odium",
             "Weapon_Number": 70
         },
         {
-            "name": "龍骨盾斧Ⅰ",
+            "name": "Dragonbone Cutter I",
             "Weapon_Number": 71
         },
         {
-            "name": "龍骨盾斧Ⅱ",
+            "name": "Dragonbone Cutter II",
             "Weapon_Number": 72
         },
         {
-            "name": "龍骨盾斧Ⅲ",
+            "name": "Dragonbone Cutter III",
             "Weapon_Number": 73
         },
         {
-            "name": "熔山龍盾斧",
+            "name": "Magda Manus",
             "Weapon_Number": 74
         },
         {
-            "name": "捲土重來熔山龍盾斧",
+            "name": "Avenging Magda Manus",
             "Weapon_Number": 75
         },
         {
-            "name": "黑鋼盾斧Ⅰ",
+            "name": "Blacksteel Charger I",
             "Weapon_Number": 76
         },
         {
-            "name": "黑鋼盾斧Ⅱ",
+            "name": "Blacksteel Charger II",
             "Weapon_Number": 77
         },
         {
-            "name": "鋼龍冰盾",
+            "name": "Daora's Casca",
             "Weapon_Number": 78
         },
         {
-            "name": "鋼龍幻夢",
+            "name": "Daora's Thwartoise",
             "Weapon_Number": 79
         },
         {
-            "name": "冥燈龍盾斧",
+            "name": "Xeno Ra'atz",
             "Weapon_Number": 80
         },
         {
-            "name": "暴虐的盾斧",
+            "name": "Tyrant's Charge Blade",
             "Weapon_Number": 81
         },
         {
-            "name": "德斯特涅塔",
+            "name": "Oppressor's Charge Blade",
             "Weapon_Number": 82
         },
         {

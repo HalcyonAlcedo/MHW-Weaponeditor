@@ -828,7 +828,7 @@ export default {
       return zero.substr(0, tmp) + hex.toLocaleUpperCase()
     },
     save (val) {
-      let data = this.str_pad(val.vul.toString(16), Math.ceil(val.vul.toString(16).length / 2) * 2)
+      let data = this.str_pad(Number(val.vul).toString(16), Math.ceil(Number(val.vul).toString(16).length / 2) * 2)
       for (let i = 0; i < val.hexL; i++) {
         let setvul
         if (val.hexL - i <= (data.length / 2)) {
@@ -849,7 +849,7 @@ export default {
       }
       valsave.vul = Number(valsave.vul) >= 0 ? Number(valsave.vul) : 256 - Math.abs(Number(valsave.vul))
       this.save(valsave)
-      valsave.vul = this.wpheart(valsave.vul) // 回显有问题，好像还原处理就好了，不影响save时数据，不知道啥原因喵″
+      valsave.vul = this.wpheart(valsave).vul // 回显有问题，好像还原处理就好了，不影响save时数据，不知道啥原因喵″
     },
     Attribute_treatment (val) {
       let valsave = val
@@ -865,7 +865,6 @@ export default {
     },
     input_interchangeable (val) {
       let valsave = val
-      console.log(valsave)
       this.save(valsave)
     },
     Select_interchangeable (val) {
