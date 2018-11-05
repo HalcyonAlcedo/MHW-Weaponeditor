@@ -190,6 +190,9 @@
               <p>{{$t("Explanatory.About_content")}}</p>
               <v-divider></v-divider>
               <p>{{$t("Explanatory.About_edition")}}</p>
+              <p>{{$t("Interface.Update_description")}}</p>
+              <div v-html="$t('Explanatory.Update_description')"></div>
+              <v-divider></v-divider>
               <p><a>https://github.com/HalcyonAlcedo/MHW-Weaponeditor</a></p>
               <v-divider></v-divider>
             </div>
@@ -229,20 +232,22 @@
       </v-dialog>
       <v-dialog v-model="Explain" persistent max-width="690">
         <v-card>
-          <v-layout row wrap>
+          <v-layout row wrap align-center>
             <v-flex xs3>
               <v-card-title class="headline">{{$t("Interface.Instructions")}}</v-card-title>
             </v-flex>
-              <v-spacer></v-spacer>
+            <v-spacer></v-spacer>
             <v-flex xs3>
-              <v-select
-                v-model="lang"
-                :items="langlist"
-                item-text="text"
-                item-value="value"
-                :label="$t('Interface.Lang')"
-                return-object
-              ></v-select>
+              <v-card-title class="headline">
+                <v-select
+                  v-model="lang"
+                  :items="langlist"
+                  item-text="text"
+                  item-value="value"
+                  :label="$t('Interface.Lang')"
+                  return-object
+                ></v-select>
+              </v-card-title>
             </v-flex>
           </v-layout>
           <v-divider></v-divider>

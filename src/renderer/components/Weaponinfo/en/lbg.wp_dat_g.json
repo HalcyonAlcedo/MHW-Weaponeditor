@@ -1,471 +1,471 @@
 {
     "Weapon": "轻弩",
     "Data": [{
-            "name": "迅擊鍊弩Ⅰ",
+            "name": "Chain Blitz I",
             "Weapon_Number": 8
         },
         {
-            "name": "迅擊鍊弩Ⅱ",
+            "name": "Chain Blitz II",
             "Weapon_Number": 9
         },
         {
-            "name": "迅擊鍊弩Ⅲ",
+            "name": "Chain Blitz III",
             "Weapon_Number": 10
         },
         {
-            "name": "高能迅擊鍊弩Ⅰ",
+            "name": "High Chain Blitz I",
             "Weapon_Number": 11
         },
         {
-            "name": "高能迅擊鍊弩Ⅱ",
+            "name": "High Chain Blitz II",
             "Weapon_Number": 12
         },
         {
-            "name": "高能迅擊鍊弩Ⅲ",
+            "name": "High Chain Blitz III",
             "Weapon_Number": 13
         },
         {
-            "name": "鉻鋼迅擊弩Ⅰ",
+            "name": "Cross Blitz I",
             "Weapon_Number": 14
         },
         {
-            "name": "鉻鋼迅擊弩Ⅱ",
+            "name": "Cross Blitz II",
             "Weapon_Number": 15
         },
         {
-            "name": "滅盡龍輕弩",
+            "name": "Nergal Spitter",
             "Weapon_Number": 16
         },
         {
-            "name": "毀滅的契機",
+            "name": "Cataclysm's Trigger",
             "Weapon_Number": 17
         },
         {
-            "name": "浮空龍迅擊弩",
+            "name": "Lumu Blitz I",
             "Weapon_Number": 18
         },
         {
-            "name": "浮空龍迅擊弩Ⅱ",
+            "name": "Lumu Blitz II",
             "Weapon_Number": 19
         },
         {
-            "name": "浮空龍颶風砲Ⅰ",
+            "name": "Lumu Typhoon I",
             "Weapon_Number": 20
         },
         {
-            "name": "浮空龍颶風砲Ⅱ",
+            "name": "Lumu Typhoon II",
             "Weapon_Number": 21
         },
         {
-            "name": "浮空龍颶風砲Ⅲ",
+            "name": "Lumu Typhoon III",
             "Weapon_Number": 22
         },
         {
-            "name": "爆鱗龍颱風砲Ⅰ",
+            "name": "Bazel Typhoon I",
             "Weapon_Number": 23
         },
         {
-            "name": "爆鱗龍颱風砲Ⅱ",
+            "name": "Bazel Typhoon II",
             "Weapon_Number": 24
         },
         {
-            "name": "凶豺龍迅擊弩Ⅰ",
+            "name": "Jagras Blitz I",
             "Weapon_Number": 25
         },
         {
-            "name": "凶豺龍迅擊弩Ⅱ",
+            "name": "Jagras Blitz II",
             "Weapon_Number": 26
         },
         {
-            "name": "凶豺龍迅擊弩Ⅲ",
+            "name": "Jagras Blitz III",
             "Weapon_Number": 27
         },
         {
-            "name": "凶豺龍火砲Ⅰ",
+            "name": "Jagras Fire I",
             "Weapon_Number": 28
         },
         {
-            "name": "凶豺龍火砲Ⅱ",
+            "name": "Jagras Fire II",
             "Weapon_Number": 29
         },
         {
-            "name": "凶豺龍火砲Ⅲ",
+            "name": "Jagras Fire III",
             "Weapon_Number": 30
         },
         {
-            "name": "火焰迅擊弩Ⅰ",
+            "name": "Flame Blitz I",
             "Weapon_Number": 31
         },
         {
-            "name": "火焰迅擊弩Ⅱ",
+            "name": "Flame Blitz II",
             "Weapon_Number": 32
         },
         {
-            "name": "火龍破壞砲Ⅰ",
+            "name": "Rathbuster I",
             "Weapon_Number": 33
         },
         {
-            "name": "火龍破壞砲Ⅱ",
+            "name": "Rathbuster II",
             "Weapon_Number": 34
         },
         {
-            "name": "閃電迅擊弩Ⅰ",
+            "name": "Thunder Blitz I",
             "Weapon_Number": 35
         },
         {
-            "name": "閃電迅擊弩Ⅱ",
+            "name": "Thunder Blitz II",
             "Weapon_Number": 36
         },
         {
-            "name": "雷光迅擊弩Ⅰ",
+            "name": "Lightning Blitz I",
             "Weapon_Number": 37
         },
         {
-            "name": "雷光迅擊弩Ⅱ",
+            "name": "Lightning Blitz II",
             "Weapon_Number": 38
         },
         {
-            "name": "雷光迅擊弩Ⅲ",
+            "name": "Lightning Blitz III",
             "Weapon_Number": 39
         },
         {
-            "name": "冰雪迅擊弩Ⅰ",
+            "name": "Snow Blitz I",
             "Weapon_Number": 40
         },
         {
-            "name": "冰雪迅擊弩Ⅱ",
+            "name": "Snow Blitz II",
             "Weapon_Number": 41
         },
         {
-            "name": "寒霜迅擊弩Ⅰ",
+            "name": "Frost Blitz I",
             "Weapon_Number": 42
         },
         {
-            "name": "寒霜迅擊弩Ⅱ",
+            "name": "Frost Blitz II",
             "Weapon_Number": 43
         },
         {
-            "name": "獵人步槍Ⅰ",
+            "name": "Hunter's Rifle I",
             "Weapon_Number": 44
         },
         {
-            "name": "獵人步槍Ⅱ",
+            "name": "Hunter's Rifle II",
             "Weapon_Number": 45
         },
         {
-            "name": "獵人步槍Ⅲ",
+            "name": "Hunter's Rifle III",
             "Weapon_Number": 46
         },
         {
-            "name": "能量步槍Ⅰ",
+            "name": "Power Rifle I",
             "Weapon_Number": 47
         },
         {
-            "name": "能量步槍Ⅱ",
+            "name": "Power Rifle II",
             "Weapon_Number": 48
         },
         {
-            "name": "能量步槍Ⅲ",
+            "name": "Power Rifle III",
             "Weapon_Number": 49
         },
         {
-            "name": "狙擊射手Ⅰ",
+            "name": "Sniper Shot I",
             "Weapon_Number": 50
         },
         {
-            "name": "狙擊射手Ⅱ",
+            "name": "Sniper Shot II",
             "Weapon_Number": 51
         },
         {
-            "name": "屍套龍輕弩",
+            "name": "Hazak Ereipia",
             "Weapon_Number": 52
         },
         {
-            "name": "髑髏的吶喊",
+            "name": "Gulgoleth's Wail",
             "Weapon_Number": 53
         },
         {
-            "name": "火焰步槍Ⅰ",
+            "name": "Blazing Rifle I",
             "Weapon_Number": 54
         },
         {
-            "name": "火焰步槍Ⅱ",
+            "name": "Blazing Rifle II",
             "Weapon_Number": 55
         },
         {
-            "name": "蠻顎龍破壞砲Ⅰ",
+            "name": "Anja Buster I",
             "Weapon_Number": 56
         },
         {
-            "name": "蠻顎龍破壞砲Ⅱ",
+            "name": "Anja Buster II",
             "Weapon_Number": 57
         },
         {
-            "name": "蠻顎龍破壞砲Ⅲ",
+            "name": "Anja Buster III",
             "Weapon_Number": 58
         },
         {
-            "name": "泥岩步槍Ⅰ",
+            "name": "Madness Rifle I",
             "Weapon_Number": 59
         },
         {
-            "name": "泥岩步槍Ⅱ",
+            "name": "Madness Rifle II",
             "Weapon_Number": 60
         },
         {
-            "name": "泥岩步槍Ⅲ",
+            "name": "Madness Rifle III",
             "Weapon_Number": 61
         },
         {
-            "name": "泥岩龍輕弩Ⅰ",
+            "name": "Jyura Bullet I",
             "Weapon_Number": 62
         },
         {
-            "name": "泥岩龍輕弩Ⅱ",
+            "name": "Jyura Bullet II",
             "Weapon_Number": 63
         },
         {
-            "name": "泥岩龍輕弩Ⅲ",
+            "name": "Jyura Bullet III",
             "Weapon_Number": 64
         },
         {
-            "name": "熔岩輕弩Ⅰ",
+            "name": "Lava Bullet I",
             "Weapon_Number": 65
         },
         {
-            "name": "熔岩輕弩Ⅱ",
+            "name": "Lava Bullet II",
             "Weapon_Number": 66
         },
         {
-            "name": "土砂龍步槍Ⅰ",
+            "name": "Carapace Rifle I",
             "Weapon_Number": 67
         },
         {
-            "name": "土砂龍步槍Ⅱ",
+            "name": "Carapace Rifle II",
             "Weapon_Number": 68
         },
         {
-            "name": "土砂龍步槍Ⅲ",
+            "name": "Carapace Rifle III",
             "Weapon_Number": 69
         },
         {
-            "name": "土砂龍射手Ⅰ",
+            "name": "Barroth Shot I",
             "Weapon_Number": 70
         },
         {
-            "name": "土砂龍射手Ⅱ",
+            "name": "Barroth Shot II",
             "Weapon_Number": 71
         },
         {
-            "name": "土砂龍射手Ⅲ",
+            "name": "Barroth Shot III",
             "Weapon_Number": 72
         },
         {
-            "name": "慘爪步槍Ⅰ",
+            "name": "Garon Rifle I",
             "Weapon_Number": 73
         },
         {
-            "name": "慘爪步槍Ⅱ",
+            "name": "Garon Rifle II",
             "Weapon_Number": 74
         },
         {
-            "name": "宿命之火",
+            "name": "Fate's Ember",
             "Weapon_Number": 75
         },
         {
-            "name": "業【羯磨】",
+            "name": "Karma",
             "Weapon_Number": 76
         },
         {
-            "name": "龍骨弩Ⅰ",
+            "name": "Dragonbone Bowgun I",
             "Weapon_Number": 77
         },
         {
-            "name": "龍骨弩Ⅱ",
+            "name": "Dragonbone Bowgun II",
             "Weapon_Number": 78
         },
         {
-            "name": "龍骨弩Ⅲ",
+            "name": "Dragonbone Bowgun III",
             "Weapon_Number": 79
         },
         {
-            "name": "鬼島",
+            "name": "Onigashima",
             "Weapon_Number": 80
         },
         {
-            "name": "大鬼島",
+            "name": "Dai-onigashima",
             "Weapon_Number": 81
         },
         {
-            "name": "麒麟筒",
+            "name": "Mythical Horn",
             "Weapon_Number": 82
         },
         {
-            "name": "麒麟筒改",
+            "name": "Mythical Horn+",
             "Weapon_Number": 83
         },
         {
-            "name": "麒麟筒【三角】",
+            "name": "Mythical Three-Horn",
             "Weapon_Number": 84
         },
         {
-            "name": "黑鋼弩Ⅰ",
+            "name": "Blacksteel Crossbow I",
             "Weapon_Number": 85
         },
         {
-            "name": "黑鋼弩Ⅱ",
+            "name": "Blacksteel Crossbow II",
             "Weapon_Number": 86
         },
         {
-            "name": "鋼冰蜂弩",
+            "name": "Icesteel Wasp",
             "Weapon_Number": 87
         },
         {
-            "name": "鋼龍冰蜂弩",
+            "name": "Daora's Hornet",
             "Weapon_Number": 88
         },
         {
-            "name": "冥燈龍輕弩槍",
+            "name": "Xeno Neqiina",
             "Weapon_Number": 89
         },
         {
-            "name": "十字弩槍",
+            "name": "Cross Bowgun",
             "Weapon_Number": 90
         },
         {
-            "name": "巨型十字槍",
+            "name": "Great Bowgun",
             "Weapon_Number": 91
         },
         {
-            "name": "恐怖機械",
+            "name": "Devil's Grin",
             "Weapon_Number": 92
         },
         {
-            "name": "瘋狂的悲嘆",
+            "name": "Devil's Madness",
             "Weapon_Number": 93
         },
         {
-            "name": "金色的弩‧狙擊",
+            "name": "Golden crossbow‧狙擊",
             "Weapon_Number": 94
         },
         {
-            "name": "金色的弩‧迫擊",
+            "name": "Golden crossbow‧迫擊",
             "Weapon_Number": 95
         },
         {
-            "name": "金色的弩‧射擊",
+            "name": "Golden crossbow‧射擊",
             "Weapon_Number": 96
         },
         {
-            "name": "金色的弩‧賊",
+            "name": "Golden crossbow‧賊",
             "Weapon_Number": 97
         },
         {
-            "name": "金色的弩‧泥魚",
+            "name": "Golden crossbow‧泥魚",
             "Weapon_Number": 98
         },
         {
-            "name": "金色的弩‧土砂",
+            "name": "Golden crossbow‧土砂",
             "Weapon_Number": 99
         },
         {
-            "name": "金色的弩‧蠻顎",
+            "name": "Golden crossbow‧蠻顎",
             "Weapon_Number": 100
         },
         {
-            "name": "金色的弩‧浮空",
+            "name": "Golden crossbow‧浮空",
             "Weapon_Number": 101
         },
         {
-            "name": "金色的弩‧慘爪",
+            "name": "Golden crossbow‧慘爪",
             "Weapon_Number": 102
         },
         {
-            "name": "金色的弩‧屍套",
+            "name": "Golden crossbow‧屍套",
             "Weapon_Number": 103
         },
         {
-            "name": "金色的弩‧王",
+            "name": "Golden crossbow‧王",
             "Weapon_Number": 104
         },
         {
-            "name": "金色的弩‧熔岩",
+            "name": "Golden crossbow‧熔岩",
             "Weapon_Number": 105
         },
         {
-            "name": "金色的弩‧爆鱗",
+            "name": "Golden crossbow‧爆鱗",
             "Weapon_Number": 106
         },
         {
-            "name": "鎧羅迅擊弩‧賊",
+            "name": "Armored crossbow‧賊",
             "Weapon_Number": 107
         },
         {
-            "name": "鎧羅迅擊弩‧泥魚",
+            "name": "Armored crossbow‧泥魚",
             "Weapon_Number": 108
         },
         {
-            "name": "鎧羅迅擊弩‧土砂",
+            "name": "Armored crossbow‧土砂",
             "Weapon_Number": 109
         },
         {
-            "name": "鎧羅迅擊弩‧蠻顎",
+            "name": "Armored crossbow‧蠻顎",
             "Weapon_Number": 110
         },
         {
-            "name": "鎧羅迅擊弩‧浮空",
+            "name": "Armored crossbow‧浮空",
             "Weapon_Number": 111
         },
         {
-            "name": "鎧羅迅擊弩‧慘爪",
+            "name": "Armored crossbow‧慘爪",
             "Weapon_Number": 112
         },
         {
-            "name": "鎧羅迅擊弩‧屍套",
+            "name": "Armored crossbow‧屍套",
             "Weapon_Number": 113
         },
         {
-            "name": "鎧羅迅擊弩‧王",
+            "name": "Armored crossbow‧王",
             "Weapon_Number": 114
         },
         {
-            "name": "鎧羅迅擊弩‧熔岩",
+            "name": "Armored crossbow‧熔岩",
             "Weapon_Number": 115
         },
         {
-            "name": "鎧羅迅擊弩‧爆鱗",
+            "name": "Armored crossbow‧爆鱗",
             "Weapon_Number": 116
         },
         {
-            "name": "鎧羅迅擊弩‧狙擊",
+            "name": "Armored crossbow‧狙擊",
             "Weapon_Number": 117
         },
         {
-            "name": "鎧羅迅擊弩‧迫擊",
+            "name": "Armored crossbow‧迫擊",
             "Weapon_Number": 118
         },
         {
-            "name": "鎧羅迅擊弩‧射擊",
+            "name": "Armored crossbow‧射擊",
             "Weapon_Number": 119
         },
         {
-            "name": "皇后甲殼",
+            "name": "Queen's crustaceans",
             "Weapon_Number": 120
         },
         {
-            "name": "皇后甲殼‧炎妃",
+            "name": "Queen's crustaceans‧炎妃",
             "Weapon_Number": 121
         },
         {
-            "name": "皇后甲殼‧滅盡",
+            "name": "Queen's crustaceans‧滅盡",
             "Weapon_Number": 122
         },
         {
-            "name": "皇后甲殼‧冥燈",
+            "name": "Queen's crustaceans‧冥燈",
             "Weapon_Number": 123
         },
         {
-            "name": "鎧羅迅擊弩‧援擊",
+            "name": "Armored crossbow‧援擊",
             "Weapon_Number": 124
         }
     ]

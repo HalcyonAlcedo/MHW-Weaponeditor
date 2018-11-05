@@ -1,451 +1,451 @@
 {
     "Weapon": "斩斧",
     "Data": [{
-            "name": "鐵製試作劍斧Ⅰ",
+            "name": "Proto Iron Axe I",
             "Weapon_Number": 7
         },
         {
-            "name": "鐵製試做劍斧Ⅱ",
+            "name": "Proto Iron Axe II",
             "Weapon_Number": 8
         },
         {
-            "name": "鐵製試做劍斧Ⅲ",
+            "name": "Proto Iron Axe III",
             "Weapon_Number": 9
         },
         {
-            "name": "鋼鐵製改良劍斧Ⅰ",
+            "name": "Improved Iron Axe I",
             "Weapon_Number": 10
         },
         {
-            "name": "鋼鐵製改良劍斧Ⅱ",
+            "name": "Improved Iron Axe II",
             "Weapon_Number": 11
         },
         {
-            "name": "鋼鐵製改良劍斧Ⅲ",
+            "name": "Improved Iron Axe III",
             "Weapon_Number": 12
         },
         {
-            "name": "合金製完成劍斧Ⅰ",
+            "name": "Perfected Alloy Axe I",
             "Weapon_Number": 13
         },
         {
-            "name": "合金製完成劍斧Ⅱ",
+            "name": "Perfected Alloy Axe II",
             "Weapon_Number": 14
         },
         {
-            "name": "滅盡龍斬斧",
+            "name": "Nergal Gash",
             "Weapon_Number": 15
         },
         {
-            "name": "斷滅的一閃",
+            "name": "Dying Light",
             "Weapon_Number": 16
         },
         {
-            "name": "優雅戰斧Ⅰ",
+            "name": "Glacial Axe I",
             "Weapon_Number": 17
         },
         {
-            "name": "優雅戰斧Ⅱ",
+            "name": "Glacial Axe II",
             "Weapon_Number": 18
         },
         {
-            "name": "凶靈之柱",
+            "name": "Frostreaver",
             "Weapon_Number": 19
         },
         {
-            "name": "亡靈之柱",
+            "name": "Legia Frostreaver",
             "Weapon_Number": 20
         },
         {
-            "name": "閃電斧Ⅰ",
+            "name": "Thunder Axe I",
             "Weapon_Number": 21
         },
         {
-            "name": "閃電斧Ⅱ",
+            "name": "Thunder Axe II",
             "Weapon_Number": 22
         },
         {
-            "name": "雷光迅斧Ⅰ",
+            "name": "Lightning Chopper I",
             "Weapon_Number": 23
         },
         {
-            "name": "雷光迅斧Ⅱ",
+            "name": "Lightning Chopper II",
             "Weapon_Number": 24
         },
         {
-            "name": "雷光迅斧Ⅲ",
+            "name": "Lightning Chopper III",
             "Weapon_Number": 25
         },
         {
-            "name": "動力迅斧Ⅰ",
+            "name": "Motor Chopper I",
             "Weapon_Number": 26
         },
         {
-            "name": "動力迅斧Ⅱ",
+            "name": "Motor Chopper II",
             "Weapon_Number": 27
         },
         {
-            "name": "凶豺龍劍斧Ⅰ",
+            "name": "Jagras Axe I",
             "Weapon_Number": 28
         },
         {
-            "name": "凶豺龍劍斧Ⅱ",
+            "name": "Jagras Axe II",
             "Weapon_Number": 29
         },
         {
-            "name": "凶豺龍劍斧Ⅲ",
+            "name": "Jagras Axe III",
             "Weapon_Number": 30
         },
         {
-            "name": "凶豺龍掠奪者Ⅰ",
+            "name": "Jagras Raider I",
             "Weapon_Number": 31
         },
         {
-            "name": "凶豺龍掠奪者Ⅱ",
+            "name": "Jagras Raider II",
             "Weapon_Number": 32
         },
         {
-            "name": "凶豺龍掠奪者Ⅲ",
+            "name": "Jagras Raider III",
             "Weapon_Number": 33
         },
         {
-            "name": "爆鱗龍劍斧Ⅰ",
+            "name": "Bazel Raider I",
             "Weapon_Number": 34
         },
         {
-            "name": "爆鱗龍劍斧Ⅱ",
+            "name": "Bazel Raider II",
             "Weapon_Number": 35
         },
         {
-            "name": "火龍劍斧Ⅰ",
+            "name": "Rathalos Axe I",
             "Weapon_Number": 36
         },
         {
-            "name": "火龍劍斧Ⅱ",
+            "name": "Rathalos Axe II",
             "Weapon_Number": 37
         },
         {
-            "name": "火龍斧飛龍牙Ⅰ",
+            "name": "Rathbringer Axe I",
             "Weapon_Number": 38
         },
         {
-            "name": "火龍斧飛龍牙Ⅱ",
+            "name": "Rathbringer Axe II",
             "Weapon_Number": 39
         },
         {
-            "name": "骨製劍斧Ⅰ",
+            "name": "Bone Axe I",
             "Weapon_Number": 40
         },
         {
-            "name": "骨製劍斧Ⅱ",
+            "name": "Bone Axe II",
             "Weapon_Number": 41
         },
         {
-            "name": "骨製劍斧Ⅲ",
+            "name": "Bone Axe III",
             "Weapon_Number": 42
         },
         {
-            "name": "骨製斬斧Ⅰ",
+            "name": "Bone Smasher I",
             "Weapon_Number": 43
         },
         {
-            "name": "骨製斬斧Ⅱ",
+            "name": "Bone Smasher II",
             "Weapon_Number": 44
         },
         {
-            "name": "骨製斬斧Ⅲ",
+            "name": "Bone Smasher III",
             "Weapon_Number": 45
         },
         {
-            "name": "重擊斬斧Ⅰ",
+            "name": "Power Smasher I",
             "Weapon_Number": 46
         },
         {
-            "name": "重擊斬斧Ⅱ",
+            "name": "Power Smasher II",
             "Weapon_Number": 47
         },
         {
-            "name": "屍套龍劍斧Ⅰ",
+            "name": "Hazak Demios I",
             "Weapon_Number": 48
         },
         {
-            "name": "屍套龍劍斧Ⅱ",
+            "name": "Hazak Demios II",
             "Weapon_Number": 49
         },
         {
-            "name": "泥岩戰斧Ⅰ",
+            "name": "Madness Axe I",
             "Weapon_Number": 50
         },
         {
-            "name": "泥岩戰斧Ⅱ",
+            "name": "Madness Axe II",
             "Weapon_Number": 51
         },
         {
-            "name": "泥岩戰斧Ⅲ",
+            "name": "Madness Axe III",
             "Weapon_Number": 52
         },
         {
-            "name": "泥岩龍劍斧Ⅰ",
+            "name": "Jyura Drought I",
             "Weapon_Number": 53
         },
         {
-            "name": "泥岩龍劍斧Ⅱ",
+            "name": "Jyura Drought II",
             "Weapon_Number": 54
         },
         {
-            "name": "泥岩龍劍斧Ⅲ",
+            "name": "Jyura Drought III",
             "Weapon_Number": 55
         },
         {
-            "name": "浮空龍大斧Ⅰ",
+            "name": "Lumu Axe I",
             "Weapon_Number": 56
         },
         {
-            "name": "浮空龍大斧Ⅱ",
+            "name": "Lumu Axe II",
             "Weapon_Number": 57
         },
         {
-            "name": "浮空龍斬斧Ⅰ",
+            "name": "Lumu Smasher I",
             "Weapon_Number": 58
         },
         {
-            "name": "浮空龍斬斧Ⅱ",
+            "name": "Lumu Smasher II",
             "Weapon_Number": 59
         },
         {
-            "name": "浮空龍斬斧Ⅲ",
+            "name": "Lumu Smasher III",
             "Weapon_Number": 60
         },
         {
-            "name": "土砂龍斧Ⅰ",
+            "name": "Carapace Axe I",
             "Weapon_Number": 61
         },
         {
-            "name": "土砂龍斧Ⅱ",
+            "name": "Carapace Axe II",
             "Weapon_Number": 62
         },
         {
-            "name": "土砂龍斧Ⅲ",
+            "name": "Carapace Axe III",
             "Weapon_Number": 63
         },
         {
-            "name": "土砂龍劍斧Ⅰ",
+            "name": "Barroth Grinder I",
             "Weapon_Number": 64
         },
         {
-            "name": "土砂龍劍斧Ⅱ",
+            "name": "Barroth Grinder II",
             "Weapon_Number": 65
         },
         {
-            "name": "土砂龍劍斧Ⅲ",
+            "name": "Barroth Grinder III",
             "Weapon_Number": 66
         },
         {
-            "name": "爆鎚戰斧Ⅰ",
+            "name": "Diablos Axe I",
             "Weapon_Number": 67
         },
         {
-            "name": "爆鎚戰斧Ⅱ",
+            "name": "Diablos Axe II",
             "Weapon_Number": 68
         },
         {
-            "name": "暴君斧",
+            "name": "Axe Semper Tyrannis",
             "Weapon_Number": 69
         },
         {
-            "name": "命運劍斧",
+            "name": "Axe of Thanatos",
             "Weapon_Number": 70
         },
         {
-            "name": "惡靈",
+            "name": "Axe of Demons",
             "Weapon_Number": 71
         },
         {
-            "name": "蠻顎龍斬斧",
+            "name": "Flammenbeil",
             "Weapon_Number": 72
         },
         {
-            "name": "蠻顎龍斬斧改",
+            "name": "Flammenbeil+",
             "Weapon_Number": 73
         },
         {
-            "name": "蠻顎劍斧",
+            "name": "Gnashing Flammenbeil",
             "Weapon_Number": 74
         },
         {
-            "name": "龍骨劍斧Ⅰ",
+            "name": "Dragonbone Slicer I",
             "Weapon_Number": 75
         },
         {
-            "name": "龍骨劍斧Ⅱ",
+            "name": "Dragonbone Slicer II",
             "Weapon_Number": 76
         },
         {
-            "name": "龍骨劍斧Ⅲ",
+            "name": "Dragonbone Slicer III",
             "Weapon_Number": 77
         },
         {
-            "name": "雷斧",
+            "name": "Peal",
             "Weapon_Number": 78
         },
         {
-            "name": "雷斧改",
+            "name": "Peal+",
             "Weapon_Number": 79
         },
         {
-            "name": "斷雷斧麒麟",
+            "name": "Kirin Thunderpeal",
             "Weapon_Number": 80
         },
         {
-            "name": "黑鋼劍斧Ⅰ",
+            "name": "Blacksteel Switch Axe I",
             "Weapon_Number": 81
         },
         {
-            "name": "黑鋼劍斧Ⅱ",
+            "name": "Blacksteel Switch Axe II",
             "Weapon_Number": 82
         },
         {
-            "name": "炎王劍斧",
+            "name": "Teostra's Arx",
             "Weapon_Number": 83
         },
         {
-            "name": "炎王城塞",
+            "name": "Teostra's Castle",
             "Weapon_Number": 84
         },
         {
-            "name": "冥燈龍劍斧",
+            "name": "Xano Martshu",
             "Weapon_Number": 85
         },
         {
-            "name": "暴君",
+            "name": "Tyrannos",
             "Weapon_Number": 86
         },
         {
-            "name": "恐怖暴君",
+            "name": "Terror Tyrannos",
             "Weapon_Number": 87
         },
         {
-            "name": "金色的劍斧‧雷",
+            "name": "Golden sword axe‧Thunder",
             "Weapon_Number": 88
         },
         {
-            "name": "金色的劍斧‧麻痺",
+            "name": "Golden sword axe‧Paralysis",
             "Weapon_Number": 89
         },
         {
-            "name": "金色的劍斧‧睡眠",
+            "name": "Golden sword axe‧sleep",
             "Weapon_Number": 90
         },
         {
-            "name": "金色的劍斧‧賊",
+            "name": "Golden sword axe‧賊",
             "Weapon_Number": 91
         },
         {
-            "name": "金色的劍斧‧泥魚",
+            "name": "Golden sword axe‧泥魚",
             "Weapon_Number": 92
         },
         {
-            "name": "金色的劍斧‧土砂",
+            "name": "Golden sword axe‧土砂",
             "Weapon_Number": 93
         },
         {
-            "name": "金色的劍斧‧浮空",
+            "name": "Golden sword axe‧浮空",
             "Weapon_Number": 94
         },
         {
-            "name": "金色的劍斧‧風漂",
+            "name": "Golden sword axe‧風漂",
             "Weapon_Number": 95
         },
         {
-            "name": "金色的劍斧‧屍套",
+            "name": "Golden sword axe‧屍套",
             "Weapon_Number": 96
         },
         {
-            "name": "金色的劍斧‧王",
+            "name": "Golden sword axe‧王",
             "Weapon_Number": 97
         },
         {
-            "name": "金色的劍斧‧角",
+            "name": "Golden sword axe‧角",
             "Weapon_Number": 98
         },
         {
-            "name": "金色的劍斧‧爆鎚",
+            "name": "Golden sword axe‧爆鎚",
             "Weapon_Number": 99
         },
         {
-            "name": "金色的劍斧‧爆鱗",
+            "name": "Golden sword axe‧爆鱗",
             "Weapon_Number": 100
         },
         {
-            "name": "鎧羅劍斧‧賊",
+            "name": "Armored Luo Jianfu‧賊",
             "Weapon_Number": 101
         },
         {
-            "name": "鎧羅劍斧‧泥魚",
+            "name": "Armored Luo Jianfu‧泥魚",
             "Weapon_Number": 102
         },
         {
-            "name": "鎧羅劍斧‧土砂",
+            "name": "Armored Luo Jianfu‧土砂",
             "Weapon_Number": 103
         },
         {
-            "name": "鎧羅劍斧‧浮空",
+            "name": "Armored Luo Jianfu‧浮空",
             "Weapon_Number": 104
         },
         {
-            "name": "鎧羅劍斧‧風漂",
+            "name": "Armored Luo Jianfu‧風漂",
             "Weapon_Number": 105
         },
         {
-            "name": "鎧羅劍斧‧屍套",
+            "name": "Armored Luo Jianfu‧屍套",
             "Weapon_Number": 106
         },
         {
-            "name": "鎧羅劍斧‧王",
+            "name": "Armored Luo Jianfu‧王",
             "Weapon_Number": 107
         },
         {
-            "name": "鎧羅劍斧‧角",
+            "name": "Armored Luo Jianfu‧角",
             "Weapon_Number": 108
         },
         {
-            "name": "鎧羅劍斧‧爆鎚",
+            "name": "Armored Luo Jianfu‧爆鎚",
             "Weapon_Number": 109
         },
         {
-            "name": "鎧羅劍斧‧爆鱗",
+            "name": "Armored Luo Jianfu‧爆鱗",
             "Weapon_Number": 110
         },
         {
-            "name": "鎧羅劍斧‧雷",
+            "name": "Armored Luo Jianfu‧Thunder",
             "Weapon_Number": 111
         },
         {
-            "name": "鎧羅劍斧‧麻痺",
+            "name": "Armored Luo Jianfu‧Paralysis",
             "Weapon_Number": 112
         },
         {
-            "name": "鎧羅劍斧‧睡眠",
+            "name": "Armored Luo Jianfu‧sleep",
             "Weapon_Number": 113
         },
         {
-            "name": "皇后斧",
+            "name": "Queen's axe",
             "Weapon_Number": 114
         },
         {
-            "name": "皇后斧‧炎妃",
+            "name": "Queen's axe‧炎妃",
             "Weapon_Number": 115
         },
         {
-            "name": "皇后斧‧滅盡",
+            "name": "Queen's axe‧滅盡",
             "Weapon_Number": 116
         },
         {
-            "name": "皇后斧‧冥燈",
+            "name": "Queen's axe‧冥燈",
             "Weapon_Number": 117
         },
         {
-            "name": "鎧羅劍斧‧水",
+            "name": "Armored Luo Jianfu‧water",
             "Weapon_Number": 118
         }
     ]

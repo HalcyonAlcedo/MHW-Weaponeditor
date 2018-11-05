@@ -1,444 +1,443 @@
 {
     "Weapon": "重弩",
-    "Data": [
-        {
-            "name": "鐵製突擊弩Ⅰ",
+    "Data": [{
+            "name": "Iron Assault I",
             "Weapon_Number": 8
         },
         {
-            "name": "鐵製突擊弩Ⅱ",
+            "name": "Iron Assault II",
             "Weapon_Number": 9
         },
         {
-            "name": "鐵製突擊弩Ⅲ",
+            "name": "Iron Assault III",
             "Weapon_Number": 10
         },
         {
-            "name": "鋼鐵突擊弩Ⅰ",
+            "name": "Steel Assault I",
             "Weapon_Number": 11
         },
         {
-            "name": "鋼鐵突擊弩Ⅱ",
+            "name": "Steel Assault II",
             "Weapon_Number": 12
         },
         {
-            "name": "鋼鐵突擊弩Ⅲ",
+            "name": "Steel Assault III",
             "Weapon_Number": 13
         },
         {
-            "name": "鉻鋼突擊弩Ⅰ",
+            "name": "Chrome Assault I",
             "Weapon_Number": 14
         },
         {
-            "name": "鉻鋼突擊弩Ⅱ",
+            "name": "Chrome Assault II",
             "Weapon_Number": 15
         },
         {
-            "name": "滅盡龍重弩槍",
+            "name": "Nergal Roar",
             "Weapon_Number": 16
         },
         {
-            "name": "擊滅砲火",
+            "name": "Destruction's Fusillade",
             "Weapon_Number": 17
         },
         {
-            "name": "水流突擊弩Ⅰ",
+            "name": "Aqua Assault I",
             "Weapon_Number": 18
         },
         {
-            "name": "水流突擊弩Ⅱ",
+            "name": "Aqua Assault II",
             "Weapon_Number": 19
         },
         {
-            "name": "水流突擊弩Ⅲ",
+            "name": "Aqua Assault III",
             "Weapon_Number": 20
         },
         {
-            "name": "激流加農砲Ⅰ",
+            "name": "Water Cannon I",
             "Weapon_Number": 21
         },
         {
-            "name": "激流加農砲Ⅱ",
+            "name": "Water Cannon II",
             "Weapon_Number": 22
         },
         {
-            "name": "激流加農砲Ⅲ",
+            "name": "Water Cannon III",
             "Weapon_Number": 23
         },
         {
-            "name": "閃耀突擊弩Ⅰ",
+            "name": "Luminous Assault I",
             "Weapon_Number": 24
         },
         {
-            "name": "閃耀突擊弩Ⅱ",
+            "name": "Luminous Assault II",
             "Weapon_Number": 25
         },
         {
-            "name": "長尾重裝弩Ⅰ",
+            "name": "Arma Destroyer I",
             "Weapon_Number": 26
         },
         {
-            "name": "長尾重裝弩Ⅱ",
+            "name": "Arma Destroyer II",
             "Weapon_Number": 27
         },
         {
-            "name": "長尾重裝弩Ⅲ",
+            "name": "Arma Destroyer III",
             "Weapon_Number": 28
         },
         {
-            "name": "薔薇",
+            "name": "Shattercryst",
             "Weapon_Number": 29
         },
         {
-            "name": "薔薇改",
+            "name": "Shattercryst+",
             "Weapon_Number": 30
         },
         {
-            "name": "冰凌薔薇",
+            "name": "Legia Shattercryst",
             "Weapon_Number": 31
         },
         {
-            "name": "凶豺龍突擊弩Ⅰ",
+            "name": "Jagras Assault I",
             "Weapon_Number": 32
         },
         {
-            "name": "凶豺龍突擊弩Ⅱ",
+            "name": "Jagras Assault II",
             "Weapon_Number": 33
         },
         {
-            "name": "凶豺龍突擊弩Ⅲ",
+            "name": "Jagras Assault III",
             "Weapon_Number": 34
         },
         {
-            "name": "凶豺龍加農砲Ⅰ",
+            "name": "Jagras Cannon I",
             "Weapon_Number": 35
         },
         {
-            "name": "凶豺龍加農砲Ⅱ",
+            "name": "Jagras Cannon II",
             "Weapon_Number": 36
         },
         {
-            "name": "牙龍重弩槍【暴食】",
+            "name": "Gluttonous Fangcannon",
             "Weapon_Number": 37
         },
         {
-            "name": "火焰突擊弩Ⅰ",
+            "name": "Blazing Assault I",
             "Weapon_Number": 38
         },
         {
-            "name": "火焰突擊弩Ⅱ",
+            "name": "Blazing Assault II",
             "Weapon_Number": 39
         },
         {
-            "name": "蠻顎龍火砲",
+            "name": "Flammenkanone",
             "Weapon_Number": 40
         },
         {
-            "name": "蠻顎重弩黑火砲",
+            "name": "Gnashing Flammenkanone",
             "Weapon_Number": 41
         },
         {
-            "name": "骨製發射器Ⅰ",
+            "name": "Bone Shooter I",
             "Weapon_Number": 42
         },
         {
-            "name": "骨製發射器Ⅱ",
+            "name": "Bone Shooter II",
             "Weapon_Number": 43
         },
         {
-            "name": "骨製發射器Ⅲ",
+            "name": "Bone Shooter III",
             "Weapon_Number": 44
         },
         {
-            "name": "堅骨發射器Ⅰ",
+            "name": "Heavy Shooter I",
             "Weapon_Number": 45
         },
         {
-            "name": "堅骨發射器Ⅱ",
+            "name": "Heavy Shooter II",
             "Weapon_Number": 46
         },
         {
-            "name": "堅骨發射器Ⅲ",
+            "name": "Heavy Shooter III",
             "Weapon_Number": 47
         },
         {
-            "name": "動能發射器Ⅰ",
+            "name": "Power Shooter I",
             "Weapon_Number": 48
         },
         {
-            "name": "動能發射器Ⅱ",
+            "name": "Power Shooter II",
             "Weapon_Number": 49
         },
         {
-            "name": "角龍發射器Ⅰ",
+            "name": "Diablos Shooter I",
             "Weapon_Number": 50
         },
         {
-            "name": "角龍發射器Ⅱ",
+            "name": "Diablos Shooter II",
             "Weapon_Number": 51
         },
         {
-            "name": "決鬥者",
+            "name": "Dual Threat",
             "Weapon_Number": 52
         },
         {
-            "name": "新造重虎槍",
+            "name": "Nero's Blazooka",
             "Weapon_Number": 53
         },
         {
-            "name": "重角轟砲",
+            "name": "Griffon Blazooka",
             "Weapon_Number": 54
         },
         {
-            "name": "花朵發射器Ⅰ",
+            "name": "Blooming Shooter I",
             "Weapon_Number": 55
         },
         {
-            "name": "花朵發射器Ⅱ",
+            "name": "Blooming Shooter II",
             "Weapon_Number": 56
         },
         {
-            "name": "花朵發射器Ⅲ",
+            "name": "Blooming Shooter III",
             "Weapon_Number": 57
         },
         {
-            "name": "曼陀羅爆破炮Ⅰ",
+            "name": "Datura Blaster I",
             "Weapon_Number": 58
         },
         {
-            "name": "曼陀羅爆破砲Ⅱ",
+            "name": "Datura Blaster II",
             "Weapon_Number": 59
         },
         {
-            "name": "曼陀羅爆破砲Ⅲ",
+            "name": "Datura Blaster III",
             "Weapon_Number": 60
         },
         {
-            "name": "尖刺發射器Ⅰ",
+            "name": "Spiked Shooter I",
             "Weapon_Number": 61
         },
         {
-            "name": "尖刺發射器Ⅱ",
+            "name": "Spiked Shooter II",
             "Weapon_Number": 62
         },
         {
-            "name": "骨鎚龍加農砲Ⅰ",
+            "name": "Baan Roar I",
             "Weapon_Number": 63
         },
         {
-            "name": "骨鎚龍加農砲Ⅱ",
+            "name": "Baan Roar II",
             "Weapon_Number": 64
         },
         {
-            "name": "骨鎚龍加農砲Ⅲ",
+            "name": "Baan Roar III",
             "Weapon_Number": 65
         },
         {
-            "name": "岩賊龍砲Ⅰ",
+            "name": "Gama Cannon I",
             "Weapon_Number": 66
         },
         {
-            "name": "岩賊龍砲Ⅱ",
+            "name": "Gama Cannon II",
             "Weapon_Number": 67
         },
         {
-            "name": "脈衝射手Ⅰ",
+            "name": "Pulsar Shooter I",
             "Weapon_Number": 68
         },
         {
-            "name": "脈衝射手Ⅱ",
+            "name": "Pulsar Shooter II",
             "Weapon_Number": 69
         },
         {
-            "name": "脈衝射手Ⅲ",
+            "name": "Pulsar Shooter III",
             "Weapon_Number": 70
         },
         {
-            "name": "飛雷龍之針Ⅰ",
+            "name": "Kadachi Lion I",
             "Weapon_Number": 71
         },
         {
-            "name": "飛雷龍之針Ⅱ",
+            "name": "Kadachi Lion II",
             "Weapon_Number": 72
         },
         {
-            "name": "飛雷龍之針Ⅲ",
+            "name": "Kadachi Lion III",
             "Weapon_Number": 73
         },
         {
-            "name": "龍骨砲Ⅰ",
+            "name": "Dragonbone Cannon I",
             "Weapon_Number": 74
         },
         {
-            "name": "龍骨砲Ⅱ",
+            "name": "Dragonbone Cannon II",
             "Weapon_Number": 75
         },
         {
-            "name": "龍骨砲Ⅲ",
+            "name": "Dragonbone Cannon III",
             "Weapon_Number": 76
         },
         {
-            "name": "熔山龍重弩槍Ⅰ",
+            "name": "Magda Gemitus I",
             "Weapon_Number": 77
         },
         {
-            "name": "熔山龍重弩槍Ⅱ",
+            "name": "Magda Gemitus II",
             "Weapon_Number": 78
         },
         {
-            "name": "迅雷狙擊弩",
+            "name": "Quickcaster",
             "Weapon_Number": 79
         },
         {
-            "name": "迅雷狙擊弩改",
+            "name": "Quickcaster+",
             "Weapon_Number": 80
         },
         {
-            "name": "迅雷閃擊",
+            "name": "Quickquiver",
             "Weapon_Number": 81
         },
         {
-            "name": "黑鋼砲筒Ⅰ",
+            "name": "Blacksteel Cannon I",
             "Weapon_Number": 82
         },
         {
-            "name": "黑鋼砲筒Ⅱ",
+            "name": "Blacksteel Cannon II",
             "Weapon_Number": 83
         },
         {
-            "name": "炎王大砲",
+            "name": "Teostra's Artillery",
             "Weapon_Number": 84
         },
         {
-            "name": "炎王灼紅巨砲",
+            "name": "Teostra's Flames",
             "Weapon_Number": 85
         },
         {
-            "name": "冥燈龍重弩槍",
+            "name": "Xeno Jiiqa",
             "Weapon_Number": 86
         },
         {
-            "name": "暴食的重弩",
+            "name": "Gluttonous Cannon",
             "Weapon_Number": 87
         },
         {
-            "name": "黑暗左右",
+            "name": "Dark Devourer",
             "Weapon_Number": 88
         },
         {
-            "name": "金色的砲筒‧援擊",
+            "name": "Golden barrel‧援擊",
             "Weapon_Number": 89
         },
         {
-            "name": "金色的砲筒‧爆擊",
+            "name": "Golden barrel‧爆擊",
             "Weapon_Number": 90
         },
         {
-            "name": "金色的砲筒‧冷擊",
+            "name": "Golden barrel‧冷擊",
             "Weapon_Number": 91
         },
         {
-            "name": "金色的砲筒‧賊",
+            "name": "Golden barrel‧賊",
             "Weapon_Number": 92
         },
         {
-            "name": "金色的砲筒‧毒妖",
+            "name": "Golden barrel‧毒妖",
             "Weapon_Number": 93
         },
         {
-            "name": "金色的砲筒‧飛雷",
+            "name": "Golden barrel‧飛雷",
             "Weapon_Number": 94
         },
         {
-            "name": "金色的砲筒‧蠻顎",
+            "name": "Golden barrel‧蠻顎",
             "Weapon_Number": 95
         },
         {
-            "name": "金色的砲筒‧眩",
+            "name": "Golden barrel‧眩",
             "Weapon_Number": 96
         },
         {
-            "name": "金色的砲筒‧骨鎚",
+            "name": "Golden barrel‧骨鎚",
             "Weapon_Number": 97
         },
         {
-            "name": "金色的砲筒‧角",
+            "name": "Golden barrel‧角",
             "Weapon_Number": 98
         },
         {
-            "name": "金色的砲筒‧岩賊",
+            "name": "Golden barrel‧岩賊",
             "Weapon_Number": 99
         },
         {
-            "name": "金色的砲筒‧熔山",
+            "name": "Golden barrel‧熔山",
             "Weapon_Number": 100
         },
         {
-            "name": "鎧羅突擊弩‧賊",
+            "name": "Armor assault crossbow‧賊",
             "Weapon_Number": 101
         },
         {
-            "name": "鎧羅突擊弩‧毒妖",
+            "name": "Armor assault crossbow‧毒妖",
             "Weapon_Number": 102
         },
         {
-            "name": "鎧羅突擊弩‧飛雷",
+            "name": "Armor assault crossbow‧飛雷",
             "Weapon_Number": 103
         },
         {
-            "name": "鎧羅突擊弩‧蠻顎",
+            "name": "Armor assault crossbow‧蠻顎",
             "Weapon_Number": 104
         },
         {
-            "name": "鎧羅突擊弩‧眩",
+            "name": "Armor assault crossbow‧眩",
             "Weapon_Number": 105
         },
         {
-            "name": "鎧羅突擊弩‧骨鎚",
+            "name": "Armor assault crossbow‧骨鎚",
             "Weapon_Number": 106
         },
         {
-            "name": "鎧羅突擊弩‧角",
+            "name": "Armor assault crossbow‧角",
             "Weapon_Number": 107
         },
         {
-            "name": "鎧羅突擊弩‧岩賊",
+            "name": "Armor assault crossbow‧岩賊",
             "Weapon_Number": 108
         },
         {
-            "name": "鎧羅突擊弩‧熔山",
+            "name": "Armor assault crossbow‧熔山",
             "Weapon_Number": 109
         },
         {
-            "name": "鎧羅突擊弩‧援擊",
+            "name": "Armor assault crossbow‧援擊",
             "Weapon_Number": 110
         },
         {
-            "name": "鎧羅突擊弩‧爆擊",
+            "name": "Armor assault crossbow‧爆擊",
             "Weapon_Number": 111
         },
         {
-            "name": "鎧羅突擊弩‧冷擊",
+            "name": "Armor assault crossbow‧冷擊",
             "Weapon_Number": 112
         },
         {
-            "name": "皇后加農砲",
+            "name": "Queen cannon",
             "Weapon_Number": 113
         },
         {
-            "name": "皇后加農砲‧炎妃",
+            "name": "Queen cannon‧炎妃",
             "Weapon_Number": 114
         },
         {
-            "name": "皇后加農砲‧滅盡",
+            "name": "Queen cannon‧滅盡",
             "Weapon_Number": 115
         },
         {
-            "name": "皇后加農砲‧冥燈",
+            "name": "Queen cannon‧冥燈",
             "Weapon_Number": 116
         },
         {
-            "name": "鎧羅突擊弩‧狙擊",
+            "name": "Armor assault crossbow‧狙擊",
             "Weapon_Number": 117
         }
     ]

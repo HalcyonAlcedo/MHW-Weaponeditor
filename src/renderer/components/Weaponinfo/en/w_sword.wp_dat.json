@@ -1,475 +1,475 @@
 {
     "Weapon": "双刀",
     "Data": [{
-            "name": "雙刀Ⅰ",
+            "name": "Matched Slicers I",
             "Weapon_Number": 8
         },
         {
-            "name": "雙刀Ⅱ",
+            "name": "Matched Slicers II",
             "Weapon_Number": 9
         },
         {
-            "name": "雙刀Ⅲ",
+            "name": "Matched Slicers III",
             "Weapon_Number": 10
         },
         {
-            "name": "決鬥雙刀Ⅰ",
+            "name": "Dual Slicers I",
             "Weapon_Number": 11
         },
         {
-            "name": "決鬥雙刀Ⅱ",
+            "name": "Dual Slicers II",
             "Weapon_Number": 12
         },
         {
-            "name": "決鬥雙刀Ⅲ",
+            "name": "Dual Slicers III",
             "Weapon_Number": 13
         },
         {
-            "name": "鉻鋼雙刀Ⅰ",
+            "name": "Chrome Slicers I",
             "Weapon_Number": 14
         },
         {
-            "name": "鉻鋼雙刀Ⅱ",
+            "name": "Chrome Slicers II",
             "Weapon_Number": 15
         },
         {
-            "name": "滅盡龍裂痕",
+            "name": "Nergal Gouge",
             "Weapon_Number": 16
         },
         {
-            "name": "殘滅之爪",
+            "name": "Decimation Claws",
             "Weapon_Number": 17
         },
         {
-            "name": "閃耀小刀Ⅰ",
+            "name": "Luminous Daggers I",
             "Weapon_Number": 18
         },
         {
-            "name": "閃耀小刀Ⅱ",
+            "name": "Luminous Daggers II",
             "Weapon_Number": 19
         },
         {
-            "name": "決鬥者對劍Ⅰ",
+            "name": "Dual Destroyers I",
             "Weapon_Number": 20
         },
         {
-            "name": "決鬥者對劍Ⅱ",
+            "name": "Dual Destroyers II",
             "Weapon_Number": 21
         },
         {
-            "name": "決鬥者對劍Ⅲ",
+            "name": "Dual Destroyers III",
             "Weapon_Number": 22
         },
         {
-            "name": "爆鱗手斧",
+            "name": "Rookslayer  Handaxes",
             "Weapon_Number": 23
         },
         {
-            "name": "爆鱗雙斧赤紅巨星",
+            "name": "Bazelhawk Rookslayer",
             "Weapon_Number": 24
         },
         {
-            "name": "冰結小刀Ⅰ",
+            "name": "Freeze Daggers I",
             "Weapon_Number": 25
         },
         {
-            "name": "冰結小刀Ⅱ",
+            "name": "Freeze Daggers II",
             "Weapon_Number": 26
         },
         {
-            "name": "冰結鏈劍Ⅰ",
+            "name": "Freeze Chain I",
             "Weapon_Number": 27
         },
         {
-            "name": "冰結鏈劍Ⅱ",
+            "name": "Freeze Chain II",
             "Weapon_Number": 28
         },
         {
-            "name": "釘鉤小刀Ⅰ",
+            "name": "Rending Beaks I",
             "Weapon_Number": 29
         },
         {
-            "name": "釘鉤小刀Ⅱ",
+            "name": "Rending Beaks II",
             "Weapon_Number": 30
         },
         {
-            "name": "釘鉤小刀Ⅲ",
+            "name": "Rending Beaks III",
             "Weapon_Number": 31
         },
         {
-            "name": "奧秘雙劍Ⅰ",
+            "name": "Arcanaria I",
             "Weapon_Number": 32
         },
         {
-            "name": "奧秘雙劍Ⅱ",
+            "name": "Arcanaria II",
             "Weapon_Number": 33
         },
         {
-            "name": "奧秘雙劍Ⅲ",
+            "name": "Arcanaria III",
             "Weapon_Number": 34
         },
         {
-            "name": "秩序細劍",
+            "name": "Sworn Rapiers",
             "Weapon_Number": 35
         },
         {
-            "name": "秩序細劍改",
+            "name": "Sworn Rapiers+",
             "Weapon_Number": 36
         },
         {
-            "name": "神聖佩劍",
+            "name": "Holy Sabbers",
             "Weapon_Number": 37
         },
         {
-            "name": "骨斧Ⅰ",
+            "name": "Bone Hatchets I",
             "Weapon_Number": 38
         },
         {
-            "name": "骨斧Ⅱ",
+            "name": "Bone Hatchets II",
             "Weapon_Number": 39
         },
         {
-            "name": "骨斧Ⅲ",
+            "name": "Bone Hatchets III",
             "Weapon_Number": 40
         },
         {
-            "name": "狂野戰斧Ⅰ",
+            "name": "Wild Hatchets I",
             "Weapon_Number": 41
         },
         {
-            "name": "狂野戰斧Ⅱ",
+            "name": "Wild Hatchets II",
             "Weapon_Number": 42
         },
         {
-            "name": "狂野戰斧Ⅲ",
+            "name": "Wild Hatchets III",
             "Weapon_Number": 43
         },
         {
-            "name": "強斧Ⅰ",
+            "name": "Strong Hatchets I",
             "Weapon_Number": 44
         },
         {
-            "name": "強斧Ⅱ",
+            "name": "Strong Hatchets II",
             "Weapon_Number": 45
         },
         {
-            "name": "火焰戰斧Ⅰ",
+            "name": "Blazing Hatchets I",
             "Weapon_Number": 46
         },
         {
-            "name": "火焰戰斧Ⅱ",
+            "name": "Blazing Hatchets II",
             "Weapon_Number": 47
         },
         {
-            "name": "蠻顎龍颶風Ⅰ",
+            "name": "Anja Cyclone I",
             "Weapon_Number": 48
         },
         {
-            "name": "蠻顎龍颶風Ⅱ",
+            "name": "Anja Cyclone II",
             "Weapon_Number": 49
         },
         {
-            "name": "蠻顎龍颶風Ⅲ",
+            "name": "Anja Cyclone III",
             "Weapon_Number": 50
         },
         {
-            "name": "爆鎚戰斧Ⅰ",
+            "name": "Diablos Hatchets I",
             "Weapon_Number": 51
         },
         {
-            "name": "爆鎚戰斧Ⅱ",
+            "name": "Diablos Hatchets II",
             "Weapon_Number": 52
         },
         {
-            "name": "爆鎚棍棒Ⅰ",
+            "name": "Diablos Clubs I",
             "Weapon_Number": 53
         },
         {
-            "name": "爆鎚棍棒Ⅱ",
+            "name": "Diablos Clubs II",
             "Weapon_Number": 54
         },
         {
-            "name": "泥岩利劍Ⅰ",
+            "name": "Madness Pangas I",
             "Weapon_Number": 55
         },
         {
-            "name": "泥岩利劍Ⅱ",
+            "name": "Madness Pangas II",
             "Weapon_Number": 56
         },
         {
-            "name": "泥岩利劍Ⅲ",
+            "name": "Madness Pangas III",
             "Weapon_Number": 57
         },
         {
-            "name": "泥岩龍斬斧Ⅰ",
+            "name": "Jyura Hatchets I",
             "Weapon_Number": 58
         },
         {
-            "name": "泥岩龍斬斧Ⅱ",
+            "name": "Jyura Hatchets II",
             "Weapon_Number": 59
         },
         {
-            "name": "泥岩龍斬斧Ⅲ",
+            "name": "Jyura Hatchets III",
             "Weapon_Number": 60
         },
         {
-            "name": "熔岩颶風Ⅰ",
+            "name": "Lava Cyclone I",
             "Weapon_Number": 61
         },
         {
-            "name": "熔岩颶風Ⅱ",
+            "name": "Lava Cyclone II",
             "Weapon_Number": 62
         },
         {
-            "name": "巨甲蟲利劍Ⅰ",
+            "name": "Taurus Pangas I",
             "Weapon_Number": 63
         },
         {
-            "name": "巨甲蟲利劍Ⅱ",
+            "name": "Taurus Pangas II",
             "Weapon_Number": 64
         },
         {
-            "name": "黑色收割者Ⅰ",
+            "name": "Dark Ripper I",
             "Weapon_Number": 65
         },
         {
-            "name": "黑色收割者Ⅱ",
+            "name": "Dark Ripper II",
             "Weapon_Number": 66
         },
         {
-            "name": "黑色收割者Ⅲ",
+            "name": "Dark Ripper III",
             "Weapon_Number": 67
         },
         {
-            "name": "脈衝戰斧Ⅰ",
+            "name": "Pulsar Hatchets I",
             "Weapon_Number": 68
         },
         {
-            "name": "脈衝戰斧Ⅱ",
+            "name": "Pulsar Hatchets II",
             "Weapon_Number": 69
         },
         {
-            "name": "脈衝戰斧Ⅲ",
+            "name": "Pulsar Hatchets III",
             "Weapon_Number": 70
         },
         {
-            "name": "飛雷龍之爪Ⅰ",
+            "name": "Kadachi Claws I",
             "Weapon_Number": 71
         },
         {
-            "name": "飛雷龍之爪Ⅱ",
+            "name": "Kadachi Claws II",
             "Weapon_Number": 72
         },
         {
-            "name": "飛雷龍之爪Ⅲ",
+            "name": "Kadachi Claws III",
             "Weapon_Number": 73
         },
         {
-            "name": "慘爪戰斧Ⅰ",
+            "name": "Garon Hatchets I",
             "Weapon_Number": 74
         },
         {
-            "name": "慘爪戰斧Ⅱ",
+            "name": "Garon Hatchets II",
             "Weapon_Number": 75
         },
         {
-            "name": "吸血鎖鎌",
+            "name": "Blood-drinker Chainblade",
             "Weapon_Number": 76
         },
         {
-            "name": "罪【真】",
+            "name": "Sin",
             "Weapon_Number": 77
         },
         {
-            "name": "龍骨雙刀Ⅰ",
+            "name": "Dragonbone Twinblades I",
             "Weapon_Number": 78
         },
         {
-            "name": "龍骨雙刀Ⅱ",
+            "name": "Dragonbone Twinblades II",
             "Weapon_Number": 79
         },
         {
-            "name": "封龍劍【超絕一門】",
+            "name": "Enduring Schism",
             "Weapon_Number": 80
         },
         {
-            "name": "熔山龍鉤爪Ⅰ",
+            "name": "Magda Ungulae I",
             "Weapon_Number": 81
         },
         {
-            "name": "熔山龍鉤爪Ⅱ",
+            "name": "Magda Ungulae II",
             "Weapon_Number": 82
         },
         {
-            "name": "雙雷劍麒麟",
+            "name": "Kirin Bolts",
             "Weapon_Number": 83
         },
         {
-            "name": "雙雷劍麒麟改",
+            "name": "Kirin Bolts+",
             "Weapon_Number": 84
         },
         {
-            "name": "迅雷",
+            "name": "Monarch",
             "Weapon_Number": 85
         },
         {
-            "name": "黑鋼雙劍Ⅰ",
+            "name": "Blacksteel Twins I",
             "Weapon_Number": 86
         },
         {
-            "name": "黑鋼雙劍Ⅱ",
+            "name": "Blacksteel Twins II",
             "Weapon_Number": 87
         },
         {
-            "name": "雙爪刀",
+            "name": "Twin Nails",
             "Weapon_Number": 88
         },
         {
-            "name": "冰炎劍維爾瑪閃焰",
+            "name": "Fire and Ice",
             "Weapon_Number": 89
         },
         {
-            "name": "冥燈龍雙劍",
+            "name": "Xeno Raqs",
             "Weapon_Number": 90
         },
         {
-            "name": "憤怒的雙刀",
+            "name": "Wrath & Rancor",
             "Weapon_Number": 91
         },
         {
-            "name": "憤怒捕食者",
+            "name": "Wrathful Predation",
             "Weapon_Number": 92
         },
         {
-            "name": "金色的雙劍‧水",
+            "name": "Golden two swords‧water",
             "Weapon_Number": 93
         },
         {
-            "name": "金色的雙劍‧冰",
+            "name": "Golden two swords‧ice",
             "Weapon_Number": 94
         },
         {
-            "name": "金色的雙劍‧毒",
+            "name": "Golden two swords‧毒",
             "Weapon_Number": 95
         },
         {
-            "name": "金色的雙劍‧搔",
+            "name": "Golden two swords‧搔",
             "Weapon_Number": 96
         },
         {
-            "name": "金色的雙劍‧泥魚",
+            "name": "Golden two swords‧泥魚",
             "Weapon_Number": 97
         },
         {
-            "name": "金色的雙劍‧飛雷",
+            "name": "Golden two swords‧飛Thunder",
             "Weapon_Number": 98
         },
         {
-            "name": "金色的雙劍‧蠻顎",
+            "name": "Golden two swords‧蠻顎",
             "Weapon_Number": 99
         },
         {
-            "name": "金色的雙劍‧黑甲",
+            "name": "Golden two swords‧黑甲",
             "Weapon_Number": 100
         },
         {
-            "name": "金色的雙劍‧眩",
+            "name": "Golden two swords‧眩",
             "Weapon_Number": 101
         },
         {
-            "name": "金色的雙劍‧慘爪",
+            "name": "Golden two swords‧慘爪",
             "Weapon_Number": 102
         },
         {
-            "name": "金色的雙劍‧角",
+            "name": "Golden two swords‧角",
             "Weapon_Number": 103
         },
         {
-            "name": "金色的雙劍‧熔岩",
+            "name": "Golden two swords‧熔岩",
             "Weapon_Number": 104
         },
         {
-            "name": "金色的雙劍‧熔山",
+            "name": "Golden two swords‧熔山",
             "Weapon_Number": 105
         },
         {
-            "name": "鎧羅小刀‧搔",
+            "name": "Armour knife‧搔",
             "Weapon_Number": 106
         },
         {
-            "name": "鎧羅小刀‧泥魚",
+            "name": "Armour knife‧泥魚",
             "Weapon_Number": 107
         },
         {
-            "name": "鎧羅小刀‧飛雷",
+            "name": "Armour knife‧飛Thunder",
             "Weapon_Number": 108
         },
         {
-            "name": "鎧羅小刀‧蠻顎",
+            "name": "Armour knife‧蠻顎",
             "Weapon_Number": 109
         },
         {
-            "name": "鎧羅小刀‧黑甲",
+            "name": "Armour knife‧黑甲",
             "Weapon_Number": 110
         },
         {
-            "name": "鎧羅小刀‧眩",
+            "name": "Armour knife‧眩",
             "Weapon_Number": 111
         },
         {
-            "name": "鎧羅小刀‧慘爪",
+            "name": "Armour knife‧慘爪",
             "Weapon_Number": 112
         },
         {
-            "name": "鎧羅小刀‧角",
+            "name": "Armour knife‧角",
             "Weapon_Number": 113
         },
         {
-            "name": "鎧羅小刀‧熔岩",
+            "name": "Armour knife‧熔岩",
             "Weapon_Number": 114
         },
         {
-            "name": "鎧羅小刀‧熔山",
+            "name": "Armour knife‧熔山",
             "Weapon_Number": 115
         },
         {
-            "name": "鎧羅小刀‧水",
+            "name": "Armour knife‧water",
             "Weapon_Number": 116
         },
         {
-            "name": "鎧羅小刀‧冰",
+            "name": "Armour knife‧ice",
             "Weapon_Number": 117
         },
         {
-            "name": "鎧羅小刀‧毒",
+            "name": "Armour knife‧毒",
             "Weapon_Number": 118
         },
         {
-            "name": "皇后小刀",
+            "name": "Queen's knife",
             "Weapon_Number": 119
         },
         {
-            "name": "皇后小刀‧炎妃",
+            "name": "Queen's knife‧炎妃",
             "Weapon_Number": 120
         },
         {
-            "name": "皇后小刀‧滅盡",
+            "name": "Queen's knife‧滅盡",
             "Weapon_Number": 121
         },
         {
-            "name": "皇后小刀‧冥燈",
+            "name": "Queen's knife‧冥燈",
             "Weapon_Number": 122
         },
         {
-            "name": "鬆軟的羽毛掃把",
+            "name": "Soft feather broom",
             "Weapon_Number": 123
         },
         {
-            "name": "鬆軟的慈愛",
+            "name": "Soft love",
             "Weapon_Number": 124
         },
         {
-            "name": "鎧羅小刀‧火",
+            "name": "Armour knife‧fire",
             "Weapon_Number": 125
         }
     ]

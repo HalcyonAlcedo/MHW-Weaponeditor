@@ -1,455 +1,455 @@
 {
     "Weapon": "太刀",
     "Data": [{
-            "name": "鐵刀Ⅰ",
+            "name": "Iron Katana I",
             "Weapon_Number": 6
         },
         {
-            "name": "鐵刀Ⅱ",
+            "name": "Iron Katana II",
             "Weapon_Number": 7
         },
         {
-            "name": "鐵刀Ⅲ",
+            "name": "Iron Katana III",
             "Weapon_Number": 8
         },
         {
-            "name": "鐵刀【禊】Ⅰ",
+            "name": "Iron Grace I",
             "Weapon_Number": 9
         },
         {
-            "name": "鐵刀【禊】Ⅱ",
+            "name": "Iron Grace II",
             "Weapon_Number": 10
         },
         {
-            "name": "鐵刀【禊】Ⅲ",
+            "name": "Iron Grace III",
             "Weapon_Number": 11
         },
         {
-            "name": "鐵刀【神樂】Ⅰ",
+            "name": "Iron Gospel I",
             "Weapon_Number": 12
         },
         {
-            "name": "鐵刀【神樂】Ⅱ",
+            "name": "Iron Gospel II",
             "Weapon_Number": 13
         },
         {
-            "name": "滅盡龍太刀",
+            "name": "Nergal Reaver",
             "Weapon_Number": 14
         },
         {
-            "name": "滅盡一刀",
+            "name": "Extermination's Edge",
             "Weapon_Number": 15
         },
         {
-            "name": "眩刀【搖】Ⅰ",
+            "name": "Flickering Glow I",
             "Weapon_Number": 16
         },
         {
-            "name": "眩刀【搖】Ⅱ",
+            "name": "Flickering Glow II",
             "Weapon_Number": 17
         },
         {
-            "name": "眩惑刀【閃】Ⅰ",
+            "name": "Dazzling Flash I",
             "Weapon_Number": 18
         },
         {
-            "name": "眩惑刀【閃】Ⅱ",
+            "name": "Dazzling Flash II",
             "Weapon_Number": 19
         },
         {
-            "name": "眩惑刀【閃】Ⅲ",
+            "name": "Dazzling Flash III",
             "Weapon_Number": 20
         },
         {
-            "name": "星空太刀Ⅰ",
+            "name": "First Dance I",
             "Weapon_Number": 21
         },
         {
-            "name": "星空太刀Ⅱ",
+            "name": "First Dance II",
             "Weapon_Number": 22
         },
         {
-            "name": "星空太刀Ⅲ",
+            "name": "First Dance III",
             "Weapon_Number": 23
         },
         {
-            "name": "星空迅刀Ⅰ",
+            "name": "Last Dance I",
             "Weapon_Number": 24
         },
         {
-            "name": "星空迅刀Ⅱ",
+            "name": "Last Dance II",
             "Weapon_Number": 25
         },
         {
-            "name": "星空迅刀Ⅲ",
+            "name": "Last Dance III",
             "Weapon_Number": 26
         },
         {
-            "name": "爆鎚太刀Ⅰ",
+            "name": "Brazen Ridge I",
             "Weapon_Number": 27
         },
         {
-            "name": "爆鎚太刀Ⅱ",
+            "name": "Brazen Ridge II",
             "Weapon_Number": 28
         },
         {
-            "name": "飛龍刀【綠葉】",
+            "name": "Wyvern Blade 'Leaf'",
             "Weapon_Number": 29
         },
         {
-            "name": "飛龍刀【翠】",
+            "name": "Wyvern Blade 'Verde'",
             "Weapon_Number": 30
         },
         {
-            "name": "飛龍刀【葵】",
+            "name": "Wyvern Blade 'Holly'",
             "Weapon_Number": 31
         },
         {
-            "name": "飛龍刀【紅葉】",
+            "name": "Wyvern Blade 'Fall'",
             "Weapon_Number": 32
         },
         {
-            "name": "飛龍刀【朱】",
+            "name": "Wyvern Blade 'Blood'",
             "Weapon_Number": 33
         },
         {
-            "name": "飛龍刀【蒼】",
+            "name": "Wyvern Blade 'Azure'",
             "Weapon_Number": 34
         },
         {
-            "name": "飛龍刀【藍染】",
+            "name": "Wyvern Blade 'Indigo'",
             "Weapon_Number": 35
         },
         {
-            "name": "骨製彎刀Ⅰ",
+            "name": "Bone Shotel I",
             "Weapon_Number": 36
         },
         {
-            "name": "骨製彎刀Ⅱ",
+            "name": "Bone Shotel II",
             "Weapon_Number": 37
         },
         {
-            "name": "骨製彎刀Ⅲ",
+            "name": "Bone Shotel III",
             "Weapon_Number": 38
         },
         {
-            "name": "硬骨彎刀Ⅰ",
+            "name": "Hard Bone Shotel I",
             "Weapon_Number": 39
         },
         {
-            "name": "硬骨彎刀Ⅱ",
+            "name": "Hard Bone Shotel II",
             "Weapon_Number": 40
         },
         {
-            "name": "硬骨彎刀Ⅲ",
+            "name": "Hard Bone Shotel III",
             "Weapon_Number": 41
         },
         {
-            "name": "骨鐮Ⅰ",
+            "name": "Bone Reaper I",
             "Weapon_Number": 42
         },
         {
-            "name": "骨鐮Ⅱ",
+            "name": "Bone Reaper II",
             "Weapon_Number": 43
         },
         {
-            "name": "爆鱗大刀",
+            "name": "Rookslayer Long Sword",
             "Weapon_Number": 44
         },
         {
-            "name": "爆鱗刀赤紅利刃",
+            "name": "Bazel Varga Rookslayer",
             "Weapon_Number": 45
         },
         {
-            "name": "火焰彎刀Ⅰ",
+            "name": "Blazing Shotel I",
             "Weapon_Number": 46
         },
         {
-            "name": "火焰彎刀Ⅱ",
+            "name": "Blazing Shotel II",
             "Weapon_Number": 47
         },
         {
-            "name": "蠻顎龍偃月刀Ⅰ",
+            "name": "Anja Scimitar I",
             "Weapon_Number": 48
         },
         {
-            "name": "蠻顎龍偃月刀Ⅱ",
+            "name": "Anja Scimitar II",
             "Weapon_Number": 49
         },
         {
-            "name": "蠻顎龍偃月刀Ⅲ",
+            "name": "Anja Scimitar III",
             "Weapon_Number": 50
         },
         {
-            "name": "泥岩龍彎刀Ⅰ",
+            "name": "Jyura Shotel I",
             "Weapon_Number": 51
         },
         {
-            "name": "泥岩龍彎刀Ⅱ",
+            "name": "Jyura Shotel II",
             "Weapon_Number": 52
         },
         {
-            "name": "泥岩龍彎刀Ⅲ",
+            "name": "Jyura Shotel III",
             "Weapon_Number": 53
         },
         {
-            "name": "深土太刀Ⅰ",
+            "name": "Dipterus I",
             "Weapon_Number": 54
         },
         {
-            "name": "深土太刀Ⅱ",
+            "name": "Dipterus II",
             "Weapon_Number": 55
         },
         {
-            "name": "深土太刀Ⅲ",
+            "name": "Dipterus III",
             "Weapon_Number": 56
         },
         {
-            "name": "屍套龍太刀Ⅰ",
+            "name": "Hazak Grosser I",
             "Weapon_Number": 57
         },
         {
-            "name": "屍套龍太刀Ⅱ",
+            "name": "Hazak Grosser II",
             "Weapon_Number": 58
         },
         {
-            "name": "脈衝彎刀Ⅰ",
+            "name": "Pulsar Shotel I",
             "Weapon_Number": 59
         },
         {
-            "name": "脈衝彎刀Ⅱ",
+            "name": "Pulsar Shotel II",
             "Weapon_Number": 60
         },
         {
-            "name": "脈衝彎刀Ⅲ",
+            "name": "Pulsar Shotel III",
             "Weapon_Number": 61
         },
         {
-            "name": "飛雷龍之牙Ⅰ",
+            "name": "Kadachi Fang I",
             "Weapon_Number": 62
         },
         {
-            "name": "飛雷龍之牙Ⅱ",
+            "name": "Kadachi Fang II",
             "Weapon_Number": 63
         },
         {
-            "name": "飛雷龍之牙Ⅲ",
+            "name": "Kadachi Fang III",
             "Weapon_Number": 64
         },
         {
-            "name": "優雅彎刀Ⅰ",
+            "name": "Glacial Shotel I",
             "Weapon_Number": 65
         },
         {
-            "name": "優雅彎刀Ⅱ",
+            "name": "Glacial Shotel II",
             "Weapon_Number": 66
         },
         {
-            "name": "流星刀",
+            "name": "Stealer",
             "Weapon_Number": 67
         },
         {
-            "name": "幻光刀",
+            "name": "Legia Stealer",
             "Weapon_Number": 68
         },
         {
-            "name": "黑色彎刀Ⅰ",
+            "name": "Dark Shotel I",
             "Weapon_Number": 69
         },
         {
-            "name": "黑色彎刀Ⅱ",
+            "name": "Dark Shotel II",
             "Weapon_Number": 70
         },
         {
-            "name": "黑色偃月刀Ⅰ",
+            "name": "Dark Scimitar I",
             "Weapon_Number": 71
         },
         {
-            "name": "黑色偃月刀Ⅱ",
+            "name": "Dark Scimitar II",
             "Weapon_Number": 72
         },
         {
-            "name": "黑色偃月刀Ⅲ",
+            "name": "Dark Scimitar III",
             "Weapon_Number": 73
         },
         {
-            "name": "龍骨刀Ⅰ",
+            "name": "Dragonbone Stabber I",
             "Weapon_Number": 74
         },
         {
-            "name": "龍骨刀Ⅱ",
+            "name": "Dragonbone Stabber II",
             "Weapon_Number": 75
         },
         {
-            "name": "龍骨刀Ⅲ",
+            "name": "Dragonbone Stabber III",
             "Weapon_Number": 76
         },
         {
-            "name": "熔山龍太刀Ⅰ",
+            "name": "Magda Facultas I",
             "Weapon_Number": 77
         },
         {
-            "name": "熔山龍太刀Ⅱ",
+            "name": "Magda Facultas II",
             "Weapon_Number": 78
         },
         {
-            "name": "黑鋼太刀Ⅰ",
+            "name": "Blacksteel Long Sword I",
             "Weapon_Number": 79
         },
         {
-            "name": "黑鋼太刀Ⅱ",
+            "name": "Blacksteel Long Sword II",
             "Weapon_Number": 80
         },
         {
-            "name": "帝王刀",
+            "name": "Imperial Saber",
             "Weapon_Number": 81
         },
         {
-            "name": "帝王刀【陽炎】",
+            "name": "Imperial Shimmer",
             "Weapon_Number": 82
         },
         {
-            "name": "冥燈龍太刀",
+            "name": "Xeno Cypher",
             "Weapon_Number": 83
         },
         {
-            "name": "天下無雙刀",
+            "name": "Supremacy Blade",
             "Weapon_Number": 84
         },
         {
-            "name": "天上天下無雙刀",
+            "name": "Divine Slasher",
             "Weapon_Number": 85
         },
         {
-            "name": "殘酷痛苦太刀",
+            "name": "Reaver 'Cruelty'",
             "Weapon_Number": 86
         },
         {
-            "name": "悲慘痛苦太刀",
+            "name": "Reaver 'Calamity'",
             "Weapon_Number": 87
         },
         {
-            "name": "金色的太刀‧水",
+            "name": "Golden sword‧water",
             "Weapon_Number": 90
         },
         {
-            "name": "金色的太刀‧毒",
+            "name": "Golden sword‧毒",
             "Weapon_Number": 91
         },
         {
-            "name": "金色的太刀‧麻痺",
+            "name": "Golden sword‧Paralysis",
             "Weapon_Number": 92
         },
         {
-            "name": "金色的太刀‧搔",
+            "name": "Golden sword‧搔",
             "Weapon_Number": 93
         },
         {
-            "name": "金色的太刀‧泥魚",
+            "name": "Golden sword‧泥魚",
             "Weapon_Number": 94
         },
         {
-            "name": "金色的太刀‧飛雷",
+            "name": "Golden sword‧飛Thunder",
             "Weapon_Number": 95
         },
         {
-            "name": "金色的太刀‧蠻顎",
+            "name": "Golden sword‧蠻顎",
             "Weapon_Number": 96
         },
         {
-            "name": "金色的太刀‧黑甲",
+            "name": "Golden sword‧黑甲",
             "Weapon_Number": 97
         },
         {
-            "name": "金色的太刀‧眩",
+            "name": "Golden sword‧眩",
             "Weapon_Number": 98
         },
         {
-            "name": "金色的太刀‧風漂",
+            "name": "Golden sword‧風漂",
             "Weapon_Number": 99
         },
         {
-            "name": "金色的太刀‧屍套",
+            "name": "Golden sword‧屍套",
             "Weapon_Number": 100
         },
         {
-            "name": "金色的太刀‧爆鎚",
+            "name": "Golden sword‧爆鎚",
             "Weapon_Number": 101
         },
         {
-            "name": "金色的太刀‧熔山",
+            "name": "Golden sword‧熔山",
             "Weapon_Number": 102
         },
         {
-            "name": "鎧羅劍‧搔",
+            "name": "Armour sword‧搔",
             "Weapon_Number": 103
         },
         {
-            "name": "鎧羅劍‧泥魚",
+            "name": "Armour sword‧泥魚",
             "Weapon_Number": 104
         },
         {
-            "name": "鎧羅劍‧飛雷",
+            "name": "Armour sword‧飛Thunder",
             "Weapon_Number": 105
         },
         {
-            "name": "鎧羅劍‧蠻顎",
+            "name": "Armour sword‧蠻顎",
             "Weapon_Number": 106
         },
         {
-            "name": "鎧羅劍‧黑甲",
+            "name": "Armour sword‧黑甲",
             "Weapon_Number": 107
         },
         {
-            "name": "鎧羅劍‧眩",
+            "name": "Armour sword‧眩",
             "Weapon_Number": 108
         },
         {
-            "name": "鎧羅劍‧風漂",
+            "name": "Armour sword‧風漂",
             "Weapon_Number": 109
         },
         {
-            "name": "鎧羅劍‧屍套",
+            "name": "Armour sword‧屍套",
             "Weapon_Number": 110
         },
         {
-            "name": "鎧羅劍‧爆鎚",
+            "name": "Armour sword‧爆鎚",
             "Weapon_Number": 111
         },
         {
-            "name": "鎧羅劍‧熔山",
+            "name": "Armour sword‧熔山",
             "Weapon_Number": 112
         },
         {
-            "name": "鎧羅劍‧水",
+            "name": "Armour sword‧water",
             "Weapon_Number": 113
         },
         {
-            "name": "鎧羅劍‧毒",
+            "name": "Armour sword‧毒",
             "Weapon_Number": 114
         },
         {
-            "name": "鎧羅劍‧麻痺",
+            "name": "Armour sword‧Paralysis",
             "Weapon_Number": 115
         },
         {
-            "name": "皇后劍",
+            "name": "Empress sword",
             "Weapon_Number": 116
         },
         {
-            "name": "皇后劍‧炎妃",
+            "name": "Empress sword‧炎妃",
             "Weapon_Number": 117
         },
         {
-            "name": "皇后劍‧滅盡",
+            "name": "Empress sword‧滅盡",
             "Weapon_Number": 118
         },
         {
-            "name": "皇后劍‧冥燈",
+            "name": "Empress sword‧冥燈",
             "Weapon_Number": 119
         },
         {
-            "name": "鎧羅劍‧火",
+            "name": "Armour sword‧fire",
             "Weapon_Number": 120
         }
     ]

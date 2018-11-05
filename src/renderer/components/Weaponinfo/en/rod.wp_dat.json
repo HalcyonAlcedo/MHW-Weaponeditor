@@ -1,459 +1,459 @@
 {
     "Weapon": "虫棍",
     "Data": [{
-            "name": "鐵製長刀Ⅰ",
+            "name": "Iron Blade I",
             "Weapon_Number": 7
         },
         {
-            "name": "鐵製長刀Ⅱ",
+            "name": "Iron Blade II",
             "Weapon_Number": 8
         },
         {
-            "name": "鐵製長刀Ⅲ",
+            "name": "Iron Blade III",
             "Weapon_Number": 9
         },
         {
-            "name": "鋼鐵長刀Ⅰ",
+            "name": "Steel Blade I",
             "Weapon_Number": 10
         },
         {
-            "name": "鋼鐵長刀Ⅱ",
+            "name": "Steel Blade II",
             "Weapon_Number": 11
         },
         {
-            "name": "鋼鐵長刀Ⅲ",
+            "name": "Steel Blade III",
             "Weapon_Number": 12
         },
         {
-            "name": "鉻鋼長刀Ⅰ",
+            "name": "Chrome Blade I",
             "Weapon_Number": 13
         },
         {
-            "name": "鉻鋼長刀Ⅱ",
+            "name": "Chrome Blade II",
             "Weapon_Number": 14
         },
         {
-            "name": "滅盡龍的沉靜",
+            "name": "Nergal Reaper",
             "Weapon_Number": 15
         },
         {
-            "name": "撲滅導燈",
+            "name": "Catastrophe's Light",
             "Weapon_Number": 16
         },
         {
-            "name": "火焰長刀Ⅰ",
+            "name": "Flame Glaive I",
             "Weapon_Number": 17
         },
         {
-            "name": "火焰長刀Ⅱ",
+            "name": "Flame Glaive II",
             "Weapon_Number": 18
         },
         {
-            "name": "火龍棍",
+            "name": "Rathmaul",
             "Weapon_Number": 19
         },
         {
-            "name": "火龍棍【炎舞】",
+            "name": "Firedance Rathmaul",
             "Weapon_Number": 20
         },
         {
-            "name": "搔鳥長刀Ⅰ",
+            "name": "Kulu Blade I",
             "Weapon_Number": 21
         },
         {
-            "name": "搔鳥長刀Ⅱ",
+            "name": "Kulu Blade II",
             "Weapon_Number": 22
         },
         {
-            "name": "搔鳥長刀Ⅲ",
+            "name": "Kulu Blade III",
             "Weapon_Number": 23
         },
         {
-            "name": "星空長刀Ⅰ",
+            "name": "Ya-Ku Wrath I",
             "Weapon_Number": 24
         },
         {
-            "name": "星空長刀Ⅱ",
+            "name": "Ya-Ku Wrath II",
             "Weapon_Number": 25
         },
         {
-            "name": "星空長刀Ⅲ",
+            "name": "Ya-Ku Wrath III",
             "Weapon_Number": 26
         },
         {
-            "name": "閃耀長刀Ⅰ",
+            "name": "Luminous Blade I",
             "Weapon_Number": 27
         },
         {
-            "name": "閃耀長刀Ⅱ",
+            "name": "Luminous Blade II",
             "Weapon_Number": 28
         },
         {
-            "name": "利刃長刀Ⅰ",
+            "name": "Destroyer Bo I",
             "Weapon_Number": 29
         },
         {
-            "name": "利刃長刀Ⅱ",
+            "name": "Destroyer Bo II",
             "Weapon_Number": 30
         },
         {
-            "name": "利刃長刀Ⅲ",
+            "name": "Destroyer Bo III",
             "Weapon_Number": 31
         },
         {
-            "name": "冰霜長刀Ⅰ",
+            "name": "Frost Blade I",
             "Weapon_Number": 32
         },
         {
-            "name": "冰霜長刀Ⅱ",
+            "name": "Frost Blade II",
             "Weapon_Number": 33
         },
         {
-            "name": "凍寒疾風刀Ⅰ",
+            "name": "Freeze Gale I",
             "Weapon_Number": 34
         },
         {
-            "name": "凍寒疾風刀Ⅱ",
+            "name": "Freeze Gale II",
             "Weapon_Number": 35
         },
         {
-            "name": "花朵之刀Ⅰ",
+            "name": "Blooming Glaive I",
             "Weapon_Number": 36
         },
         {
-            "name": "花朵之刀Ⅱ",
+            "name": "Blooming Glaive II",
             "Weapon_Number": 37
         },
         {
-            "name": "花朵之刀Ⅲ",
+            "name": "Blooming Glaive III",
             "Weapon_Number": 38
         },
         {
-            "name": "曼陀羅長刀Ⅰ",
+            "name": "Datura Blade I",
             "Weapon_Number": 39
         },
         {
-            "name": "曼陀羅長刀Ⅱ",
+            "name": "Datura Blade II",
             "Weapon_Number": 40
         },
         {
-            "name": "曼陀羅長刀Ⅲ",
+            "name": "Datura Blade III",
             "Weapon_Number": 41
         },
         {
-            "name": "岩賊龍長鞭Ⅰ",
+            "name": "Gama Cane I",
             "Weapon_Number": 42
         },
         {
-            "name": "岩賊龍長鞭Ⅱ",
+            "name": "Gama Cane II",
             "Weapon_Number": 43
         },
         {
-            "name": "骨棍Ⅰ",
+            "name": "Bone Rod I",
             "Weapon_Number": 44
         },
         {
-            "name": "骨棍Ⅱ",
+            "name": "Bone Rod II",
             "Weapon_Number": 45
         },
         {
-            "name": "骨棍Ⅲ",
+            "name": "Bone Rod III",
             "Weapon_Number": 46
         },
         {
-            "name": "硬骨棍Ⅰ",
+            "name": "Hard Bone Rod I",
             "Weapon_Number": 47
         },
         {
-            "name": "硬骨棍Ⅱ",
+            "name": "Hard Bone Rod II",
             "Weapon_Number": 48
         },
         {
-            "name": "硬骨棍Ⅲ",
+            "name": "Hard Bone Rod III",
             "Weapon_Number": 49
         },
         {
-            "name": "飛空棍Ⅰ",
+            "name": "Aerial Rod I",
             "Weapon_Number": 50
         },
         {
-            "name": "飛空棍Ⅱ",
+            "name": "Aerial Rod II",
             "Weapon_Number": 51
         },
         {
-            "name": "屍套龍操蟲棍Ⅰ",
+            "name": "Hazak Entoma I",
             "Weapon_Number": 52
         },
         {
-            "name": "屍套龍操蟲棍Ⅱ",
+            "name": "Hazak Entoma II",
             "Weapon_Number": 53
         },
         {
-            "name": "蠻顎龍桿刀",
+            "name": "Flammenkaefer",
             "Weapon_Number": 54
         },
         {
-            "name": "蠻顎龍桿刀改",
+            "name": "Flammenkaefer+",
             "Weapon_Number": 55
         },
         {
-            "name": "蠻顎棍翼龍桿刀",
+            "name": "Gnashing Flammenkaefer",
             "Weapon_Number": 56
         },
         {
-            "name": "水流棍Ⅰ",
+            "name": "Aqua Rod I",
             "Weapon_Number": 57
         },
         {
-            "name": "水流棍Ⅱ",
+            "name": "Aqua Rod II",
             "Weapon_Number": 58
         },
         {
-            "name": "水流棍Ⅲ",
+            "name": "Aqua Rod III",
             "Weapon_Number": 59
         },
         {
-            "name": "激流長刀Ⅰ",
+            "name": "Water Glaive I",
             "Weapon_Number": 60
         },
         {
-            "name": "激流長刀Ⅱ",
+            "name": "Water Glaive II",
             "Weapon_Number": 61
         },
         {
-            "name": "激流長刀Ⅲ",
+            "name": "Water Glaive III",
             "Weapon_Number": 62
         },
         {
-            "name": "爆鎚棍Ⅰ",
+            "name": "Diablos Rod I",
             "Weapon_Number": 63
         },
         {
-            "name": "爆鎚棍Ⅱ",
+            "name": "Diablos Rod II",
             "Weapon_Number": 64
         },
         {
-            "name": "暴君長刀Ⅰ",
+            "name": "Tyrannis Glaive I",
             "Weapon_Number": 65
         },
         {
-            "name": "暴君長刀Ⅱ",
+            "name": "Tyrannis Glaive II",
             "Weapon_Number": 66
         },
         {
-            "name": "脈衝長棍Ⅰ",
+            "name": "Pulsar Rod I",
             "Weapon_Number": 67
         },
         {
-            "name": "脈衝長棍Ⅱ",
+            "name": "Pulsar Rod II",
             "Weapon_Number": 68
         },
         {
-            "name": "脈衝長棍Ⅲ",
+            "name": "Pulsar Rod III",
             "Weapon_Number": 69
         },
         {
-            "name": "飛雷龍之柱Ⅰ",
+            "name": "Kadachi Pillar I",
             "Weapon_Number": 70
         },
         {
-            "name": "飛雷龍之柱Ⅱ",
+            "name": "Kadachi Pillar II",
             "Weapon_Number": 71
         },
         {
-            "name": "飛雷龍之柱Ⅲ",
+            "name": "Kadachi Pillar III",
             "Weapon_Number": 72
         },
         {
-            "name": "慘爪長棍Ⅰ",
+            "name": "Garon Rod I",
             "Weapon_Number": 73
         },
         {
-            "name": "慘爪長棍Ⅱ",
+            "name": "Garon Rod II",
             "Weapon_Number": 74
         },
         {
-            "name": "魅惑三鈷杵",
+            "name": "Temptation's Trident",
             "Weapon_Number": 75
         },
         {
-            "name": "惡【VICE】",
+            "name": "Vice",
             "Weapon_Number": 76
         },
         {
-            "name": "龍骨棍Ⅰ",
+            "name": "Dragonbone Glaive I",
             "Weapon_Number": 77
         },
         {
-            "name": "龍骨棍Ⅱ",
+            "name": "Dragonbone Glaive I",
             "Weapon_Number": 78
         },
         {
-            "name": "龍骨棍Ⅲ",
+            "name": "Dragonbone Glaive I",
             "Weapon_Number": 79
         },
         {
-            "name": "深藍電光",
+            "name": "Indigo Flash",
             "Weapon_Number": 80
         },
         {
-            "name": "蒼藍電魂",
+            "name": "Azure Bolt",
             "Weapon_Number": 81
         },
         {
-            "name": "碧綠神鳴",
+            "name": "Verdant Levin",
             "Weapon_Number": 82
         },
         {
-            "name": "黑鋼長刀Ⅰ",
+            "name": "Blacksteel Glaive I",
             "Weapon_Number": 83
         },
         {
-            "name": "黑鋼長刀Ⅱ",
+            "name": "Blacksteel Glaive I",
             "Weapon_Number": 84
         },
         {
-            "name": "靈魂鋼龍棍",
+            "name": "Daora's Entom",
             "Weapon_Number": 85
         },
         {
-            "name": "冰體鋼龍棍",
+            "name": "Daora's Tethidine",
             "Weapon_Number": 86
         },
         {
-            "name": "冥燈龍長刀",
+            "name": "Xeno Shmaena",
             "Weapon_Number": 87
         },
         {
-            "name": "邪惡之翼",
+            "name": "Bad Wing",
             "Weapon_Number": 88
         },
         {
-            "name": "污穢暴風雨",
+            "name": "Grunge Storm",
             "Weapon_Number": 89
         },
         {
-            "name": "穿心槍蓋博爾格",
+            "name": "Piercing gun Guy Bolger",
             "Weapon_Number": 90
         },
         {
-            "name": "穿心槍蓋博爾格‧真",
+            "name": "Piercing gun Guy Bolger Really",
             "Weapon_Number": 91
         },
         {
-            "name": "金色的長刀‧水",
+            "name": "Golden long sword‧water",
             "Weapon_Number": 92
         },
         {
-            "name": "金色的長刀‧冰",
+            "name": "Golden long sword‧ice",
             "Weapon_Number": 93
         },
         {
-            "name": "金色的長刀‧麻痺",
+            "name": "Golden long sword‧Paralysis",
             "Weapon_Number": 94
         },
         {
-            "name": "金色的長刀‧搔",
+            "name": "Golden long sword‧搔",
             "Weapon_Number": 95
         },
         {
-            "name": "金色的長刀‧毒妖",
+            "name": "Golden long sword‧毒妖",
             "Weapon_Number": 96
         },
         {
-            "name": "金色的長刀‧飛雷",
+            "name": "Golden long sword‧飛Thunder",
             "Weapon_Number": 97
         },
         {
-            "name": "金色的長刀‧眩",
+            "name": "Golden long sword‧眩",
             "Weapon_Number": 98
         },
         {
-            "name": "金色的長刀‧慘爪",
+            "name": "Golden long sword‧慘爪",
             "Weapon_Number": 99
         },
         {
-            "name": "金色的長刀‧屍套",
+            "name": "Golden long sword‧屍套",
             "Weapon_Number": 100
         },
         {
-            "name": "金色的長刀‧王",
+            "name": "Golden long sword‧王",
             "Weapon_Number": 101
         },
         {
-            "name": "金色的長刀‧角",
+            "name": "Golden long sword‧角",
             "Weapon_Number": 102
         },
         {
-            "name": "金色的長刀‧岩賊",
+            "name": "Golden long sword‧岩賊",
             "Weapon_Number": 103
         },
         {
-            "name": "鎧羅長刀‧搔",
+            "name": "Armored long knife‧搔",
             "Weapon_Number": 104
         },
         {
-            "name": "鎧羅長刀‧毒妖",
+            "name": "Armored long knife‧毒妖",
             "Weapon_Number": 105
         },
         {
-            "name": "鎧羅長刀‧飛雷",
+            "name": "Armored long knife‧飛Thunder",
             "Weapon_Number": 106
         },
         {
-            "name": "鎧羅長刀‧眩",
+            "name": "Armored long knife‧眩",
             "Weapon_Number": 107
         },
         {
-            "name": "鎧羅長刀‧慘爪",
+            "name": "Armored long knife‧慘爪",
             "Weapon_Number": 108
         },
         {
-            "name": "鎧羅長刀‧屍套",
+            "name": "Armored long knife‧屍套",
             "Weapon_Number": 109
         },
         {
-            "name": "鎧羅長刀‧王",
+            "name": "Armored long knife‧王",
             "Weapon_Number": 110
         },
         {
-            "name": "鎧羅長刀‧角",
+            "name": "Armored long knife‧角",
             "Weapon_Number": 111
         },
         {
-            "name": "鎧羅長刀‧岩賊",
+            "name": "Armored long knife‧岩賊",
             "Weapon_Number": 112
         },
         {
-            "name": "鎧羅長刀‧水",
+            "name": "Armored long knife‧water",
             "Weapon_Number": 113
         },
         {
-            "name": "鎧羅長刀‧冰",
+            "name": "Armored long knife‧ice",
             "Weapon_Number": 114
         },
         {
-            "name": "鎧羅長刀‧麻痺",
+            "name": "Armored long knife‧Paralysis",
             "Weapon_Number": 115
         },
         {
-            "name": "皇后長鞭",
+            "name": "Queen's whip",
             "Weapon_Number": 116
         },
         {
-            "name": "皇后長鞭‧炎妃",
+            "name": "Queen's whip‧炎妃",
             "Weapon_Number": 117
         },
         {
-            "name": "皇后長鞭‧滅盡",
+            "name": "Queen's whip‧滅盡",
             "Weapon_Number": 118
         },
         {
-            "name": "皇后長鞭‧冥燈",
+            "name": "Queen's whip‧冥燈",
             "Weapon_Number": 119
         },
         {
-            "name": "鎧羅長刀‧睡眠",
+            "name": "Armored long knife‧sleep",
             "Weapon_Number": 120
         }
     ]

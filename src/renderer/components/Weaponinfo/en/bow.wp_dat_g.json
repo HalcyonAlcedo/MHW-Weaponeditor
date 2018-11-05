@@ -1,427 +1,427 @@
 {
     "Weapon": "弓",
     "Data": [{
-            "name": "鐵弓Ⅰ",
+            "name": "Iron Bow I",
             "Weapon_Number": 8
         },
         {
-            "name": "鐵弓Ⅱ",
+            "name": "Iron Bow II",
             "Weapon_Number": 9
         },
         {
-            "name": "鐵弓Ⅲ",
+            "name": "Iron Bow III",
             "Weapon_Number": 10
         },
         {
-            "name": "鋼鐵弓Ⅰ",
+            "name": "Steel Bow I",
             "Weapon_Number": 11
         },
         {
-            "name": "鋼鐵弓Ⅱ",
+            "name": "Steel Bow II",
             "Weapon_Number": 12
         },
         {
-            "name": "鋼鐵弓Ⅲ",
+            "name": "Steel Bow III",
             "Weapon_Number": 13
         },
         {
-            "name": "合金弓Ⅰ",
+            "name": "Alloy Bow I",
             "Weapon_Number": 14
         },
         {
-            "name": "合金弓Ⅱ",
+            "name": "Alloy Bow II",
             "Weapon_Number": 15
         },
         {
-            "name": "滅盡龍大弓",
+            "name": "Nergal Whisper",
             "Weapon_Number": 16
         },
         {
-            "name": "必滅一矢",
+            "name": "Doom's Shaft",
             "Weapon_Number": 17
         },
         {
-            "name": "搔鳥弓Ⅰ",
+            "name": "Kulu Arrow I",
             "Weapon_Number": 18
         },
         {
-            "name": "搔鳥弓Ⅱ",
+            "name": "Kulu Arrow II",
             "Weapon_Number": 19
         },
         {
-            "name": "搔鳥弓Ⅲ",
+            "name": "Kulu Arrow III",
             "Weapon_Number": 20
         },
         {
-            "name": "星空迅擊弓Ⅰ",
+            "name": "Archer's Dance I",
             "Weapon_Number": 21
         },
         {
-            "name": "星空迅擊弓Ⅱ",
+            "name": "Archer's Dance II",
             "Weapon_Number": 22
         },
         {
-            "name": "星空迅擊弓Ⅲ",
+            "name": "Archer's Dance III",
             "Weapon_Number": 23
         },
         {
-            "name": "爆鎚震弓",
+            "name": "Brazencord",
             "Weapon_Number": 24
         },
         {
-            "name": "重弓巨靈勇士",
+            "name": "Gigacles",
             "Weapon_Number": 25
         },
         {
-            "name": "公主弓矢Ⅰ",
+            "name": "Princess Arrow I",
             "Weapon_Number": 26
         },
         {
-            "name": "公主弓矢Ⅱ",
+            "name": "Princess Arrow II",
             "Weapon_Number": 27
         },
         {
-            "name": "公主弓矢Ⅲ",
+            "name": "Princess Arrow III",
             "Weapon_Number": 28
         },
         {
-            "name": "火龍強弓Ⅰ",
+            "name": "Rathslinger I",
             "Weapon_Number": 29
         },
         {
-            "name": "火龍強弓Ⅱ",
+            "name": "Rathslinger II",
             "Weapon_Number": 30
         },
         {
-            "name": "火龍強弓Ⅲ",
+            "name": "Rathslinger III",
             "Weapon_Number": 31
         },
         {
-            "name": "水流弓Ⅰ",
+            "name": "Aqua Arrow I",
             "Weapon_Number": 32
         },
         {
-            "name": "水流弓Ⅱ",
+            "name": "Aqua Arrow II",
             "Weapon_Number": 33
         },
         {
-            "name": "水流弓Ⅲ",
+            "name": "Aqua Arrow III",
             "Weapon_Number": 34
         },
         {
-            "name": "激流射手Ⅰ",
+            "name": "Water Shot I",
             "Weapon_Number": 35
         },
         {
-            "name": "激流射手Ⅱ",
+            "name": "Water Shot II",
             "Weapon_Number": 36
         },
         {
-            "name": "激流射手Ⅲ",
+            "name": "Water Shot III",
             "Weapon_Number": 37
         },
         {
-            "name": "優雅長弓Ⅰ",
+            "name": "Glacial Arrow I",
             "Weapon_Number": 38
         },
         {
-            "name": "優雅長弓Ⅱ",
+            "name": "Glacial Arrow II",
             "Weapon_Number": 39
         },
         {
-            "name": "銀蕨",
+            "name": "Snowfletcher",
             "Weapon_Number": 40
         },
         {
-            "name": "冰凌銀蕨",
+            "name": "Legia Snowfletcher",
             "Weapon_Number": 41
         },
         {
-            "name": "獵弓Ⅰ",
+            "name": "Hunter's Bow I",
             "Weapon_Number": 42
         },
         {
-            "name": "獵弓Ⅱ",
+            "name": "Hunter's Bow II",
             "Weapon_Number": 43
         },
         {
-            "name": "獵弓Ⅲ",
+            "name": "Hunter's Bow III",
             "Weapon_Number": 44
         },
         {
-            "name": "能量獵弓Ⅰ",
+            "name": "Hunter's Stoutbow I",
             "Weapon_Number": 45
         },
         {
-            "name": "能量獵弓Ⅱ",
+            "name": "Hunter's Stoutbow II",
             "Weapon_Number": 46
         },
         {
-            "name": "能量獵弓Ⅲ",
+            "name": "Hunter's Stoutbow III",
             "Weapon_Number": 47
         },
         {
-            "name": "勇氣獵弓Ⅰ",
+            "name": "Hunter's Proudbow I",
             "Weapon_Number": 48
         },
         {
-            "name": "勇氣獵弓Ⅱ",
+            "name": "Hunter's Proudbow II",
             "Weapon_Number": 49
         },
         {
-            "name": "屍套龍弓Ⅰ",
+            "name": "Hazak Velos I",
             "Weapon_Number": 50
         },
         {
-            "name": "屍套龍弓Ⅱ",
+            "name": "Hazak Velos II",
             "Weapon_Number": 51
         },
         {
-            "name": "爆鎚大弓Ⅰ",
+            "name": "Diablos Bow I",
             "Weapon_Number": 52
         },
         {
-            "name": "爆鎚大弓Ⅱ",
+            "name": "Diablos Bow II",
             "Weapon_Number": 53
         },
         {
-            "name": "爆鎚角弓",
+            "name": "Diablos Coilbender",
             "Weapon_Number": 54
         },
         {
-            "name": "疾風角弓",
+            "name": "Galebender",
             "Weapon_Number": 55
         },
         {
-            "name": "角王弓疾風",
+            "name": "Cera Coilbender",
             "Weapon_Number": 56
         },
         {
-            "name": "花朵弓Ｉ",
+            "name": "Blooming Arch I",
             "Weapon_Number": 57
         },
         {
-            "name": "花朵弓Ⅱ",
+            "name": "Blooming Arch II",
             "Weapon_Number": 58
         },
         {
-            "name": "花朵弓Ⅲ",
+            "name": "Blooming Arch III",
             "Weapon_Number": 59
         },
         {
-            "name": "曼陀羅弓Ｉ",
+            "name": "Datura String I",
             "Weapon_Number": 60
         },
         {
-            "name": "曼陀羅弓Ⅱ",
+            "name": "Datura String II",
             "Weapon_Number": 61
         },
         {
-            "name": "曼陀羅弓Ⅲ",
+            "name": "Datura String III",
             "Weapon_Number": 62
         },
         {
-            "name": "火焰弓Ⅰ",
+            "name": "Blazing Bow I",
             "Weapon_Number": 63
         },
         {
-            "name": "火焰弓Ⅱ",
+            "name": "Blazing Bow II",
             "Weapon_Number": 64
         },
         {
-            "name": "蠻顎龍射手Ⅰ",
+            "name": "Anja Arch I",
             "Weapon_Number": 65
         },
         {
-            "name": "蠻顎龍射手Ⅱ",
+            "name": "Anja Arch II",
             "Weapon_Number": 66
         },
         {
-            "name": "蠻顎龍射手Ⅲ",
+            "name": "Anja Arch III",
             "Weapon_Number": 67
         },
         {
-            "name": "脈衝弓Ⅰ",
+            "name": "Pulsar Bow I",
             "Weapon_Number": 68
         },
         {
-            "name": "脈衝弓Ⅱ",
+            "name": "Pulsar Bow II",
             "Weapon_Number": 69
         },
         {
-            "name": "脈衝弓Ⅲ",
+            "name": "Pulsar Bow III",
             "Weapon_Number": 70
         },
         {
-            "name": "飛雷弓射手大蛇",
+            "name": "Kadachi Strikebow",
             "Weapon_Number": 71
         },
         {
-            "name": "飛雷弓【羽羽矢】",
+            "name": "Flying Kadachi Strikebow",
             "Weapon_Number": 72
         },
         {
-            "name": "龍骨弓Ⅰ",
+            "name": "Dragonbone Bow I",
             "Weapon_Number": 73
         },
         {
-            "name": "龍骨弓Ⅱ",
+            "name": "Dragonbone Bow II",
             "Weapon_Number": 74
         },
         {
-            "name": "龍骨弓Ⅲ",
+            "name": "Dragonbone Bow III",
             "Weapon_Number": 75
         },
         {
-            "name": "黑鋼弓Ⅰ",
+            "name": "Blacksteel Bow I",
             "Weapon_Number": 76
         },
         {
-            "name": "黑鋼弓Ⅱ",
+            "name": "Blacksteel Bow II",
             "Weapon_Number": 77
         },
         {
-            "name": "鋼冰馬弓",
+            "name": "Icesteel Bow",
             "Weapon_Number": 78
         },
         {
-            "name": "鋼龍強弓",
+            "name": "Daora's Sagittarii",
             "Weapon_Number": 79
         },
         {
-            "name": "冥燈龍大弓",
+            "name": "Xeno Metora",
             "Weapon_Number": 80
         },
         {
-            "name": "十字獵弓",
+            "name": "Cross Hunter's Bow",
             "Weapon_Number": 81
         },
         {
-            "name": "巨型獵弓",
+            "name": "Great Hunter's Bow",
             "Weapon_Number": 82
         },
         {
-            "name": "暴徒的凶弓",
+            "name": "Insurgent's Bow",
             "Weapon_Number": 83
         },
         {
-            "name": "惡棍之弓",
+            "name": "Villainous Brace",
             "Weapon_Number": 84
         },
         {
-            "name": "金色的弓‧水",
+            "name": "Golden bow‧water",
             "Weapon_Number": 87
         },
         {
-            "name": "金色的弓‧雷",
+            "name": "Golden bow‧Thunder",
             "Weapon_Number": 88
         },
         {
-            "name": "金色的弓‧爆破",
+            "name": "Golden bow‧爆破",
             "Weapon_Number": 89
         },
         {
-            "name": "金色的弓‧搔",
+            "name": "Golden bow‧搔",
             "Weapon_Number": 90
         },
         {
-            "name": "金色的弓‧毒妖",
+            "name": "Golden bow‧毒妖",
             "Weapon_Number": 91
         },
         {
-            "name": "金色的弓‧飛雷",
+            "name": "Golden bow‧飛雷",
             "Weapon_Number": 92
         },
         {
-            "name": "金色的弓‧蠻顎",
+            "name": "Golden bow‧蠻顎",
             "Weapon_Number": 93
         },
         {
-            "name": "金色的弓‧女王",
+            "name": "Golden bow‧女王",
             "Weapon_Number": 94
         },
         {
-            "name": "金色的弓‧風漂",
+            "name": "Golden bow‧風漂",
             "Weapon_Number": 95
         },
         {
-            "name": "金色的弓‧屍套",
+            "name": "Golden bow‧屍套",
             "Weapon_Number": 96
         },
         {
-            "name": "金色的弓‧王",
+            "name": "Golden bow‧王",
             "Weapon_Number": 97
         },
         {
-            "name": "金色的弓‧角",
+            "name": "Golden bow‧角",
             "Weapon_Number": 98
         },
         {
-            "name": "鎧羅弓‧搔",
+            "name": "Armored bow‧搔",
             "Weapon_Number": 99
         },
         {
-            "name": "鎧羅弓‧毒妖",
+            "name": "Armored bow‧毒妖",
             "Weapon_Number": 100
         },
         {
-            "name": "鎧羅弓‧飛雷",
+            "name": "Armored bow‧飛雷",
             "Weapon_Number": 101
         },
         {
-            "name": "鎧羅弓‧蠻顎",
+            "name": "Armored bow‧蠻顎",
             "Weapon_Number": 102
         },
         {
-            "name": "鎧羅弓‧女王",
+            "name": "Armored bow‧女王",
             "Weapon_Number": 103
         },
         {
-            "name": "鎧羅弓‧風漂",
+            "name": "Armored bow‧風漂",
             "Weapon_Number": 104
         },
         {
-            "name": "鎧羅弓‧屍套",
+            "name": "Armored bow‧屍套",
             "Weapon_Number": 105
         },
         {
-            "name": "鎧羅弓‧王",
+            "name": "Armored bow‧王",
             "Weapon_Number": 106
         },
         {
-            "name": "鎧羅弓‧角",
+            "name": "Armored bow‧角",
             "Weapon_Number": 107
         },
         {
-            "name": "鎧羅弓‧水",
+            "name": "Armored bow‧water",
             "Weapon_Number": 108
         },
         {
-            "name": "鎧羅弓‧雷",
+            "name": "Armored bow‧Thunder",
             "Weapon_Number": 109
         },
         {
-            "name": "鎧羅弓‧爆破",
+            "name": "Armored bow‧爆破",
             "Weapon_Number": 110
         },
         {
-            "name": "皇后弓",
+            "name": "Queen's bow",
             "Weapon_Number": 111
         },
         {
-            "name": "皇后弓‧炎妃",
+            "name": "Queen's bow‧炎妃",
             "Weapon_Number": 112
         },
         {
-            "name": "皇后弓‧滅盡",
+            "name": "Queen's bow‧滅盡",
             "Weapon_Number": 113
         },
         {
-            "name": "皇后弓‧冥燈",
+            "name": "Queen's bow‧冥燈",
             "Weapon_Number": 114
         },
         {
-            "name": "鎧羅弓‧火",
+            "name": "Armored bow‧fire",
             "Weapon_Number": 115
         }
     ],

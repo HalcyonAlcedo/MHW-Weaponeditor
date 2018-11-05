@@ -1,7 +1,6 @@
 {
     "Weapon": "盾斧",
-    "Data": [
-        {
+    "Data": [{
             "name": "Proto Commission Axe I",
             "Weapon_Number": 6
         },
@@ -310,123 +309,123 @@
             "Weapon_Number": 82
         },
         {
-            "name": "但丁的魔劍",
+            "name": "Dante's magic sword",
             "Weapon_Number": 83
         },
         {
-            "name": "金色的盾斧‧冰",
+            "name": "Golden Shield axe‧ice",
             "Weapon_Number": 85
         },
         {
-            "name": "金色的盾斧‧雷",
+            "name": "Golden Shield axe‧Thunder",
             "Weapon_Number": 86
         },
         {
-            "name": "金色的盾斧‧睡眠",
+            "name": "Golden Shield axe‧sleep",
             "Weapon_Number": 87
         },
         {
-            "name": "金色的盾斧‧賊",
+            "name": "Golden Shield axe‧賊",
             "Weapon_Number": 88
         },
         {
-            "name": "金色的盾斧‧泥魚",
+            "name": "Golden Shield axe‧泥魚",
             "Weapon_Number": 89
         },
         {
-            "name": "金色的盾斧‧飛雷",
+            "name": "Golden Shield axe‧飛Thunder",
             "Weapon_Number": 90
         },
         {
-            "name": "金色的盾斧‧痺賊",
+            "name": "Golden Shield axe‧痺賊",
             "Weapon_Number": 91
         },
         {
-            "name": "金色的盾斧‧慘爪",
+            "name": "Golden Shield axe‧慘爪",
             "Weapon_Number": 92
         },
         {
-            "name": "金色的盾斧‧屍套",
+            "name": "Golden Shield axe‧屍套",
             "Weapon_Number": 93
         },
         {
-            "name": "金色的盾斧‧王",
+            "name": "Golden Shield axe‧王",
             "Weapon_Number": 94
         },
         {
-            "name": "金色的盾斧‧角",
+            "name": "Golden Shield axe‧角",
             "Weapon_Number": 95
         },
         {
-            "name": "金色的盾斧‧岩賊",
+            "name": "Golden Shield axe‧岩賊",
             "Weapon_Number": 96
         },
         {
-            "name": "鎧羅兵裝‧賊",
+            "name": "Armour armour‧賊",
             "Weapon_Number": 97
         },
         {
-            "name": "鎧羅兵裝‧泥魚",
+            "name": "Armour armour‧泥魚",
             "Weapon_Number": 98
         },
         {
-            "name": "鎧羅兵裝‧飛雷",
+            "name": "Armour armour‧飛Thunder",
             "Weapon_Number": 99
         },
         {
-            "name": "鎧羅兵裝‧痺賊",
+            "name": "Armour armour‧痺賊",
             "Weapon_Number": 100
         },
         {
-            "name": "鎧羅兵裝‧慘爪",
+            "name": "Armour armour‧慘爪",
             "Weapon_Number": 101
         },
         {
-            "name": "鎧羅兵裝‧屍套",
+            "name": "Armour armour‧屍套",
             "Weapon_Number": 102
         },
         {
-            "name": "鎧羅兵裝‧王",
+            "name": "Armour armour‧王",
             "Weapon_Number": 103
         },
         {
-            "name": "鎧羅兵裝‧角",
+            "name": "Armour armour‧角",
             "Weapon_Number": 104
         },
         {
-            "name": "鎧羅兵裝‧岩賊",
+            "name": "Armour armour‧岩賊",
             "Weapon_Number": 105
         },
         {
-            "name": "鎧羅兵裝‧冰",
+            "name": "Armour armour‧ice",
             "Weapon_Number": 106
         },
         {
-            "name": "鎧羅兵裝‧雷",
+            "name": "Armour armour‧Thunder",
             "Weapon_Number": 107
         },
         {
-            "name": "鎧羅兵裝‧睡眠",
+            "name": "Armour armour‧sleep",
             "Weapon_Number": 108
         },
         {
-            "name": "皇后武器",
+            "name": "Queen's weapon",
             "Weapon_Number": 109
         },
         {
-            "name": "皇后武器‧炎妃",
+            "name": "Queen's weapon‧炎妃",
             "Weapon_Number": 110
         },
         {
-            "name": "皇后武器‧滅盡",
+            "name": "Queen's weapon‧滅盡",
             "Weapon_Number": 111
         },
         {
-            "name": "皇后武器‧冥燈",
+            "name": "Queen's weapon‧冥燈",
             "Weapon_Number": 112
         },
         {
-            "name": "鎧羅兵裝‧水",
+            "name": "Armour armour‧water",
             "Weapon_Number": 113
         }
     ]

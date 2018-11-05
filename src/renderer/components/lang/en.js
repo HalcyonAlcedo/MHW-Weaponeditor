@@ -30,7 +30,8 @@ module.exports = {
     No_data: 'No data available',
     Original: 'Original',
     Old_version: 'Compatibility mode',
-    Version_update: 'Version update'
+    Version_update: 'Version update',
+    Update_description: 'Update description'
   },
   Explanatory: {
     Elimination_unknown_weapons: 'Exclude undocumented weapon data from the weapon information list',
@@ -38,13 +39,16 @@ module.exports = {
     Binary_mode: 'Display the file mode of the binary data of the file, the binary data is auxiliary display according to the weapon type',
     Dark_theme: 'Switch software main color to dark mode',
     About_content: 'This software can view and modify the weapon data magic file in Monster Hunter World. The modified file will be placed under Monster Hunter World\\nativePC\\common\\equip\\. Modified files will affect game balance and should not be used online. ',
-    About_edition: 'Software version: 0.9.1',
+    About_edition: 'Software version: 0.9.3',
     Instructions: '<h3>The tool can read the unwrapped weapon data, built in the current version of the weapon data file, and directly create a new mod file. Partial value modification will be automatically corrected according to the inherent coefficient. The weapon information is manually entered, which may be different from the current version data. Do not use the modified file for online use.</h3><br><h4>Usage:</h4><br><span>&nbsp;&nbsp;1. Open the unpacked mod file or click New to select the desired weapon file.</span><br><span>&nbsp;&nbsp;2, search or manually find the weapon to be modified.</span><br><span>&nbsp;&nbsp;3. Change the corresponding attribute to the value you want.</span><br><span>&nbsp;&nbsp;4.Click Save to save the file to the (Your game\\nativePC\\common\\equip\\).</span><br><br><h4>The tool source code is posted on Github: https://github.com/HalcyonAlcedo/MHW-Weaponeditor</h4>',
     Old_version: 'The data file will be opened in the 154766 version file format.',
     Old_version_open: 'Compatibility mode is started. Please re open the data file.',
     Old_version_close: 'Compatibility mode is closed. Please re open the data file.',
     Version_update: 'Update the currently open file to the new version',
-    Version_update_true: 'The version data is updated. Do not forget to save the data file.'
+    Version_update_true: 'The version data is updated. Do not forget to save the data file.',
+    Free_model: 'if you need to modify the model, please adjust to modify the data, do not know not to move',
+    Have_model: 'if you want to close the model, please change it to 65535',
+    Update_description: '<ul><li>Repair skills to modify bug</li><li>Weapon skill description</li><li>Adding custom models can be an option.</li><li>Add description interface language switch</li><li>Adding traditional Chinese</li><li>Add English</li><li>Modify the default language for traditional Chinese</li></ul>'
   },
   Weapon: {
     Charge_blade: 'Shield Axe',
