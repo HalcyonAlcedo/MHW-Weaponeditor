@@ -866,6 +866,24 @@ export default {
           {value: 0, text: this.$t('WeaponExplain.Strong_exocet_bottle')},
           {value: 1, text: this.$t('WeaponExplain.Strong_attribute_bottle')}
         ]
+      } else if (this.weapon === 'g_lance.wp_dat') {
+        return [
+          {value: 0, text: this.$t('WeaponExplain.Normal_type') + ' LV1'},
+          {value: 1, text: this.$t('WeaponExplain.Normal_type') + ' LV2'},
+          {value: 2, text: this.$t('WeaponExplain.Normal_type') + ' LV3'},
+          {value: 3, text: this.$t('WeaponExplain.Normal_type') + ' LV4'},
+          {value: 4, text: this.$t('WeaponExplain.Normal_type') + ' LV5'},
+          {value: 5, text: this.$t('WeaponExplain.Diffusion_type') + ' LV1'},
+          {value: 6, text: this.$t('WeaponExplain.Diffusion_type') + ' LV2'},
+          {value: 7, text: this.$t('WeaponExplain.Diffusion_type') + ' LV3'},
+          {value: 8, text: this.$t('WeaponExplain.Diffusion_type') + ' LV4'},
+          {value: 9, text: this.$t('WeaponExplain.Diffusion_type') + ' LV5'},
+          {value: 10, text: this.$t('WeaponExplain.Radiological_type') + ' LV1'},
+          {value: 11, text: this.$t('WeaponExplain.Radiological_type') + ' LV2'},
+          {value: 12, text: this.$t('WeaponExplain.Radiological_type') + ' LV3'},
+          {value: 13, text: this.$t('WeaponExplain.Radiological_type') + ' LV4'},
+          {value: 14, text: this.$t('WeaponExplain.Radiological_type') + ' LV5'}
+        ]
       } else if (this.weapon === 's_axe.wp_dat') {
         let saxebottle = []
         saxebottle.push({value: 0, text: this.$t('WeaponExplain.Strong_exocet_bottle')})
