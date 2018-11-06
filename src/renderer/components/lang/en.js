@@ -49,7 +49,7 @@ module.exports = {
     Version_update_true: 'The version data is updated. Do not forget to save the data file.',
     Free_model: 'if you need to modify the model, please adjust to modify the data, do not know not to move',
     Have_model: 'if you want to close the model, please change it to 65535',
-    Update_description: '<ul><li>Repair skills to modify bug</li><li>Weapon skill description</li><li>Adding custom models can be an option.</li><li>Add description interface language switch</li><li>Adding traditional Chinese</li><li>Add English</li><li>Modify the default language for traditional Chinese</li></ul>'
+    Update_description: '<ul><li> One-click Selection of Updating Weapon Model </li><li> Adding Special Attribute Data of Shotgun </li><li> Correcting Traditional Chinese Description Errors </li><li> Save save error in compatible compatibility mode </li></ul>'
   },
   Weapon: {
     Charge_blade: 'Shield Axe',

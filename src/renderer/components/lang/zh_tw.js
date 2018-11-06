@@ -49,7 +49,7 @@ module.exports = {
     Version_update_true: '版本數據更新完成,請勿忘記保存資料檔案',
     Free_model: '如需修改模型請調整為修改數據，不懂勿動',
     Have_model: '如需關閉模型請改成65535',
-    Update_description: '<ul><li>修復技能修改bug</li><li>添加武器技能說明</li><li>添加自定義模型可以選項</li><li>添加說明介面語言切換</li><li>添加繁體中文</li><li>添加英文</li><li>修改默認語言為繁體中文</li></ul>'
+    Update_description: '<ul><li>更新武器模型一鍵選擇</li><li>添加銃槍特殊屬性數據</li><li>修正繁體中文描述錯誤</li><li>修正兼容模式下允許保存保存的錯誤</li></ul>'
   },
   Weapon: {
     Charge_blade: '盾斧',
