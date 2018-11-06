@@ -423,7 +423,10 @@ export default {
     },
     savefile () {
       let _this = this
-      if (this.file !== this.$t('Interface.No_file_opened')) {
+      if (this.Old_version) {
+        this.snackbar.text = this.$t('Interface.Old_version_save')
+        this.snackbar.snackbar = true
+      } else if (this.file !== this.$t('Interface.No_file_opened')) {
         let filepath = dialog.showSaveDialog({ title: this.$t('Interface.Save_file'), defaultPath: this.weapon })
         console.log(this.filedata)
         fs.writeFile(filepath, this.filedata, { flag: 'w' }, function (err) {

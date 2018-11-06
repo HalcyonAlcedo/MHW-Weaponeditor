@@ -31,7 +31,8 @@ module.exports = {
     Original: '原始',
     Old_version: '相容模式',
     Version_update: '版本更新',
-    Update_description: '更新說明'
+    Update_description: '更新說明',
+    Old_version_save: '請勿保存兼容模式'
   },
   Explanatory: {
     Elimination_unknown_weapons: '武器信息清單中排除掉未被記載的武器數據',

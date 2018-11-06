@@ -31,7 +31,8 @@ module.exports = {
     Original: 'Original',
     Old_version: 'Compatibility mode',
     Version_update: 'Version update',
-    Update_description: 'Update description'
+    Update_description: 'Update description',
+    Old_version_save: 'Do not save compatibility mode.'
   },
   Explanatory: {
     Elimination_unknown_weapons: 'Exclude undocumented weapon data from the weapon information list',

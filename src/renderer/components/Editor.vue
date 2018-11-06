@@ -541,115 +541,160 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <!-- model -->
-                  <v-list-tile v-if="props.item.wp_Unprefixed_Model.vul !== false">
-                    <v-tooltip bottom v-if="props.item.wp_Unprefixed_Model.vul !== 65535">
-                      <v-text-field
+                  <!-- new model -->
+                  <v-list-tile v-if="props.item.wp_Model !== false || props.item.wp_Unprefixed_Model !== false">
+                    <v-menu
+                      v-model="props.menu"
+                      :close-on-content-click="false"
+                      :nudge-width="300"
+                      offset-x
+                    >
+                      <v-btn
                         slot="activator"
-                        :label="$t('WeaponExplain.Independent_model')"
-                        @change="input_interchangeable(props.item.wp_Unprefixed_Model)"
-                        v-model="props.item.wp_Unprefixed_Model.vul"
-                        full-width
-                        box
-                      ></v-text-field>
-                      <span>{{$t('Explanatory.Have_model')}}</span>
-                    </v-tooltip>
-                    <v-tooltip bottom v-else>
-                      <v-select
-                        slot="activator"
-                        v-model="props.item.wp_Unprefixed_Model.vul"
-                        :items="[{text:$t('WeaponExplain.Nothing'),value:65535},{text:$t('WeaponExplain.Edit_data'),value:0}]"
-                        @change="Select_interchangeable(props.item.wp_Unprefixed_Model)"
-                        box
-                        :label="$t('WeaponExplain.Independent_model')"
-                        item-text="text"
-                        item-value="value"
-                        return-object
-                      ></v-select>
-                      <span>{{$t('Explanatory.Free_model')}}</span>
-                    </v-tooltip>
-                    <v-text-field
-                      v-if="sourceitems && (props.item.wp_Unprefixed_Model.vul !== props.item.wp_sourcedata.wp_Unprefixed_Model.vul)"
-                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Independent_model')"
-                      v-model="props.item.wp_sourcedata.wp_Unprefixed_Model.vul"
-                      full-width
-                      box
-                      color="red"
-                      readonly
-                    ></v-text-field>
+                        color="indigo"
+                        dark
+                      >
+                        {{$t('WeaponExplain.Weapon_model')}}
+                      </v-btn>
+
+                      <v-card>
+                        <v-list two-line>
+                          <v-list-tile avatar justify-space-around>
+                            <v-autocomplete
+                              :label="$t('WeaponExplain.Weapon_model')"
+                              v-model="props.item.models"
+                              :items="modelitem"
+                              @change="
+                              props.item.wp_Model.vul = props.item.models.model,
+                              props.item.wp_Minor_Model.vul = props.item.models.minormodel,
+                              props.item.wp_Unprefixed_Model.vul = props.item.models.unperfixedmodel,
+                              input_interchangeable(props.item.wp_Model),
+                              input_interchangeable(props.item.wp_Minor_Model),
+                              input_interchangeable(props.item.wp_Unprefixed_Model)"
+                              item-text="wpname"
+                              persistent-hint
+                              box
+                              return-object
+                              :no-data-text="$t('Interface.No_data')"
+                            >
+                            </v-autocomplete>
+                          </v-list-tile>
+                        </v-list>
+                        <v-divider></v-divider>
+                        <v-list two-line>
+                          <v-list-tile v-if="props.item.wp_Unprefixed_Model.vul !== false">
+                            <v-tooltip bottom v-if="props.item.wp_Unprefixed_Model.vul !== 65535">
+                              <v-text-field
+                                slot="activator"
+                                :label="$t('WeaponExplain.Independent_model')"
+                                @change="input_interchangeable(props.item.wp_Unprefixed_Model)"
+                                v-model="props.item.wp_Unprefixed_Model.vul"
+                                full-width
+                                box
+                              ></v-text-field>
+                              <span>{{$t('Explanatory.Have_model')}}</span>
+                            </v-tooltip>
+                            <v-tooltip bottom v-else>
+                              <v-select
+                                slot="activator"
+                                v-model="props.item.wp_Unprefixed_Model.vul"
+                                :items="[{text:$t('WeaponExplain.Nothing'),value:65535},{text:$t('WeaponExplain.Edit_data'),value:0}]"
+                                @change="Select_interchangeable(props.item.wp_Unprefixed_Model)"
+                                box
+                                :label="$t('WeaponExplain.Independent_model')"
+                                item-text="text"
+                                item-value="value"
+                                return-object
+                              ></v-select>
+                              <span>{{$t('Explanatory.Free_model')}}</span>
+                            </v-tooltip>
+                            <v-text-field
+                              v-if="sourceitems && (props.item.wp_Unprefixed_Model.vul !== props.item.wp_sourcedata.wp_Unprefixed_Model.vul)"
+                              :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Independent_model')"
+                              v-model="props.item.wp_sourcedata.wp_Unprefixed_Model.vul"
+                              full-width
+                              box
+                              color="red"
+                              readonly
+                            ></v-text-field>
+                          </v-list-tile>
+                          <v-list-tile v-if="props.item.wp_Model.vul !== false">
+                            <v-tooltip bottom v-if="props.item.wp_Model.vul !== 65535">
+                              <v-text-field
+                                slot="activator"
+                                :label="$t('WeaponExplain.Weapon_model')"
+                                @change="input_interchangeable(props.item.wp_Model)"
+                                v-model="props.item.wp_Model.vul"
+                                full-width
+                                box
+                              ></v-text-field>
+                              <span>{{$t('Explanatory.Have_model')}}</span>
+                            </v-tooltip>
+                            <v-tooltip bottom v-else>
+                              <v-select
+                                slot="activator"
+                                v-model="props.item.wp_Model.vul"
+                                :items="[{text:$t('WeaponExplain.Nothing'),value:65535},{text:$t('WeaponExplain.Edit_data'),value:0}]"
+                                @change="Select_interchangeable(props.item.wp_Model)"
+                                box
+                                :label="$t('WeaponExplain.Weapon_model')"
+                                item-text="text"
+                                item-value="value"
+                                return-object
+                              ></v-select>
+                              <span>{{$t('Explanatory.Free_model')}}</span>
+                            </v-tooltip>
+                            <v-text-field
+                              v-if="sourceitems && (props.item.wp_Model.vul !== props.item.wp_sourcedata.wp_Model.vul)"
+                              :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Weapon_model')"
+                              v-model="props.item.wp_sourcedata.wp_Model.vul"
+                              full-width
+                              box
+                              color="red"
+                              readonly
+                            ></v-text-field>
+                          </v-list-tile>
+                          <v-list-tile v-if="props.item.wp_Minor_Model.vul !== false">
+                            <v-tooltip bottom v-if="props.item.wp_Minor_Model.vul !== 65535">
+                              <v-text-field
+                                slot="activator"
+                                :label="$t('WeaponExplain.Weapon_secondary_model')"
+                                @change="input_interchangeable(props.item.wp_Minor_Model)"
+                                v-model="props.item.wp_Minor_Model.vul"
+                                full-width
+                                box
+                              ></v-text-field>
+                              <span>{{$t('Explanatory.Have_model')}}</span>
+                            </v-tooltip>
+                            <v-tooltip bottom v-else>
+                              <v-select
+                                slot="activator"
+                                v-model="props.item.wp_Minor_Model.vul"
+                                :items="[{text:$t('WeaponExplain.Nothing'),value:65535},{text:$t('WeaponExplain.Edit_data'),value:0}]"
+                                @change="Select_interchangeable(props.item.wp_Minor_Model)"
+                                box
+                                :label="$t('WeaponExplain.Weapon_secondary_model')"
+                                item-text="text"
+                                item-value="value"
+                                return-object
+                              ></v-select>
+                              <span>{{$t('Explanatory.Free_model')}}</span>
+                            </v-tooltip>
+                            <v-text-field
+                              v-if="sourceitems && (props.item.wp_Minor_Model.vul !== props.item.wp_sourcedata.wp_Minor_Model.vul)"
+                              :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Weapon_secondary_model')"
+                              v-model="props.item.wp_sourcedata.wp_Minor_Model.vul"
+                              full-width
+                              box
+                              color="red"
+                              readonly
+                            ></v-text-field>
+                          </v-list-tile>
+                        </v-list>
+                      </v-card>
+                    </v-menu>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.wp_Model.vul !== false">
-                    <v-tooltip bottom v-if="props.item.wp_Model.vul !== 65535">
-                      <v-text-field
-                        slot="activator"
-                        :label="$t('WeaponExplain.Weapon_model')"
-                        @change="input_interchangeable(props.item.wp_Model)"
-                        v-model="props.item.wp_Model.vul"
-                        full-width
-                        box
-                      ></v-text-field>
-                      <span>{{$t('Explanatory.Have_model')}}</span>
-                    </v-tooltip>
-                    <v-tooltip bottom v-else>
-                      <v-select
-                        slot="activator"
-                        v-model="props.item.wp_Model.vul"
-                        :items="[{text:$t('WeaponExplain.Nothing'),value:65535},{text:$t('WeaponExplain.Edit_data'),value:0}]"
-                        @change="Select_interchangeable(props.item.wp_Model)"
-                        box
-                        :label="$t('WeaponExplain.Weapon_model')"
-                        item-text="text"
-                        item-value="value"
-                        return-object
-                      ></v-select>
-                      <span>{{$t('Explanatory.Free_model')}}</span>
-                    </v-tooltip>
-                    <v-text-field
-                      v-if="sourceitems && (props.item.wp_Model.vul !== props.item.wp_sourcedata.wp_Model.vul)"
-                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Weapon_model')"
-                      v-model="props.item.wp_sourcedata.wp_Model.vul"
-                      full-width
-                      box
-                      color="red"
-                      readonly
-                    ></v-text-field>
-                  </v-list-tile>
-                  <v-list-tile v-if="props.item.wp_Minor_Model.vul !== false">
-                    <v-tooltip bottom v-if="props.item.wp_Minor_Model.vul !== 65535">
-                      <v-text-field
-                        slot="activator"
-                        :label="$t('WeaponExplain.Weapon_secondary_model')"
-                        @change="input_interchangeable(props.item.wp_Minor_Model)"
-                        v-model="props.item.wp_Minor_Model.vul"
-                        full-width
-                        box
-                      ></v-text-field>
-                      <span>{{$t('Explanatory.Have_model')}}</span>
-                    </v-tooltip>
-                    <v-tooltip bottom v-else>
-                      <v-select
-                        slot="activator"
-                        v-model="props.item.wp_Minor_Model.vul"
-                        :items="[{text:$t('WeaponExplain.Nothing'),value:65535},{text:$t('WeaponExplain.Edit_data'),value:0}]"
-                        @change="Select_interchangeable(props.item.wp_Minor_Model)"
-                        box
-                        :label="$t('WeaponExplain.Weapon_secondary_model')"
-                        item-text="text"
-                        item-value="value"
-                        return-object
-                      ></v-select>
-                      <span>{{$t('Explanatory.Free_model')}}</span>
-                    </v-tooltip>
-                    <v-text-field
-                      v-if="sourceitems && (props.item.wp_Minor_Model.vul !== props.item.wp_sourcedata.wp_Minor_Model.vul)"
-                      :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Weapon_secondary_model')"
-                      v-model="props.item.wp_sourcedata.wp_Minor_Model.vul"
-                      full-width
-                      box
-                      color="red"
-                      readonly
-                    ></v-text-field>
-                  </v-list-tile>
+                  <!-- nwe model end -->
                   <v-list-tile v-if="props.item.wp_Weapon_skills !== false">
                     <v-autocomplete
                       :label="$t('WeaponExplain.Weapon_skills')"
@@ -858,6 +903,21 @@ export default {
         {value: 6, text: 'Rank7'},
         {value: 7, text: 'Rank8'}
       ]
+    },
+    modelitem () {
+      let _items = this.items
+      let itemsarr = []
+      for (let i = 0, l = _items.length; i < l; i++) {
+        if (this.wpname(_items[i].wp_Number.vul) !== this.$t('WeaponExplain.Unknown') && this.wpname(_items[i].wp_Number.vul) !== 'Unknown') {
+          itemsarr.push({
+            wpname: _items[i].wp_Name,
+            model: _items[i].wp_Model.vul,
+            minormodel: _items[i].wp_Minor_Model.vul,
+            unperfixedmodel: _items[i].wp_Unprefixed_Model.vul
+          })
+        }
+      }
+      return itemsarr
     },
     skillitem () {
       let skill = []
