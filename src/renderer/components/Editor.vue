@@ -939,7 +939,7 @@ export default {
     },
     skillitem () {
       let skill = []
-      for (let i = 0; i < 149; i++) {
+      for (let i = 0; i < 165; i++) {
         if (this.$te('Skill.' + i)) {
           skill.push(
             {
@@ -1242,9 +1242,9 @@ export default {
       for (let p = 0; p < Hexpointer[1]; p++) {
         let Hex16 = data[(HexRuler * i) + Hexpointer[0] - p]
         if (Hex16 !== undefined) {
-          ret += Hex16.toString(16)
+          ret += this.str_pad(Hex16.toString(16), 2)
         } else {
-          ret = 0
+          ret = '00'
         }
       }
       return {vul: parseInt(ret, 16), hex: (HexRuler * i) + Hexpointer[0], hexL: Hexpointer[1]}
