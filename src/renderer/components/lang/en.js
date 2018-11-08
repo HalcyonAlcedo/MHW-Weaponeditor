@@ -51,6 +51,20 @@ module.exports = {
     Have_model: 'if you want to close the model, please change it to 65535',
     Update_description: '<ul><li> Fixed problems with lack of skills. </li><li> Fixed the problem of numerical display in some cases. </li></ul>'
   },
+  Weaponsmiscellaneous: {
+    Sharpness: '斬味'
+  },
+  Sharpness: {
+    Number: '斬味id',
+    Weaponlist: '影響武器列表',
+    Red: '紅斬',
+    Orange: '橙斬',
+    Yellow: '黃斬',
+    green: '綠斬',
+    blue: '藍斬',
+    white: '白斬',
+    purple: '紫斬'
+  },
   Weapon: {
     Charge_blade: 'Shield Axe',
     Gunlance: 'Gunlance',
@@ -83,6 +97,7 @@ module.exports = {
     Chopping_grade_quick1: 'Short White',
     Chopping_grade_quick2: 'Medium White',
     Chopping_grade_quick3: 'Long White',
+    Reset: 'Reset',
     Damage: 'damage value',
     Defense: 'defense value',
     Heart: 'will heart value',

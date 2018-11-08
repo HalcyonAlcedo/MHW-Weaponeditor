@@ -51,6 +51,20 @@ module.exports = {
     Have_model: '如需關閉模型請改成65535',
     Update_description: '<ul><li>修復了技能缺少的問題</li><li>修復了某些情況下數值顯示異常的問題</li></ul>'
   },
+  Weaponsmiscellaneous: {
+    Sharpness: '斬味'
+  },
+  Sharpness: {
+    Number: '斬味id',
+    Weaponlist: '影響武器列表',
+    Red: '紅斬',
+    Orange: '橙斬',
+    Yellow: '黃斬',
+    green: '綠斬',
+    blue: '藍斬',
+    white: '白斬',
+    purple: '紫斬'
+  },
   Weapon: {
     Charge_blade: '盾斧',
     Gunlance: '銃槍',
@@ -83,6 +97,7 @@ module.exports = {
     Chopping_grade_quick1: '短白',
     Chopping_grade_quick2: '中白',
     Chopping_grade_quick3: '長白',
+    Reset: '重置',
     Damage: '傷害值',
     Defense: '防禦值',
     Heart: '會心值',

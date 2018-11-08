@@ -39,7 +39,8 @@
             >
               <v-card>
                 <v-card-title>
-                  <h4>{{ props.item.wp_Name }}</h4><v-spacer></v-spacer>
+                  <h4 v-if="props.item.wp_Number !== false">{{ props.item.wp_Name }}</h4>
+                  <h4 v-if="props.item.k_Number !== false">{{ $t('Weaponsmiscellaneous.Sharpness') + props.item.k_Number.vul }}</h4><v-spacer></v-spacer>
                   <h5>{{ $t('WeaponExplain.Address') }}：<span class="red--text">{{ str_pad(props.item.wp_Hex) }}</span></h5>
                 </v-card-title>
                 <v-divider></v-divider>
@@ -50,6 +51,15 @@
                     <v-text-field
                       :label="$t('WeaponExplain.Sequence_number')"
                       v-model="props.item.wp_Number.vul"
+                      full-width
+                      box
+                      disabled
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="props.item.k_Number !== false">
+                    <v-text-field
+                      :label="$t('Sharpness.Number')"
+                      v-model="props.item.k_Number.vul"
                       full-width
                       box
                       disabled
@@ -68,6 +78,132 @@
                       v-if="sourceitems && (props.item.wp_Money.vul !== props.item.wp_sourcedata.wp_Money.vul)"
                       :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Manufacturing_costs')"
                       v-model="props.item.wp_sourcedata.wp_Money.vul"
+                      full-width
+                      box
+                      color="red"
+                      readonly
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="props.item.k_Sharpness_red !== false">
+                    <v-text-field
+                      :label="$t('Sharpness.Red')"
+                      @change="input_interchangeable(props.item.k_Sharpness_red)"
+                      v-model="props.item.k_Sharpness_red.vul"
+                      full-width
+                      box
+                    ></v-text-field>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.k_Sharpness_red.vul !== props.item.wp_sourcedata.k_Sharpness_red.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('Sharpness.Red')"
+                      v-model="props.item.wp_sourcedata.k_Sharpness_red.vul"
+                      full-width
+                      box
+                      color="red"
+                      readonly
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="props.item.k_Sharpness_orange !== false">
+                    <v-text-field
+                      :label="$t('Sharpness.Orange')"
+                      @change="input_interchangeable(props.item.k_Sharpness_orange)"
+                      v-model="props.item.k_Sharpness_orange.vul"
+                      full-width
+                      box
+                    ></v-text-field>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.k_Sharpness_orange.vul !== props.item.wp_sourcedata.k_Sharpness_orange.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('Sharpness.Orange')"
+                      v-model="props.item.wp_sourcedata.k_Sharpness_orange.vul"
+                      full-width
+                      box
+                      color="red"
+                      readonly
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="props.item.k_Sharpness_yellow !== false">
+                    <v-text-field
+                      :label="$t('Sharpness.Yellow')"
+                      @change="input_interchangeable(props.item.k_Sharpness_yellow)"
+                      v-model="props.item.k_Sharpness_yellow.vul"
+                      full-width
+                      box
+                    ></v-text-field>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.k_Sharpness_yellow.vul !== props.item.wp_sourcedata.k_Sharpness_yellow.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('Sharpness.Yellow')"
+                      v-model="props.item.wp_sourcedata.k_Sharpness_yellow.vul"
+                      full-width
+                      box
+                      color="red"
+                      readonly
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="props.item.k_Sharpness_green !== false">
+                    <v-text-field
+                      :label="$t('Sharpness.green')"
+                      @change="input_interchangeable(props.item.k_Sharpness_green)"
+                      v-model="props.item.k_Sharpness_green.vul"
+                      full-width
+                      box
+                    ></v-text-field>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.k_Sharpness_green.vul !== props.item.wp_sourcedata.k_Sharpness_green.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('Sharpness.green')"
+                      v-model="props.item.wp_sourcedata.k_Sharpness_green.vul"
+                      full-width
+                      box
+                      color="red"
+                      readonly
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="props.item.k_Sharpness_blue !== false">
+                    <v-text-field
+                      :label="$t('Sharpness.blue')"
+                      @change="input_interchangeable(props.item.k_Sharpness_blue)"
+                      v-model="props.item.k_Sharpness_blue.vul"
+                      full-width
+                      box
+                    ></v-text-field>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.k_Sharpness_blue.vul !== props.item.wp_sourcedata.k_Sharpness_blue.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('Sharpness.blue')"
+                      v-model="props.item.wp_sourcedata.k_Sharpness_blue.vul"
+                      full-width
+                      box
+                      color="red"
+                      readonly
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="props.item.k_Sharpness_white !== false">
+                    <v-text-field
+                      :label="$t('Sharpness.white')"
+                      @change="input_interchangeable(props.item.k_Sharpness_white)"
+                      v-model="props.item.k_Sharpness_white.vul"
+                      full-width
+                      box
+                    ></v-text-field>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.k_Sharpness_white.vul !== props.item.wp_sourcedata.k_Sharpness_white.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('Sharpness.white')"
+                      v-model="props.item.wp_sourcedata.k_Sharpness_white.vul"
+                      full-width
+                      box
+                      color="red"
+                      readonly
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="props.item.k_Sharpness_purple !== false">
+                    <v-text-field
+                      :label="$t('Sharpness.purple')"
+                      @change="input_interchangeable(props.item.k_Sharpness_purple)"
+                      v-model="props.item.k_Sharpness_purple.vul"
+                      full-width
+                      box
+                    ></v-text-field>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.k_Sharpness_purple.vul !== props.item.wp_sourcedata.k_Sharpness_purple.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('Sharpness.purple')"
+                      v-model="props.item.wp_sourcedata.k_Sharpness_purple.vul"
                       full-width
                       box
                       color="red"
@@ -136,6 +272,13 @@
                                   input_interchangeable(props.item.wp_Chopping_grade)">
                                   {{$t('WeaponExplain.Chopping_grade_quick3')}}</v-btn>
                             </v-list-tile-avatar>
+                            <v-list-tile-avatar>
+                                <v-btn small @click="props.item.wp_Chopping_value.vul = props.item.wp_sourcedata.wp_Chopping_value.vul,
+                                  props.item.wp_Chopping_grade.vul = props.item.wp_sourcedata.wp_Chopping_grade.vul,
+                                  input_interchangeable(props.item.wp_Chopping_value),
+                                  input_interchangeable(props.item.wp_Chopping_grade)">
+                                  {{$t('WeaponExplain.Reset')}}</v-btn>
+                            </v-list-tile-avatar>
                             </v-layout>
                           </v-list-tile>
                         </v-list>
@@ -145,7 +288,7 @@
                             <v-list-tile-title pa-2 ma-2>
                             <v-layout align-center justify-center row>
                               <v-flex xs5>
-                                {{$t('WeaponExplain.Chopping_value')}}
+                                {{$t('WeaponExplain.Chopping_value') + '(' + props.item.wp_Chopping_value.vul + ')'}}
                               </v-flex>
                               <v-flex xs7>
                                 <v-slider
@@ -319,6 +462,29 @@
                 </v-flex>
                 <v-flex xs12 sm6>
                   <v-list two-line>
+                    <v-data-iterator
+                      v-if="props.item.k_Number !== false"
+                      :items="kwpname(props.item.k_Number.vul)"
+                      row
+                      wrap
+                    >
+                    <v-toolbar
+                      slot="header"
+                      color="indigo darken-5"
+                      dark
+                      flat
+                    >
+                      <v-toolbar-title>{{$t('Sharpness.Weaponlist')}}</v-toolbar-title>
+                    </v-toolbar>
+                    <v-flex
+                      slot="item"
+                      slot-scope="props"
+                    >
+                    <v-card max-width hover>
+                      <v-card-title class="subheading font-weight-bold">{{ props.item.name }}</v-card-title>
+                    </v-card>
+                    </v-flex>
+                    </v-data-iterator>
                   <v-list-tile v-if="props.item.wp_Cartridge_matching !== false">
                     <v-text-field
                       :label="$t('WeaponExplain.Match_projectile')"
@@ -740,15 +906,15 @@ export default {
     search: null,
     items: [
       {
-        wp_Name: '',
-        wp_Number: 0,
-        wp_Money: 0,
-        wp_Rarity: 0,
+        wp_Name: false,
+        wp_Number: false,
+        wp_Money: false,
+        wp_Rarity: false,
         wp_Chopping_value: false,
         wp_Chopping_grade: false,
-        wp_Damage_value: 0,
-        wp_Defense_value: 0,
-        wp_Heart_value: 0,
+        wp_Damage_value: false,
+        wp_Defense_value: false,
+        wp_Heart_value: false,
         wp_Visible_attributes: false,
         wp_Visible_attribute_values: false,
         wp_Hidden_attribute: false,
@@ -756,13 +922,13 @@ export default {
         wp_Cartridge_matching: false,
         wp_Offset_size: false,
         wp_Seal_Dragon: false,
-        wp_Slot_grade_Number: 0,
-        wp_Slot_grade_1: 0,
-        wp_Slot_grade_2: 0,
-        wp_Slot_grade_3: 0,
+        wp_Slot_grade_Number: false,
+        wp_Slot_grade_1: false,
+        wp_Slot_grade_2: false,
+        wp_Slot_grade_3: false,
         wp_Special_projectile: false,
         wp_Special_attributes: false,
-        wp_Weapon_skills: 0
+        wp_Weapon_skills: false
       }
     ],
     sourceitems: false
@@ -789,6 +955,8 @@ export default {
         let itemsarr = []
         for (let i = 0, l = _items.length; i < l; i++) {
           if (this.wpname(_items[i].wp_Number.vul) !== this.$t('WeaponExplain.Unknown') && this.wpname(_items[i].wp_Number.vul) !== 'Unknown') {
+            itemsarr.push(_items[i])
+          } else if (_items[i].wp_Number === false && _items[i].k_Number !== false) {
             itemsarr.push(_items[i])
           }
         }
@@ -1264,20 +1432,51 @@ export default {
       }
       return this.$t('WeaponExplain.Unknown')
     },
+    kwpname (id) {
+      let wpnamelist
+      wpnamelist = require('./Smiscellaneous/' + this.$i18n.locale + '/Sharpness.json')
+      let namedata = wpnamelist.Data
+      if (namedata[id]) {
+        let ret = []
+        for (let i = 0; i < namedata[id].length; i++) {
+          ret[i] = {name: namedata[id][i]}
+        }
+        console.log(ret)
+        return ret
+      } else {
+        return []
+      }
+    },
     wpdefense (HexFunction) {
-      HexFunction.vul = Math.ceil(HexFunction.vul)
+      if (HexFunction !== false) {
+        HexFunction.vul = Math.ceil(HexFunction.vul)
+      } else {
+        HexFunction = false
+      }
       return HexFunction
     },
     wpheart (HexFunction) {
-      HexFunction.vul = HexFunction.vul <= 100 ? HexFunction.vul : '-' + (256 - HexFunction.vul)
+      if (HexFunction !== false) {
+        HexFunction.vul = HexFunction.vul <= 100 ? HexFunction.vul : '-' + (256 - HexFunction.vul)
+      } else {
+        HexFunction = false
+      }
       return HexFunction
     },
     wpattribute (HexFunction) {
-      HexFunction.vul = HexFunction.vul * 10
+      if (HexFunction !== false) {
+        HexFunction.vul = HexFunction.vul * 10
+      } else {
+        HexFunction = false
+      }
       return HexFunction
     },
     wpdamage (HexFunction) {
-      HexFunction.vul = Math.ceil(HexFunction.vul * this.weapon_damage(this.weapon))
+      if (HexFunction !== false) {
+        HexFunction.vul = Math.ceil(HexFunction.vul * this.weapon_damage(this.weapon))
+      } else {
+        HexFunction = false
+      }
       return HexFunction
     },
     hexdata (data, setsourcedata = false) {
@@ -1310,7 +1509,7 @@ export default {
           'wp_Special_attributes': [44, 1], // 44
           'wp_Weapon_skills': [(HexRuler + 2), 1] // HexRuler(下一行) + 2
         }
-      } else {
+      } else if (data[7] === 0 && data[74] === 1 && data[142] === 2) {
         HexRuler = 16 * 4 + 4 // 远程武器
         HexPointer = {
           'wp_Number': [6, 1], // 6
@@ -1336,6 +1535,21 @@ export default {
           'wp_Special_projectile': [62, 1], // 62
           'wp_Weapon_skills': [(HexRuler + 2), 1] // HexRuler(下一行) + 2
         }
+      } else if (data[6] === 0 && data[24] === 1 && data[42] === 2) {
+        HexRuler = 18 // 斩味
+        HexPointer = {
+          'k_Number': [9, 4], // 6~9
+          'k_Sharpness_red': [11, 2], // 8~9
+          'k_Sharpness_orange': [13, 2], // 10~11
+          'k_Sharpness_yellow': [15, 2], // 12~13
+          'k_Sharpness_green': [17, 2], // 14~15
+          'k_Sharpness_blue': [19, 2], // 16~17
+          'k_Sharpness_white': [21, 2], // 08~19
+          'k_Sharpness_purple': [23, 2] // 20~21
+        }
+      } else {
+        HexRuler = data.length // 未知
+        HexPointer = {}
       }
       let wplist = []
       for (let l = data.length / HexRuler, i = 0; i < l; i++) {
@@ -1366,7 +1580,15 @@ export default {
           'wp_Slot_grade_3': _this.HexFunction(data, HexPointer.wp_Slot_grade_3, HexRuler, i),
           'wp_Special_projectile': _this.HexFunction(data, HexPointer.wp_Special_projectile, HexRuler, i),
           'wp_Special_attributes': _this.HexFunction(data, HexPointer.wp_Special_attributes, HexRuler, i),
-          'wp_Weapon_skills': _this.HexFunction(data, HexPointer.wp_Weapon_skills, HexRuler, i)
+          'wp_Weapon_skills': _this.HexFunction(data, HexPointer.wp_Weapon_skills, HexRuler, i),
+          'k_Number': _this.HexFunction(data, HexPointer.k_Number, HexRuler, i),
+          'k_Sharpness_red': _this.HexFunction(data, HexPointer.k_Sharpness_red, HexRuler, i),
+          'k_Sharpness_orange': _this.HexFunction(data, HexPointer.k_Sharpness_orange, HexRuler, i),
+          'k_Sharpness_yellow': _this.HexFunction(data, HexPointer.k_Sharpness_yellow, HexRuler, i),
+          'k_Sharpness_green': _this.HexFunction(data, HexPointer.k_Sharpness_green, HexRuler, i),
+          'k_Sharpness_blue': _this.HexFunction(data, HexPointer.k_Sharpness_blue, HexRuler, i),
+          'k_Sharpness_white': _this.HexFunction(data, HexPointer.k_Sharpness_white, HexRuler, i),
+          'k_Sharpness_purple': _this.HexFunction(data, HexPointer.k_Sharpness_purple, HexRuler, i)
         }
         if (this.sourceitems) {
           wplist[i].wp_sourcedata = this.sourceitems[i]

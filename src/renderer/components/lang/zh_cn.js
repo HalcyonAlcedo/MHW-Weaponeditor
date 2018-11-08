@@ -68,6 +68,20 @@ module.exports = {
     Hunting_bow: '弓',
     Unknown: '未知'
   },
+  Weaponsmiscellaneous: {
+    Sharpness: '斩味'
+  },
+  Sharpness: {
+    Number: '斩味id',
+    Weaponlist: '影响武器列表',
+    Red: '红斩',
+    Orange: '橙斩',
+    Yellow: '黄斩',
+    green: '绿斩',
+    blue: '蓝斩',
+    white: '白斩',
+    purple: '紫斩'
+  },
   WeaponExplain: {
     Describe: '描述',
     Address: '地址',
@@ -83,6 +97,7 @@ module.exports = {
     Chopping_grade_quick1: '短白',
     Chopping_grade_quick2: '中白',
     Chopping_grade_quick3: '长白',
+    Reset: '重置',
     Damage: '伤害值',
     Defense: '防御值',
     Heart: '会心值',
