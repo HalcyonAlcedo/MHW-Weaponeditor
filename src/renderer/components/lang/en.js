@@ -32,7 +32,9 @@ module.exports = {
     Old_version: 'Compatibility mode',
     Version_update: 'Version update',
     Update_description: 'Update description',
-    Old_version_save: 'Do not save compatibility mode.'
+    Old_version_save: 'Do not save compatibility mode.',
+    Weapon: 'Weapon',
+    Weaponsmiscellaneous: 'Weapons miscellaneous'
   },
   Explanatory: {
     Elimination_unknown_weapons: 'Exclude undocumented weapon data from the weapon information list',
@@ -52,7 +54,9 @@ module.exports = {
     Update_description: '<ul><li> Add sharpness reset function </li><li> Add sharpness to modify function. </li></ul>'
   },
   Weaponsmiscellaneous: {
-    Sharpness: 'Sharpness'
+    Sharpness: 'Sharpness',
+    Wswordattribute: 'Double attribute',
+    Saxebottle: 'Saxe bottle'
   },
   Sharpness: {
     Number: 'Sharpness Id',
@@ -64,6 +68,18 @@ module.exports = {
     blue: 'Blue Sharpness',
     white: 'White Sharpness',
     purple: 'Purple Sharpness'
+  },
+  Wswordattribute: {
+    Number: 'Double knife Double attribute Id',
+    First_attribute: 'The first attribute',
+    First_attribute_values: 'The first attribute values',
+    Second_attribute: 'The second attribute',
+    Second_attribute_values: 'The second attribute values'
+  },
+  Saxebottle: {
+    Number: 'Saxe bottle Id',
+    Bottle_type: 'Bottle type',
+    Attribute_values: 'Attribute values'
   },
   Weapon: {
     Charge_blade: 'Shield Axe',

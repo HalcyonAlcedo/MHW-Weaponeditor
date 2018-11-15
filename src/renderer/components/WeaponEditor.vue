@@ -14,6 +14,8 @@
             right
             offset-x
             full-width
+            :close-on-content-click = false
+            v-model="newfilemenu"
           >
             <v-list-tile @click="" style="width: 100%" slot="activator">
               <v-list-tile-action>
@@ -24,13 +26,27 @@
               </v-list-tile-content>
             </v-list-tile>
             <v-list>
-              <v-list-tile
-                v-for="(item, i) in newfile"
-                :key="i"
-                @click="openfile(item.file)"
-              >
-                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-              </v-list-tile>
+              <v-list-group
+                  v-for="(item, i) in newfile"
+                  :key="i"
+                  no-action
+                >
+                  <v-list-tile slot="activator">
+                    <v-list-tile-content>
+                      <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+                    </v-list-tile-content>
+                  </v-list-tile>
+
+                  <v-list-tile
+                    v-for="subItem in item.items"
+                    :key="subItem.title"
+                    @click="openfile(subItem.file),newfilemenu = false"
+                  >
+                    <v-list-tile-content>
+                      <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
+                    </v-list-tile-content>
+                  </v-list-tile>
+                </v-list-group>
             </v-list>
           </v-menu>
           <v-list-tile @click="openfile()">
@@ -310,6 +326,7 @@ export default {
       update: false,
       loaddialog: false,
       sound: false,
+      newfilemenu: false,
       file: '',
       snackbar: {
         snackbar: false,
@@ -328,7 +345,7 @@ export default {
   },
   computed: {
     newfile () {
-      return [
+      let wp = [
         { title: this.$t('Weapon.Greatsword') + ' (l_sword)', file: 'l_sword.wp_dat' },
         { title: this.$t('Weapon.Blade') + ' (sword)', file: 'sword.wp_dat' },
         { title: this.$t('Weapon.Hammer') + ' (hammer)', file: 'hammer.wp_dat' },
@@ -342,8 +359,16 @@ export default {
         { title: this.$t('Weapon.Hunting_horn') + ' (whistle)', file: 'whistle.wp_dat' },
         { title: this.$t('Weapon.Gunlance') + ' (g_lance)', file: 'g_lance.wp_dat' },
         { title: this.$t('Weapon.Charge_blade') + ' (c_axe)', file: 'c_axe.wp_dat' },
-        { title: this.$t('Weapon.Hunting_bow') + ' (bow)', file: 'bow.wp_dat_g' },
-        { title: this.$t('Weaponsmiscellaneous.Sharpness') + ' (kireaji.kire)', file: 'kireaji.kire' }
+        { title: this.$t('Weapon.Hunting_bow') + ' (bow)', file: 'bow.wp_dat_g' }
+      ]
+      let wpm = [
+        { title: this.$t('Weaponsmiscellaneous.Sharpness') + ' (kireaji.kire)', file: 'kireaji.kire' },
+        { title: this.$t('Weaponsmiscellaneous.Wswordattribute') + ' (wep_wsword.wep_wsd)', file: 'wep_wsword.wep_wsd' },
+        { title: this.$t('Weaponsmiscellaneous.Saxebottle') + ' (wep_saxe.wep_saxe)', file: 'wep_saxe.wep_saxe' }
+      ]
+      return [
+        {title: this.$t('Interface.Weapon'), items: wp},
+        {title: this.$t('Interface.Weaponsmiscellaneous'), items: wpm}
       ]
     },
     weapon () {
@@ -429,7 +454,6 @@ export default {
         this.snackbar.snackbar = true
       } else if (this.file !== this.$t('Interface.No_file_opened')) {
         let filepath = dialog.showSaveDialog({ title: this.$t('Interface.Save_file'), defaultPath: this.weapon !== 'Unknown' ? this.weapon : this.file })
-        console.log(this.filedata)
         fs.writeFile(filepath, this.filedata, { flag: 'w' }, function (err) {
           if (err) {
             _this.snackbar.text = _this.$t('Interface.Save_Failure')

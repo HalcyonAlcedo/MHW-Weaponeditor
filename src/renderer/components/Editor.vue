@@ -40,7 +40,10 @@
               <v-card>
                 <v-card-title>
                   <h4 v-if="props.item.wp_Number !== false">{{ props.item.wp_Name }}</h4>
-                  <h4 v-if="props.item.k_Number !== false">{{ $t('Weaponsmiscellaneous.Sharpness') + props.item.k_Number.vul }}</h4><v-spacer></v-spacer>
+                  <h4 v-if="props.item.k_Number !== false">{{ $t('Weaponsmiscellaneous.Sharpness') + props.item.k_Number.vul }}</h4>
+                  <h4 v-if="props.item.ws_Number !== false">{{ $t('Weaponsmiscellaneous.Wswordattribute') + props.item.ws_Number.vul }}</h4>
+                  <h4 v-if="props.item.sa_Number !== false">{{ $t('Weaponsmiscellaneous.Saxebottle') + props.item.sa_Number.vul }}</h4>
+                  <v-spacer></v-spacer>
                   <h5>{{ $t('WeaponExplain.Address') }}：<span class="red--text">{{ str_pad(props.item.wp_Hex) }}</span></h5>
                 </v-card-title>
                 <v-divider></v-divider>
@@ -60,6 +63,24 @@
                     <v-text-field
                       :label="$t('Sharpness.Number')"
                       v-model="props.item.k_Number.vul"
+                      full-width
+                      box
+                      disabled
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="props.item.ws_Number !== false">
+                    <v-text-field
+                      :label="$t('Wswordattribute.Number')"
+                      v-model="props.item.ws_Number.vul"
+                      full-width
+                      box
+                      disabled
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="props.item.sa_Number !== false">
+                    <v-text-field
+                      :label="$t('Saxebottle.Number')"
+                      v-model="props.item.sa_Number.vul"
                       full-width
                       box
                       disabled
@@ -413,6 +434,123 @@
                       v-if="sourceitems && (props.item.wp_Visible_attribute_values.vul !== props.item.wp_sourcedata.wp_Visible_attribute_values.vul)"
                       :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Visible_attribute_values')"
                       v-model="props.item.wp_sourcedata.wp_Visible_attribute_values.vul"
+                      full-width
+                      box
+                      color="red"
+                      readonly
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="props.item.ws_First_attribute !== false">
+                    <v-select
+                      v-model="props.item.ws_First_attribute.vul"
+                      :items="attributeitem"
+                      @change="Select_interchangeable(props.item.ws_First_attribute)"
+                      box
+                      :label="$t('Wswordattribute.First_attribute')"
+                      item-text="text"
+                      item-value="value"
+                      return-object
+                    ></v-select>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.ws_First_attribute.vul !== props.item.wp_sourcedata.ws_First_attribute.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('Wswordattribute.First_attribute')"
+                      :value="attribute(props.item.wp_sourcedata.ws_First_attribute.vul)"
+                      full-width
+                      box
+                      color="red"
+                      readonly
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="props.item.ws_First_attribute_values !== false">
+                    <v-text-field
+                      :label="$t('Wswordattribute.First_attribute_values')"
+                      @change="Attribute_treatment(props.item.ws_First_attribute_values)"
+                      v-model="props.item.ws_First_attribute_values.vul"
+                      full-width
+                      box
+                    ></v-text-field>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.ws_First_attribute_values.vul !== props.item.wp_sourcedata.ws_First_attribute_values.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('Wswordattribute.First_attribute_values')"
+                      v-model="props.item.wp_sourcedata.ws_First_attribute_values.vul"
+                      full-width
+                      box
+                      color="red"
+                      readonly
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="props.item.ws_Second_attribute !== false">
+                    <v-select
+                      v-model="props.item.ws_Second_attribute.vul"
+                      :items="attributeitem"
+                      @change="Select_interchangeable(props.item.ws_Second_attribute)"
+                      box
+                      :label="$t('Wswordattribute.Second_attribute')"
+                      item-text="text"
+                      item-value="value"
+                      return-object
+                    ></v-select>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.ws_Second_attribute.vul !== props.item.wp_sourcedata.ws_Second_attribute.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('Wswordattribute.Second_attribute')"
+                      :value="attribute(props.item.wp_sourcedata.ws_Second_attribute.vul)"
+                      full-width
+                      box
+                      color="red"
+                      readonly
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="props.item.ws_Second_attribute_values !== false">
+                    <v-text-field
+                      :label="$t('Wswordattribute.Second_attribute_values')"
+                      @change="Attribute_treatment(props.item.ws_Second_attribute_values)"
+                      v-model="props.item.ws_Second_attribute_values.vul"
+                      full-width
+                      box
+                    ></v-text-field>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.ws_Second_attribute_values.vul !== props.item.wp_sourcedata.ws_Second_attribute_values.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('Wswordattribute.Second_attribute_values')"
+                      v-model="props.item.wp_sourcedata.ws_Second_attribute_values.vul"
+                      full-width
+                      box
+                      color="red"
+                      readonly
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="props.item.sa_Attribute !== false">
+                    <v-select
+                      v-model="props.item.sa_Attribute.vul"
+                      :items="wepsaxeitem"
+                      @change="Select_interchangeable(props.item.sa_Attribute)"
+                      box
+                      :label="$t('Saxebottle.Bottle_type')"
+                      item-text="text"
+                      item-value="value"
+                      return-object
+                    ></v-select>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.sa_Attribute.vul !== props.item.wp_sourcedata.sa_Attribute.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('Saxebottle.Bottle_type')"
+                      :value="specialattributes(props.item.wp_sourcedata.sa_Attribute.vul)"
+                      full-width
+                      box
+                      color="red"
+                      readonly
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="props.item.sa_Attribute_value !== false">
+                    <v-text-field
+                      :label="$t('Saxebottle.Attribute_values')"
+                      @change="Attribute_treatment(props.item.sa_Attribute_value)"
+                      v-model="props.item.sa_Attribute_value.vul"
+                      full-width
+                      box
+                    ></v-text-field>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.sa_Attribute_value.vul !== props.item.wp_sourcedata.sa_Attribute_value.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('Saxebottle.Attribute_values')"
+                      v-model="props.item.wp_sourcedata.sa_Attribute_value.vul"
                       full-width
                       box
                       color="red"
@@ -958,6 +1096,10 @@ export default {
             itemsarr.push(_items[i])
           } else if (_items[i].wp_Number === false && _items[i].k_Number !== false) {
             itemsarr.push(_items[i])
+          } else if (_items[i].k_Number === false && _items[i].ws_Number !== false) {
+            itemsarr.push(_items[i])
+          } else if (_items[i].ws_Number === false && _items[i].sa_Number !== false) {
+            itemsarr.push(_items[i])
           }
         }
         return itemsarr
@@ -1077,6 +1219,16 @@ export default {
           {value: 0, text: this.$t('WeaponExplain.Nothing')}
         ]
       }
+    },
+    wepsaxeitem () {
+      return [
+        {value: 0, text: this.$t('WeaponExplain.Strong_exocet_bottle')},
+        {value: 1, text: this.$t('WeaponExplain.Strong_attribute_bottle')},
+        {value: 2, text: this.$t('WeaponExplain.Extinguish_dragon')},
+        {value: 3, text: this.$t('WeaponExplain.Reduce_breath')},
+        {value: 4, text: this.$t('WeaponExplain.Hemp')},
+        {value: 5, text: this.$t('WeaponExplain.Poison')}
+      ]
     },
     rankitem () {
       return [
@@ -1441,7 +1593,6 @@ export default {
         for (let i = 0; i < namedata[id].length; i++) {
           ret[i] = {name: namedata[id][i]}
         }
-        console.log(ret)
         return ret
       } else {
         return []
@@ -1547,6 +1698,27 @@ export default {
           'k_Sharpness_white': [21, 2], // 08~19
           'k_Sharpness_purple': [23, 2] // 20~21
         }
+      } else if (data[6] === 0 && data[16] === 1 && data[26] === 2) {
+        HexRuler = 10 // 双刀双属性
+        HexPointer = {
+          'ws_Number': [9, 4], // 6~9
+          'ws_First_attribute': [10, 1], // 10
+          'ws_First_attribute_values': [12, 2], // 11~12
+          'ws_Second_attribute': [13, 1], // 13
+          'ws_Second_attribute_values': [15, 2] // 14~15
+        }
+      } else if (data[6] === 0 && data[16] === 1 && data[26] === 2) {
+        HexRuler = 27 // 虫
+        HexPointer = {
+          'ri_Number': [15, 4] // 11~15
+        }
+      } else if (data[6] === 0 && data[13] === 1 && data[20] === 2) {
+        HexRuler = 7 // 斩瓶
+        HexPointer = {
+          'sa_Number': [9, 4], // 6~9
+          'sa_Attribute': [10, 1], // 10
+          'sa_Attribute_value': [12, 2] // 11~12
+        }
       } else {
         HexRuler = data.length // 未知
         HexPointer = {}
@@ -1588,7 +1760,15 @@ export default {
           'k_Sharpness_green': _this.HexFunction(data, HexPointer.k_Sharpness_green, HexRuler, i),
           'k_Sharpness_blue': _this.HexFunction(data, HexPointer.k_Sharpness_blue, HexRuler, i),
           'k_Sharpness_white': _this.HexFunction(data, HexPointer.k_Sharpness_white, HexRuler, i),
-          'k_Sharpness_purple': _this.HexFunction(data, HexPointer.k_Sharpness_purple, HexRuler, i)
+          'k_Sharpness_purple': _this.HexFunction(data, HexPointer.k_Sharpness_purple, HexRuler, i),
+          'ws_Number': _this.HexFunction(data, HexPointer.ws_Number, HexRuler, i),
+          'ws_First_attribute': _this.HexFunction(data, HexPointer.ws_First_attribute, HexRuler, i),
+          'ws_First_attribute_values': _this.wpattribute(_this.HexFunction(data, HexPointer.ws_First_attribute_values, HexRuler, i)),
+          'ws_Second_attribute': _this.HexFunction(data, HexPointer.ws_Second_attribute, HexRuler, i),
+          'ws_Second_attribute_values': _this.wpattribute(_this.HexFunction(data, HexPointer.ws_Second_attribute_values, HexRuler, i)),
+          'sa_Number': _this.HexFunction(data, HexPointer.sa_Number, HexRuler, i),
+          'sa_Attribute': _this.HexFunction(data, HexPointer.sa_Attribute, HexRuler, i),
+          'sa_Attribute_value': _this.wpattribute(_this.HexFunction(data, HexPointer.sa_Attribute_value, HexRuler, i))
         }
         if (this.sourceitems) {
           wplist[i].wp_sourcedata = this.sourceitems[i]

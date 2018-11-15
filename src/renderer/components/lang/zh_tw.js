@@ -32,7 +32,9 @@ module.exports = {
     Old_version: '相容模式',
     Version_update: '版本更新',
     Update_description: '更新說明',
-    Old_version_save: '請勿保存兼容模式'
+    Old_version_save: '請勿保存兼容模式',
+    Weapon: '武器',
+    Weaponsmiscellaneous: '武器雜項'
   },
   Explanatory: {
     Elimination_unknown_weapons: '武器信息清單中排除掉未被記載的武器數據',
@@ -52,7 +54,9 @@ module.exports = {
     Update_description: '<ul><li>添加斬味重置功能</li><li>添加斬味修改功能</li></ul>'
   },
   Weaponsmiscellaneous: {
-    Sharpness: '斬味'
+    Sharpness: '斬味',
+    Wswordattribute: '雙屬性',
+    Saxebottle: '斬瓶'
   },
   Sharpness: {
     Number: '斬味id',
@@ -64,6 +68,18 @@ module.exports = {
     blue: '藍斬',
     white: '白斬',
     purple: '紫斬'
+  },
+  Wswordattribute: {
+    Number: '雙刀雙屬性id',
+    First_attribute: '第一屬性',
+    First_attribute_values: '第一屬性值',
+    Second_attribute: '第二屬性',
+    Second_attribute_values: '第二屬性值'
+  },
+  Saxebottle: {
+    Number: '斬瓶id',
+    Bottle_type: '斬瓶類型',
+    Attribute_values: '屬性值'
   },
   Weapon: {
     Charge_blade: '盾斧',

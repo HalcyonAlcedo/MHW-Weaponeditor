@@ -32,7 +32,9 @@ module.exports = {
     Old_version: '兼容模式',
     Version_update: '版本更新',
     Update_description: '更新说明',
-    Old_version_save: '请勿保存兼容模式'
+    Old_version_save: '请勿保存兼容模式',
+    Weapon: '武器',
+    Weaponsmiscellaneous: '武器杂项'
   },
   Explanatory: {
     Elimination_unknown_weapons: '武器信息列表中排除掉未被记载的武器数据',
@@ -69,7 +71,9 @@ module.exports = {
     Unknown: '未知'
   },
   Weaponsmiscellaneous: {
-    Sharpness: '斩味'
+    Sharpness: '斩味',
+    Wswordattribute: '双属性',
+    Saxebottle: '斩瓶'
   },
   Sharpness: {
     Number: '斩味id',
@@ -81,6 +85,18 @@ module.exports = {
     blue: '蓝斩',
     white: '白斩',
     purple: '紫斩'
+  },
+  Wswordattribute: {
+    Number: '双刀双属性id',
+    First_attribute: '第一属性',
+    First_attribute_values: '第一属性值',
+    Second_attribute: '第二属性',
+    Second_attribute_values: '第二属性值'
+  },
+  Saxebottle: {
+    Number: '斩瓶id',
+    Bottle_type: '斩瓶类型',
+    Attribute_values: '属性值'
   },
   WeaponExplain: {
     Describe: '描述',
