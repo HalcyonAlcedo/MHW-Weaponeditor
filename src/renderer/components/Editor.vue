@@ -39,10 +39,10 @@
             >
               <v-card>
                 <v-card-title>
-                  <h4 v-if="props.item.wp_Number !== false">{{ props.item.wp_Name }}</h4>
-                  <h4 v-if="props.item.k_Number !== false">{{ $t('Weaponsmiscellaneous.Sharpness') + props.item.k_Number.vul }}</h4>
-                  <h4 v-if="props.item.ws_Number !== false">{{ $t('Weaponsmiscellaneous.Wswordattribute') + props.item.ws_Number.vul }}</h4>
-                  <h4 v-if="props.item.sa_Number !== false">{{ $t('Weaponsmiscellaneous.Saxebottle') + props.item.sa_Number.vul }}</h4>
+                  <h4 v-if="existence(props.item.wp_Number)">{{ props.item.wp_Name }}</h4>
+                  <h4 v-else-if="existence(props.item.k_Number)">{{ $t('Weaponsmiscellaneous.Sharpness') + props.item.k_Number.vul }}</h4>
+                  <h4 v-else-if="existence(props.item.ws_Number)">{{ $t('Weaponsmiscellaneous.Wswordattribute') + props.item.ws_Number.vul }}</h4>
+                  <h4 v-else-if="existence(props.item.sa_Number)">{{ $t('Weaponsmiscellaneous.Saxebottle') + props.item.sa_Number.vul }}</h4>
                   <v-spacer></v-spacer>
                   <h5>{{ $t('WeaponExplain.Address') }}：<span class="red--text">{{ str_pad(props.item.wp_Hex) }}</span></h5>
                 </v-card-title>
@@ -50,7 +50,7 @@
                 <v-layout row wrap>
                 <v-flex xs12 sm6>
                   <v-list two-line>
-                  <v-list-tile v-if="props.item.wp_Number !== false">
+                  <v-list-tile v-if="existence(props.item.wp_Number)">
                     <v-text-field
                       :label="$t('WeaponExplain.Sequence_number')"
                       v-model="props.item.wp_Number.vul"
@@ -59,7 +59,7 @@
                       disabled
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.k_Number !== false">
+                  <v-list-tile v-if="existence(props.item.k_Number)">
                     <v-text-field
                       :label="$t('Sharpness.Number')"
                       v-model="props.item.k_Number.vul"
@@ -68,7 +68,7 @@
                       disabled
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.ws_Number !== false">
+                  <v-list-tile v-if="existence(props.item.ws_Number)">
                     <v-text-field
                       :label="$t('Wswordattribute.Number')"
                       v-model="props.item.ws_Number.vul"
@@ -77,7 +77,7 @@
                       disabled
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.sa_Number !== false">
+                  <v-list-tile v-if="existence(props.item.sa_Number)">
                     <v-text-field
                       :label="$t('Saxebottle.Number')"
                       v-model="props.item.sa_Number.vul"
@@ -86,7 +86,7 @@
                       disabled
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.wp_Money !== false">
+                  <v-list-tile v-if="existence(props.item.wp_Money)">
                     <v-text-field
                       :label="$t('WeaponExplain.Manufacturing_costs')"
                       @change="input_interchangeable(props.item.wp_Money)"
@@ -105,7 +105,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.k_Sharpness_red !== false">
+                  <v-list-tile v-if="existence(props.item.k_Sharpness_red)">
                     <v-text-field
                       :label="$t('Sharpness.Red')"
                       @change="input_interchangeable(props.item.k_Sharpness_red)"
@@ -123,7 +123,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.k_Sharpness_orange !== false">
+                  <v-list-tile v-if="existence(props.item.k_Sharpness_orange)">
                     <v-text-field
                       :label="$t('Sharpness.Orange')"
                       @change="input_interchangeable(props.item.k_Sharpness_orange)"
@@ -141,7 +141,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.k_Sharpness_yellow !== false">
+                  <v-list-tile v-if="existence(props.item.k_Sharpness_yellow)">
                     <v-text-field
                       :label="$t('Sharpness.Yellow')"
                       @change="input_interchangeable(props.item.k_Sharpness_yellow)"
@@ -159,7 +159,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.k_Sharpness_green !== false">
+                  <v-list-tile v-if="existence(props.item.k_Sharpness_green)">
                     <v-text-field
                       :label="$t('Sharpness.green')"
                       @change="input_interchangeable(props.item.k_Sharpness_green)"
@@ -177,7 +177,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.k_Sharpness_blue !== false">
+                  <v-list-tile v-if="existence(props.item.k_Sharpness_blue)">
                     <v-text-field
                       :label="$t('Sharpness.blue')"
                       @change="input_interchangeable(props.item.k_Sharpness_blue)"
@@ -195,7 +195,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.k_Sharpness_white !== false">
+                  <v-list-tile v-if="existence(props.item.k_Sharpness_white)">
                     <v-text-field
                       :label="$t('Sharpness.white')"
                       @change="input_interchangeable(props.item.k_Sharpness_white)"
@@ -213,7 +213,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.k_Sharpness_purple !== false">
+                  <v-list-tile v-if="existence(props.item.k_Sharpness_purple)">
                     <v-text-field
                       :label="$t('Sharpness.purple')"
                       @change="input_interchangeable(props.item.k_Sharpness_purple)"
@@ -231,7 +231,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.wp_Rarity !== false">
+                  <v-list-tile v-if="existence(props.item.wp_Rarity)">
                     <v-select
                       v-model="props.item.wp_Rarity.vul"
                       :items="rankitem"
@@ -252,7 +252,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.wp_Chopping_value !== false">
+                  <v-list-tile v-if="existence(props.item.wp_Chopping_value)">
                     <v-menu
                       v-model="props.menu"
                       :close-on-content-click="false"
@@ -345,7 +345,7 @@
                       </v-card>
                     </v-menu>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.wp_Damage_value !== false">
+                  <v-list-tile v-if="existence(props.item.wp_Damage_value)">
                     <v-text-field
                       :label="$t('WeaponExplain.Damage')"
                       @change="Damage_treatment(props.item.wp_Damage_value)"
@@ -363,7 +363,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.wp_Defense_value !== false">
+                  <v-list-tile v-if="existence(props.item.wp_Defense_value)">
                     <v-text-field
                       :label="$t('WeaponExplain.Defense')"
                       @change="Defense_treatment(props.item.wp_Defense_value)"
@@ -381,7 +381,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.wp_Heart_value !== false">
+                  <v-list-tile v-if="existence(props.item.wp_Heart_value)">
                     <v-text-field
                       :label="$t('WeaponExplain.Heart')"
                       suffix="%"
@@ -401,7 +401,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.wp_Visible_attributes !== false">
+                  <v-list-tile v-if="existence(props.item.wp_Visible_attributes)">
                     <v-select
                       v-model="props.item.wp_Visible_attributes.vul"
                       :items="attributeitem"
@@ -422,7 +422,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.wp_Visible_attribute_values !== false">
+                  <v-list-tile v-if="existence(props.item.wp_Visible_attribute_values)">
                     <v-text-field
                       :label="$t('WeaponExplain.Visible_attribute_values')"
                       @change="Attribute_treatment(props.item.wp_Visible_attribute_values)"
@@ -440,7 +440,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.ws_First_attribute !== false">
+                  <v-list-tile v-if="existence(props.item.ws_First_attribute)">
                     <v-select
                       v-model="props.item.ws_First_attribute.vul"
                       :items="attributeitem"
@@ -461,7 +461,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.ws_First_attribute_values !== false">
+                  <v-list-tile v-if="existence(props.item.ws_First_attribute_values)">
                     <v-text-field
                       :label="$t('Wswordattribute.First_attribute_values')"
                       @change="Attribute_treatment(props.item.ws_First_attribute_values)"
@@ -479,7 +479,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.ws_Second_attribute !== false">
+                  <v-list-tile v-if="existence(props.item.ws_Second_attribute)">
                     <v-select
                       v-model="props.item.ws_Second_attribute.vul"
                       :items="attributeitem"
@@ -500,7 +500,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.ws_Second_attribute_values !== false">
+                  <v-list-tile v-if="existence(props.item.ws_Second_attribute_values)">
                     <v-text-field
                       :label="$t('Wswordattribute.Second_attribute_values')"
                       @change="Attribute_treatment(props.item.ws_Second_attribute_values)"
@@ -518,7 +518,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.sa_Attribute !== false">
+                  <v-list-tile v-if="existence(props.item.sa_Attribute)">
                     <v-select
                       v-model="props.item.sa_Attribute.vul"
                       :items="wepsaxeitem"
@@ -539,7 +539,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.sa_Attribute_value !== false">
+                  <v-list-tile v-if="existence(props.item.sa_Attribute_value)">
                     <v-text-field
                       :label="$t('Saxebottle.Attribute_values')"
                       @change="Attribute_treatment(props.item.sa_Attribute_value)"
@@ -557,7 +557,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.wp_Hidden_attribute !== false">
+                  <v-list-tile v-if="existence(props.item.wp_Hidden_attribute)">
                     <v-select
                       v-model="props.item.wp_Hidden_attribute.vul"
                       :items="attributeitem"
@@ -578,7 +578,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.wp_Hidden_attribute_values !== false">
+                  <v-list-tile v-if="existence(props.item.wp_Hidden_attribute_values)">
                     <v-text-field
                       :label="$t('WeaponExplain.Hidden_attribute_values')"
                       @change="Attribute_treatment(props.item.wp_Hidden_attribute_values)"
@@ -601,7 +601,7 @@
                 <v-flex xs12 sm6>
                   <v-list two-line>
                     <v-data-iterator
-                      v-if="props.item.k_Number !== false"
+                      v-if="existence(props.item.k_Number)"
                       :items="kwpname(props.item.k_Number.vul)"
                       row
                       wrap
@@ -623,7 +623,7 @@
                     </v-card>
                     </v-flex>
                     </v-data-iterator>
-                  <v-list-tile v-if="props.item.wp_Cartridge_matching !== false">
+                  <v-list-tile v-if="existence(props.item.wp_Cartridge_matching)">
                     <v-text-field
                       :label="$t('WeaponExplain.Match_projectile')"
                       @change="input_interchangeable(props.item.wp_Cartridge_matching)"
@@ -641,7 +641,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.wp_Offset_size !== false">
+                  <v-list-tile v-if="existence(props.item.wp_Offset_size)">
                     <v-select
                       v-model="props.item.wp_Offset_size.vul"
                       :items="generalsizeitem"
@@ -662,7 +662,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.wp_Seal_Dragon !== false">
+                  <v-list-tile v-if="existence(props.item.wp_Seal_Dragon)">
                     <v-select
                       v-model="props.item.wp_Seal_Dragon.vul"
                       :items="generalsizeitem"
@@ -683,7 +683,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.wp_Slot_grade_Number !== false">
+                  <v-list-tile v-if="existence(props.item.wp_Slot_grade_Number)">
                     <v-select
                       v-model="props.item.wp_Slot_grade_Number.vul"
                       :items="grooveitem"
@@ -704,7 +704,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.wp_Slot_grade_1 !== false">
+                  <v-list-tile v-if="existence(props.item.wp_Slot_grade_1)">
                     <v-select
                       v-model="props.item.wp_Slot_grade_1.vul"
                       :items="gradeitem"
@@ -725,7 +725,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.wp_Slot_grade_2 !== false">
+                  <v-list-tile v-if="existence(props.item.wp_Slot_grade_2)">
                     <v-select
                       v-model="props.item.wp_Slot_grade_2.vul"
                       :items="gradeitem"
@@ -746,7 +746,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.wp_Slot_grade_3 !== false">
+                  <v-list-tile v-if="existence(props.item.wp_Slot_grade_3)">
                     <v-select
                       v-model="props.item.wp_Slot_grade_3.vul"
                       :items="gradeitem"
@@ -767,7 +767,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.wp_Special_projectile !== false && specialprojectileitem[props.item.wp_Special_projectile.vul] !== undefined">
+                  <v-list-tile v-if="existence(props.item.wp_Special_projectile) && specialprojectileitem[props.item.wp_Special_projectile.vul] !== undefined">
                     <v-select
                       v-model="props.item.wp_Special_projectile.vul"
                       :items="specialprojectileitem"
@@ -788,7 +788,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-else-if="props.item.wp_Special_projectile !== false">
+                  <v-list-tile v-else-if="existence(props.item.wp_Special_projectile)">
                     <v-text-field
                       :label="$t('WeaponExplain.Specialprojectile')"
                       @change="input_interchangeable(props.item.wp_Special_projectile)"
@@ -806,7 +806,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-if="props.item.wp_Special_attributes !== false && specialattributesitem[props.item.wp_Special_attributes.vul] !== undefined">
+                  <v-list-tile v-if="existence(props.item.wp_Special_attributes) && specialattributesitem[props.item.wp_Special_attributes.vul] !== undefined">
                     <v-select
                       v-model="props.item.wp_Special_attributes.vul"
                       :items="specialattributesitem"
@@ -827,7 +827,7 @@
                       readonly
                     ></v-text-field>
                   </v-list-tile>
-                  <v-list-tile v-else-if="props.item.wp_Special_attributes !== false">
+                  <v-list-tile v-else-if="existence(props.item.wp_Special_attributes)">
                     <v-text-field
                       :label="$t('WeaponExplain.Special_attributes')"
                       @change="input_interchangeable(props.item.wp_Special_attributes)"
@@ -846,7 +846,7 @@
                     ></v-text-field>
                   </v-list-tile>
                   <!-- new model -->
-                  <v-list-tile v-if="props.item.wp_Model !== false || props.item.wp_Unprefixed_Model !== false">
+                  <v-list-tile v-if="existence(props.item.wp_Model) || existence(props.item.wp_Unprefixed_Model)">
                     <v-menu
                       v-model="props.menu"
                       :close-on-content-click="false"
@@ -886,7 +886,7 @@
                         </v-list>
                         <v-divider></v-divider>
                         <v-list two-line>
-                          <v-list-tile v-if="props.item.wp_Unprefixed_Model.vul !== false">
+                          <v-list-tile v-if="existence(props.item.wp_Unprefixed_Model.vul)">
                             <v-tooltip bottom v-if="props.item.wp_Unprefixed_Model.vul !== 65535">
                               <v-text-field
                                 slot="activator"
@@ -922,7 +922,7 @@
                               readonly
                             ></v-text-field>
                           </v-list-tile>
-                          <v-list-tile v-if="props.item.wp_Model.vul !== false">
+                          <v-list-tile v-if="existence(props.item.wp_Model.vul)">
                             <v-tooltip bottom v-if="props.item.wp_Model.vul !== 65535">
                               <v-text-field
                                 slot="activator"
@@ -958,7 +958,7 @@
                               readonly
                             ></v-text-field>
                           </v-list-tile>
-                          <v-list-tile v-if="props.item.wp_Minor_Model.vul !== false">
+                          <v-list-tile v-if="existence(props.item.wp_Minor_Model.vul)">
                             <v-tooltip bottom v-if="props.item.wp_Minor_Model.vul !== 65535">
                               <v-text-field
                                 slot="activator"
@@ -999,7 +999,7 @@
                     </v-menu>
                   </v-list-tile>
                   <!-- nwe model end -->
-                  <v-list-tile v-if="props.item.wp_Weapon_skills !== false">
+                  <v-list-tile v-if="existence(props.item.wp_Weapon_skills)">
                     <v-autocomplete
                       :label="$t('WeaponExplain.Weapon_skills')"
                       v-model="props.item.wp_Weapon_skills.vul"
@@ -1092,13 +1092,13 @@ export default {
       if (this.excludeunknown) {
         let itemsarr = []
         for (let i = 0, l = _items.length; i < l; i++) {
-          if (this.wpname(_items[i].wp_Number.vul) !== this.$t('WeaponExplain.Unknown') && this.wpname(_items[i].wp_Number.vul) !== 'Unknown') {
+          if (this.existence(_items[i].wp_Number) && this.wpname(_items[i].wp_Number.vul) !== this.$t('WeaponExplain.Unknown') && this.wpname(_items[i].wp_Number.vul) !== 'Unknown') {
             itemsarr.push(_items[i])
-          } else if (_items[i].wp_Number === false && _items[i].k_Number !== false) {
+          } else if (this.existence(_items[i].k_Number) && _items[i].k_Number !== false) {
             itemsarr.push(_items[i])
-          } else if (_items[i].k_Number === false && _items[i].ws_Number !== false) {
+          } else if (this.existence(_items[i].ws_Number) && _items[i].ws_Number !== false) {
             itemsarr.push(_items[i])
-          } else if (_items[i].ws_Number === false && _items[i].sa_Number !== false) {
+          } else if (this.existence(_items[i].sa_Number) && _items[i].sa_Number !== false) {
             itemsarr.push(_items[i])
           }
         }
@@ -1296,6 +1296,9 @@ export default {
       var zero = new Array(digits + 1).join('0')
       var tmp = digits - hex.length
       return zero.substr(0, tmp) + hex.toLocaleUpperCase()
+    },
+    existence (target) {
+      return target && target !== false
     },
     save (val) {
       let data = this.str_pad(Number(val.vul).toString(16), Math.ceil(Number(val.vul).toString(16).length / 2) * 2)
@@ -1567,7 +1570,7 @@ export default {
           ret = '00'
         }
       }
-      return {vul: parseInt(ret, 16), hex: (HexRuler * i) + Hexpointer[0], hexL: Hexpointer[1]}
+      return {vul: parseInt(ret, 16), hex: (HexRuler * i) + Hexpointer[0], hexL: Hexpointer[1], resourceprocessing: Hexpointer.length > 2 ? Hexpointer[2] : false}
     },
     wpname (id) {
       let wpnamelist
@@ -1577,6 +1580,9 @@ export default {
         return this.$t('WeaponExplain.Unknown')
       }
       let namedata = wpnamelist.Data
+      if (!Number.isInteger(id)) {
+        id = id.vul
+      }
       for (let i = 0; i < namedata.length; i++) {
         if (namedata[i].Weapon_Number === id) {
           return namedata[i].name
@@ -1598,33 +1604,24 @@ export default {
         return []
       }
     },
-    wpdefense (HexFunction) {
+    Resourceprocessing (HexFunction) {
       if (HexFunction !== false) {
-        HexFunction.vul = Math.ceil(HexFunction.vul)
-      } else {
-        HexFunction = false
-      }
-      return HexFunction
-    },
-    wpheart (HexFunction) {
-      if (HexFunction !== false) {
-        HexFunction.vul = HexFunction.vul <= 100 ? HexFunction.vul : '-' + (256 - HexFunction.vul)
-      } else {
-        HexFunction = false
-      }
-      return HexFunction
-    },
-    wpattribute (HexFunction) {
-      if (HexFunction !== false) {
-        HexFunction.vul = HexFunction.vul * 10
-      } else {
-        HexFunction = false
-      }
-      return HexFunction
-    },
-    wpdamage (HexFunction) {
-      if (HexFunction !== false) {
-        HexFunction.vul = Math.ceil(HexFunction.vul * this.weapon_damage(this.weapon))
+        switch (HexFunction.resourceprocessing) {
+          case 'wpdamage':
+            HexFunction.vul = Math.ceil(HexFunction.vul * this.weapon_damage(this.weapon))
+            break
+          case 'wpattribute':
+            HexFunction.vul = HexFunction.vul * 10
+            break
+          case 'wpheart':
+            HexFunction.vul = HexFunction.vul <= 100 ? HexFunction.vul : '-' + (256 - HexFunction.vul)
+            break
+          case 'wpdefense':
+            HexFunction.vul = Math.ceil(HexFunction.vul)
+            break
+          default:
+            HexFunction.vul = HexFunction.vul
+        }
       } else {
         HexFunction = false
       }
@@ -1645,13 +1642,13 @@ export default {
           'wp_Rarity': [25, 1], // 25
           'wp_Chopping_value': [26, 1], // 26
           'wp_Chopping_grade': [27, 1], // 27
-          'wp_Damage_value': [29, 2], // 28~29
-          'wp_Defense_value': [31, 2], // 30~31
-          'wp_Heart_value': [32, 1], // 32
+          'wp_Damage_value': [29, 2, 'wpdamage'], // 28~29
+          'wp_Defense_value': [31, 2, 'wpdefense'], // 30~31
+          'wp_Heart_value': [32, 1, 'wpheart'], // 32
           'wp_Visible_attributes': [33, 1], // 33
-          'wp_Visible_attribute_values': [35, 2], // 34~35
+          'wp_Visible_attribute_values': [35, 2, 'wpattribute'], // 34~35
           'wp_Hidden_attribute': [36, 1], // 36
-          'wp_Hidden_attribute_values': [38, 2], // 37~38
+          'wp_Hidden_attribute_values': [38, 2, 'wpattribute'], // 37~38
           'wp_Seal_Dragon': [39, 1], // 39
           'wp_Slot_grade_Number': [40, 1], // 40
           'wp_Slot_grade_1': [41, 1], // 41
@@ -1669,13 +1666,13 @@ export default {
           'wp_Minor_Model': [17, 2], // 16~17
           'wp_Money': [28, 4], // 25~28
           'wp_Rarity': [29, 1], // 29
-          'wp_Damage_value': [31, 2], // 30~31
-          'wp_Defense_value': [33, 2], // 32~33
-          'wp_Heart_value': [34, 1], // 34
+          'wp_Damage_value': [31, 2, 'wpdamage'], // 30~31
+          'wp_Defense_value': [33, 2, 'wpdefense'], // 32~33
+          'wp_Heart_value': [34, 1, 'wpheart'], // 34
           'wp_Visible_attributes': [35, 1], // 35
-          'wp_Visible_attribute_values': [37, 2], // 36~37
+          'wp_Visible_attribute_values': [37, 2, 'wpattribute'], // 36~37
           'wp_Hidden_attribute': [38, 1], // 38
-          'wp_Hidden_attribute_values': [40, 2], // 39~40
+          'wp_Hidden_attribute_values': [40, 2, 'wpattribute'], // 39~40
           'wp_Seal_Dragon': [41, 1], // 41
           'wp_Cartridge_matching': [42, 1], // 42
           'wp_Offset_size': [44, 1], // 44
@@ -1703,9 +1700,9 @@ export default {
         HexPointer = {
           'ws_Number': [9, 4], // 6~9
           'ws_First_attribute': [10, 1], // 10
-          'ws_First_attribute_values': [12, 2], // 11~12
+          'ws_First_attribute_values': [12, 2, 'wpattribute'], // 11~12
           'ws_Second_attribute': [13, 1], // 13
-          'ws_Second_attribute_values': [15, 2] // 14~15
+          'ws_Second_attribute_values': [15, 2, 'wpattribute'] // 14~15
         }
       } else if (data[6] === 0 && data[16] === 1 && data[26] === 2) {
         HexRuler = 27 // 虫
@@ -1717,7 +1714,19 @@ export default {
         HexPointer = {
           'sa_Number': [9, 4], // 6~9
           'sa_Attribute': [10, 1], // 10
-          'sa_Attribute_value': [12, 2] // 11~12
+          'sa_Attribute_value': [12, 2, 'wpattribute'] // 11~12
+        }
+      } else if (data[6] === 0 && data[13] === 1 && data[20] === 2) {
+        HexRuler = 7 // 狩猎笛
+        HexPointer = {
+          'ww_Number': [9, 4] // 6~9
+        }
+      } else if (data[6] === 0 && data[14] === 1 && data[22] === 2) {
+        HexRuler = 8 // 铳枪
+        HexPointer = {
+          'gl_Number': [9, 4], // 6~9
+          'gl_bombard_type': [11, 2], // 10~11
+          'gl_bombard_level': [13, 2] // 12~13
         }
       } else {
         HexRuler = data.length // 未知
@@ -1725,54 +1734,16 @@ export default {
       }
       let wplist = []
       for (let l = data.length / HexRuler, i = 0; i < l; i++) {
-        wplist[i] = {
-          'wp_Hex': (HexRuler * i).toString(16),
-          'wp_Unprefixed_Model': _this.HexFunction(data, HexPointer.wp_Unprefixed_Model, HexRuler, i),
-          'wp_Model': _this.HexFunction(data, HexPointer.wp_Model, HexRuler, i),
-          'wp_Minor_Model': _this.HexFunction(data, HexPointer.wp_Minor_Model, HexRuler, i),
-          'wp_Name': _this.wpname(_this.HexFunction(data, HexPointer.wp_Number, HexRuler, i).vul),
-          'wp_Number': _this.HexFunction(data, HexPointer.wp_Number, HexRuler, i),
-          'wp_Money': _this.HexFunction(data, HexPointer.wp_Money, HexRuler, i),
-          'wp_Rarity': _this.HexFunction(data, HexPointer.wp_Rarity, HexRuler, i),
-          'wp_Chopping_value': _this.HexFunction(data, HexPointer.wp_Chopping_value, HexRuler, i),
-          'wp_Chopping_grade': _this.HexFunction(data, HexPointer.wp_Chopping_grade, HexRuler, i),
-          'wp_Damage_value': _this.wpdamage(_this.HexFunction(data, HexPointer.wp_Damage_value, HexRuler, i)),
-          'wp_Defense_value': _this.wpdefense(_this.HexFunction(data, HexPointer.wp_Defense_value, HexRuler, i)),
-          'wp_Heart_value': _this.wpheart(_this.HexFunction(data, HexPointer.wp_Heart_value, HexRuler, i)),
-          'wp_Visible_attributes': _this.HexFunction(data, HexPointer.wp_Visible_attributes, HexRuler, i),
-          'wp_Visible_attribute_values': _this.wpattribute(_this.HexFunction(data, HexPointer.wp_Visible_attribute_values, HexRuler, i)),
-          'wp_Hidden_attribute': _this.HexFunction(data, HexPointer.wp_Hidden_attribute, HexRuler, i),
-          'wp_Hidden_attribute_values': _this.wpattribute(_this.HexFunction(data, HexPointer.wp_Hidden_attribute_values, HexRuler, i)),
-          'wp_Cartridge_matching': _this.HexFunction(data, HexPointer.wp_Cartridge_matching, HexRuler, i),
-          'wp_Offset_size': _this.HexFunction(data, HexPointer.wp_Offset_size, HexRuler, i),
-          'wp_Seal_Dragon': _this.HexFunction(data, HexPointer.wp_Seal_Dragon, HexRuler, i),
-          'wp_Slot_grade_Number': _this.HexFunction(data, HexPointer.wp_Slot_grade_Number, HexRuler, i),
-          'wp_Slot_grade_1': _this.HexFunction(data, HexPointer.wp_Slot_grade_1, HexRuler, i),
-          'wp_Slot_grade_2': _this.HexFunction(data, HexPointer.wp_Slot_grade_2, HexRuler, i),
-          'wp_Slot_grade_3': _this.HexFunction(data, HexPointer.wp_Slot_grade_3, HexRuler, i),
-          'wp_Special_projectile': _this.HexFunction(data, HexPointer.wp_Special_projectile, HexRuler, i),
-          'wp_Special_attributes': _this.HexFunction(data, HexPointer.wp_Special_attributes, HexRuler, i),
-          'wp_Weapon_skills': _this.HexFunction(data, HexPointer.wp_Weapon_skills, HexRuler, i),
-          'k_Number': _this.HexFunction(data, HexPointer.k_Number, HexRuler, i),
-          'k_Sharpness_red': _this.HexFunction(data, HexPointer.k_Sharpness_red, HexRuler, i),
-          'k_Sharpness_orange': _this.HexFunction(data, HexPointer.k_Sharpness_orange, HexRuler, i),
-          'k_Sharpness_yellow': _this.HexFunction(data, HexPointer.k_Sharpness_yellow, HexRuler, i),
-          'k_Sharpness_green': _this.HexFunction(data, HexPointer.k_Sharpness_green, HexRuler, i),
-          'k_Sharpness_blue': _this.HexFunction(data, HexPointer.k_Sharpness_blue, HexRuler, i),
-          'k_Sharpness_white': _this.HexFunction(data, HexPointer.k_Sharpness_white, HexRuler, i),
-          'k_Sharpness_purple': _this.HexFunction(data, HexPointer.k_Sharpness_purple, HexRuler, i),
-          'ws_Number': _this.HexFunction(data, HexPointer.ws_Number, HexRuler, i),
-          'ws_First_attribute': _this.HexFunction(data, HexPointer.ws_First_attribute, HexRuler, i),
-          'ws_First_attribute_values': _this.wpattribute(_this.HexFunction(data, HexPointer.ws_First_attribute_values, HexRuler, i)),
-          'ws_Second_attribute': _this.HexFunction(data, HexPointer.ws_Second_attribute, HexRuler, i),
-          'ws_Second_attribute_values': _this.wpattribute(_this.HexFunction(data, HexPointer.ws_Second_attribute_values, HexRuler, i)),
-          'sa_Number': _this.HexFunction(data, HexPointer.sa_Number, HexRuler, i),
-          'sa_Attribute': _this.HexFunction(data, HexPointer.sa_Attribute, HexRuler, i),
-          'sa_Attribute_value': _this.wpattribute(_this.HexFunction(data, HexPointer.sa_Attribute_value, HexRuler, i))
+        let wpobj = {}
+        wpobj.wp_Hex = (HexRuler * i).toString(16) // 目标地址
+        wpobj.wp_Name = _this.wpname(_this.HexFunction(data, HexPointer.wp_Number, HexRuler, i))
+        for (let n in HexPointer) { // 遍历所有属性
+          wpobj[n] = _this.Resourceprocessing(_this.HexFunction(data, HexPointer[n], HexRuler, i))
         }
-        if (this.sourceitems) {
-          wplist[i].wp_sourcedata = this.sourceitems[i]
+        if (this.sourceitems) { // 加入原始数据
+          wpobj.wp_sourcedata = this.sourceitems[i]
         }
+        wplist[i] = wpobj
       }
       return wplist
     }
