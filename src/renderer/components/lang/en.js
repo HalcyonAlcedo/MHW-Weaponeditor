@@ -56,7 +56,8 @@ module.exports = {
   Weaponsmiscellaneous: {
     Sharpness: 'Sharpness',
     Wswordattribute: 'Double attribute',
-    Saxebottle: 'Saxe bottle'
+    Saxebottle: 'Saxe bottle',
+    Bombardment: 'Bombardment'
   },
   Sharpness: {
     Number: 'Sharpness Id',
@@ -80,6 +81,11 @@ module.exports = {
     Number: 'Saxe bottle Id',
     Bottle_type: 'Bottle type',
     Attribute_values: 'Attribute values'
+  },
+  Bombardment: {
+    Number: 'Bombardment Id',
+    Bombard_type: 'Bombardment type',
+    Bombard_level: 'Bombardment level'
   },
   Weapon: {
     Charge_blade: 'Charge Blade',

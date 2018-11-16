@@ -73,7 +73,8 @@ module.exports = {
   Weaponsmiscellaneous: {
     Sharpness: '斩味',
     Wswordattribute: '双属性',
-    Saxebottle: '斩瓶'
+    Saxebottle: '斩瓶',
+    Bombardment: '铳枪炮击'
   },
   Sharpness: {
     Number: '斩味id',
@@ -97,6 +98,11 @@ module.exports = {
     Number: '斩瓶id',
     Bottle_type: '斩瓶类型',
     Attribute_values: '属性值'
+  },
+  Bombardment: {
+    Number: '铳枪炮击id',
+    Bombard_type: '炮击类型',
+    Bombard_level: '炮击等级'
   },
   WeaponExplain: {
     Describe: '描述',
