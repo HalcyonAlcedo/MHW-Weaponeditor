@@ -5,7 +5,7 @@
         <v-autocomplete
           v-model="search"
           :items="filteritem"
-          item-text="wp_Name"
+          :item-text="searchitemtext(filteritem[0])"
           persistent-hint
           prepend-icon="search"
           :no-data-text="$t('Interface.No_data')"
@@ -43,6 +43,8 @@
                   <h4 v-else-if="existence(props.item.k_Number)">{{ $t('Weaponsmiscellaneous.Sharpness') + props.item.k_Number.vul }}</h4>
                   <h4 v-else-if="existence(props.item.ws_Number)">{{ $t('Weaponsmiscellaneous.Wswordattribute') + props.item.ws_Number.vul }}</h4>
                   <h4 v-else-if="existence(props.item.sa_Number)">{{ $t('Weaponsmiscellaneous.Saxebottle') + props.item.sa_Number.vul }}</h4>
+                  <h4 v-else-if="existence(props.item.ww_Number)">{{ $t('Weaponsmiscellaneous.Syllable') + props.item.ww_Number.vul }}</h4>
+                  <h4 v-else-if="existence(props.item.gl_Number)">{{ $t('Weaponsmiscellaneous.Bombardment') + props.item.gl_Number.vul }}</h4>
                   <v-spacer></v-spacer>
                   <h5>{{ $t('WeaponExplain.Address') }}：<span class="red--text">{{ str_pad(props.item.wp_Hex) }}</span></h5>
                 </v-card-title>
@@ -81,6 +83,24 @@
                     <v-text-field
                       :label="$t('Saxebottle.Number')"
                       v-model="props.item.sa_Number.vul"
+                      full-width
+                      box
+                      disabled
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="existence(props.item.gl_Number)">
+                    <v-text-field
+                      :label="$t('Bombardment.Number')"
+                      v-model="props.item.gl_Number.vul"
+                      full-width
+                      box
+                      disabled
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="existence(props.item.ww_Number)">
+                    <v-text-field
+                      :label="$t('Syllable.Number')"
+                      v-model="props.item.ww_Number.vul"
                       full-width
                       box
                       disabled
@@ -246,6 +266,111 @@
                       v-if="sourceitems && (props.item.wp_Rarity.vul !== props.item.wp_sourcedata.wp_Rarity.vul)"
                       :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Production_expenses')"
                       :value="'Rank' + Number(props.item.wp_sourcedata.wp_Rarity.vul + 1)"
+                      full-width
+                      box
+                      color="red"
+                      readonly
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="existence(props.item.gl_bombard_type)">
+                    <v-select
+                      v-model="props.item.gl_bombard_type.vul"
+                      :items="bombardtypeitem"
+                      @change="Select_interchangeable(props.item.gl_bombard_type)"
+                      box
+                      :label="$t('Bombardment.Bombard_type')"
+                      item-text="text"
+                      item-value="value"
+                      return-object
+                    ></v-select>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.gl_bombard_type.vul !== props.item.wp_sourcedata.gl_bombard_type.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('Bombardment.Bombard_type')"
+                      :value="bombardattributes(props.item.wp_sourcedata.gl_bombard_type.vul)"
+                      full-width
+                      box
+                      color="red"
+                      readonly
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="existence(props.item.gl_bombard_level)">
+                    <v-select
+                      v-model="props.item.gl_bombard_level.vul"
+                      :items="bombardlevelitem"
+                      @change="Select_interchangeable(props.item.gl_bombard_level)"
+                      box
+                      :label="$t('Bombardment.Bombard_level')"
+                      item-text="text"
+                      item-value="value"
+                      return-object
+                    ></v-select>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.gl_bombard_level.vul !== props.item.wp_sourcedata.gl_bombard_level.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('Bombardment.Bombard_level')"
+                      :value="'LV' + Number(props.item.wp_sourcedata.gl_bombard_level.vul + 1)"
+                      full-width
+                      box
+                      color="red"
+                      readonly
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="existence(props.item.ww_Timbre1)">
+                    <v-select
+                      v-model="props.item.ww_Timbre1.vul"
+                      :items="timbreitem"
+                      @change="Select_interchangeable(props.item.ww_Timbre1)"
+                      box
+                      :label="$t('Syllable.Syllable1')"
+                      item-text="text"
+                      item-value="value"
+                      return-object
+                    ></v-select>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.ww_Timbre1.vul !== props.item.wp_sourcedata.ww_Timbre1.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('Syllable.Syllable1')"
+                      :value="timbrebutes(props.item.wp_sourcedata.ww_Timbre1.vul)"
+                      full-width
+                      box
+                      color="red"
+                      readonly
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="existence(props.item.ww_Timbre2)">
+                    <v-select
+                      v-model="props.item.ww_Timbre2.vul"
+                      :items="timbreitem"
+                      @change="Select_interchangeable(props.item.ww_Timbre2)"
+                      box
+                      :label="$t('Syllable.Syllable2')"
+                      item-text="text"
+                      item-value="value"
+                      return-object
+                    ></v-select>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.ww_Timbre2.vul !== props.item.wp_sourcedata.ww_Timbre2.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('Syllable.Syllable2')"
+                      :value="timbrebutes(props.item.wp_sourcedata.ww_Timbre2.vul)"
+                      full-width
+                      box
+                      color="red"
+                      readonly
+                    ></v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-if="existence(props.item.ww_Timbre3)">
+                    <v-select
+                      v-model="props.item.ww_Timbre3.vul"
+                      :items="timbreitem"
+                      @change="Select_interchangeable(props.item.ww_Timbre3)"
+                      box
+                      :label="$t('Syllable.Syllable3')"
+                      item-text="text"
+                      item-value="value"
+                      return-object
+                    ></v-select>
+                    <v-text-field
+                      v-if="sourceitems && (props.item.ww_Timbre3.vul !== props.item.wp_sourcedata.ww_Timbre3.vul)"
+                      :label="$t('Interface.Original') + ' ' + $t('Syllable.Syllable3')"
+                      :value="timbrebutes(props.item.wp_sourcedata.ww_Timbre3.vul)"
                       full-width
                       box
                       color="red"
@@ -1100,6 +1225,10 @@ export default {
             itemsarr.push(_items[i])
           } else if (this.existence(_items[i].sa_Number) && _items[i].sa_Number !== false) {
             itemsarr.push(_items[i])
+          } else if (this.existence(_items[i].gl_Number) && _items[i].gl_Number !== false) {
+            itemsarr.push(_items[i])
+          } else if (this.existence(_items[i].ww_Number) && _items[i].ww_Number !== false) {
+            itemsarr.push(_items[i])
           }
         }
         return itemsarr
@@ -1135,6 +1264,18 @@ export default {
         {value: 1, text: this.$t('WeaponExplain.OneGroove')},
         {value: 2, text: this.$t('WeaponExplain.TwoGroove')},
         {value: 3, text: this.$t('WeaponExplain.ThreeGroove')}
+      ]
+    },
+    timbreitem () {
+      return [
+        {value: 0, text: this.$t('WeaponExplain.Purple_timbre')},
+        {value: 1, text: this.$t('WeaponExplain.Red_timbre')},
+        {value: 2, text: this.$t('WeaponExplain.Orange_timbre')},
+        {value: 3, text: this.$t('WeaponExplain.Yellow_timbre')},
+        {value: 4, text: this.$t('WeaponExplain.Green_timbre')},
+        {value: 5, text: this.$t('WeaponExplain.Blue_timbre')},
+        {value: 6, text: this.$t('WeaponExplain.Indigo_timbre')},
+        {value: 7, text: this.$t('WeaponExplain.White_timbre')}
       ]
     },
     gradeitem () {
@@ -1194,6 +1335,10 @@ export default {
           {value: 13, text: this.$t('WeaponExplain.Radiological_type') + ' LV4'},
           {value: 14, text: this.$t('WeaponExplain.Radiological_type') + ' LV5'}
         ]
+      } else if (this.weapon === 'whistle.wp_dat') {
+        return []
+      } else if (this.weapon === 'w_sword.wp_dat') {
+        return []
       } else if (this.weapon === 's_axe.wp_dat') {
         let saxebottle = []
         saxebottle.push({value: 0, text: this.$t('WeaponExplain.Strong_exocet_bottle')})
@@ -1240,6 +1385,22 @@ export default {
         {value: 5, text: 'Rank6'},
         {value: 6, text: 'Rank7'},
         {value: 7, text: 'Rank8'}
+      ]
+    },
+    bombardtypeitem () {
+      return [
+        {value: 0, text: this.$t('WeaponExplain.Normal_type')},
+        {value: 1, text: this.$t('WeaponExplain.Radiological_type')},
+        {value: 2, text: this.$t('WeaponExplain.Diffusion_type')}
+      ]
+    },
+    bombardlevelitem () {
+      return [
+        {value: 0, text: 'LV1'},
+        {value: 1, text: 'LV2'},
+        {value: 2, text: 'LV3'},
+        {value: 3, text: 'LV4'},
+        {value: 4, text: 'LV5'}
       ]
     },
     modelitem () {
@@ -1297,10 +1458,35 @@ export default {
       var tmp = digits - hex.length
       return zero.substr(0, tmp) + hex.toLocaleUpperCase()
     },
+    searchitemtext (data) {
+      let namelist = [
+        'k_Number',
+        'ws_Number',
+        'ri_Number',
+        'sa_Number',
+        'ww_Number',
+        'gl_Number',
+        'sk_Number'
+      ]
+      for (let i = 0; i < namelist.length; i++) {
+        if (namelist[i] in data) {
+          console.log(namelist[i])
+          return namelist[i] + '.vul'
+        }
+      }
+      if ('wp_Name' in data) {
+        return 'wp_Name'
+      } else {
+        return 'wp_Hex'
+      }
+    },
     existence (target) {
-      return target && target !== false
+      return target !== undefined && target !== false
     },
     save (val) {
+      if (val.vul.length === 0) {
+        val.vul = 0
+      }
       let data = this.str_pad(Number(val.vul).toString(16), Math.ceil(Number(val.vul).toString(16).length / 2) * 2)
       for (let i = 0; i < val.hexL; i++) {
         let setvul
@@ -1316,7 +1502,11 @@ export default {
       }
     },
     Heart_treatment (val) {
-      let valsave = val
+      let valsave
+      if (val.vul === '') {
+        val.vul = 0
+      }
+      valsave = val
       if (Math.abs(Number(valsave.vul)) > 100) {
         valsave.vul = Number(valsave.vul) >= 0 ? 100 : -100
       }
@@ -1325,28 +1515,48 @@ export default {
       valsave.vul = this.wpheart(valsave).vul // 回显有问题，好像还原处理就好了，不影响save时数据，不知道啥原因喵″
     },
     Attribute_treatment (val) {
-      let valsave = val
+      let valsave
+      if (val.vul === '') {
+        val.vul = 0
+      }
+      valsave = val
       valsave.vul = Math.ceil(val.vul / 10)
       this.save(valsave)
       valsave.vul = Math.ceil(val.vul * 10) // 同上喵″
     },
     Damage_treatment (val) {
-      let valsave = val
+      let valsave
+      if (val.vul === '') {
+        val.vul = 0
+      }
+      valsave = val
       valsave.vul = Math.ceil(val.vul / this.weapon_damage(this.weapon))
       this.save(valsave)
       valsave.vul = Math.ceil(val.vul * this.weapon_damage(this.weapon)) // 同上喵″
     },
     input_interchangeable (val) {
-      let valsave = val
+      let valsave
+      if (val.vul === '') {
+        val.vul = 0
+      }
+      valsave = val
       this.save(valsave)
     },
     Select_interchangeable (val) {
-      let valsave = val
+      let valsave
+      if (val.vul === '') {
+        val.vul = 0
+      }
+      valsave = val
       valsave.vul = valsave.vul.value
       this.save(valsave)
     },
     Defense_treatment (val) {
-      let valsave = val
+      let valsave
+      if (val.vul === '') {
+        val.vul = 0
+      }
+      valsave = val
       valsave.vul = Math.ceil(valsave.vul)
       this.save(valsave)
     },
@@ -1557,6 +1767,55 @@ export default {
       }
       return specialattributestext
     },
+    bombardattributes (bombardattributes) {
+      let bombardattributestext = this.$t('WeaponExplain.Nothing')
+      switch (bombardattributes) {
+        case 0:
+          bombardattributestext = this.$t('WeaponExplain.Radiological_type')
+          break
+        case 1:
+          bombardattributestext = this.$t('WeaponExplain.Radiological_type')
+          break
+        case 2:
+          bombardattributestext = this.$t('WeaponExplain.Diffusion_type')
+          break
+        default:
+          bombardattributestext = this.$t('WeaponExplain.Error')
+      }
+      return bombardattributestext
+    },
+    timbrebutes (timbrebutes) {
+      let timbrebutestext = this.$t('WeaponExplain.Nothing')
+      switch (timbrebutes) {
+        case 0:
+          timbrebutestext = this.$t('WeaponExplain.Purple_timbre')
+          break
+        case 1:
+          timbrebutestext = this.$t('WeaponExplain.Red_timbre')
+          break
+        case 2:
+          timbrebutestext = this.$t('WeaponExplain.Orange_timbre')
+          break
+        case 3:
+          timbrebutestext = this.$t('WeaponExplain.Yellow_timbre')
+          break
+        case 4:
+          timbrebutestext = this.$t('WeaponExplain.Green_timbre')
+          break
+        case 5:
+          timbrebutestext = this.$t('WeaponExplain.Blue_timbre')
+          break
+        case 6:
+          timbrebutestext = this.$t('WeaponExplain.Indigo_timbre')
+          break
+        case 7:
+          timbrebutestext = this.$t('WeaponExplain.White_timbre')
+          break
+        default:
+          timbrebutestext = this.$t('WeaponExplain.Error')
+      }
+      return timbrebutestext
+    },
     HexFunction (data, Hexpointer, HexRuler, i) {
       let ret = ''
       if (Hexpointer === undefined) {
@@ -1709,17 +1968,20 @@ export default {
         HexPointer = {
           'ri_Number': [15, 4] // 11~15
         }
-      } else if (data[6] === 0 && data[13] === 1 && data[20] === 2) {
+      } else if (data[2] === 42 && data[6] === 0 && data[13] === 1 && data[20] === 2) {
         HexRuler = 7 // 斩瓶
         HexPointer = {
           'sa_Number': [9, 4], // 6~9
           'sa_Attribute': [10, 1], // 10
           'sa_Attribute_value': [12, 2, 'wpattribute'] // 11~12
         }
-      } else if (data[6] === 0 && data[13] === 1 && data[20] === 2) {
+      } else if (data[2] === 50 && data[6] === 0 && data[13] === 1 && data[20] === 2) {
         HexRuler = 7 // 狩猎笛
         HexPointer = {
-          'ww_Number': [9, 4] // 6~9
+          'ww_Number': [9, 4], // 6~9
+          'ww_Timbre1': [10, 1], // 10
+          'ww_Timbre2': [11, 1], // 11
+          'ww_Timbre3': [12, 1] // 12
         }
       } else if (data[6] === 0 && data[14] === 1 && data[22] === 2) {
         HexRuler = 8 // 铳枪
@@ -1727,6 +1989,14 @@ export default {
           'gl_Number': [9, 4], // 6~9
           'gl_bombard_type': [11, 2], // 10~11
           'gl_bombard_level': [13, 2] // 12~13
+        }
+      } else if (data[2] === 120 && data[6] === 0 && data[17] === 1 && data[28] === 1) {
+        HexRuler = 10 // 技能
+        HexPointer = {
+          'sk_Number': [7, 2], // 6~9
+          'sk_level': [8, 1], // 8
+          'sk_First_effect': [10, 2], // 9~10
+          'sk_Second_effect': [12, 2] // 11~12
         }
       } else {
         HexRuler = data.length // 未知

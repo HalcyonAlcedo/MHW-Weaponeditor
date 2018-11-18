@@ -42,7 +42,7 @@ module.exports = {
     Binary_mode: 'Display the file mode of the binary data of the file, the binary data is displayed according to the weapon type',
     Dark_theme: 'Switch UI to dark theme',
     About_content: 'This software can view and modify the weapon data files in Monster Hunter World. The modified file will be placed under Monster Hunter World\\nativePC\\common\\equip\\. Modified files will affect game balance and should not be used online. ',
-    About_edition: 'Software version: 0.9.6',
+    About_edition: 'Software version: 0.9.8',
     Instructions: '<h3>The tool can read the unwrapped weapon data, built in the current version of the weapon data file, and directly create a new mod file. Partial value modification will be automatically corrected according to the inherent coefficient. The weapon information is manually entered, which may be different from the current version data. Do not use the modified file for online use.</h3><br><h4>Usage:</h4><br><span>&nbsp;&nbsp;1. Open the unpacked mod file or click New to select the desired weapon file.</span><br><span>&nbsp;&nbsp;2, search or manually find the weapon to be modified.</span><br><span>&nbsp;&nbsp;3. Change the corresponding attribute to the value you want.</span><br><span>&nbsp;&nbsp;4.Click Save to save the file to the (Your game\\nativePC\\common\\equip\\).</span><br><br><h4>The tool source code is posted on Github: https://github.com/HalcyonAlcedo/MHW-Weaponeditor</h4>',
     Old_version: 'The data file will be opened in the 154766 version file format.',
     Old_version_open: 'Compatibility mode is ON. Please re-open the data file.',
@@ -51,13 +51,14 @@ module.exports = {
     Version_update_true: 'The version data is updated. Don\'t forget to save the data file.',
     Free_model: 'modify the model only if you know what your doing',
     Have_model: 'to close the model, change it to 65535',
-    Update_description: '<ul><li>Repair skills to modify bug</li><li>Weapon skill description</li><li>Adding custom models can be an option.</li><li>Add description interface language switch</li><li>Adding traditional Chinese</li><li>Add English</li><li>Modify the default language for traditional Chinese</li></ul>'
+    Update_description: '<ul><li>Adding multiple weapon miscellaneous editing functions.</li></ul>'
   },
   Weaponsmiscellaneous: {
     Sharpness: 'Sharpness',
     Wswordattribute: 'Double attribute',
     Saxebottle: 'Saxe bottle',
-    Bombardment: 'Bombardment'
+    Bombardment: 'Bombardment',
+    Syllable: 'Syllable'
   },
   Sharpness: {
     Number: 'Sharpness Id',
@@ -86,6 +87,12 @@ module.exports = {
     Number: 'Bombardment Id',
     Bombard_type: 'Bombardment type',
     Bombard_level: 'Bombardment level'
+  },
+  Syllable: {
+    Number: 'Syllable Id',
+    Syllable1: 'Syllable 1',
+    Syllable2: 'Syllable 2',
+    Syllable3: 'Syllable 3'
   },
   Weapon: {
     Charge_blade: 'Charge Blade',
