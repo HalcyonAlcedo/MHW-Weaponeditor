@@ -34,7 +34,8 @@ module.exports = {
     Update_description: 'Update description',
     Old_version_save: 'Do not save compatibility mode.',
     Weapon: 'Weapon',
-    Weaponsmiscellaneous: 'Weapons miscellaneous'
+    Weaponsmiscellaneous: 'Weapons miscellaneous',
+    Oldfile: 'Maybe an old version of the file'
   },
   Explanatory: {
     Elimination_unknown_weapons: 'Exclude undocumented weapon data from the weapon information list',
@@ -44,21 +45,23 @@ module.exports = {
     About_content: 'This software can view and modify the weapon data files in Monster Hunter World. The modified file will be placed under Monster Hunter World\\nativePC\\common\\equip\\. Modified files will affect game balance and should not be used online. ',
     About_edition: 'Software version: 0.9.8',
     Instructions: '<h3>The tool can read the unwrapped weapon data, built in the current version of the weapon data file, and directly create a new mod file. Partial value modification will be automatically corrected according to the inherent coefficient. The weapon information is manually entered, which may be different from the current version data. Do not use the modified file for online use.</h3><br><h4>Usage:</h4><br><span>&nbsp;&nbsp;1. Open the unpacked mod file or click New to select the desired weapon file.</span><br><span>&nbsp;&nbsp;2, search or manually find the weapon to be modified.</span><br><span>&nbsp;&nbsp;3. Change the corresponding attribute to the value you want.</span><br><span>&nbsp;&nbsp;4.Click Save to save the file to the (Your game\\nativePC\\common\\equip\\).</span><br><br><h4>The tool source code is posted on Github: https://github.com/HalcyonAlcedo/MHW-Weaponeditor</h4>',
-    Old_version: 'The data file will be opened in the 154766 version file format.',
+    Old_version: 'The data file will be opened by name matching. It is suggested that the new version of the data file be modified by magic.',
     Old_version_open: 'Compatibility mode is ON. Please re-open the data file.',
     Old_version_close: 'Compatibility mode is OFF. Please re-open the data file.',
     Version_update: 'Update the currently open file to the new version',
     Version_update_true: 'The version data is updated. Don\'t forget to save the data file.',
     Free_model: 'modify the model only if you know what your doing',
     Have_model: 'to close the model, change it to 65535',
-    Update_description: '<ul><li>Adding multiple weapon miscellaneous editing functions.</li></ul>'
+    Update_description: '<ul><li>Adding multiple weapon miscellaneous editing functions.</li><li> Update the original file </li><li> Change the compatibility mode to name matching, and the renamed data file cannot be matched in compatibility mode. </li></ul>'
   },
   Weaponsmiscellaneous: {
     Sharpness: 'Sharpness',
     Wswordattribute: 'Double attribute',
     Saxebottle: 'Saxe bottle',
     Bombardment: 'Bombardment',
-    Syllable: 'Syllable'
+    Syllable: 'Syllable',
+    Rod: 'Rod insect',
+    Skill: 'Skill'
   },
   Sharpness: {
     Number: 'Sharpness Id',

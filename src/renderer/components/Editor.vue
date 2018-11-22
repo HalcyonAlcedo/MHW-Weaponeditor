@@ -1821,6 +1821,9 @@ export default {
       if (Hexpointer === undefined) {
         return false
       }
+      if (Hexpointer === 'auto') {
+        return {vul: i}
+      }
       for (let p = 0; p < Hexpointer[1]; p++) {
         let Hex16 = data[(HexRuler * i) + Hexpointer[0] - p]
         if (Hex16 !== undefined) {
@@ -1833,7 +1836,13 @@ export default {
     },
     wpname (id) {
       let wpnamelist
-      if (this.weapon) {
+      if (
+        this.weapon &&
+        (this.weapon.substring(this.weapon.lastIndexOf('.') + 1) === 'wp_dat_g' || this.weapon.substring(this.weapon.lastIndexOf('.') + 1) === 'wp_dat')
+      ) {
+        console.log(
+          this.weapon.substring(this.weapon.lastIndexOf('.') + 1) === 'wp_dat_g' ||
+          this.weapon.substring(this.weapon.lastIndexOf('.') + 1) === 'wp_dat')
         wpnamelist = require('./Weaponinfo/' + this.$i18n.locale + '/' + this.weapon + '.json')
       } else {
         return this.$t('WeaponExplain.Unknown')
@@ -1997,6 +2006,17 @@ export default {
           'sk_level': [8, 1], // 8
           'sk_First_effect': [10, 2], // 9~10
           'sk_Second_effect': [12, 2] // 11~12
+        }
+      } else if (data[0] === 166 && data[1] === 1 && data[2] === 20) {
+        HexRuler = 6 // 弓瓶
+        HexPointer = {
+          'bt_Number': 'auto',
+          'bt_chopping': [7, 1], // 6~9
+          'bt_enhance': [8, 1], // 10~11
+          'bt_paralysis': [9, 1], // 12~13
+          'bt_poison': [10, 1], // 12~13
+          'bt_sleep': [11, 1], // 12~13
+          'bt_bomb': [12, 1] // 12~13
         }
       } else {
         HexRuler = data.length // 未知

@@ -15,99 +15,138 @@ const mutations = {
   FILE_SET_NAME (state, filedata) {
     let file = [filedata[0], filedata[1], filedata[2]]
     if (state.Oldversion) {
-      switch (file.join('-')) {
-        case '134-1-127':
+      switch (state.file.substring(state.file.lastIndexOf('\\') + 1)) {
+        case 'l_sword.wp_dat':
           state.filename = 'l_sword.wp_dat'
           break
-        case '134-1-132':
+        case 'sword.wp_dat':
           state.filename = 'sword.wp_dat'
           break
-        case '134-1-124':
+        case 'hammer.wp_dat':
           state.filename = 'hammer.wp_dat'
           break
-        case '134-1-125':
-          if (filedata[8121] === 133) {
-            state.filename = 'lance.wp_dat'
-          } else {
-            state.filename = 'w_sword.wp_dat'
-          }
+        case 'lance.wp_dat':
+          state.filename = 'lance.wp_dat'
           break
-        case '134-1-118':
+        case 'w_sword.wp_dat':
+          state.filename = 'w_sword.wp_dat'
+          break
+        case 's_axe.wp_dat':
           state.filename = 's_axe.wp_dat'
           break
-        case '134-1-120':
-          if (filedata[7800] === 169) {
-            state.filename = 'rod.wp_dat'
-          } else {
-            state.filename = 'tachi.wp_dat'
-          }
+        case 'rod.wp_dat':
+          state.filename = 'rod.wp_dat'
           break
-        case '177-1-124':
+        case 'tachi.wp_dat':
+          state.filename = 'tachi.wp_dat'
+          break
+        case 'lbg.wp_dat_g':
           state.filename = 'lbg.wp_dat_g'
           break
-        case '134-1-123':
+        case 'whistle.wp_dat':
           state.filename = 'whistle.wp_dat'
           break
-        case '134-1-117':
+        case 'g_lance.wp_dat':
           state.filename = 'g_lance.wp_dat'
           break
-        case '134-1-113':
+        case 'c_axe.wp_dat':
           state.filename = 'c_axe.wp_dat'
           break
-        case '177-1-115':
+        case 'bow.wp_dat_g':
           state.filename = 'bow.wp_dat_g'
           break
-        case '177-1-117':
+        case 'hbg.wp_dat_g':
           state.filename = 'hbg.wp_dat_g'
+          break
+        case 'kireaji.kire':
+          state.filename = 'kireaji.kire'
+          break
+        case 'rod_insect.rod_inse':
+          state.filename = 'rod_insect.rod_inse'
+          break
+        case 'skill_data.skl_dat':
+          state.filename = 'skill_data.skl_dat'
+          break
+        case 'wep_glan.wep_glan':
+          state.filename = 'wep_glan.wep_glan'
+          break
+        case 'wep_saxe.wep_saxe':
+          state.filename = 'wep_saxe.wep_saxe'
+          break
+        case 'wep_whistle.wep_wsl':
+          state.filename = 'wep_whistle.wep_wsl'
+          break
+        case 'wep_wsword.wep_wsd':
+          state.filename = 'wep_wsword.wep_wsd'
           break
         default:
           state.filename = 'Unknown'
       }
     } else {
       switch (file.join('-')) {
-        case '134-1-128':
+        case '134-1-135':
           state.filename = 'l_sword.wp_dat'
           break
-        case '134-1-133':
+        case '134-1-142':
           state.filename = 'sword.wp_dat'
           break
-        case '134-1-125':
+        case '134-1-132':
           state.filename = 'hammer.wp_dat'
           break
-        case '134-1-126':
+        case '134-1-133':
           if (filedata[8121] === 133) {
             state.filename = 'lance.wp_dat'
           } else {
             state.filename = 'w_sword.wp_dat'
           }
           break
-        case '134-1-119':
+        case '134-1-126':
           state.filename = 's_axe.wp_dat'
           break
-        case '134-1-121':
-          if (filedata[7800] === 169) {
-            state.filename = 'rod.wp_dat'
-          } else {
-            state.filename = 'tachi.wp_dat'
-          }
+        case '134-1-128':
+          state.filename = 'rod.wp_dat'
           break
-        case '177-1-125':
+        case '134-1-129':
+          state.filename = 'tachi.wp_dat'
+          break
+        case '177-1-131':
           state.filename = 'lbg.wp_dat_g'
           break
-        case '134-1-124':
+        case '134-1-131':
           state.filename = 'whistle.wp_dat'
           break
-        case '134-1-118':
+        case '134-1-125':
           state.filename = 'g_lance.wp_dat'
           break
-        case '134-1-114':
+        case '134-1-121':
           state.filename = 'c_axe.wp_dat'
           break
-        case '177-1-116':
+        case '177-1-122':
           state.filename = 'bow.wp_dat_g'
           break
-        case '177-1-118':
+        case '177-1-124':
           state.filename = 'hbg.wp_dat_g'
+          break
+        case '119-1-119':
+          state.filename = 'kireaji.kire'
+          break
+        case '0-1-62':
+          state.filename = 'rod_insect.rod_inse'
+          break
+        case '94-0-120':
+          state.filename = 'skill_data.skl_dat'
+          break
+        case '119-1-15':
+          state.filename = 'wep_glan.wep_glan'
+          break
+        case '119-1-42':
+          state.filename = 'wep_saxe.wep_saxe'
+          break
+        case '119-1-50':
+          state.filename = 'wep_whistle.wep_wsl'
+          break
+        case '119-1-4':
+          state.filename = 'wep_wsword.wep_wsd'
           break
         default:
           state.filename = 'Unknown'

@@ -30,6 +30,7 @@ console.log(lang)
 
 const i18n = new VueI18n({
   locale: 'zh_tw',
+  fallbackLocale: 'zh_cn',
   messages: {
     'zh_cn': require('./components/lang/zh_cn'),
     'zh_tw': require('./components/lang/zh_tw'),

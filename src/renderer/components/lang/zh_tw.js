@@ -34,7 +34,8 @@ module.exports = {
     Update_description: '更新說明',
     Old_version_save: '請勿保存兼容模式',
     Weapon: '武器',
-    Weaponsmiscellaneous: '武器雜項'
+    Weaponsmiscellaneous: '武器雜項',
+    Oldfile: '可能是舊版本文件'
   },
   Explanatory: {
     Elimination_unknown_weapons: '武器信息清單中排除掉未被記載的武器數據',
@@ -44,21 +45,23 @@ module.exports = {
     About_content: '本軟件可針對《怪物獵人世界》中武器數據魔改檔案進行查看和修改,修改後檔案放置在Monster Hunter World\\nativePC\\common\\equip\\下即可生效。修改後檔案將影響遊戲平衡性,請勿用於聯機使用。',
     About_edition: '軟體版本：0.9.8',
     Instructions: '<h3>該工具可以讀取解包後的武器數據,內寘了當前版本的武器資料檔案,可以直接新建mod檔案。部分數值修改會根據固有係數自動修正,武器資訊為手動錄入,可能與現版本數據存在差异。修改後的檔案請勿用於聯機使用。</h3><br><h4>用法：</h4><br><span>&nbsp;&nbsp;1、打開解包後的mod檔案或點擊新建選擇需要的武器檔案</span><br><span>&nbsp;&nbsp;2、蒐索或手動找到要修改的武器</span><br><span>&nbsp;&nbsp;3、將相應内容改成你希望的數值</span><br><span>&nbsp;&nbsp;4、點擊保存將檔案保存至遊戲目錄\\nativePC\\common\\equip\\</span><br><br><h4>工具原始程式碼發佈在Github上：https://github.com/HalcyonAlcedo/MHW-Weaponeditor</h4>',
-    Old_version: '將以154766版本檔案格式打開資料檔案,建議使用新版本資料檔案進行魔改。',
+    Old_version: '將以名稱匹配方式打開資料檔案,建議使用新版本資料檔案進行魔改。',
     Old_version_open: '相容模式已啟動,請重新打開資料檔案',
     Old_version_close: '相容模式已關閉,請重新打開資料檔案',
     Version_update: '將現時打開的檔案更新到新版本',
     Version_update_true: '版本數據更新完成,請勿忘記保存資料檔案',
     Free_model: '如需修改模型請調整為修改數據，不懂勿動',
     Have_model: '如需關閉模型請改成65535',
-    Update_description: '<ul><li>增加多個武器雜項編輯功能</li></ul>'
+    Update_description: '<ul><li>增加多個武器雜項編輯功能</li><li>更新原始檔案</li><li>將相容模式改為名稱匹配，相容模式下無法匹配重命名後的資料檔案。</li></ul>'
   },
   Weaponsmiscellaneous: {
     Sharpness: '斬味',
     Wswordattribute: '雙屬性',
     Saxebottle: '斬瓶',
     Bombardment: '銃槍炮擊',
-    Syllable: '笛音'
+    Syllable: '笛音',
+    Rod: '獵蟲',
+    Skill: '技能'
   },
   Sharpness: {
     Number: '斬味id',

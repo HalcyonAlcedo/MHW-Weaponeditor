@@ -192,7 +192,7 @@
         </v-container>
       </v-content>
       <v-footer app fixed style="-webkit-app-region: drag">
-        <span>&nbsp;&nbsp;&nbsp;By Alcedo  &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | {{$t("Interface.Data_version")}} 157749 | {{$t("Interface.Original_file_version")}} 157749 （{{$t("Interface.Extract_from")}} 2018-10-31） | {{$t("Interface.Current_file")}} {{file}}（{{weaponfilename}}）|</span>
+        <span>&nbsp;&nbsp;&nbsp;By Alcedo  &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | {{$t("Interface.Data_version")}} 157749 | {{$t("Interface.Original_file_version")}} 161254 （{{$t("Interface.Extract_from")}} 2018-11-22） | {{$t("Interface.Current_file")}} {{file}}（{{weaponfilename}}）|</span>
       </v-footer>
       <v-dialog
         v-model="dialog"
@@ -374,6 +374,9 @@ export default {
       ]
     },
     weapon () {
+      if (this.file !== this.$store.getters.donefilename && this.$store.getters.donefilename !== 'Unknown') {
+        this.snackbar.text = this.$t('Interface.Oldfile')
+      }
       return this.$store.getters.donefilename
     },
     filedata () {
@@ -409,6 +412,20 @@ export default {
           return this.$t('Weapon.Hunting_bow')
         case 'hbg.wp_dat_g':
           return this.$t('Weapon.Heavy_crossbow')
+        case 'kireaji.kire':
+          return this.$t('Weaponsmiscellaneous.Sharpness')
+        case 'rod_insect.rod_inse':
+          return this.$t('Weaponsmiscellaneous.Rod')
+        case 'skill_data.skl_dat':
+          return this.$t('Weaponsmiscellaneous.Skill')
+        case 'wep_glan.wep_glan':
+          return this.$t('Weaponsmiscellaneous.Bombardment')
+        case 'wep_saxe.wep_saxe':
+          return this.$t('Weaponsmiscellaneous.Saxebottle')
+        case 'wep_whistle.wep_wsl':
+          return this.$t('Weaponsmiscellaneous.Syllable')
+        case 'wep_wsword.wep_wsd':
+          return this.$t('Weaponsmiscellaneous.Wswordattribute')
         default:
           return this.$t('Weapon.Unknown')
       }
@@ -493,8 +510,8 @@ export default {
           _this.snackbar.snackbar = true
           console.log(err)
         } else {
-          _this.$store.dispatch('setdata', data)
           _this.$store.dispatch('setfile', f)
+          _this.$store.dispatch('setdata', data)
           _this.snackbar.text = _this.$t('Interface.Open_Success')
           _this.snackbar.snackbar = true
         }
