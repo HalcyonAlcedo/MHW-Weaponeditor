@@ -24,7 +24,7 @@ module.exports = {
     Current_file: '當前檔案',
     Read: '已讀',
     Refuse: '拒絕',
-    Loading: '讀取中,請稍後',
+    Loading: '讀取中,請稍候',
     Instructions: '使用說明',
     No_file_opened: '未打開文件',
     No_data: '無可用數據',
