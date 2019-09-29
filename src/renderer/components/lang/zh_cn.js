@@ -78,7 +78,8 @@ module.exports = {
     Bombardment: '铳枪炮击',
     Syllable: '笛音',
     Rod: '猎虫',
-    Skill: '技能'
+    Skill: '技能',
+    Bottletable: '弓瓶'
   },
   Sharpness: {
     Number: '斩味id',
@@ -113,6 +114,15 @@ module.exports = {
     Syllable1: '音色1',
     Syllable2: '音色2',
     Syllable3: '音色3'
+  },
+  Bottletable: {
+    Number: '斩瓶id',
+    chopping: '斩瓶',
+    enhance: '强击瓶',
+    paralysis: '麻痹瓶',
+    poison: '毒瓶',
+    sleep: '眠瓶',
+    bomb: '爆炸瓶'
   },
   WeaponExplain: {
     Describe: '描述',

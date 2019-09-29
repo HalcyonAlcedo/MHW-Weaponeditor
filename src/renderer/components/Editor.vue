@@ -106,6 +106,15 @@
                       disabled
                     ></v-text-field>
                   </v-list-tile>
+                  <v-list-tile v-if="existence(props.item.bt_Number)">
+                    <v-text-field
+                      :label="$t('Syllable.Number')"
+                      v-model="props.item.bt_Number.vul"
+                      full-width
+                      box
+                      disabled
+                    ></v-text-field>
+                  </v-list-tile>
                   <v-list-tile v-if="existence(props.item.wp_Money)">
                     <v-text-field
                       :label="$t('WeaponExplain.Manufacturing_costs')"
