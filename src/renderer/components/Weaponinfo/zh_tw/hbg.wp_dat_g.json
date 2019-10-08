@@ -440,6 +440,30 @@
         {
             "name": "鎧羅突擊弩‧狙擊",
             "Weapon_Number": 117
+        },
+        {
+            "name": "帝王金砲筒·蠻顎",
+            "Weapon_Number": 118
+        },
+        {
+            "name": "帝王金砲筒·角",
+            "Weapon_Number": 119
+        },
+        {
+            "name": "帝王金砲筒·飛雷",
+            "Weapon_Number": 120
+        },
+        {
+            "name": "帝王金砲筒·熔山",
+            "Weapon_Number": 121
+        },
+        {
+            "name": "帝王金砲筒·水",
+            "Weapon_Number": 122
+        },
+        {
+            "name": "帝王金砲筒·冰",
+            "Weapon_Number": 123
         }
     ]
 }

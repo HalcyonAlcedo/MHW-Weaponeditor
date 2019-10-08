@@ -467,6 +467,30 @@
         {
             "name": "鎧羅迅擊弩‧援擊",
             "Weapon_Number": 124
+        },
+        {
+            "name": "帝王金弩·爆鱗",
+            "Weapon_Number": 125
+        },
+        {
+            "name": "帝王金弩·慘爪",
+            "Weapon_Number": 126
+        },
+        {
+            "name": "帝王金弩·屍套",
+            "Weapon_Number": 127
+        },
+        {
+            "name": "帝王金弩·王",
+            "Weapon_Number": 128
+        },
+        {
+            "name": "帝王金弩·雷",
+            "Weapon_Number": 129
+        },
+        {
+            "name": "帝王金弩·冰",
+            "Weapon_Number": 130
         }
     ]
 }

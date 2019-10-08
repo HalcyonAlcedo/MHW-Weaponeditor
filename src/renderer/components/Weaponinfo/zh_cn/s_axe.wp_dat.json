@@ -448,6 +448,34 @@
         {
             "name": "铠罗剑斧‧水",
             "Weapon_Number": 118
+        },
+        {
+            "name": "帝王金剑斧·风漂",
+            "Weapon_Number": 119
+        },
+        {
+            "name": "帝王金剑斧·尸套",
+            "Weapon_Number": 120
+        },
+        {
+            "name": "帝王金剑斧·王",
+            "Weapon_Number": 121
+        },
+        {
+            "name": "帝王金剑斧·爆鳞",
+            "Weapon_Number": 122
+        },
+        {
+            "name": "帝王金剑斧·雷",
+            "Weapon_Number": 123
+        },
+        {
+            "name": "帝王金剑斧·水",
+            "Weapon_Number": 124
+        },
+        {
+            "name": "帝王金剑斧·麻痹",
+            "Weapon_Number": 125
         }
     ]
 }

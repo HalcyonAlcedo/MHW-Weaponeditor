@@ -94,11 +94,10 @@ const mutations = {
           state.filename = 'hammer.wp_dat'
           break
         case '134-1-133':
-          if (filedata[8121] === 133) {
-            state.filename = 'lance.wp_dat'
-          } else {
-            state.filename = 'w_sword.wp_dat'
-          }
+          state.filename = 'lance.wp_dat'
+          break
+        case '134-1-134':
+          state.filename = 'w_sword.wp_dat'
           break
         case '134-1-126':
           state.filename = 's_axe.wp_dat'
@@ -115,6 +114,9 @@ const mutations = {
         case '134-1-131':
           state.filename = 'whistle.wp_dat'
           break
+        case '177-1-124':
+          state.filename = 'hbg.wp_dat_g'
+          break
         case '134-1-125':
           state.filename = 'g_lance.wp_dat'
           break
@@ -124,16 +126,13 @@ const mutations = {
         case '177-1-122':
           state.filename = 'bow.wp_dat_g'
           break
-        case '177-1-124':
-          state.filename = 'hbg.wp_dat_g'
-          break
         case '119-1-119':
           state.filename = 'kireaji.kire'
           break
-        case '0-1-62':
+        case '9-1-61':
           state.filename = 'rod_insect.rod_inse'
           break
-        case '94-0-120':
+        case '94-0-118':
           state.filename = 'skill_data.skl_dat'
           break
         case '119-1-15':

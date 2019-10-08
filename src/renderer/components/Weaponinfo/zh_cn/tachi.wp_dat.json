@@ -460,6 +460,34 @@
         {
             "name": "铠罗剑‧火",
             "Weapon_Number": 120
+        },
+        {
+            "name": "帝王金太刀·飞雷",
+            "Weapon_Number": 121
+        },
+        {
+            "name": "帝王金太刀·风漂",
+            "Weapon_Number": 122
+        },
+        {
+            "name": "帝王金太刀·尸套",
+            "Weapon_Number": 123
+        },
+        {
+            "name": "帝王金太刀·熔山",
+            "Weapon_Number": 124
+        },
+        {
+            "name": "帝王金太刀·水",
+            "Weapon_Number": 125
+        },
+        {
+            "name": "帝王金太刀·火",
+            "Weapon_Number": 126
+        },
+        {
+            "name": "帝王金太刀·麻痹",
+            "Weapon_Number": 127
         }
     ]
 }

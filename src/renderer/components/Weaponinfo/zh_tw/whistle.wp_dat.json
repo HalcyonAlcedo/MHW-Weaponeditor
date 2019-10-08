@@ -463,6 +463,34 @@
         {
             "name": "鎧羅風笛‧睡眠",
             "Weapon_Number": 132
+        },
+        {
+            "name": "帝王金龍笛·麻痺",
+            "Weapon_Number": 133
+        },
+        {
+            "name": "帝王金龍笛·蠻顎",
+            "Weapon_Number": 134
+        },
+        {
+            "name": "帝王金龍笛·幻",
+            "Weapon_Number": 135
+        },
+        {
+            "name": "帝王金龍笛·岩賊",
+            "Weapon_Number": 136
+        },
+        {
+            "name": "帝王金龍笛·風漂",
+            "Weapon_Number": 137
+        },
+        {
+            "name": "帝王金龍笛·水",
+            "Weapon_Number": 138
+        },
+        {
+            "name": "帝王金龍笛·龍",
+            "Weapon_Number": 139
         }
     ]
 }

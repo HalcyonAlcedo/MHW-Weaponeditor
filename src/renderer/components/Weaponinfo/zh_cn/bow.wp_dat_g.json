@@ -424,6 +424,30 @@
         {
             "name": "铠罗弓‧火",
             "Weapon_Number": 115
+        },
+        {
+            "name": "帝王金弓·飞雷",
+            "Weapon_Number": 116
+        },
+        {
+            "name": "帝王金弓·风漂",
+            "Weapon_Number": 117
+        },
+        {
+            "name": "帝王金弓·王",
+            "Weapon_Number": 118
+        },
+        {
+            "name": "帝王金弓·尸套",
+            "Weapon_Number": 119
+        },
+        {
+            "name": "帝王金弓·水",
+            "Weapon_Number": 120
+        },
+        {
+            "name": "帝王金弓·爆破",
+            "Weapon_Number": 121
         }
     ]
 }

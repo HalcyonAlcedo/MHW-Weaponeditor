@@ -458,8 +458,44 @@
             "Weapon_Number": 121
         },
         {
+            "name": "硬梆梆的針山",
+            "Weapon_Number": 122
+        },
+        {
+            "name": "硬梆梆的怨氣",
+            "Weapon_Number": 123
+        },
+        {
             "name": "鎧羅大錘‧睡眠",
             "Weapon_Number": 124
+        },
+        {
+            "name": "帝王金鎚·痺賊",
+            "Weapon_Number": 125
+        },
+        {
+            "name": "帝王金鎚·屍套",
+            "Weapon_Number": 126
+        },
+        {
+            "name": "帝王金鎚·爆鎚",
+            "Weapon_Number": 127
+        },
+        {
+            "name": "帝王金鎚·水",
+            "Weapon_Number": 128
+        },
+        {
+            "name": "帝王金鎚·冰",
+            "Weapon_Number": 129
+        },
+        {
+            "name": "帝王金鎚·雷",
+            "Weapon_Number": 130
+        },
+        {
+            "name": "帝王金鎚·爆破",
+            "Weapon_Number": 131
         }
     ]
 }

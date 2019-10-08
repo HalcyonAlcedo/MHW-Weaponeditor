@@ -458,8 +458,44 @@
             "Weapon_Number": 121
         },
         {
+            "name": "硬邦邦的针山",
+            "Weapon_Number": 122
+        },
+        {
+            "name": "硬邦邦的怨气",
+            "Weapon_Number": 123
+        },
+        {
             "name": "铠罗大锤‧睡眠",
             "Weapon_Number": 124
+        },
+        {
+            "name": "帝王金锤·痹贼",
+            "Weapon_Number": 125
+        },
+        {
+            "name": "帝王金锤·尸套",
+            "Weapon_Number": 126
+        },
+        {
+            "name": "帝王金锤·爆锤",
+            "Weapon_Number": 127
+        },
+        {
+            "name": "帝王金锤·水",
+            "Weapon_Number": 128
+        },
+        {
+            "name": "帝王金锤·冰",
+            "Weapon_Number": 129
+        },
+        {
+            "name": "帝王金锤·雷",
+            "Weapon_Number": 130
+        },
+        {
+            "name": "帝王金锤·爆破",
+            "Weapon_Number": 131
         }
     ]
 }

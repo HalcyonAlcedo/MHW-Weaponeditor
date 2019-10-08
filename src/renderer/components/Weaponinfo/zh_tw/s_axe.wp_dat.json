@@ -447,6 +447,34 @@
         {
             "name": "鎧羅劍斧‧水",
             "Weapon_Number": 118
+        },
+        {
+            "name": "帝王金劍斧·風漂",
+            "Weapon_Number": 119
+        },
+        {
+            "name": "帝王金劍斧·屍套",
+            "Weapon_Number": 120
+        },
+        {
+            "name": "帝王金劍斧·王",
+            "Weapon_Number": 121
+        },
+        {
+            "name": "帝王金劍斧·爆鱗",
+            "Weapon_Number": 122
+        },
+        {
+            "name": "帝王金劍斧·雷",
+            "Weapon_Number": 123
+        },
+        {
+            "name": "帝王金劍斧·水",
+            "Weapon_Number": 124
+        },
+        {
+            "name": "帝王金劍斧·麻痺",
+            "Weapon_Number": 125
         }
     ]
 }

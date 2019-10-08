@@ -499,6 +499,42 @@
         {
             "name": "鎧羅切刀‧火",
             "Weapon_Number": 132
+        },
+        {
+            "name": "帝王金劍·痺賊",
+            "Weapon_Number": 133
+        },
+        {
+            "name": "帝王金劍·風漂",
+            "Weapon_Number": 134
+        },
+        {
+            "name": "帝王金劍·王",
+            "Weapon_Number": 135
+        },
+        {
+            "name": "帝王金劍·幻",
+            "Weapon_Number": 136
+        },
+        {
+            "name": "帝王金劍·水",
+            "Weapon_Number": 137
+        },
+        {
+            "name": "帝王金劍·龍",
+            "Weapon_Number": 138
+        },
+        {
+            "name": "帝王金劍·爆破",
+            "Weapon_Number": 139
+        },
+        {
+            "name": "銀劍",
+            "Weapon_Number": 140
+        },
+        {
+            "name": "銀劍plus",
+            "Weapon_Number": 141
         }
     ]
 }

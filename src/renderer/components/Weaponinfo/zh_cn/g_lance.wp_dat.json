@@ -448,6 +448,34 @@
         {
             "name": "铠罗铳枪‧冰",
             "Weapon_Number": 117
+        },
+        {
+            "name": "帝王金铳枪·风飘",
+            "Weapon_Number": 118
+        },
+        {
+            "name": "帝王金铳枪·尸套",
+            "Weapon_Number": 119
+        },
+        {
+            "name": "帝王金铳枪·王",
+            "Weapon_Number": 120
+        },
+        {
+            "name": "帝王金铳枪·爆鳞",
+            "Weapon_Number": 121
+        },
+        {
+            "name": "帝王金铳枪·飞雷",
+            "Weapon_Number": 122
+        },
+        {
+            "name": "帝王金铳枪·麻痹",
+            "Weapon_Number": 123
+        },
+        {
+            "name": "帝王金铳枪·水",
+            "Weapon_Number": 124
         }
     ]
 }

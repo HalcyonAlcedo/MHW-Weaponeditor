@@ -428,6 +428,34 @@
         {
             "name": "鎧羅兵裝‧水",
             "Weapon_Number": 113
+        },
+        {
+            "name": "帝王金盾斧·飛雷",
+            "Weapon_Number": 114
+        },
+        {
+            "name": "帝王金盾斧·痺賊",
+            "Weapon_Number": 115
+        },
+        {
+            "name": "帝王金盾斧·屍套",
+            "Weapon_Number": 116
+        },
+        {
+            "name": "帝王金盾斧·王",
+            "Weapon_Number": 117
+        },
+        {
+            "name": "帝王金盾斧·冰",
+            "Weapon_Number": 118
+        },
+        {
+            "name": "帝王金盾斧·岩賊",
+            "Weapon_Number": 119
+        },
+        {
+            "name": "帝王金盾斧·水",
+            "Weapon_Number": 120
         }
     ]
 }

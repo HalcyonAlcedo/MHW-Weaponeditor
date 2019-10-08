@@ -455,6 +455,34 @@
         {
             "name": "鎧羅長刀‧睡眠",
             "Weapon_Number": 120
+        },
+        {
+            "name": "帝王金長刀·飛雷",
+            "Weapon_Number": 121
+        },
+        {
+            "name": "帝王金長刀·屍套",
+            "Weapon_Number": 122
+        },
+        {
+            "name": "帝王金長刀·王",
+            "Weapon_Number": 123
+        },
+        {
+            "name": "帝王金長刀·岩賊",
+            "Weapon_Number": 124
+        },
+        {
+            "name": "帝王金長刀·水",
+            "Weapon_Number": 125
+        },
+        {
+            "name": "帝王金長刀·冰",
+            "Weapon_Number": 126
+        },
+        {
+            "name": "帝王金長刀·麻痺",
+            "Weapon_Number": 127
         }
     ]
 }

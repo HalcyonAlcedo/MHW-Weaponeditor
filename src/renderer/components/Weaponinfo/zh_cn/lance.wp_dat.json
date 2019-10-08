@@ -468,6 +468,34 @@
         {
             "name": "铠罗之尖‧毒",
             "Weapon_Number": 125
+        },
+        {
+            "name": "帝王金枪·麻痹",
+            "Weapon_Number": 126
+        },
+        {
+            "name": "帝王金枪·风漂",
+            "Weapon_Number": 127
+        },
+        {
+            "name": "帝王金枪·尸套",
+            "Weapon_Number": 128
+        },
+        {
+            "name": "帝王金枪·王",
+            "Weapon_Number": 129
+        },
+        {
+            "name": "帝王金枪·岩贼",
+            "Weapon_Number": 130
+        },
+        {
+            "name": "帝王金枪·水",
+            "Weapon_Number": 131
+        },
+        {
+            "name": "帝王金枪·雷",
+            "Weapon_Number": 132
         }
     ]
 }
