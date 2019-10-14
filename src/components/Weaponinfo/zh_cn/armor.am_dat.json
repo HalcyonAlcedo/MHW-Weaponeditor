@@ -1,0 +1,6024 @@
+{
+    "Weapon": "装备",
+    "Data": [{
+            "name": "獵人頭盔",
+            "Equipment_Number": 1,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "皮製頭飾",
+            "Equipment_Number": 2,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "蠻顎龍頭盔",
+            "Equipment_Number": 3,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "凶豺龍頭盔",
+            "Equipment_Number": 4,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "骨製頭盔",
+            "Equipment_Number": 5,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "合金頭盔",
+            "Equipment_Number": 6,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "巨蜂頭盔",
+            "Equipment_Number": 9,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "搔鳥頭盔",
+            "Equipment_Number": 10,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "毒妖鳥頭盔",
+            "Equipment_Number": 11,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "泥魚龍頭盔",
+            "Equipment_Number": 12,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "土砂龍頭盔",
+            "Equipment_Number": 13,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "飛雷龍頭盔",
+            "Equipment_Number": 14,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "鎖甲頭飾",
+            "Equipment_Number": 15,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "巨甲蟲頭盔",
+            "Equipment_Number": 18,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "獨角仙護頭",
+            "Equipment_Number": 20,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "雌火龍頭盔",
+            "Equipment_Number": 21,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "凶顎龍頭盔",
+            "Equipment_Number": 22,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "眩鳥頭盔",
+            "Equipment_Number": 23,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "浮空龍頭盔",
+            "Equipment_Number": 24,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "礦石頭盔",
+            "Equipment_Number": 25,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "死神首腦",
+            "Equipment_Number": 26,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "風漂龍頭盔",
+            "Equipment_Number": 27,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "骨鎚龍頭盔",
+            "Equipment_Number": 28,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "慘爪龍頭盔",
+            "Equipment_Number": 29,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "鑄鐵頭盔",
+            "Equipment_Number": 31,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "火龍頭盔",
+            "Equipment_Number": 33,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "角龍頭盔",
+            "Equipment_Number": 34,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "麒麟角",
+            "Equipment_Number": 35,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "旅團帽",
+            "Equipment_Number": 36,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "爆碎羽飾",
+            "Equipment_Number": 37,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "皮製頭飾α",
+            "Equipment_Number": 39,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "皮製頭飾β",
+            "Equipment_Number": 40,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "獵人頭盔α",
+            "Equipment_Number": 41,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "獵人頭盔β",
+            "Equipment_Number": 42,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "骨製頭盔α",
+            "Equipment_Number": 43,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "骨製頭盔β",
+            "Equipment_Number": 44,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "合金頭盔α",
+            "Equipment_Number": 45,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "合金頭盔β",
+            "Equipment_Number": 46,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "巨蜂頭盔α",
+            "Equipment_Number": 51,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "巨蜂頭盔β",
+            "Equipment_Number": 52,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "巨甲蟲頭盔α",
+            "Equipment_Number": 57,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "巨甲蟲頭盔β",
+            "Equipment_Number": 58,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "凶豺龍頭盔α",
+            "Equipment_Number": 61,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "凶豺龍頭盔β",
+            "Equipment_Number": 62,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "搔鳥頭盔α",
+            "Equipment_Number": 63,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "搔鳥頭盔β",
+            "Equipment_Number": 64,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "毒妖鳥頭盔α",
+            "Equipment_Number": 65,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "毒妖鳥頭盔β",
+            "Equipment_Number": 66,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "泥魚龍頭盔α",
+            "Equipment_Number": 67,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "泥魚龍頭盔β",
+            "Equipment_Number": 68,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "土砂龍頭盔α",
+            "Equipment_Number": 69,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "土砂龍頭盔β",
+            "Equipment_Number": 70,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "飛雷龍頭盔α",
+            "Equipment_Number": 71,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "飛雷龍頭盔β",
+            "Equipment_Number": 72,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "雌火龍頭盔α",
+            "Equipment_Number": 73,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "雌火龍頭盔β",
+            "Equipment_Number": 74,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "凶顎龍頭盔α",
+            "Equipment_Number": 75,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "凶顎龍頭盔β",
+            "Equipment_Number": 76,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "眩鳥頭盔α",
+            "Equipment_Number": 77,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "眩鳥頭盔β",
+            "Equipment_Number": 78,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "浮空龍頭盔α",
+            "Equipment_Number": 79,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "浮空龍頭盔β",
+            "Equipment_Number": 80,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "慘爪龍頭盔α",
+            "Equipment_Number": 81,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "慘爪龍頭盔β",
+            "Equipment_Number": 82,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "岩賊龍頭盔α",
+            "Equipment_Number": 83,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "岩賊龍頭盔β",
+            "Equipment_Number": 84,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "熔岩龍頭盔α",
+            "Equipment_Number": 85,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "熔岩龍頭盔β",
+            "Equipment_Number": 86,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "火龍心頭盔α",
+            "Equipment_Number": 87,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "火龍心頭盔β",
+            "Equipment_Number": 88,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "礦石頭盔α",
+            "Equipment_Number": 89,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "礦石頭盔β",
+            "Equipment_Number": 90,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "鑄鐵頭盔α",
+            "Equipment_Number": 91,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "鑄鐵頭盔β",
+            "Equipment_Number": 92,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "蠻顎龍頭盔α",
+            "Equipment_Number": 93,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "蠻顎龍頭盔β",
+            "Equipment_Number": 94,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "風漂龍頭盔α",
+            "Equipment_Number": 95,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "風漂龍頭盔β",
+            "Equipment_Number": 96,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "骨鎚龍頭盔α",
+            "Equipment_Number": 97,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "骨鎚龍頭盔β",
+            "Equipment_Number": 98,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "烏爾德頭盔α",
+            "Equipment_Number": 99,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "烏爾德頭盔β",
+            "Equipment_Number": 100,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "火龍頭盔α",
+            "Equipment_Number": 101,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "火龍頭盔β",
+            "Equipment_Number": 102,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "角龍頭盔α",
+            "Equipment_Number": 103,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "角龍頭盔β",
+            "Equipment_Number": 104,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "麒麟角α",
+            "Equipment_Number": 105,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "麒麟角β",
+            "Equipment_Number": 106,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "戰紋頭盔α",
+            "Equipment_Number": 107,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "戰紋頭盔β",
+            "Equipment_Number": 108,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "爆鎚龍頭盔α",
+            "Equipment_Number": 109,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "爆鎚龍頭盔β",
+            "Equipment_Number": 110,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "火龍魂頭盔α",
+            "Equipment_Number": 111,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "火龍魂頭盔β",
+            "Equipment_Number": 112,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "暴君角龍頭盔α",
+            "Equipment_Number": 113,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "暴君角龍頭盔β",
+            "Equipment_Number": 114,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "爆鱗龍頭盔α",
+            "Equipment_Number": 115,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "爆鱗龍頭盔β",
+            "Equipment_Number": 116,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "獨角仙護頭α",
+            "Equipment_Number": 117,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "獨角仙護頭β",
+            "Equipment_Number": 118,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "旅團帽α",
+            "Equipment_Number": 119,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "旅團帽β",
+            "Equipment_Number": 120,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "大馬士革頭盔α",
+            "Equipment_Number": 121,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "大馬士革頭盔β",
+            "Equipment_Number": 122,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "杜賓頭盔α",
+            "Equipment_Number": 123,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "杜賓頭盔β",
+            "Equipment_Number": 124,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "冥燈幽火頭飾α",
+            "Equipment_Number": 125,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "冥燈幽火頭飾β",
+            "Equipment_Number": 126,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "帝王皇冠α",
+            "Equipment_Number": 127,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "帝王皇冠β",
+            "Equipment_Number": 128,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "鋼龍強力α",
+            "Equipment_Number": 129,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "鋼龍強力β",
+            "Equipment_Number": 130,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "死神首腦α",
+            "Equipment_Number": 131,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "死神首腦β",
+            "Equipment_Number": 132,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "公會十字頭飾α",
+            "Equipment_Number": 133,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "公會十字頭飾β",
+            "Equipment_Number": 134,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "鑄島熔岩頭飾α",
+            "Equipment_Number": 137,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "鑄島熔岩頭飾β",
+            "Equipment_Number": 138,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【巴魯特】服裝‧頭部",
+            "Equipment_Number": 145,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【潛水夫】服裝‧頭部",
+            "Equipment_Number": 146,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "鎖甲頭飾α",
+            "Equipment_Number": 147,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "鎖甲頭飾β",
+            "Equipment_Number": 148,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "骷髏面罩α",
+            "Equipment_Number": 149,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "骷髏面罩β",
+            "Equipment_Number": 150,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "追蹤者頭飾α",
+            "Equipment_Number": 151,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "追蹤者頭飾β",
+            "Equipment_Number": 152,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "艾路頭套α",
+            "Equipment_Number": 153,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "菌豬頭套α",
+            "Equipment_Number": 154,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【旅團】服裝‧頭部",
+            "Equipment_Number": 155,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【公會十字】服裝‧頭部",
+            "Equipment_Number": 156,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【收穫】服裝‧頭部",
+            "Equipment_Number": 157,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【獵戶星】服裝‧頭部",
+            "Equipment_Number": 158,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【盛裝】服裝‧頭部",
+            "Equipment_Number": 159,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "突擊龍角α",
+            "Equipment_Number": 166,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "突擊龍角β",
+            "Equipment_Number": 167,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "貓蜥龍護目鏡",
+            "Equipment_Number": 168,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "燕尾蝶護頭",
+            "Equipment_Number": 169,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "燕尾蝶護頭α",
+            "Equipment_Number": 170,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "燕尾蝶護頭β",
+            "Equipment_Number": 171,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "Twitch‧頭部",
+            "Equipment_Number": 172,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "Twitch Prime 帽",
+            "Equipment_Number": 173,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "貓蜥龍護目鏡α",
+            "Equipment_Number": 174,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "貓蜥龍護目鏡β",
+            "Equipment_Number": 175,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "原型頭盔",
+            "Equipment_Number": 176,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "封龍耳飾α",
+            "Equipment_Number": 181,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "知性眼鏡α",
+            "Equipment_Number": 183,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "龍王的獨眼α",
+            "Equipment_Number": 185,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "獵人頭飾",
+            "Equipment_Number": 190,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "絢輝龍鎧羅頭盔α",
+            "Equipment_Number": 191,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "絢輝龍鎧羅頭盔β",
+            "Equipment_Number": 192,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "巴魯特頭飾",
+            "Equipment_Number": 193,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "潛水夫修羅",
+            "Equipment_Number": 194,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "收穫頭飾",
+            "Equipment_Number": 195,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "獵戶星頭飾",
+            "Equipment_Number": 196,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "盛裝頭飾",
+            "Equipment_Number": 197,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "鎧武者‧頭部",
+            "Equipment_Number": 200,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "殘虐頭盔α",
+            "Equipment_Number": 201,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "殘虐頭盔β",
+            "Equipment_Number": 202,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "黎明武士【寂】‧頭部",
+            "Equipment_Number": 204,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "黎明武士【譽】‧頭部",
+            "Equipment_Number": 205,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "騰龍戰盔α",
+            "Equipment_Number": 206,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "巴魯特頭飾α",
+            "Equipment_Number": 207,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "潛水夫修羅α",
+            "Equipment_Number": 208,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "收穫頭飾α",
+            "Equipment_Number": 209,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "獵戶星頭飾α",
+            "Equipment_Number": 210,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "盛裝頭飾α",
+            "Equipment_Number": 211,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "燕尾蝶男護頭",
+            "Equipment_Number": 212,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "燕尾蝶男護頭α",
+            "Equipment_Number": 213,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "燕尾蝶男護頭β",
+            "Equipment_Number": 214,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "獨角仙后護頭",
+            "Equipment_Number": 215,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "獨角仙后護頭α",
+            "Equipment_Number": 216,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "獨角仙后護頭β",
+            "Equipment_Number": 217,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "烏爾德頭盔γ",
+            "Equipment_Number": 218,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "麒麟角γ",
+            "Equipment_Number": 219,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "帝王皇冠γ",
+            "Equipment_Number": 220,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "鋼龍強力γ",
+            "Equipment_Number": 221,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "戰紋頭盔γ",
+            "Equipment_Number": 222,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "鑄島熔岩頭飾γ",
+            "Equipment_Number": 223,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "冥燈幽火頭飾γ",
+            "Equipment_Number": 224,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "蒼星之將【頭盔】α",
+            "Equipment_Number": 229,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "但丁假髮α",
+            "Equipment_Number": 230,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "皇后琴弦α",
+            "Equipment_Number": 231,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "皇后琴弦β",
+            "Equipment_Number": 232,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "封印的眼罩α",
+            "Equipment_Number": 233,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "墨鏡α",
+            "Equipment_Number": 234,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "扒手龍頭套α",
+            "Equipment_Number": 235,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "搖曳鰻頭套α",
+            "Equipment_Number": 236,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【蝴蝶】服裝‧頭部",
+            "Equipment_Number": 237,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【死神】服裝‧頭部",
+            "Equipment_Number": 238,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【但丁】服裝‧頭部",
+            "Equipment_Number": 239,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【騰龍】服裝‧頭部",
+            "Equipment_Number": 240,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【追蹤者】服裝‧頭部",
+            "Equipment_Number": 241,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【原型】服裝‧頭部",
+            "Equipment_Number": 242,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【甲蟲】服裝‧頭部",
+            "Equipment_Number": 243,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【墨鏡】服裝",
+            "Equipment_Number": 245,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【菌豬頭套】服裝",
+            "Equipment_Number": 246,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【艾路頭套】服裝",
+            "Equipment_Number": 247,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【封印的眼罩】服裝",
+            "Equipment_Number": 248,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【搖曳鰻頭套】服裝",
+            "Equipment_Number": 249,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【骷髏面罩】服裝",
+            "Equipment_Number": 250,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【扒手龍頭套】服裝",
+            "Equipment_Number": 251,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "皇后琴弦γ",
+            "Equipment_Number": 253,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "絢輝龍鎧羅頭盔γ",
+            "Equipment_Number": 258,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【SAKURA】服裝‧頭部",
+            "Equipment_Number": 292,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "傑洛特面罩α",
+            "Equipment_Number": 293,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "希里面罩α",
+            "Equipment_Number": 294,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【傑洛特】服裝‧頭部",
+            "Equipment_Number": 295,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【希里】服裝‧頭部",
+            "Equipment_Number": 296,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【巴耶克】服裝‧頭部",
+            "Equipment_Number": 297,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "亞蘿伊面罩γ",
+            "Equipment_Number": 298,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "【亞蘿伊】服裝‧頭部",
+            "Equipment_Number": 299,
+            "Equipment_Type": 0
+        },
+        {
+            "name": "獵人鎧甲",
+            "Equipment_Number": 1,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "皮製服飾",
+            "Equipment_Number": 2,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "蠻顎龍鎧甲",
+            "Equipment_Number": 3,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "凶豺龍鎧甲",
+            "Equipment_Number": 4,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "骨製鎧甲",
+            "Equipment_Number": 5,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "合金鎧甲",
+            "Equipment_Number": 6,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "巨蜂鎧甲",
+            "Equipment_Number": 9,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "搔鳥鎧甲",
+            "Equipment_Number": 10,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "毒妖鳥鎧甲",
+            "Equipment_Number": 11,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "泥魚龍鎧甲",
+            "Equipment_Number": 12,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "土砂龍鎧甲",
+            "Equipment_Number": 13,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "飛雷龍鎧甲",
+            "Equipment_Number": 14,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "鎖甲服飾",
+            "Equipment_Number": 15,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "巨甲蟲鎧甲",
+            "Equipment_Number": 18,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "獨角仙上身",
+            "Equipment_Number": 20,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "雌火龍鎧甲",
+            "Equipment_Number": 21,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "凶顎龍鎧甲",
+            "Equipment_Number": 22,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "眩鳥鎧甲",
+            "Equipment_Number": 23,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "浮空龍鎧甲",
+            "Equipment_Number": 24,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "礦石鎧甲",
+            "Equipment_Number": 25,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "死神肌肉",
+            "Equipment_Number": 26,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "風漂龍鎧甲",
+            "Equipment_Number": 27,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "骨鎚龍鎧甲",
+            "Equipment_Number": 28,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "慘爪龍鎧甲",
+            "Equipment_Number": 29,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "鑄鐵鎧甲",
+            "Equipment_Number": 31,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "火龍鎧甲",
+            "Equipment_Number": 33,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "角龍鎧甲",
+            "Equipment_Number": 34,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "麒麟服飾",
+            "Equipment_Number": 35,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "旅團戰衣",
+            "Equipment_Number": 36,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "皮製服飾α",
+            "Equipment_Number": 39,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "皮製服飾β",
+            "Equipment_Number": 40,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "獵人鎧甲α",
+            "Equipment_Number": 41,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "獵人鎧甲β",
+            "Equipment_Number": 42,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "骨製鎧甲α",
+            "Equipment_Number": 43,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "骨製鎧甲β",
+            "Equipment_Number": 44,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "合金鎧甲α",
+            "Equipment_Number": 45,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "合金鎧甲β",
+            "Equipment_Number": 46,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "巨蜂鎧甲α",
+            "Equipment_Number": 51,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "巨蜂鎧甲β",
+            "Equipment_Number": 52,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "酸翼龍斗篷α",
+            "Equipment_Number": 55,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "酸翼龍斗篷β",
+            "Equipment_Number": 56,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "巨甲蟲鎧甲α",
+            "Equipment_Number": 57,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "巨甲蟲鎧甲β",
+            "Equipment_Number": 58,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "凶豺龍鎧甲α",
+            "Equipment_Number": 61,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "凶豺龍鎧甲β",
+            "Equipment_Number": 62,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "搔鳥鎧甲α",
+            "Equipment_Number": 63,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "搔鳥鎧甲β",
+            "Equipment_Number": 64,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "毒妖鳥鎧甲α",
+            "Equipment_Number": 65,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "毒妖鳥鎧甲β",
+            "Equipment_Number": 66,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "泥魚龍鎧甲α",
+            "Equipment_Number": 67,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "泥魚龍鎧甲β",
+            "Equipment_Number": 68,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "土砂龍鎧甲α",
+            "Equipment_Number": 69,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "土砂龍鎧甲β",
+            "Equipment_Number": 70,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "飛雷龍鎧甲α",
+            "Equipment_Number": 71,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "飛雷龍鎧甲β",
+            "Equipment_Number": 72,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "雌火龍鎧甲α",
+            "Equipment_Number": 73,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "雌火龍鎧甲β",
+            "Equipment_Number": 74,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "凶顎龍鎧甲α",
+            "Equipment_Number": 75,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "凶顎龍鎧甲β",
+            "Equipment_Number": 76,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "眩鳥鎧甲α",
+            "Equipment_Number": 77,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "眩鳥鎧甲β",
+            "Equipment_Number": 78,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "浮空龍鎧甲α",
+            "Equipment_Number": 79,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "浮空龍鎧甲β",
+            "Equipment_Number": 80,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "慘爪龍鎧甲α",
+            "Equipment_Number": 81,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "慘爪龍鎧甲β",
+            "Equipment_Number": 82,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "岩賊龍鎧甲α",
+            "Equipment_Number": 83,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "岩賊龍鎧甲β",
+            "Equipment_Number": 84,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "熔岩龍鎧甲α",
+            "Equipment_Number": 85,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "熔岩龍鎧甲β",
+            "Equipment_Number": 86,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "火龍心鎧甲α",
+            "Equipment_Number": 87,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "火龍心鎧甲β",
+            "Equipment_Number": 88,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "礦石鎧甲α",
+            "Equipment_Number": 89,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "礦石鎧甲β",
+            "Equipment_Number": 90,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "鑄鐵鎧甲α",
+            "Equipment_Number": 91,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "鑄鐵鎧甲β",
+            "Equipment_Number": 92,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "蠻顎龍鎧甲α",
+            "Equipment_Number": 93,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "蠻顎龍鎧甲β",
+            "Equipment_Number": 94,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "風漂龍鎧甲α",
+            "Equipment_Number": 95,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "風漂龍鎧甲β",
+            "Equipment_Number": 96,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "骨鎚龍鎧甲α",
+            "Equipment_Number": 97,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "骨鎚龍鎧甲β",
+            "Equipment_Number": 98,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "烏爾德鎧甲α",
+            "Equipment_Number": 99,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "烏爾德鎧甲β",
+            "Equipment_Number": 100,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "火龍鎧甲α",
+            "Equipment_Number": 101,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "火龍鎧甲β",
+            "Equipment_Number": 102,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "角龍鎧甲α",
+            "Equipment_Number": 103,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "角龍鎧甲β",
+            "Equipment_Number": 104,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "麒麟服飾α",
+            "Equipment_Number": 105,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "麒麟服飾β",
+            "Equipment_Number": 106,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "戰紋鎧甲α",
+            "Equipment_Number": 107,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "戰紋鎧甲β",
+            "Equipment_Number": 108,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "爆鎚龍鎧甲α",
+            "Equipment_Number": 109,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "爆鎚龍鎧甲β",
+            "Equipment_Number": 110,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "火龍魂鎧甲α",
+            "Equipment_Number": 111,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "火龍魂鎧甲β",
+            "Equipment_Number": 112,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "暴君角龍鎧甲α",
+            "Equipment_Number": 113,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "暴君角龍鎧甲β",
+            "Equipment_Number": 114,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "爆鱗龍鎧甲α",
+            "Equipment_Number": 115,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "爆鱗龍鎧甲β",
+            "Equipment_Number": 116,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "獨角仙上身α",
+            "Equipment_Number": 117,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "獨角仙上身β",
+            "Equipment_Number": 118,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "旅團戰衣α",
+            "Equipment_Number": 119,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "旅團戰衣β",
+            "Equipment_Number": 120,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "大馬士革鎧甲α",
+            "Equipment_Number": 121,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "大馬士革鎧甲β",
+            "Equipment_Number": 122,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "杜賓鎧甲α",
+            "Equipment_Number": 123,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "杜賓鎧甲β",
+            "Equipment_Number": 124,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "冥燈幽火皮α",
+            "Equipment_Number": 125,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "冥燈幽火皮β",
+            "Equipment_Number": 126,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "帝王鎧甲α",
+            "Equipment_Number": 127,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "帝王鎧甲β",
+            "Equipment_Number": 128,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "鋼龍恐懼α",
+            "Equipment_Number": 129,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "鋼龍恐懼β",
+            "Equipment_Number": 130,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "死神肌肉α",
+            "Equipment_Number": 131,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "死神肌肉β",
+            "Equipment_Number": 132,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "公會十字戰衣α",
+            "Equipment_Number": 133,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "公會十字戰衣β",
+            "Equipment_Number": 134,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "鑄島熔岩皮α",
+            "Equipment_Number": 137,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "鑄島熔岩皮β",
+            "Equipment_Number": 138,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "【巴魯特】服裝‧身體",
+            "Equipment_Number": 145,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "【潛水夫】服裝‧身體",
+            "Equipment_Number": 146,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "鎖甲服飾α",
+            "Equipment_Number": 147,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "鎖甲服飾β",
+            "Equipment_Number": 148,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "追蹤者服飾α",
+            "Equipment_Number": 149,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "追蹤者服飾β",
+            "Equipment_Number": 150,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "【旅團】服裝‧身體",
+            "Equipment_Number": 151,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "【公會十字】服裝‧身體",
+            "Equipment_Number": 152,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "【收穫】服裝‧身體",
+            "Equipment_Number": 153,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "【獵戶星】服裝‧身體",
+            "Equipment_Number": 154,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "【盛裝】服裝‧身體",
+            "Equipment_Number": 155,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "燕尾蝶上身",
+            "Equipment_Number": 159,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "燕尾蝶上身α",
+            "Equipment_Number": 160,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "燕尾蝶上身β",
+            "Equipment_Number": 161,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "Twitch‧身體",
+            "Equipment_Number": 162,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "Twitch Prime T恤",
+            "Equipment_Number": 163,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "原型鎧甲",
+            "Equipment_Number": 164,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "獵人裝甲",
+            "Equipment_Number": 190,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "絢輝龍鎧羅鎧甲α",
+            "Equipment_Number": 191,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "絢輝龍鎧羅鎧甲β",
+            "Equipment_Number": 192,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "巴魯特服飾",
+            "Equipment_Number": 193,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "潛水夫服裝",
+            "Equipment_Number": 194,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "收穫裝甲",
+            "Equipment_Number": 195,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "獵戶星服飾",
+            "Equipment_Number": 196,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "盛裝服飾",
+            "Equipment_Number": 197,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "鎧武者‧身體",
+            "Equipment_Number": 200,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "殘虐鎧甲α",
+            "Equipment_Number": 201,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "殘虐鎧甲β",
+            "Equipment_Number": 202,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "黎明武士【寂】‧身體",
+            "Equipment_Number": 204,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "黎明武士【譽】‧身體",
+            "Equipment_Number": 205,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "騰龍戰鎧α",
+            "Equipment_Number": 206,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "巴魯特服飾α",
+            "Equipment_Number": 207,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "潛水夫服裝α",
+            "Equipment_Number": 208,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "收穫裝甲α",
+            "Equipment_Number": 209,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "獵戶星服飾α",
+            "Equipment_Number": 210,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "盛裝服飾α",
+            "Equipment_Number": 211,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "燕尾蝶男上身",
+            "Equipment_Number": 212,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "燕尾蝶男上身α",
+            "Equipment_Number": 213,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "燕尾蝶男上身β",
+            "Equipment_Number": 214,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "獨角仙后上身",
+            "Equipment_Number": 215,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "獨角仙后上身α",
+            "Equipment_Number": 216,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "獨角仙后上身β",
+            "Equipment_Number": 217,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "烏爾德鎧甲γ",
+            "Equipment_Number": 218,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "麒麟服飾γ",
+            "Equipment_Number": 219,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "帝王鎧甲γ",
+            "Equipment_Number": 220,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "鋼龍恐懼γ",
+            "Equipment_Number": 221,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "戰紋鎧甲γ",
+            "Equipment_Number": 222,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "鑄島熔岩皮γ",
+            "Equipment_Number": 223,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "冥燈幽火皮γ",
+            "Equipment_Number": 224,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "蒼星之將【鎧甲】α",
+            "Equipment_Number": 229,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "但丁風衣α",
+            "Equipment_Number": 230,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "皇后鎧甲α",
+            "Equipment_Number": 231,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "皇后鎧甲β",
+            "Equipment_Number": 232,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "【蝴蝶】服裝‧身體",
+            "Equipment_Number": 233,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "【死神】服裝‧身體",
+            "Equipment_Number": 234,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "【但丁】服裝‧身體",
+            "Equipment_Number": 235,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "【騰龍】服裝‧身體",
+            "Equipment_Number": 236,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "【追蹤者】服裝‧身體",
+            "Equipment_Number": 237,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "【原型】服裝‧身體",
+            "Equipment_Number": 238,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "【甲蟲】服裝‧身體",
+            "Equipment_Number": 239,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "皇后鎧甲γ",
+            "Equipment_Number": 242,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "絢輝龍鎧羅鎧甲γ",
+            "Equipment_Number": 247,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "【SAKURA】服裝‧身體",
+            "Equipment_Number": 292,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "傑洛特身體α",
+            "Equipment_Number": 293,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "希里身體α",
+            "Equipment_Number": 294,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "【傑洛特】服裝‧身體",
+            "Equipment_Number": 295,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "【希里】服裝‧身體",
+            "Equipment_Number": 296,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "【巴耶克】服裝‧身體",
+            "Equipment_Number": 297,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "亞蘿伊身體γ",
+            "Equipment_Number": 298,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "【亞蘿伊】服裝‧身體",
+            "Equipment_Number": 299,
+            "Equipment_Type": 1
+        },
+        {
+            "name": "獵人腕甲",
+            "Equipment_Number": 1,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "皮製手套",
+            "Equipment_Number": 2,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "蠻顎龍腕甲",
+            "Equipment_Number": 3,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "凶豺龍腕甲",
+            "Equipment_Number": 4,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "骨製腕甲",
+            "Equipment_Number": 5,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "合金腕甲",
+            "Equipment_Number": 6,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "巨蜂腕甲",
+            "Equipment_Number": 9,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "搔鳥腕甲",
+            "Equipment_Number": 10,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "毒妖鳥腕甲",
+            "Equipment_Number": 11,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "泥魚龍腕甲",
+            "Equipment_Number": 12,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "土砂龍腕甲",
+            "Equipment_Number": 13,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "飛雷龍腕甲",
+            "Equipment_Number": 14,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "鎖甲手套",
+            "Equipment_Number": 15,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "巨甲蟲腕甲",
+            "Equipment_Number": 18,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "獨角仙護袖",
+            "Equipment_Number": 20,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "雌火龍腕甲",
+            "Equipment_Number": 21,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "凶顎龍腕甲",
+            "Equipment_Number": 22,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "眩鳥腕甲",
+            "Equipment_Number": 23,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "浮空龍腕甲",
+            "Equipment_Number": 24,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "礦石腕甲",
+            "Equipment_Number": 25,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "死神雙手",
+            "Equipment_Number": 26,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "風漂龍腕甲",
+            "Equipment_Number": 27,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "骨鎚龍腕甲",
+            "Equipment_Number": 28,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "慘爪龍腕甲",
+            "Equipment_Number": 29,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "鑄鐵腕甲",
+            "Equipment_Number": 31,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "火龍腕甲",
+            "Equipment_Number": 33,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "角龍腕甲",
+            "Equipment_Number": 34,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "麒麟長腕甲",
+            "Equipment_Number": 35,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "旅團腕甲",
+            "Equipment_Number": 36,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "皮製手套α",
+            "Equipment_Number": 39,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "皮製手套β",
+            "Equipment_Number": 40,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "獵人腕甲α",
+            "Equipment_Number": 41,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "獵人腕甲β",
+            "Equipment_Number": 42,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "骨製腕甲α",
+            "Equipment_Number": 43,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "骨製腕甲β",
+            "Equipment_Number": 44,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "合金腕甲α",
+            "Equipment_Number": 45,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "合金腕甲β",
+            "Equipment_Number": 46,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "巨蜂腕甲α",
+            "Equipment_Number": 51,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "巨蜂腕甲β",
+            "Equipment_Number": 52,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "巨甲蟲腕甲α",
+            "Equipment_Number": 57,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "巨甲蟲腕甲β",
+            "Equipment_Number": 58,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "凶豺龍腕甲α",
+            "Equipment_Number": 61,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "凶豺龍腕甲β",
+            "Equipment_Number": 62,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "搔鳥腕甲α",
+            "Equipment_Number": 63,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "搔鳥腕甲β",
+            "Equipment_Number": 64,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "毒妖鳥腕甲α",
+            "Equipment_Number": 65,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "毒妖鳥腕甲β",
+            "Equipment_Number": 66,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "泥魚龍腕甲α",
+            "Equipment_Number": 67,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "泥魚龍腕甲β",
+            "Equipment_Number": 68,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "土砂龍腕甲α",
+            "Equipment_Number": 69,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "土砂龍腕甲β",
+            "Equipment_Number": 70,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "飛雷龍腕甲α",
+            "Equipment_Number": 71,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "飛雷龍腕甲β",
+            "Equipment_Number": 72,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "雌火龍腕甲α",
+            "Equipment_Number": 73,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "雌火龍腕甲β",
+            "Equipment_Number": 74,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "凶顎龍腕甲α",
+            "Equipment_Number": 75,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "凶顎龍腕甲β",
+            "Equipment_Number": 76,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "眩鳥腕甲α",
+            "Equipment_Number": 77,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "眩鳥腕甲β",
+            "Equipment_Number": 78,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "浮空龍腕甲α",
+            "Equipment_Number": 79,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "浮空龍腕甲β",
+            "Equipment_Number": 80,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "慘爪龍腕甲α",
+            "Equipment_Number": 81,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "慘爪龍腕甲β",
+            "Equipment_Number": 82,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "岩賊龍腕甲α",
+            "Equipment_Number": 83,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "岩賊龍腕甲β",
+            "Equipment_Number": 84,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "熔岩龍腕甲α",
+            "Equipment_Number": 85,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "熔岩龍腕甲β",
+            "Equipment_Number": 86,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "火龍心腕甲α",
+            "Equipment_Number": 87,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "火龍心腕甲β",
+            "Equipment_Number": 88,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "礦石腕甲α",
+            "Equipment_Number": 89,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "礦石腕甲β",
+            "Equipment_Number": 90,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "鑄鐵腕甲α",
+            "Equipment_Number": 91,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "鑄鐵腕甲β",
+            "Equipment_Number": 92,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "蠻顎龍腕甲α",
+            "Equipment_Number": 93,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "蠻顎龍腕甲β",
+            "Equipment_Number": 94,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "風漂龍腕甲α",
+            "Equipment_Number": 95,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "風漂龍腕甲β",
+            "Equipment_Number": 96,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "骨鎚龍腕甲α",
+            "Equipment_Number": 97,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "骨鎚龍腕甲β",
+            "Equipment_Number": 98,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "烏爾德腕甲α",
+            "Equipment_Number": 99,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "烏爾德腕甲β",
+            "Equipment_Number": 100,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "火龍腕甲α",
+            "Equipment_Number": 101,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "火龍腕甲β",
+            "Equipment_Number": 102,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "角龍腕甲α",
+            "Equipment_Number": 103,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "角龍腕甲β",
+            "Equipment_Number": 104,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "麒麟長腕甲α",
+            "Equipment_Number": 105,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "麒麟長腕甲β",
+            "Equipment_Number": 106,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "戰紋腕甲α",
+            "Equipment_Number": 107,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "戰紋腕甲β",
+            "Equipment_Number": 108,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "爆鎚龍腕甲α",
+            "Equipment_Number": 109,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "爆鎚龍腕甲β",
+            "Equipment_Number": 110,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "火龍魂腕甲α",
+            "Equipment_Number": 111,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "火龍魂腕甲β",
+            "Equipment_Number": 112,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "暴君角龍腕甲α",
+            "Equipment_Number": 113,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "暴君角龍腕甲β",
+            "Equipment_Number": 114,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "爆鱗龍腕甲α",
+            "Equipment_Number": 115,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "爆鱗龍腕甲β",
+            "Equipment_Number": 116,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "獨角仙護袖α",
+            "Equipment_Number": 117,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "獨角仙護袖β",
+            "Equipment_Number": 118,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "旅團腕甲α",
+            "Equipment_Number": 119,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "旅團腕甲β",
+            "Equipment_Number": 120,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "大馬士革腕甲α",
+            "Equipment_Number": 121,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "大馬士革腕甲β",
+            "Equipment_Number": 122,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "杜賓腕甲α",
+            "Equipment_Number": 123,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "杜賓腕甲β",
+            "Equipment_Number": 124,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "冥燈幽火鋼爪α",
+            "Equipment_Number": 125,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "冥燈幽火鋼爪β",
+            "Equipment_Number": 126,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "帝王腕甲α",
+            "Equipment_Number": 127,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "帝王腕甲β",
+            "Equipment_Number": 128,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "鋼龍剛強α",
+            "Equipment_Number": 129,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "鋼龍剛強β",
+            "Equipment_Number": 130,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "死神雙手α",
+            "Equipment_Number": 131,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "死神雙手β",
+            "Equipment_Number": 132,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "公會十字腕甲α",
+            "Equipment_Number": 133,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "公會十字腕甲β",
+            "Equipment_Number": 134,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "鑄島熔岩鋼爪α",
+            "Equipment_Number": 137,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "鑄島熔岩鋼爪β",
+            "Equipment_Number": 138,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "【收穫】服裝‧腕部",
+            "Equipment_Number": 145,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "【獵戶星】服裝‧腕部",
+            "Equipment_Number": 146,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "鎖甲手套α",
+            "Equipment_Number": 147,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "鎖甲手套β",
+            "Equipment_Number": 148,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "追蹤者手套α",
+            "Equipment_Number": 149,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "追蹤者手套β",
+            "Equipment_Number": 150,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "【巴魯特】服裝‧腕部",
+            "Equipment_Number": 151,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "【潛水夫】服裝‧腕部",
+            "Equipment_Number": 152,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "【盛裝】服裝‧腕部",
+            "Equipment_Number": 153,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "燕尾蝶護袖",
+            "Equipment_Number": 159,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "燕尾蝶護袖α",
+            "Equipment_Number": 160,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "燕尾蝶護袖β",
+            "Equipment_Number": 161,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "【旅團】服裝‧腕部",
+            "Equipment_Number": 162,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "【公會十字】服裝‧腕部",
+            "Equipment_Number": 163,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "冠突龍護手",
+            "Equipment_Number": 164,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "冠突龍護手α",
+            "Equipment_Number": 165,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "冠突龍護手β",
+            "Equipment_Number": 166,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "原型腕甲",
+            "Equipment_Number": 167,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "獵人手套",
+            "Equipment_Number": 190,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "絢輝龍鎧羅腕甲α",
+            "Equipment_Number": 191,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "絢輝龍鎧羅腕甲β",
+            "Equipment_Number": 192,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "巴魯特手套",
+            "Equipment_Number": 193,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "潛水夫腕甲",
+            "Equipment_Number": 194,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "收穫手套",
+            "Equipment_Number": 195,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "獵戶星腕甲",
+            "Equipment_Number": 196,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "盛裝手套",
+            "Equipment_Number": 197,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "鎧武者‧腕部",
+            "Equipment_Number": 200,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "殘虐腕甲α",
+            "Equipment_Number": 201,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "殘虐腕甲β",
+            "Equipment_Number": 202,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "黎明武士【寂】‧腕部",
+            "Equipment_Number": 204,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "黎明武士【譽】‧腕部",
+            "Equipment_Number": 205,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "騰龍腕甲α",
+            "Equipment_Number": 206,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "巴魯特手套α",
+            "Equipment_Number": 207,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "潛水夫腕甲α",
+            "Equipment_Number": 208,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "收穫手套α",
+            "Equipment_Number": 209,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "獵戶星腕甲α",
+            "Equipment_Number": 210,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "盛裝手套α",
+            "Equipment_Number": 211,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "燕尾蝶男護袖",
+            "Equipment_Number": 212,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "燕尾蝶男護袖α",
+            "Equipment_Number": 213,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "燕尾蝶男護袖β",
+            "Equipment_Number": 214,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "獨角仙后護袖",
+            "Equipment_Number": 215,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "獨角仙后護袖α",
+            "Equipment_Number": 216,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "獨角仙后護袖β",
+            "Equipment_Number": 217,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "烏爾德腕甲γ",
+            "Equipment_Number": 218,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "麒麟長腕甲γ",
+            "Equipment_Number": 219,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "帝王腕甲γ",
+            "Equipment_Number": 220,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "鋼龍剛強γ",
+            "Equipment_Number": 221,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "戰紋腕甲γ",
+            "Equipment_Number": 222,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "鑄島熔岩鋼爪γ",
+            "Equipment_Number": 223,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "冥燈幽火鋼爪γ",
+            "Equipment_Number": 224,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "蒼星之將【腕甲】α",
+            "Equipment_Number": 229,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "但丁手套α",
+            "Equipment_Number": 230,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "皇后腕甲α",
+            "Equipment_Number": 231,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "皇后腕甲β",
+            "Equipment_Number": 232,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "【蝴蝶】服裝‧腕部",
+            "Equipment_Number": 233,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "【死神】服裝‧腕部",
+            "Equipment_Number": 234,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "【但丁】服裝‧腕部",
+            "Equipment_Number": 235,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "【騰龍】服裝‧腕部",
+            "Equipment_Number": 236,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "【追蹤者】服裝‧腕部",
+            "Equipment_Number": 237,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "【原型】服裝‧腕部",
+            "Equipment_Number": 238,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "【甲蟲】服裝‧腕部",
+            "Equipment_Number": 239,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "皇后腕甲γ",
+            "Equipment_Number": 242,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "絢輝龍鎧羅腕甲γ",
+            "Equipment_Number": 247,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "【SAKURA】服裝‧腕部",
+            "Equipment_Number": 292,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "傑洛特腕甲α",
+            "Equipment_Number": 293,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "希里腕甲α",
+            "Equipment_Number": 294,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "【傑洛特】服裝‧腕部",
+            "Equipment_Number": 295,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "【希里】服裝‧腕部",
+            "Equipment_Number": 296,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "【巴耶克】服裝‧腕部",
+            "Equipment_Number": 297,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "亞蘿伊腕甲γ",
+            "Equipment_Number": 298,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "【亞蘿伊】服裝‧腕部",
+            "Equipment_Number": 299,
+            "Equipment_Type": 2
+        },
+        {
+            "name": "獵人腰甲",
+            "Equipment_Number": 1,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "皮製皮帶",
+            "Equipment_Number": 2,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "蠻顎龍腰甲",
+            "Equipment_Number": 3,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "凶豺龍腰甲",
+            "Equipment_Number": 4,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "骨製腰甲",
+            "Equipment_Number": 5,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "合金腰甲",
+            "Equipment_Number": 6,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "巨蜂腰甲",
+            "Equipment_Number": 9,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "搔鳥腰甲",
+            "Equipment_Number": 10,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "毒妖鳥腰甲",
+            "Equipment_Number": 11,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "泥魚龍腰甲",
+            "Equipment_Number": 12,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "土砂龍腰甲",
+            "Equipment_Number": 13,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "飛雷龍腰甲",
+            "Equipment_Number": 14,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "鎖甲皮帶",
+            "Equipment_Number": 15,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "巨甲蟲腰甲",
+            "Equipment_Number": 18,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "獨角仙護腰具",
+            "Equipment_Number": 20,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "雌火龍腰甲",
+            "Equipment_Number": 21,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "凶顎龍腰甲",
+            "Equipment_Number": 22,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "眩鳥腰甲",
+            "Equipment_Number": 23,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "浮空龍腰甲",
+            "Equipment_Number": 24,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "礦石腰甲",
+            "Equipment_Number": 25,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "死神臍帶",
+            "Equipment_Number": 26,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "風漂龍腰甲",
+            "Equipment_Number": 27,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "骨鎚龍腰甲",
+            "Equipment_Number": 28,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "慘爪龍腰甲",
+            "Equipment_Number": 29,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "鑄鐵腰甲",
+            "Equipment_Number": 31,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "火龍腰甲",
+            "Equipment_Number": 33,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "角龍腰甲",
+            "Equipment_Number": 34,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "麒麟腰環",
+            "Equipment_Number": 35,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "旅團腰甲",
+            "Equipment_Number": 36,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "皮製皮帶α",
+            "Equipment_Number": 39,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "皮製皮帶β",
+            "Equipment_Number": 40,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "獵人腰甲α",
+            "Equipment_Number": 41,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "獵人腰甲β",
+            "Equipment_Number": 42,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "骨製腰甲α",
+            "Equipment_Number": 43,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "骨製腰甲β",
+            "Equipment_Number": 44,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "合金腰甲α",
+            "Equipment_Number": 45,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "合金腰甲β",
+            "Equipment_Number": 46,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "巨蜂腰甲α",
+            "Equipment_Number": 51,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "巨蜂腰甲β",
+            "Equipment_Number": 52,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "巨甲蟲腰甲α",
+            "Equipment_Number": 57,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "巨甲蟲腰甲β",
+            "Equipment_Number": 58,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "凶豺龍腰甲α",
+            "Equipment_Number": 61,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "凶豺龍腰甲β",
+            "Equipment_Number": 62,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "搔鳥腰甲α",
+            "Equipment_Number": 63,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "搔鳥腰甲β",
+            "Equipment_Number": 64,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "毒妖鳥腰甲α",
+            "Equipment_Number": 65,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "毒妖鳥腰甲β",
+            "Equipment_Number": 66,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "泥魚龍腰甲α",
+            "Equipment_Number": 67,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "泥魚龍腰甲β",
+            "Equipment_Number": 68,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "土砂龍腰甲α",
+            "Equipment_Number": 69,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "土砂龍腰甲β",
+            "Equipment_Number": 70,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "飛雷龍腰甲α",
+            "Equipment_Number": 71,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "飛雷龍腰甲β",
+            "Equipment_Number": 72,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "雌火龍腰甲α",
+            "Equipment_Number": 73,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "雌火龍腰甲β",
+            "Equipment_Number": 74,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "凶顎龍腰甲α",
+            "Equipment_Number": 75,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "凶顎龍腰甲β",
+            "Equipment_Number": 76,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "眩鳥腰甲α",
+            "Equipment_Number": 77,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "眩鳥腰甲β",
+            "Equipment_Number": 78,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "浮空龍腰甲α",
+            "Equipment_Number": 79,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "浮空龍腰甲β",
+            "Equipment_Number": 80,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "慘爪龍腰甲α",
+            "Equipment_Number": 81,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "慘爪龍腰甲β",
+            "Equipment_Number": 82,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "岩賊龍腰甲α",
+            "Equipment_Number": 83,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "岩賊龍腰甲β",
+            "Equipment_Number": 84,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "熔岩龍腰甲α",
+            "Equipment_Number": 85,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "熔岩龍腰甲β",
+            "Equipment_Number": 86,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "火龍心腰甲α",
+            "Equipment_Number": 87,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "火龍心腰甲β",
+            "Equipment_Number": 88,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "礦石腰甲α",
+            "Equipment_Number": 89,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "礦石腰甲β",
+            "Equipment_Number": 90,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "鑄鐵腰甲α",
+            "Equipment_Number": 91,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "鑄鐵腰甲β",
+            "Equipment_Number": 92,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "蠻顎龍腰甲α",
+            "Equipment_Number": 93,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "蠻顎龍腰甲β",
+            "Equipment_Number": 94,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "風漂龍腰甲α",
+            "Equipment_Number": 95,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "風漂龍腰甲β",
+            "Equipment_Number": 96,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "骨鎚龍腰甲α",
+            "Equipment_Number": 97,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "骨鎚龍腰甲β",
+            "Equipment_Number": 98,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "烏爾德腰甲α",
+            "Equipment_Number": 99,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "烏爾德腰甲β",
+            "Equipment_Number": 100,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "火龍腰甲α",
+            "Equipment_Number": 101,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "火龍腰甲β",
+            "Equipment_Number": 102,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "角龍腰甲α",
+            "Equipment_Number": 103,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "角龍腰甲β",
+            "Equipment_Number": 104,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "麒麟腰環α",
+            "Equipment_Number": 105,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "麒麟腰環β",
+            "Equipment_Number": 106,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "戰紋腰甲α",
+            "Equipment_Number": 107,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "戰紋腰甲β",
+            "Equipment_Number": 108,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "爆鎚龍腰甲α",
+            "Equipment_Number": 109,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "爆鎚龍腰甲β",
+            "Equipment_Number": 110,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "火龍魂腰甲α",
+            "Equipment_Number": 111,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "火龍魂腰甲β",
+            "Equipment_Number": 112,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "暴君角龍腰甲α",
+            "Equipment_Number": 113,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "暴君角龍腰甲β",
+            "Equipment_Number": 114,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "爆鱗龍腰甲α",
+            "Equipment_Number": 115,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "爆鱗龍腰甲β",
+            "Equipment_Number": 116,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "獨角仙護腰具α",
+            "Equipment_Number": 117,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "獨角仙護腰具β",
+            "Equipment_Number": 118,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "旅團腰甲α",
+            "Equipment_Number": 119,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "旅團腰甲β",
+            "Equipment_Number": 120,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "大馬士革腰甲α",
+            "Equipment_Number": 121,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "大馬士革腰甲β",
+            "Equipment_Number": 122,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "杜賓腰甲α",
+            "Equipment_Number": 123,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "杜賓腰甲β",
+            "Equipment_Number": 124,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "冥燈幽火脊椎α",
+            "Equipment_Number": 125,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "冥燈幽火脊椎β",
+            "Equipment_Number": 126,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "帝王腰甲α",
+            "Equipment_Number": 127,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "帝王腰甲β",
+            "Equipment_Number": 128,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "鋼龍安穩α",
+            "Equipment_Number": 129,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "鋼龍安穩β",
+            "Equipment_Number": 130,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "死神臍帶α",
+            "Equipment_Number": 131,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "死神臍帶β",
+            "Equipment_Number": 132,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "公會十字腰甲α",
+            "Equipment_Number": 133,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "公會十字腰甲β",
+            "Equipment_Number": 134,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "鑄島熔岩脊椎α",
+            "Equipment_Number": 137,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "鑄島熔岩脊椎β",
+            "Equipment_Number": 138,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "【收穫】服裝‧腰部",
+            "Equipment_Number": 145,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "【獵戶星】服裝‧腰部",
+            "Equipment_Number": 146,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "鎖甲皮帶α",
+            "Equipment_Number": 147,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "鎖甲皮帶β",
+            "Equipment_Number": 148,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "追蹤者皮帶α",
+            "Equipment_Number": 149,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "追蹤者皮帶β",
+            "Equipment_Number": 150,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "【巴魯特】服裝‧腰部",
+            "Equipment_Number": 151,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "【潛水夫】服裝‧腰部",
+            "Equipment_Number": 152,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "【盛裝】服裝‧腰部",
+            "Equipment_Number": 153,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "燕尾蝶護腰具",
+            "Equipment_Number": 159,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "燕尾蝶護腰具α",
+            "Equipment_Number": 160,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "燕尾蝶護腰具β",
+            "Equipment_Number": 161,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "【旅團】服裝‧腰部",
+            "Equipment_Number": 162,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "【公會十字】服裝‧腰部",
+            "Equipment_Number": 163,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "原型腰甲",
+            "Equipment_Number": 164,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "獵人護裙",
+            "Equipment_Number": 190,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "絢輝龍鎧羅腰甲α",
+            "Equipment_Number": 191,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "絢輝龍鎧羅腰甲β",
+            "Equipment_Number": 192,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "巴魯特風衣",
+            "Equipment_Number": 193,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "潛水夫皮帶",
+            "Equipment_Number": 194,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "收穫護裙",
+            "Equipment_Number": 195,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "獵戶星風衣",
+            "Equipment_Number": 196,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "盛裝護裙",
+            "Equipment_Number": 197,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "鎧武者‧腰部",
+            "Equipment_Number": 200,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "殘虐腰甲α",
+            "Equipment_Number": 201,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "殘虐腰甲β",
+            "Equipment_Number": 202,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "黎明武士【寂】‧腰部",
+            "Equipment_Number": 204,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "黎明武士【譽】‧腰部",
+            "Equipment_Number": 205,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "騰龍腰甲α",
+            "Equipment_Number": 206,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "巴魯特風衣α",
+            "Equipment_Number": 207,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "潛水夫皮帶α",
+            "Equipment_Number": 208,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "收穫護裙α",
+            "Equipment_Number": 209,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "獵戶星風衣α",
+            "Equipment_Number": 210,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "盛裝護裙α",
+            "Equipment_Number": 211,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "燕尾蝶男護腰具",
+            "Equipment_Number": 212,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "燕尾蝶男護腰具α",
+            "Equipment_Number": 213,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "燕尾蝶男護腰具β",
+            "Equipment_Number": 214,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "獨角仙后護腰具",
+            "Equipment_Number": 215,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "獨角仙后護腰具α",
+            "Equipment_Number": 216,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "獨角仙后護腰具β",
+            "Equipment_Number": 217,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "烏爾德腰甲γ",
+            "Equipment_Number": 218,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "麒麟腰環γ",
+            "Equipment_Number": 219,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "帝王腰甲γ",
+            "Equipment_Number": 220,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "鋼龍安穩γ",
+            "Equipment_Number": 222,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "戰紋腰甲γ",
+            "Equipment_Number": 223,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "鑄島熔岩脊椎γ",
+            "Equipment_Number": 224,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "冥燈幽火脊椎γ",
+            "Equipment_Number": 226,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "蒼星之將【腰帶】α",
+            "Equipment_Number": 231,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "但丁皮帶α",
+            "Equipment_Number": 232,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "皇后腰甲α",
+            "Equipment_Number": 233,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "皇后腰甲β",
+            "Equipment_Number": 234,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "【蝴蝶】服裝‧腰部",
+            "Equipment_Number": 235,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "【死神】服裝‧腰部",
+            "Equipment_Number": 236,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "【但丁】服裝‧腰部",
+            "Equipment_Number": 237,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "【騰龍】服裝‧腰部",
+            "Equipment_Number": 238,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "【追蹤者】服裝‧腰部",
+            "Equipment_Number": 239,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "【原型】服裝‧腰部",
+            "Equipment_Number": 240,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "【甲蟲】服裝‧腰部",
+            "Equipment_Number": 241,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "皇后腰甲γ",
+            "Equipment_Number": 244,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "絢輝龍鎧羅腰甲γ",
+            "Equipment_Number": 249,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "【SAKURA】服裝‧腰部",
+            "Equipment_Number": 292,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "傑洛特的腰α",
+            "Equipment_Number": 293,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "希里的腰α",
+            "Equipment_Number": 294,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "【傑洛特】服裝‧腰部",
+            "Equipment_Number": 295,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "【希里】服裝‧腰部",
+            "Equipment_Number": 296,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "【巴耶克】服裝‧腰部",
+            "Equipment_Number": 297,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "亞蘿伊的腰γ",
+            "Equipment_Number": 298,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "【亞蘿伊】服裝‧腰部",
+            "Equipment_Number": 299,
+            "Equipment_Type": 3
+        },
+        {
+            "name": "獵人護腿",
+            "Equipment_Number": 1,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "皮製長褲",
+            "Equipment_Number": 2,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "蠻顎龍護腿",
+            "Equipment_Number": 3,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "凶豺龍護腿",
+            "Equipment_Number": 4,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "骨製護腿",
+            "Equipment_Number": 5,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "合金護腿",
+            "Equipment_Number": 6,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "咬魚靴",
+            "Equipment_Number": 8,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "巨蜂護腿",
+            "Equipment_Number": 9,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "搔鳥護腿",
+            "Equipment_Number": 10,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "毒妖鳥護腿",
+            "Equipment_Number": 11,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "泥魚龍護腿",
+            "Equipment_Number": 12,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "土砂龍護腿",
+            "Equipment_Number": 13,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "飛雷龍護腿",
+            "Equipment_Number": 14,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "鎖甲長褲",
+            "Equipment_Number": 15,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "巨甲蟲護腿",
+            "Equipment_Number": 18,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "獨角仙腳",
+            "Equipment_Number": 20,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "雌火龍護腿",
+            "Equipment_Number": 21,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "凶顎龍護腿",
+            "Equipment_Number": 22,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "眩鳥護腿",
+            "Equipment_Number": 23,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "浮空龍護腿",
+            "Equipment_Number": 24,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "礦石護腿",
+            "Equipment_Number": 25,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "死神腳跟",
+            "Equipment_Number": 26,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "風漂龍護腿",
+            "Equipment_Number": 27,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "骨鎚龍護腿",
+            "Equipment_Number": 28,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "慘爪龍護腿",
+            "Equipment_Number": 29,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "鑄鐵護腿",
+            "Equipment_Number": 31,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "火龍護腿",
+            "Equipment_Number": 33,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "角龍護腿",
+            "Equipment_Number": 34,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "麒麟護脛",
+            "Equipment_Number": 35,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "旅團靴",
+            "Equipment_Number": 36,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "皮製長褲α",
+            "Equipment_Number": 39,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "皮製長褲β",
+            "Equipment_Number": 40,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "獵人護腿α",
+            "Equipment_Number": 41,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "獵人護腿β",
+            "Equipment_Number": 42,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "骨製護腿α",
+            "Equipment_Number": 43,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "骨製護腿β",
+            "Equipment_Number": 44,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "合金護腿α",
+            "Equipment_Number": 45,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "合金護腿β",
+            "Equipment_Number": 46,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "咬魚靴α",
+            "Equipment_Number": 49,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "咬魚靴β",
+            "Equipment_Number": 50,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "巨蜂護腿α",
+            "Equipment_Number": 51,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "巨蜂護腿β",
+            "Equipment_Number": 52,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "巨甲蟲護腿α",
+            "Equipment_Number": 57,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "巨甲蟲護腿β",
+            "Equipment_Number": 58,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "凶豺龍護腿α",
+            "Equipment_Number": 61,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "凶豺龍護腿β",
+            "Equipment_Number": 62,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "搔鳥護腿α",
+            "Equipment_Number": 63,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "搔鳥護腿β",
+            "Equipment_Number": 64,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "毒妖鳥護腿α",
+            "Equipment_Number": 65,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "毒妖鳥護腿β",
+            "Equipment_Number": 66,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "泥魚龍護腿α",
+            "Equipment_Number": 67,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "泥魚龍護腿β",
+            "Equipment_Number": 68,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "土砂龍護腿α",
+            "Equipment_Number": 69,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "土砂龍護腿β",
+            "Equipment_Number": 70,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "飛雷龍護腿α",
+            "Equipment_Number": 71,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "飛雷龍護腿β",
+            "Equipment_Number": 72,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "雌火龍護腿α",
+            "Equipment_Number": 73,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "雌火龍護腿β",
+            "Equipment_Number": 74,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "凶顎龍護腿α",
+            "Equipment_Number": 75,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "凶顎龍護腿β",
+            "Equipment_Number": 76,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "眩鳥護腿α",
+            "Equipment_Number": 77,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "眩鳥護腿β",
+            "Equipment_Number": 78,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "浮空龍護腿α",
+            "Equipment_Number": 79,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "浮空龍護腿β",
+            "Equipment_Number": 80,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "慘爪龍護腿α",
+            "Equipment_Number": 81,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "慘爪龍護腿β",
+            "Equipment_Number": 82,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "岩賊龍護腿α",
+            "Equipment_Number": 83,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "岩賊龍護腿β",
+            "Equipment_Number": 84,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "熔岩龍護腿α",
+            "Equipment_Number": 85,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "熔岩龍護腿β",
+            "Equipment_Number": 86,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "火龍心護腿α",
+            "Equipment_Number": 87,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "火龍心護腿β",
+            "Equipment_Number": 88,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "礦石護腿α",
+            "Equipment_Number": 89,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "礦石護腿β",
+            "Equipment_Number": 90,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "鑄鐵護腿α",
+            "Equipment_Number": 91,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "鑄鐵護腿β",
+            "Equipment_Number": 92,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "蠻顎龍護腿α",
+            "Equipment_Number": 93,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "蠻顎龍護腿β",
+            "Equipment_Number": 94,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "風漂龍護腿α",
+            "Equipment_Number": 95,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "風漂龍護腿β",
+            "Equipment_Number": 96,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "骨鎚龍護腿α",
+            "Equipment_Number": 97,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "骨鎚龍護腿β",
+            "Equipment_Number": 98,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "烏爾德護腿α",
+            "Equipment_Number": 99,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "烏爾德護腿β",
+            "Equipment_Number": 100,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "火龍護腿α",
+            "Equipment_Number": 101,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "火龍護腿β",
+            "Equipment_Number": 102,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "角龍護腿α",
+            "Equipment_Number": 103,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "角龍護腿β",
+            "Equipment_Number": 104,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "麒麟護脛α",
+            "Equipment_Number": 105,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "麒麟護脛β",
+            "Equipment_Number": 106,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "戰紋護腿α",
+            "Equipment_Number": 107,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "戰紋護腿β",
+            "Equipment_Number": 108,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "爆鎚龍護腿α",
+            "Equipment_Number": 109,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "爆鎚龍護腿β",
+            "Equipment_Number": 110,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "火龍魂護腿α",
+            "Equipment_Number": 111,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "火龍魂護腿β",
+            "Equipment_Number": 112,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "暴君角龍護腿α",
+            "Equipment_Number": 113,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "暴君角龍護腿β",
+            "Equipment_Number": 114,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "爆鱗龍護腿α",
+            "Equipment_Number": 115,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "爆鱗龍護腿β",
+            "Equipment_Number": 116,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "獨角仙腳α",
+            "Equipment_Number": 117,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "獨角仙腳β",
+            "Equipment_Number": 118,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "旅團靴α",
+            "Equipment_Number": 119,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "旅團靴β",
+            "Equipment_Number": 120,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "大馬士革護腿α",
+            "Equipment_Number": 121,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "大馬士革護腿β",
+            "Equipment_Number": 122,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "杜賓護腿α",
+            "Equipment_Number": 123,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "杜賓護腿β",
+            "Equipment_Number": 124,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "冥燈幽火靴α",
+            "Equipment_Number": 125,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "冥燈幽火靴β",
+            "Equipment_Number": 126,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "帝王護腿α",
+            "Equipment_Number": 127,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "帝王護腿β",
+            "Equipment_Number": 128,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "鋼龍踏實α",
+            "Equipment_Number": 129,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "鋼龍踏實β",
+            "Equipment_Number": 130,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "死神腳跟α",
+            "Equipment_Number": 131,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "死神腳跟β",
+            "Equipment_Number": 132,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "公會十字靴α",
+            "Equipment_Number": 133,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "公會十字靴β",
+            "Equipment_Number": 134,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "鑄島熔岩靴α",
+            "Equipment_Number": 137,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "鑄島熔岩靴β",
+            "Equipment_Number": 138,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "【收穫】服裝‧腳部",
+            "Equipment_Number": 145,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "【獵戶星】服裝‧腳部",
+            "Equipment_Number": 146,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "鎖甲長褲α",
+            "Equipment_Number": 147,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "鎖甲長褲β",
+            "Equipment_Number": 148,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "追蹤者長褲α",
+            "Equipment_Number": 149,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "追蹤者長褲β",
+            "Equipment_Number": 150,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "【巴魯特】服裝‧腳部",
+            "Equipment_Number": 151,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "【潛水夫】服裝‧腳部",
+            "Equipment_Number": 152,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "【盛裝】服裝‧腳部",
+            "Equipment_Number": 153,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "燕尾蝶腳",
+            "Equipment_Number": 159,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "燕尾蝶腳α",
+            "Equipment_Number": 160,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "燕尾蝶腳β",
+            "Equipment_Number": 161,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "【旅團】服裝‧腳部",
+            "Equipment_Number": 162,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "【公會十字】服裝‧腳部",
+            "Equipment_Number": 163,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "原型護腿",
+            "Equipment_Number": 164,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "獵人護腿",
+            "Equipment_Number": 190,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "絢輝龍鎧羅護腿α",
+            "Equipment_Number": 191,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "絢輝龍鎧羅護腿β",
+            "Equipment_Number": 192,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "巴魯特靴",
+            "Equipment_Number": 193,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "潛水夫靴",
+            "Equipment_Number": 194,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "收穫護腿",
+            "Equipment_Number": 195,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "獵戶星靴",
+            "Equipment_Number": 196,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "盛裝靴",
+            "Equipment_Number": 197,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "鎧武者‧腳部",
+            "Equipment_Number": 200,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "殘虐護腿α",
+            "Equipment_Number": 201,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "殘虐護腿β",
+            "Equipment_Number": 202,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "黎明武士【寂】‧腳部",
+            "Equipment_Number": 204,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "黎明武士【譽】‧腳部",
+            "Equipment_Number": 205,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "騰龍護腿α",
+            "Equipment_Number": 206,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "巴魯特靴α",
+            "Equipment_Number": 207,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "潛水夫靴α",
+            "Equipment_Number": 208,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "收穫護腿α",
+            "Equipment_Number": 209,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "獵戶星靴α",
+            "Equipment_Number": 210,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "盛裝靴α",
+            "Equipment_Number": 211,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "燕尾蝶男腳",
+            "Equipment_Number": 212,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "燕尾蝶男腳α",
+            "Equipment_Number": 213,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "燕尾蝶男腳β",
+            "Equipment_Number": 214,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "獨角仙后腳",
+            "Equipment_Number": 215,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "獨角仙后腳α",
+            "Equipment_Number": 216,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "獨角仙后腳β",
+            "Equipment_Number": 217,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "烏爾德護腿γ",
+            "Equipment_Number": 218,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "麒麟護脛γ",
+            "Equipment_Number": 219,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "帝王護腿γ",
+            "Equipment_Number": 220,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "鋼龍踏實γ",
+            "Equipment_Number": 221,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "戰紋護腿γ",
+            "Equipment_Number": 222,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "鑄島熔岩靴γ",
+            "Equipment_Number": 223,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "冥燈幽火靴γ",
+            "Equipment_Number": 224,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "蒼星之將【腿甲】α",
+            "Equipment_Number": 229,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "但丁皮褲靴α",
+            "Equipment_Number": 230,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "皇后護腿α",
+            "Equipment_Number": 231,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "皇后護腿β",
+            "Equipment_Number": 232,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "【蝴蝶】服裝‧腳部",
+            "Equipment_Number": 233,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "【死神】服裝‧腳部",
+            "Equipment_Number": 234,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "【但丁】服裝‧腳部",
+            "Equipment_Number": 235,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "【騰龍】服裝‧腳部",
+            "Equipment_Number": 236,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "【追蹤者】服裝‧腳部",
+            "Equipment_Number": 237,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "【原型】服裝‧腳部",
+            "Equipment_Number": 238,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "【甲蟲】服裝‧腳部",
+            "Equipment_Number": 239,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "皇后護腿γ",
+            "Equipment_Number": 242,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "絢輝龍鎧羅護腿γ",
+            "Equipment_Number": 247,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "【SAKURA】服裝‧腳部",
+            "Equipment_Number": 292,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "傑洛特護腿α",
+            "Equipment_Number": 293,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "希里護腿α",
+            "Equipment_Number": 294,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "【傑洛特】服裝‧腳部",
+            "Equipment_Number": 295,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "【希里】服裝‧腳部",
+            "Equipment_Number": 296,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "【巴耶克】服裝‧腳部",
+            "Equipment_Number": 297,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "亞蘿伊護腿γ",
+            "Equipment_Number": 298,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "【亞蘿伊】服裝‧腳部",
+            "Equipment_Number": 299,
+            "Equipment_Type": 4
+        },
+        {
+            "name": "耐毒護石Ⅰ",
+            "Equipment_Number": 0,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐毒護石Ⅱ",
+            "Equipment_Number": 1,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐毒護石Ⅲ",
+            "Equipment_Number": 2,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "攻擊護石Ⅰ",
+            "Equipment_Number": 3,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "攻擊護石Ⅱ",
+            "Equipment_Number": 4,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "攻擊護石Ⅲ",
+            "Equipment_Number": 5,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "防禦護石Ⅰ",
+            "Equipment_Number": 6,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "防禦護石Ⅱ",
+            "Equipment_Number": 7,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "防禦護石Ⅲ",
+            "Equipment_Number": 8,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐痺護石Ⅰ",
+            "Equipment_Number": 9,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐痺護石Ⅱ",
+            "Equipment_Number": 10,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐痺護石Ⅲ",
+            "Equipment_Number": 11,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐眠護石Ⅰ",
+            "Equipment_Number": 12,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐眠護石Ⅱ",
+            "Equipment_Number": 13,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐眠護石Ⅲ",
+            "Equipment_Number": 14,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐絕護石Ⅰ",
+            "Equipment_Number": 15,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐絕護石Ⅱ",
+            "Equipment_Number": 16,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐絕護石Ⅲ",
+            "Equipment_Number": 17,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐爆護石Ⅰ",
+            "Equipment_Number": 18,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐爆護石Ⅱ",
+            "Equipment_Number": 19,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐爆護石Ⅲ",
+            "Equipment_Number": 20,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐裂護石Ⅰ",
+            "Equipment_Number": 21,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐裂護石Ⅱ",
+            "Equipment_Number": 22,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐裂護石Ⅲ",
+            "Equipment_Number": 23,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐防護石Ⅰ",
+            "Equipment_Number": 24,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐防護石Ⅱ",
+            "Equipment_Number": 25,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐防護石Ⅲ",
+            "Equipment_Number": 26,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐性護石Ⅰ",
+            "Equipment_Number": 27,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐性護石Ⅱ",
+            "Equipment_Number": 28,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐性護石Ⅲ",
+            "Equipment_Number": 29,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耳塞護石Ⅰ",
+            "Equipment_Number": 30,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "防風護石Ⅰ",
+            "Equipment_Number": 31,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐震護石Ⅰ",
+            "Equipment_Number": 32,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐震護石Ⅱ",
+            "Equipment_Number": 33,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "體力護石Ⅰ",
+            "Equipment_Number": 34,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "體力護石Ⅱ",
+            "Equipment_Number": 35,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "體力護石Ⅲ",
+            "Equipment_Number": 36,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "治癒護石Ⅰ",
+            "Equipment_Number": 37,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "治癒護石Ⅱ",
+            "Equipment_Number": 38,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "治癒護石Ⅲ",
+            "Equipment_Number": 39,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "早復護石Ⅰ",
+            "Equipment_Number": 40,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "早復護石Ⅱ",
+            "Equipment_Number": 41,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐火護石Ⅰ",
+            "Equipment_Number": 42,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐火護石Ⅱ",
+            "Equipment_Number": 43,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐火護石Ⅲ",
+            "Equipment_Number": 44,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐水護石Ⅰ",
+            "Equipment_Number": 45,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐水護石Ⅱ",
+            "Equipment_Number": 46,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐水護石Ⅲ",
+            "Equipment_Number": 47,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐冰護石Ⅰ",
+            "Equipment_Number": 48,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐冰護石Ⅱ",
+            "Equipment_Number": 49,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐冰護石Ⅲ",
+            "Equipment_Number": 50,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐雷護石Ⅰ",
+            "Equipment_Number": 51,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐雷護石Ⅱ",
+            "Equipment_Number": 52,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐雷護石Ⅲ",
+            "Equipment_Number": 53,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐龍護石Ⅰ",
+            "Equipment_Number": 54,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐龍護石Ⅱ",
+            "Equipment_Number": 55,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐龍護石Ⅲ",
+            "Equipment_Number": 56,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐屬護石Ⅰ",
+            "Equipment_Number": 57,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐屬護石Ⅱ",
+            "Equipment_Number": 58,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐屬護石Ⅲ",
+            "Equipment_Number": 59,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "火焰護石Ⅰ",
+            "Equipment_Number": 60,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "火焰護石Ⅱ",
+            "Equipment_Number": 61,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "火焰護石Ⅲ",
+            "Equipment_Number": 62,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "流水護石Ⅰ",
+            "Equipment_Number": 63,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "流水護石Ⅱ",
+            "Equipment_Number": 64,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "流水護石Ⅲ",
+            "Equipment_Number": 65,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "冰結護石Ⅰ",
+            "Equipment_Number": 66,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "冰結護石Ⅱ",
+            "Equipment_Number": 67,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "冰結護石Ⅲ",
+            "Equipment_Number": 68,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "雷光護石Ⅰ",
+            "Equipment_Number": 69,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "雷光護石Ⅱ",
+            "Equipment_Number": 70,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "雷光護石Ⅲ",
+            "Equipment_Number": 71,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "破龍護石Ⅰ",
+            "Equipment_Number": 72,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "破龍護石Ⅱ",
+            "Equipment_Number": 73,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "破龍護石Ⅲ",
+            "Equipment_Number": 74,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "毒擊護石Ⅰ",
+            "Equipment_Number": 75,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "毒擊護石Ⅱ",
+            "Equipment_Number": 76,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "毒擊護石Ⅲ",
+            "Equipment_Number": 77,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "痺擊護石Ⅰ",
+            "Equipment_Number": 78,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "痺擊護石Ⅱ",
+            "Equipment_Number": 79,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "痺擊護石Ⅲ",
+            "Equipment_Number": 80,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "睡擊護石Ⅰ",
+            "Equipment_Number": 81,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "睡擊護石Ⅱ",
+            "Equipment_Number": 82,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "睡擊護石Ⅲ",
+            "Equipment_Number": 83,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "爆破護石Ⅰ",
+            "Equipment_Number": 84,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "爆破護石Ⅱ",
+            "Equipment_Number": 85,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "爆破護石Ⅲ",
+            "Equipment_Number": 86,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "達人護石Ⅰ",
+            "Equipment_Number": 87,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "達人護石Ⅱ",
+            "Equipment_Number": 88,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "達人護石Ⅲ",
+            "Equipment_Number": 89,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "超心護石",
+            "Equipment_Number": 90,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "超心護石Ⅱ",
+            "Equipment_Number": 91,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "痛擊護石Ⅰ",
+            "Equipment_Number": 92,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "痛擊護石Ⅱ",
+            "Equipment_Number": 93,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "集中護石Ⅰ",
+            "Equipment_Number": 94,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "集中護石Ⅱ",
+            "Equipment_Number": 95,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "昂揚護石Ⅰ",
+            "Equipment_Number": 96,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "昂揚護石Ⅱ",
+            "Equipment_Number": 97,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "拔刀護石Ⅰ",
+            "Equipment_Number": 99,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "拔刀護石Ⅱ",
+            "Equipment_Number": 100,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "重擊護石Ⅰ",
+            "Equipment_Number": 101,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "重擊護石Ⅱ",
+            "Equipment_Number": 102,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "KO護石Ⅰ",
+            "Equipment_Number": 103,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "KO護石Ⅱ",
+            "Equipment_Number": 104,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "奪氣護石Ⅰ",
+            "Equipment_Number": 105,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "奪氣護石Ⅱ",
+            "Equipment_Number": 106,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "奪氣護石Ⅲ",
+            "Equipment_Number": 107,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "全開護石Ⅰ",
+            "Equipment_Number": 108,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "全開護石Ⅱ",
+            "Equipment_Number": 109,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "挑戰護石Ⅰ",
+            "Equipment_Number": 110,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "挑戰護石Ⅱ",
+            "Equipment_Number": 111,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "無傷護石Ⅰ",
+            "Equipment_Number": 112,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "無傷護石Ⅱ",
+            "Equipment_Number": 113,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "暴怒護石Ⅰ",
+            "Equipment_Number": 116,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "暴怒護石Ⅱ",
+            "Equipment_Number": 117,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "特射護石Ⅰ",
+            "Equipment_Number": 121,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "特射護石Ⅱ",
+            "Equipment_Number": 122,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "砲術護石Ⅰ",
+            "Equipment_Number": 123,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "砲術護石Ⅱ",
+            "Equipment_Number": 124,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "砲術護石Ⅲ",
+            "Equipment_Number": 125,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "強走護石Ⅰ",
+            "Equipment_Number": 128,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "強走護石Ⅱ",
+            "Equipment_Number": 129,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "體術護石Ⅰ",
+            "Equipment_Number": 130,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "體術護石Ⅱ",
+            "Equipment_Number": 131,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "早氣護石Ⅰ",
+            "Equipment_Number": 132,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "早氣護石Ⅱ",
+            "Equipment_Number": 133,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "斷食護石Ⅰ",
+            "Equipment_Number": 134,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "斷食護石Ⅱ",
+            "Equipment_Number": 135,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "斷食護石Ⅲ",
+            "Equipment_Number": 136,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "迴避護石Ⅰ",
+            "Equipment_Number": 137,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "迴避護石Ⅱ",
+            "Equipment_Number": 138,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "跳躍護石Ⅰ",
+            "Equipment_Number": 139,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "跳躍護石Ⅱ",
+            "Equipment_Number": 140,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "鐵壁護石Ⅰ",
+            "Equipment_Number": 141,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "鐵壁護石Ⅱ",
+            "Equipment_Number": 142,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "鐵壁護石Ⅲ",
+            "Equipment_Number": 143,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "納刀護石Ⅰ",
+            "Equipment_Number": 144,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "納刀護石Ⅱ",
+            "Equipment_Number": 145,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "納刀護石Ⅲ",
+            "Equipment_Number": 146,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "友愛護石Ⅰ",
+            "Equipment_Number": 147,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "友愛護石Ⅱ",
+            "Equipment_Number": 148,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "友愛護石Ⅲ",
+            "Equipment_Number": 149,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "持續護石Ⅰ",
+            "Equipment_Number": 150,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "持續護石Ⅱ",
+            "Equipment_Number": 151,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "持續護石Ⅲ",
+            "Equipment_Number": 152,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "快吃護石Ⅰ",
+            "Equipment_Number": 153,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "快吃護石Ⅱ",
+            "Equipment_Number": 154,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "快吃護石Ⅲ",
+            "Equipment_Number": 155,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "研磨護石Ⅰ",
+            "Equipment_Number": 156,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "研磨護石Ⅱ",
+            "Equipment_Number": 157,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "研磨護石Ⅲ",
+            "Equipment_Number": 158,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "爆師護石Ⅰ",
+            "Equipment_Number": 159,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "爆師護石Ⅱ",
+            "Equipment_Number": 160,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "爆師護石Ⅲ",
+            "Equipment_Number": 161,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "嗜菇護石Ⅰ",
+            "Equipment_Number": 162,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "嗜菇護石Ⅱ",
+            "Equipment_Number": 163,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "嗜菇護石Ⅲ",
+            "Equipment_Number": 164,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "加護護石Ⅰ",
+            "Equipment_Number": 165,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "加護護石Ⅱ",
+            "Equipment_Number": 166,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "加護護石Ⅲ",
+            "Equipment_Number": 167,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "指揮護石Ⅰ",
+            "Equipment_Number": 168,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "指揮護石Ⅱ",
+            "Equipment_Number": 169,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "指揮護石Ⅲ",
+            "Equipment_Number": 170,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "植學護石Ⅰ",
+            "Equipment_Number": 171,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "植學護石Ⅱ",
+            "Equipment_Number": 172,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "植學護石Ⅲ",
+            "Equipment_Number": 173,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "地學護石Ⅰ",
+            "Equipment_Number": 174,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "地學護石Ⅱ",
+            "Equipment_Number": 175,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "地學護石Ⅲ",
+            "Equipment_Number": 176,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "渾身護石Ⅰ",
+            "Equipment_Number": 177,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "渾身護石Ⅱ",
+            "Equipment_Number": 178,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "投石護石Ⅰ",
+            "Equipment_Number": 179,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "投石護石Ⅱ",
+            "Equipment_Number": 180,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "投石護石Ⅲ",
+            "Equipment_Number": 181,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "潛伏護石Ⅰ",
+            "Equipment_Number": 182,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "潛伏護石Ⅱ",
+            "Equipment_Number": 183,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "潛伏護石Ⅲ",
+            "Equipment_Number": 184,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐衝護石Ⅰ",
+            "Equipment_Number": 185,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐衝護石Ⅱ",
+            "Equipment_Number": 186,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "煙復護石Ⅰ",
+            "Equipment_Number": 188,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "煙復護石Ⅱ",
+            "Equipment_Number": 189,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "煙復護石Ⅲ",
+            "Equipment_Number": 190,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "沼渡護石Ⅰ",
+            "Equipment_Number": 191,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "沼渡護石Ⅱ",
+            "Equipment_Number": 192,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "沼渡護石Ⅲ",
+            "Equipment_Number": 193,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "昆蟲學護石Ⅰ",
+            "Equipment_Number": 194,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "昆蟲學護石Ⅱ",
+            "Equipment_Number": 195,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "昆蟲學護石Ⅲ",
+            "Equipment_Number": 196,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐瘴護石Ⅰ",
+            "Equipment_Number": 197,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐瘴護石Ⅱ",
+            "Equipment_Number": 198,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耐瘴護石Ⅲ",
+            "Equipment_Number": 199,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "威嚇護石Ⅰ",
+            "Equipment_Number": 200,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "威嚇護石Ⅱ",
+            "Equipment_Number": 201,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "威嚇護石Ⅲ",
+            "Equipment_Number": 202,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "順風護石",
+            "Equipment_Number": 203,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "祝福護石",
+            "Equipment_Number": 204,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "先驅護石",
+            "Equipment_Number": 205,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "強襲護石",
+            "Equipment_Number": 206,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "戰技護石",
+            "Equipment_Number": 207,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "泥浴護石",
+            "Equipment_Number": 208,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "陷阱彈護石",
+            "Equipment_Number": 209,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "心靜自然涼護石",
+            "Equipment_Number": 210,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "騎手護石",
+            "Equipment_Number": 211,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "狩獵生活護石",
+            "Equipment_Number": 212,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "籌備護石",
+            "Equipment_Number": 213,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "採集鐵人護石",
+            "Equipment_Number": 214,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "調查達人護石",
+            "Equipment_Number": 215,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "風水護石",
+            "Equipment_Number": 216,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "通常彈護石",
+            "Equipment_Number": 217,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "貫通彈護石",
+            "Equipment_Number": 218,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "散彈護石",
+            "Equipment_Number": 219,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "毒瓶護石",
+            "Equipment_Number": 220,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "麻痺瓶護石",
+            "Equipment_Number": 221,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "睡眠瓶護石",
+            "Equipment_Number": 222,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "爆破瓶護石",
+            "Equipment_Number": 223,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "不屈護石",
+            "Equipment_Number": 225,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "吹笛護石",
+            "Equipment_Number": 227,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "裝填護石",
+            "Equipment_Number": 228,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "砲擊手護石Ⅰ",
+            "Equipment_Number": 229,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "砲擊手護石Ⅱ",
+            "Equipment_Number": 230,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "小胃口護石",
+            "Equipment_Number": 231,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "追蹤護石",
+            "Equipment_Number": 232,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "疾風護石",
+            "Equipment_Number": 233,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "滅龍護石",
+            "Equipment_Number": 234,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "堅守護石",
+            "Equipment_Number": 235,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "體術護石Ⅲ",
+            "Equipment_Number": 236,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "覺醒護石Ⅰ",
+            "Equipment_Number": 248,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "覺醒護石Ⅱ",
+            "Equipment_Number": 249,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "匠之護石Ⅰ",
+            "Equipment_Number": 250,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "匠之護石Ⅱ",
+            "Equipment_Number": 251,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "匠之護石Ⅲ",
+            "Equipment_Number": 252,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "底力護石Ⅰ",
+            "Equipment_Number": 253,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "底力護石Ⅱ",
+            "Equipment_Number": 254,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "裝備護石Ⅰ",
+            "Equipment_Number": 255,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "整備護石Ⅱ",
+            "Equipment_Number": 256,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "整備護石Ⅲ",
+            "Equipment_Number": 257,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耳塞護石Ⅱ",
+            "Equipment_Number": 258,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "耳塞護石Ⅲ",
+            "Equipment_Number": 259,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "防風護石Ⅱ",
+            "Equipment_Number": 260,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "防風護石Ⅲ",
+            "Equipment_Number": 261,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "回迴避護石Ⅲ",
+            "Equipment_Number": 262,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "KO護石Ⅲ",
+            "Equipment_Number": 263,
+            "Equipment_Type": 5
+        },
+        {
+            "name": "早復護石Ⅲ",
+            "Equipment_Number": 264,
+            "Equipment_Type": 5
+        }
+    ]
+}
