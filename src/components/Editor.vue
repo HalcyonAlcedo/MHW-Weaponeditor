@@ -55,6 +55,7 @@
                 <h4 v-else-if="existence(item.sa_Number)">{{ $t('Weaponsmiscellaneous.Saxebottle') + item.sa_Number.vul }}</h4>
                 <h4 v-else-if="existence(item.ww_Number)">{{ $t('Weaponsmiscellaneous.Syllable') + item.ww_Number.vul }}</h4>
                 <h4 v-else-if="existence(item.gl_Number)">{{ $t('Weaponsmiscellaneous.Bombardment') + item.gl_Number.vul }}</h4>
+                <h4 v-else-if="existence(item.sh_Number)">{{ $t('Weaponsmiscellaneous.Shell') + item.sh_Number.vul }}</h4>
                 <v-spacer></v-spacer>
                 <v-card-subtitle>
                   {{ $t('WeaponExplain.Address') }}：<span class="red--text">{{ str_pad(item.wp_Hex) }}</span>
@@ -97,6 +98,15 @@
                   <v-text-field
                     :label="$t('Huntingbottle.Number')"
                     v-model="item.bt_Number.vul"
+                    
+                    filled
+                    disabled
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.sh_Number)">
+                  <v-text-field
+                    :label="$t('Shell.Number')"
+                    v-model="item.sh_Number.vul"
                     
                     filled
                     disabled
@@ -1741,6 +1751,79 @@
                 </v-list>
               </v-flex>
               </v-layout>
+              <v-expansion-panels accordion focusable v-if="existence(item.sh_Number)">
+                <v-expansion-panel v-for="itemdata in shlist(item)" :key="itemdata.name">
+                  <v-expansion-panel-header v-slot="{ open }">
+                    <v-row no-gutters>
+                      <v-col cols="3">{{$t('Shell.' + itemdata.name)}}</v-col>
+                      <v-col
+                        cols="9"
+                        class="text--secondary"
+                      >
+                        <v-fade-transition leave-absolute>
+                          <span v-if="open">{{$t('Interface.Save_file')}}</span>
+                          <v-row
+                            v-else
+                            no-gutters
+                            style="width: 100%"
+                          >
+                            <v-col cols="4">{{$t('Shell.Ammunition')}}: {{ itemdata.Ammunition.vul }}</v-col>
+                            <v-col cols="4">{{$t('Shell.Model')}}: {{ selectlist(shmodelist, itemdata.Model.vul) }}</v-col>
+                            <v-col cols="4">{{$t('Shell.Speed')}}: {{ selectlist(shspeedlist, itemdata.Speed.vul) }}</v-col>
+                          </v-row>
+                        </v-fade-transition>
+                      </v-col>
+                    </v-row>
+                  </v-expansion-panel-header>
+                  <v-expansion-panel-content>
+                    <v-row
+                      justify="space-around"
+                      no-gutters
+                    >
+
+                      <v-col cols="6">
+                        <v-list-item>
+                          <v-text-field
+                            :label="$t('Shell.Ammunition')"
+                            @change="input_interchangeable(itemdata.Ammunition)"
+                            v-model="itemdata.Ammunition.vul"
+                            filled
+                          ></v-text-field>
+                        </v-list-item> 
+                      </v-col>
+
+                      <v-col cols="6">
+                        <v-list-item>
+                          <v-select
+                            v-model="itemdata.Model.vul"
+                            :items="shmodelist"
+                            @change="input_interchangeable(itemdata.Model)"
+                            filled
+                            :label="$t('Shell.Model')"
+                            item-text="text"
+                            item-value="value"
+                          ></v-select>
+                        </v-list-item>
+                      </v-col>
+
+                      <v-col cols="6">
+                        <v-list-item>
+                          <v-select
+                            v-model="itemdata.Speed.vul"
+                            :items="shspeedlist"
+                            @change="input_interchangeable(itemdata.Speed)"
+                            filled
+                            :label="$t('Shell.Speed')"
+                            item-text="text"
+                            item-value="value"
+                          ></v-select>
+                        </v-list-item> 
+                      </v-col>
+
+                    </v-row>
+                  </v-expansion-panel-content>
+                </v-expansion-panel>
+              </v-expansion-panels>
             </v-card>
           </v-col>
         </v-row>
@@ -1888,6 +1971,8 @@
             } else if (this.existence(_items[i].gl_Number) && _items[i].gl_Number !== false) {
               itemsarr.push(_items[i])
             } else if (this.existence(_items[i].ww_Number) && _items[i].ww_Number !== false) {
+              itemsarr.push(_items[i])
+            } else if (this.existence(_items[i].sh_Number) && _items[i].sh_Number !== false) {
               itemsarr.push(_items[i])
             }
           }
@@ -2070,6 +2155,67 @@
           {value: 4, text: 'LV5'}
         ]
       },
+      shmodelist () {
+        return [
+          {value: 0, text: this.$t('WeaponExplain.Normal_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Small')},
+          {value: 1, text: this.$t('WeaponExplain.Normal_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Inside') + '(1)'},
+          {value: 2, text: this.$t('WeaponExplain.Normal_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Inside') + '(2)'},
+          {value: 3, text: this.$t('WeaponExplain.Normal_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Inside') + '(3)'},
+          {value: 4, text: this.$t('WeaponExplain.Normal_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Big') + '(1)'},
+          {value: 5, text: this.$t('WeaponExplain.Normal_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Big') + '(2)'},
+          {value: 7, text: this.$t('WeaponExplain.Normal_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Big') + '(3)'},
+          {value: 11, text: this.$t('WeaponExplain.Normal_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Big') + '(4)'},
+          {value: 20, text: this.$t('WeaponExplain.Normal_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Big') + '(5)'},
+          {value: 21, text: this.$t('WeaponExplain.Normal_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Big') + '(6)'},
+          {value: 24, text: this.$t('WeaponExplain.Normal_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Big') + '(7)'},
+          {value: 32, text: this.$t('WeaponExplain.Normal_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Big') + '(8)'},
+          {value: 6, text: this.$t('WeaponExplain.Normal_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Verybig') + '(1)'},
+          {value: 8, text: this.$t('WeaponExplain.Normal_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Verybig') + '(2)'},
+          {value: 9, text: this.$t('WeaponExplain.Normal_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Verybig') + '(3)'},
+          {value: 12, text: this.$t('WeaponExplain.Normal_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Verybig') + '(4)'},
+          {value: 13, text: this.$t('WeaponExplain.Normal_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Verybig') + '(5)'},
+          {value: 19, text: this.$t('WeaponExplain.Normal_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Verybig') + '(6)'},
+          {value: 25, text: this.$t('WeaponExplain.Normal_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Verybig') + '(7)'},
+          {value: 28, text: this.$t('WeaponExplain.Rapid_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Small')},
+          {value: 29, text: this.$t('WeaponExplain.Rapid_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Inside') + '(2)'},
+          {value: 30, text: this.$t('WeaponExplain.Rapid_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Inside') + '(3)'},
+          {value: 31, text: this.$t('WeaponExplain.Rapid_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Big') + '(1)'},
+          {value: 33, text: this.$t('WeaponExplain.Rapid_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Big') + '(2)'},
+          {value: 18, text: this.$t('WeaponExplain.Diffusion_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Small')},
+          {value: 14, text: this.$t('WeaponExplain.Diffusion_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Inside') + '(1)'},
+          {value: 27, text: this.$t('WeaponExplain.Diffusion_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Inside') + '(2)'},
+          {value: 15, text: this.$t('WeaponExplain.Diffusion_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Big') + '(1)'},
+          {value: 16, text: this.$t('WeaponExplain.Diffusion_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Big') + '(2)'},
+          {value: 22, text: this.$t('WeaponExplain.Diffusion_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Big') + '(3)'},
+          {value: 23, text: this.$t('WeaponExplain.Diffusion_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Big') + '(4)'},
+          {value: 26, text: this.$t('WeaponExplain.Diffusion_type') + this.$t('Shell.Recoil') + this.$t('WeaponExplain.Big') + '(5)'},
+          {value: 10, text: this.$t('WeaponExplain.Automatic_type')},
+          {value: 17, text: this.$t('WeaponExplain.Dragon_type')},
+        ]
+      },
+      shspeedlist () {
+        return [
+          {value: 17, text: this.$t('WeaponExplain.Fast')},
+          {value: 0, text: this.$t('WeaponExplain.Medium') + '(1)'},
+          {value: 1, text: this.$t('WeaponExplain.Medium') + '(2)'},
+          {value: 14, text: this.$t('WeaponExplain.Medium') + '(3)'},
+          {value: 18, text: this.$t('WeaponExplain.Medium') + '(4)'},
+          {value: 2, text: this.$t('WeaponExplain.Slightly_slow') + '(1)'},
+          {value: 3, text: this.$t('WeaponExplain.Slightly_slow') + '(2)'},
+          {value: 4, text: this.$t('WeaponExplain.Slightly_slow') + '(3)'},
+          {value: 5, text: this.$t('WeaponExplain.Slightly_slow') + '(4)'},
+          {value: 11, text: this.$t('WeaponExplain.Slightly_slow') + '(5)'},
+          {value: 15, text: this.$t('WeaponExplain.Slightly_slow') + '(6)'},
+          {value: 16, text: this.$t('WeaponExplain.Slightly_slow') + '(7)'},
+          {value: 6, text: this.$t('WeaponExplain.Slow') + '(1)'},
+          {value: 7, text: this.$t('WeaponExplain.Slow') + '(2)'},
+          {value: 8, text: this.$t('WeaponExplain.Slow') + '(3)'},
+          {value: 9, text: this.$t('WeaponExplain.Slow') + '(4)'},
+          {value: 10, text: this.$t('WeaponExplain.Slow') + '(5)'},
+          {value: 12, text: this.$t('WeaponExplain.Slow') + '(6)'},
+          {value: 13, text: this.$t('WeaponExplain.Slow') + '(7)'},
+        ]
+      },
       modelitem () {
         let _items = this.items
         let itemsarr = []
@@ -2134,6 +2280,12 @@
         var tmp = digits - hex.length
         return zero.substr(0, tmp) + hex.toLocaleUpperCase()
       },
+      selectlist (list, data) {
+        for (let i = 0, l = list.length; i < l; i++) {
+          if (data === list[i].value) return list[i].text
+        }
+        return this.$t('WeaponExplain.Error')
+      },
       searchitemtext (data) {
         let namelist = [
           'k_Number',
@@ -2143,7 +2295,9 @@
           'sa_Number',
           'ww_Number',
           'gl_Number',
-          'sk_Number'
+          'sk_Number',
+          'sh_Number',
+          'eq_Number'
         ]
         for (let i = 0; i < namelist.length; i++) {
           if (namelist[i] in data) {
@@ -2543,6 +2697,26 @@
         if (Hexpointer === 'auto') {
           return {vul: i}
         }
+        if (typeof (Hexpointer[0]) !== 'number') {
+          let vul = {}
+          for (let k in Hexpointer) {
+            let vulret = ''
+            for (let p = 0; p < Hexpointer[k][1]; p++) {
+              let Hex16 = data[(HexRuler * i) + Hexpointer[k][0] - p]
+              if (Hex16 !== undefined) {
+                vulret += this.str_pad(Hex16.toString(16), 2)
+              } else {
+                vulret = '00'
+              }
+            }
+            vul[k] = {
+              vul: parseInt(vulret, 16),
+              hex: (HexRuler * i) + Hexpointer[k][0],
+              hexL: Hexpointer[k][1],
+            }
+          }
+          return {data: vul}
+        }
         for (let p = 0; p < Hexpointer[1]; p++) {
           let Hex16 = data[(HexRuler * i) + Hexpointer[0] - p]
           if (Hex16 !== undefined) {
@@ -2616,6 +2790,20 @@
           return []
         }
       },
+      shlist (item) {
+        let data = []
+        for (let k in item) {
+          if (k !== 'sh_Number' && k !== 'wp_Hex' && k !== 'wp_Name') {
+            data.push({
+              name: k,
+              Ammunition: item[k].data.Ammunition,
+              Model: item[k].data.Model,
+              Speed: item[k].data.Speed
+            })
+          }
+        }
+        return data
+      },
       Resourceprocessing (HexFunction) {
         if (HexFunction !== false) {
           switch (HexFunction.resourceprocessing) {
@@ -2623,7 +2811,9 @@
               HexFunction.vul = Math.ceil(HexFunction.vul * this.weapon_damage(this.weapon))
               break
             case 'wpattribute':
-              HexFunction.vul = HexFunction.vul <= 100 ? HexFunction.vul : '-' + (256 - HexFunction.vul)
+              if (HexFunction.hexL == 1) {
+                HexFunction.vul = HexFunction.vul <= 100 ? HexFunction.vul : '-' + (256 - HexFunction.vul)
+              }
               if (HexFunction.vul !== 0) { HexFunction.vul = HexFunction.vul + '0' }
               break
             case 'wpheart':
@@ -2749,6 +2939,181 @@
             'sk_level': [8, 1], // 8
             'sk_First_effect': [10, 2], // 9~10
             'sk_Second_effect': [12, 2] // 11~12
+          }
+        } else if (data[0] === 166 && data[1] === 1 && data[2] === 77) {
+          HexRuler = 111 // 弩弹
+          HexPointer = {
+            'sh_Number': 'auto',
+            'Normal_1': {
+              Ammunition: [6, 1],
+              Model: [7, 1],
+              Speed: [8, 1],
+            },
+            'Normal_2': {
+              Ammunition: [9, 1],
+              Model: [10, 1],
+              Speed: [11, 1],
+            },
+            'Normal_3': {
+              Ammunition: [12, 1],
+              Model: [13, 1],
+              Speed: [14, 1],
+            },
+            'Through_1': {
+              Ammunition: [15, 1],
+              Model: [16, 1],
+              Speed: [17, 1],
+            },
+            'Through_2': {
+              Ammunition: [18, 1],
+              Model: [19, 1],
+              Speed: [20, 1],
+            },
+            'Through_3': {
+              Ammunition: [21, 1],
+              Model: [22, 1],
+              Speed: [23, 1],
+            },
+            'Scattering_1': {
+              Ammunition: [24, 1],
+              Model: [25, 1],
+              Speed: [26, 1],
+            },
+            'Scattering_2': {
+              Ammunition: [27, 1],
+              Model: [28, 1],
+              Speed: [29, 1],
+            },
+            'Scattering_3': {
+              Ammunition: [30, 1],
+              Model: [31, 1],
+              Speed: [32, 1],
+            },
+            'Diffusion_1': {
+              Ammunition: [33, 1],
+              Model: [34, 1],
+              Speed: [35, 1],
+            },
+            'Diffusion_2': {
+              Ammunition: [36, 1],
+              Model: [37, 1],
+              Speed: [38, 1],
+            },
+            'Diffusion_3': {
+              Ammunition: [39, 1],
+              Model: [40, 1],
+              Speed: [41, 1],
+            },
+            'Dragon_shot': {
+              Ammunition: [42, 1],
+              Model: [43, 1],
+              Speed: [44, 1],
+            },
+            'Slash': {
+              Ammunition: [45, 1],
+              Model: [46, 1],
+              Speed: [47, 1],
+            },
+            'Grenade_1': {
+              Ammunition: [48, 1],
+              Model: [49, 1],
+              Speed: [50, 1],
+            },
+            'Grenade_2': {
+              Ammunition: [51, 1],
+              Model: [52, 1],
+              Speed: [53, 1],
+            },
+            'Grenade_3': {
+              Ammunition: [54, 1],
+              Model: [55, 1],
+              Speed: [56, 1],
+            },
+            'Fire': {
+              Ammunition: [57, 1],
+              Model: [58, 1],
+              Speed: [59, 1],
+            },
+            'Water': {
+              Ammunition: [60, 1],
+              Model: [61, 1],
+              Speed: [62, 1],
+            },
+            'Ice': {
+              Ammunition: [63, 1],
+              Model: [64, 1],
+              Speed: [65, 1],
+            },
+            'Electricity': {
+              Ammunition: [66, 1],
+              Model: [67, 1],
+              Speed: [68, 1],
+            },
+            'Dragon': {
+              Ammunition: [69, 1],
+              Model: [70, 1],
+              Speed: [71, 1],
+            },
+            'Poison_1': {
+              Ammunition: [72, 1],
+              Model: [73, 1],
+              Speed: [74, 1],
+            },
+            'Poison_2': {
+              Ammunition: [75, 1],
+              Model: [76, 1],
+              Speed: [77, 1],
+            },
+            'Hemp_1': {
+              Ammunition: [78, 1],
+              Model: [79, 1],
+              Speed: [80, 1],
+            },
+            'Hemp_2': {
+              Ammunition: [81, 1],
+              Model: [82, 1],
+              Speed: [83, 1],
+            },
+            'Sleep_1': {
+              Ammunition: [84, 1],
+              Model: [85, 1],
+              Speed: [86, 1],
+            },
+            'Sleep_2': {
+              Ammunition: [87, 1],
+              Model: [88, 1],
+              Speed: [89, 1],
+            },
+            'Reduce_breath': {
+              Ammunition: [90, 1],
+              Model: [91, 1],
+              Speed: [92, 1],
+            },
+            'Restores_1': {
+              Ammunition: [93, 1],
+              Model: [94, 1],
+              Speed: [95, 1],
+            },
+            'Restores_2': {
+              Ammunition: [96, 1],
+              Model: [97, 1],
+              Speed: [98, 1],
+            },
+            'Madman': {
+              Ammunition: [99, 1],
+              Model: [100, 1],
+              Speed: [101, 1],
+            },
+            'Harden': {
+              Ammunition: [102, 1],
+              Model: [103, 1],
+              Speed: [104, 1],
+            },
+            'Capture': {
+              Ammunition: [105, 1],
+              Model: [106, 1],
+              Speed: [107, 1],
+            }
           }
         } else if (data[0] === 166 && data[1] === 1 && data[2] === 20) {
           HexRuler = 6 // 弓瓶

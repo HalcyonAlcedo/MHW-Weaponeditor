@@ -1,6 +1,6 @@
 {
   "name": "mhw-equipedit",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -16,6 +16,7 @@
   "main": "background.js",
   "dependencies": {
     "core-js": "^2.6.5",
+    "electron-asar-hot-updater": "^0.1.2",
     "vue": "^2.6.10",
     "vue-i18n": "^8.0.0",
     "vue-router": "^3.0.3",

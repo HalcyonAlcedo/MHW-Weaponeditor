@@ -85,6 +85,9 @@ const mutations = {
         case 'bottle_table.bbtbl':
           state.filename = 'bottle_table.bbtbl'
           break
+        case 'shell_table.shl_tbl':
+            state.filename = 'shell_table.shl_tbl'
+            break
         default:
           state.filename = 'Unknown'
       }
@@ -159,6 +162,9 @@ const mutations = {
         case '166-1-20':
           state.filename = 'bottle_table.bbtbl'
           break
+        case '166-1-77':
+            state.filename = 'shell_table.shl_tbl'
+            break
         default:
           state.filename = 'Unknown'
       }

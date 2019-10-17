@@ -1226,6 +1226,11 @@ address@^1.0.3:
   resolved "https://registry.npm.taobao.org/address/download/address-1.1.2.tgz#bf1116c9c758c51b7a933d296b72c221ed9428b6"
   integrity sha1-vxEWycdYxRt6kz0pa3LCIe2UKLY=
 
+adm-zip@^0.4.11:
+  version "0.4.13"
+  resolved "https://registry.npm.taobao.org/adm-zip/download/adm-zip-0.4.13.tgz#597e2f8cc3672151e1307d3e95cddbc75672314a"
+  integrity sha1-WX4vjMNnIVHhMH0+lc3bx1ZyMUo=
+
 ajv-errors@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/ajv-errors/download/ajv-errors-1.0.1.tgz#f35986aceb91afadec4102fbd85014950cefa64d"
@@ -3340,6 +3345,17 @@ ejs@~2.5.6:
   version "2.5.9"
   resolved "https://registry.npm.taobao.org/ejs/download/ejs-2.5.9.tgz#7ba254582a560d267437109a68354112475b0ce5"
   integrity sha1-e6JUWCpWDSZ0NxCaaDVBEkdbDOU=
+
+electron-asar-hot-updater@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.npm.taobao.org/electron-asar-hot-updater/download/electron-asar-hot-updater-0.1.2.tgz#d3309f351b1d62bdd84dc23fc0518f7678b1b973"
+  integrity sha1-0zCfNRsdYr3YTcI/wFGPdnixuXM=
+  dependencies:
+    adm-zip "^0.4.11"
+    original-fs "^1.0.0"
+    request "^2.87.0"
+    request-progress "^3.0.0"
+    semver-diff "^3.0.0"
 
 electron-builder@^21.2.0:
   version "21.2.0"
@@ -6584,6 +6600,11 @@ ora@^3.4.0:
     strip-ansi "^5.2.0"
     wcwidth "^1.0.1"
 
+original-fs@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/original-fs/download/original-fs-1.1.0.tgz#f856f031b9e24c082ed35b497c9fd4b29f2c031f"
+  integrity sha1-+FbwMbniTAgu01tJfJ/Usp8sAx8=
+
 original@^1.0.0:
   version "1.0.2"
   resolved "https://registry.npm.taobao.org/original/download/original-1.0.2.tgz#e442a61cffe1c5fd20a65f3261c26663b303f25f"
@@ -7771,6 +7792,13 @@ repeating@^2.0.0:
   dependencies:
     is-finite "^1.0.0"
 
+request-progress@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/request-progress/download/request-progress-3.0.0.tgz#4ca754081c7fec63f505e4faa825aa06cd669dbe"
+  integrity sha1-TKdUCBx/7GP1BeT6qCWqBs1mnb4=
+  dependencies:
+    throttleit "^1.0.0"
+
 request-promise-core@1.1.2:
   version "1.1.2"
   resolved "https://registry.npm.taobao.org/request-promise-core/download/request-promise-core-1.1.2.tgz#339f6aababcafdb31c799ff158700336301d3346"
@@ -8054,6 +8082,13 @@ semver-diff@^2.0.0:
   integrity sha1-S7uEN8jTfksM8aaP1ybsbWRdbTY=
   dependencies:
     semver "^5.0.3"
+
+semver-diff@^3.0.0:
+  version "3.1.1"
+  resolved "https://registry.npm.taobao.org/semver-diff/download/semver-diff-3.1.1.tgz#05f77ce59f325e00e2706afd67bb506ddb1ca32b"
+  integrity sha1-Bfd85Z8yXgDicGr9Z7tQbdscoys=
+  dependencies:
+    semver "^6.3.0"
 
 "semver@2 || 3 || 4 || 5", semver@^5.0.3, semver@^5.3.0, semver@^5.4.1, semver@^5.5.0, semver@^5.5.1, semver@^5.6.0:
   version "5.7.1"
@@ -8860,6 +8895,11 @@ throttleit@0.0.2:
   version "0.0.2"
   resolved "https://registry.npm.taobao.org/throttleit/download/throttleit-0.0.2.tgz#cfedf88e60c00dd9697b61fdd2a8343a9b680eaf"
   integrity sha1-z+34jmDADdlpe2H90qg0OptoDq8=
+
+throttleit@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/throttleit/download/throttleit-1.0.0.tgz#9e785836daf46743145a5984b6268d828528ac6c"
+  integrity sha1-nnhYNtr0Z0MUWlmEtiaNgoUorGw=
 
 through2-filter@^3.0.0:
   version "3.0.0"

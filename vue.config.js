@@ -14,7 +14,11 @@ module.exports = {
       builderOptions: {
         productName: 'MHWEE',
         copyright: 'Copyright © 2019 Alcedo',
-        asarUnpack:['Sourceweapon']
+        extraResources:  {
+          "from": "./node_modules/electron-asar-hot-updater/updater.exe",
+          "to": "../updater.exe"
+        }
+        // asarUnpack:['Sourceweapon']
       }
     }
   }

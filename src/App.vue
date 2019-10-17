@@ -362,7 +362,8 @@ export default {
         { title: this.$t('Weaponsmiscellaneous.Saxebottle') + ' (wep_saxe.wep_saxe)', file: 'wep_saxe.wep_saxe' },
         { title: this.$t('Weaponsmiscellaneous.Bombardment') + ' (wep_glan.wep_glan)', file: 'wep_glan.wep_glan' },
         { title: this.$t('Weaponsmiscellaneous.Syllable') + ' (wep_whistle.wep_wsl)', file: 'wep_whistle.wep_wsl' },
-        { title: this.$t('Weaponsmiscellaneous.Bottle') + ' (bottle_table.bbtbl)', file: 'bottle_table.bbtbl' }
+        { title: this.$t('Weaponsmiscellaneous.Bottle') + ' (bottle_table.bbtbl)', file: 'bottle_table.bbtbl' },
+        { title: this.$t('Weaponsmiscellaneous.Shell') + ' (shell_table.shl_tbl)', file: 'shell_table.shl_tbl' }
       ]
       return [
         {title: this.$t('Interface.Weapon'), items: wp},
@@ -422,6 +423,8 @@ export default {
           return this.$t('Weaponsmiscellaneous.Syllable')
         case 'bottle_table.bbtbl':
           return this.$t('Weaponsmiscellaneous.Bottle')
+        case 'shell_table.shl_tbl':
+          return this.$t('Weaponsmiscellaneous.Shell')
         case 'wep_wsword.wep_wsd':
           return this.$t('Weaponsmiscellaneous.Wswordattribute')
         case 'armor.am_dat':
@@ -456,6 +459,7 @@ export default {
   methods: {
     openfile (file = null) {
       let filepath
+      let _this = this
       if (file === null) {
         // this.$refs.filElem.dispatchEvent(new MouseEvent('click'))
         // this.loaddialog = true
@@ -470,9 +474,14 @@ export default {
       } else {
         this.$store.dispatch('setOldversion', false)
         this.Old_version = false
-        filepath = path.join(__static, '/Sourceweapon/' + file)
-        this.file = filepath.substring(filepath.lastIndexOf('\\') + 1)
-        this.loadfile(filepath)
+        filepath = path.join(__static, '../../Sourceweapon/' + file)
+        fs.access(filepath,fs.constants.F_OK, (err) => {
+          if (err) {
+            filepath = path.join(__static, '/Sourceweapon/' + file)
+          }
+          _this.file = filepath.substring(filepath.lastIndexOf('\\') + 1)
+          _this.loadfile(filepath)
+        })
         // this.file = file
         // this.loadfile(file)
       }
@@ -531,12 +540,19 @@ export default {
     contrastdata () {
       let _this = this
       if (this.weapon !== 'Unknown' && this.sound) {
-        fs.readFile(path.join(__static, '/Sourceweapon/' + this.weapon), function (err, data) {
-          if (!err) {
-            _this.$store.dispatch('setsourcedata', data)
+        let filepath = path.join(__static, '../../Sourceweapon/' + this.weapon)
+        fs.access(filepath,fs.constants.F_OK, (err) => {
+          if (err) {
+            filepath = path.join(__static, '/Sourceweapon/' + _this.weapon)
           }
-          _this.loaddialog = false
+          fs.readFile(filepath, function (err, data) {
+            if (!err) {
+              _this.$store.dispatch('setsourcedata', data)
+            }
+            _this.loaddialog = false
+          })
         })
+        
         // axios({
         //   method: 'get',
         //   url: '/Sourceweapon/' + this.weapon, // 请求地址
