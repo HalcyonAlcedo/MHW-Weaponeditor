@@ -57,9 +57,9 @@
                 <h4 v-else-if="existence(item.gl_Number)">{{ $t('Weaponsmiscellaneous.Bombardment') + item.gl_Number.vul }}</h4>
                 <h4 v-else-if="existence(item.sh_Number)">{{ $t('Weaponsmiscellaneous.Shell') + item.sh_Number.vul }}</h4>
                 <v-spacer></v-spacer>
-                <v-card-subtitle>
+                <v-subheader>
                   {{ $t('WeaponExplain.Address') }}：<span class="red--text">{{ str_pad(item.wp_Hex) }}</span>
-                </v-card-subtitle>
+                </v-subheader>
               </v-card-title>
 
               <v-divider></v-divider>
