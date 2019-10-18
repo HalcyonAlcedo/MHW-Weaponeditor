@@ -338,9 +338,11 @@
         <v-card-text>
           <div v-html="$t('Explanatory.Toolsinfo')"></div>
           <v-text-field
-            :label="$t('Interface.Passwd')"
-            v-model="devtoolspassword"
+            v-model="modurl"
           ></v-text-field>
+          <v-btn class="ma-2" tile outlined color="success" @click="request">
+            {{$t('Interface.Request')}}
+          </v-btn>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -375,7 +377,7 @@
 <script>
 import fs from 'fs'
 import path from 'path'
-// import axios from 'axios'
+import axios from 'axios'
 
 const {dialog} = require('electron').remote
 
@@ -408,7 +410,7 @@ export default {
         timeout: 6000,
         text: ''
       },
-      devtoolspassword: '',
+      modurl: '',
       devtools: false,
       ipc: require('electron').ipcRenderer
     }
@@ -453,6 +455,12 @@ export default {
     },
     filedata () {
       return this.$store.getters.donefiledata
+    },
+    license () {
+      return this.$store.getters.donelicense
+    },
+    uuid () {
+      return this.$store.getters.doneuuid
     },
     weaponfilename () {
       switch (this.weapon) {
@@ -564,9 +572,33 @@ export default {
         // this.loadfile(file)
       }
     },
+    request () {
+      let _this = this
+      axios({
+        method: 'post',
+        url: 'https://mhwee.com/requestauthorization.php', // 请求地址
+        headers:{
+          'Content-type': 'application/x-www-form-urlencoded'
+        },
+        data: {
+          modurl: this.modurl,
+          UUID: this.uuid
+        },
+        transformRequest: [function (data) {
+          let ret = ''
+          for (let it in data) {
+            ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+          }
+          return ret
+        }],
+        responseType: 'json' // 表明返回服务器返回的数据类型
+      }).then((res) => { // 处理返回的文件流
+        _this.devtools = false
+      })
+    },
     tools (router) {
-      if (this.devtoolspassword === 'b38mBx') {
-        this.$router.push('/data')
+      if (this.license) {
+        this.$router.push('/' + router)
       } else {
         this.devtools = true
       }

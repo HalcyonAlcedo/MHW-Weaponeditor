@@ -26,6 +26,7 @@ function createWindow () {
     frame: false,
     icon: path.join(__static, 'icon.png'),
     webPreferences: {
+      webPreferences: {webSecurity: false},
       nodeIntegration: true
     } 
   })

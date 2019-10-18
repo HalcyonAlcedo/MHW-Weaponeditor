@@ -5,7 +5,9 @@ const state = {
   filesourcedata: false,
   excludeunknown: true,
   Oldversion: false,
-  versionupdate: false
+  versionupdate: false,
+  license: false,
+  uuid: ''
 }
 
 const mutations = {
@@ -194,6 +196,12 @@ const mutations = {
   },
   UPDATE_Old_version (state, update) {
     state.versionupdate = update
+  },
+  SET_LICENSE (state, license) {
+    state.license = license
+  },
+  SET_UUID (state, uuid) {
+    state.uuid = uuid
   }
 }
 
@@ -215,6 +223,12 @@ const getters = {
   },
   doneOldversion: state => {
     return state.Oldversion
+  },
+  donelicense: state => {
+    return state.license
+  },
+  doneuuid: state => {
+    return state.uuid
   }
 }
 
@@ -240,6 +254,12 @@ const actions = {
   },
   updateversion ({ commit }, update) {
     commit('UPDATE_Old_version', update)
+  },
+  setlicense ({ commit }, license) {
+    commit('SET_LICENSE', license)
+  },
+  setuuid ({ commit }, uuid) {
+    commit('SET_UUID', uuid)
   }
 }
 

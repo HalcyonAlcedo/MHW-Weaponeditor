@@ -1,51 +1,129 @@
 <template>
-  <v-container fluid>
-    <v-tabs
-      v-model="tab"
-      class="elevation-2"
-      show-arrows
-      dark
-    >
-      <v-tabs-slider></v-tabs-slider>
-
-      <v-tab
-        v-for="i in tabs"
-        :key="i.file"
-        :href="`#tab-${i.file}`"
-      >
-        {{ i.title }}
+<v-container fluid>
+  <v-card>
+    <v-tabs vertical>
+      <v-tab>
+        <v-icon left>mdi-account</v-icon>
+        原始文件
+      </v-tab>
+      <v-tab>
+        <v-icon left>mdi-access-point</v-icon>
+        进行文件合并
       </v-tab>
 
-      <v-tab-item
-        v-for="i in tabs"
-        :key="i.file"
-        :value="'tab-' + i.file"
-      >
-        <v-card
-          flat
-          tile
-        >
-          <v-data-table
-            :headers="headers[i.file]"
-            :items="desserts[i.file]"
-            :items-per-page="10"
-            class="elevation-1"
-          ></v-data-table>
+      <v-tab-item>
+        <v-card flat>
+          <v-card-text>
+            <v-row>
+              <v-col
+                cols="12"
+                sm="4"
+              >
+                <v-hover
+                  v-slot:default="{ hover }"
+                  open-delay="200"
+                >
+                  <v-card
+                    :elevation="hover ? 16 : 2"
+                    class="mx-auto"
+                    height="350"
+                    max-width="350"
+                  >
+                    <v-card-title>
+                      原始数据
+                    </v-card-title>
+                    <v-card-text v-text="sdata">
+
+                    </v-card-text>
+                  </v-card>
+                </v-hover>
+              </v-col>
+
+              <v-col
+                cols="12"
+                sm="4"
+              >
+                <v-hover
+                  v-slot:default="{ hover }"
+                  close-delay="200"
+                >
+                  <v-card
+                    :elevation="hover ? 16 : 2"
+                    class="mx-auto"
+                    height="350"
+                    max-width="350"
+                  >
+                    <v-card-title>
+                      当前文件数据
+                      <div class="flex-grow-1"></div>
+                      <span @click="openfile('r')">打开</span>
+                    </v-card-title>
+                    <v-card-text v-text="rdata">
+
+                    </v-card-text>
+                  </v-card>
+                </v-hover>
+              </v-col>
+              <v-col
+                cols="12"
+                sm="4"
+              >
+                <v-hover
+                  v-slot:default="{ hover }"
+                  close-delay="200"
+                >
+                  <v-card
+                    :elevation="hover ? 16 : 2"
+                    class="mx-auto"
+                    height="350"
+                    max-width="350"
+                  >
+                    <v-card-title>
+                      待合并文件数据
+                      <div class="flex-grow-1"></div>
+                      <span @click="openfile('t')">打开</span>
+                    </v-card-title>
+                    <v-card-text v-text="tdata">
+
+                    </v-card-text>
+                  </v-card>
+                </v-hover>
+              </v-col>
+            </v-row>
+          </v-card-text>
+        </v-card>
+      </v-tab-item>
+      <v-tab-item>
+        <v-card flat>
+          <v-card-text>
+            <p>
+              Fusce a quam. Phasellus nec sem in justo pellentesque facilisis. Nam eget dui. Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros. In dui magna, posuere eget, vestibulum et, tempor auctor, justo.
+            </p>
+
+            <p class="mb-0">
+              Cras sagittis. Phasellus nec sem in justo pellentesque facilisis. Proin sapien ipsum, porta a, auctor quis, euismod ut, mi. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nam at tortor in tellus interdum sagittis.
+            </p>
+          </v-card-text>
         </v-card>
       </v-tab-item>
     </v-tabs>
-  </v-container>
+  </v-card>
+</v-container>
 </template>
 
 <script>
   import fs from 'fs'
   import path from 'path'
 
+  const {dialog} = require('electron').remote
+
   export default {
     data () {
       return {
-        //data
-        tab: null,
+        sdata: [],
+        rdata: [],
+        tdata: [],
+        file: '',
         tabs: [
           { title: this.$t('Weapon.Greatsword') + ' (l_sword)', file: 'l_sword.wp_dat' },
           { title: this.$t('Weapon.Blade') + ' (sword)', file: 'sword.wp_dat' },
@@ -67,7 +145,7 @@
           { title: this.$t('Weaponsmiscellaneous.Bombardment') + ' (wep_glan.wep_glan)', file: 'wep_glan.wep_glan' },
           { title: this.$t('Weaponsmiscellaneous.Syllable') + ' (wep_whistle.wep_wsl)', file: 'wep_whistle.wep_wsl' },
           { title: this.$t('Weaponsmiscellaneous.Bottle') + ' (bottle_table.bbtbl)', file: 'bottle_table.bbtbl' },
-          // { title: this.$t('Weaponsmiscellaneous.Shell') + ' (shell_table.shl_tbl)', file: 'shell_table.shl_tbl' }
+          { title: this.$t('Weaponsmiscellaneous.Shell') + ' (shell_table.shl_tbl)', file: 'shell_table.shl_tbl' }
         ],
         filedata: [],
         headers: {
@@ -116,34 +194,49 @@
         }
       }
     },
-    mounted () {
-      let _this = this
-      for (let datafile = 0; datafile < this.tabs.length; datafile++) {
-        let file = this.tabs[datafile].file
-        let name = this.tabs[datafile].title
+    methods: {
+      rtos () {
+
+      },
+      openfile (t) {
         let filepath
-        filepath = path.join(__static, '../../Sourceweapon/' + file)
+        let _this = this
+        dialog.showOpenDialog({
+          properties: ['openFile']
+        }).then(result => {
+          let file = result.filePaths[0].substring(result.filePaths[0].lastIndexOf('\\') + 1)
+          this.loadfile(result.filePaths[0], file, t)
+        }).catch(err => {
+          console.log('err:' + err)
+        })
+      },
+      loadfile (f, filename, t) {
+        let _this = this
+        fs.readFile(f, function (err, data) {
+          if (!err) {
+            if (t === 'r') {
+              _this.rdata = data
+              _this.contrastdata(filename)
+            } else {
+              _this.tdata = data
+            }
+          }
+        })
+      },
+      contrastdata (filename) {
+        let _this = this
+        let filepath = path.join(__static, '../../Sourceweapon/' + filename)
         fs.access(filepath,fs.constants.F_OK, (err) => {
           if (err) {
-            filepath = path.join(__static, '/Sourceweapon/' + file)
+            filepath = path.join(__static, '/Sourceweapon/' + filename)
           }
-          fs.readFile(filepath, function (err, hexdata) {
+          fs.readFile(filepath, function (err, data) {
             if (!err) {
-              let data = _this.hexdata(hexdata, file)
-              _this.filedata.push(
-                {
-                  file: file,
-                  name: name,
-                  data: data
-                }
-              )
-              _this.setheaders(file)
+              _this.sdata = data
             }
           })
         })
-      }
-    },
-    methods: {
+      },
       setheaders (file) {
         let _this = this
         let header = []
