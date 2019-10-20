@@ -2233,7 +2233,7 @@
       },
       skillitem () {
         let skill = []
-        for (let i = 0; i < 165; i++) {
+        for (let i = 0; i < 168; i++) {
           if (this.$te('Skill.' + i)) {
             skill.push(
               {
@@ -2296,8 +2296,7 @@
           'ww_Number',
           'gl_Number',
           'sk_Number',
-          'sh_Number',
-          'eq_Number'
+          'sh_Number'
         ]
         for (let i = 0; i < namelist.length; i++) {
           if (namelist[i] in data) {

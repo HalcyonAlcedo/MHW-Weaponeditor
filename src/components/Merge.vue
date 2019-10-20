@@ -195,9 +195,6 @@
       }
     },
     methods: {
-      rtos () {
-
-      },
       openfile (t) {
         let filepath
         let _this = this

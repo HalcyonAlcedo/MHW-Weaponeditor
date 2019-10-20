@@ -1,36 +1,16 @@
 <template>
 <v-app>
   <router-view></router-view>
-  <v-dialog
-    v-model="dialog"
-    width="500"
+  <v-snackbar
+    v-model="snackbar"
+    bottom
+    color="cyan darken-2"
+    left
+    multi-line
+    :timeout="6000"
   >
-    <v-card>
-      <v-card-title
-        class="headline grey lighten-2"
-        primary-title
-      >
-        Mod开发人员
-      </v-card-title>
-
-      <v-card-text>
-        您拥有版软件高级功能使用许可，可以使用本软件全部功能。
-      </v-card-text>
-
-      <v-divider></v-divider>
-
-      <v-card-actions>
-        <v-spacer></v-spacer>
-        <v-btn
-          color="primary"
-          text
-          @click="dialog = false"
-        >
-          确认
-        </v-btn>
-      </v-card-actions>
-    </v-card>
-  </v-dialog>
+    尊敬的Mod开发人员，您拥有版软件高级功能使用许可，可以使用本软件全部功能。
+  </v-snackbar>
 </v-app>
 </template>
 
@@ -44,7 +24,7 @@
   export default {
     data () {
       return {
-        dialog: false,
+        snackbar: false,
       }
     },
     mounted () {
@@ -81,7 +61,7 @@
             responseType: 'json' // 表明返回服务器返回的数据类型
           }).then((res) => { // 处理返回的文件流
             if (res.data.state) {
-              _this.dialog = true
+              _this.snackbar = true
               _this.$store.dispatch('setlicense', true)
             }
           })

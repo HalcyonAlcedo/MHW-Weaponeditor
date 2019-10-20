@@ -114,19 +114,14 @@
             </template>
           <span>{{$t("Interface.Unopen")}}</span>
         </v-tooltip>
-        <v-tooltip bottom>
-            <template v-slot:activator="{ on }">
-              <v-list-item v-on="on">
-                <v-list-item-action >
-                  <v-icon>mdi-code-tags</v-icon>
-                </v-list-item-action>
-                <v-list-item-content>
-                  <v-list-item-title>{{$t("Interface.Tools_Hex")}}</v-list-item-title>
-                </v-list-item-content>
-              </v-list-item>
-            </template>
-          <span>{{$t("Interface.Unopen")}}</span>
-        </v-tooltip>
+        <v-list-item @click="tools(sourcemod ? 'edit' : 'hexedit')">
+          <v-list-item-action >
+            <v-icon>mdi-code-tags</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>{{sourcemod ? $t("Interface.Tools_View") : $t("Interface.Tools_Hex")}}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
         <v-tooltip bottom>
             <template v-slot:activator="{ on }">
               <v-list-item v-on="on">
@@ -207,7 +202,7 @@
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="title">
-            新建
+            {{$t("Interface.New_file")}}
           </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
@@ -534,7 +529,16 @@ export default {
     },
     lang: function () {
       this.$i18n.locale = this.lang.value
+    },
+    $route(to, from) {
+      console.log(this.$route.path);
+      if (this.$route.path === '/edit') {
+        this.sourcemod = false
+      } else {
+        this.sourcemod = true
+      }
     }
+
   },
   props: {
     source: String
