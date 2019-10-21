@@ -38,8 +38,9 @@
 </template>
 
 <script>
-  import fs from 'fs'
-  import path from 'path'
+  import axios from 'axios'
+  // import fs from 'fs'
+  // import path from 'path'
 
   export default {
     data () {
@@ -121,6 +122,7 @@
       for (let datafile = 0; datafile < this.tabs.length; datafile++) {
         let file = this.tabs[datafile].file
         let name = this.tabs[datafile].title
+        /*
         let filepath
         filepath = path.join(__static, '../../Sourceweapon/' + file)
         fs.access(filepath,fs.constants.F_OK, (err) => {
@@ -140,6 +142,24 @@
               _this.setheaders(file)
             }
           })
+        })
+        */
+        axios({
+          method: 'get',
+          url: '/Sourceweapon/' + file, // 请求地址
+          responseType: 'arraybuffer' // 表明返回服务器返回的数据类型
+        }).then((res) => { // 处理返回的文件流
+          let content = res.data
+          let hexdata = new Uint8Array(content)
+          let data = _this.hexdata(hexdata, file)
+          _this.filedata.push(
+            {
+              file: file,
+              name: name,
+              data: data
+            }
+          )
+          _this.setheaders(file)
         })
       }
     },

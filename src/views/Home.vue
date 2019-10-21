@@ -116,7 +116,7 @@
         </v-tooltip>
         <v-list-item @click="tools(sourcemod ? 'edit' : 'hexedit')">
           <v-list-item-action >
-            <v-icon>mdi-code-tags</v-icon>
+            <v-icon>{{sourcemod ? 'mdi-window-maximize' : 'mdi-code-tags'}}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>{{sourcemod ? $t("Interface.Tools_View") : $t("Interface.Tools_Hex")}}</v-list-item-title>
@@ -531,17 +531,12 @@ export default {
       this.$i18n.locale = this.lang.value
     },
     $route(to, from) {
-      console.log(this.$route.path);
       if (this.$route.path === '/edit') {
         this.sourcemod = false
       } else {
         this.sourcemod = true
       }
     }
-
-  },
-  props: {
-    source: String
   },
   methods: {
     openfile (file = null) {
@@ -598,6 +593,7 @@ export default {
         responseType: 'json' // 表明返回服务器返回的数据类型
       }).then((res) => { // 处理返回的文件流
         _this.devtools = false
+        _this.$store.dispatch('setlicense', true)
       })
     },
     tools (router) {
