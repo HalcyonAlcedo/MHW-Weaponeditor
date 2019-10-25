@@ -17,10 +17,10 @@
 
 <script>
   import axios from 'axios'
-  // import fs from 'fs'
-  // import path from 'path'
-  
-  // import {machineId, machineIdSync} from 'node-machine-id'
+  import fs from 'fs'
+  import path from 'path'
+
+  import {machineId, machineIdSync} from 'node-machine-id'
 
   export default {
     data () {
@@ -30,10 +30,6 @@
       }
     },
     mounted () {
-      let id = ''
-      this.$store.dispatch('setuuid', id)
-      this.onlyLicense(id)
-      /*
       let _this = this
       let id = machineIdSync()
       _this.$store.dispatch('setuuid', id)
@@ -60,10 +56,8 @@
           _this.onlyLicense(id)
         }
       })
-      */
     },
     methods: {
-      /*
       generateLicense (id, time) {
         let license = {
           UUID: id,
@@ -76,7 +70,6 @@
           }
         });
       },
-      */
       onlyLicense (id) {
         let _this = this
         axios({
@@ -98,7 +91,7 @@
           responseType: 'json' // 表明返回服务器返回的数据类型
         }).then((res) => { // 处理返回的文件流
           if (res.data.state) {
-            // _this.generateLicense(res.data.UUID, res.data.time)
+            _this.generateLicense(res.data.UUID, res.data.time)
             _this.lictime = res.data.time
             _this.snackbar = true
             _this.$store.dispatch('setlicense', true)

@@ -6,7 +6,7 @@
       clipped
     >
       <v-list dense>
-        <v-list-item @click.stop="left = !left">
+        <v-list-item link @click.stop="left = !left">
           <v-list-item-action>
             <v-icon>mdi-exit-to-app</v-icon>
           </v-list-item-action>
@@ -14,7 +14,7 @@
             <v-list-item-title>{{$t("Interface.New_file")}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item @click="openfile()">
+        <v-list-item link @click="openfile()">
           <v-list-item-action>
             <v-icon>folder_open</v-icon>
           </v-list-item-action>
@@ -23,7 +23,7 @@
           </v-list-item-content>
           <input ref="filElem" type="file" style="display:none" @change="getFile">
         </v-list-item>
-        <v-list-item @click="savefile()">
+        <v-list-item link @click="savefile()">
           <v-list-item-action>
             <v-icon>save</v-icon>
           </v-list-item-action>
@@ -31,7 +31,7 @@
             <v-list-item-title>{{$t("Interface.Save_file")}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item @click="dialog = true">
+        <v-list-item link @click="dialog = true">
           <v-list-item-action>
             <v-icon>info</v-icon>
           </v-list-item-action>
@@ -43,7 +43,7 @@
       <v-divider></v-divider>
       <v-list dense>
         <v-subheader>{{$t("Interface.Setting")}}</v-subheader>
-        <v-list-item @click="1">
+        <v-list-item link >
           <v-list-item-action>
             <v-checkbox
               v-model="excludeunknown"
@@ -55,7 +55,7 @@
           </v-list-item-content>
         </v-list-item>
         
-        <v-list-item @click="1">
+        <v-list-item link >
           <v-list-item-action>
             <v-checkbox
               v-model="sound"
@@ -66,7 +66,7 @@
             <v-list-item-subtitle>{{$t("Explanatory.Raw_data_comparison")}}</v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item @click="1">
+        <v-list-item link >
           <v-list-item-action>
             <v-checkbox
               v-model="Old_version"
@@ -78,7 +78,7 @@
             <v-list-item-subtitle>{{$t("Explanatory.Old_version")}}</v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item @click="1" v-if="Old_version">
+        <v-list-item link v-if="Old_version">
           <v-btn
             :loading="update"
             :disabled="update"
@@ -122,19 +122,14 @@
             <v-list-item-title>{{sourcemod ? $t("Interface.Tools_View") : $t("Interface.Tools_Hex")}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-tooltip bottom>
-            <template v-slot:activator="{ on }">
-              <v-list-item v-on="on">
-                <v-list-item-action>
-                  <v-icon>mdi-notebook-multiple</v-icon>
-                </v-list-item-action>
-                <v-list-item-content>
-                  <v-list-item-title>{{$t("Interface.Tools_Help")}}</v-list-item-title>
-                </v-list-item-content>
-              </v-list-item>
-            </template>
-          <span>{{$t("Interface.Unopen")}}</span>
-        </v-tooltip>
+        <v-list-item to="/">
+          <v-list-item-action>
+            <v-icon>home</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>{{$t("Interface.Tools_Home")}}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
       <v-divider></v-divider>
       <v-list
@@ -531,7 +526,7 @@ export default {
       this.$i18n.locale = this.lang.value
     },
     $route(to, from) {
-      if (this.$route.path === '/edit') {
+      if (this.$route.path === '/mhwee/edit') {
         this.sourcemod = false
       } else {
         this.sourcemod = true
@@ -598,7 +593,7 @@ export default {
     },
     tools (router) {
       if (this.license) {
-        this.$router.push('/' + router)
+        this.$router.push('/mhwee/' + router)
       } else {
         this.devtools = true
       }
@@ -709,7 +704,7 @@ export default {
           _this.snackbar.text = _this.$t('Interface.Open_Failure')
           _this.snackbar.snackbar = true
         } else {
-          _this.$router.push('/edit')
+          _this.$router.push('/mhwee/edit')
           _this.$store.dispatch('setfile', f)
           _this.$store.dispatch('setdata', data)
           _this.snackbar.text = _this.$t('Interface.Open_Success')

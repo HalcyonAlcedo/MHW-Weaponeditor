@@ -1,7 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import store from './store'
+import NotFound from './404.vue'
 import Home from './views/Home.vue'
+import Tool_Home from './tools/Home.vue'
+import Tool_Local from './tools/LocalMode.vue'
+import Tool_Management from './tools/ModeManagement.vue'
+import Homedev from './views/HomeDev.vue'
 import Edit from './components/Editor.vue'
 import EditData from './components/Data.vue'
 import HEXEdit from './components/HexEdit.vue'
@@ -11,26 +16,82 @@ Vue.use(Router)
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'tools',
+    component: Homedev,
+    children: [
+      {
+        path: '/home',
+        component: Tool_Home,
+        meta: { requiresAuth: false }
+      },
+      {
+        path: '/local',
+        component: Tool_Local,
+        children: [
+          {
+            path: '/local/edit',
+            component: Edit,
+            meta: { requiresAuth: false }
+          },
+          {
+            path: '/local/hexedit',
+            component: HEXEdit,
+            meta: { requiresAuth: false }
+          },
+        ],
+        meta: { requiresAuth: false }
+      },
+      {
+        path: '/management',
+        component: Tool_Management,
+        children: [
+          {
+            path: '/management/edit',
+            component: Edit,
+            meta: { requiresAuth: false }
+          },
+          {
+            path: '/management/hexedit',
+            component: HEXEdit,
+            meta: { requiresAuth: false }
+          },
+        ],
+        meta: { requiresAuth: false }
+      },
+    ],
+    meta: { requiresAuth: false }
+  },
+  {
+    path: '/mhwee',
     component: Home,
     children: [
       {
-        path: '/edit',
+        path: '/mhwee/edit',
         component: Edit,
         meta: { requiresAuth: false }
       },
       {
-        path: '/data',
+        path: '/mhwee/data',
         component: EditData,
         meta: { requiresAuth: true }
       },
       {
-        path: '/hexedit',
+        path: '/mhwee/hexedit',
         component: HEXEdit,
         meta: { requiresAuth: true }
       }
+    ],
+    meta: { requiresAuth: false }
+  },
+  {
+    path: '*',
+    name: '404',
+    component: NotFound,
+    children: [
+
     ]
-  }
+  },
+
 ]
 
 const router = new Router({

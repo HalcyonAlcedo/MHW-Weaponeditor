@@ -28,12 +28,12 @@
                       v-on="on"
                       :color="item.wp_Colour"
                   >
-                      <v-row
-                      class="fill-height"
-                      align="center"
-                      justify="center"
-                      v-text="str_pad(item.wp_Hex, 2)"
-                      ></v-row>
+                    <v-row
+                    class="fill-height"
+                    align="center"
+                    justify="center"
+                    v-text="str_pad(item.wp_Hex, 2)"
+                    ></v-row>
                   </v-card>
                 </template>
                 <span>{{$t("WeaponExplain.Describe")}}：{{ item.wp_Describe }}</span>

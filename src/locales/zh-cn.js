@@ -44,7 +44,7 @@ module.exports = {
     Tools_dataMerge: 'Mod合并',
     Tools_Hex: '二进制编辑',
     Tools_View: '视图编辑',
-    Tools_Help: '教程',
+    Tools_Home: '首页',
     Unopen: '暂未开放',
     Request: '申请'
   },
