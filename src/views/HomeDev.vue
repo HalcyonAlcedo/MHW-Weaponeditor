@@ -133,8 +133,8 @@
         fab: false
       },
       drawerItems: [
-        { title: '主页', icon: 'dashboard', link: '/home' },
-        { title: '本地Mod', icon: 'list', link: '/local' },
+        // { title: '主页', icon: 'dashboard', link: '/home' },
+        { title: '游戏Mod', icon: 'list', link: '/local' },
         { title: 'Mod管理', icon: 'wb_cloudy', link: '/management' },
         { title: '装备编辑工具', icon: 'build', link: '/mhwee' },
         // { title: '个人信息', icon: 'person', link: '/user' },

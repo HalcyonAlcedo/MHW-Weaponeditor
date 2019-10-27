@@ -89,6 +89,8 @@
                           <v-col cols="7">{{ selection.ctime.toISOString().substr(0, 10) + ' ' + selection.ctime.toISOString().substr(11, 8) }}</v-col>
                           <v-col class="text-right" tag="strong" cols="5">修改时间:</v-col>
                           <v-col cols="7">{{ selection.mtime.toISOString().substr(0, 10) + ' ' + selection.mtime.toISOString().substr(11, 8) }}</v-col>
+                          <v-col class="text-right" tag="strong" cols="5">MD5值:</v-col>
+                          <v-col cols="7">{{ selection.md5 }}</v-col>
                         </v-row>
                       </v-card-text>
                     </v-card>
@@ -123,8 +125,19 @@
                           tile 
                           outlined 
                           color="success" 
-                          @click="openhex(selection.src)">
+                          disabled
+                          @click="openhex(selection.src)"
+                        >
                           <v-icon left>mdi-pencil</v-icon> 二进制编辑
+                        </v-btn>
+                        <v-btn
+                          class="ma-2" 
+                          tile 
+                          outlined 
+                          color="success"
+                          @click="savefile(selection.src)"
+                        >
+                          <v-icon left>mdi-pencil</v-icon> 保存修改
                         </v-btn>
                       </v-card-text>
                     </v-card>
@@ -255,11 +268,19 @@
         'F:\\SteamLibrary\\steamapps\\common\\Monster Hunter World',
         'G:\\SteamLibrary\\steamapps\\common\\Monster Hunter World',
         'H:\\SteamLibrary\\steamapps\\common\\Monster Hunter World',
-        'D:\\MHW\\Monster Hunter World'
       ]
+      if (this.gameConfig.gamePath !== '') {
+        gamepaths = [this.gameConfig.gamePath]
+      }
       this.selectgame(gamepaths)
     },
     computed: {
+      gameConfig () {
+        return this.$store.getters.doneGameConfig
+      },
+      filedata () {
+        return this.$store.getters.donefiledata
+      },
     },
     watch: {
       gamedir (gamepath) {
@@ -282,6 +303,7 @@
           fs.access(gamepath + '\\MonsterHunterWorld.exe',fs.constants.F_OK, (err) => {
             if (!err) {
               _this.gamedir = gamepath
+              _this.$store.dispatch('setgamePath', gamepath)
               fs.access(gamepath + '\\nativePC',fs.constants.F_OK, (err) => {
                 if (!err) {
                   _this.gamefile(gamepath + '\\nativePC')
@@ -357,15 +379,22 @@
                         if(isFile){
                           if (nativepath.length === 1) {
                             let filetype = nativepath[0].substring(nativepath[0].lastIndexOf(".") + 1)
-                            _this.items.push({
-                              name: nativepath[0],
-                              file: filetype,
-                              src: filedir,
-                              size: stats.size,
-                              ctime: stats.ctime,
-                              mtime: stats.mtime,
-                              edit: filetype in _this.editlist
+                            let rs = fs.createReadStream(filedir)
+                            let hash = crypto.createHash('md5')
+                            rs.on('data', hash.update.bind(hash))
+                            rs.on('end', function () {
+                              _this.items.push({
+                                name: nativepath[0],
+                                file: filetype,
+                                src: filedir,
+                                size: stats.size,
+                                ctime: stats.ctime,
+                                mtime: stats.mtime,
+                                md5: hash.digest('hex'),
+                                edit: filetype in _this.editlist
+                              })
                             })
+                            
                           } else {
                             let dir = nativepath[nativepath.length - 1]
                             let rootdir = _this.items.findIndex((n) => n.name === nativepath[0])
@@ -469,7 +498,18 @@
             console.log(err)
           }
         })
-      }
+      },
+      savefile (filepath) {
+        let _this = this
+        fs.writeFile(filepath, this.filedata, { flag: 'w' }, function (err) {
+          if (err) {
+            _this.snackbar.text = _this.$t('Interface.Save_Failure')
+          } else {
+            _this.snackbar.text = _this.$t('Interface.Save_Success')
+          }
+          _this.snackbar.open = true
+        })
+      },
     },
   }
 </script>

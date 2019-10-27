@@ -6,6 +6,14 @@
       clipped
     >
       <v-list dense>
+        <v-list-item link @click.stop="$router.push('/')">
+          <v-list-item-action>
+            <v-icon>mdi-home</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>{{$t("Interface.Tools_Home")}}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
         <v-list-item link @click.stop="left = !left">
           <v-list-item-action>
             <v-icon>mdi-exit-to-app</v-icon>

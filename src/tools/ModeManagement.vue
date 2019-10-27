@@ -66,7 +66,7 @@
           activatable
           item-key="name"
           open-on-click
-          selected-color="indigo"
+          :selected-color="validation ? 'indigo' : 'red'"
           return-object
           :active.sync="active"
           transition
@@ -482,6 +482,15 @@
                                   type: modinfo.type,
                                   version: modinfo.version,
                                   src: filedir,
+                                  validation: true,
+                                })
+                              } else {
+                                _this.items.push({
+                                  name: modinfo.name,
+                                  type: modinfo.type,
+                                  version: modinfo.version,
+                                  src: filedir,
+                                  validation: false,
                                 })
                               }
                             }
@@ -543,7 +552,7 @@
                             children = _this.children(children, nativepath, filedir, stats)
                             _this.moditems[rootdir].children = children
                             
-                          } else {
+                          } else if (dir !== '') {
                             _this.moditems.push({
                               name: dir,
                               children: [],
@@ -618,6 +627,10 @@
             _this.$store.dispatch('setdata', data)
           }
         })
+      },
+      installMod (modmd5) {
+        
+
       },
       // 文件操作
       createdir (dir, name) {
