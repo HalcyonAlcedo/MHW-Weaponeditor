@@ -66,7 +66,7 @@
           activatable
           item-key="name"
           open-on-click
-          :selected-color="validation ? 'indigo' : 'red'"
+          selected-color="indigo"
           return-object
           :active.sync="active"
           transition
@@ -191,10 +191,10 @@
                           class="text-left"
                           tag="v-card-text"
                         >
-                          <v-btn class="ma-2" tile outlined color="success" disabled>
+                          <v-btn class="ma-2" tile outlined color="success" :disabled="gamePath == ''" @click="installmode(selection.name)">
                             <v-icon left>mdi-pencil</v-icon> 安装Mod
                           </v-btn>
-                          <v-btn class="ma-2" tile outlined color="success" disabled>
+                          <v-btn class="ma-2" tile outlined color="success" :disabled="gamePath == ''" @click="uninstallmode(selection.name)">
                             <v-icon left>mdi-pencil</v-icon> 卸载Mod
                           </v-btn>
                           <v-btn class="ma-2" tile outlined color="error" @click="removedir(selection.src)">
@@ -264,6 +264,105 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
+    <v-dialog
+      v-model="install"
+      width="500"
+    >
+      <v-card>
+        <v-card-title
+          class="headline grey lighten-2"
+          primary-title
+        >
+          Mod安装
+        </v-card-title>
+
+        <v-card-text>
+          安装文件
+          <v-list-item v-for="(item, i) in installFile" :key="i">
+            <v-list-item-content>
+              <v-list-item-title>{{item.cpfile}}</v-list-item-title>
+              <v-list-item-subtitle>{{item.file}}</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+          冲突文件
+          <v-list-item v-for="(item, i) in installBackup" :key="i">
+            <v-list-item-content>
+              <v-list-item-title>{{item.file}}</v-list-item-title>
+              <v-list-item-subtitle>{{item.cpconfig.cpfile}}</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="primary"
+            text
+            @click="cancelInstall()"
+          >
+            取消
+          </v-btn>
+          <v-btn
+            color="primary"
+            text
+            @click="installMod()"
+          >
+            安装
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+    <v-dialog
+      v-model="uninstall"
+      width="500"
+    >
+      <v-card>
+        <v-card-title
+          class="headline grey lighten-2"
+          primary-title
+        >
+          Mod卸载
+        </v-card-title>
+
+        <v-card-text>
+          卸载文件
+          <v-list-item v-for="(item, i) in uninstallFile" :key="i">
+            <v-list-item-content>
+              <v-list-item-title>{{item.file}}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          还原文件
+          <v-list-item v-for="(item, i) in uninstallBackup" :key="i">
+            <v-list-item-content>
+              <v-list-item-title>{{item.file}}</v-list-item-title>
+              <v-list-item-subtitle>{{item.cpfile}}</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="primary"
+            text
+            @click="cancelInstall()"
+          >
+            取消
+          </v-btn>
+          <v-btn
+            color="primary"
+            text
+            @click="uninstallMod()"
+          >
+            卸载
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-card>
 </template>
 
@@ -274,6 +373,7 @@
   import zipper from 'zip-local'
 
   const {dialog} = require('electron').remote
+  const {cpfile} = require('../plugins/nodefile')
   const software = path.join(__static, '../../')
 
   export default {
@@ -319,6 +419,17 @@
       items: [],
       moditems: [],
       modelist: [],
+      writemodeconfigname: '',
+      writemodeconfiglist: [],
+      writemodeconfiglength: 0,
+      installBackup: [],
+      installFile: [],
+      install: false,
+      installName: '',
+      uninstallBackup: [],
+      uninstallFile: [],
+      uninstall: false,
+      uninstallName: '',
       cols: 5,
       addmode: false,
       snackbar: {
@@ -341,15 +452,19 @@
           _this.getModeList()
         } else {
           _this.createdir(software, 'gamemodes')
+          _this.createdir(modepath, 'installtemp')
         }
       })
     },
     computed: {
+      gamePath () {
+        return this.$store.getters.doneGamePath
+      },
     },
     watch: {
       active () {
         this.moditems = []
-      }
+      },
     },
     methods: {
       dialogOperation (operation) {
@@ -384,7 +499,7 @@
       },
       installLocalMod () {
         let _this = this
-        let unzippath = path.join(software, '/gamemodes/' + _this.addNewMod.md5)
+        let unzippath = path.join(software, '/gamemodes/installtemp/' + _this.addNewMod.md5)
         fs.access(unzippath,fs.constants.F_OK, (err) => {
           if (!err) {
             _this.snackbar.open = true,
@@ -397,6 +512,7 @@
                   if(!error) {
                     let unzippedfs = unzipped.memory()
                     let zipFileList = unzippedfs.contents()
+                    _this.writemodeconfiglength = zipFileList.length
 
                     let modinfo = JSON.stringify({
                       name: _this.addNewMod.name,
@@ -412,16 +528,53 @@
                         // _this.removedir(unzippath)
                       }
                     })
+                    _this.writemodeconfigname = _this.addNewMod.name
                     for(let i = 0; i < zipFileList.length; i++) {
                       if (zipFileList[i].lastIndexOf("nativePC") == 0) {
-                        unzipped.save(unzippath)
+                        let unzippedfs = unzipped.memory()
+                        unzippedfs = unzippedfs.contents()
+                        unzipped.save(unzippath, function(error) {
+                          for(let mode = 0; mode < unzippedfs.length; mode++) {
+                            let file = path.join(unzippath, unzippedfs[mode])
+                            let rs = fs.createReadStream(file)
+                            let hash = crypto.createHash('md5')
+                            rs.on('data', hash.update.bind(hash))
+                            rs.on('end', function () {
+                              let copyfile = path.join(software, '/gamemodes/ModuleWarehouse/')
+                              let md5 = hash.digest('hex')
+                              cpfile(file, copyfile, md5 + '.mhwmod')
+                              _this.installmodeconfig({
+                                file: unzippedfs[mode].substring(unzippedfs[mode].lastIndexOf("nativePC") + 9),
+                                md5: md5
+                              })
+                            })
+                          }
+                        })
                         _this.getModeList()
                         break
                       } else if (i == zipFileList.length - 1) {
                         unzippath = path.join(unzippath, '/nativePC')
                         fs.mkdir(unzippath,{recursive:true},(err)=>{
                           if(!err){
-                            unzipped.save(unzippath)
+                            let unzippedfs = unzipped.memory()
+                            unzippedfs = unzippedfs.contents()
+                            unzipped.save(unzippath, function(error) {
+                              for(let mode = 0; mode < unzippedfs.length; mode++) {
+                                let file = path.join(unzippath, unzippedfs[mode])
+                                let rs = fs.createReadStream(file)
+                                let hash = crypto.createHash('md5')
+                                rs.on('data', hash.update.bind(hash))
+                                rs.on('end', function () {
+                                  let copyfile = path.join(software, '/gamemodes/ModuleWarehouse/')
+                                  let md5 = hash.digest('hex')
+                                  cpfile(file, copyfile, md5 + '.mhwmod')
+                                  _this.installmodeconfig({
+                                    file: unzippedfs[mode].substring(unzippedfs[mode].lastIndexOf("nativePC") + 9),
+                                    md5: md5
+                                  })
+                                })
+                              }
+                            })
                             _this.getModeList()
                           }
                         })
@@ -441,11 +594,10 @@
             })
           }
         })
-        
       },
       getModeList () {
         let _this = this
-        let filePath = software + '\\gamemodes'
+        let filePath = software + '\\gamemodes\\installtemp'
         this.items = []
         this.active = []
         fs.readdir(filePath,function(err,files){
@@ -482,7 +634,6 @@
                                   type: modinfo.type,
                                   version: modinfo.version,
                                   src: filedir,
-                                  validation: true,
                                 })
                               } else {
                                 _this.items.push({
@@ -490,7 +641,6 @@
                                   type: modinfo.type,
                                   version: modinfo.version,
                                   src: filedir,
-                                  validation: false,
                                 })
                               }
                             }
@@ -598,6 +748,153 @@
         }
         return children
       },
+      installmodeconfig(modedata){
+        let _this = this
+        this.writemodeconfiglist.push({
+          file: modedata.file,
+          md5: modedata.md5
+        })
+        if (this.writemodeconfiglist.length === this.writemodeconfiglength) {
+          let modConfig = software + '\\gamemodes\\modeInstallInfo.json'
+          fs.access(modConfig,fs.constants.F_OK, (err) => {
+            if(!err) {
+              _this.writemodeconfig()
+            } else {
+              let modinfo = JSON.stringify({
+                modes: []
+              }, null, "\t")
+              fs.writeFile(modConfig, modinfo, function(err){
+                _this.writemodeconfig()
+              })
+            }
+          })
+        }
+      },
+      writemodeconfig () {
+        let _this = this
+        let modConfig = software + '\\gamemodes\\modeInstallInfo.json'
+        fs.access(modConfig,fs.constants.F_OK, (err) => {
+          if(!err) {
+            fs.readFile(modConfig,function (err, data) {
+              if(!err) {
+                let modinfo = JSON.parse(data)
+              }
+            })
+          } else {
+            let modinfo = JSON.stringify({
+              modes: []
+            }, null, "\t")
+            fs.writeFile(modConfig, modinfo, function(err){})
+          }
+        })
+        fs.readFile(modConfig, function (err, data) {
+          if(!err) {
+            let modinfo = JSON.parse(data)
+            let index = modinfo.modes.findIndex((n) => n.name === _this.writemodeconfigname)
+            if (index === -1) {
+              modinfo.modes.push({
+                name: _this.writemodeconfigname,
+                files: []
+              })
+              index = modinfo.modes.length - 1
+            }
+            for (let i = 0; i < _this.writemodeconfiglist.length; i++) {
+              if(modinfo.modes[index].files.findIndex((n)=>{n.file === _this.writemodeconfiglist[i].file}) === -1) {
+                modinfo.modes[index].files.push({
+                  file: _this.writemodeconfiglist[i].file,
+                  md5: _this.writemodeconfiglist[i].md5
+                })
+              }
+            }
+            modinfo = JSON.stringify(modinfo, null, "\t")
+            fs.writeFile(modConfig, modinfo, function(err){
+              _this.writemodeconfigname = ''
+              _this.writemodeconfiglist = []
+              _this.writemodeconfiglength = 0
+            })
+          }
+        })
+      },
+      installmode(modename){
+        let _this = this
+        let gamepath = path.join(this.gamePath,'/')
+        let modConfig = software + '\\gamemodes\\modeInstallInfo.json'
+        fs.readFile(modConfig, function (err, data) {
+          if(!err) {
+            let modinfo = JSON.parse(data)
+            let index = modinfo.modes.findIndex((n) => n.name === modename)
+            if (index === -1) {
+              _this.snackbar.open = true,
+              _this.snackbar.text = '安装失败，模组文件不存在，请重新安装模组！',
+              _this.snackbar.color = 'error'
+            } else {
+              _this.installName = modename
+              _this.install = true
+              for (let i = 0; i < modinfo.modes[index].files.length; i++) {
+                let gamemodefile = path.join(gamepath, modinfo.modes[index].files[i].file)
+                let copyfile = path.join(software, '/gamemodes/ModuleWarehouse/')
+                fs.access(gamemodefile,fs.constants.F_OK, (err) => {
+                  if (!err) {
+                    let rs = fs.createReadStream(gamemodefile)
+                    let hash = crypto.createHash('md5')
+                    rs.on('data', hash.update.bind(hash))
+                    rs.on('end', function () {
+                      let md5 = hash.digest('hex')
+                      _this.installBackup.push({
+                        file: modinfo.modes[index].files[i].file,
+                        md5: md5,
+                        cpconfig: {
+                          file: gamemodefile,
+                          cpfile: copyfile,
+                          filename: md5 + '.mhwmod'
+                        },
+                      })
+                      cpfile(gamemodefile, copyfile, md5 + '.mhwmod')
+                    })
+                  }
+                  _this.installFile.push({
+                    file: path.join(copyfile, modinfo.modes[index].files[i].md5 + '.mhwmod'),
+                    cpfile: gamemodefile,
+                    filename: modinfo.modes[index].files[i].md5 + '.mhwmod'
+                  })
+                })
+              }
+            }
+          }
+        })
+      },
+      uninstallmode(modename){
+        let _this = this
+        let gamepath = path.join(this.gamePath,'/')
+        let modConfig = software + '\\gamemodes\\modeInstallInfo.json'
+        let copyfile = path.join(software, '/gamemodes/ModuleWarehouse/')
+        fs.readFile(modConfig, function (err, data) {
+          if(!err) {
+            let modinfo = JSON.parse(data)
+            let index = modinfo.modes.findIndex((n) => n.name === modename)
+            if (index === -1) {
+              _this.snackbar.open = true,
+              _this.snackbar.text = '卸载失败！',
+              _this.snackbar.color = 'error'
+            } else {
+
+              _this.uninstallName = modename
+              _this.uninstall = true
+              for (let i = 0; i < modinfo.modes[index].files.length; i++) {
+                _this.uninstallFile.push({
+                  file: path.join(gamepath, modinfo.modes[index].files[i].file),
+                })
+              }
+              for (let i = 0; i < modinfo.modes[index].installBackup.length; i++) {
+                _this.uninstallBackup.push({
+                  file: path.join(copyfile, modinfo.modes[index].installBackup[i].md5 + '.mhwmod'),
+                  cpfile: path.join(gamepath, modinfo.modes[index].installBackup[i].file),
+                })
+              }
+            }
+          }
+        })
+      },
       openhex (file) {
         let _this = this
         this.cols = 2
@@ -628,9 +925,82 @@
           }
         })
       },
-      installMod (modmd5) {
-        
-
+      installMod () {
+        for (let i = 0; i < this.installFile.length; i++) {
+          cpfile(this.installFile[i].file, this.installFile[i].cpfile)
+        }
+        this.installFile = []
+        this.install = false
+        let modename = this.installName
+        let _this = this
+        let gamepath = path.join(this.gamePath,'/')
+        let modConfig = software + '\\gamemodes\\modeInstallInfo.json'
+        fs.readFile(modConfig, function (err, data) {
+          if(!err) {
+            let modinfo = JSON.parse(data)
+            let index = modinfo.modes.findIndex((n) => n.name === modename)
+            if (index !== -1) {
+              if(!modinfo.modes[index].installBackup){
+                modinfo.modes[index].installBackup = []
+              }
+              for (let i = 0; i < _this.installBackup.length; i++) {
+                modinfo.modes[index].installBackup.push({
+                  file: _this.installBackup[i].file,
+                  md5: _this.installBackup[i].md5,
+                })
+              }
+            }
+            modinfo = JSON.stringify(modinfo, null, "\t")
+            fs.writeFile(modConfig, modinfo, function(err){
+              _this.installBackup = []
+              _this.installName = ''
+            })
+          }
+        })
+        this.snackbar.open = true,
+        this.snackbar.text = '安装成功',
+        this.snackbar.color = 'success'
+      },
+      uninstallMod () {
+        for (let i = 0; i < this.uninstallFile.length; i++) {
+          fs.unlinkSync(this.uninstallFile[i].file)
+        }
+        this.uninstallFile = []
+        this.uninstall = false
+        let modename = this.uninstallName
+        let _this = this
+        let gamepath = path.join(this.gamePath,'/')
+        let modConfig = software + '\\gamemodes\\modeInstallInfo.json'
+        fs.readFile(modConfig, function (err, data) {
+          if(!err) {
+            let modinfo = JSON.parse(data)
+            let index = modinfo.modes.findIndex((n) => n.name === modename)
+            if (index !== -1) {
+              delete modinfo.modes[index].installBackup
+              for (let i = 0; i < _this.uninstallFile.length; i++) {
+                cpfile(_this.uninstallBackup[i].file, _this.uninstallBackup[i].cpfile)
+              }
+            }
+            modinfo = JSON.stringify(modinfo, null, "\t")
+            fs.writeFile(modConfig, modinfo, function(err){
+              _this.uninstallBackup = []
+              _this.uninstallName = ''
+            })
+          }
+        })
+        this.snackbar.open = true,
+        this.snackbar.text = '卸载成功',
+        this.snackbar.color = 'success'
+      },
+      cancelInstall() {
+        this.installBackup = []
+        this.installFile = []
+        this.install = false
+        this.installName = ''
+        this.uninstallBackup = []
+        this.uninstallFile = []
+        this.uninstall = false
+        this.uninstallName = ''
       },
       // 文件操作
       createdir (dir, name) {

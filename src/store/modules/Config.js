@@ -1,7 +1,5 @@
 const state = {
-  GameConfig: {
-    gamePath: '',
-  },
+  gamePath: '',
   license: {
     state: false,
     uuid: ''
@@ -16,13 +14,13 @@ const mutations = {
     state.license.uuid = uuid
   },
   SET_GAMEPATH (state, gamePath) {
-    state.GameConfig.gamePath = gamePath
+    state.gamePath = gamePath
   }
 }
 
 const getters = {
-  doneGameConfig: state => {
-    return state.GameConfig
+  doneGamePath: state => {
+    return state.gamePath
   },
   donelicense: state => {
     return state.license.state

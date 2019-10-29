@@ -269,14 +269,14 @@
         'G:\\SteamLibrary\\steamapps\\common\\Monster Hunter World',
         'H:\\SteamLibrary\\steamapps\\common\\Monster Hunter World',
       ]
-      if (this.gameConfig.gamePath !== '') {
-        gamepaths = [this.gameConfig.gamePath]
+      if (this.gamePath !== '') {
+        gamepaths = [this.gamePath]
       }
       this.selectgame(gamepaths)
     },
     computed: {
-      gameConfig () {
-        return this.$store.getters.doneGameConfig
+      gamePath () {
+        return this.$store.getters.doneGamePath
       },
       filedata () {
         return this.$store.getters.donefiledata
@@ -284,6 +284,14 @@
     },
     watch: {
       gamedir (gamepath) {
+        if(gamepath !== '') {
+          let Config = path.join(__static, '../../config.json')
+          let modinfo = JSON.stringify({
+            gamePath: gamepath
+          }, null, "\t")
+          fs.writeFile(Config, modinfo, function(err){})
+        }
+        this.$store.dispatch('setgamePath', gamepath)
         this.gamefile(gamepath + '\\nativePC')
       }
     },
@@ -303,7 +311,6 @@
           fs.access(gamepath + '\\MonsterHunterWorld.exe',fs.constants.F_OK, (err) => {
             if (!err) {
               _this.gamedir = gamepath
-              _this.$store.dispatch('setgamePath', gamepath)
               fs.access(gamepath + '\\nativePC',fs.constants.F_OK, (err) => {
                 if (!err) {
                   _this.gamefile(gamepath + '\\nativePC')
@@ -367,7 +374,7 @@
               //遍历读取到的文件列表
               files.forEach(function(filename){
                   //获取当前文件的绝对路径
-                  let filedir = path.join(filePath,filename);
+                  let filedir = path.join(filePath,filename)
                   //根据文件路径获取文件信息，返回一个fs.Stats对象
                   fs.stat(filedir,function(eror,stats){
                       if(eror){

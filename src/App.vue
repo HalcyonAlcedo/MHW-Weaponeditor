@@ -21,6 +21,8 @@
   import path from 'path'
 
   import {machineId, machineIdSync} from 'node-machine-id'
+  
+  const software = path.join(__static, '../../')
 
   export default {
     data () {
@@ -33,7 +35,7 @@
       let _this = this
       let id = machineIdSync()
       _this.$store.dispatch('setuuid', id)
-      let filepath = path.join(__static, '../../license')
+      let filepath = path.join(software, 'license')
       fs.access(filepath,fs.constants.F_OK, (err) => {
         if (!err) {
           fs.readFile(filepath, function (err, data) {
@@ -56,6 +58,66 @@
           _this.onlyLicense(id)
         }
       })
+      let modConfig = software + '\\gamemodes\\modeInstallInfo.json'
+      fs.access(modConfig,fs.constants.F_OK, (err) => {
+        if(!err) {
+          fs.readFile(modConfig,function (err, data) {
+            if(!err) {
+              let modinfo = JSON.parse(data)
+            }
+          })
+        } else {
+          let modinfo = JSON.stringify({
+            modes: []
+          }, null, "\t")
+          fs.writeFile(modConfig, modinfo, function(err){})
+        }
+      })
+      let Config = software + '\\config.json'
+      fs.access(Config,fs.constants.F_OK, (err) => {
+        if(!err) {
+          fs.readFile(Config,function (err, data) {
+            if(!err) {
+              let modinfo = JSON.parse(data)
+              if(modinfo.gamePath !== '') {
+                _this.$store.dispatch('setgamePath', modinfo.gamePath)
+              }
+            }
+          })
+        } else {
+          let gamepaths = [
+            'C:\\Program Files (x86)\Steam\\SteamApps\\common\\Monster Hunter World',
+            'D:\\Program Files (x86)\Steam\\SteamApps\\common\\Monster Hunter World',
+            'E:\\Program Files (x86)\Steam\\SteamApps\\common\\Monster Hunter World',
+            'F:\\Program Files (x86)\Steam\\SteamApps\\common\\Monster Hunter World',
+            'G:\\Program Files (x86)\Steam\\SteamApps\\common\\Monster Hunter World',
+            'H:\\Program Files (x86)\Steam\\SteamApps\\common\\Monster Hunter World',
+            'C:\\SteamLibrary\\steamapps\\common\\Monster Hunter World',
+            'D:\\SteamLibrary\\steamapps\\common\\Monster Hunter World',
+            'E:\\SteamLibrary\\steamapps\\common\\Monster Hunter World',
+            'F:\\SteamLibrary\\steamapps\\common\\Monster Hunter World',
+            'G:\\SteamLibrary\\steamapps\\common\\Monster Hunter World',
+            'H:\\SteamLibrary\\steamapps\\common\\Monster Hunter World',
+          ]
+          for(let i = 0; i < gamepaths.length; i++) {
+            let gamepath = path.resolve(gamepaths[i])
+            fs.access(gamepath + '\\MonsterHunterWorld.exe',fs.constants.F_OK, (err) => {
+              if (!err) {
+                _this.$store.dispatch('setgamePath', gamepath)
+                let modinfo = JSON.stringify({
+                  gamePath: gamepath
+                }, null, "\t")
+                fs.writeFile(Config, modinfo, function(err){})
+              }
+            })
+          }
+          
+        }
+      })
+    },
+    watch: {
+    },
+    computed: {
     },
     methods: {
       generateLicense (id, time) {
