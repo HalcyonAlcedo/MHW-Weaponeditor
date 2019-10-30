@@ -79,7 +79,7 @@ var mkdirs = function(dirname, callback) {
             // console.log(path.dirname(dirname));  
             mkdirs(path.dirname(dirname), function () {  
                 fs.mkdir(dirname, callback);  
-            });  
+            });
         }  
     });  
 }  

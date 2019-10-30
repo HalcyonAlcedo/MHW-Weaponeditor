@@ -76,8 +76,8 @@
       let Config = software + '\\config.json'
       fs.access(Config,fs.constants.F_OK, (err) => {
         if(!err) {
-          fs.readFile(Config,function (err, data) {
-            if(!err) {
+          fs.readFile(Config,function (error, data) {
+            if(!error) {
               let modinfo = JSON.parse(data)
               if(modinfo.gamePath !== '') {
                 _this.$store.dispatch('setgamePath', modinfo.gamePath)
@@ -86,12 +86,12 @@
           })
         } else {
           let gamepaths = [
-            'C:\\Program Files (x86)\Steam\\SteamApps\\common\\Monster Hunter World',
-            'D:\\Program Files (x86)\Steam\\SteamApps\\common\\Monster Hunter World',
-            'E:\\Program Files (x86)\Steam\\SteamApps\\common\\Monster Hunter World',
-            'F:\\Program Files (x86)\Steam\\SteamApps\\common\\Monster Hunter World',
-            'G:\\Program Files (x86)\Steam\\SteamApps\\common\\Monster Hunter World',
-            'H:\\Program Files (x86)\Steam\\SteamApps\\common\\Monster Hunter World',
+            'C:\\Program Files (x86)\\Steam\\SteamApps\\common\\Monster Hunter World',
+            'D:\\Program Files (x86)\\Steam\\SteamApps\\common\\Monster Hunter World',
+            'E:\\Program Files (x86)\\Steam\\SteamApps\\common\\Monster Hunter World',
+            'F:\\Program Files (x86)\\Steam\\SteamApps\\common\\Monster Hunter World',
+            'G:\\Program Files (x86)\\Steam\\SteamApps\\common\\Monster Hunter World',
+            'H:\\Program Files (x86)\\Steam\\SteamApps\\common\\Monster Hunter World',
             'C:\\SteamLibrary\\steamapps\\common\\Monster Hunter World',
             'D:\\SteamLibrary\\steamapps\\common\\Monster Hunter World',
             'E:\\SteamLibrary\\steamapps\\common\\Monster Hunter World',
@@ -103,6 +103,8 @@
             let gamepath = path.resolve(gamepaths[i])
             fs.access(gamepath + '\\MonsterHunterWorld.exe',fs.constants.F_OK, (err) => {
               if (!err) {
+                console.log('app game 搜索')
+                console.log(gamepath)
                 _this.$store.dispatch('setgamePath', gamepath)
                 let modinfo = JSON.stringify({
                   gamePath: gamepath

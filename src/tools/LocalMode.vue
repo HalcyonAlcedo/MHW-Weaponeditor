@@ -225,6 +225,9 @@
         wep_wsl: 'mdi-knife-military',
         bbtbl: 'mdi-knife-military',
         shl_tbl: 'mdi-knife-military',
+        mrl3: 'mdi-newspaper-variant-multiple',
+        evwp: 'mdi-hexagon-multiple',
+        tex: 'mdi-card-text',
         md: 'mdi-markdown',
       },
       editlist: [
@@ -256,12 +259,12 @@
     }),
     mounted () {
       let gamepaths = [
-        'C:\\Program Files (x86)\Steam\\SteamApps\\common\\Monster Hunter World',
-        'D:\\Program Files (x86)\Steam\\SteamApps\\common\\Monster Hunter World',
-        'E:\\Program Files (x86)\Steam\\SteamApps\\common\\Monster Hunter World',
-        'F:\\Program Files (x86)\Steam\\SteamApps\\common\\Monster Hunter World',
-        'G:\\Program Files (x86)\Steam\\SteamApps\\common\\Monster Hunter World',
-        'H:\\Program Files (x86)\Steam\\SteamApps\\common\\Monster Hunter World',
+        'C:\\Program Files (x86)\\Steam\\SteamApps\\common\\Monster Hunter World',
+        'D:\\Program Files (x86)\\Steam\\SteamApps\\common\\Monster Hunter World',
+        'E:\\Program Files (x86)\\Steam\\SteamApps\\common\\Monster Hunter World',
+        'F:\\Program Files (x86)\\Steam\\SteamApps\\common\\Monster Hunter World',
+        'G:\\Program Files (x86)\\Steam\\SteamApps\\common\\Monster Hunter World',
+        'H:\\Program Files (x86)\\Steam\\SteamApps\\common\\Monster Hunter World',
         'C:\\SteamLibrary\\steamapps\\common\\Monster Hunter World',
         'D:\\SteamLibrary\\steamapps\\common\\Monster Hunter World',
         'E:\\SteamLibrary\\steamapps\\common\\Monster Hunter World',
@@ -283,13 +286,20 @@
       },
     },
     watch: {
+      gamePath () {
+        this.selectgame (this.gamePath)
+      },
       gamedir (gamepath) {
         if(gamepath !== '') {
           let Config = path.join(__static, '../../config.json')
           let modinfo = JSON.stringify({
             gamePath: gamepath
           }, null, "\t")
-          fs.writeFile(Config, modinfo, function(err){})
+          fs.writeFile(Config, modinfo, function(err){
+            if (err) {
+              console.log(err)
+            }
+          })
         }
         this.$store.dispatch('setgamePath', gamepath)
         this.gamefile(gamepath + '\\nativePC')
@@ -403,7 +413,6 @@
                             })
                             
                           } else {
-                            let dir = nativepath[nativepath.length - 1]
                             let rootdir = _this.items.findIndex((n) => n.name === nativepath[0])
                             
                             if (rootdir >= 0) {
@@ -476,7 +485,9 @@
             console.log(err)
           } else {
             _this.$router.push('/hexedit').catch(err => {
-              console.log('all good')
+              if (err) {
+                console.log(err)
+              }
             })
             _this.$store.dispatch('setfile', file)
             _this.$store.dispatch('setdata', data)
@@ -491,7 +502,9 @@
             console.log(err)
           } else {
             _this.$router.push('/local/edit').catch(err => {
-              console.log('all good')
+              if (err) {
+                console.log(err)
+              }
             })
             _this.$store.dispatch('setfile', file)
             _this.$store.dispatch('setdata', data)
