@@ -491,6 +491,314 @@
         {
             "name": "帝王金弩·冰",
             "Weapon_Number": 130
+        },
+        {
+            "name": "防衛隊連裝式輕弩Ⅰ",
+            "Weapon_Number": 131
+        },
+        {
+            "name": "防衛隊連裝式輕弩Ⅱ",
+            "Weapon_Number": 132
+        },
+        {
+            "name": "防衛隊連裝式輕弩Ⅲ",
+            "Weapon_Number": 133
+        },
+        {
+            "name": "防衛隊連裝式輕弩Ⅳ",
+            "Weapon_Number": 134
+        },
+        {
+            "name": "防衛隊連裝式輕弩Ⅴ",
+            "Weapon_Number": 135
+        },
+        {
+            "name": "十字猛擊弩Ⅰ",
+            "Weapon_Number": 142
+        },
+        {
+            "name": "十字猛擊弩Ⅱ",
+            "Weapon_Number": 143
+        },
+        {
+            "name": "十字猛擊弩Ⅲ",
+            "Weapon_Number": 144
+        },
+        {
+            "name": "黑羽弩Ⅰ",
+            "Weapon_Number": 145
+        },
+        {
+            "name": "黑羽弩Ⅱ",
+            "Weapon_Number": 146
+        },
+        {
+            "name": "浮空龍颶風砲Ⅳ",
+            "Weapon_Number": 147
+        },
+        {
+            "name": "毀滅的契機【悲】",
+            "Weapon_Number": 148
+        },
+        {
+            "name": "夢魘種子Ⅰ",
+            "Weapon_Number": 149
+        },
+        {
+            "name": "夢魘種子Ⅱ",
+            "Weapon_Number": 150
+        },
+        {
+            "name": "斬龍迅擊弩",
+            "Weapon_Number": 151
+        },
+        {
+            "name": "罪罰迅擊弩Ⅰ",
+            "Weapon_Number": 152
+        },
+        {
+            "name": "罪罰迅擊弩Ⅱ",
+            "Weapon_Number": 153
+        },
+        {
+            "name": "爆鱗龍核心",
+            "Weapon_Number": 155
+        },
+        {
+            "name": "隱密輕弩Ⅰ",
+            "Weapon_Number": 156
+        },
+        {
+            "name": "隱密輕弩Ⅱ",
+            "Weapon_Number": 157
+        },
+        {
+            "name": "牙龍弩【風噬】Ⅰ",
+            "Weapon_Number": 158
+        },
+        {
+            "name": "牙龍弩【風噬】Ⅱ",
+            "Weapon_Number": 159
+        },
+        {
+            "name": "轟龍火砲Ⅰ",
+            "Weapon_Number": 160
+        },
+        {
+            "name": "轟龍火砲Ⅱ",
+            "Weapon_Number": 161
+        },
+        {
+            "name": "火龍破壞砲Ⅲ",
+            "Weapon_Number": 162
+        },
+        {
+            "name": "魂魄砲蒼炎弩",
+            "Weapon_Number": 163
+        },
+        {
+            "name": "銀光煌龍弩",
+            "Weapon_Number": 164
+        },
+        {
+            "name": "雷光迅擊弩Ⅳ",
+            "Weapon_Number": 165
+        },
+        {
+            "name": "王弩雷管",
+            "Weapon_Number": 166
+        },
+        {
+            "name": "王弩雷管‧改",
+            "Weapon_Number": 167
+        },
+        {
+            "name": "王牙弩【野雷】",
+            "Weapon_Number": 168
+        },
+        {
+            "name": "寒霜迅擊弩Ⅲ",
+            "Weapon_Number": 171
+        },
+        {
+            "name": "暴風加農",
+            "Weapon_Number": 172
+        },
+        {
+            "name": "暴風加農‧改",
+            "Weapon_Number": 173
+        },
+        {
+            "name": "暴風雹弩",
+            "Weapon_Number": 174
+        },
+        {
+            "name": "潟湖迅擊弩Ⅰ",
+            "Weapon_Number": 175
+        },
+        {
+            "name": "潟湖迅擊弩Ⅱ",
+            "Weapon_Number": 176
+        },
+        {
+            "name": "破碎發射器Ⅰ",
+            "Weapon_Number": 177
+        },
+        {
+            "name": "破碎發射器Ⅱ",
+            "Weapon_Number": 178
+        },
+        {
+            "name": "破碎發射器Ⅲ",
+            "Weapon_Number": 179
+        },
+        {
+            "name": "嚴冰飛鷹",
+            "Weapon_Number": 180
+        },
+        {
+            "name": "冰姬隼擊",
+            "Weapon_Number": 181
+        },
+        {
+            "name": "髑髏的絕望",
+            "Weapon_Number": 182
+        },
+        {
+            "name": "災厄髑髏",
+            "Weapon_Number": 183
+        },
+        {
+            "name": "蠻顎龍破壞砲Ⅳ",
+            "Weapon_Number": 184
+        },
+        {
+            "name": "晃射雷顎Ⅰ",
+            "Weapon_Number": 185
+        },
+        {
+            "name": "晃射雷顎Ⅱ",
+            "Weapon_Number": 186
+        },
+        {
+            "name": "泥岩龍輕弩Ⅳ",
+            "Weapon_Number": 187
+        },
+        {
+            "name": "冰魚龍發射器Ⅰ",
+            "Weapon_Number": 188
+        },
+        {
+            "name": "冰魚龍發射器Ⅱ",
+            "Weapon_Number": 189
+        },
+        {
+            "name": "火碎銃Ⅰ",
+            "Weapon_Number": 190
+        },
+        {
+            "name": "火碎銃Ⅱ",
+            "Weapon_Number": 191
+        },
+        {
+            "name": "巨牛大弩Ⅰ",
+            "Weapon_Number": 192
+        },
+        {
+            "name": "巨牛大弩Ⅱ",
+            "Weapon_Number": 193
+        },
+        {
+            "name": "土砂龍坍崩Ⅰ",
+            "Weapon_Number": 195
+        },
+        {
+            "name": "土砂龍坍崩Ⅱ",
+            "Weapon_Number": 196
+        },
+        {
+            "name": "碎龍射手Ⅰ",
+            "Weapon_Number": 197
+        },
+        {
+            "name": "碎龍射手Ⅱ",
+            "Weapon_Number": 198
+        },
+        {
+            "name": "業【羯磨】‧改",
+            "Weapon_Number": 200
+        },
+        {
+            "name": "冥府銃火",
+            "Weapon_Number": 201
+        },
+        {
+            "name": "死靈【冤魂】",
+            "Weapon_Number": 202
+        },
+        {
+            "name": "封龍弩Ⅰ",
+            "Weapon_Number": 203
+        },
+        {
+            "name": "封龍弩Ⅱ",
+            "Weapon_Number": 204
+        },
+        {
+            "name": "盛者必衰－散華－",
+            "Weapon_Number": 205
+        },
+        {
+            "name": "神島",
+            "Weapon_Number": 206
+        },
+        {
+            "name": "麒麟筒【三界三禍】",
+            "Weapon_Number": 208
+        },
+        {
+            "name": "水螅‧刺胞",
+            "Weapon_Number": 209
+        },
+        {
+            "name": "暴君‧刺胞",
+            "Weapon_Number": 210
+        },
+        {
+            "name": "鋼龍冰蜂寒弩",
+            "Weapon_Number": 211
+        },
+        {
+            "name": "新‧十字弩槍",
+            "Weapon_Number": 213
+        },
+        {
+            "name": "業弩暗黑狂亂",
+            "Weapon_Number": 214
+        },
+        {
+            "name": "魂焰龍弩‧炎妃",
+            "Weapon_Number": 219
+        },
+        {
+            "name": "魂焰龍弩‧滅盡",
+            "Weapon_Number": 220
+        },
+        {
+            "name": "魂焰龍弩‧冥燈",
+            "Weapon_Number": 221
+        },
+        {
+            "name": "劫難火砲",
+            "Weapon_Number": 222
+        },
+        {
+            "name": "公會宮殿弩槍",
+            "Weapon_Number": 223
+        },
+        {
+            "name": "宮廷警弩【狙星】",
+            "Weapon_Number": 232
         }
     ]
 }

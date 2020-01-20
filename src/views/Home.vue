@@ -91,6 +91,7 @@
         </v-list-item>
       </v-list>
       <v-divider></v-divider>
+      <!--
       <v-subheader>{{$t("Interface.Tools")}}</v-subheader>
       <v-list>
         <v-list-item @click="tools('data')">
@@ -137,6 +138,7 @@
         </v-tooltip>
       </v-list>
       <v-divider></v-divider>
+      -->
       <v-list
         subheader
         three-line>
@@ -220,13 +222,14 @@
           <v-list-item
             v-for="subItem in item.items"
             :key="subItem.title"
+            :disabled="subItem.disabled"
             @click="openfile(subItem.file),left = false"
           >
             <v-list-item-title>{{ subItem.title }}</v-list-item-title>
           </v-list-item>
         </v-list-group>
         <v-divider></v-divider>
-        <v-list-item @click="openfile('armor.am_dat'),left = false">
+        <v-list-item disabled @click="openfile('armor.am_dat'),left = false">
           <v-list-item-title>
             {{$t("Interface.equipment")}}
           </v-list-item-title>
@@ -240,7 +243,7 @@
       class="white--text"
       style="-webkit-app-region: drag"
     >
-      <span>&nbsp;&nbsp;&nbsp;By Alcedo  &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | {{$t("Interface.Data_version")}} 167796 | {{$t("Interface.Original_file_version")}} 167796 （{{$t("Interface.Extract_from")}} 2019-05-09） | {{$t("Interface.Current_file")}} {{file}}（{{weaponfilename}}）|</span>
+      <span>&nbsp;&nbsp;&nbsp;By Alcedo  &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | {{$t("Interface.Data_version")}} 10.12.01 | {{$t("Interface.Original_file_version")}} 10.12.01 （{{$t("Interface.Extract_from")}} 2020-01-20） | {{$t("Interface.Current_file")}} {{file}}（{{weaponfilename}}）|</span>
     </v-footer>
 
     <!--弹窗-->
@@ -429,13 +432,13 @@ export default {
         { title: this.$t('Weapon.Hunting_bow') + ' (bow)', file: 'bow.wp_dat_g' }
       ]
       let wpm = [
-        { title: this.$t('Weaponsmiscellaneous.Sharpness') + ' (kireaji.kire)', file: 'kireaji.kire' },
-        { title: this.$t('Weaponsmiscellaneous.Wswordattribute') + ' (wep_wsword.wep_wsd)', file: 'wep_wsword.wep_wsd' },
-        { title: this.$t('Weaponsmiscellaneous.Saxebottle') + ' (wep_saxe.wep_saxe)', file: 'wep_saxe.wep_saxe' },
-        { title: this.$t('Weaponsmiscellaneous.Bombardment') + ' (wep_glan.wep_glan)', file: 'wep_glan.wep_glan' },
-        { title: this.$t('Weaponsmiscellaneous.Syllable') + ' (wep_whistle.wep_wsl)', file: 'wep_whistle.wep_wsl' },
-        { title: this.$t('Weaponsmiscellaneous.Bottle') + ' (bottle_table.bbtbl)', file: 'bottle_table.bbtbl' },
-        { title: this.$t('Weaponsmiscellaneous.Shell') + ' (shell_table.shl_tbl)', file: 'shell_table.shl_tbl' }
+        { title: this.$t('Weaponsmiscellaneous.Sharpness') + ' (kireaji.kire)', file: 'kireaji.kire' , disabled: true},
+        { title: this.$t('Weaponsmiscellaneous.Wswordattribute') + ' (wep_wsword.wep_wsd)', file: 'wep_wsword.wep_wsd' , disabled: true},
+        { title: this.$t('Weaponsmiscellaneous.Saxebottle') + ' (wep_saxe.wep_saxe)', file: 'wep_saxe.wep_saxe' , disabled: true},
+        { title: this.$t('Weaponsmiscellaneous.Bombardment') + ' (wep_glan.wep_glan)', file: 'wep_glan.wep_glan' , disabled: true},
+        { title: this.$t('Weaponsmiscellaneous.Syllable') + ' (wep_whistle.wep_wsl)', file: 'wep_whistle.wep_wsl' , disabled: true},
+        { title: this.$t('Weaponsmiscellaneous.Bottle') + ' (bottle_table.bbtbl)', file: 'bottle_table.bbtbl' , disabled: true},
+        { title: this.$t('Weaponsmiscellaneous.Shell') + ' (shell_table.shl_tbl)', file: 'shell_table.shl_tbl' , disabled: true}
       ]
       return [
         {title: this.$t('Interface.Weapon'), items: wp},

@@ -1,57 +1,57 @@
 const hexAddress = (data) => {
   let HexRuler
   let HexPointer
-  if (data[7] === 0 && data[71] === 1 && data[136] === 2) {
-    HexRuler = 16 * 4 + 1 // 近程武器
+  if (data[11] === 0 && data[76] === 1 && data[142] === 2) {
+    HexRuler = 16 * 4 + 2 // 近程武器
     HexPointer = {
-      'wp_Number': [6, 1], // 6
-      'wp_Unprefixed_Model': [13, 2], // 12~13
-      'wp_Model': [15, 2], // 14~15
-      'wp_Minor_Model': [17, 2], // 16~17
-      'wp_Money': [24, 4], // 21~24
-      'wp_Rarity': [25, 1], // 25
-      'wp_Chopping_value': [26, 1], // 26
-      'wp_Chopping_grade': [27, 1], // 27
-      'wp_Damage_value': [29, 2, 'wpdamage'], // 28~29
-      'wp_Defense_value': [31, 2, 'wpdefense'], // 30~31
-      'wp_Heart_value': [32, 1, 'wpheart'], // 32
-      'wp_Visible_attributes': [33, 1], // 33
-      'wp_Visible_attribute_values': [35, 2, 'wpattribute'], // 34~35
-      'wp_Hidden_attribute': [36, 1], // 36
-      'wp_Hidden_attribute_values': [38, 2, 'wpattribute'], // 37~38
-      'wp_Seal_Dragon': [39, 1], // 39
-      'wp_Slot_grade_Number': [40, 1], // 40
-      'wp_Slot_grade_1': [41, 1], // 41
-      'wp_Slot_grade_2': [42, 1], // 42
-      'wp_Slot_grade_3': [43, 1], // 43
-      'wp_Special_attributes': [44, 1], // 44
-      'wp_Weapon_skills': [(HexRuler + 2), 1] // HexRuler(下一行) + 2
+      'wp_Number': [10, 1], // 6
+      'wp_Unprefixed_Model': [18, 2], // 12~13
+      'wp_Model': [20, 2], // 14~15
+      'wp_Minor_Model': [22, 2], // 16~17
+      'wp_Money': [29, 4], // 21~24
+      'wp_Rarity': [30, 1], // 25
+      'wp_Chopping_value': [31, 1], // 26
+      'wp_Chopping_grade': [32, 1], // 27
+      'wp_Damage_value': [34, 2, 'wpdamage'], // 28~29
+      'wp_Defense_value': [36, 2, 'wpdefense'], // 30~31
+      'wp_Heart_value': [37, 1, 'wpheart'], // 32
+      'wp_Visible_attributes': [38, 1], // 33
+      'wp_Visible_attribute_values': [40, 2, 'wpattribute'], // 34~35
+      'wp_Hidden_attribute': [41, 1], // 36
+      'wp_Hidden_attribute_values': [43, 2, 'wpattribute'], // 37~38
+      'wp_Seal_Dragon': [44, 1], // 39
+      'wp_Slot_grade_Number': [45, 1], // 40
+      'wp_Slot_grade_1': [46, 1], // 41
+      'wp_Slot_grade_2': [47, 1], // 42
+      'wp_Slot_grade_3': [48, 1], // 43
+      'wp_Special_attributes': [49, 1], // 44
+      'wp_Weapon_skills': [(HexRuler + 7), 1] // HexRuler(下一行) + 2
     }
-  } else if (data[7] === 0 && data[74] === 1 && data[142] === 2) {
-    HexRuler = 16 * 4 + 4 // 远程武器
+  } else if (data[11] === 0 && data[79] === 1 && data[148] === 2) {
+    HexRuler = 16 * 4 + 5 // 远程武器
     HexPointer = {
-      'wp_Number': [6, 1], // 6
-      'wp_Unprefixed_Model': [13, 2], // 12~13
-      'wp_Model': [15, 2], // 14~15
-      'wp_Minor_Model': [17, 2], // 16~17
-      'wp_Money': [28, 4], // 25~28
-      'wp_Rarity': [29, 1], // 29
-      'wp_Damage_value': [31, 2, 'wpdamage'], // 30~31
-      'wp_Defense_value': [33, 2, 'wpdefense'], // 32~33
-      'wp_Heart_value': [34, 1, 'wpheart'], // 34
-      'wp_Visible_attributes': [35, 1], // 35
-      'wp_Visible_attribute_values': [37, 2, 'wpattribute'], // 36~37
-      'wp_Hidden_attribute': [38, 1], // 38
-      'wp_Hidden_attribute_values': [40, 2, 'wpattribute'], // 39~40
-      'wp_Seal_Dragon': [41, 1], // 41
-      'wp_Cartridge_matching': [42, 1], // 42
-      'wp_Offset_size': [44, 1], // 44
-      'wp_Slot_grade_Number': [45, 1], // 45
-      'wp_Slot_grade_1': [46, 1], // 46
-      'wp_Slot_grade_2': [47, 1], // 47
-      'wp_Slot_grade_3': [48, 1], // 48
-      'wp_Special_projectile': [62, 1], // 62
-      'wp_Weapon_skills': [(HexRuler + 2), 1] // HexRuler(下一行) + 2
+      'wp_Number': [10, 1], // 6
+      'wp_Unprefixed_Model': [18, 2], // 12~13
+      'wp_Model': [20, 2], // 14~15
+      'wp_Minor_Model': [22, 2], // 16~17
+      'wp_Money': [33, 4], // 25~28
+      'wp_Rarity': [34, 1], // 29
+      'wp_Damage_value': [36, 2, 'wpdamage'], // 30~31
+      'wp_Defense_value': [38, 2, 'wpdefense'], // 32~33
+      'wp_Heart_value': [39, 1, 'wpheart'], // 34
+      'wp_Visible_attributes': [40, 1], // 35
+      'wp_Visible_attribute_values': [42, 2, 'wpattribute'], // 36~37
+      'wp_Hidden_attribute': [43, 1], // 38
+      'wp_Hidden_attribute_values': [45, 2, 'wpattribute'], // 39~40
+      'wp_Seal_Dragon': [46, 1], // 41
+      'wp_Cartridge_matching': [47, 1], // 42
+      'wp_Offset_size': [49, 1], // 44
+      'wp_Slot_grade_Number': [50, 1], // 45
+      'wp_Slot_grade_1': [51, 1], // 46
+      'wp_Slot_grade_2': [52, 1], // 47
+      'wp_Slot_grade_3': [53, 1], // 48
+      'wp_Special_projectile': [67, 1], // 62
+      'wp_Weapon_skills': [(HexRuler + 7), 1] // HexRuler(下一行) + 2
     }
   } else if (data[6] === 0 && data[24] === 1 && data[42] === 2) {
     HexRuler = 18 // 斩味

@@ -512,6 +512,330 @@
         {
             "name": "帝王金大劍·雷",
             "Weapon_Number": 134
+        },
+        {
+            "name": "防衛隊炎刃型大劍Ⅰ",
+            "Weapon_Number": 135
+        },
+        {
+            "name": "防衛隊炎刃型大劍Ⅱ",
+            "Weapon_Number": 136
+        },
+        {
+            "name": "防衛隊炎刃型大劍Ⅲ",
+            "Weapon_Number": 137
+        },
+        {
+            "name": "防衛隊炎刃型大劍Ⅳ",
+            "Weapon_Number": 138
+        },
+        {
+            "name": "防衛隊炎刃型大劍Ⅴ",
+            "Weapon_Number": 139
+        },
+        {
+            "name": "鉻鋼死神鐮刀Ⅰ",
+            "Weapon_Number": 149
+        },
+        {
+            "name": "鉻鋼死神鐮刀Ⅱ",
+            "Weapon_Number": 150
+        },
+        {
+            "name": "鉻鋼死神鐮刀Ⅲ",
+            "Weapon_Number": 151
+        },
+        {
+            "name": "滅鬼兇器【斷】",
+            "Weapon_Number": 152
+        },
+        {
+            "name": "雷光懲罰者Ⅳ",
+            "Weapon_Number": 153
+        },
+        {
+            "name": "迅雷斷裂斧Ⅰ",
+            "Weapon_Number": 154
+        },
+        {
+            "name": "迅雷斷裂斧Ⅱ",
+            "Weapon_Number": 155
+        },
+        {
+            "name": "霜炎Ⅲ",
+            "Weapon_Number": 157
+        },
+        {
+            "name": "冰尖巨牙",
+            "Weapon_Number": 158
+        },
+        {
+            "name": "冰尖巨牙‧改",
+            "Weapon_Number": 159
+        },
+        {
+            "name": "斷海冰牙",
+            "Weapon_Number": 160
+        },
+        {
+            "name": "凶豺龍兵器Ⅰ",
+            "Weapon_Number": 161
+        },
+        {
+            "name": "凶豺龍兵器Ⅱ",
+            "Weapon_Number": 162
+        },
+        {
+            "name": "巨牛大斧Ⅰ",
+            "Weapon_Number": 163
+        },
+        {
+            "name": "巨牛大斧Ⅱ",
+            "Weapon_Number": 164
+        },
+        {
+            "name": "蛇神斷頭台Ⅰ",
+            "Weapon_Number": 166
+        },
+        {
+            "name": "蛇神斷頭台Ⅱ",
+            "Weapon_Number": 167
+        },
+        {
+            "name": "隱密之炎Ⅰ",
+            "Weapon_Number": 168
+        },
+        {
+            "name": "隱密之炎Ⅱ",
+            "Weapon_Number": 169
+        },
+        {
+            "name": "火碎劍Ⅰ",
+            "Weapon_Number": 170
+        },
+        {
+            "name": "火碎劍Ⅱ",
+            "Weapon_Number": 171
+        },
+        {
+            "name": "斬龍之炎Ⅰ",
+            "Weapon_Number": 172
+        },
+        {
+            "name": "斬龍之炎Ⅱ",
+            "Weapon_Number": 173
+        },
+        {
+            "name": "曼陀羅茁壯Ⅰ",
+            "Weapon_Number": 174
+        },
+        {
+            "name": "曼陀羅茁壯Ⅱ",
+            "Weapon_Number": 175
+        },
+        {
+            "name": "潟湖巨像Ⅰ",
+            "Weapon_Number": 176
+        },
+        {
+            "name": "潟湖巨像Ⅱ",
+            "Weapon_Number": 177
+        },
+        {
+            "name": "火龍煌劍‧改",
+            "Weapon_Number": 178
+        },
+        {
+            "name": "火龍煌炎劍",
+            "Weapon_Number": 179
+        },
+        {
+            "name": "輝劍火龍",
+            "Weapon_Number": 180
+        },
+        {
+            "name": "大鬼龍顎Ⅰ",
+            "Weapon_Number": 181
+        },
+        {
+            "name": "大鬼龍顎Ⅱ",
+            "Weapon_Number": 182
+        },
+        {
+            "name": "大鬼龍顎Ⅲ",
+            "Weapon_Number": 183
+        },
+        {
+            "name": "嚴冰之翼",
+            "Weapon_Number": 184
+        },
+        {
+            "name": "冰翼靈羽",
+            "Weapon_Number": 185
+        },
+        {
+            "name": "轟龍大顎",
+            "Weapon_Number": 186
+        },
+        {
+            "name": "轟龍大顎‧改",
+            "Weapon_Number": 187
+        },
+        {
+            "name": "轟大劍【王虎】",
+            "Weapon_Number": 188
+        },
+        {
+            "name": "魔物的狂氣",
+            "Weapon_Number": 189
+        },
+        {
+            "name": "怨憎魔物",
+            "Weapon_Number": 190
+        },
+        {
+            "name": "蠻顎大劍‧改",
+            "Weapon_Number": 191
+        },
+        {
+            "name": "兵器蠻炎大劍",
+            "Weapon_Number": 192
+        },
+        {
+            "name": "兵器雷顎大劍",
+            "Weapon_Number": 193
+        },
+        {
+            "name": "兵器雷顎大劍‧改",
+            "Weapon_Number": 194
+        },
+        {
+            "name": "兵器蠻雷大劍",
+            "Weapon_Number": 195
+        },
+        {
+            "name": "激流巨像Ⅳ",
+            "Weapon_Number": 196
+        },
+        {
+            "name": "夜神剃刀Ⅰ",
+            "Weapon_Number": 198
+        },
+        {
+            "name": "夜神剃刀Ⅱ",
+            "Weapon_Number": 199
+        },
+        {
+            "name": "土砂龍巨漢Ⅰ",
+            "Weapon_Number": 200
+        },
+        {
+            "name": "土砂龍巨漢Ⅱ",
+            "Weapon_Number": 201
+        },
+        {
+            "name": "罪罰粉碎者Ⅰ",
+            "Weapon_Number": 202
+        },
+        {
+            "name": "罪罰粉碎者Ⅱ",
+            "Weapon_Number": 203
+        },
+        {
+            "name": "激骨鎚削岩劍Ⅰ",
+            "Weapon_Number": 204
+        },
+        {
+            "name": "激骨鎚削岩劍Ⅱ",
+            "Weapon_Number": 205
+        },
+        {
+            "name": "碎龍巨劍",
+            "Weapon_Number": 206
+        },
+        {
+            "name": "爆大劍惡霸之刃",
+            "Weapon_Number": 207
+        },
+        {
+            "name": "封龍大劍Ⅰ",
+            "Weapon_Number": 209
+        },
+        {
+            "name": "封龍大劍Ⅱ",
+            "Weapon_Number": 210
+        },
+        {
+            "name": "無相法身－不動－",
+            "Weapon_Number": 211
+        },
+        {
+            "name": "岩漿衛士熔山劍",
+            "Weapon_Number": 212
+        },
+        {
+            "name": "召雷劍【麒麟帝】",
+            "Weapon_Number": 213
+        },
+        {
+            "name": "鋼龍寒冰大劍",
+            "Weapon_Number": 214
+        },
+        {
+            "name": "龍顎劍【絕牙】",
+            "Weapon_Number": 216
+        },
+        {
+            "name": "業劍暗黑暴食",
+            "Weapon_Number": 217
+        },
+        {
+            "name": "魂焰剛劍‧炎妃",
+            "Weapon_Number": 223
+        },
+        {
+            "name": "魂焰剛劍‧滅盡",
+            "Weapon_Number": 224
+        },
+        {
+            "name": "魂焰剛劍‧冥燈",
+            "Weapon_Number": 225
+        },
+        {
+            "name": "劫難之刃",
+            "Weapon_Number": 226
+        },
+        {
+            "name": "吼大劍【荒咬】",
+            "Weapon_Number": 227
+        },
+        {
+            "name": "冰魚龍斬劍Ⅰ",
+            "Weapon_Number": 228
+        },
+        {
+            "name": "冰魚龍斬劍Ⅱ",
+            "Weapon_Number": 229
+        },
+        {
+            "name": "冷凍旗魚",
+            "Weapon_Number": 230
+        },
+        {
+            "name": "冷凍劍魚",
+            "Weapon_Number": 231
+        },
+        {
+            "name": "公會宮殿大劍",
+            "Weapon_Number": 232
+        },
+        {
+            "name": "瞬間冷凍劍魚",
+            "Weapon_Number": 234
+        },
+        {
+            "name": "宮廷王劍【金星】",
+            "Weapon_Number": 239
         }
     ]
 }

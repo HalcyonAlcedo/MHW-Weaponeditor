@@ -2002,7 +2002,8 @@
           {value: 0, text: this.$t('WeaponExplain.Nothing')},
           {value: 1, text: this.$t('WeaponExplain.Small')},
           {value: 2, text: this.$t('WeaponExplain.Inside')},
-          {value: 3, text: this.$t('WeaponExplain.Big')}
+          {value: 3, text: this.$t('WeaponExplain.Big')},
+          {value: 4, text: this.$t('WeaponExplain.Verybig')}
         ]
       },
       grooveitem () {
@@ -2030,7 +2031,8 @@
           {value: 0, text: this.$t('WeaponExplain.NoGroove')},
           {value: 1, text: this.$t('WeaponExplain.OneGroovel')},
           {value: 2, text: this.$t('WeaponExplain.TwoGroovel')},
-          {value: 3, text: this.$t('WeaponExplain.ThreeGroovel')}
+          {value: 3, text: this.$t('WeaponExplain.ThreeGroovel')},
+          {value: 4, text: this.$t('WeaponExplain.FourGroovel')}
         ]
       },
       specialprojectileitem () {
@@ -2138,7 +2140,12 @@
           {value: 4, text: 'Rank5'},
           {value: 5, text: 'Rank6'},
           {value: 6, text: 'Rank7'},
-          {value: 7, text: 'Rank8'}
+          {value: 7, text: 'Rank8'},
+          {value: 8, text: 'Rank9'},
+          {value: 9, text: 'Rank10'},
+          {value: 10, text: 'Rank11'},
+          {value: 11, text: 'Rank12'},
+          {value: 12, text: 'Rank13'},
         ]
       },
       bombardtypeitem () {

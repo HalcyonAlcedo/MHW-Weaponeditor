@@ -15,7 +15,7 @@ const mutations = {
     state.file = file
   },
   FILE_SET_NAME (state, filedata) {
-    let file = [filedata[0], filedata[1], filedata[2]]
+    let file = [filedata[0], filedata[1], filedata[2], filedata[3], filedata[4], filedata[5], filedata[6]]
     if (state.Oldversion) {
       switch (state.file.substring(state.file.lastIndexOf('\\') + 1)) {
         case 'l_sword.wp_dat':
@@ -95,46 +95,48 @@ const mutations = {
       }
     } else {
       switch (file.join('-')) {
-        case '134-1-135':
+        case '1-16-9-24-193-1-44':
           state.filename = 'l_sword.wp_dat'
           break
-        case '134-1-142':
+        case '1-16-9-24-193-1-42':
           state.filename = 'sword.wp_dat'
           break
-        case '134-1-132':
+        case '1-16-9-24-193-1-37':
           state.filename = 'hammer.wp_dat'
           break
-        case '134-1-133':
-          state.filename = 'lance.wp_dat'
+        case '1-16-9-24-193-1-36':
+          if (state.file.substring(state.file.lastIndexOf('\\') + 1) === 'lance.wp_dat') {
+            state.filename = 'lance.wp_dat'
+          } else {
+            state.filename = 'whistle.wp_dat'
+          }
           break
-        case '134-1-134':
-          state.filename = 'w_sword.wp_dat'
+        case '1-16-9-24-193-1-40':
+          if (state.file.substring(state.file.lastIndexOf('\\') + 1) === 'w_sword.wp_dat') {
+            state.filename = 'w_sword.wp_dat'
+          } else {
+            state.filename = 'tachi.wp_dat'
+          }
           break
-        case '134-1-126':
+        case '1-16-9-24-193-1-31':
           state.filename = 's_axe.wp_dat'
           break
-        case '134-1-128':
+        case '1-16-9-24-193-1-33':
           state.filename = 'rod.wp_dat'
           break
-        case '134-1-129':
-          state.filename = 'tachi.wp_dat'
-          break
-        case '177-1-131':
+        case '1-16-9-24-29-2-37':
           state.filename = 'lbg.wp_dat_g'
           break
-        case '134-1-131':
-          state.filename = 'whistle.wp_dat'
-          break
-        case '177-1-124':
+        case '1-16-9-24-29-2-32':
           state.filename = 'hbg.wp_dat_g'
           break
-        case '134-1-125':
+        case '1-16-9-24-193-1-30':
           state.filename = 'g_lance.wp_dat'
           break
-        case '134-1-121':
+        case '1-16-9-24-193-1-26':
           state.filename = 'c_axe.wp_dat'
           break
-        case '177-1-122':
+        case '1-16-9-24-29-2-28':
           state.filename = 'bow.wp_dat_g'
           break
         case '119-1-119':
