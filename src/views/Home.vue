@@ -434,10 +434,10 @@ export default {
       let wpm = [
         { title: this.$t('Weaponsmiscellaneous.Sharpness') + ' (kireaji.kire)', file: 'kireaji.kire'},
         { title: this.$t('Weaponsmiscellaneous.Wswordattribute') + ' (wep_wsword.wep_wsd)', file: 'wep_wsword.wep_wsd'},
-        { title: this.$t('Weaponsmiscellaneous.Saxebottle') + ' (wep_saxe.wep_saxe)', file: 'wep_saxe.wep_saxe' , disabled: true},
-        { title: this.$t('Weaponsmiscellaneous.Bombardment') + ' (wep_glan.wep_glan)', file: 'wep_glan.wep_glan' , disabled: true},
-        { title: this.$t('Weaponsmiscellaneous.Syllable') + ' (wep_whistle.wep_wsl)', file: 'wep_whistle.wep_wsl' , disabled: true},
-        { title: this.$t('Weaponsmiscellaneous.Bottle') + ' (bottle_table.bbtbl)', file: 'bottle_table.bbtbl' , disabled: true},
+        { title: this.$t('Weaponsmiscellaneous.Saxebottle') + ' (wep_saxe.wep_saxe)', file: 'wep_saxe.wep_saxe'},
+        { title: this.$t('Weaponsmiscellaneous.Bombardment') + ' (wep_glan.wep_glan)', file: 'wep_glan.wep_glan'},
+        { title: this.$t('Weaponsmiscellaneous.Syllable') + ' (wep_whistle.wep_wsl)', file: 'wep_whistle.wep_wsl'},
+        { title: this.$t('Weaponsmiscellaneous.Bottle') + ' (bottle_table.bbtbl)', file: 'bottle_table.bbtbl'},
         { title: this.$t('Weaponsmiscellaneous.Shell') + ' (shell_table.shl_tbl)', file: 'shell_table.shl_tbl'}
       ]
       return [
@@ -746,6 +746,15 @@ export default {
       e.stopPropagation()
     })
     this.Explain = true
+    this.ipc.on('vc-editdata', (event, arg) => {
+      let regdata = arg['HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{05360E8D-2964-400C-8C25-1921B7F5CA49}'].values
+      let version = regdata.DisplayVersion.value.split(".")
+      if(version[0] != 14 || version[1] < 23) {
+        _this.snackbar.text = _this.$t('Interface.VCLow_version')
+        _this.snackbar.snackbar = true
+      }
+    })
+    this.ipc.send('check-vc')
   }
 }
 </script>

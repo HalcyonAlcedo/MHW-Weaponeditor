@@ -99,7 +99,11 @@ const mutations = {
           state.filename = 'l_sword.wp_dat'
           break
         case '1-16-9-24-193-1-42':
-          state.filename = 'sword.wp_dat'
+          if (state.file.substring(state.file.lastIndexOf('\\') + 1) === 'wep_saxe.wep_saxe') {
+            state.filename = 'wep_saxe.wep_saxe'
+          } else {
+            state.filename = 'sword.wp_dat'
+          }
           break
         case '1-16-9-24-193-1-37':
           state.filename = 'hammer.wp_dat'
@@ -148,13 +152,10 @@ const mutations = {
         case '1-16-9-24-135-0-226':
           state.filename = 'skill_data.skl_dat'
           break
-        case '119-1-15':
+        case '1-16-9-24-194-1-21':
           state.filename = 'wep_glan.wep_glan'
           break
-        case '119-1-42':
-          state.filename = 'wep_saxe.wep_saxe'
-          break
-        case '119-1-50':
+        case '1-16-9-24-193-1-50':
           state.filename = 'wep_whistle.wep_wsl'
           break
         case '1-16-9-24-193-1-8':
@@ -163,7 +164,7 @@ const mutations = {
         case '93-0-25':
           state.filename = 'armor.am_dat'
           break
-        case '166-1-20':
+        case '1-16-9-24-19-2-26':
           state.filename = 'bottle_table.bbtbl'
           break
         case '1-16-9-24-29-2-186':

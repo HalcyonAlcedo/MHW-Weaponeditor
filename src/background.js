@@ -82,6 +82,7 @@ app.on('ready', async () => {
 
   }
 
+  //更新
   EAU.init({
     'api': 'https://mhwee.com/update.php', // The API EAU will talk to
     'server': false, // Where to check. true: server side, false: client side, default: true.
@@ -137,6 +138,15 @@ ipcMain.on('window-all-closed', () => {
 
 ipcMain.on('hide-window', () => {
   win.minimize()
+})
+
+ipcMain.on('check-vc', (event, arg) => {
+  //检查环境
+  let regedit = require('regedit');
+  regedit.setExternalVBSLocation('resources/regedit/vbs');
+  regedit.list(['HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{05360E8D-2964-400C-8C25-1921B7F5CA49}'], function(err, result) {
+    event.reply('vc-editdata', result)
+  })
 })
 
 // Exit cleanly on request from parent process in development mode.

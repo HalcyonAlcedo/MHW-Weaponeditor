@@ -25,15 +25,15 @@ const hexAddress = (data) => {
       'wp_Slot_grade_2': [47, 1], // 42
       'wp_Slot_grade_3': [48, 1], // 43
       'wp_Special_attributes': [49, 1], // 44
-      'wp_Weapon_skills': [(HexRuler + 7), 1] // HexRuler(下一行) + 2
+      'wp_Weapon_skills': [(HexRuler + 6), 1] // HexRuler(下一行) + 2
     }
   } else if (data[11] === 0 && data[79] === 1 && data[148] === 2) {
     HexRuler = 16 * 4 + 5 // 远程武器
     HexPointer = {
       'wp_Number': [10, 1], // 6
-      'wp_Unprefixed_Model': [18, 2], // 12~13
-      'wp_Model': [20, 2], // 14~15
-      'wp_Minor_Model': [22, 2], // 16~17
+      'wp_Unprefixed_Model': [17, 2], // 12~13
+      'wp_Model': [19, 2], // 14~15
+      'wp_Minor_Model': [21, 2], // 16~17
       'wp_Money': [33, 4], // 25~28
       'wp_Rarity': [34, 1], // 29
       'wp_Damage_value': [36, 2, 'wpdamage'], // 30~31
@@ -51,7 +51,7 @@ const hexAddress = (data) => {
       'wp_Slot_grade_2': [52, 1], // 47
       'wp_Slot_grade_3': [53, 1], // 48
       'wp_Special_projectile': [67, 1], // 62
-      'wp_Weapon_skills': [(HexRuler + 7), 1] // HexRuler(下一行) + 2
+      'wp_Weapon_skills': [(HexRuler + 6), 1] // HexRuler(下一行) + 2
     }
   } else if (data[10] === 0 && data[28] === 1 && data[46] === 2) {
     HexRuler = 18 // 斩味
@@ -79,27 +79,27 @@ const hexAddress = (data) => {
     HexPointer = {
       'ri_Number': [15, 4] // 11~15
     }
-  } else if (data[2] === 42 && data[6] === 0 && data[13] === 1 && data[20] === 2) {
+  } else if (data[4] === 193 && data[6] === 42 && data[10] === 0 && data[17] === 1 && data[24] === 2) {
     HexRuler = 7 // 斩瓶
     HexPointer = {
-      'sa_Number': [9, 4], // 6~9
-      'sa_Attribute': [10, 1], // 10
-      'sa_Attribute_value': [12, 2, 'wpattribute'] // 11~12
+      'sa_Number': [13, 4], // 6~9
+      'sa_Attribute': [14, 1], // 10
+      'sa_Attribute_value': [16, 2, 'wpattribute'] // 11~12
     }
-  } else if (data[2] === 50 && data[6] === 0 && data[13] === 1 && data[20] === 2) {
+  } else if (data[4] === 193 && data[6] === 50 && data[10] === 0 && data[17] === 1 && data[24] === 2) {
     HexRuler = 7 // 狩猎笛
     HexPointer = {
-      'ww_Number': [9, 4], // 6~9
-      'ww_Timbre1': [10, 1], // 10
-      'ww_Timbre2': [11, 1], // 11
-      'ww_Timbre3': [12, 1] // 12
+      'ww_Number': [13, 4], // 6~9
+      'ww_Timbre1': [14, 1], // 10
+      'ww_Timbre2': [15, 1], // 11
+      'ww_Timbre3': [16, 1] // 12
     }
-  } else if (data[6] === 0 && data[14] === 1 && data[22] === 2) {
+  } else if (data[4] === 194 && data[6] === 21 && data[10] === 0 && data[18] === 1 && data[26] === 2) {
     HexRuler = 8 // 铳枪
     HexPointer = {
-      'gl_Number': [9, 4], // 6~9
-      'gl_bombard_type': [11, 2], // 10~11
-      'gl_bombard_level': [13, 2] // 12~13
+      'gl_Number': [13, 4], // 6~9
+      'gl_bombard_type': [15, 2], // 10~11
+      'gl_bombard_level': [17, 2] // 12~13
     }
   } else if (data[2] === 120 && data[6] === 0 && data[17] === 1 && data[28] === 1) {
     HexRuler = 10 // 技能
@@ -284,16 +284,16 @@ const hexAddress = (data) => {
         Speed: [111, 1],
       }
     }
-  } else if (data[0] === 166 && data[1] === 1 && data[2] === 20) {
+  } else if (data[4] === 29 && data[5] === 2 && data[6] === 26) {
     HexRuler = 6 // 弓瓶
     HexPointer = {
       'bt_Number': 'auto',
-      'bt_chopping': [7, 1], // 6~9
-      'bt_enhance': [8, 1], // 10~11
-      'bt_paralysis': [9, 1], // 12~13
-      'bt_poison': [10, 1], // 12~13
-      'bt_sleep': [11, 1], // 12~13
-      'bt_bomb': [12, 1] // 12~13
+      'bt_chopping': [10, 1], // 6~9
+      'bt_enhance': [11, 1], // 10~11
+      'bt_paralysis': [12, 1], // 12~13
+      'bt_poison': [13, 1], // 12~13
+      'bt_sleep': [14, 1], // 12~13
+      'bt_bomb': [15, 1] // 12~13
     }
   } else if (data[10] === 1 && data[59] === 2 && data[123] === 3) {
     HexRuler = 60 // 装备

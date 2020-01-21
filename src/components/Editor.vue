@@ -2161,7 +2161,8 @@
           {value: 1, text: 'LV2'},
           {value: 2, text: 'LV3'},
           {value: 3, text: 'LV4'},
-          {value: 4, text: 'LV5'}
+          {value: 4, text: 'LV5'},
+          {value: 5, text: 'LV5'}
         ]
       },
       shmodelist () {
