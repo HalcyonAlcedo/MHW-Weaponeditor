@@ -139,13 +139,13 @@ const mutations = {
         case '1-16-9-24-29-2-28':
           state.filename = 'bow.wp_dat_g'
           break
-        case '119-1-119':
+        case '1-16-9-24-193-1-0':
           state.filename = 'kireaji.kire'
           break
         case '9-1-61':
           state.filename = 'rod_insect.rod_inse'
           break
-        case '94-0-118':
+        case '1-16-9-24-135-0-226':
           state.filename = 'skill_data.skl_dat'
           break
         case '119-1-15':
@@ -157,7 +157,7 @@ const mutations = {
         case '119-1-50':
           state.filename = 'wep_whistle.wep_wsl'
           break
-        case '119-1-4':
+        case '1-16-9-24-193-1-8':
           state.filename = 'wep_wsword.wep_wsd'
           break
         case '93-0-25':
@@ -166,7 +166,7 @@ const mutations = {
         case '166-1-20':
           state.filename = 'bottle_table.bbtbl'
           break
-        case '166-1-77':
+        case '1-16-9-24-29-2-186':
             state.filename = 'shell_table.shl_tbl'
             break
         default:

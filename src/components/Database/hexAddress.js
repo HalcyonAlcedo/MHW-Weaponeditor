@@ -53,26 +53,26 @@ const hexAddress = (data) => {
       'wp_Special_projectile': [67, 1], // 62
       'wp_Weapon_skills': [(HexRuler + 7), 1] // HexRuler(下一行) + 2
     }
-  } else if (data[6] === 0 && data[24] === 1 && data[42] === 2) {
+  } else if (data[10] === 0 && data[28] === 1 && data[46] === 2) {
     HexRuler = 18 // 斩味
     HexPointer = {
-      'k_Number': [9, 4], // 6~9
-      'k_Sharpness_red': [11, 2], // 8~9
-      'k_Sharpness_orange': [13, 2], // 10~11
-      'k_Sharpness_yellow': [15, 2], // 12~13
-      'k_Sharpness_green': [17, 2], // 14~15
-      'k_Sharpness_blue': [19, 2], // 16~17
-      'k_Sharpness_white': [21, 2], // 08~19
-      'k_Sharpness_purple': [23, 2] // 20~21
+      'k_Number': [13, 4], // 6~9
+      'k_Sharpness_red': [15, 2], // 8~9
+      'k_Sharpness_orange': [17, 2], // 10~11
+      'k_Sharpness_yellow': [19, 2], // 12~13
+      'k_Sharpness_green': [21, 2], // 14~15
+      'k_Sharpness_blue': [23, 2], // 16~17
+      'k_Sharpness_white': [25, 2], // 08~19
+      'k_Sharpness_purple': [27, 2] // 20~21
     }
-  } else if (data[6] === 0 && data[16] === 1 && data[26] === 2) {
+  } else if (data[10] === 0 && data[20] === 1 && data[30] === 2) {
     HexRuler = 10 // 双刀双属性
     HexPointer = {
-      'ws_Number': [9, 4], // 6~9
-      'ws_First_attribute': [10, 1], // 10
-      'ws_First_attribute_values': [12, 2, 'wpattribute'], // 11~12
-      'ws_Second_attribute': [13, 1], // 13
-      'ws_Second_attribute_values': [15, 2, 'wpattribute'] // 14~15
+      'ws_Number': [13, 4], // 6~9
+      'ws_First_attribute': [14, 1], // 10
+      'ws_First_attribute_values': [16, 2, 'wpattribute'], // 11~12
+      'ws_Second_attribute': [17, 1], // 13
+      'ws_Second_attribute_values': [19, 2, 'wpattribute'] // 14~15
     }
   } else if (data[6] === 0 && data[16] === 1 && data[26] === 2) {
     HexRuler = 27 // 虫
@@ -104,184 +104,184 @@ const hexAddress = (data) => {
   } else if (data[2] === 120 && data[6] === 0 && data[17] === 1 && data[28] === 1) {
     HexRuler = 10 // 技能
     HexPointer = {
-      'sk_Number': [7, 2], // 6~9
-      'sk_level': [8, 1], // 8
-      'sk_First_effect': [10, 2], // 9~10
-      'sk_Second_effect': [12, 2] // 11~12
+      'sk_Number': [11, 2], // 6~9
+      'sk_level': [12, 1], // 8
+      'sk_First_effect': [14, 2], // 9~10
+      'sk_Second_effect': [16, 2] // 11~12
     }
-  } else if (data[0] === 166 && data[1] === 1 && data[2] === 77) {
+  } else if (data[4] === 29 && data[5] === 2 && data[6] === 186) {
     HexRuler = 111 // 弩弹
     HexPointer = {
       'sh_Number': 'auto',
       'Normal_1': {
-        Ammunition: [6, 1],
-        Model: [7, 1],
-        Speed: [8, 1],
+        Ammunition: [10, 1],
+        Model: [11, 1],
+        Speed: [12, 1],
       },
       'Normal_2': {
-        Ammunition: [9, 1],
-        Model: [10, 1],
-        Speed: [11, 1],
+        Ammunition: [13, 1],
+        Model: [14, 1],
+        Speed: [15, 1],
       },
       'Normal_3': {
-        Ammunition: [12, 1],
-        Model: [13, 1],
-        Speed: [14, 1],
+        Ammunition: [16, 1],
+        Model: [17, 1],
+        Speed: [18, 1],
       },
       'Through_1': {
-        Ammunition: [15, 1],
-        Model: [16, 1],
-        Speed: [17, 1],
+        Ammunition: [19, 1],
+        Model: [20, 1],
+        Speed: [21, 1],
       },
       'Through_2': {
-        Ammunition: [18, 1],
-        Model: [19, 1],
-        Speed: [20, 1],
+        Ammunition: [22, 1],
+        Model: [23, 1],
+        Speed: [24, 1],
       },
       'Through_3': {
-        Ammunition: [21, 1],
-        Model: [22, 1],
-        Speed: [23, 1],
+        Ammunition: [25, 1],
+        Model: [26, 1],
+        Speed: [27, 1],
       },
       'Scattering_1': {
-        Ammunition: [24, 1],
-        Model: [25, 1],
-        Speed: [26, 1],
+        Ammunition: [28, 1],
+        Model: [29, 1],
+        Speed: [30, 1],
       },
       'Scattering_2': {
-        Ammunition: [27, 1],
-        Model: [28, 1],
-        Speed: [29, 1],
+        Ammunition: [31, 1],
+        Model: [32, 1],
+        Speed: [33, 1],
       },
       'Scattering_3': {
-        Ammunition: [30, 1],
-        Model: [31, 1],
-        Speed: [32, 1],
+        Ammunition: [34, 1],
+        Model: [35, 1],
+        Speed: [36, 1],
       },
       'Diffusion_1': {
-        Ammunition: [33, 1],
-        Model: [34, 1],
-        Speed: [35, 1],
+        Ammunition: [37, 1],
+        Model: [38, 1],
+        Speed: [39, 1],
       },
       'Diffusion_2': {
-        Ammunition: [36, 1],
-        Model: [37, 1],
-        Speed: [38, 1],
+        Ammunition: [3406, 1],
+        Model: [41, 1],
+        Speed: [42, 1],
       },
       'Diffusion_3': {
-        Ammunition: [39, 1],
-        Model: [40, 1],
-        Speed: [41, 1],
+        Ammunition: [43, 1],
+        Model: [44, 1],
+        Speed: [45, 1],
       },
       'Dragon_shot': {
-        Ammunition: [42, 1],
-        Model: [43, 1],
-        Speed: [44, 1],
+        Ammunition: [46, 1],
+        Model: [47, 1],
+        Speed: [48, 1],
       },
       'Slash': {
-        Ammunition: [45, 1],
-        Model: [46, 1],
-        Speed: [47, 1],
+        Ammunition: [49, 1],
+        Model: [50, 1],
+        Speed: [51, 1],
       },
       'Grenade_1': {
-        Ammunition: [48, 1],
-        Model: [49, 1],
-        Speed: [50, 1],
+        Ammunition: [52, 1],
+        Model: [53, 1],
+        Speed: [54, 1],
       },
       'Grenade_2': {
-        Ammunition: [51, 1],
-        Model: [52, 1],
-        Speed: [53, 1],
+        Ammunition: [55, 1],
+        Model: [56, 1],
+        Speed: [57, 1],
       },
       'Grenade_3': {
-        Ammunition: [54, 1],
-        Model: [55, 1],
-        Speed: [56, 1],
+        Ammunition: [58, 1],
+        Model: [59, 1],
+        Speed: [60, 1],
       },
       'Fire': {
-        Ammunition: [57, 1],
-        Model: [58, 1],
-        Speed: [59, 1],
+        Ammunition: [61, 1],
+        Model: [62, 1],
+        Speed: [63, 1],
       },
       'Water': {
-        Ammunition: [60, 1],
-        Model: [61, 1],
-        Speed: [62, 1],
+        Ammunition: [64, 1],
+        Model: [65, 1],
+        Speed: [66, 1],
       },
       'Ice': {
-        Ammunition: [63, 1],
-        Model: [64, 1],
-        Speed: [65, 1],
+        Ammunition: [67, 1],
+        Model: [68, 1],
+        Speed: [69, 1],
       },
       'Electricity': {
-        Ammunition: [66, 1],
-        Model: [67, 1],
-        Speed: [68, 1],
+        Ammunition: [70, 1],
+        Model: [71, 1],
+        Speed: [72, 1],
       },
       'Dragon': {
-        Ammunition: [69, 1],
-        Model: [70, 1],
-        Speed: [71, 1],
+        Ammunition: [73, 1],
+        Model: [74, 1],
+        Speed: [75, 1],
       },
       'Poison_1': {
-        Ammunition: [72, 1],
-        Model: [73, 1],
-        Speed: [74, 1],
+        Ammunition: [76, 1],
+        Model: [77, 1],
+        Speed: [78, 1],
       },
       'Poison_2': {
-        Ammunition: [75, 1],
-        Model: [76, 1],
-        Speed: [77, 1],
+        Ammunition: [79, 1],
+        Model: [80, 1],
+        Speed: [81, 1],
       },
       'Hemp_1': {
-        Ammunition: [78, 1],
-        Model: [79, 1],
-        Speed: [80, 1],
+        Ammunition: [82, 1],
+        Model: [83, 1],
+        Speed: [84, 1],
       },
       'Hemp_2': {
-        Ammunition: [81, 1],
-        Model: [82, 1],
-        Speed: [83, 1],
+        Ammunition: [85, 1],
+        Model: [86, 1],
+        Speed: [87, 1],
       },
       'Sleep_1': {
-        Ammunition: [84, 1],
-        Model: [85, 1],
-        Speed: [86, 1],
+        Ammunition: [88, 1],
+        Model: [89, 1],
+        Speed: [90, 1],
       },
       'Sleep_2': {
-        Ammunition: [87, 1],
-        Model: [88, 1],
-        Speed: [89, 1],
+        Ammunition: [91, 1],
+        Model: [92, 1],
+        Speed: [93, 1],
       },
       'Reduce_breath': {
-        Ammunition: [90, 1],
-        Model: [91, 1],
-        Speed: [92, 1],
+        Ammunition: [94, 1],
+        Model: [95, 1],
+        Speed: [96, 1],
       },
       'Restores_1': {
-        Ammunition: [93, 1],
-        Model: [94, 1],
-        Speed: [95, 1],
+        Ammunition: [97, 1],
+        Model: [98, 1],
+        Speed: [99, 1],
       },
       'Restores_2': {
-        Ammunition: [96, 1],
-        Model: [97, 1],
-        Speed: [98, 1],
+        Ammunition: [100, 1],
+        Model: [101, 1],
+        Speed: [102, 1],
       },
       'Madman': {
-        Ammunition: [99, 1],
-        Model: [100, 1],
-        Speed: [101, 1],
+        Ammunition: [103, 1],
+        Model: [104, 1],
+        Speed: [105, 1],
       },
       'Harden': {
-        Ammunition: [102, 1],
-        Model: [103, 1],
-        Speed: [104, 1],
+        Ammunition: [106, 1],
+        Model: [107, 1],
+        Speed: [108, 1],
       },
       'Capture': {
-        Ammunition: [105, 1],
-        Model: [106, 1],
-        Speed: [107, 1],
+        Ammunition: [109, 1],
+        Model: [110, 1],
+        Speed: [111, 1],
       }
     }
   } else if (data[0] === 166 && data[1] === 1 && data[2] === 20) {
