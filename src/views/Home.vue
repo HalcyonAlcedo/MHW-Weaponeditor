@@ -385,8 +385,8 @@ export default {
     return {
       lang: Language,
       langlist: [
-        {text: '简体中文', value: 'zh_cn'},
-        //{text: '繁體中文', value: 'zh_tw'}
+        //{text: '简体中文', value: 'zh_cn'},
+        {text: '繁體中文', value: 'zh_tw'}
       ],
       drawer: true,
       left: false,

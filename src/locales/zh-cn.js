@@ -5,6 +5,7 @@ module.exports = {
   Interface: {
     Title: '怪物猎人世界装备编辑器',
     Download: '下载离线版',
+    Portable: '下载便携版',
     Lang: '语言 Language',
     Menu: '菜单',
     New_file: '新建',
