@@ -438,7 +438,8 @@ export default {
         { title: this.$t('Weaponsmiscellaneous.Bombardment') + ' (wep_glan.wep_glan)', file: 'wep_glan.wep_glan'},
         { title: this.$t('Weaponsmiscellaneous.Syllable') + ' (wep_whistle.wep_wsl)', file: 'wep_whistle.wep_wsl'},
         { title: this.$t('Weaponsmiscellaneous.Bottle') + ' (bottle_table.bbtbl)', file: 'bottle_table.bbtbl'},
-        { title: this.$t('Weaponsmiscellaneous.Shell') + ' (shell_table.shl_tbl)', file: 'shell_table.shl_tbl'}
+        { title: this.$t('Weaponsmiscellaneous.Shell') + ' (shell_table.shl_tbl)', file: 'shell_table.shl_tbl'},
+        { title: this.$t('Weaponsmiscellaneous.Skill') + ' (skill_data.skl_dat)', file: 'skill_data.skl_dat'}
       ]
       return [
         {title: this.$t('Interface.Weapon'), items: wp},

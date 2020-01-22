@@ -56,6 +56,7 @@
                 <h4 v-else-if="existence(item.ww_Number)">{{ $t('Weaponsmiscellaneous.Syllable') + item.ww_Number.vul }}</h4>
                 <h4 v-else-if="existence(item.gl_Number)">{{ $t('Weaponsmiscellaneous.Bombardment') + item.gl_Number.vul }}</h4>
                 <h4 v-else-if="existence(item.sh_Number)">{{ $t('Weaponsmiscellaneous.Shell') + item.sh_Number.vul }}</h4>
+                <h4 v-else-if="existence(item.sk_Number)">{{ $t('Weaponsmiscellaneous.Skill') + item.sk_Number.vul }}</h4>
                 <v-spacer></v-spacer>
                 <v-subheader>
                   {{ $t('WeaponExplain.Address') }}：<span class="red--text">{{ str_pad(item.wp_Hex) }}</span>
@@ -125,6 +126,15 @@
                   <v-text-field
                     :label="$t('Bombardment.Number')"
                     v-model="item.gl_Number.vul"
+                    
+                    filled
+                    disabled
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.sk_Number)">
+                  <v-text-field
+                    :label="$t('Skill.Number')"
+                    v-model="item.sk_Number.vul"
                     
                     filled
                     disabled
@@ -806,6 +816,104 @@
                     readonly
                   ></v-text-field>
                 </v-list-item>
+
+                <v-list-item v-if="existence(item.sk_level)">
+                  <v-text-field
+                    :label="$t('Skill.Level')"
+                    @change="input_interchangeable(item.sk_level)"
+                    v-model="item.sk_level.vul"
+                    
+                    filled
+                    readonly
+                  ></v-text-field>
+                  <v-text-field
+                    v-if="sourceitems && (item.sk_level.vul !== item.wp_sourcedata.sk_level.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Skill.Level')"
+                    v-model="item.wp_sourcedata.sk_level.vul"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                
+                <v-list-item v-if="existence(item.sk_First_effect)">
+                  <v-text-field
+                    :label="$t('Skill.Parameter_1')"
+                    @change="input_interchangeable(item.sk_First_effect)"
+                    v-model="item.sk_First_effect.vul"
+                    
+                    filled
+                    readonly
+                  ></v-text-field>
+                  <v-text-field
+                    v-if="sourceitems && (item.sk_First_effect.vul !== item.wp_sourcedata.sk_First_effect.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Skill.Parameter_1')"
+                    v-model="item.wp_sourcedata.sk_First_effect.vul"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.sk_Second_effect)">
+                  <v-text-field
+                    :label="$t('Skill.Parameter_2')"
+                    @change="input_interchangeable(item.sk_Second_effect)"
+                    v-model="item.sk_Second_effect.vul"
+                    
+                    filled
+                    readonly
+                  ></v-text-field>
+                  <v-text-field
+                    v-if="sourceitems && (item.sk_Second_effect.vul !== item.wp_sourcedata.sk_Second_effect.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Skill.Parameter_2')"
+                    v-model="item.wp_sourcedata.sk_Second_effect.vul"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.sk_Thirdly_effect)">
+                  <v-text-field
+                    :label="$t('Skill.Parameter_3')"
+                    @change="input_interchangeable(item.sk_Thirdly_effect)"
+                    v-model="item.sk_Thirdly_effect.vul"
+                    
+                    filled
+                    readonly
+                  ></v-text-field>
+                  <v-text-field
+                    v-if="sourceitems && (item.sk_Thirdly_effect.vul !== item.wp_sourcedata.sk_Thirdly_effect.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Skill.Parameter_3')"
+                    v-model="item.wp_sourcedata.sk_Thirdly_effect.vul"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.sk_Fourthly_effect)">
+                  <v-text-field
+                    :label="$t('Skill.Parameter_4')"
+                    @change="input_interchangeable(item.sk_Fourthly_effect)"
+                    v-model="item.sk_Fourthly_effect.vul"
+                    
+                    filled
+                    readonly
+                  ></v-text-field>
+                  <v-text-field
+                    v-if="sourceitems && (item.sk_Fourthly_effect.vul !== item.wp_sourcedata.sk_Fourthly_effect.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Skill.Parameter_4')"
+                    v-model="item.wp_sourcedata.sk_Fourthly_effect.vul"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+
                 <v-list-item v-if="existence(item.wp_Heart_value)">
                   <v-text-field
                     :label="$t('WeaponExplain.Heart')"
@@ -1975,6 +2083,8 @@
             } else if (this.existence(_items[i].ww_Number) && _items[i].ww_Number !== false) {
               itemsarr.push(_items[i])
             } else if (this.existence(_items[i].sh_Number) && _items[i].sh_Number !== false) {
+              itemsarr.push(_items[i])
+            } else if (this.existence(_items[i].sk_Number) && _items[i].sk_Number !== false) {
               itemsarr.push(_items[i])
             }
           }

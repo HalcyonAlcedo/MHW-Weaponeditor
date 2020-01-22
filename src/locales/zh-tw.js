@@ -300,6 +300,12 @@ module.exports = {
     Intensify: '强化'
   },
   Skill: {
+    Number: '技能id',
+    Level: '技能等級',
+    Parameter_1: '參數1',
+    Parameter_2: '參數2',
+    Parameter_3: '參數3',
+    Parameter_4: '參數4',
     0: '無技能',
     1: '毒耐性',
     2: '麻痹耐性',

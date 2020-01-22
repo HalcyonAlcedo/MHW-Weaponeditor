@@ -101,13 +101,15 @@ const hexAddress = (data) => {
       'gl_bombard_type': [15, 2], // 10~11
       'gl_bombard_level': [17, 2] // 12~13
     }
-  } else if (data[2] === 120 && data[6] === 0 && data[17] === 1 && data[28] === 1) {
-    HexRuler = 10 // 技能
+  } else if (data[10] === 0 && data[29] === 1 && data[67] === 1 && data[86] === 2) {
+    HexRuler = 19 // 技能
     HexPointer = {
       'sk_Number': [11, 2], // 6~9
       'sk_level': [12, 1], // 8
       'sk_First_effect': [14, 2], // 9~10
-      'sk_Second_effect': [16, 2] // 11~12
+      'sk_Second_effect': [16, 2], // 11~12
+      'sk_Thirdly_effect': [18, 2], // 11~12
+      'sk_Fourthly_effect': [20, 2] // 11~12
     }
   } else if (data[4] === 29 && data[5] === 2 && data[6] === 186) {
     HexRuler = 111 // 弩弹
