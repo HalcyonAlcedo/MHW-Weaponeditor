@@ -106,10 +106,10 @@ const hexAddress = (data) => {
     HexPointer = {
       'sk_Number': [11, 2], // 6~9
       'sk_level': [12, 1], // 8
-      'sk_First_effect': [14, 2], // 9~10
-      'sk_Second_effect': [16, 2], // 11~12
-      'sk_Thirdly_effect': [18, 2], // 11~12
-      'sk_Fourthly_effect': [20, 2] // 11~12
+      'sk_First_effect': [22, 2], // 9~10
+      'sk_Second_effect': [24, 2], // 11~12
+      'sk_Thirdly_effect': [24, 4], // 11~12
+      'sk_Fourthly_effect': [28, 4] // 11~12
     }
   } else if (data[4] === 29 && data[5] === 2 && data[6] === 186) {
     HexRuler = 111 // 弩弹

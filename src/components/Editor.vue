@@ -56,7 +56,7 @@
                 <h4 v-else-if="existence(item.ww_Number)">{{ $t('Weaponsmiscellaneous.Syllable') + item.ww_Number.vul }}</h4>
                 <h4 v-else-if="existence(item.gl_Number)">{{ $t('Weaponsmiscellaneous.Bombardment') + item.gl_Number.vul }}</h4>
                 <h4 v-else-if="existence(item.sh_Number)">{{ $t('Weaponsmiscellaneous.Shell') + item.sh_Number.vul }}</h4>
-                <h4 v-else-if="existence(item.sk_Number)">{{ $t('Weaponsmiscellaneous.Skill') + item.sk_Number.vul }}</h4>
+                <h4 v-else-if="existence(item.sk_Number)">{{ item.wp_Name + 'LV' + item.sk_level.vul }}</h4>
                 <v-spacer></v-spacer>
                 <v-subheader>
                   {{ $t('WeaponExplain.Address') }}：<span class="red--text">{{ str_pad(item.wp_Hex) }}</span>
@@ -869,44 +869,6 @@
                     v-if="sourceitems && (item.sk_Second_effect.vul !== item.wp_sourcedata.sk_Second_effect.vul)"
                     :label="$t('Interface.Original') + ' ' + $t('Skill.Parameter_2')"
                     v-model="item.wp_sourcedata.sk_Second_effect.vul"
-                    
-                    filled
-                    prepend-icon="mdi-transfer-left"
-                    readonly
-                  ></v-text-field>
-                </v-list-item>
-                <v-list-item v-if="existence(item.sk_Thirdly_effect)">
-                  <v-text-field
-                    :label="$t('Skill.Parameter_3')"
-                    @change="input_interchangeable(item.sk_Thirdly_effect)"
-                    v-model="item.sk_Thirdly_effect.vul"
-                    
-                    filled
-                    readonly
-                  ></v-text-field>
-                  <v-text-field
-                    v-if="sourceitems && (item.sk_Thirdly_effect.vul !== item.wp_sourcedata.sk_Thirdly_effect.vul)"
-                    :label="$t('Interface.Original') + ' ' + $t('Skill.Parameter_3')"
-                    v-model="item.wp_sourcedata.sk_Thirdly_effect.vul"
-                    
-                    filled
-                    prepend-icon="mdi-transfer-left"
-                    readonly
-                  ></v-text-field>
-                </v-list-item>
-                <v-list-item v-if="existence(item.sk_Fourthly_effect)">
-                  <v-text-field
-                    :label="$t('Skill.Parameter_4')"
-                    @change="input_interchangeable(item.sk_Fourthly_effect)"
-                    v-model="item.sk_Fourthly_effect.vul"
-                    
-                    filled
-                    readonly
-                  ></v-text-field>
-                  <v-text-field
-                    v-if="sourceitems && (item.sk_Fourthly_effect.vul !== item.wp_sourcedata.sk_Fourthly_effect.vul)"
-                    :label="$t('Interface.Original') + ' ' + $t('Skill.Parameter_4')"
-                    v-model="item.wp_sourcedata.sk_Fourthly_effect.vul"
                     
                     filled
                     prepend-icon="mdi-transfer-left"
@@ -2415,7 +2377,6 @@
           'sa_Number',
           'ww_Number',
           'gl_Number',
-          'sk_Number',
           'sh_Number'
         ]
         for (let i = 0; i < namelist.length; i++) {
@@ -2909,6 +2870,17 @@
           return []
         }
       },
+      skpname (id) {
+        console.log(id)
+        let wpnamelist
+        wpnamelist = require('../components/Smiscellaneous/' + this.$i18n.locale + '/skill.json')
+        let namedata = wpnamelist.Data
+        if (namedata[id]) {
+          return namedata[id]
+        } else {
+          return []
+        }
+      },
       shlist (item) {
         let data = []
         for (let k in item) {
@@ -2958,6 +2930,8 @@
           wpobj.wp_Hex = (HexRuler * i).toString(16) // 目标地址
           if (HexPointer.eq_Type != null) {
             wpobj.wp_Name = _this.wpname(_this.HexFunction(data, HexPointer.eq_Number, HexRuler, i).vul, _this.HexFunction(data, HexPointer.eq_Type, HexRuler, i).vul)
+          } else if (HexPointer.sk_Number != null) {
+            wpobj.wp_Name = _this.skpname(_this.HexFunction(data, HexPointer.sk_Number, HexRuler, i).vul)
           } else {
             wpobj.wp_Name = _this.wpname(_this.HexFunction(data, HexPointer.wp_Number, HexRuler, i))
           }
