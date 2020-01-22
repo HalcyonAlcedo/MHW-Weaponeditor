@@ -178,22 +178,22 @@ const hexAddress = (data) => {
         Model: [47, 1],
         Speed: [48, 1],
       },
-      'Slash': {
+      'Grenade_1': {
         Ammunition: [49, 1],
         Model: [50, 1],
         Speed: [51, 1],
       },
-      'Grenade_1': {
+      'Grenade_2': {
         Ammunition: [52, 1],
         Model: [53, 1],
         Speed: [54, 1],
       },
-      'Grenade_2': {
+      'Grenade_3': {
         Ammunition: [55, 1],
         Model: [56, 1],
         Speed: [57, 1],
       },
-      'Grenade_3': {
+      'Slash': {
         Ammunition: [58, 1],
         Model: [59, 1],
         Speed: [60, 1],
@@ -295,34 +295,34 @@ const hexAddress = (data) => {
       'bt_sleep': [14, 1], // 12~13
       'bt_bomb': [15, 1] // 12~13
     }
-  } else if (data[10] === 1 && data[59] === 2 && data[123] === 3) {
+  } else if (data[11] === 0 && data[70] === 1 && data[130] === 2) {
     HexRuler = 60 // 装备
     HexPointer = {
-      'eq_Number': [59, 1],
-      'eq_Type': [16, 1], // 6~9
-      'eq_Variant': [12, 1], // 10~11
-      'eq_Defense': [18, 2], // 12~13
-      'eq_Rarity': [26, 1], // 12~13
-      'eq_Money': [30, 4], // 12~13
-      'eq_Patience1': [31, 1, 'wpattribute'], // 12~13
-      'eq_Patience2': [32, 1, 'wpattribute'], // 12~13
-      'eq_Patience3': [33, 1, 'wpattribute'], // 12~13
-      'eq_Patience4': [34, 1, 'wpattribute'], // 12~13
-      'eq_Patience5': [35, 1, 'wpattribute'], // 12~13
-      'eq_Slot_grade_Number': [36, 1],
-      'eq_Slot_grade_1': [37, 1],
-      'eq_Slot_grade_2': [38, 1],
-      'eq_Slot_grade_3': [39, 1],
-      'qe_Weapon_skills1': [41, 2],
-      'qe_Weapon_skillslv1': [42, 1],
-      'qe_Weapon_skills2': [44, 2],
-      'qe_Weapon_skillslv2': [45, 1],
-      'qe_Weapon_skills3': [47, 2],
-      'qe_Weapon_skillslv3': [48, 1],
-      'qe_Weapon_skills4': [50, 2],
-      'qe_Weapon_skillslv4': [51, 1],
-      'qe_Weapon_skills5': [53, 2],
-      'qe_Weapon_skillslv5': [54, 1]
+      'eq_Number': [64, 2],
+      'eq_Type': [20, 1], // 6~9
+      'eq_Variant': [18, 1], // 10~11
+      'eq_Defense': [22, 2], // 12~13
+      'eq_Rarity': [30, 1], // 12~13
+      'eq_Money': [34, 4], // 12~13
+      'eq_Patience1': [35, 1, 'wpattribute'], // 12~13
+      'eq_Patience2': [36, 1, 'wpattribute'], // 12~13
+      'eq_Patience3': [37, 1, 'wpattribute'], // 12~13
+      'eq_Patience4': [38, 1, 'wpattribute'], // 12~13
+      'eq_Patience5': [39, 1, 'wpattribute'], // 12~13
+      'eq_Slot_grade_Number': [40, 1],
+      'eq_Slot_grade_1': [41, 1],
+      'eq_Slot_grade_2': [42, 1],
+      'eq_Slot_grade_3': [43, 1],
+      'qe_Weapon_skills1': [45, 2],
+      'qe_Weapon_skillslv1': [46, 1],
+      'qe_Weapon_skills2': [48, 2],
+      'qe_Weapon_skillslv2': [49, 1],
+      'qe_Weapon_skills3': [51, 2],
+      'qe_Weapon_skillslv3': [52, 1],
+      'qe_Weapon_skills4': [54, 2],
+      'qe_Weapon_skillslv4': [55, 1],
+      'qe_Weapon_skills5': [57, 2],
+      'qe_Weapon_skillslv5': [58, 1]
 
     }
   } else {

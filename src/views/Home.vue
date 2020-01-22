@@ -229,7 +229,7 @@
           </v-list-item>
         </v-list-group>
         <v-divider></v-divider>
-        <v-list-item disabled @click="openfile('armor.am_dat'),left = false">
+        <v-list-item @click="openfile('armor.am_dat'),left = false">
           <v-list-item-title>
             {{$t("Interface.equipment")}}
           </v-list-item-title>
@@ -386,7 +386,7 @@ export default {
       lang: Language,
       langlist: [
         {text: '简体中文', value: 'zh_cn'},
-        {text: '繁體中文', value: 'zh_tw'}
+        //{text: '繁體中文', value: 'zh_tw'}
       ],
       drawer: true,
       left: false,

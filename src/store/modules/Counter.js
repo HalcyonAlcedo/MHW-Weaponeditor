@@ -161,7 +161,7 @@ const mutations = {
         case '1-16-9-24-193-1-8':
           state.filename = 'wep_wsword.wep_wsd'
           break
-        case '93-0-25':
+        case '1-16-9-24-95-0-212':
           state.filename = 'armor.am_dat'
           break
         case '1-16-9-24-19-2-26':
