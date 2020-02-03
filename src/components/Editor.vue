@@ -56,6 +56,10 @@
                 <h4 v-else-if="existence(item.ww_Number)">{{ $t('Weaponsmiscellaneous.Syllable') + item.ww_Number.vul }}</h4>
                 <h4 v-else-if="existence(item.gl_Number)">{{ $t('Weaponsmiscellaneous.Bombardment') + item.gl_Number.vul }}</h4>
                 <h4 v-else-if="existence(item.sh_Number)">{{ $t('Weaponsmiscellaneous.Shell') + item.sh_Number.vul }}</h4>
+                <h4 v-else-if="existence(item.as_Number)">{{ item.wp_Name }}</h4>
+                <h4 v-else-if="existence(item.wrt_Number)">{{ item.wp_Name }}</h4>
+                <h4 v-else-if="existence(item.wus_Number)">{{ item.wp_Name }}</h4>
+                <h4 v-else-if="existence(item.art_Number)">{{ item.wp_Name }}</h4>
                 <h4 v-else-if="existence(item.sk_Number)">{{ item.wp_Name + 'LV' + item.sk_level.vul }}</h4>
                 <v-spacer></v-spacer>
                 <v-subheader>
@@ -108,6 +112,15 @@
                   <v-text-field
                     :label="$t('Shell.Number')"
                     v-model="item.sh_Number.vul"
+                    
+                    filled
+                    disabled
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.as_Number)">
+                  <v-text-field
+                    :label="$t('ASkill.Number')"
+                    v-model="item.as_Number.vul"
                     
                     filled
                     disabled
@@ -167,6 +180,70 @@
                     disabled
                   ></v-text-field>
                 </v-list-item>
+                <!--武器和裝備製作id、類型-->
+                <v-list-item v-if="existence(item.wrt_Number)">
+                  <v-text-field
+                    :label="$t('Weaponrecipe.Number')"
+                    v-model="item.wrt_Number.vul"
+                    
+                    filled
+                    disabled
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.wrt_Type)">
+                  <v-text-field
+                    :label="$t('Weaponrecipe.Type')"
+                    :value="item.wrt_Type.vul"
+                    
+                    filled
+                    disabled
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.wus_Number)">
+                  <v-text-field
+                    :label="$t('Weaponrecipe.Number')"
+                    v-model="item.wus_Number.vul"
+                    
+                    filled
+                    disabled
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.wus_Type)">
+                  <v-text-field
+                    :label="$t('Weaponrecipe.Type')"
+                    :value="item.wus_Type.vul"
+                    
+                    filled
+                    disabled
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.art_Number)">
+                  <v-text-field
+                    :label="$t('Armorrecipe.Number')"
+                    v-model="item.art_Number.vul"
+                    
+                    filled
+                    disabled
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.art_Type)">
+                  <v-text-field
+                    :label="$t('Armorrecipe.Type')"
+                    :value="item.art_Type.vul"
+                    
+                    filled
+                    disabled
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.as_Type)">
+                  <v-text-field
+                    :label="$t('ASkill.Type')"
+                    :value="askType(item.as_Type.vul)"
+                    
+                    filled
+                    disabled
+                  ></v-text-field>
+                </v-list-item>
                 <v-list-item v-if="existence(item.eq_Variant)">
                   <v-text-field
                     :label="$t('Equipment.Variant')"
@@ -189,6 +266,25 @@
                     v-if="sourceitems && (item.eq_Defense.vul !== item.wp_sourcedata.eq_Defense.vul)"
                     :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Defense')"
                     v-model="item.wp_sourcedata.eq_Defense.vul"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.eq_Model)">
+                  <v-text-field
+                    :label="$t('Equipment.Equipment_model')"
+                    @change="input_interchangeable(item.eq_Model)"
+                    v-model="item.eq_Model.vul"
+                    
+                    filled
+                    readonly
+                  ></v-text-field>
+                  <v-text-field
+                    v-if="sourceitems && (item.eq_Model.vul !== item.wp_sourcedata.eq_Model.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Equipment.Equipment_model')"
+                    v-model="item.wp_sourcedata.eq_Model.vul"
                     
                     filled
                     prepend-icon="mdi-transfer-left"
@@ -324,7 +420,70 @@
                     prepend-icon="mdi-transfer-left"
                     readonly
                   ></v-text-field>
-                </v-list-item>  
+                </v-list-item>
+                <v-list-item v-if="existence(item.as_Slot_grade_Number)">
+                  <v-select
+                    v-model="item.as_Slot_grade_Number.vul"
+                    :items="grooveitem"
+                    @change="Select_interchangeable(item.as_Slot_grade_Number)"
+                    filled
+                    :label="$t('ASkill.Slot_grade_Number')"
+                    item-text="text"
+                    item-value="value"
+                    return-object
+                  ></v-select>
+                  <v-text-field
+                    v-if="sourceitems && (item.as_Slot_grade_Number.vul !== item.wp_sourcedata.as_Slot_grade_Number.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('ASkill.Slot_grade_Number')"
+                    :value="groove(item.wp_sourcedata.as_Slot_grade_Number.vul)"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.as_Slot_grade_1)">
+                  <v-select
+                    v-model="item.as_Slot_grade_1.vul"
+                    :items="gradeitem"
+                    @change="Select_interchangeable(item.as_Slot_grade_1)"
+                    filled
+                    :label="$t('ASkill.Slot_grade_Number1')"
+                    item-text="text"
+                    item-value="value"
+                    return-object
+                  ></v-select>
+                  <v-text-field
+                    v-if="sourceitems && (item.as_Slot_grade_1.vul !== item.wp_sourcedata.as_Slot_grade_1.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('ASkill.Slot_grade_Number1')"
+                    :value="grade(item.wp_sourcedata.as_Slot_grade_1.vul)"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.as_Slot_grade_2)">
+                  <v-select
+                    v-model="item.as_Slot_grade_2.vul"
+                    :items="gradeitem"
+                    @change="Select_interchangeable(item.as_Slot_grade_2)"
+                    filled
+                    :label="$t('ASkill.Slot_grade_Number2')"
+                    item-text="text"
+                    item-value="value"
+                    return-object
+                  ></v-select>
+                  <v-text-field
+                    v-if="sourceitems && (item.as_Slot_grade_2.vul !== item.wp_sourcedata.as_Slot_grade_2.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('ASkill.Slot_grade_Number2')"
+                    :value="grade(item.wp_sourcedata.as_Slot_grade_2.vul)"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
                 <v-list-item v-if="existence(item.eq_Slot_grade_Number)">
                   <v-select
                     v-model="item.eq_Slot_grade_Number.vul"
@@ -702,6 +861,490 @@
                     readonly
                   ></v-text-field>
                 </v-list-item>
+                <!--武器製造-->
+                <v-list-item v-if="existence(item.wrt_item1)">
+                  <v-autocomplete
+                    :label="$t('Weaponrecipe.item1')"
+                    v-model="item.wrt_item1.vul"
+                    :items="itemlist"
+                    @change="input_interchangeable(item.wrt_item1)"
+                    item-text="text"
+                    persistent-hint
+                    filled
+                    :no-data-text="$t('Interface.No_data')"
+                  >
+                  </v-autocomplete>
+                  <v-text-field
+                    v-if="sourceitems && (item.wrt_item1.vul !== item.wp_sourcedata.wrt_item1.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Weaponrecipe.item1')"
+                    :value="itemvul(item.wp_sourcedata.wrt_item1.vul)"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.wrt_item1quantity)">
+                  <v-text-field
+                    :label="$t('Weaponrecipe.item1quantity')"
+                    @change="input_interchangeable(item.wrt_item1quantity)"
+                    v-model="item.wrt_item1quantity.vul"
+                    
+                    filled
+                  ></v-text-field>
+                  <v-text-field
+                    v-if="sourceitems && (item.wrt_item1quantity.vul !== item.wp_sourcedata.wrt_item1quantity.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Weaponrecipe.item1quantity')"
+                    v-model="item.wp_sourcedata.wrt_item1quantity.vul"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.wrt_item2)">
+                  <v-autocomplete
+                    :label="$t('Weaponrecipe.item2')"
+                    v-model="item.wrt_item2.vul"
+                    :items="itemlist"
+                    @change="input_interchangeable(item.wrt_item2)"
+                    item-text="text"
+                    persistent-hint
+                    filled
+                    :no-data-text="$t('Interface.No_data')"
+                  >
+                  </v-autocomplete>
+                  <v-text-field
+                    v-if="sourceitems && (item.wrt_item2.vul !== item.wp_sourcedata.wrt_item2.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Weaponrecipe.item2')"
+                    :value="itemvul(item.wp_sourcedata.wrt_item2.vul)"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.wrt_item2quantity)">
+                  <v-text-field
+                    :label="$t('Weaponrecipe.item2quantity')"
+                    @change="input_interchangeable(item.wrt_item2quantity)"
+                    v-model="item.wrt_item2quantity.vul"
+                    
+                    filled
+                  ></v-text-field>
+                  <v-text-field
+                    v-if="sourceitems && (item.wrt_item1quantity.vul !== item.wp_sourcedata.wrt_item2quantity.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Weaponrecipe.item2quantity')"
+                    v-model="item.wp_sourcedata.wrt_item2quantity.vul"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.wrt_item3)">
+                  <v-autocomplete
+                    :label="$t('Weaponrecipe.item3')"
+                    v-model="item.wrt_item3.vul"
+                    :items="itemlist"
+                    @change="input_interchangeable(item.wrt_item3)"
+                    item-text="text"
+                    persistent-hint
+                    filled
+                    :no-data-text="$t('Interface.No_data')"
+                  >
+                  </v-autocomplete>
+                  <v-text-field
+                    v-if="sourceitems && (item.wrt_item3.vul !== item.wp_sourcedata.wrt_item3.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Weaponrecipe.item3')"
+                    :value="itemvul(item.wp_sourcedata.wrt_item3.vul)"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.wrt_item3quantity)">
+                  <v-text-field
+                    :label="$t('Weaponrecipe.item3quantity')"
+                    @change="input_interchangeable(item.wrt_item3quantity)"
+                    v-model="item.wrt_item3quantity.vul"
+                    
+                    filled
+                  ></v-text-field>
+                  <v-text-field
+                    v-if="sourceitems && (item.wrt_item3quantity.vul !== item.wp_sourcedata.wrt_item3quantity.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Weaponrecipe.item3quantity')"
+                    v-model="item.wp_sourcedata.wrt_item3quantity.vul"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.wrt_item4)">
+                  <v-autocomplete
+                    :label="$t('Weaponrecipe.item4')"
+                    v-model="item.wrt_item4.vul"
+                    :items="itemlist"
+                    @change="input_interchangeable(item.wrt_item4)"
+                    item-text="text"
+                    persistent-hint
+                    filled
+                    :no-data-text="$t('Interface.No_data')"
+                  >
+                  </v-autocomplete>
+                  <v-text-field
+                    v-if="sourceitems && (item.wrt_item4.vul !== item.wp_sourcedata.wrt_item4.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Weaponrecipe.item4')"
+                    :value="itemvul(item.wp_sourcedata.wrt_item4.vul)"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.wrt_item4quantity)">
+                  <v-text-field
+                    :label="$t('Weaponrecipe.item4quantity')"
+                    @change="input_interchangeable(item.wrt_item4quantity)"
+                    v-model="item.wrt_item4quantity.vul"
+                    
+                    filled
+                  ></v-text-field>
+                  <v-text-field
+                    v-if="sourceitems && (item.wrt_item4quantity.vul !== item.wp_sourcedata.wrt_item4quantity.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Weaponrecipe.item4quantity')"
+                    v-model="item.wp_sourcedata.wrt_item4quantity.vul"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <!--武器派生-->
+                <v-list-item v-if="existence(item.wus_item1)">
+                  <v-autocomplete
+                    :label="$t('Weaponrecipe.item1')"
+                    v-model="item.wus_item1.vul"
+                    :items="itemlist"
+                    @change="input_interchangeable(item.wus_item1)"
+                    item-text="text"
+                    persistent-hint
+                    filled
+                    :no-data-text="$t('Interface.No_data')"
+                  >
+                  </v-autocomplete>
+                  <v-text-field
+                    v-if="sourceitems && (item.wus_item1.vul !== item.wp_sourcedata.wus_item1.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Weaponrecipe.item1')"
+                    :value="itemvul(item.wp_sourcedata.wus_item1.vul)"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.wus_item1quantity)">
+                  <v-text-field
+                    :label="$t('Weaponrecipe.item1quantity')"
+                    @change="input_interchangeable(item.wus_item1quantity)"
+                    v-model="item.wus_item1quantity.vul"
+                    
+                    filled
+                  ></v-text-field>
+                  <v-text-field
+                    v-if="sourceitems && (item.wus_item1quantity.vul !== item.wp_sourcedata.wus_item1quantity.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Weaponrecipe.item1quantity')"
+                    v-model="item.wp_sourcedata.wus_item1quantity.vul"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.wus_item2)">
+                  <v-autocomplete
+                    :label="$t('Weaponrecipe.item2')"
+                    v-model="item.wus_item2.vul"
+                    :items="itemlist"
+                    @change="input_interchangeable(item.wus_item2)"
+                    item-text="text"
+                    persistent-hint
+                    filled
+                    :no-data-text="$t('Interface.No_data')"
+                  >
+                  </v-autocomplete>
+                  <v-text-field
+                    v-if="sourceitems && (item.wus_item2.vul !== item.wp_sourcedata.wus_item2.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Weaponrecipe.item2')"
+                    :value="itemvul(item.wp_sourcedata.wus_item2.vul)"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.wus_item2quantity)">
+                  <v-text-field
+                    :label="$t('Weaponrecipe.item2quantity')"
+                    @change="input_interchangeable(item.wus_item2quantity)"
+                    v-model="item.wus_item2quantity.vul"
+                    
+                    filled
+                  ></v-text-field>
+                  <v-text-field
+                    v-if="sourceitems && (item.wus_item1quantity.vul !== item.wp_sourcedata.wus_item2quantity.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Weaponrecipe.item2quantity')"
+                    v-model="item.wp_sourcedata.wus_item2quantity.vul"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.wus_item3)">
+                  <v-autocomplete
+                    :label="$t('Weaponrecipe.item3')"
+                    v-model="item.wus_item3.vul"
+                    :items="itemlist"
+                    @change="input_interchangeable(item.wus_item3)"
+                    item-text="text"
+                    persistent-hint
+                    filled
+                    :no-data-text="$t('Interface.No_data')"
+                  >
+                  </v-autocomplete>
+                  <v-text-field
+                    v-if="sourceitems && (item.wus_item3.vul !== item.wp_sourcedata.wus_item3.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Weaponrecipe.item3')"
+                    :value="itemvul(item.wp_sourcedata.wus_item3.vul)"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.wus_item3quantity)">
+                  <v-text-field
+                    :label="$t('Weaponrecipe.item3quantity')"
+                    @change="input_interchangeable(item.wus_item3quantity)"
+                    v-model="item.wus_item3quantity.vul"
+                    
+                    filled
+                  ></v-text-field>
+                  <v-text-field
+                    v-if="sourceitems && (item.wus_item3quantity.vul !== item.wp_sourcedata.wus_item3quantity.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Weaponrecipe.item3quantity')"
+                    v-model="item.wp_sourcedata.wus_item3quantity.vul"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.wus_item4)">
+                  <v-autocomplete
+                    :label="$t('Weaponrecipe.item4')"
+                    v-model="item.wus_item4.vul"
+                    :items="itemlist"
+                    @change="input_interchangeable(item.wus_item4)"
+                    item-text="text"
+                    persistent-hint
+                    filled
+                    :no-data-text="$t('Interface.No_data')"
+                  >
+                  </v-autocomplete>
+                  <v-text-field
+                    v-if="sourceitems && (item.wus_item4.vul !== item.wp_sourcedata.wus_item4.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Weaponrecipe.item4')"
+                    :value="itemvul(item.wp_sourcedata.wus_item4.vul)"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.wus_item4quantity)">
+                  <v-text-field
+                    :label="$t('Weaponrecipe.item4quantity')"
+                    @change="input_interchangeable(item.wus_item4quantity)"
+                    v-model="item.wus_item4quantity.vul"
+                    
+                    filled
+                  ></v-text-field>
+                  <v-text-field
+                    v-if="sourceitems && (item.wus_item4quantity.vul !== item.wp_sourcedata.wus_item4quantity.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Weaponrecipe.item4quantity')"
+                    v-model="item.wp_sourcedata.wus_item4quantity.vul"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <!--裝備製造-->
+                <v-list-item v-if="existence(item.art_item1)">
+                  <v-autocomplete
+                    :label="$t('Armorrecipe.item1')"
+                    v-model="item.art_item1.vul"
+                    :items="itemlist"
+                    @change="input_interchangeable(item.art_item1)"
+                    item-text="text"
+                    persistent-hint
+                    filled
+                    :no-data-text="$t('Interface.No_data')"
+                  >
+                  </v-autocomplete>
+                  <v-text-field
+                    v-if="sourceitems && (item.art_item1.vul !== item.wp_sourcedata.art_item1.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Armorrecipe.item1')"
+                    :value="itemvul(item.wp_sourcedata.art_item1.vul)"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.art_item1quantity)">
+                  <v-text-field
+                    :label="$t('Armorrecipe.item1quantity')"
+                    @change="input_interchangeable(item.art_item1quantity)"
+                    v-model="item.art_item1quantity.vul"
+                    
+                    filled
+                  ></v-text-field>
+                  <v-text-field
+                    v-if="sourceitems && (item.art_item1quantity.vul !== item.wp_sourcedata.art_item1quantity.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Armorrecipe.item1quantity')"
+                    v-model="item.wp_sourcedata.art_item1quantity.vul"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.art_item2)">
+                  <v-autocomplete
+                    :label="$t('Armorrecipe.item2')"
+                    v-model="item.art_item2.vul"
+                    :items="itemlist"
+                    @change="input_interchangeable(item.art_item2)"
+                    item-text="text"
+                    persistent-hint
+                    filled
+                    :no-data-text="$t('Interface.No_data')"
+                  >
+                  </v-autocomplete>
+                  <v-text-field
+                    v-if="sourceitems && (item.art_item2.vul !== item.wp_sourcedata.art_item2.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Armorrecipe.item2')"
+                    :value="itemvul(item.wp_sourcedata.art_item2.vul)"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.art_item2quantity)">
+                  <v-text-field
+                    :label="$t('Armorrecipe.item2quantity')"
+                    @change="input_interchangeable(item.art_item2quantity)"
+                    v-model="item.art_item2quantity.vul"
+                    
+                    filled
+                  ></v-text-field>
+                  <v-text-field
+                    v-if="sourceitems && (item.art_item1quantity.vul !== item.wp_sourcedata.art_item2quantity.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Armorrecipe.item2quantity')"
+                    v-model="item.wp_sourcedata.art_item2quantity.vul"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.art_item3)">
+                  <v-autocomplete
+                    :label="$t('Armorrecipe.item3')"
+                    v-model="item.art_item3.vul"
+                    :items="itemlist"
+                    @change="input_interchangeable(item.art_item3)"
+                    item-text="text"
+                    persistent-hint
+                    filled
+                    :no-data-text="$t('Interface.No_data')"
+                  >
+                  </v-autocomplete>
+                  <v-text-field
+                    v-if="sourceitems && (item.art_item3.vul !== item.wp_sourcedata.art_item3.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Armorrecipe.item3')"
+                    :value="itemvul(item.wp_sourcedata.art_item3.vul)"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.art_item3quantity)">
+                  <v-text-field
+                    :label="$t('Armorrecipe.item3quantity')"
+                    @change="input_interchangeable(item.art_item3quantity)"
+                    v-model="item.art_item3quantity.vul"
+                    
+                    filled
+                  ></v-text-field>
+                  <v-text-field
+                    v-if="sourceitems && (item.art_item3quantity.vul !== item.wp_sourcedata.art_item3quantity.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Armorrecipe.item3quantity')"
+                    v-model="item.wp_sourcedata.art_item3quantity.vul"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.art_item4)">
+                  <v-autocomplete
+                    :label="$t('Armorrecipe.item4')"
+                    v-model="item.art_item4.vul"
+                    :items="itemlist"
+                    @change="input_interchangeable(item.art_item4)"
+                    item-text="text"
+                    persistent-hint
+                    filled
+                    :no-data-text="$t('Interface.No_data')"
+                  >
+                  </v-autocomplete>
+                  <v-text-field
+                    v-if="sourceitems && (item.art_item4.vul !== item.wp_sourcedata.art_item4.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Armorrecipe.item4')"
+                    :value="itemvul(item.wp_sourcedata.art_item4.vul)"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.art_item4quantity)">
+                  <v-text-field
+                    :label="$t('Armorrecipe.item4quantity')"
+                    @change="input_interchangeable(item.art_item4quantity)"
+                    v-model="item.art_item4quantity.vul"
+                    
+                    filled
+                  ></v-text-field>
+                  <v-text-field
+                    v-if="sourceitems && (item.art_item4quantity.vul !== item.wp_sourcedata.art_item4quantity.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Armorrecipe.item4quantity')"
+                    v-model="item.wp_sourcedata.art_item4quantity.vul"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+
                 <v-list-item v-if="existence(item.wp_Chopping_value)">
                   <v-menu
                     v-model="props.menu"
@@ -1818,6 +2461,61 @@
                     readonly
                   ></v-text-field>
                 </v-list-item>
+                <!--武器和裝備前置-->
+                <v-list-item v-if="existence(item.wrt_Unlock)">
+                  <v-autocomplete
+                    :label="$t('Weaponrecipe.Unlock')"
+                    v-model="item.wrt_Unlock.vul"
+                    :items="itemlist"
+                    @change="input_interchangeable(item.wrt_Unlock)"
+                    item-text="text"
+                    persistent-hint
+                    filled
+                    :no-data-text="$t('Interface.No_data')"
+                  >
+                  </v-autocomplete>
+                  <v-text-field
+                    v-if="sourceitems && (item.art_Unlock.vul !== item.wp_sourcedata.art_Unlock.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Weaponrecipe.Unlock')"
+                    :value="itemvul(item.wp_sourcedata.art_Unlock.vul)"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <!--
+                <v-list-item v-if="existence(item.wus_Unlock)">
+                  <v-text-field
+                    :label="$t('Weaponrecipe.Unlock')"
+                    :value="wrtname(item.wus_Unlock.vul, item.wus_Type.vul)"
+                    filled
+                    disabled
+                  ></v-text-field>
+                </v-list-item>
+                -->
+                <v-list-item v-if="existence(item.art_Unlock)">
+                  <v-autocomplete
+                    :label="$t('Armorrecipe.Unlock')"
+                    v-model="item.art_Unlock.vul"
+                    :items="itemlist"
+                    @change="input_interchangeable(item.art_Unlock)"
+                    item-text="text"
+                    persistent-hint
+                    filled
+                    :no-data-text="$t('Interface.No_data')"
+                  >
+                  </v-autocomplete>
+                  <v-text-field
+                    v-if="sourceitems && (item.art_Unlock.vul !== item.wp_sourcedata.art_Unlock.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Armorrecipe.Unlock')"
+                    :value="itemvul(item.wp_sourcedata.art_Unlock.vul)"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
                 </v-list>
               </v-flex>
               </v-layout>
@@ -2047,6 +2745,14 @@
             } else if (this.existence(_items[i].sh_Number) && _items[i].sh_Number !== false) {
               itemsarr.push(_items[i])
             } else if (this.existence(_items[i].sk_Number) && _items[i].sk_Number !== false) {
+              itemsarr.push(_items[i])
+            } else if (this.existence(_items[i].as_Number) && _items[i].as_Number !== false) {
+              itemsarr.push(_items[i])
+            } else if (this.existence(_items[i].wrt_Number) && this.wrtname(_items[i].wrt_Number.vul, _items[i].wrt_Type.vul) !== this.$t('WeaponExplain.Unknown') && this.wrtname(_items[i].wrt_Number.vul, _items[i].wrt_Type.vul) !== 'Unknown') {
+              itemsarr.push(_items[i])
+            } else if (this.existence(_items[i].wus_Number) && this.wrtname(_items[i].wus_Number.vul, _items[i].wus_Type.vul) !== this.$t('WeaponExplain.Unknown') && this.wrtname(_items[i].wus_Number.vul, _items[i].wus_Type.vul) !== 'Unknown') {
+              itemsarr.push(_items[i])
+            } else if (this.existence(_items[i].art_Number) && this.wpname(_items[i].art_Number.vul, _items[i].art_Type.vul) !== this.$t('WeaponExplain.Unknown') && this.wpname(_items[i].art_Number.vul, _items[i].art_Type.vul) !== 'Unknown') {
               itemsarr.push(_items[i])
             }
           }
@@ -2313,9 +3019,23 @@
         }
         return itemsarr
       },
+      itemlist () {
+        let itemist
+        itemist = require('../components/Smiscellaneous/' + this.$i18n.locale + '/item.json')
+        let namedata = []
+        for(let i in itemist.Data){
+            namedata.push(
+              {
+                text: itemist.Data[i],
+                value: Number(i)
+              }
+            )
+        }
+        return namedata
+      },
       skillitem () {
         let skill = []
-        for (let i = 0; i < 168; i++) {
+        for (let i = 0; i < 214; i++) {
           if (this.$te('Skill.' + i)) {
             skill.push(
               {
@@ -2595,6 +3315,70 @@
         }
         return gradetext
       },
+      wrtType (type, file = false) {
+        let wrttext
+        switch (type) {
+          case 0:
+            wrttext = file ? 'l_sword.wp_dat' : this.$t('Weapon.Greatsword')
+            break
+          case 1:
+            wrttext = file ? 'sword.wp_dat' : this.$t('Weapon.Blade')
+            break
+          case 2:
+            wrttext = file ? 'w_sword.wp_dat' : this.$t('Weapon.Dual_blade')
+            break
+          case 3:
+            wrttext = file ? 'tachi.wp_dat' : this.$t('Weapon.Longsword')
+            break
+          case 4:
+            wrttext = file ? 'hammer.wp_dat' : this.$t('Weapon.Hammer')
+            break
+          case 5:
+            wrttext = file ? 'whistle.wp_dat' : this.$t('Weapon.Hunting_horn')
+            break
+          case 6:
+            wrttext = file ? 'lance.wp_dat' : this.$t('Weapon.Lance')
+            break
+          case 7:
+            wrttext = file ? 'g_lance.wp_dat' : this.$t('Weapon.Gunlance')
+            break
+          case 8:
+            wrttext = file ? 's_axe.wp_dat' : this.$t('Weapon.Switch_axe')
+            break
+          case 9:
+            wrttext = file ? 'c_axe.wp_dat' : this.$t('Weapon.Charge_blade')
+            break
+          case 10:
+            wrttext = file ? 'rod.wp_dat' : this.$t('Weapon.Insect_glaive')
+            break
+          case 11:
+            wrttext = file ? 'bow.wp_dat_g' : this.$t('Weapon.Hunting_bow')
+            break
+          case 12:
+            wrttext = file ? 'hbg.wp_dat_g' : this.$t('Weapon.Heavy_crossbow')
+            break
+          case 13:
+            wrttext = file ? 'lbg.wp_dat_g' : this.$t('Weapon.Light_crossbow')
+            break
+          default:
+            wrttext = this.$t('Weapon.Unknown')
+        }
+        return wrttext
+      },
+      askType (grade) {
+        let gradetext = this.$t('WeaponExplain.NoGroove')
+        switch (grade) {
+          case 112:
+            gradetext = this.$t('WeaponExplain.clothes')
+            break
+          case 113:
+            gradetext = this.$t('WeaponExplain.pipe')
+            break
+          default:
+            gradetext = this.$t('WeaponExplain.Unknown')
+        }
+        return gradetext
+      },
       generalsize (generalsize) {
         let generalsizetext = this.$t('WeaponExplain.Nothing')
         switch (generalsize) {
@@ -2769,6 +3553,16 @@
         }
         return equipmentvarianttext
       },
+      itemvul (id) {
+        let wpnamelist
+        wpnamelist = require('../components/Smiscellaneous/' + this.$i18n.locale + '/item.json')
+        let namedata = wpnamelist.Data
+        if (namedata[id]) {
+          return namedata[id]
+        } else {
+          return this.$t('WeaponExplain.Unknown')
+        }
+      },
       HexFunction (data, Hexpointer, HexRuler, i) {
         let ret = ''
         if (Hexpointer === undefined) {
@@ -2811,7 +3605,12 @@
         let wpnamelist
         if (
           this.weapon &&
-          (this.weapon.substring(this.weapon.lastIndexOf('.') + 1) === 'wp_dat_g' || this.weapon.substring(this.weapon.lastIndexOf('.') + 1) === 'wp_dat' || this.weapon.substring(this.weapon.lastIndexOf('.') + 1) === 'am_dat')
+          (
+            this.weapon.substring(this.weapon.lastIndexOf('.') + 1) === 'wp_dat_g'
+            || this.weapon.substring(this.weapon.lastIndexOf('.') + 1) === 'wp_dat'
+            || this.weapon.substring(this.weapon.lastIndexOf('.') + 1) === 'am_dat'
+            || this.weapon.substring(this.weapon.lastIndexOf('.') + 1) === 'eq_crt'
+          )
         ) {
           wpnamelist = require('../components/Weaponinfo/' + this.$i18n.locale + '/' + this.weapon + '.json')
         } else {
@@ -2838,6 +3637,25 @@
             if (namedata[i].Weapon_Number === id) {
               return namedata[i].name
             }
+          }
+        }
+        return this.$t('WeaponExplain.Unknown')
+      },
+      wrtname (id, type) {
+        let wpnamelist
+        let wrtweapon = this.wrtType(type, true)
+        if (wrtweapon !== this.$t('Weapon.Unknown')) {
+          wpnamelist = require('../components/Weaponinfo/' + this.$i18n.locale + '/' + wrtweapon + '.json')
+        } else {
+          return this.$t('WeaponExplain.Unknown')
+        }
+        let namedata = wpnamelist.Data
+        if (!Number.isInteger(id)) {
+          id = id.vul
+        }
+        for (let i = 0; i < namedata.length; i++) {
+          if (namedata[i].Weapon_Number === id) {
+            return namedata[i].name
           }
         }
         return this.$t('WeaponExplain.Unknown')
@@ -2870,10 +3688,19 @@
           return []
         }
       },
-      skpname (id) {
-        console.log(id)
+      skname (id) {
         let wpnamelist
         wpnamelist = require('../components/Smiscellaneous/' + this.$i18n.locale + '/skill.json')
+        let namedata = wpnamelist.Data
+        if (namedata[id]) {
+          return namedata[id]
+        } else {
+          return []
+        }
+      },
+      asname (id) {
+        let wpnamelist
+        wpnamelist = require('../components/Smiscellaneous/' + this.$i18n.locale + '/askill.json')
         let namedata = wpnamelist.Data
         if (namedata[id]) {
           return namedata[id]
@@ -2931,7 +3758,15 @@
           if (HexPointer.eq_Type != null) {
             wpobj.wp_Name = _this.wpname(_this.HexFunction(data, HexPointer.eq_Number, HexRuler, i).vul, _this.HexFunction(data, HexPointer.eq_Type, HexRuler, i).vul)
           } else if (HexPointer.sk_Number != null) {
-            wpobj.wp_Name = _this.skpname(_this.HexFunction(data, HexPointer.sk_Number, HexRuler, i).vul)
+            wpobj.wp_Name = _this.skname(_this.HexFunction(data, HexPointer.sk_Number, HexRuler, i).vul)
+          } else if (HexPointer.as_Number != null) {
+            wpobj.wp_Name = _this.asname(_this.HexFunction(data, HexPointer.as_Number, HexRuler, i).vul)
+          } else if (HexPointer.wrt_Number != null) {
+            wpobj.wp_Name = _this.wrtname(_this.HexFunction(data, HexPointer.wrt_Number, HexRuler, i).vul, _this.HexFunction(data, HexPointer.wrt_Type, HexRuler, i).vul)
+          } else if (HexPointer.wus_Number != null) {
+            wpobj.wp_Name = _this.wrtname(_this.HexFunction(data, HexPointer.wus_Number, HexRuler, i).vul, _this.HexFunction(data, HexPointer.wus_Type, HexRuler, i).vul)
+          } else if (HexPointer.art_Number != null) {
+            wpobj.wp_Name = _this.wpname(_this.HexFunction(data, HexPointer.art_Number, HexRuler, i).vul, _this.HexFunction(data, HexPointer.art_Type, HexRuler, i).vul)
           } else {
             wpobj.wp_Name = _this.wpname(_this.HexFunction(data, HexPointer.wp_Number, HexRuler, i))
           }

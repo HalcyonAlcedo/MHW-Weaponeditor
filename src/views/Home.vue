@@ -229,11 +229,6 @@
           </v-list-item>
         </v-list-group>
         <v-divider></v-divider>
-        <v-list-item @click="openfile('armor.am_dat'),left = false">
-          <v-list-item-title>
-            {{$t("Interface.equipment")}}
-          </v-list-item-title>
-        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
@@ -439,11 +434,20 @@ export default {
         { title: this.$t('Weaponsmiscellaneous.Syllable') + ' (wep_whistle.wep_wsl)', file: 'wep_whistle.wep_wsl'},
         { title: this.$t('Weaponsmiscellaneous.Bottle') + ' (bottle_table.bbtbl)', file: 'bottle_table.bbtbl'},
         { title: this.$t('Weaponsmiscellaneous.Shell') + ' (shell_table.shl_tbl)', file: 'shell_table.shl_tbl'},
-        { title: this.$t('Weaponsmiscellaneous.Skill') + ' (skill_data.skl_dat)', file: 'skill_data.skl_dat'}
+        { title: this.$t('Weaponsmiscellaneous.Skill') + ' (skill_data.skl_dat)', file: 'skill_data.skl_dat'},
+        { title: this.$t('Weaponsmiscellaneous.Rod') + ' (rod_insect.rod_inse)', file: 'rod_insect.rod_inse', disabled: true},
+        { title: this.$t('Weaponsmiscellaneous.ASkill') + ' (a_skill.ask)', file: 'a_skill.ask'},
+        { title: this.$t('Weaponsmiscellaneous.WeaponMake') + ' (weapon.eq_crt)', file: 'weapon.eq_crt'},
+        { title: this.$t('Weaponsmiscellaneous.WeaponDerived') + ' (weapon.eq_cus)', file: 'weapon.eq_cus'}
+      ]
+      let eq = [
+        { title: this.$t('Armor.Armor') + ' (armor.am_dat)', file: 'armor.am_dat'},
+        { title: this.$t('Armor.ArmorMake') + ' (armor.eq_crt)', file: 'armor.eq_crt'},
       ]
       return [
         {title: this.$t('Interface.Weapon'), items: wp},
-        {title: this.$t('Interface.Weaponsmiscellaneous'), items: wpm}
+        {title: this.$t('Interface.Weaponsmiscellaneous'), items: wpm},
+        {title: this.$t('Interface.equipment'), items: eq}
       ]
     },
     weapon () {
@@ -497,6 +501,8 @@ export default {
           return this.$t('Weaponsmiscellaneous.Rod')
         case 'skill_data.skl_dat':
           return this.$t('Weaponsmiscellaneous.Skill')
+        case 'a_skill.ask':
+          return this.$t('Weaponsmiscellaneous.ASkill')
         case 'wep_glan.wep_glan':
           return this.$t('Weaponsmiscellaneous.Bombardment')
         case 'wep_saxe.wep_saxe':
@@ -509,6 +515,12 @@ export default {
           return this.$t('Weaponsmiscellaneous.Shell')
         case 'wep_wsword.wep_wsd':
           return this.$t('Weaponsmiscellaneous.Wswordattribute')
+        case 'weapon.eq_cus':
+          return this.$t('Weaponsmiscellaneous.WeaponDerived')
+        case 'weapon.eq_crt':
+          return this.$t('Weaponsmiscellaneous.WeaponMake')
+        case 'armor.eq_crt':
+          return this.$t('Armor.ArmorMake')
         case 'armor.am_dat':
           return this.$t('Interface.equipment')
         default:
@@ -595,7 +607,7 @@ export default {
           return ret
         }],
         responseType: 'json' // 表明返回服务器返回的数据类型
-      }).then((res) => { // 处理返回的文件流
+      }).then(() => { // 处理返回的文件流
         _this.devtools = false
         _this.$store.dispatch('setlicense', true)
       })

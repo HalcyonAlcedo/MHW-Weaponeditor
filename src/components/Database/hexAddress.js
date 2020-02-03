@@ -5,9 +5,9 @@ const hexAddress = (data) => {
     HexRuler = 16 * 4 + 2 // 近程武器
     HexPointer = {
       'wp_Number': [10, 1], // 6
-      'wp_Unprefixed_Model': [18, 2], // 12~13
-      'wp_Model': [20, 2], // 14~15
-      'wp_Minor_Model': [22, 2], // 16~17
+      'wp_Unprefixed_Model': [17, 2], // 12~13
+      'wp_Model': [19, 2], // 14~15
+      'wp_Minor_Model': [21, 2], // 16~17
       'wp_Money': [29, 4], // 21~24
       'wp_Rarity': [30, 1], // 25
       'wp_Chopping_value': [31, 1], // 26
@@ -110,6 +110,15 @@ const hexAddress = (data) => {
       'sk_Second_effect': [24, 2], // 11~12
       'sk_Thirdly_effect': [24, 4], // 11~12
       'sk_Fourthly_effect': [28, 4] // 11~12
+    } 
+  } else if (data[26] === 1 && data[54] === 2 && data[82] === 3) {
+    HexRuler = 28 // 衣装
+    HexPointer = {
+      'as_Number': [29, 4], // 22~26
+      'as_Type': [10, 1],
+      'as_Slot_grade_Number': [34, 1],
+      'as_Slot_grade_1': [35, 1],
+      'as_Slot_grade_2': [36, 1],
     }
   } else if (data[4] === 29 && data[5] === 2 && data[6] === 186) {
     HexRuler = 111 // 弩弹
@@ -302,7 +311,8 @@ const hexAddress = (data) => {
     HexPointer = {
       'eq_Number': [64, 2],
       'eq_Type': [20, 1], // 6~9
-      'eq_Variant': [18, 1], // 10~11
+      'eq_Model': [18, 2], // 14~15
+      'eq_Variant': [16, 1], // 10~11
       'eq_Defense': [22, 2], // 12~13
       'eq_Rarity': [30, 1], // 12~13
       'eq_Money': [34, 4], // 12~13
@@ -325,7 +335,51 @@ const hexAddress = (data) => {
       'qe_Weapon_skillslv4': [55, 1],
       'qe_Weapon_skills5': [57, 2],
       'qe_Weapon_skillslv5': [58, 1]
-
+    }
+  } else if (data[10] === 0 && data[2156] === 1 && data[3192] === 2) {
+    HexRuler = 37 // 武器制造
+    HexPointer = {
+      'wrt_Number': [12, 2],
+      'wrt_Type': [10, 1],
+      'wrt_item1': [32, 2],
+      'wrt_item1quantity': [33, 1],
+      'wrt_item2': [35, 2],
+      'wrt_item2quantity': [36, 1],
+      'wrt_item3': [38, 2],
+      'wrt_item3quantity': [39, 1],
+      'wrt_item4': [41, 2],
+      'wrt_item4quantity': [42, 1],
+      'wrt_Unlock': [14, 2],
+    }
+  } else if (data[10] === 0 && data[8374] === 3 && data[16492] === 1) {
+    HexRuler = 41 // 武器派生
+    HexPointer = {
+      'wus_Number': [12, 2],
+      'wus_Type': [10, 1],
+      'wus_item1': [28, 2],
+      'wus_item1quantity': [29, 1],
+      'wus_item2': [31, 2],
+      'wus_item2quantity': [32, 1],
+      'wus_item3': [34, 2],
+      'wus_item3quantity': [35, 1],
+      'wus_item4': [37, 2],
+      'wus_item4quantity': [38, 1],
+      'wus_Unlock': [40, 2],
+    }
+  } else if (data[10] === 5 && data[3821] === 0 && data[18954] === 1) {
+    HexRuler = 37 // 裝備制造
+    HexPointer = {
+      'art_Number': [12, 2],
+      'art_Type': [10, 1],
+      'art_item1': [32, 2],
+      'art_item1quantity': [33, 1],
+      'art_item2': [35, 2],
+      'art_item2quantity': [36, 1],
+      'art_item3': [38, 2],
+      'art_item3quantity': [39, 1],
+      'art_item4': [41, 2],
+      'art_item4quantity': [42, 1],
+      'art_Unlock': [14, 2],
     }
   } else {
     HexRuler = data.length // 未知

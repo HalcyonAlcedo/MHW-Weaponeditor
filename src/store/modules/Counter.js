@@ -88,8 +88,20 @@ const mutations = {
           state.filename = 'bottle_table.bbtbl'
           break
         case 'shell_table.shl_tbl':
-            state.filename = 'shell_table.shl_tbl'
-            break
+          state.filename = 'shell_table.shl_tbl'
+          break
+        case 'a_skill.ask':
+          state.filename = 'a_skill.ask'
+          break
+        case 'weapon.eq_crt':
+          state.filename = 'weapon.eq_crt'
+          break
+        case 'weapon.eq_cus':
+          state.filename = 'weapon.eq_cus'
+          break
+        case 'armor.eq_crt':
+          state.filename = 'armor.eq_crt'
+          break
         default:
           state.filename = 'Unknown'
       }
@@ -146,7 +158,7 @@ const mutations = {
         case '1-16-9-24-193-1-0':
           state.filename = 'kireaji.kire'
           break
-        case '9-1-61':
+        case '230-245-255-28-23-104-203':
           state.filename = 'rod_insect.rod_inse'
           break
         case '1-16-9-24-135-0-226':
@@ -170,6 +182,18 @@ const mutations = {
         case '1-16-9-24-29-2-186':
             state.filename = 'shell_table.shl_tbl'
             break
+        case '1-16-9-24-104-0-20':
+          state.filename = 'a_skill.ask'
+          break
+        case '1-16-9-24-121-0-135':
+          state.filename = 'weapon.eq_crt'
+          break
+        case '1-16-9-24-88-0-169':
+          state.filename = 'weapon.eq_cus'
+          break
+        case '1-16-9-24-121-0-200':
+          state.filename = 'armor.eq_crt'
+          break
         default:
           state.filename = 'Unknown'
       }
