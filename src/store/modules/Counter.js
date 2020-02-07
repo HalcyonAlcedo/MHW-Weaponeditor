@@ -161,7 +161,7 @@ const mutations = {
         case '230-245-255-28-23-104-203':
           state.filename = 'rod_insect.rod_inse'
           break
-        case '1-16-9-24-135-0-226':
+        case '1-16-9-24-187-0-226':
           state.filename = 'skill_data.skl_dat'
           break
         case '1-16-9-24-194-1-21':
@@ -173,13 +173,13 @@ const mutations = {
         case '1-16-9-24-193-1-8':
           state.filename = 'wep_wsword.wep_wsd'
           break
-        case '1-16-9-24-95-0-212':
+        case '1-16-9-24-95-0-220':
           state.filename = 'armor.am_dat'
           break
         case '1-16-9-24-19-2-26':
           state.filename = 'bottle_table.bbtbl'
           break
-        case '1-16-9-24-29-2-186':
+        case '1-16-9-24-29-2-188':
             state.filename = 'shell_table.shl_tbl'
             break
         case '1-16-9-24-104-0-20':
@@ -191,7 +191,7 @@ const mutations = {
         case '1-16-9-24-88-0-169':
           state.filename = 'weapon.eq_cus'
           break
-        case '1-16-9-24-121-0-200':
+        case '1-16-9-24-121-0-97':
           state.filename = 'armor.eq_crt'
           break
         default:

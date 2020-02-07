@@ -790,6 +790,14 @@
             "Weapon_Number": 217
         },
         {
+            "name": "爆熱機關式【銀翼】",
+            "Weapon_Number": 218
+        },
+        {
+            "name": "鬼金棒",
+            "Weapon_Number": 219
+        },
+        {
             "name": "魂焰剛劍‧炎妃",
             "Weapon_Number": 223
         },
@@ -828,6 +836,10 @@
         {
             "name": "公會宮殿大劍",
             "Weapon_Number": 232
+        },
+        {
+            "name": "大鬼金棒",
+            "Weapon_Number": 233
         },
         {
             "name": "瞬間冷凍劍魚",

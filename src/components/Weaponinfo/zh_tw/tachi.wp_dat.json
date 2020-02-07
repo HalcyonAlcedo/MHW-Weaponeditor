@@ -785,6 +785,10 @@
             "Weapon_Number": 219
         },
         {
+            "name": "鬼薙刀",
+            "Weapon_Number": 221
+        },
+        {
             "name": "魂焰龍刀‧炎妃",
             "Weapon_Number": 225
         },
@@ -815,6 +819,10 @@
         {
             "name": "公會宮殿配刀",
             "Weapon_Number": 232
+        },
+        {
+            "name": "大鬼薙刀",
+            "Weapon_Number": 233
         },
         {
             "name": "宮廷禮刀【將星】",

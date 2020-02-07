@@ -782,6 +782,10 @@
             "Weapon_Number": 210
         },
         {
+            "name": "鬼槍金獅子",
+            "Weapon_Number": 211
+        },
+        {
             "name": "魂焰龍槍‧炎妃",
             "Weapon_Number": 215
         },
@@ -804,6 +808,10 @@
         {
             "name": "公會宮殿高塔",
             "Weapon_Number": 220
+        },
+        {
+            "name": "大鬼槍金獅子",
+            "Weapon_Number": 221
         },
         {
             "name": "轟雷長槍Ⅱ",

@@ -758,6 +758,10 @@
             "Weapon_Number": 205
         },
         {
+            "name": "鬼銃槍",
+            "Weapon_Number": 206
+        },
+        {
             "name": "魂焰銃槍‧炎妃",
             "Weapon_Number": 210
         },
@@ -788,6 +792,10 @@
         {
             "name": "公會宮殿守序者",
             "Weapon_Number": 217
+        },
+        {
+            "name": "雷鬼銃槍德拉岡",
+            "Weapon_Number": 218
         },
         {
             "name": "宮廷銃槍【護星】",

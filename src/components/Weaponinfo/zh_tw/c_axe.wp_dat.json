@@ -722,6 +722,10 @@
             "Weapon_Number": 196
         },
         {
+            "name": "金剛盾斧",
+            "Weapon_Number": 197
+        },
+        {
             "name": "魂焰盾斧‧炎妃",
             "Weapon_Number": 201
         },
@@ -740,6 +744,18 @@
         {
             "name": "公會宮殿碟斧",
             "Weapon_Number": 205
+        },
+        {
+            "name": "金剛盾斧雷霆",
+            "Weapon_Number": 206
+        },
+        {
+            "name": "黑鷹",
+            "Weapon_Number": 213
+        },
+        {
+            "name": "雷光黑鷹",
+            "Weapon_Number": 214
         },
         {
             "name": "宮廷鏡盾【機星】",

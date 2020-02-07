@@ -1,0 +1,13 @@
+当前目标游戏版本：11.50.00
+
+此mod将允许所有文件再次从nativePC加载。
+
+安装：将文件解压缩到游戏的主文件夹（exe所在的位置）中。
+您需要安装最新的Visual c ++（VC_redist.x64和VC_redist.x86都装），否则游戏将在启动时崩溃。
+
+补丁和vc++均从官网下载，如果不信任这些文件可以自行去官网下载
+
+Stracker's Loader：
+https://www.nexusmods.com/monsterhunterworld/mods/1982
+Visual c ++：
+https://support.microsoft.com/zh-cn/help/2977003/the-latest-supported-visual-c-downloads

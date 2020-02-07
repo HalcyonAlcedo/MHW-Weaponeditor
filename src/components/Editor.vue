@@ -2630,7 +2630,12 @@
             class="mr-4
             grey--text"
           >
-            Page {{ page }} of {{ numberOfPages }}
+            <v-text-field
+              v-model="page"
+              type="number"
+              style="width:100px"
+              :suffix="'/'+numberOfPages"
+            ></v-text-field>
           </span>
           <v-btn
             fab

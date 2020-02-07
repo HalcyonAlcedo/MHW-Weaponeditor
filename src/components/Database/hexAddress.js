@@ -4,7 +4,7 @@ const hexAddress = (data) => {
   if (data[11] === 0 && data[76] === 1 && data[142] === 2) {
     HexRuler = 16 * 4 + 2 // 近程武器
     HexPointer = {
-      'wp_Number': [10, 1], // 6
+      'wp_Number': [11, 2], // 6
       'wp_Unprefixed_Model': [17, 2], // 12~13
       'wp_Model': [19, 2], // 14~15
       'wp_Minor_Model': [21, 2], // 16~17
@@ -30,7 +30,7 @@ const hexAddress = (data) => {
   } else if (data[11] === 0 && data[79] === 1 && data[148] === 2) {
     HexRuler = 16 * 4 + 5 // 远程武器
     HexPointer = {
-      'wp_Number': [10, 1], // 6
+      'wp_Number': [11, 2], // 6
       'wp_Unprefixed_Model': [17, 2], // 12~13
       'wp_Model': [19, 2], // 14~15
       'wp_Minor_Model': [21, 2], // 16~17
@@ -101,13 +101,13 @@ const hexAddress = (data) => {
       'gl_bombard_type': [15, 2], // 10~11
       'gl_bombard_level': [17, 2] // 12~13
     }
-  } else if (data[10] === 0 && data[29] === 1 && data[67] === 1 && data[86] === 2) {
-    HexRuler = 19 // 技能
+  } else if (data[10] === 0 && data[37] === 1 && data[64] === 1 && data[91] === 1) {
+    HexRuler = 27 // 技能
     HexPointer = {
       'sk_Number': [11, 2], // 6~9
       'sk_level': [12, 1], // 8
-      'sk_First_effect': [22, 2], // 9~10
-      'sk_Second_effect': [24, 2], // 11~12
+      'sk_First_effect': [28, 2], // 9~10
+      'sk_Second_effect': [30, 2], // 11~12
       'sk_Thirdly_effect': [24, 4], // 11~12
       'sk_Fourthly_effect': [28, 4] // 11~12
     } 
@@ -120,7 +120,7 @@ const hexAddress = (data) => {
       'as_Slot_grade_1': [35, 1],
       'as_Slot_grade_2': [36, 1],
     }
-  } else if (data[4] === 29 && data[5] === 2 && data[6] === 186) {
+  } else if (data[4] === 29 && data[5] === 2 && data[6] === 188) {
     HexRuler = 111 // 弩弹
     HexPointer = {
       'sh_Number': 'auto',
@@ -366,7 +366,7 @@ const hexAddress = (data) => {
       'wus_item4quantity': [38, 1],
       'wus_Unlock': [40, 2],
     }
-  } else if (data[10] === 5 && data[3821] === 0 && data[18954] === 1) {
+  } else if (data[10] === 5 && data[3821] === 0 && data[20508] === 1) {
     HexRuler = 37 // 裝備制造
     HexPointer = {
       'art_Number': [12, 2],

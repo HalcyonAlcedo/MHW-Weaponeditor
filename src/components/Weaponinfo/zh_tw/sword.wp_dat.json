@@ -829,6 +829,10 @@
             "Weapon_Number": 221
         },
         {
+            "name": "金獸棍",
+            "Weapon_Number": 222
+        },
+        {
             "name": "魂焰龍劍‧炎妃",
             "Weapon_Number": 226
         },
@@ -851,6 +855,10 @@
         {
             "name": "公會宮殿利劍",
             "Weapon_Number": 231
+        },
+        {
+            "name": "金獸棍【禁忌】",
+            "Weapon_Number": 232
         },
         {
             "name": "宮廷繼劍【新星】",

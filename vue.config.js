@@ -15,7 +15,7 @@ module.exports = {
         productName: 'MHW Equipment Editor',
         copyright: 'Copyright © 2020 Alcedo',
         win: {
-          target: ['portable']
+          target: ['zip']
         },
         extraResources:  [
           {
@@ -25,6 +25,13 @@ module.exports = {
           {
             "from": "./node_modules/regedit/vbs",
             "to": "../regedit/vbs",
+            "filter": [
+              "**/*"
+            ]
+          },
+          {
+            "from": "./LeadFile",
+            "to": "../前置文件",
             "filter": [
               "**/*"
             ]

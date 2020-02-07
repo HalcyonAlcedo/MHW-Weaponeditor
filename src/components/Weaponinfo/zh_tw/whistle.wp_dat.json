@@ -777,6 +777,10 @@
             "Weapon_Number": 211
         },
         {
+            "name": "電電太鼓",
+            "Weapon_Number": 212
+        },
+        {
             "name": "魂焰龍笛‧炎妃",
             "Weapon_Number": 216
         },
@@ -799,6 +803,10 @@
         {
             "name": "公會宮殿吟遊者",
             "Weapon_Number": 221
+        },
+        {
+            "name": "電電太鼓【雷轟】",
+            "Weapon_Number": 222
         },
         {
             "name": "宮廷奏琴【響星】",
