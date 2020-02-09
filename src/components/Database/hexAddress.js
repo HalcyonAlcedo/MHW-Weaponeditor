@@ -106,8 +106,8 @@ const hexAddress = (data) => {
     HexPointer = {
       'sk_Number': [11, 2], // 6~9
       'sk_level': [12, 1], // 8
-      'sk_First_effect': [28, 2], // 9~10
-      'sk_Second_effect': [30, 2], // 11~12
+      'sk_First_effect': [30, 2], // 9~10
+      'sk_Second_effect': [32, 2], // 11~12
       'sk_Thirdly_effect': [24, 4], // 11~12
       'sk_Fourthly_effect': [28, 4] // 11~12
     } 

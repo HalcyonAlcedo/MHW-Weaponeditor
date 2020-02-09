@@ -1487,7 +1487,6 @@
                     v-model="item.sk_First_effect.vul"
                     
                     filled
-                    readonly
                   ></v-text-field>
                   <v-text-field
                     v-if="sourceitems && (item.sk_First_effect.vul !== item.wp_sourcedata.sk_First_effect.vul)"
@@ -1506,7 +1505,6 @@
                     v-model="item.sk_Second_effect.vul"
                     
                     filled
-                    readonly
                   ></v-text-field>
                   <v-text-field
                     v-if="sourceitems && (item.sk_Second_effect.vul !== item.wp_sourcedata.sk_Second_effect.vul)"
