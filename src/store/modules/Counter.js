@@ -7,7 +7,8 @@ const state = {
   Oldversion: false,
   versionupdate: false,
   license: false,
-  uuid: ''
+  uuid: '',
+  newinterface: false
 }
 
 const mutations = {
@@ -158,9 +159,6 @@ const mutations = {
         case '1-16-9-24-193-1-0':
           state.filename = 'kireaji.kire'
           break
-        case '230-245-255-28-23-104-203':
-          state.filename = 'rod_insect.rod_inse'
-          break
         case '1-16-9-24-187-0-226':
           state.filename = 'skill_data.skl_dat'
           break
@@ -170,13 +168,13 @@ const mutations = {
         case '1-16-9-24-193-1-50':
           state.filename = 'wep_whistle.wep_wsl'
           break
-        case '1-16-9-24-193-1-8':
+        case '1-16-9-24-193-1-10':
           state.filename = 'wep_wsword.wep_wsd'
           break
         case '1-16-9-24-95-0-220':
           state.filename = 'armor.am_dat'
           break
-        case '1-16-9-24-19-2-26':
+        case '1-16-9-24-29-2-26':
           state.filename = 'bottle_table.bbtbl'
           break
         case '1-16-9-24-29-2-188':
@@ -188,7 +186,7 @@ const mutations = {
         case '1-16-9-24-121-0-135':
           state.filename = 'weapon.eq_crt'
           break
-        case '1-16-9-24-88-0-169':
+        case '1-16-9-24-88-0-153':
           state.filename = 'weapon.eq_cus'
           break
         case '1-16-9-24-121-0-97':
@@ -196,6 +194,9 @@ const mutations = {
           break
         default:
           state.filename = 'Unknown'
+      }
+      if (state.filename == 'Unknown' && state.file.substring(state.file.lastIndexOf('\\') + 1) == 'rod_insect.rod_inse') {
+          state.filename = 'rod_insect.rod_inse'
       }
     }
   },
@@ -229,7 +230,10 @@ const mutations = {
   },
   SET_UUID (state, uuid) {
     state.uuid = uuid
-  }
+  },
+  NEW_IMTERFACE (state, newinterface) {
+    state.newinterface = newinterface
+  },
 }
 
 const getters = {
@@ -256,6 +260,9 @@ const getters = {
   },
   doneuuid: state => {
     return state.uuid
+  },
+  donenewInterface: state => {
+    return state.newinterface
   }
 }
 
@@ -275,6 +282,9 @@ const actions = {
   },
   excludeUnknown ({ commit }, excludeunknown) {
     commit('EXCLUDE_UKNOWN', excludeunknown)
+  },
+  newInterface ({ commit }, newinterface) {
+    commit('NEW_IMTERFACE', newinterface)
   },
   setOldversion ({ commit }, Oldversion) {
     commit('SET_Old_version', Oldversion)

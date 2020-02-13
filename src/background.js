@@ -10,12 +10,28 @@ import path from 'path'
 const EAU = require('electron-asar-hot-updater');
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
+//edge-js模块加载
+let edgepath = path.join(__static, isDevelopment ? '../' : '../../ecryption/');
+let edge = __non_webpack_require__(isDevelopment ? 'electron-edge-js' : edgepath + 'electron-edge-js');
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
 
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([{scheme: 'app', privileges: { secure: true, standard: true } }])
+
+//c# code
+let DencryptionHelper = edge.func({
+  assemblyFile: path.join(edgepath, 'dll/EncryptionHelper.dll'),
+  typeName: 'EncryptionHelper.Startup',
+  methodName: 'nodeDecrypt'
+});
+let EncryptionHelper = edge.func({
+  assemblyFile: path.join(edgepath, 'dll/EncryptionHelper.dll'),
+  typeName: 'EncryptionHelper.Startup',
+  methodName: 'nodeEcrypt'
+});
 
 function createWindow () {
   // Create the browser window.
@@ -149,6 +165,26 @@ ipcMain.on('check-vc', (event, arg) => {
   })
 })
 
+ipcMain.on('Dencryption', (event, data) => {
+  //解密文件
+  let payload = {
+    filebyte: data.hex,
+    key: data.key,
+  };
+  DencryptionHelper(payload, function (error, result) {
+    event.reply('reDencryption', result)
+  });
+})
+ipcMain.on('Encryption', (event, data) => {
+  //解密文件
+  let payload = {
+    filebyte: data.hex,
+    key: data.key,
+  };
+  EncryptionHelper(payload, function (error, result) {
+    event.reply('reEncryption', result)
+  });
+})
 // Exit cleanly on request from parent process in development mode.
 if (isDevelopment) {
   if (process.platform === 'win32') {

@@ -14,9 +14,9 @@ module.exports = {
       builderOptions: {
         productName: 'MHW Equipment Editor',
         copyright: 'Copyright © 2020 Alcedo',
-        win: {
-          target: ['zip']
-        },
+        //win: {
+        //  target: ['zip']
+        //},
         extraResources:  [
           {
             "from": "./node_modules/electron-asar-hot-updater/updater.exe",
@@ -30,6 +30,20 @@ module.exports = {
             ]
           },
           {
+            "from": "./node_modules/electron-edge-js",
+            "to": "../ecryption/electron-edge-js",
+            "filter": [
+              "**/*"
+            ]
+          },
+          {
+            "from": "./dll",
+            "to": "../ecryption/dll",
+            "filter": [
+              "**/*"
+            ]
+          },
+          {
             "from": "./LeadFile",
             "to": "../前置文件",
             "filter": [
@@ -37,7 +51,6 @@ module.exports = {
             ]
           }
         ]
-        // asarUnpack:['Sourceweapon']
       }
     }
   }

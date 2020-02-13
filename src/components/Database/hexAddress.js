@@ -74,10 +74,23 @@ const hexAddress = (data) => {
       'ws_Second_attribute': [17, 1], // 13
       'ws_Second_attribute_values': [19, 2, 'wpattribute'] // 14~15
     }
-  } else if (data[6] === 0 && data[16] === 1 && data[26] === 2) {
-    HexRuler = 27 // 虫
+  } else if (data[10] === 0 && data[38] === 1 && data[66] === 2) {
+    HexRuler = 28 // 虫
     HexPointer = {
-      'ri_Number': [15, 4] // 11~15
+      'ri_Number': [13, 4], // 11~15
+      'ri_type': [14, 1],
+      'TreePositionId': [15, 1],
+      'BaseModelId': [16, 1],
+      'TreeId': [18, 2],
+      'ri_craftCost': [23, 4],
+      'Rarity': [24, 1],
+      'ri_power': [26, 2],
+      'ri_speed': [28, 2],
+      'ri_heal': [30, 2],
+      'Element': [32, 2],
+      'ri_dustEffect': [34, 2],
+      'TreePos': [36, 2],
+      'EquipId': [37, 1],
     }
   } else if (data[4] === 193 && data[6] === 42 && data[10] === 0 && data[17] === 1 && data[24] === 2) {
     HexRuler = 7 // 斩瓶

@@ -38,7 +38,17 @@
       </template>
 
       <template v-slot:default="props">
-        <v-row>
+        <v-row justify="start" v-if="newinterface">
+          <v-col
+            v-for="item in props.items"
+            :key="item.wp_Number"
+            cols="12"
+            sm="4"
+          >
+            <Standard :data="item" :sourcedata="sourceitems" />
+          </v-col>
+        </v-row>
+        <v-row v-else>
           <v-col
             v-for="item in props.items"
             :key="item.wp_Number"
@@ -61,6 +71,7 @@
                 <h4 v-else-if="existence(item.wus_Number)">{{ item.wp_Name }}</h4>
                 <h4 v-else-if="existence(item.art_Number)">{{ item.wp_Name }}</h4>
                 <h4 v-else-if="existence(item.sk_Number)">{{ item.wp_Name + 'LV' + item.sk_level.vul }}</h4>
+                <h4 v-else-if="existence(item.ri_Number)">{{ item.wp_Name}}</h4>
                 <v-spacer></v-spacer>
                 <v-subheader>
                   {{ $t('WeaponExplain.Address') }}：<span class="red--text">{{ str_pad(item.wp_Hex) }}</span>
@@ -180,7 +191,6 @@
                     disabled
                   ></v-text-field>
                 </v-list-item>
-                <!--武器和裝備製作id、類型-->
                 <v-list-item v-if="existence(item.wrt_Number)">
                   <v-text-field
                     :label="$t('Weaponrecipe.Number')"
@@ -253,6 +263,129 @@
                     disabled
                   ></v-text-field>
                 </v-list-item>
+                <v-list-item v-if="existence(item.ri_Number)">
+                  <v-text-field
+                    :label="$t('Insect.Number')"
+                    v-model="item.ri_Number.vul"
+                    
+                    filled
+                    disabled
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.ri_type)">
+                  <v-select
+                    v-model="item.ri_type.vul"
+                    :items="attacktypeitem"
+                    @change="Select_interchangeable(item.ri_type)"
+                    filled
+                    :label="$t('Insect.Type')"
+                    item-text="text"
+                    item-value="value"
+                    return-object
+                  ></v-select>
+                  <v-text-field
+                    v-if="sourceitems && (item.ri_type.vul !== item.wp_sourcedata.ri_type.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Insect.Type')"
+                    :value="'Rank' + Number(item.wp_sourcedata.ri_type.vul + 1)"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.ri_craftCost)">
+                  <v-text-field
+                    :label="$t('Insect.Craft_costs')"
+                    @change="input_interchangeable(item.ri_craftCost)"
+                    v-model="item.ri_craftCost.vul"
+                    
+                    filled
+                  ></v-text-field>
+                  <v-text-field
+                    v-if="sourceitems && (item.ri_craftCost.vul !== item.wp_sourcedata.ri_craftCost.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Insect.Craft_costs')"
+                    v-model="item.wp_sourcedata.ri_craftCost.vul"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.ri_power)">
+                  <v-text-field
+                    :label="$t('Insect.Power')"
+                    @change="input_interchangeable(item.ri_power)"
+                    v-model="item.ri_power.vul"
+                    
+                    filled
+                  ></v-text-field>
+                  <v-text-field
+                    v-if="sourceitems && (item.ri_power.vul !== item.wp_sourcedata.ri_power.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Insect.Power')"
+                    v-model="item.wp_sourcedata.ri_power.vul"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.ri_speed)">
+                  <v-text-field
+                    :label="$t('Insect.Speed')"
+                    @change="input_interchangeable(item.ri_speed)"
+                    v-model="item.ri_speed.vul"
+                    
+                    filled
+                  ></v-text-field>
+                  <v-text-field
+                    v-if="sourceitems && (item.ri_craftCost.vul !== item.wp_sourcedata.ri_speed.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Insect.Speed')"
+                    v-model="item.wp_sourcedata.ri_speed.vul"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.ri_heal)">
+                  <v-text-field
+                    :label="$t('Insect.Heal')"
+                    @change="input_interchangeable(item.ri_heal)"
+                    v-model="item.ri_heal.vul"
+                    
+                    filled
+                  ></v-text-field>
+                  <v-text-field
+                    v-if="sourceitems && (item.ri_heal.vul !== item.wp_sourcedata.ri_heal.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Insect.Heal')"
+                    v-model="item.wp_sourcedata.ri_heal.vul"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
+                <v-list-item v-if="existence(item.ri_dustEffect)">
+                  <v-select
+                    v-model="item.ri_dustEffect.vul"
+                    :items="dustEffectitem"
+                    @change="Select_interchangeable(item.ri_dustEffect)"
+                    filled
+                    :label="$t('Insect.Dust')"
+                    item-text="text"
+                    item-value="value"
+                    return-object
+                  ></v-select>
+                  <v-text-field
+                    v-if="sourceitems && (item.ri_dustEffect.vul !== item.wp_sourcedata.ri_dustEffect.vul)"
+                    :label="$t('Interface.Original') + ' ' + $t('Insect.Dust')"
+                    :value="'Rank' + Number(item.wp_sourcedata.ri_dustEffect.vul + 1)"
+                    
+                    filled
+                    prepend-icon="mdi-transfer-left"
+                    readonly
+                  ></v-text-field>
+                </v-list-item>
                 <v-list-item v-if="existence(item.eq_Defense)">
                   <v-text-field
                     :label="$t('WeaponExplain.Defense')"
@@ -260,7 +393,6 @@
                     v-model="item.eq_Defense.vul"
                     
                     filled
-                    readonly
                   ></v-text-field>
                   <v-text-field
                     v-if="sourceitems && (item.eq_Defense.vul !== item.wp_sourcedata.eq_Defense.vul)"
@@ -861,7 +993,6 @@
                     readonly
                   ></v-text-field>
                 </v-list-item>
-                <!--武器製造-->
                 <v-list-item v-if="existence(item.wrt_item1)">
                   <v-autocomplete
                     :label="$t('Weaponrecipe.item1')"
@@ -1022,7 +1153,6 @@
                     readonly
                   ></v-text-field>
                 </v-list-item>
-                <!--武器派生-->
                 <v-list-item v-if="existence(item.wus_item1)">
                   <v-autocomplete
                     :label="$t('Weaponrecipe.item1')"
@@ -1183,7 +1313,6 @@
                     readonly
                   ></v-text-field>
                 </v-list-item>
-                <!--裝備製造-->
                 <v-list-item v-if="existence(item.art_item1)">
                   <v-autocomplete
                     :label="$t('Armorrecipe.item1')"
@@ -2108,7 +2237,6 @@
                     readonly
                   ></v-text-field>
                 </v-list-item>
-                <!-- new model -->
                 <v-list-item v-if="existence(item.wp_Model) || existence(item.wp_Unprefixed_Model)">
                   <v-menu
                     v-model="props.menu"
@@ -2258,7 +2386,6 @@
                     </v-card>
                   </v-menu>
                 </v-list-item>
-                <!-- nwe model end -->
                 <v-list-item v-if="existence(item.wp_Weapon_skills)">
                   <v-autocomplete
                     :label="$t('WeaponExplain.Weapon_skills')"
@@ -2459,7 +2586,6 @@
                     readonly
                   ></v-text-field>
                 </v-list-item>
-                <!--武器和裝備前置-->
                 <v-list-item v-if="existence(item.wrt_Unlock)">
                   <v-autocomplete
                     :label="$t('Weaponrecipe.Unlock')"
@@ -2482,16 +2608,6 @@
                     readonly
                   ></v-text-field>
                 </v-list-item>
-                <!--
-                <v-list-item v-if="existence(item.wus_Unlock)">
-                  <v-text-field
-                    :label="$t('Weaponrecipe.Unlock')"
-                    :value="wrtname(item.wus_Unlock.vul, item.wus_Type.vul)"
-                    filled
-                    disabled
-                  ></v-text-field>
-                </v-list-item>
-                -->
                 <v-list-item v-if="existence(item.art_Unlock)">
                   <v-autocomplete
                     :label="$t('Armorrecipe.Unlock')"
@@ -2661,6 +2777,7 @@
 
 <script>
   import hexAddress from './Database/hexAddress'
+  import Standard from './Project/Standard'
 
   export default {
     data () {
@@ -2702,6 +2819,9 @@
         sourceitems: false
       }
     },
+    components: {
+      Standard,
+    },
     computed: {
       getfile () {
         return this.$store.getters.donefile
@@ -2717,6 +2837,9 @@
       },
       excludeunknown () {
         return this.$store.getters.doneexcludeunknown
+      },
+      newinterface () {
+        return this.$store.getters.donenewInterface
       },
       numberOfPages () {
           return Math.ceil(this.filteritem.length / this.itemsPerPage)
@@ -2738,6 +2861,8 @@
             } else if (this.existence(_items[i].ws_Number) && _items[i].ws_Number !== false) {
               itemsarr.push(_items[i])
             } else if (this.existence(_items[i].bt_Number) && _items[i].bt_Number !== false) {
+              itemsarr.push(_items[i])
+            } else if (this.existence(_items[i].ri_Number) && _items[i].ri_Number !== false) {
               itemsarr.push(_items[i])
             } else if (this.existence(_items[i].sa_Number) && _items[i].sa_Number !== false) {
               itemsarr.push(_items[i])
@@ -2929,6 +3054,20 @@
           {value: 12, text: 'Rank13'},
         ]
       },
+      attacktypeitem () {
+        return [
+          {value: 0, text: this.$t('WeaponExplain.Cut')},
+          {value: 1, text: this.$t('WeaponExplain.Strike')},
+        ]
+      },
+      dustEffectitem () {
+        return [
+          {value: 0, text: this.$t('Insect.DustEffect_0')},
+          {value: 1, text: this.$t('Insect.DustEffect_1')},
+          {value: 2, text: this.$t('Insect.DustEffect_2')},
+          {value: 3, text: this.$t('Insect.DustEffect_3')},
+        ]
+      },
       bombardtypeitem () {
         return [
           {value: 0, text: this.$t('WeaponExplain.Normal_type')},
@@ -3062,6 +3201,15 @@
         } else {
           this.sourceitems = false
         }
+      },
+      newinterface: function () {
+        if (this.newinterface) {
+        this.itemsPerPageArray = [12, 24]
+        this.itemsPerPage = 12
+        } else {
+        this.itemsPerPageArray = [2, 4]
+        this.itemsPerPage = 2
+        }
       }
     },
     mounted () {
@@ -3096,7 +3244,6 @@
           'k_Number',
           'ws_Number',
           'bt_Number',
-          'ri_Number',
           'sa_Number',
           'ww_Number',
           'gl_Number',
@@ -3701,6 +3848,16 @@
           return []
         }
       },
+      riname (id) {
+        let wpnamelist
+        wpnamelist = require('../components/Smiscellaneous/' + this.$i18n.locale + '/insect.json')
+        let namedata = wpnamelist.Data
+        if (namedata[id]) {
+          return namedata[id]
+        } else {
+          return []
+        }
+      },
       asname (id) {
         let wpnamelist
         wpnamelist = require('../components/Smiscellaneous/' + this.$i18n.locale + '/askill.json')
@@ -3762,6 +3919,8 @@
             wpobj.wp_Name = _this.wpname(_this.HexFunction(data, HexPointer.eq_Number, HexRuler, i).vul, _this.HexFunction(data, HexPointer.eq_Type, HexRuler, i).vul)
           } else if (HexPointer.sk_Number != null) {
             wpobj.wp_Name = _this.skname(_this.HexFunction(data, HexPointer.sk_Number, HexRuler, i).vul)
+          } else if (HexPointer.ri_Number != null) {
+            wpobj.wp_Name = _this.riname(_this.HexFunction(data, HexPointer.ri_Number, HexRuler, i).vul)
           } else if (HexPointer.as_Number != null) {
             wpobj.wp_Name = _this.asname(_this.HexFunction(data, HexPointer.as_Number, HexRuler, i).vul)
           } else if (HexPointer.wrt_Number != null) {

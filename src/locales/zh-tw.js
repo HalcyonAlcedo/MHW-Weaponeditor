@@ -48,7 +48,8 @@ module.exports = {
     Tools_Help: '教程',
     Unopen: '暫未開放',
     Request: '申請',
-    VCLow_version: 'VC++版本較低，可能無法正常運行Mod，建議升級后使用'
+    VCLow_version: 'VC++版本較低，可能無法正常運行Mod，建議升級后使用',
+    NewInterface: '體驗新界面',
   },
   Explanatory: {
     Elimination_unknown_weapons: '武器信息清單中排除掉未被記載的武器數據',
@@ -56,7 +57,7 @@ module.exports = {
     Binary_mode: '顯示檔案二進位數據的檔案模式,二進位數據根據武器類型進行輔助顯示',
     Dark_theme: '切換軟件主色調至暗黑模式',
     About_content: '本軟件可針對《怪物獵人世界》中武器數據魔改檔案進行查看和修改,修改後檔案放置在Monster Hunter World\\nativePC\\common\\equip\\下即可生效。修改後檔案將影響遊戲平衡性,請勿用於聯機使用。',
-    About_edition: '軟體版本：1.1.3',
+    About_edition: '軟體版本：1.1.4',
     Instructions: '<h3>該工具可以讀取解包後的武器數據,內寘了當前版本的武器資料檔案,可以直接新建mod檔案。部分數值修改會根據固有係數自動修正,武器資訊為手動錄入,可能與現版本數據存在差异。修改後的檔案請勿用於聯機使用。</h3><br><h4>用法：</h4><br><span>&nbsp;&nbsp;1、打開解包後的mod檔案或點擊新建選擇需要的武器檔案</span><br><span>&nbsp;&nbsp;2、蒐索或手動找到要修改的武器</span><br><span>&nbsp;&nbsp;3、將相應内容改成你希望的數值</span><br><span>&nbsp;&nbsp;4、點擊保存將檔案保存至遊戲目錄\\nativePC\\common\\equip\\</span><br><span>&nbsp;&nbsp;5、安裝冰原裝載Mod（https://www.nexusmods.com/monsterhunterworld/mods/1984）</span><br><br><h4>工具原始程式碼發佈在Github上：https://github.com/HalcyonAlcedo/MHW-Weaponeditor</h4>',
     Old_version: '將以名稱匹配方式打開資料檔案,建議使用新版本資料檔案進行魔改。',
     Old_version_open: '相容模式已啟動,請重新打開資料檔案',
@@ -65,8 +66,12 @@ module.exports = {
     Version_update_true: '版本數據更新完成,請勿忘記保存資料檔案',
     Free_model: '如需修改模型請調整為修改數據，不懂勿動',
     Have_model: '如需關閉模型請改成65535',
-    Update_description: '<ul><li>修復某些武器id錯誤</li><li>開放技能修改</li></ul>',
-    Toolsinfo: '開發者工具箱只針對MOD開發人員開放，工具箱内包含本工具内置的數據信息和一些實用工具，如需申請開發者認證許可，請在下方填寫您曾經發佈過的一個Mod地址並提交申請，申請后您將擁有1天的試用時間，審核通過后在有效期内可隨意使用。'
+    Update_description: '<ul><li>添加獵蟲修改</li><li>修復系統錯誤</li></ul>',
+    Toolsinfo: '開發者工具箱只針對MOD開發人員開放，工具箱内包含本工具内置的數據信息和一些實用工具，如需申請開發者認證許可，請在下方填寫您曾經發佈過的一個Mod地址並提交申請，申請后您將擁有1天的試用時間，審核通過后在有效期内可隨意使用。',
+    NewInterface: '嘗試新的編輯界面',
+    ResetChopping: '需要開啓原始數據對比功能',
+    NoLimit: '當前無修改限制',
+    DidNotOpen: '當前文件未開啓新版編輯界面功能，請使用舊版界面操作'
   },
   Weaponsmiscellaneous: {
     Sharpness: '斬味',
@@ -79,12 +84,12 @@ module.exports = {
     Bottle: '弓瓶',
     Shell: '弩彈',
     ASkill: '装置',
-    WeaponDerived: '派生',
-    WeaponMake: '制造'
+    WeaponDerived: '武器派生',
+    WeaponMake: '武器制造'
   },
   Armor: {
     Armor: '裝備',
-    ArmorMake: '製造'
+    ArmorMake: '裝備製造'
   },
   Weaponrecipe: {
     Number: '武器Id',
@@ -225,6 +230,21 @@ module.exports = {
     skilllv4: '技能四等級',
     skilllv5: '技能五等級'
   },
+  Insect: {
+    Number: '獵蟲id',
+    Craft_costs: '購買費用',
+    Type: '攻擊系統',
+    Speed: '速度',
+    Power: '力量',
+    Heal: '回復',
+    Rarity: '治愈',
+    Dust: '粉尘',
+    DustEffect_0: '爆破',
+    DustEffect_1: '回復',
+    DustEffect_2: '麻痹',
+    DustEffect_3: '毒',
+    Unknown: '未知'
+  },
   Weapon: {
     Charge_blade: '盾斧',
     Gunlance: '銃槍',
@@ -308,6 +328,7 @@ module.exports = {
     Strike: '打擊',
     Attribute: '内容',
     Speed: '速度',
+    Power: '力量',
     Endurance: '耐力',
     Restores: '回復',
     Extinguish_dragon: '滅龍',

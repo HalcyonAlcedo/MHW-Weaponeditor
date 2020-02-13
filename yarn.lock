@@ -3331,6 +3331,11 @@ ecc-jsbn@~0.1.1:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
 
+edge-cs@1.2.1:
+  version "1.2.1"
+  resolved "https://registry.npm.taobao.org/edge-cs/download/edge-cs-1.2.1.tgz#bd1a9ecdb94ef0ed40c894582046749e57045e5a"
+  integrity sha1-vRqezblO8O1AyJRYIEZ0nlcEXlo=
+
 ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.npm.taobao.org/ee-first/download/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
@@ -3398,6 +3403,14 @@ electron-download@^4.1.0, electron-download@^4.1.1:
     rc "^1.2.1"
     semver "^5.4.1"
     sumchecker "^2.0.2"
+
+electron-edge-js@^12.8.1:
+  version "12.8.1"
+  resolved "https://registry.npm.taobao.org/electron-edge-js/download/electron-edge-js-12.8.1.tgz#d964682b8551ce9020ae233cba020d624dd5c69d"
+  integrity sha1-2WRoK4VRzpAgriM8ugINYk3Vxp0=
+  dependencies:
+    edge-cs "1.2.1"
+    nan "^2.14.0"
 
 electron-publish@21.2.0:
   version "21.2.0"
@@ -6175,7 +6188,7 @@ mz@^2.4.0:
     object-assign "^4.0.1"
     thenify-all "^1.0.0"
 
-nan@^2.12.1:
+nan@^2.12.1, nan@^2.14.0:
   version "2.14.0"
   resolved "https://registry.npm.taobao.org/nan/download/nan-2.14.0.tgz#7818f722027b2459a86f0295d434d1fc2336c52c"
   integrity sha1-eBj3IgJ7JFmobwKV1DTR/CM2xSw=

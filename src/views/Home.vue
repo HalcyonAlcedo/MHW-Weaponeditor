@@ -5,6 +5,13 @@
       app
       clipped
     >
+      <template v-slot:img>
+        <v-img
+          src="__static'../../330896.jpg"
+          aspect-ratio='0.19'
+          gradient="to top right, rgba(255,255,255,.45), rgba(255,0255,255,1)"
+        ></v-img>
+      </template>
       <v-list dense>
         <v-list-item @click.stop="left = !left">
           <v-list-item-action>
@@ -64,6 +71,18 @@
           <v-list-item-content @click.prevent="sound = !sound">
             <v-list-item-title>{{$t("Interface.Raw_data_comparison")}}</v-list-item-title>
             <v-list-item-subtitle>{{$t("Explanatory.Raw_data_comparison")}}</v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item @click="1">
+          <v-list-item-action>
+            <v-checkbox
+              v-model="NewInterface"
+            ></v-checkbox>
+          </v-list-item-action>
+
+          <v-list-item-content @click.prevent="NewInterface = !NewInterface">
+            <v-list-item-title>{{$t("Interface.NewInterface")}}</v-list-item-title>
+            <v-list-item-subtitle>{{$t("Explanatory.NewInterface")}}</v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
         <v-list-item @click="1">
@@ -391,6 +410,7 @@ export default {
       sourcemod: false,
       excludeunknown: true,
       Old_version: false,
+      NewInterface: false,
       update: false,
       loaddialog: false,
       sound: false,
@@ -435,7 +455,7 @@ export default {
         { title: this.$t('Weaponsmiscellaneous.Bottle') + ' (bottle_table.bbtbl)', file: 'bottle_table.bbtbl'},
         { title: this.$t('Weaponsmiscellaneous.Shell') + ' (shell_table.shl_tbl)', file: 'shell_table.shl_tbl'},
         { title: this.$t('Weaponsmiscellaneous.Skill') + ' (skill_data.skl_dat)', file: 'skill_data.skl_dat'},
-        { title: this.$t('Weaponsmiscellaneous.Rod') + ' (rod_insect.rod_inse)', file: 'rod_insect.rod_inse', disabled: true},
+        { title: this.$t('Weaponsmiscellaneous.Rod') + ' (rod_insect.rod_inse)', file: 'rod_insect.rod_inse'},
         { title: this.$t('Weaponsmiscellaneous.ASkill') + ' (a_skill.ask)', file: 'a_skill.ask'},
         { title: this.$t('Weaponsmiscellaneous.WeaponMake') + ' (weapon.eq_crt)', file: 'weapon.eq_crt'},
         { title: this.$t('Weaponsmiscellaneous.WeaponDerived') + ' (weapon.eq_cus)', file: 'weapon.eq_cus'}
@@ -531,6 +551,9 @@ export default {
   watch: {
     excludeunknown: function () {
       this.$store.dispatch('excludeUnknown', this.excludeunknown)
+    },
+    NewInterface: function () {
+      this.$store.dispatch('newInterface', this.NewInterface)
     },
     weapon: function () {
       this.contrastdata()
@@ -644,6 +667,12 @@ export default {
         this.snackbar.text = this.$t('Interface.Old_version_save')
         this.snackbar.snackbar = true
       } else if (this.file !== this.$t('Interface.No_file_opened')) {
+        if (this.weapon == 'rod_insect.rod_inse') {
+          _this.ipc.send('Encryption', {
+            hex: _this.filedata,
+            key: 'SFghFQVFJycHnypExurPwut98ZZq1cwvm7lpDpASeP4biRhstQgULzlb',
+          })
+        } else {
         dialog.showSaveDialog({ title: this.$t('Interface.Save_file'), defaultPath: this.weapon !== 'Unknown' ? this.weapon : this.file }).then(result => {
           fs.writeFile(result.filePath, this.filedata, { flag: 'w' }, function (err) {
             if (err) {
@@ -656,6 +685,7 @@ export default {
         }).catch(err => {
           console.log('err:' + err)
         })
+        }
         // const data = _this.filedata
         // const url = window.URL.createObjectURL(new Blob([data], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}))
         // const link = document.createElement('a')
@@ -684,6 +714,8 @@ export default {
             }
             _this.loaddialog = false
           })
+        }).catch(err => {
+          console.log('err:' + err)
         })
         
         // axios({
@@ -725,9 +757,16 @@ export default {
           _this.snackbar.text = _this.$t('Interface.Open_Failure')
           _this.snackbar.snackbar = true
         } else {
+          if(path.extname(f) == '.rod_inse') {
+            _this.ipc.send('Dencryption', {
+              hex: data,
+              key: 'SFghFQVFJycHnypExurPwut98ZZq1cwvm7lpDpASeP4biRhstQgULzlb',
+            })
+          } else {
+            _this.$store.dispatch('setdata', data)
+          }
           _this.$router.push('/edit')
           _this.$store.dispatch('setfile', f)
-          _this.$store.dispatch('setdata', data)
           _this.snackbar.text = _this.$t('Interface.Open_Success')
           _this.snackbar.snackbar = true
         }
@@ -766,6 +805,25 @@ export default {
         _this.snackbar.text = _this.$t('Interface.VCLow_version')
         _this.snackbar.snackbar = true
       }
+    })
+    this.ipc.on('reDencryption', (event, DencryptionData) => {
+      this.$store.dispatch('setdata', DencryptionData)
+    })
+    this.ipc.on('reEncryption', (event, EncryptionData) => {
+
+      dialog.showSaveDialog({ title: _this.$t('Interface.Save_file'), defaultPath: 'rod_insect.rod_inse' }).then(result => {
+        fs.writeFile(result.filePath, EncryptionData, { flag: 'w' }, function (err) {
+          if (err) {
+            _this.snackbar.text = _this.$t('Interface.Save_Failure')
+          } else {
+            _this.snackbar.text = _this.$t('Interface.Save_Success')
+          }
+          _this.snackbar.snackbar = true
+        })
+      }).catch(err => {
+        console.log('err:' + err)
+      })
+
     })
     this.ipc.send('check-vc')
   }
