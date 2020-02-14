@@ -14,9 +14,9 @@ module.exports = {
       builderOptions: {
         productName: 'MHW Equipment Editor',
         copyright: 'Copyright © 2020 Alcedo',
-        //win: {
-        //  target: ['zip']
-        //},
+        win: {
+          target: ['zip','nsis']
+        },
         extraResources:  [
           {
             "from": "./node_modules/electron-asar-hot-updater/updater.exe",

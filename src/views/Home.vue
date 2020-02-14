@@ -172,18 +172,28 @@
         ></v-select>
         </v-list-item>
       </v-list>
-      <!--
       <div class="flex-grow-1"></div>
       <v-divider></v-divider>
-      <v-list-item href="https://mhwee.alcedo.top/download/MHW%20Equipment%20Editor.zip">
-        <v-list-item-action>
-          <v-icon>mdi-cloud-download-outline</v-icon>
-        </v-list-item-action>
-        <v-list-item-content>
-          <v-list-item-title>{{$t("Interface.Download")}}</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-      -->
+      <v-dialog v-if="!isNotWeb" v-model="dialogDownload" max-width="450">
+        <template v-slot:activator="{ on }">
+          <v-list-item v-on="on">
+            <v-list-item-action>
+              <v-icon>mdi-cloud-download-outline</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>{{$t("Interface.Download")}}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </template>
+        <v-card>
+          <v-card-title class="headline">{{$t("Interface.DownloadVersion")}}</v-card-title>
+          <v-card-text class="text-center">
+            <v-btn class="ma-2" x-large color="success" href="/download/MHW Equipment Editor.exe" @click="dialogDownload = false" dark>{{$t("Interface.Installed")}}</v-btn>
+            <v-btn class="ma-2" x-large color="success" href="/download/MHW Equipment Editor.zip" @click="dialogDownload = false" dark>{{$t("Interface.FreeInstallation")}}</v-btn>
+            <v-btn class="ma-2" x-large color="success" href="/download/MHW Equipment Editor Portable.zip" @click="dialogDownload = false" dark>{{$t("Interface.Portable")}}</v-btn>
+          </v-card-text>
+        </v-card>
+      </v-dialog>
     </v-navigation-drawer>
 
     <v-app-bar
@@ -197,10 +207,10 @@
       <v-toolbar-title>{{$t("Interface.Title")}} - {{file}}</v-toolbar-title>
       <div class="flex-grow-1"></div>
 
-      <v-btn @click="ipc.send('hide-window')" icon style="-webkit-app-region: no-drag">
+      <v-btn v-if="isNotWeb" @click="appOperation('hide')" icon style="-webkit-app-region: no-drag">
         <v-icon>remove</v-icon>
       </v-btn>
-      <v-btn @click="ipc.send('window-all-closed')" icon style="-webkit-app-region: no-drag">
+      <v-btn v-if="isNotWeb" @click="appOperation('closed')" icon style="-webkit-app-region: no-drag">
         <v-icon>close</v-icon>
       </v-btn>
 
@@ -331,7 +341,18 @@
           ></v-select>
         </v-card-title>
         <v-divider></v-divider>
-        <v-card-text><div v-html="$t('Explanatory.Instructions')"></div></v-card-text>
+        <v-card-text>
+          <div v-html="$t('Explanatory.Instructions')"></div>
+          <div v-if="loadenvironment">
+            <v-divider></v-divider>
+            {{$t("Interface.Loading_Environment")}}
+            <v-progress-linear
+              indeterminate
+              class="mb-0"
+            ></v-progress-linear>
+            <small>*{{$t("Interface.Loading_Environment_info")}}</small>
+          </div>
+        </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="green darken-1" text @click.native="Explain = false">{{$t("Interface.Read")}}</v-btn>
@@ -387,11 +408,8 @@
 
 
 <script>
-import fs from 'fs'
-import path from 'path'
 import axios from 'axios'
-
-const {dialog} = require('electron').remote
+import edit_core from '../plugins/edit_core'
 
 export default {
   data () {
@@ -405,6 +423,7 @@ export default {
       drawer: true,
       left: false,
       dialog: false,
+      dialogDownload: false,
       Explain: false,
       appdark: false,
       sourcemod: false,
@@ -413,6 +432,7 @@ export default {
       NewInterface: false,
       update: false,
       loaddialog: false,
+      loadenvironment: true,
       sound: false,
       file: '',
       snackbar: {
@@ -424,11 +444,13 @@ export default {
         text: ''
       },
       modurl: '',
-      devtools: false,
-      ipc: require('electron').ipcRenderer
+      devtools: false
     }
   },
   computed: {
+    isNotWeb () {
+      return edit_core.notWeb
+    },
     newfile () {
       let wp = [
         { title: this.$t('Weapon.Greatsword') + ' (l_sword)', file: 'l_sword.wp_dat' },
@@ -471,9 +493,6 @@ export default {
       ]
     },
     weapon () {
-      if (this.file !== this.$store.getters.donefilename && this.$store.getters.donefilename !== 'Unknown') {
-        this.snackbar.text = this.$t('Interface.Oldfile')
-      }
       return this.$store.getters.donefilename
     },
     filedata () {
@@ -556,6 +575,9 @@ export default {
       this.$store.dispatch('newInterface', this.NewInterface)
     },
     weapon: function () {
+      if (this.file !== this.$store.getters.donefilename && this.$store.getters.donefilename !== 'Unknown') {
+        this.snackbar.text = this.$t('Interface.Oldfile')
+      }
       this.contrastdata()
     },
     sound: function () {
@@ -569,7 +591,7 @@ export default {
     lang: function () {
       this.$i18n.locale = this.lang.value
     },
-    $route(to, from) {
+    $route() {
       if (this.$route.path === '/edit') {
         this.sourcemod = false
       } else {
@@ -579,36 +601,29 @@ export default {
   },
   methods: {
     openfile (file = null) {
-      let filepath
+      // let filepath
       let _this = this
-      if (file === null) {
-        // this.$refs.filElem.dispatchEvent(new MouseEvent('click'))
-        // this.loaddialog = true
-        dialog.showOpenDialog({
-          properties: ['openFile']
-        }).then(result => {
-          this.file = result.filePaths[0].substring(result.filePaths[0].lastIndexOf('\\') + 1)
-          this.loadfile(result.filePaths[0])
-        }).catch(err => {
-          console.log('err:' + err)
-        })
-      } else {
-        filepath = path.join(__static, '../../Sourceweapon/' + file)
-        fs.access(filepath,fs.constants.F_OK, (err) => {
-          if (err) {
-            filepath = path.join(__static, '/Sourceweapon/' + file)
-            _this.$store.dispatch('setOldversion', false)
-            _this.Old_version = false
-          } else {
-            _this.$store.dispatch('setOldversion', true)
-            _this.Old_version = true
-          }
+      edit_core.openfile(file, (setOld_version, filepath, data) => {
+        if (setOld_version !== null) {
+          _this.$store.dispatch('setOldversion', setOld_version)
+          _this.Old_version = setOld_version
+        }
+        if (filepath !== null && data !== null) {
           _this.file = filepath.substring(filepath.lastIndexOf('\\') + 1)
-          _this.loadfile(filepath)
-        })
-        // this.file = file
-        // this.loadfile(file)
-      }
+          _this.$store.dispatch('setfile', filepath)
+          _this.$store.dispatch('setdata', data)
+          _this.$router.push('/edit')
+          _this.snackbar.text = _this.$t('Interface.Open_Success')
+          _this.snackbar.snackbar = true
+          _this.loaddialog = false
+        } else {
+          _this.$refs.filElem.dispatchEvent(new MouseEvent('click'))
+        }
+      }, () => {
+        _this.snackbar.text = _this.$t('Interface.Open_Failure')
+        _this.snackbar.snackbar = true
+        _this.loaddialog = false
+      })
     },
     request () {
       let _this = this
@@ -667,34 +682,12 @@ export default {
         this.snackbar.text = this.$t('Interface.Old_version_save')
         this.snackbar.snackbar = true
       } else if (this.file !== this.$t('Interface.No_file_opened')) {
-        if (this.weapon == 'rod_insect.rod_inse') {
-          _this.ipc.send('Encryption', {
-            hex: _this.filedata,
-            key: 'SFghFQVFJycHnypExurPwut98ZZq1cwvm7lpDpASeP4biRhstQgULzlb',
-          })
-        } else {
-        dialog.showSaveDialog({ title: this.$t('Interface.Save_file'), defaultPath: this.weapon !== 'Unknown' ? this.weapon : this.file }).then(result => {
-          fs.writeFile(result.filePath, this.filedata, { flag: 'w' }, function (err) {
-            if (err) {
-              _this.snackbar.text = _this.$t('Interface.Save_Failure')
-            } else {
-              _this.snackbar.text = _this.$t('Interface.Save_Success')
-            }
-            _this.snackbar.snackbar = true
-          })
-        }).catch(err => {
-          console.log('err:' + err)
+        edit_core.savefile(this.$t('Interface.Save_file'), this.weapon !== 'Unknown' ? this.weapon : this.file, this.filedata, () => {
+          _this.snackbar.text = _this.$t('Interface.Save_Success')
+          _this.snackbar.snackbar = true
+        }, () => {
+          _this.snackbar.text = _this.$t('Interface.Save_Failure')
         })
-        }
-        // const data = _this.filedata
-        // const url = window.URL.createObjectURL(new Blob([data], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}))
-        // const link = document.createElement('a')
-        // link.style.display = 'none'
-        // link.href = url
-        // link.setAttribute('download', _this.weapon !== 'Unknown' ? _this.weapon : _this.file)
-        // document.body.appendChild(link)
-        // link.click()
-        // document.body.removeChild(link)
       } else {
         this.snackbar.text = this.$t('Interface.No_file_opened')
         this.snackbar.snackbar = true
@@ -703,75 +696,19 @@ export default {
     contrastdata () {
       let _this = this
       if (this.weapon !== 'Unknown' && this.sound) {
-        let filepath = path.join(__static, '../../Sourceweapon/' + this.weapon)
-        fs.access(filepath,fs.constants.F_OK, (err) => {
-          if (err) {
-            filepath = path.join(__static, '/Sourceweapon/' + _this.weapon)
-          }
-          fs.readFile(filepath, function (err, data) {
-            if (!err) {
-              _this.$store.dispatch('setsourcedata', data)
-            }
-            _this.loaddialog = false
-          })
-        }).catch(err => {
+        console.log(this.weapon)
+        edit_core.openfile(this.weapon, (setOld_version, filepath, data) => {
+          _this.$store.dispatch('setsourcedata', data)
+          _this.loaddialog = false
+        }, (err) => {
           console.log('err:' + err)
         })
-        
-        // axios({
-        //   method: 'get',
-        //   url: '/Sourceweapon/' + this.weapon, // 请求地址
-        //   responseType: 'arraybuffer' // 表明返回服务器返回的数据类型
-        // }).then((res) => { // 处理返回的文件流
-        //   let content = res.data
-        //   let data = new Uint8Array(content)
-        //   _this.$store.dispatch('setsourcedata', data)
-        //   _this.loaddialog = false
-        // })
       } else {
         this.$store.dispatch('setsourcedata', false)
       }
     },
-    loadfile (f) {
-      let _this = this
-      this.loaddialog = true
-      // axios({
-      //   method: 'get',
-      //   url: '/Sourceweapon/' + f, // 请求地址
-      //   responseType: 'arraybuffer' // 表明返回服务器返回的数据类型
-      // }).then((res) => { // 处理返回的文件流
-      //   let content = res.data
-      //   let data = new Uint8Array(content)
-      //   _this.$store.dispatch('setfile', f)
-      //   _this.$store.dispatch('setdata', data)
-      //   _this.snackbar.text = _this.$t('Interface.Open_Success')
-      //   _this.snackbar.snackbar = true
-      //   _this.loaddialog = false
-      // }).catch(function(error){
-      //   _this.snackbar.text = _this.$t('Interface.Open_Failure')
-      //   _this.snackbar.snackbar = true
-      //   _this.loaddialog = false
-      // })
-      fs.readFile(f, function (err, data) {
-        if (err) {
-          _this.snackbar.text = _this.$t('Interface.Open_Failure')
-          _this.snackbar.snackbar = true
-        } else {
-          if(path.extname(f) == '.rod_inse') {
-            _this.ipc.send('Dencryption', {
-              hex: data,
-              key: 'SFghFQVFJycHnypExurPwut98ZZq1cwvm7lpDpASeP4biRhstQgULzlb',
-            })
-          } else {
-            _this.$store.dispatch('setdata', data)
-          }
-          _this.$router.push('/edit')
-          _this.$store.dispatch('setfile', f)
-          _this.snackbar.text = _this.$t('Interface.Open_Success')
-          _this.snackbar.snackbar = true
-        }
-        _this.loaddialog = false
-      })
+    appOperation (Operation) {
+      edit_core.APPOperation(Operation)
     },
     versionupdate () {
       this.$store.dispatch('updateversion', true)
@@ -785,47 +722,18 @@ export default {
   mounted () {
     let _this = this
     this.file = this.$t('Interface.No_file_opened')
-    document.addEventListener('drop', function (e) {
-      e.preventDefault()
-      e.stopPropagation()
-      for (let f of e.dataTransfer.files) {
-        _this.file = f.name
-        _this.loadfile(f.path)
-      }
-    })
     document.addEventListener('dragover', function (e) {
       e.preventDefault()
       e.stopPropagation()
     })
     this.Explain = true
-    this.ipc.on('vc-editdata', (event, arg) => {
-      let regdata = arg['HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{05360E8D-2964-400C-8C25-1921B7F5CA49}'].values
-      let version = regdata.DisplayVersion.value.split(".")
-      if(version[0] != 14 || version[1] < 23) {
+    edit_core.load_environment((check) => {
+      _this.loadenvironment = false
+      if (!check) {
         _this.snackbar.text = _this.$t('Interface.VCLow_version')
         _this.snackbar.snackbar = true
       }
     })
-    this.ipc.on('reDencryption', (event, DencryptionData) => {
-      this.$store.dispatch('setdata', DencryptionData)
-    })
-    this.ipc.on('reEncryption', (event, EncryptionData) => {
-
-      dialog.showSaveDialog({ title: _this.$t('Interface.Save_file'), defaultPath: 'rod_insect.rod_inse' }).then(result => {
-        fs.writeFile(result.filePath, EncryptionData, { flag: 'w' }, function (err) {
-          if (err) {
-            _this.snackbar.text = _this.$t('Interface.Save_Failure')
-          } else {
-            _this.snackbar.text = _this.$t('Interface.Save_Success')
-          }
-          _this.snackbar.snackbar = true
-        })
-      }).catch(err => {
-        console.log('err:' + err)
-      })
-
-    })
-    this.ipc.send('check-vc')
   }
 }
 </script>

@@ -167,7 +167,7 @@
       setheaders (file) {
         let _this = this
         let header = []
-        this.filedata.map(function(value,index) {
+        this.filedata.map(function(value) {
           if (value.file === file) {
             let data = value.data
             for (let val in data[0]) {
