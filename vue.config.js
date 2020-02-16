@@ -5,8 +5,8 @@ module.exports = {
 
   pluginOptions: {
     i18n: {
-      locale: 'en',
-      fallbackLocale: 'en',
+      locale: 'zh-tw',
+      fallbackLocale: 'zh-tw',
       localeDir: 'locales',
       enableInSFC: false
     },
@@ -15,7 +15,7 @@ module.exports = {
         productName: 'MHW Equipment Editor',
         copyright: 'Copyright © 2020 Alcedo',
         win: {
-          target: ['zip','nsis']
+          target: ['zip']
         },
         extraResources:  [
           {

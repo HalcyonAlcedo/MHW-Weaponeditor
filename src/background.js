@@ -9,13 +9,13 @@ import path from 'path'
 import fs from 'fs'
 import download from 'download'
 import zipper from 'zip-local'
-import regedit from 'regedit'
 
 const EAU = require('electron-asar-hot-updater');
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
-//edge-js模块加载
+//模块依赖文件路径
 let edgepath = path.join(__static, isDevelopment ? '../' : '../../ecryption/');
+let regeditpath = path.join(__static, '../../regedit/');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -23,37 +23,63 @@ let win
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([{scheme: 'app', privileges: { secure: true, standard: true } }])
 
-let importDll = (event) => {
+let importDll = (event, check) => {
+  if (fsExistsSync(edgepath + 'dll/') && fsExistsSync(edgepath + 'electron-edge-js/') || isDevelopment) {
+    electronEdge_Dencryption()
+    event(check)
+  } else {
+    fs.mkdir(edgepath,function(){
+      download('https://mhwee.alcedo.top/download/ecryption.zip', edgepath).then(() => {
+        zipper.unzip(edgepath + 'ecryption.zip', function(error, unzipped) {
+          if(!error) {
+            unzipped.save(null, function() {
+              electronEdge_Dencryption()
+              event(check)
+            });
+          }
+        });
+      });
+    })
+  }
+}
+
+function importRegedit (event) {
+  let regedit = null
+  if (fsExistsSync(regeditpath + 'vbs/') || isDevelopment) {
+    regedit = require('regedit')
+    checkVC(regedit, event)
+  } else {
+    fs.mkdir(edgepath,function(){
+      download('https://mhwee.alcedo.top/download/regedit.zip', regeditpath).then(() => {
+        zipper.unzip(regeditpath + 'regedit.zip', function(error, unzipped) {
+          if(!error) {
+            unzipped.save(null, function() {
+              regedit = require('regedit')
+              checkVC(regedit, event)
+            });
+          }
+        });
+      });
+    })
+  }
+}
+
+function checkVC (regedit, event) {
   let check = false
   regedit.setExternalVBSLocation('regedit/vbs');
   regedit.list(['HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{05360E8D-2964-400C-8C25-1921B7F5CA49}'], function(err, result) {
-    let regdata = result['HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{05360E8D-2964-400C-8C25-1921B7F5CA49}'].values
-    let version = regdata.DisplayVersion.value.split(".")
-    if(version[0] != 14 || version[1] <= 23) {
-      check = true
-    } else (
-      console.log('本机vc++版本', version)
-    )
-    if (fsExistsSync(edgepath + 'dll/') && fsExistsSync(edgepath + 'electron-edge-js/') || isDevelopment) {
-      electronEdge_Dencryption()
-      event(check)
-    } else {
-      fs.mkdir(edgepath,function(){
-        download('https://mhwee.alcedo.top/download/ecryption.zip', edgepath).then(() => {
-          zipper.unzip(edgepath + 'ecryption.zip', function(error, unzipped) {
-            if(!error) {
-              unzipped.save(null, function() {
-                electronEdge_Dencryption()
-                event(check)
-              });
-            }
-          });
-        });
-      })
+    if (!err) {
+      let regdata = result['HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{05360E8D-2964-400C-8C25-1921B7F5CA49}'].values
+      let version = regdata.DisplayVersion.value.split(".")
+      if(version[0] != 14 || version[1] <= 23) {
+        check = true
+      } else (
+        console.log('本机vc++版本', version)
+      )
     }
+    importDll(event, check)
   })
 }
-
 function fsExistsSync (path) {
   try{
       fs.accessSync(path,fs.F_OK);
@@ -222,7 +248,9 @@ app.hide_window = () => {
   win.minimize()
 }
 
-app.load_environment = importDll
+app.load_environment = (event) => {
+  importRegedit(event)
+}
 app.fileDencryption = () => {console.log('尚未完成初始化')}
 app.fileEncryption = () => {console.log('尚未完成初始化')}
 

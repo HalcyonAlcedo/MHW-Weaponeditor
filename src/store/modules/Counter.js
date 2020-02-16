@@ -67,6 +67,9 @@ const mutations = {
         case 'rod_insect.rod_inse':
           state.filename = 'rod_insect.rod_inse'
           break
+        case 'rod_insect.rod_inse_d':
+          state.filename = 'rod_insect.rod_inse'
+          break
         case 'skill_data.skl_dat':
           state.filename = 'skill_data.skl_dat'
           break
@@ -195,8 +198,12 @@ const mutations = {
         default:
           state.filename = 'Unknown'
       }
-      if (state.filename == 'Unknown' && state.file.substring(state.file.lastIndexOf('\\') + 1) == 'rod_insect.rod_inse') {
-          state.filename = 'rod_insect.rod_inse'
+      if (
+        state.filename == 'Unknown' &&
+        (state.file.substring(state.file.lastIndexOf('\\') + 1) == 'rod_insect.rod_inse' ||
+        state.file.substring(state.file.lastIndexOf('\\') + 1) == 'rod_insect.rod_inse_d')
+      ) {
+        state.filename = 'rod_insect.rod_inse'
       }
     }
   },

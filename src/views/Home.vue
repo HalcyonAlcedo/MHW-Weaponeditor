@@ -194,6 +194,14 @@
           </v-card-text>
         </v-card>
       </v-dialog>
+      <v-list-item v-if="!isNotWeb" href="/download/MHW数据文件加解密工具.zip">
+        <v-list-item-action>
+          <v-icon>mdi-cloud-download-outline</v-icon>
+        </v-list-item-action>
+        <v-list-item-content>
+          <v-list-item-title>{{$t("Interface.DownloadDencryption")}}</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
     </v-navigation-drawer>
 
     <v-app-bar
@@ -343,7 +351,7 @@
         <v-divider></v-divider>
         <v-card-text>
           <div v-html="$t('Explanatory.Instructions')"></div>
-          <div v-if="loadenvironment">
+          <div v-if="loadenvironment && isNotWeb">
             <v-divider></v-divider>
             {{$t("Interface.Loading_Environment")}}
             <v-progress-linear
@@ -356,6 +364,17 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="green darken-1" text @click.native="Explain = false">{{$t("Interface.Read")}}</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+    <v-dialog v-model="dialogEncryptionwarning" persistent max-width="450">
+      <v-card>
+        <v-card-title class="headline">{{$t("Interface.Warning")}}</v-card-title>
+        <v-card-text>{{file == 'rod_insect.rod_inse' ? $t("Explanatory.Encryptionwarning") : $t("Explanatory.Dencryptionwarning")}}</v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="green darken-1" text href="/download/MHW数据文件加解密工具.zip" @click="dialogEncryptionwarning = false">{{$t("Interface.DownloadDencryption")}}</v-btn>
+          <v-btn color="green darken-1" text @click="dialogEncryptionwarning = false">{{$t("Interface.Read")}}</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -424,6 +443,7 @@ export default {
       left: false,
       dialog: false,
       dialogDownload: false,
+      dialogEncryptionwarning: false,
       Explain: false,
       appdark: false,
       sourcemod: false,
@@ -591,6 +611,11 @@ export default {
     lang: function () {
       this.$i18n.locale = this.lang.value
     },
+    file: function () {
+      if(!this.isNotWeb && (this.file == 'rod_insect.rod_inse_d' || this.file == 'rod_insect.rod_inse')) {
+        this.dialogEncryptionwarning = true
+      }
+    },
     $route() {
       if (this.$route.path === '/edit') {
         this.sourcemod = false
@@ -664,7 +689,11 @@ export default {
       reader.readAsArrayBuffer(file[0]);
       reader.onload = function() {
         _this.file = file[0].name
-        let data = new Uint8Array(this.result)
+        let temp_data = new Uint8Array(this.result)
+        var data = new Buffer(this.result.byteLength);
+        for (var i = 0; i < temp_data.length; ++i) {
+          data[i] = temp_data[i];
+        }
         _this.loaddialog = false
         _this.$store.dispatch('setfile', file[0].name)
         _this.$store.dispatch('setdata', data)

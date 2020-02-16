@@ -27,7 +27,7 @@ var openfile = ( file = null,callback, error ,isPath = false ) => {
         error(err)
       })
     } else {
-      callback()
+      callback(null, null, null)
     }
   } else { //文件加载
     if (isNotWeb) {
@@ -65,7 +65,6 @@ var openfile = ( file = null,callback, error ,isPath = false ) => {
                 break;
             }
             if(key) {
-              console.log(app)
               app.fileDencryption(callback, {
                 Oldversion: Old_version,
                 filepath: filepath,
@@ -79,9 +78,16 @@ var openfile = ( file = null,callback, error ,isPath = false ) => {
         })
       })
     } else {
+      let getfile = file
+      switch (file) {
+        case 'rod_insect.rod_inse':
+          getfile = 'Decode/rod_insect.rod_inse'
+          file = 'rod_insect.rod_inse_d'
+          break;
+      }
       axios({
         method: 'get',
-        url: '/Sourceweapon/' + file, // 请求地址
+        url: '/Sourceweapon/' + getfile, // 请求地址
         responseType: 'arraybuffer' // 表明返回服务器返回的数据类型
       }).then((res) => { // 处理返回的文件流
         let content = res.data
@@ -146,6 +152,11 @@ var savefile = ( title, file, data, callback, error ) => {
     let link = document.createElement('a')
     link.style.display = 'none'
     link.href = url
+    switch (file) {
+      case 'rod_insect.rod_inse':
+        file = 'rod_insect.rod_inse_d'
+        break;
+    }
     link.setAttribute('download', file)
     document.body.appendChild(link)
     link.click()
