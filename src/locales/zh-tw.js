@@ -49,12 +49,16 @@ module.exports = {
     Tools: '開發者工具箱',
     Tools_data: '資料數據',
     Tools_dataMerge: 'Mod合并',
+    Tools_dataConfig: '生成Mod變更文件',
+    Tools_encryption: '加解密工具',
     Tools_Hex: '二進制編輯',
     Tools_View: '視圖編輯',
     Tools_Help: '教程',
     Unopen: '暫未開放',
     Request: '申請',
     Warning: '警告',
+    EncryptionFile: '選擇待加密文件',
+    DencryptionFile: '選擇待解密文件',
     DownloadDencryption: '下載加解密工具',
     VCLow_version: 'VC++版本較低，可能無法正常運行Mod，建議升級后使用',
     NewInterface: '體驗新界面',
@@ -66,7 +70,7 @@ module.exports = {
     Binary_mode: '顯示檔案二進位數據的檔案模式,二進位數據根據武器類型進行輔助顯示',
     Dark_theme: '切換軟件主色調至暗黑模式',
     About_content: '本軟件可針對《怪物獵人世界》中武器數據魔改檔案進行查看和修改,修改後檔案放置在Monster Hunter World\\nativePC\\common\\equip\\下即可生效。修改後檔案將影響遊戲平衡性,請勿用於聯機使用。',
-    About_edition: '軟體版本：1.1.7',
+    About_edition: '軟體版本：1.1.8',
     Instructions: '<h3>該工具可以讀取解包後的武器數據,內寘了當前版本的武器資料檔案,可以直接新建mod檔案。部分數值修改會根據固有係數自動修正,武器資訊為手動錄入,可能與現版本數據存在差异。修改後的檔案請勿用於聯機使用。</h3><br><h4>用法：</h4><br><span>&nbsp;&nbsp;1、打開解包後的mod檔案或點擊新建選擇需要的武器檔案</span><br><span>&nbsp;&nbsp;2、蒐索或手動找到要修改的武器</span><br><span>&nbsp;&nbsp;3、將相應内容改成你希望的數值</span><br><span>&nbsp;&nbsp;4、點擊保存將檔案保存至遊戲目錄\\nativePC\\common\\equip\\</span><br><span>&nbsp;&nbsp;5、安裝冰原裝載Mod（https://www.nexusmods.com/monsterhunterworld/mods/1984）</span><br><br><h4>工具原始程式碼發佈在Github上：https://github.com/HalcyonAlcedo/MHW-Weaponeditor</h4>',
     Old_version: '將以名稱匹配方式打開資料檔案,建議使用新版本資料檔案進行魔改。',
     Old_version_open: '相容模式已啟動,請重新打開資料檔案',
@@ -75,14 +79,18 @@ module.exports = {
     Version_update_true: '版本數據更新完成,請勿忘記保存資料檔案',
     Free_model: '如需修改模型請調整為修改數據，不懂勿動',
     Have_model: '如需關閉模型請改成65535',
-    Update_description: '<ul><li>添加外部导入配置功能</li></ul>',
+    Update_description: '<ul><li>更換加密文件處理方式，支持網頁端處理加密文件，新增加解密功能</li></ul>',
     Toolsinfo: '開發者工具箱只針對MOD開發人員開放，工具箱内包含本工具内置的數據信息和一些實用工具，如需申請開發者認證許可，請在下方填寫您曾經發佈過的一個Mod地址並提交申請，申請后您將擁有1天的試用時間，審核通過后在有效期内可隨意使用。',
     NewInterface: '嘗試新的編輯界面',
     ResetChopping: '需要開啓原始數據對比功能',
     NoLimit: '當前無修改限制',
     DidNotOpen: '當前文件未開啓新版編輯界面功能，請使用舊版界面操作',
     Encryptionwarning: '當前要修改的文件為加密文件,請使用加解密工具解密后再次打開解密后的文件',
-    Dencryptionwarning: '當前要修改的文件為解密后的文件，保存后請使用加解密工具加密后放入游戲才能生效'
+    Dencryptionwarning: '當前要修改的文件為解密后的文件，保存后請使用加解密工具加密后放入游戲才能生效',
+    EncryptionHelp: `
+    此工具用於解密被加密的數據文件和將解密的文件加密回程序識別的加密文件</br>
+    當前内置了 cus_pa、cus_par、msk、owp_dat、dtt_eda、dtt_epg、plp、plsp、plip、asp 類型的文件密鑰，如果你有其他類型的加密文件和密鑰可以在Github上告訴我，確認后會補充進系統
+    `
   },
   Weaponsmiscellaneous: {
     Sharpness: '斬味',

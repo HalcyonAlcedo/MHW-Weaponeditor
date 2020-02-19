@@ -15,7 +15,7 @@ module.exports = {
         productName: 'MHW Equipment Editor',
         copyright: 'Copyright © 2020 Alcedo',
         win: {
-          target: ['zip']
+          target: ['zip','nsis']
         },
         extraResources:  [
           {
@@ -29,27 +29,29 @@ module.exports = {
               "**/*"
             ]
           },
-          {
-            "from": "./node_modules/electron-edge-js",
-            "to": "../ecryption/electron-edge-js",
-            "filter": [
-              "**/*"
-            ]
-          },
-          {
-            "from": "./dll",
-            "to": "../ecryption/dll",
-            "filter": [
-              "**/*"
-            ]
-          },
-          {
-            "from": "./LeadFile",
-            "to": "../前置文件",
-            "filter": [
-              "**/*"
-            ]
-          }
+          //暂时不需要加载dll文件
+          //{
+          //  "from": "./node_modules/electron-edge-js",
+          //  "to": "../ecryption/electron-edge-js",
+          //  "filter": [
+          //    "**/*"
+          //  ]
+          //},
+          //{
+          //  "from": "./dll",
+          //  "to": "../ecryption/dll",
+          //  "filter": [
+          //    "**/*"
+          //  ]
+          //},
+          //此后考虑不再包含前置文件，这个文件太大，下载太费流量
+          //{
+          //  "from": "./LeadFile",
+          //  "to": "../前置文件",
+          //  "filter": [
+          //    "**/*"
+          //  ]
+          //}
         ]
       }
     }

@@ -9,7 +9,8 @@ const state = {
   versionupdate: false,
   license: false,
   uuid: '',
-  newinterface: false
+  newinterface: false,
+  dataChangeToConfig: false
 }
 
 const mutations = {
@@ -257,6 +258,9 @@ const mutations = {
   NEW_IMTERFACE (state, newinterface) {
     state.newinterface = newinterface
   },
+  SET_DATATOCONFIG (state, dataChangeToConfig) {
+    state.dataChangeToConfig = dataChangeToConfig
+  },
 }
 
 const getters = {
@@ -289,6 +293,9 @@ const getters = {
   },
   donenewInterface: state => {
     return state.newinterface
+  },
+  doneDataToConfig: state => {
+    return state.dataChangeToConfig
   }
 }
 
@@ -326,6 +333,9 @@ const actions = {
   },
   setuuid ({ commit }, uuid) {
     commit('SET_UUID', uuid)
+  },
+  setdatatoconfig ({ commit }, dataChangeToConfig) {
+    commit('SET_DATATOCONFIG', dataChangeToConfig)
   }
 }
 

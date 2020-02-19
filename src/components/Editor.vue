@@ -2809,9 +2809,12 @@
       config () {
         return this.$store.getters.doneconfig
       },
+      dataToConfig () {
+        return this.$store.getters.doneDataToConfig
+      },
       numberOfPages () {
-          return Math.ceil(this.filteritem.length / this.itemsPerPage)
-        },
+        return Math.ceil(this.filteritem.length / this.itemsPerPage)
+      },
       filteredKeys () {
         return this.keys.filter(key => key !== `Name`)
       },
@@ -3169,6 +3172,9 @@
         if (this.sourcedata) {
           this.sourceitems = this.hexdata(this.sourcedata)
           this.items = this.hexdata(this.data)
+          if (this.dataToConfig) {
+            this.dataChangeToConfig()
+          }
         } else {
           this.sourceitems = false
         }
@@ -3929,6 +3935,29 @@
           }
         }
         return confighex
+      },
+      dataChangeToConfig () {
+        let changeData = []
+        for(let i = 0; i < this.items.length; i++) {
+          let tempData = {
+            hex: this.items[i].wp_Hex,
+            index: i,
+            name: this.items[i].wp_Name,
+            change: []
+          }
+          for(let data in this.items[i]) {
+            if(data !== 'wp_sourcedata' && typeof(this.items[i][data]) == 'object') {
+              if (this.items[i][data].vul !== this.items[i].wp_sourcedata[data].vul) {
+                tempData.change.push(this.items[i][data])
+              }
+            }
+          }
+          if(tempData.change.length > 0) {
+            changeData.push(tempData)
+          }
+        }
+        console.log(changeData)
+        this.$store.dispatch('setdatatoconfig', false)
       }
     }
   }

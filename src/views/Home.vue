@@ -112,30 +112,35 @@
         </v-list-item>
       </v-list>
       <v-divider></v-divider>
-      <!--
       <v-subheader>{{$t("Interface.Tools")}}</v-subheader>
       <v-list>
-        <v-list-item @click="tools('data')">
-          <v-list-item-action>
-            <v-icon>mdi-database</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>{{$t("Interface.Tools_data")}}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on }">
+            <v-list-item v-on="on" @click="dataChangeToConfig">
+              <v-list-item-action>
+                <v-icon>mdi-call-merge</v-icon>
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-title>{{$t("Interface.Tools_dataConfig")}}</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </template>
+          <span>{{$t("Interface.Unopen")}}</span>
+        </v-tooltip>
         <v-tooltip bottom>
             <template v-slot:activator="{ on }">
               <v-list-item v-on="on">
                 <v-list-item-action>
-                  <v-icon>mdi-call-merge</v-icon>
+                  <v-icon>mdi-window-maximize</v-icon>
                 </v-list-item-action>
                 <v-list-item-content>
-                  <v-list-item-title>{{$t("Interface.Tools_dataMerge")}}</v-list-item-title>
+                  <v-list-item-title>{{$t("Interface.Tools_Hex")}}</v-list-item-title>
                 </v-list-item-content>
               </v-list-item>
             </template>
           <span>{{$t("Interface.Unopen")}}</span>
         </v-tooltip>
+        <!--
         <v-list-item @click="tools(sourcemod ? 'edit' : 'hexedit')">
           <v-list-item-action >
             <v-icon>{{sourcemod ? 'mdi-window-maximize' : 'mdi-code-tags'}}</v-icon>
@@ -144,22 +149,18 @@
             <v-list-item-title>{{sourcemod ? $t("Interface.Tools_View") : $t("Interface.Tools_Hex")}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-tooltip bottom>
-            <template v-slot:activator="{ on }">
-              <v-list-item v-on="on">
-                <v-list-item-action>
-                  <v-icon>mdi-notebook-multiple</v-icon>
-                </v-list-item-action>
-                <v-list-item-content>
-                  <v-list-item-title>{{$t("Interface.Tools_Help")}}</v-list-item-title>
-                </v-list-item-content>
-              </v-list-item>
-            </template>
-          <span>{{$t("Interface.Unopen")}}</span>
-        </v-tooltip>
+        -->
+        <v-list-item @click="tools({target:'dialogEncryptionwarning'})">
+          <v-list-item-action>
+            <v-icon>mdi-folder-edit-outline</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>{{$t("Interface.Tools_encryption")}}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        
       </v-list>
       <v-divider></v-divider>
-      -->
       <v-list
         subheader
         three-line>
@@ -196,14 +197,6 @@
           </v-card-text>
         </v-card>
       </v-dialog>
-      <v-list-item v-if="!isNotWeb" href="/download/MHW数据文件加解密工具.zip">
-        <v-list-item-action>
-          <v-icon>mdi-cloud-download-outline</v-icon>
-        </v-list-item-action>
-        <v-list-item-content>
-          <v-list-item-title>{{$t("Interface.DownloadDencryption")}}</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
     </v-navigation-drawer>
 
     <v-app-bar
@@ -369,15 +362,25 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-    <v-dialog v-model="dialogEncryptionwarning" persistent max-width="450">
+    <v-dialog v-model="dialogEncryptionwarning" max-width="750">
       <v-card>
-        <v-card-title class="headline">{{$t("Interface.Warning")}}</v-card-title>
-        <v-card-text>{{file == 'rod_insect.rod_inse' ? $t("Explanatory.Encryptionwarning") : $t("Explanatory.Dencryptionwarning")}}</v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="green darken-1" text href="/download/MHW数据文件加解密工具.zip" @click="dialogEncryptionwarning = false">{{$t("Interface.DownloadDencryption")}}</v-btn>
-          <v-btn color="green darken-1" text @click="dialogEncryptionwarning = false">{{$t("Interface.Read")}}</v-btn>
-        </v-card-actions>
+        <v-card-title class="headline">{{$t("Interface.Tools_encryption")}}</v-card-title>
+        <v-card-text>
+          <div v-html="$t('Explanatory.EncryptionHelp')"></div>
+          <v-divider></v-divider>
+          <v-container>
+            <v-row>
+              <v-col cols="12" sm="6">
+                <v-btn rounded color="primary" @click="EncryptionFile(true)" dark>{{$t("Interface.EncryptionFile")}}</v-btn>
+              </v-col>
+              <v-col cols="12" sm="6">
+                <v-btn rounded color="primary" @click="EncryptionFile(false)" dark>{{$t("Interface.DencryptionFile")}}</v-btn>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-card-text>
+        <input ref="encodedFilElem" type="file" style="display:none" @change="EncryptionGetFile">
+        <input ref="dencodedFilElem" type="file" style="display:none" @change="DencryptionGetFile">
       </v-card>
     </v-dialog>
     <v-dialog 
@@ -438,7 +441,7 @@ export default {
     return {
       lang: Language,
       langlist: [
-        //{text: '简体中文', value: 'zh_cn'},
+        {text: '简体中文', value: 'zh_cn'},
         {text: '繁體中文', value: 'zh_tw'}
       ],
       drawer: true,
@@ -623,11 +626,6 @@ export default {
     lang: function () {
       this.$i18n.locale = this.lang.value
     },
-    file: function () {
-      if(!this.isNotWeb && (this.file == 'rod_insect.rod_inse_d' || this.file == 'rod_insect.rod_inse')) {
-        this.dialogEncryptionwarning = true
-      }
-    },
     $route() {
       if (this.$route.path === '/edit') {
         this.sourcemod = false
@@ -638,7 +636,6 @@ export default {
   },
   methods: {
     openfile (file = null) {
-      // let filepath
       let _this = this
       edit_core.openfile(file, (setOld_version, filepath, data) => {
         if (setOld_version !== null) {
@@ -687,11 +684,70 @@ export default {
         _this.$store.dispatch('setlicense', true)
       })
     },
-    tools (router) {
+    tools (target) {
       if (this.license) {
-        this.$router.push('/' + router)
+        if (typeof(target) == 'string') {
+          this.$router.push('/' + target)
+        } else {
+          this[target.target] = true
+        }
       } else {
         this.devtools = true
+      }
+    },
+    EncryptionFile(encoded = true) {
+      let _this = this
+      edit_core.openfile(null, (_, filepath, data) => {
+        if (filepath !== null && data !== null) {
+          if (encoded) {
+            edit_core.encodedFile(filepath, data)
+          } else {
+            edit_core.decodedFile(filepath, data)
+          }
+        } else {
+          if (encoded) {
+            _this.$refs.encodedFilElem.dispatchEvent(new MouseEvent('click'))
+          } else {
+            _this.$refs.dencodedFilElem.dispatchEvent(new MouseEvent('click'))
+          }
+        }
+        _this.dialogEncryptionwarning = false
+        _this.snackbar.text = _this.$t('Interface.Open_Success')
+          _this.snackbar.snackbar = true
+      }, null, false, true)
+    },
+    EncryptionGetFile (event) {
+      let _this = this
+      let file = event.target.files
+      let reader = new FileReader();
+      reader.readAsArrayBuffer(file[0]);
+      reader.onload = function() {
+        let temp_data = new Uint8Array(this.result)
+        let data = new Buffer(this.result.byteLength);
+        for (var i = 0; i < temp_data.length; ++i) {
+          data[i] = temp_data[i];
+        }
+        edit_core.encodedFile(file[0].name, data)
+        _this.dialogEncryptionwarning = false
+        _this.snackbar.text = _this.$t('Interface.Open_Success')
+        _this.snackbar.snackbar = true
+      }
+    },
+    DencryptionGetFile (event) {
+      let _this = this
+      let file = event.target.files
+      let reader = new FileReader();
+      reader.readAsArrayBuffer(file[0]);
+      reader.onload = function() {
+        let temp_data = new Uint8Array(this.result)
+        let data = new Buffer(this.result.byteLength);
+        for (var i = 0; i < temp_data.length; ++i) {
+          data[i] = temp_data[i];
+        }
+        edit_core.decodedFile(file[0].name, data)
+        _this.dialogEncryptionwarning = false
+        _this.snackbar.text = _this.$t('Interface.Open_Success')
+        _this.snackbar.snackbar = true
       }
     },
     getFile (event) {
@@ -707,6 +763,10 @@ export default {
           data[i] = temp_data[i];
         }
         _this.loaddialog = false
+        let key = edit_core.CryptographicKey(file[0].name.substring(file[0].name.lastIndexOf('.')))
+        if (key) {
+          data = edit_core.decoded(key, data)
+        }
         _this.$store.dispatch('setfile', file[0].name)
         _this.$store.dispatch('setdata', data)
         _this.snackbar.text = _this.$t('Interface.Open_Success')
@@ -715,6 +775,16 @@ export default {
       reader.onerror = function() {
         _this.snackbar.text = _this.$t('Interface.Open_Failure')
         _this.snackbar.snackbar = true
+      }
+    },
+    dataChangeToConfig () {
+      if(this.file !== this.$t('Interface.No_file_opened')) {
+        this.sound = true
+        this.contrastdata()
+        this.$store.dispatch('setdatatoconfig', true)
+      } else {
+        this.snackbar.text = this.$t('Interface.No_file_opened')
+        this.snackbar.snackbar = true
       }
     },
     savefile () {

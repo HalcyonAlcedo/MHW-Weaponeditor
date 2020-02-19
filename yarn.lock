@@ -3724,6 +3724,11 @@ ee-first@1.1.1:
   resolved "https://registry.npm.taobao.org/ee-first/download/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
+egoroof-blowfish@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.npm.taobao.org/egoroof-blowfish/download/egoroof-blowfish-2.2.1.tgz#3b2f17de67a3d583c80d40b8af866d34aaadf7b7"
+  integrity sha1-Oy8X3mej1YPIDUC4r4ZtNKqt97c=
+
 ejs@^2.6.1, ejs@^2.6.2:
   version "2.7.1"
   resolved "https://registry.npm.taobao.org/ejs/download/ejs-2.7.1.tgz#5b5ab57f718b79d4aca9254457afecd36fa80228"

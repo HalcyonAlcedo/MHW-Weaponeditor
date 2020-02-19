@@ -22,7 +22,7 @@ let regeditpath = path.join(__static, '../../regedit/');
 let win
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([{scheme: 'app', privileges: { secure: true, standard: true } }])
-
+/*
 let importDll = (event, check) => {
   if (fsExistsSync(edgepath + 'dll/') && fsExistsSync(edgepath + 'electron-edge-js/') || isDevelopment) {
     electronEdge_Dencryption()
@@ -42,7 +42,7 @@ let importDll = (event, check) => {
     })
   }
 }
-
+*/
 function importRegedit (event) {
   let regedit = null
   if (fsExistsSync(regeditpath + 'vbs/') || isDevelopment) {
@@ -77,7 +77,9 @@ function checkVC (regedit, event) {
         console.log('本机vc++版本', version)
       )
     }
-    importDll(event, check)
+    event(check)
+    //暂时不需要加载dll文件了
+    //importDll(event, check)
   })
 }
 function fsExistsSync (path) {
@@ -88,7 +90,7 @@ function fsExistsSync (path) {
   }
   return true;
 }
-
+/*
 function electronEdge_Dencryption () {
   let edge = __non_webpack_require__(isDevelopment ? 'electron-edge-js' : edgepath + 'electron-edge-js');
 
@@ -129,6 +131,7 @@ function electronEdge_Dencryption () {
   app.fileDencryption = Dencryption
   app.fileEncryption = Encryption
 }
+*/
 
 function createWindow () {
   // Create the browser window.

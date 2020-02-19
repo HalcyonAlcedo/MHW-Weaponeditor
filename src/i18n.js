@@ -7,6 +7,7 @@ export default new VueI18n({
   locale: 'zh_tw',
   fallbackLocale: 'zh_tw',
   messages: {
-    'zh_tw': require('./locales/zh-tw')
+    'zh_tw': require('./locales/zh-tw'),
+    'zh_cn': require('./locales/zh-cn')
   }
 })
