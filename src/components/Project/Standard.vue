@@ -13,9 +13,9 @@
               <div class="overline mb-4">
                 {{contentType}}
                 <v-spacer></v-spacer>
-                {{ $t('WeaponExplain.Address') }}：<span class="red--text">{{ str_pad(data.wp_Hex) }}</span>
+                {{ $t('WeaponExplain.Address') }}：<span class="red--text">{{ str_pad(data.Data_Hex) }}</span>
               </div>
-              <v-list-item-title class="headline mb-1">{{contentTitle}}</v-list-item-title>
+              <v-list-item-title class="headline mb-1">{{contentTitle !== null ? contentTitle : $t('WeaponExplain.Unknown')}}</v-list-item-title>
           </v-list-item-content>
 
           <!--
@@ -37,14 +37,11 @@
           <span class="headline">{{contentTitle}}</span>
           <v-spacer></v-spacer>
           <v-subheader>
-            {{ $t('WeaponExplain.Address') }}：<span class="red--text">{{ str_pad(data.wp_Hex) }}</span>
+            {{ $t('WeaponExplain.Address') }}：<span class="red--text">{{ str_pad(data.Data_Hex) }}</span>
           </v-subheader>
         </v-card-title>
         <v-card-text>
-          <wpdat v-if="category == 'wp_dat'" :hexdata="data" :sourcedata="sourcedata" />
-          <wpdatg v-else-if="category == 'wp_dat_g'" :hexdata="data" :sourcedata="sourcedata" />
-          <rodinse v-else-if="category == 'rod_inse'" :hexdata="data" :sourcedata="sourcedata" />
-          <div v-else>{{$t('Explanatory.DidNotOpen')}}</div>
+          <externalVive :hexdata="data" :sourcedata="sourcedata"/>
           <small>{{$t('Explanatory.NoLimit')}}</small>
         </v-card-text>
       </v-card>
@@ -53,9 +50,7 @@
 </template>
 
 <script>
-  import wpdat from './module/wp_dat'
-  import wpdatg from './module/wp_dat_g'
-  import rodinse from './module/rod_inse'
+  import externalVive from './externalVive'
 
   export default {
     data: () => ({
@@ -63,28 +58,12 @@
     }),
     props: ['data','sourcedata','items'],
     components: {
-      wpdat,
-      wpdatg,
-      rodinse,
+      externalVive,
     },
     computed: {
       contentTitle () {
         let title = this.$t('WeaponExplain.Error')
-        if (this.existence(this.data.wp_Number)) { title = this.data.wp_Name } else 
-        if (this.existence(this.data.eq_Number)) { title = this.data.wp_Name } else 
-        if (this.existence(this.data.as_Number)) { title = this.data.wp_Name } else 
-        if (this.existence(this.data.wrt_Number)) { title = this.data.wp_Name } else 
-        if (this.existence(this.data.wus_Number)) { title = this.data.wp_Name } else 
-        if (this.existence(this.data.art_Number)) { title = this.data.wp_Name } else 
-        if (this.existence(this.data.ri_Number)) { title = this.data.wp_Name } else 
-        if (this.existence(this.data.sk_Number)) { title = this.data.wp_Name + 'LV' + this.data.sk_level.vul } else 
-        if (this.existence(this.data.k_Number)) { title = this.$t('Weaponsmiscellaneous.Sharpness') + this.data.k_Number.vul } else 
-        if (this.existence(this.data.ws_Number)) { title = this.$t('Weaponsmiscellaneous.Wswordattribute') + this.data.ws_Number.vul } else 
-        if (this.existence(this.data.bt_Number)) { title = this.$t('Weaponsmiscellaneous.Bottle') + this.data.bt_Number.vul } else 
-        if (this.existence(this.data.sa_Number)) { title = this.$t('Weaponsmiscellaneous.Saxebottle') + this.data.sa_Number.vul } else 
-        if (this.existence(this.data.ww_Number)) { title = this.$t('Weaponsmiscellaneous.Syllable') + this.data.ww_Number.vul } else 
-        if (this.existence(this.data.gl_Number)) { title = this.$t('Weaponsmiscellaneous.Bombardment') + this.data.gl_Number.vul } else 
-        if (this.existence(this.data.sh_Number)) { title = this.$t('Weaponsmiscellaneous.Shell') + this.data.sh_Number.vul } 
+        if (this.existence(this.data.Title)) { title = this.data.Title }
         return title
       },
       weapon () {
@@ -92,6 +71,9 @@
       },
       category () {
         return this.weapon.substring(this.weapon.lastIndexOf('.') + 1)
+      },
+      config () {
+        return this.$store.getters.doneconfig
       },
       contentType () {
         switch (this.weapon) {
@@ -151,9 +133,13 @@
             return this.$t('Armor.ArmorMake')
           case 'armor.am_dat':
             return this.$t('Interface.equipment')
-          default:
-            return this.$t('Weapon.Unknown')
         }
+        for (let configList = 0; configList < this.config.length; configList++) {
+          if(this.weapon == this.config[configList].modeFile) {
+            return this.config[configList].name
+          }
+        }
+        return this.$t('Weapon.Unknown')
       }
     },
     methods: {

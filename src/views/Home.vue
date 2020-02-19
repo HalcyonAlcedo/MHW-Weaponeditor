@@ -73,6 +73,7 @@
             <v-list-item-subtitle>{{$t("Explanatory.Raw_data_comparison")}}</v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
+        <!--
         <v-list-item @click="1">
           <v-list-item-action>
             <v-checkbox
@@ -85,6 +86,7 @@
             <v-list-item-subtitle>{{$t("Explanatory.NewInterface")}}</v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
+        -->
         <v-list-item @click="1">
           <v-list-item-action>
             <v-checkbox
@@ -464,6 +466,7 @@ export default {
         text: ''
       },
       modurl: '',
+      importConfig: [],
       devtools: false
     }
   },
@@ -506,10 +509,12 @@ export default {
         { title: this.$t('Armor.Armor') + ' (armor.am_dat)', file: 'armor.am_dat'},
         { title: this.$t('Armor.ArmorMake') + ' (armor.eq_crt)', file: 'armor.eq_crt'},
       ]
+      let ip = this.importConfig
       return [
         {title: this.$t('Interface.Weapon'), items: wp},
         {title: this.$t('Interface.Weaponsmiscellaneous'), items: wpm},
-        {title: this.$t('Interface.equipment'), items: eq}
+        {title: this.$t('Interface.equipment'), items: eq},
+        {title: this.$t('Interface.Other'), items: ip}
       ]
     },
     weapon () {
@@ -523,6 +528,9 @@ export default {
     },
     uuid () {
       return this.$store.getters.doneuuid
+    },
+    config () {
+      return this.$store.getters.doneconfig
     },
     weaponfilename () {
       switch (this.weapon) {
@@ -582,9 +590,13 @@ export default {
           return this.$t('Armor.ArmorMake')
         case 'armor.am_dat':
           return this.$t('Interface.equipment')
-        default:
-          return this.$t('Weapon.Unknown')
       }
+      for (let configList = 0; configList < this.config.length; configList++) {
+        if(this.weapon == this.config[configList].modeFile) {
+          return this.config[configList].name
+        }
+      }
+      return this.$t('Weapon.Unknown')
     }
   },
   watch: {
@@ -725,7 +737,6 @@ export default {
     contrastdata () {
       let _this = this
       if (this.weapon !== 'Unknown' && this.sound) {
-        console.log(this.weapon)
         edit_core.openfile(this.weapon, (setOld_version, filepath, data) => {
           _this.$store.dispatch('setsourcedata', data)
           _this.loaddialog = false
@@ -756,6 +767,17 @@ export default {
       e.stopPropagation()
     })
     this.Explain = true
+    edit_core.AddedConfig((data) => {
+      if (data && data.name !== undefined && data.modeFile !== undefined){
+        if(data.type == undefined) {
+          data.type = data.modeFile.substring(data.modeFile.lastIndexOf('.') + 1)
+        }
+        this.importConfig.push({ title: `${data.name} (${data.modeFile})`, file: data.modeFile})
+        _this.$store.dispatch('setconfig', data)
+      }
+    },(err) => {
+      console.log(err)
+    })
     edit_core.load_environment((check) => {
       _this.loadenvironment = false
       if (!check) {

@@ -2237,6 +2237,7 @@
                     readonly
                   ></v-text-field>
                 </v-list-item>
+
                 <v-list-item v-if="existence(item.wp_Model) || existence(item.wp_Unprefixed_Model)">
                   <v-menu
                     v-model="props.menu"
@@ -2257,12 +2258,13 @@
                             v-model="item.models"
                             :items="modelitem"
                             @change="
-                            item.wp_Model.vul = item.models.model,
-                            item.wp_Minor_Model.vul = item.models.minormodel,
-                            item.wp_Unprefixed_Model.vul = item.models.unperfixedmodel,
-                            input_interchangeable(item.wp_Model),
-                            input_interchangeable(item.wp_Minor_Model),
-                            input_interchangeable(item.wp_Unprefixed_Model)"
+                              item.wp_Model.vul = item.models.model,
+                              item.wp_Minor_Model.vul = item.models.minormodel,
+                              item.wp_Unprefixed_Model.vul = item.models.unperfixedmodel,
+                              input_interchangeable(item.wp_Model),
+                              input_interchangeable(item.wp_Minor_Model),
+                              input_interchangeable(item.wp_Unprefixed_Model)
+                            "
                             item-text="wpname"
                             persistent-hint
                             filled
@@ -2275,108 +2277,69 @@
                       <v-divider></v-divider>
                       <v-list two-line>
                         <v-list-item v-if="existence(item.wp_Unprefixed_Model.vul)">
-                          <v-tooltip bottom v-if="item.wp_Unprefixed_Model.vul !== 65535">
-                            <v-text-field
-                              slot="activator"
-                              :label="$t('WeaponExplain.Independent_model')"
-                              @change="input_interchangeable(item.wp_Unprefixed_Model)"
-                              v-model="item.wp_Unprefixed_Model.vul"
-                              
-                              filled
-                            ></v-text-field>
+                          <v-tooltip bottom>
+                            <template v-slot:activator="{ on }">
+                              <v-text-field
+                                slot="activator"
+                                :label="$t('WeaponExplain.Independent_model')"
+                                @change="input_interchangeable(item.wp_Unprefixed_Model)"
+                                v-model="item.wp_Unprefixed_Model.vul"
+                                filled
+                                v-on="on"
+                              ></v-text-field>
+                            </template>
                             <span>{{$t('Explanatory.Have_model')}}</span>
-                          </v-tooltip>
-                          <v-tooltip bottom v-else>
-                            <v-select
-                              slot="activator"
-                              v-model="item.wp_Unprefixed_Model.vul"
-                              :items="[{text:$t('WeaponExplain.Nothing'),value:65535},{text:$t('WeaponExplain.Edit_data'),value:0}]"
-                              @change="Select_interchangeable(item.wp_Unprefixed_Model)"
-                              filled
-                              :label="$t('WeaponExplain.Independent_model')"
-                              item-text="text"
-                              item-value="value"
-                              return-object
-                            ></v-select>
-                            <span>{{$t('Explanatory.Free_model')}}</span>
                           </v-tooltip>
                           <v-text-field
                             v-if="sourceitems && (item.wp_Unprefixed_Model.vul !== item.wp_sourcedata.wp_Unprefixed_Model.vul)"
                             :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Independent_model')"
                             v-model="item.wp_sourcedata.wp_Unprefixed_Model.vul"
-                            
                             filled
                             prepend-icon="mdi-transfer-left"
                             readonly
                           ></v-text-field>
                         </v-list-item>
                         <v-list-item v-if="existence(item.wp_Model.vul)">
-                          <v-tooltip bottom v-if="item.wp_Model.vul !== 65535">
-                            <v-text-field
-                              slot="activator"
-                              :label="$t('WeaponExplain.Weapon_model')"
-                              @change="input_interchangeable(item.wp_Model)"
-                              v-model="item.wp_Model.vul"
-                              
-                              filled
-                            ></v-text-field>
+                          <v-tooltip bottom>
+                            <template v-slot:activator="{ on }">
+                              <v-text-field
+                                slot="activator"
+                                :label="$t('WeaponExplain.Weapon_model')"
+                                @change="input_interchangeable(item.wp_Model)"
+                                v-model="item.wp_Model.vul"
+                                filled
+                                v-on="on"
+                              ></v-text-field>
+                            </template>
                             <span>{{$t('Explanatory.Have_model')}}</span>
-                          </v-tooltip>
-                          <v-tooltip bottom v-else>
-                            <v-select
-                              slot="activator"
-                              v-model="item.wp_Model.vul"
-                              :items="[{text:$t('WeaponExplain.Nothing'),value:65535},{text:$t('WeaponExplain.Edit_data'),value:0}]"
-                              @change="Select_interchangeable(item.wp_Model)"
-                              filled
-                              :label="$t('WeaponExplain.Weapon_model')"
-                              item-text="text"
-                              item-value="value"
-                              return-object
-                            ></v-select>
-                            <span>{{$t('Explanatory.Free_model')}}</span>
                           </v-tooltip>
                           <v-text-field
                             v-if="sourceitems && (item.wp_Model.vul !== item.wp_sourcedata.wp_Model.vul)"
                             :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Weapon_model')"
                             v-model="item.wp_sourcedata.wp_Model.vul"
-                            
                             filled
                             prepend-icon="mdi-transfer-left"
                             readonly
                           ></v-text-field>
                         </v-list-item>
                         <v-list-item v-if="existence(item.wp_Minor_Model.vul)">
-                          <v-tooltip bottom v-if="item.wp_Minor_Model.vul !== 65535">
-                            <v-text-field
-                              slot="activator"
-                              :label="$t('WeaponExplain.Weapon_secondary_model')"
-                              @change="input_interchangeable(item.wp_Minor_Model)"
-                              v-model="item.wp_Minor_Model.vul"
-                              
-                              filled
-                            ></v-text-field>
+                          <v-tooltip bottom>
+                            <template v-slot:activator="{ on }">
+                              <v-text-field
+                                slot="activator"
+                                :label="$t('WeaponExplain.Weapon_secondary_model')"
+                                @change="input_interchangeable(item.wp_Minor_Model)"
+                                v-model="item.wp_Minor_Model.vul"
+                                filled
+                                v-on="on"
+                              ></v-text-field>
+                            </template>
                             <span>{{$t('Explanatory.Have_model')}}</span>
-                          </v-tooltip>
-                          <v-tooltip bottom v-else>
-                            <v-select
-                              slot="activator"
-                              v-model="item.wp_Minor_Model.vul"
-                              :items="[{text:$t('WeaponExplain.Nothing'),value:65535},{text:$t('WeaponExplain.Edit_data'),value:0}]"
-                              @change="Select_interchangeable(item.wp_Minor_Model)"
-                              filled
-                              :label="$t('WeaponExplain.Weapon_secondary_model')"
-                              item-text="text"
-                              item-value="value"
-                              return-object
-                            ></v-select>
-                            <span>{{$t('Explanatory.Free_model')}}</span>
                           </v-tooltip>
                           <v-text-field
                             v-if="sourceitems && (item.wp_Minor_Model.vul !== item.wp_sourcedata.wp_Minor_Model.vul)"
                             :label="$t('Interface.Original') + ' ' + $t('WeaponExplain.Weapon_secondary_model')"
                             v-model="item.wp_sourcedata.wp_Minor_Model.vul"
-                            
                             filled
                             prepend-icon="mdi-transfer-left"
                             readonly
@@ -2386,6 +2349,7 @@
                     </v-card>
                   </v-menu>
                 </v-list-item>
+
                 <v-list-item v-if="existence(item.wp_Weapon_skills)">
                   <v-autocomplete
                     :label="$t('WeaponExplain.Weapon_skills')"
@@ -2778,6 +2742,7 @@
 <script>
   import hexAddress from './Database/hexAddress'
   import Standard from './Project/Standard'
+  import hexHandler from '../plugins/edit/hexHandler'
 
   export default {
     data () {
@@ -2841,6 +2806,9 @@
       newinterface () {
         return this.$store.getters.donenewInterface
       },
+      config () {
+        return this.$store.getters.doneconfig
+      },
       numberOfPages () {
           return Math.ceil(this.filteritem.length / this.itemsPerPage)
         },
@@ -2881,6 +2849,8 @@
             } else if (this.existence(_items[i].wus_Number) && this.wrtname(_items[i].wus_Number.vul, _items[i].wus_Type.vul) !== this.$t('WeaponExplain.Unknown') && this.wrtname(_items[i].wus_Number.vul, _items[i].wus_Type.vul) !== 'Unknown') {
               itemsarr.push(_items[i])
             } else if (this.existence(_items[i].art_Number) && this.wpname(_items[i].art_Number.vul, _items[i].art_Type.vul) !== this.$t('WeaponExplain.Unknown') && this.wpname(_items[i].art_Number.vul, _items[i].art_Type.vul) !== 'Unknown') {
+              itemsarr.push(_items[i])
+            } else if (this.existence(_items[i].Title) && _items[i].Title !== false) {
               itemsarr.push(_items[i])
             }
           }
@@ -3152,6 +3122,7 @@
         for (let i = 0, l = _items.length; i < l; i++) {
           if (this.wpname(_items[i].wp_Number.vul) !== this.$t('WeaponExplain.Unknown') && this.wpname(_items[i].wp_Number.vul) !== 'Unknown') {
             itemsarr.push({
+              id: _items[i].wp_Number,
               wpname: _items[i].wp_Name,
               model: _items[i].wp_Model.vul,
               minormodel: _items[i].wp_Minor_Model.vul,
@@ -3233,6 +3204,12 @@
         var tmp = digits - hex.length
         return zero.substr(0, tmp) + hex.toLocaleUpperCase()
       },
+      isEmptyObjec (obj) {
+        for (let _ in obj) {
+          return true
+        }
+        return false
+      },
       selectlist (list, data) {
         for (let i = 0, l = list.length; i < l; i++) {
           if (data === list[i].value) return list[i].text
@@ -3250,13 +3227,15 @@
           'sh_Number'
         ]
         for (let i = 0; i < namelist.length; i++) {
-          if (namelist[i] in data) {
+          if (data !== undefined && this.isEmptyObjec(data[namelist[i]])) {
             return namelist[i] + '.vul'
           }
         }
-        if ('wp_Name' in data) {
+        if (data !== undefined && this.isEmptyObjec(data.wp_Name)) {
           return 'wp_Name'
-        } else {
+        } else if (data !== undefined && this.isEmptyObjec(data.Title)) {
+          return 'Title'
+        } {
           return 'wp_Hex'
         }
       },
@@ -3908,39 +3887,48 @@
       },
       hexdata (data) {
         let _this = this
-        let gethexAddress = hexAddress(data)
-        let HexRuler = gethexAddress.HexRuler
-        let HexPointer = gethexAddress.HexPointer
-        let wplist = []
-        for (let l = data.length / HexRuler, i = 0; i < l; i++) {
-          let wpobj = {}
-          wpobj.wp_Hex = (HexRuler * i).toString(16) // 目标地址
-          if (HexPointer.eq_Type != null) {
-            wpobj.wp_Name = _this.wpname(_this.HexFunction(data, HexPointer.eq_Number, HexRuler, i).vul, _this.HexFunction(data, HexPointer.eq_Type, HexRuler, i).vul)
-          } else if (HexPointer.sk_Number != null) {
-            wpobj.wp_Name = _this.skname(_this.HexFunction(data, HexPointer.sk_Number, HexRuler, i).vul)
-          } else if (HexPointer.ri_Number != null) {
-            wpobj.wp_Name = _this.riname(_this.HexFunction(data, HexPointer.ri_Number, HexRuler, i).vul)
-          } else if (HexPointer.as_Number != null) {
-            wpobj.wp_Name = _this.asname(_this.HexFunction(data, HexPointer.as_Number, HexRuler, i).vul)
-          } else if (HexPointer.wrt_Number != null) {
-            wpobj.wp_Name = _this.wrtname(_this.HexFunction(data, HexPointer.wrt_Number, HexRuler, i).vul, _this.HexFunction(data, HexPointer.wrt_Type, HexRuler, i).vul)
-          } else if (HexPointer.wus_Number != null) {
-            wpobj.wp_Name = _this.wrtname(_this.HexFunction(data, HexPointer.wus_Number, HexRuler, i).vul, _this.HexFunction(data, HexPointer.wus_Type, HexRuler, i).vul)
-          } else if (HexPointer.art_Number != null) {
-            wpobj.wp_Name = _this.wpname(_this.HexFunction(data, HexPointer.art_Number, HexRuler, i).vul, _this.HexFunction(data, HexPointer.art_Type, HexRuler, i).vul)
-          } else {
-            wpobj.wp_Name = _this.wpname(_this.HexFunction(data, HexPointer.wp_Number, HexRuler, i))
+        let config = this.config.filter(item=>item.type === _this.weapon.substring(_this.weapon.lastIndexOf('.') + 1, _this.weapon.length))
+        let confighex = []
+        if (config.length !== 0) {
+          config = config[0]
+          confighex = hexHandler.DataFormation(data, config.dataInfo, config.dataFormation, config.resources, this.sourceitems)
+          this.$store.dispatch('newInterface', true)
+        } else {
+          this.$store.dispatch('newInterface', false)
+          //原始版本数据
+          let gethexAddress = hexAddress(data)
+          let HexRuler = gethexAddress.HexRuler
+          let HexPointer = gethexAddress.HexPointer
+          for (let l = data.length / HexRuler, i = 0; i < l; i++) {
+            let wpobj = {}
+            wpobj.wp_Hex = (HexRuler * i).toString(16) // 目标地址
+            if (HexPointer.eq_Type != null) {
+              wpobj.wp_Name = _this.wpname(_this.HexFunction(data, HexPointer.eq_Number, HexRuler, i).vul, _this.HexFunction(data, HexPointer.eq_Type, HexRuler, i).vul)
+            } else if (HexPointer.sk_Number != null) {
+              wpobj.wp_Name = _this.skname(_this.HexFunction(data, HexPointer.sk_Number, HexRuler, i).vul)
+            } else if (HexPointer.ri_Number != null) {
+              wpobj.wp_Name = _this.riname(_this.HexFunction(data, HexPointer.ri_Number, HexRuler, i).vul)
+            } else if (HexPointer.as_Number != null) {
+              wpobj.wp_Name = _this.asname(_this.HexFunction(data, HexPointer.as_Number, HexRuler, i).vul)
+            } else if (HexPointer.wrt_Number != null) {
+              wpobj.wp_Name = _this.wrtname(_this.HexFunction(data, HexPointer.wrt_Number, HexRuler, i).vul, _this.HexFunction(data, HexPointer.wrt_Type, HexRuler, i).vul)
+            } else if (HexPointer.wus_Number != null) {
+              wpobj.wp_Name = _this.wrtname(_this.HexFunction(data, HexPointer.wus_Number, HexRuler, i).vul, _this.HexFunction(data, HexPointer.wus_Type, HexRuler, i).vul)
+            } else if (HexPointer.art_Number != null) {
+              wpobj.wp_Name = _this.wpname(_this.HexFunction(data, HexPointer.art_Number, HexRuler, i).vul, _this.HexFunction(data, HexPointer.art_Type, HexRuler, i).vul)
+            } else {
+              wpobj.wp_Name = _this.wpname(_this.HexFunction(data, HexPointer.wp_Number, HexRuler, i))
+            }
+            for (let n in HexPointer) { // 遍历所有属性
+              wpobj[n] = _this.Resourceprocessing(_this.HexFunction(data, HexPointer[n], HexRuler, i))
+            }
+            if (this.sourceitems) { // 加入原始数据
+              wpobj.wp_sourcedata = this.sourceitems[i]
+            }
+            confighex[i] = wpobj
           }
-          for (let n in HexPointer) { // 遍历所有属性
-            wpobj[n] = _this.Resourceprocessing(_this.HexFunction(data, HexPointer[n], HexRuler, i))
-          }
-          if (this.sourceitems) { // 加入原始数据
-            wpobj.wp_sourcedata = this.sourceitems[i]
-          }
-          wplist[i] = wpobj
         }
-        return wplist
+        return confighex
       }
     }
   }

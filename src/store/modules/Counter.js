@@ -2,6 +2,7 @@ const state = {
   file: '',
   filename: false,
   filedata: [],
+  config: [],
   filesourcedata: false,
   excludeunknown: true,
   Oldversion: false,
@@ -205,6 +206,16 @@ const mutations = {
       ) {
         state.filename = 'rod_insect.rod_inse'
       }
+      for(let configloadfile = 0; configloadfile < state.config.length; configloadfile ++) {
+        let loadfilename = state.config[configloadfile].modeFile
+        if (
+          state.filename == 'Unknown' &&
+          (state.file.substring(state.file.lastIndexOf('\\') + 1) == loadfilename ||
+          state.file.substring(state.file.lastIndexOf('\\') + 1) == loadfilename + '_d')
+        ) {
+          state.filename = loadfilename
+        }
+      }
     }
   },
   DATA_SET (state, filedata) {
@@ -222,6 +233,11 @@ const mutations = {
   },
   DATA_EDIT (state, data) {
     state.filedata[data.address] = data.value
+  },
+  CONFIG_ADD (state, data) {
+    if(state.config.filter(item=> data[0] !== undefined && item.type === data[0].type).length == 0) {
+      state.config.push(data)
+    }
   },
   EXCLUDE_UKNOWN (state, excludeunknown) {
     state.excludeunknown = excludeunknown
@@ -253,6 +269,9 @@ const getters = {
   donefiledata: state => {
     return state.filedata
   },
+  doneconfig: state => {
+    return state.config
+  },
   donefilesourcedata: state => {
     return state.filesourcedata
   },
@@ -280,6 +299,9 @@ const actions = {
   setdata ({ commit }, filedata) {
     commit('FILE_SET_NAME', filedata)
     commit('DATA_SET', filedata)
+  },
+  setconfig ({ commit }, data) {
+    commit('CONFIG_ADD', data)
   },
   editdata ({ commit }, data) {
     commit('DATA_EDIT', data)

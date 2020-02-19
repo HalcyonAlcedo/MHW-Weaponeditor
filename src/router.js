@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import store from './store'
 import Home from './views/Home.vue'
-import update from './views/update.vue'
 import Edit from './components/Editor.vue'
 import EditData from './components/Data.vue'
 import HEXEdit from './components/HexEdit.vue'
@@ -31,11 +30,6 @@ const routes = [
         meta: { requiresAuth: true }
       }
     ]
-  },
-  {
-    path: '/update',
-    name: 'update',
-    component: update,
   }
 ]
 

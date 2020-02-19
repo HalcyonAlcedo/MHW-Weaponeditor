@@ -4,7 +4,7 @@ const hexAddress = (data) => {
   if (data[11] === 0 && data[76] === 1 && data[142] === 2) {
     HexRuler = 16 * 4 + 2 // 近程武器
     HexPointer = {
-      'wp_Number': [11, 2], // 6
+      'wp_Number': [13, 4], // 6
       'wp_Unprefixed_Model': [17, 2], // 12~13
       'wp_Model': [19, 2], // 14~15
       'wp_Minor_Model': [21, 2], // 16~17
@@ -30,7 +30,7 @@ const hexAddress = (data) => {
   } else if (data[11] === 0 && data[79] === 1 && data[148] === 2) {
     HexRuler = 16 * 4 + 5 // 远程武器
     HexPointer = {
-      'wp_Number': [11, 2], // 6
+      'wp_Number': [13, 4], // 6
       'wp_Unprefixed_Model': [17, 2], // 12~13
       'wp_Model': [19, 2], // 14~15
       'wp_Minor_Model': [21, 2], // 16~17
