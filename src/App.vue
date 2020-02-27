@@ -17,6 +17,7 @@
 
 <script>
   import axios from 'axios'
+  //import JSON5 from 'json5'
   // import fs from 'fs'
   // import path from 'path'
   
@@ -42,7 +43,7 @@
         if (!err) {
           fs.readFile(filepath, function (err, data) {
             if (!err && data.length > 0) {
-              let lic = JSON.parse(data)
+              let lic = JSON5.parse(data)
               let licdate = new Date(lic.time)
               let date = new Date()
               if (lic.UUID === id && licdate > date) {

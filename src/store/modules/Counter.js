@@ -10,7 +10,8 @@ const state = {
   license: false,
   uuid: '',
   newinterface: false,
-  dataChangeToConfig: false
+  dataChangeToConfig: false,
+  languagesdata:[]
 }
 
 const mutations = {
@@ -261,6 +262,9 @@ const mutations = {
   SET_DATATOCONFIG (state, dataChangeToConfig) {
     state.dataChangeToConfig = dataChangeToConfig
   },
+  ADD_LAMHIAHE_DATA (state, LanguageData) {
+    state.languagesdata.push(LanguageData)
+  },
 }
 
 const getters = {
@@ -296,6 +300,9 @@ const getters = {
   },
   doneDataToConfig: state => {
     return state.dataChangeToConfig
+  },
+  doneLanguageData: state => {
+    return state.languagesdata
   }
 }
 
@@ -336,6 +343,9 @@ const actions = {
   },
   setdatatoconfig ({ commit }, dataChangeToConfig) {
     commit('SET_DATATOCONFIG', dataChangeToConfig)
+  },
+  addlanguagedata ({ commit }, LanguageData) {
+    commit('ADD_LAMHIAHE_DATA', LanguageData)
   }
 }
 

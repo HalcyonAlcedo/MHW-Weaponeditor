@@ -43,7 +43,7 @@
             v-for="item in props.items"
             :key="item.wp_Number"
             cols="12"
-            sm="4"
+            :sm="cols_sm"
           >
             <Standard :data="item" :sourcedata="sourceitems" />
           </v-col>
@@ -2812,6 +2812,9 @@
       dataToConfig () {
         return this.$store.getters.doneDataToConfig
       },
+      languageData () {
+        return this.$store.getters.doneLanguageData
+      },
       numberOfPages () {
         return Math.ceil(this.filteritem.length / this.itemsPerPage)
       },
@@ -3137,7 +3140,12 @@
       },
       itemlist () {
         let itemist
-        itemist = require('../components/Smiscellaneous/' + this.$i18n.locale + '/item.json')
+        let languageData = this.languageData.filter(item=>item.name === 'item' && item.language === this.$i18n.locale)
+        if (languageData.length !== 0) {
+          itemist = languageData[0].data
+        } else {
+          itemist = require('../components/Smiscellaneous/item.json')
+        }
         let namedata = []
         for(let i in itemist.Data){
             namedata.push(
@@ -3162,6 +3170,15 @@
           }
         }
         return skill
+      },
+      cols_sm () {
+        let sm = 4
+        for (let configList = 0; configList < this.config.length; configList++) {
+          if(this.weapon == this.config[configList].modeFile && this.config[configList].cols_sm > 0 && this.config[configList].cols_sm <= 12) {
+            sm = this.config[configList].cols_sm
+          }
+        }
+        return sm
       }
     },
     watch: {
@@ -3690,7 +3707,12 @@
       },
       itemvul (id) {
         let wpnamelist
-        wpnamelist = require('../components/Smiscellaneous/' + this.$i18n.locale + '/item.json')
+        let languageData = this.languageData.filter(item=>item.name === 'item' && item.language === this.$i18n.locale)
+        if (languageData.length !== 0) {
+          wpnamelist = languageData[0].data
+        } else {
+          wpnamelist = require('../components/Smiscellaneous/item.json')
+        }
         let namedata = wpnamelist.Data
         if (namedata[id]) {
           return namedata[id]
@@ -3747,7 +3769,12 @@
             || this.weapon.substring(this.weapon.lastIndexOf('.') + 1) === 'eq_crt'
           )
         ) {
-          wpnamelist = require('../components/Weaponinfo/' + this.$i18n.locale + '/' + this.weapon + '.json')
+          let languageData = this.languageData.filter(item=>item.name === this.weapon && item.language === this.$i18n.locale)
+          if (languageData.length !== 0) {
+            wpnamelist = languageData[0].data
+          } else {
+            wpnamelist = require('../components/Weaponinfo/' + this.weapon + '.json')
+          }
         } else {
           return this.$t('WeaponExplain.Unknown')
         }
@@ -3780,7 +3807,12 @@
         let wpnamelist
         let wrtweapon = this.wrtType(type, true)
         if (wrtweapon !== this.$t('Weapon.Unknown')) {
-          wpnamelist = require('../components/Weaponinfo/' + this.$i18n.locale + '/' + wrtweapon + '.json')
+          let languageData = this.languageData.filter(item=>item.name === wrtweapon && item.language === this.$i18n.locale)
+          if (languageData.length !== 0) {
+            wpnamelist = languageData[0].data
+          } else {
+            wpnamelist = require('../components/Weaponinfo/' + wrtweapon + '.json')
+          }
         } else {
           return this.$t('WeaponExplain.Unknown')
         }
@@ -3797,7 +3829,12 @@
       },
       kwpname (id) {
         let wpnamelist
-        wpnamelist = require('../components/Smiscellaneous/' + this.$i18n.locale + '/Sharpness.json')
+        let languageData = this.languageData.filter(item=>item.name === 'Sharpness' && item.language === this.$i18n.locale)
+        if (languageData.length !== 0) {
+          wpnamelist = languageData[0].data
+        } else {
+          wpnamelist = require('../components/Smiscellaneous/Sharpness.json')
+        }
         let namedata = wpnamelist.Data
         if (namedata[id]) {
           let ret = []
@@ -3811,7 +3848,12 @@
       },
       bwpname (id) {
         let wpnamelist
-        wpnamelist = require('../components/Smiscellaneous/' + this.$i18n.locale + '/bottle.json')
+        let languageData = this.languageData.filter(item=>item.name === 'bottle' && item.language === this.$i18n.locale)
+        if (languageData.length !== 0) {
+          wpnamelist = languageData[0].data
+        } else {
+          wpnamelist = require('../components/Smiscellaneous/bottle.json')
+        }
         let namedata = wpnamelist.Data
         if (namedata[id]) {
           let ret = []
@@ -3825,7 +3867,12 @@
       },
       skname (id) {
         let wpnamelist
-        wpnamelist = require('../components/Smiscellaneous/' + this.$i18n.locale + '/skill.json')
+        let languageData = this.languageData.filter(item=>item.name === 'skill' && item.language === this.$i18n.locale)
+        if (languageData.length !== 0) {
+          wpnamelist = languageData[0].data
+        } else {
+          wpnamelist = require('../components/Smiscellaneous/skill.json')
+        }
         let namedata = wpnamelist.Data
         if (namedata[id]) {
           return namedata[id]
@@ -3835,7 +3882,12 @@
       },
       riname (id) {
         let wpnamelist
-        wpnamelist = require('../components/Smiscellaneous/' + this.$i18n.locale + '/insect.json')
+        let languageData = this.languageData.filter(item=>item.name === 'insect' && item.language === this.$i18n.locale)
+        if (languageData.length !== 0) {
+          wpnamelist = languageData[0].data
+        } else {
+          wpnamelist = require('../components/Smiscellaneous/insect.json')
+        }
         let namedata = wpnamelist.Data
         if (namedata[id]) {
           return namedata[id]
@@ -3845,7 +3897,12 @@
       },
       asname (id) {
         let wpnamelist
-        wpnamelist = require('../components/Smiscellaneous/' + this.$i18n.locale + '/askill.json')
+        let languageData = this.languageData.filter(item=>item.name === 'askill' && item.language === this.$i18n.locale)
+        if (languageData.length !== 0) {
+          wpnamelist = languageData[0].data
+        } else {
+          wpnamelist = require('../components/Smiscellaneous/askill.json')
+        }
         let namedata = wpnamelist.Data
         if (namedata[id]) {
           return namedata[id]

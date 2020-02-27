@@ -4,6 +4,8 @@ const platform = require('os').platform()
 const isDevelopment = process.env.NODE_ENV !== 'production'
 const isNotWeb = platform !== 'browser'
 //初始化依赖
+const JSON5 = require('json5')
+const Blowfish = require('egoroof-blowfish')
 if (isNotWeb) {
   var path = require('path')
   var fs = require('fs')
@@ -11,7 +13,6 @@ if (isNotWeb) {
 } else {
   var axios = require('axios')
 }
-  var Blowfish = require('egoroof-blowfish')
 
 var AddedConfig = (callback, error, internal = false) => {
   if (isNotWeb && !internal) {
@@ -24,7 +25,7 @@ var AddedConfig = (callback, error, internal = false) => {
             if (err) {
               error(err)
             } else {
-              let configData = JSON.parse(data)
+              let configData = JSON5.parse(data)
               configData.dataInfo = ProcessData(configData.dataInfo)
               if(configData.modeFile !== undefined) {
                 let configLoadFile = path.join(__static, '../../Sourceweapon/' + configData.modeFile)
@@ -64,7 +65,7 @@ var ProcessData = (dataInfo) => {
     return defaultDataInfo
   }
   //检查资料完整性并填充至默认数据中
-  if (typeof(dataInfo.HexRuler) == 'number') {
+  if (typeof(dataInfo.HexRuler) == 'number' || typeof(dataInfo.HexRuler) == 'string') {
     defaultDataInfo.HexRuler = dataInfo.HexRuler
   }
   if (dataInfo.HexPointer) {
@@ -130,9 +131,7 @@ var openfile = ( file = null,callback, error ,isPath = false, dontEncrypted = fa
           } else {
             //判断是否为加密文件
             let key = CryptographicKey(GetExtname(filepath))
-            console.log(data, dontEncrypted)
             if(key && !dontEncrypted) data = decoded(key, data)
-            console.log(data)
             callback(Old_version, filepath, data)
           }
         })
@@ -238,6 +237,9 @@ function CryptographicKey(filename) {
     case '.owp_dat':
       key = 'FZoS8QLyOyeFmkdrz73P9Fh2N4NcTwy3QQPjc1YRII5KWovK6yFuU8SL'
       break;
+    case '.shlp':
+      key = 'FZoS8QLyOyeFmkdrz73P9Fh2N4NcTwy3QQPjc1YRII5KWovK6yFuU8SL'
+      break;
     case '.plp':
       key = 'j1P15gEkgVa7NdFxiqwCPitykHctY2nZPjSaElvqb0eSwcLO1cOlTqqv'
       break;
@@ -306,6 +308,36 @@ function GetExtname(file) {
     return file.substring(file.lastIndexOf('.'))
   }
 }
+
+//多语言载入
+var MultiLanguage = (callback) => {
+  if (isNotWeb) {
+    let LanguagePath = isDevelopment ? path.join(__static, '/Language/') : path.join(__static, '../../Language/')
+    fs.readdir( LanguagePath, function( err, paths ){
+      if (!err) {
+        paths.forEach(function( filepath ){
+          fs.readdir( path.join(LanguagePath, filepath), function( err, LanguageFilepaths ){
+            for(let i = 0;i < LanguageFilepaths.length; i++) {
+              let languagePath = path.join(LanguagePath, filepath + '/' + LanguageFilepaths[i])
+              fs.readFile(languagePath, 'utf8',function (err, data) {
+                if (err) {
+                  console.log('文件加载失败')
+                } else {
+                  let LanguageData = JSON5.parse(data)
+                  callback(LanguageData, filepath, LanguageFilepaths[i].substring(0, LanguageFilepaths[i].lastIndexOf('.')))
+                }
+              })
+            }
+          })
+        });
+      } else {
+        console.log('文件列表加载失败')
+      }
+    })
+  } else {
+    console.log('网页版不加载')
+  }
+}
 //载入外部依赖
 var load_environment = (callback) => {
   app.load_environment(callback)
@@ -323,4 +355,5 @@ export default {
   encodedFile: EncodedFile,
   decodedFile: DecodedFile,
   CryptographicKey: CryptographicKey,
+  MultiLanguage: MultiLanguage,
 }

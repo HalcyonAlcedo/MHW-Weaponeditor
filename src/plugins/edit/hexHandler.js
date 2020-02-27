@@ -5,20 +5,48 @@ var DataFormation = (data, dataInfo, dataFormation, resources, sourceData) => {
     let HexPointer = gethexAddress.HexPointer
     let HexStartOffset = gethexAddress.StartOffset
     let Datalist = []
-    for (let l = (data.length - HexStartOffset) / HexRuler, dataLine = 0; dataLine < l; dataLine++) {
-      let Dataobj = {}
-      Dataobj.Data_Hex = (HexRuler * dataLine).toString(16) // 目标地址
-      for (let hp in HexPointer) { // 遍历所有属性
-        Dataobj[hp] = ProcessingRawData(ProcessingHex(data, HexPointer[hp], HexRuler, dataLine))
+
+    if (typeof(HexRuler) == "string") {
+      //非标准行
+      if (HexRuler == "Linebyline") {
+        //逐行处理
+        let dataLine = 0
+        for (let LineName in HexPointer) {
+          let Dataobj = {}
+          let Line = HexPointer[LineName]
+          Dataobj.Data_Hex = Line.StartAddress.toString(16)
+          for (let hp in Line.Pointer) { // 遍历所有属性
+            Dataobj[hp] = ProcessingRawData(ProcessingHex(data, Line.Pointer[hp], Line.StartAddress, 1))
+          }
+          let Resources = ProcessResources(dataFormation, resources)
+          for(let res = 0; res < Resources.length; res++) {
+            let resourcesId = ProcessingHex(
+              data, Line[Resources[res].requiredParameters], HexRuler, dataLine
+            )
+            Dataobj[Resources[res].name] = Resources[res].func(resourcesId ? resourcesId : LineName, true)
+          }
+          Dataobj.SourceData = sourceData[dataLine]
+          Datalist[dataLine] = Dataobj
+          dataLine ++
+        }
       }
-      let Resources = ProcessResources(dataFormation, resources)
-      for(let res = 0; res < Resources.length; res++) {
-        Dataobj[Resources[res].name] = Resources[res].func(ProcessingHex(
-          data, HexPointer[Resources[res].requiredParameters], HexRuler, dataLine
-        ))
+    } else if (typeof(HexRuler) == "number") {
+      //标准行循环
+      for (let l = (data.length - HexStartOffset) / HexRuler, dataLine = 0; dataLine < l; dataLine++) {
+        let Dataobj = {}
+        Dataobj.Data_Hex = (HexRuler * dataLine).toString(16) // 目标地址
+        for (let hp in HexPointer) { // 遍历所有属性
+          Dataobj[hp] = ProcessingRawData(ProcessingHex(data, HexPointer[hp], HexRuler, dataLine))
+        }
+        let Resources = ProcessResources(dataFormation, resources)
+        for(let res = 0; res < Resources.length; res++) {
+          Dataobj[Resources[res].name] = Resources[res].func(ProcessingHex(
+            data, HexPointer[Resources[res].requiredParameters], HexRuler, dataLine
+          ))
+        }
+        Dataobj.SourceData = sourceData[dataLine]
+        Datalist[dataLine] = Dataobj
       }
-      Dataobj.SourceData = sourceData[dataLine]
-      Datalist[dataLine] = Dataobj
     }
     return Datalist
 }
@@ -109,7 +137,8 @@ var SingleToHex = (t) => {
   e = FillString(e, "0", 8, true);
   var r = parseInt(s + e + m, 2).toString(16);
   r = FillString(r, "0", 8, true);
-  return InsertString(r, "", 2).toUpperCase();
+  //return InsertString(r, "", 2).toUpperCase();
+  return r
 }
 /*
   内部方法
@@ -150,8 +179,8 @@ function ProcessResources (dataFormation, resources) {
       case "MatchName".toLowerCase():
         ResourcesObj.push({
           name: dataFormation[df].name,
-          func: (id) => {
-            if(typeof (id) !== 'number') {
+          func: (id, string = false) => {
+            if(typeof (id) !== 'number' && !string) {
               id = id.vul
             }
             return matchName(Obj_resources, id)
@@ -257,6 +286,7 @@ function str_pad (hex, digits = 8) {
   var tmp = digits - hex.length
   return zero.substr(0, tmp) + hex.toLocaleUpperCase()
 }
+/*
 function InsertString(t, c, n) {
   var r = new Array();
   for (var i = 0; i * 2 < t.length; i++) {
@@ -264,6 +294,7 @@ function InsertString(t, c, n) {
   }
   return r.join(c);
 }
+*/
 function FillString(t, c, n, b) {
   if ((t == "") || (c.length != 1) || (n <= t.length)) {
     return t;

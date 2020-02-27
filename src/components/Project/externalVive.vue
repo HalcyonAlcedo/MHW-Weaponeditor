@@ -1,7 +1,7 @@
 <template>
   <v-container>
   <v-row>
-      <v-col v-for="item in datalist" :key="item.hexdata" :cols="item.col.default" :sm="item.col.sm" :md="item.col.md">
+      <v-col v-for="item in datalist" :key="item.hexdata" :cols="item.col.default" :sm="item.col.sm" :md="item.col.md" :hidden="item.type == null">
         <v-text-field
           v-if="item.type == 'input'"
           :label="item.label"
@@ -22,6 +22,18 @@
           :suffix="item.suffix"
           return-object
         ></v-select>
+        <v-autocomplete
+          v-if="item.type == 'search_select'"
+          :label="item.label"
+          v-model="hexdata[item.hexdata].vul"
+          :items="item.items"
+          @change="item.change(hexdata[item.hexdata])"
+          item-text="text"
+          item-value="value"
+          persistent-hint
+          :no-data-text="$t('Interface.No_data')"
+        >
+        </v-autocomplete>
         <v-text-field
           v-if="item.sourcedata && sourcedata && (item.hexdata !== item.hexsourcedata)"
           :label="$t('Interface.Original') + ' ' + $t(item.label)"
@@ -67,15 +79,27 @@
             change: null,
             sourcedata: false,
           }
+          if (this.hexdata[item.hexdata] == undefined) {
+            ret.type = null
+            return ret
+          }
           if (_this.isEmptyObjec(item.change)) {
             ret.change = _this[item.change]
-          } else if (item.change === null) {
+          } else if (item.change === null || item.change === undefined) {
             ret.change = _this.input_interchangeable
           }
           if(_this.isEmptyObjec(item.items)) {
-            ret.items = resources[item.items]
+            let tempItem = []
+            if (!(resources[item.items] instanceof Array)) {
+              for(let _item in resources[item.items]) {
+                tempItem[_item] = {value: Number(_item), text: resources[item.items][_item]}
+              }
+            } else {
+              tempItem = resources[item.items]
+            }
+            ret.items = tempItem
           }
-          if (_this.isEmptyObjec(item.type) && (item.type == 'input' || item.type == 'select')) {
+          if (_this.isEmptyObjec(item.type) && (item.type == 'input' || item.type == 'select' || item.type == 'search_select')) {
             ret.type = item.type
           }
           if (_this.isEmptyObjec(item.col)) {
@@ -121,11 +145,21 @@
         if (val.vul.length === 0) {
           val.vul = 0
         }
-        let data = this.str_pad(Number(val.vul).toString(16), Math.ceil(Number(val.vul).toString(16).length / 2) * 2)
+        let vulHex = ''
+        if (val.float) {
+          vulHex = val.vul
+        } else {
+          vulHex = Number(val.vul).toString(16)
+        }
+        let tempdata = this.str_pad(vulHex, val.hexL * 2)
+        let data = []
+        for(let i = 0; i * 2 < tempdata.length; i++){
+          data.push(tempdata.substr(i * 2, 2))
+        }
         for (let i = 0; i < val.hexL; i++) {
           let setvul
-          if (val.hexL - i <= (data.length / 2)) {
-            setvul = parseInt(data.substr(-2 - (val.hexL - (i * 2)), 2), 16)
+          if (val.hexL - i <= data.length) {
+            setvul = parseInt(data[i], 16)
           } else {
             setvul = '00'
           }
@@ -180,6 +214,7 @@
         }
         valsave = val
         valsave.vul = hexHandler.SingleToHex(valsave.vul)
+        valsave.float = true
         this.save(valsave, true)
         valsave.vul = hexHandler.HexToSingle(valsave.vul)
       }

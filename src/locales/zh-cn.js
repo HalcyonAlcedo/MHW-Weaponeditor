@@ -62,7 +62,8 @@ module.exports = {
     DownloadDencryption: '下载加解密工具',
     VCLow_version: 'VC++版本较低,可能无法正常运行Mod,建议升级后使用',
     NewInterface: '体验新界面',
-    Other: '其他'
+    Other: '其他',
+    TranslationProvider: ''
   },
   Explanatory: {
     Elimination_unknown_weapons: '武器信息清单中排除掉未被记载的武器数据',
@@ -70,8 +71,8 @@ module.exports = {
     Binary_mode: '显示档案二进位数据的档案模式,二进位数据根据武器类型进行辅助显示',
     Dark_theme: '切换软件主色调至暗黑模式',
     About_content: '本软件可针对《怪物猎人世界》中武器数据魔改档案进行查看和修改,修改后档案放置在Monster Hunter World\\nativePC\\common\\equip\\下即可生效。修改后档案将影响游戏平衡性,请勿用于联机使用。',
-    About_edition: '软件版本：1.1.8',
-    Instructions: '<h3>该工具可以读取解包后的武器数据,内置了当前版本的武器数据档案,可以直接新建mod档案。部分数值修改会根据固有系数自动修正,武器信息为手动录入,可能与现版本数据存在差异。修改后的档案请勿用于联机使用。</h3><br><h4>用法：</h4><br><span>&nbsp；&nbsp；1、打开解包后的mod档案或点击新建选择需要的武器档案</span><br><span>&nbsp；&nbsp；2、搜索或手动找到要修改的武器</span><br><span>&nbsp；&nbsp；3、将相应属性改成你希望的数值</span><br><span>&nbsp；&nbsp；4、点击保存将档案保存至游戏目录\\nativePC\\common\\equip\\</span><br><span>&nbsp；&nbsp；5、安装冰原装载Mod（https://www.nexusmods.com/monsterhunterworld/mods/1984）</span><br><br><h4>工具原始代码发布在Github上：https://github.com/HalcyonAlcedo/MHW-Weaponeditor</h4>',
+    About_edition: '软件版本：1.1.11',
+    Instructions: '<h3>该工具可以读取解包后的武器数据,内置了当前版本的武器数据档案,可以直接新建mod档案。部分数值修改会根据固有系数自动修正,武器信息为手动录入,可能与现版本数据存在差异。修改后的档案请勿用于联机使用。</h3><br><h4>用法：</h4><br><span>&nbsp;&nbsp;1、打开解包后的mod档案或点击新建选择需要的武器档案</span><br><span>&nbsp;&nbsp;2、搜索或手动找到要修改的武器</span><br><span>&nbsp;&nbsp;3、将相应属性改成你希望的数值</span><br><span>&nbsp;&nbsp;4、点击保存将档案保存至游戏目录\\nativePC\\common\\equip\\</span><br><span>&nbsp;&nbsp;5、安装冰原装载Mod（https://www.nexusmods.com/monsterhunterworld/mods/1984）</span><br><br><h4>工具原始代码发布在Github上：https://github.com/HalcyonAlcedo/MHW-Weaponeditor</h4>',
     Old_version: '将以名称匹配方式打开数据档案,建议使用新版本数据档案进行魔改。',
     Old_version_open: '兼容模式已启动,请重新打开数据档案',
     Old_version_close: '兼容模式已关闭,请重新打开数据档案',
@@ -79,17 +80,19 @@ module.exports = {
     Version_update_true: '版本数据更新完成,请勿忘记保存数据档案',
     Free_model: '如需修改模型请调整为修改数据,不懂勿动',
     Have_model: '如需关闭模型请改成65535',
-    Update_description: '<ul><li>更换加密文件处理方式，支持网页端处理加密文件，新增加解密功能</li></ul>',
+    Update_description: '<ul><li>修复配置文件默认值错误</li></ul>',
     Toolsinfo: '开发者工具箱只针对MOD开发人员开放,工具箱内包含本工具内置的数据信息和一些实用工具,如需申请开发者认证许可,请在下方填写您曾经发布过的一个Mod地址并提交申请,申请后您将拥有1天的试用时间,审核通过后在有效期内可随意使用。',
     NewInterface: '尝试新的编辑界面',
     ResetChopping: '需要开启原始数据对比功能',
-    NoLimit: '当前无修改限制', DidNotOpen: '当前文件未开启新版编辑界面功能,请使用旧版界面操作',
+    NoLimit: '当前无修改限制',
+    DidNotOpen: '当前文件未开启新版编辑界面功能,请使用旧版界面操作',
     Encryptionwarning: '当前要修改的文件为加密文件,请使用加解密工具解密后再次打开解密后的文件',
     Dencryptionwarning: '当前要修改的文件为解密后的文件,保存后请使用加解密工具加密后放入游戏才能生效',
     EncryptionHelp: `
     此工具用于解密被加密的数据文件和将解密的文件加密回程序识别的加密文件</br>
-    当前内置了cus_pa、cus_par、msk、owp_dat、dtt_eda、dtt_epg、plp、plsp、plip、asp类型的文件密钥,如果你有其他类型的加密文件和密钥可以在Github上告诉我,确认后会补充进系统
-    `
+    当前内置了cus_pa、cus_par、msk、owp_dat、dtt_eda、dtt_epg、plp、plsp、plip、asp、shlp类型的文件密钥,如果你有其他类型的加密文件和密钥可以在Github上告诉我,确认后会补充进系统
+    `,
+    ConfigAuthor: '当前配置文件作者：'
   },
   Weaponsmiscellaneous: {
     Sharpness: '斩味',

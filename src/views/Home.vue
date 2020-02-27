@@ -270,7 +270,7 @@
       class="white--text"
       style="-webkit-app-region: drag"
     >
-      <span>&nbsp;&nbsp;&nbsp;By Alcedo  &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | {{$t("Interface.Data_version")}} 11.50.00 | {{$t("Interface.Original_file_version")}} 11.50.00 （{{$t("Interface.Extract_from")}} 2020-02-06） | {{$t("Interface.Current_file")}} {{file}}（{{weaponfilename}}）|</span>
+      <span>&nbsp;&nbsp;&nbsp;By Alcedo  &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | {{$t("Interface.Data_version")}} 11.50.00 | {{$t("Interface.Original_file_version")}} 11.50.01 （{{$t("Interface.Extract_from")}} 2020-02-20） | {{$t("Interface.Current_file")}} {{file}}（{{weaponfilename}}）|</span>
     </v-footer>
 
     <!--弹窗-->
@@ -279,7 +279,11 @@
       max-width="490"
     >
       <v-card>
-        <v-card-title class="headline">{{$t("Interface.About")}}</v-card-title>
+        <v-card-title class="headline">
+          {{$t("Interface.About")}}
+          <v-spacer />
+          <div class="overline mb-4">{{$t("Interface.TranslationProvider")}}</div>
+        </v-card-title>
   
         <v-card-text>
           <div>
@@ -613,6 +617,11 @@ export default {
       if (this.file !== this.$store.getters.donefilename && this.$store.getters.donefilename !== 'Unknown') {
         this.snackbar.text = this.$t('Interface.Oldfile')
       }
+      for (let configList = 0; configList < this.config.length; configList++) {
+        if(this.weapon == this.config[configList].modeFile && this.config[configList].author != undefined && this.config[configList].author != '') {
+          this.snackbar.text = this.$t('Explanatory.ConfigAuthor') + this.config[configList].author
+        }
+      }
       this.contrastdata()
     },
     sound: function () {
@@ -853,6 +862,31 @@ export default {
       if (!check) {
         _this.snackbar.text = _this.$t('Interface.VCLow_version')
         _this.snackbar.snackbar = true
+      }
+    })
+    
+    edit_core.MultiLanguage((LanguageData, Language, file)=>{
+      if (LanguageData && Language) {
+        console.log(file)
+        if (file == 'view') {
+          _this.$i18n.setLocaleMessage(Language,LanguageData)
+          for(let LanguageList in _this.$i18n.messages) {
+            if (_this.langlist.filter(function (el) {
+              return el.value == LanguageList;
+            }).length == 0) {
+              _this.langlist.push({
+                text: _this.$i18n.messages[LanguageList].Config.Language,
+                value: LanguageList
+              })
+            }
+          }
+        } else {
+          _this.$store.dispatch('addlanguagedata', {
+            name: file,
+            language: Language,
+            data: LanguageData
+          })
+        }
       }
     })
   }

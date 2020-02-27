@@ -536,7 +536,7 @@
           filename &&
           (filename.substring(filename.lastIndexOf('.') + 1) === 'wp_dat_g' || filename.substring(filename.lastIndexOf('.') + 1) === 'wp_dat' || filename.substring(filename.lastIndexOf('.') + 1) === 'am_dat')
         ) {
-          wpnamelist = require('../components/Weaponinfo/' + this.$i18n.locale + '/' + filename + '.json')
+          wpnamelist = require('../components/Weaponinfo/' + filename + '.json')
         } else {
           return this.$t('WeaponExplain.Unknown')
         }

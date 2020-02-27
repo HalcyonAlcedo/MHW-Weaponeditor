@@ -1,6 +1,18 @@
 <template>
   <v-row justify="center">
-    <v-dialog v-model="dialog" max-width="600px">
+    <v-expansion-panels v-if="operation_template == 'table'">
+      <v-expansion-panel>
+        <v-expansion-panel-header>
+          {{contentTitle}}
+          <v-spacer></v-spacer>
+          {{ $t('WeaponExplain.Address') }}：<span class="red--text">{{ str_pad(data.Data_Hex) }}</span>
+        </v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <externalVive :hexdata="data" :sourcedata="sourcedata"/>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+    </v-expansion-panels>
+    <v-dialog v-else v-model="dialog" max-width="600px">
       <template v-slot:activator="{ on }">
         <v-card
           class="mx-auto"
@@ -54,7 +66,7 @@
 
   export default {
     data: () => ({
-      dialog: false,
+      dialog: false
     }),
     props: ['data','sourcedata','items'],
     components: {
@@ -140,12 +152,21 @@
           }
         }
         return this.$t('Weapon.Unknown')
-      }
+      },
+      operation_template () {
+        let template = 'panel'
+        for (let configList = 0; configList < this.config.length; configList++) {
+          if(this.weapon == this.config[configList].modeFile && this.config[configList].template) {
+            template = this.config[configList].template
+          }
+        }
+        return template
+      },
     },
     methods: {
       //检查项目是否存在
       existence (target) {
-        return target !== undefined && target !== false
+        return target !== undefined && target !== false && target !== 'null'
       },
       str_pad (hex, digits = 8) {
         var zero = new Array(digits + 1).join('0')
