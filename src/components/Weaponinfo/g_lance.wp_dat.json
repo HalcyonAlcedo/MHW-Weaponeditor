@@ -800,6 +800,78 @@
         {
             "name": "宮廷銃槍【護星】",
             "Weapon_Number": 225
+        },
+        {
+            "name": "赤龍擊破槍‧火",
+            "Weapon_Number": 229
+        },        
+        {
+            "name": "赤龍擊破槍‧水",
+            "Weapon_Number": 230
+        },        
+        {
+            "name": "赤龍擊破槍‧冰",
+            "Weapon_Number": 231
+        },        
+        {
+            "name": "赤龍擊破槍‧雷",
+            "Weapon_Number": 232
+        },        
+        {
+            "name": "赤龍擊破槍‧龍",
+            "Weapon_Number": 233
+        },        
+        {
+            "name": "赤龍擊破槍‧毒",
+            "Weapon_Number": 234
+        },        
+        {
+            "name": "赤龍擊破槍‧麻痺",
+            "Weapon_Number": 235
+        },        
+        {
+            "name": "赤龍擊破槍‧睡眠",
+            "Weapon_Number": 236
+        },        
+        {
+            "name": "赤龍擊破槍‧爆破",
+            "Weapon_Number": 237
+        },        
+        {
+            "name": "赤龍擊破槍‧火",
+            "Weapon_Number": 238
+        },        
+        {
+            "name": "赤龍擊破槍‧水",
+            "Weapon_Number": 239
+        },        
+        {
+            "name": "赤龍擊破槍‧冰",
+            "Weapon_Number": 240
+        },        
+        {
+            "name": "赤龍擊破槍‧雷",
+            "Weapon_Number": 241
+        },        
+        {
+            "name": "赤龍擊破槍‧龍",
+            "Weapon_Number": 242
+        },        
+        {
+            "name": "赤龍擊破槍‧毒",
+            "Weapon_Number": 243
+        },        
+        {
+            "name": "赤龍擊破槍‧麻痺",
+            "Weapon_Number": 244
+        },        
+        {
+            "name": "赤龍擊破槍‧睡眠",
+            "Weapon_Number": 245
+        },        
+        {
+            "name": "赤龍擊破槍‧爆破",
+            "Weapon_Number": 246
         }
     ]
 }

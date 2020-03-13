@@ -807,6 +807,46 @@
         {
             "name": "宮廷警弩【狙星】",
             "Weapon_Number": 232
+        },
+        {
+            "name": "赤龍狙擊弩‧火",
+            "Weapon_Number": 236
+        },        
+        {
+            "name": "赤龍狙擊弩‧冰",
+            "Weapon_Number": 237
+        },        
+        {
+            "name": "赤龍狙擊弩‧雷",
+            "Weapon_Number": 238
+        },        
+        {
+            "name": "赤龍狙擊弩‧水",
+            "Weapon_Number": 239
+        },        
+        {
+            "name": "赤龍狙擊弩‧龍",
+            "Weapon_Number": 240
+        },        
+        {
+            "name": "赤龍狙擊弩‧火",
+            "Weapon_Number": 241
+        },        
+        {
+            "name": "赤龍狙擊弩‧冰",
+            "Weapon_Number": 242
+        },        
+        {
+            "name": "赤龍狙擊弩‧雷",
+            "Weapon_Number": 243
+        },        
+        {
+            "name": "赤龍狙擊弩‧水",
+            "Weapon_Number": 244
+        },        
+        {
+            "name": "赤龍狙擊弩‧龍",
+            "Weapon_Number": 245
         }
     ]
 }

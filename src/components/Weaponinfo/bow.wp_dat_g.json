@@ -767,6 +767,54 @@
         {
             "name": "宮廷翼弓【極星】",
             "Weapon_Number": 221
+        },
+        {
+            "name": "赤龍穿心箭‧火",
+            "Weapon_Number": 225
+        },        
+        {
+            "name": "赤龍穿心箭‧水",
+            "Weapon_Number": 226
+        },        
+        {
+            "name": "赤龍穿心箭‧冰",
+            "Weapon_Number": 227
+        },        
+        {
+            "name": "赤龍穿心箭‧雷",
+            "Weapon_Number": 228
+        },        
+        {
+            "name": "赤龍穿心箭‧龍",
+            "Weapon_Number": 229
+        },        
+        {
+            "name": "赤龍穿心箭‧爆破",
+            "Weapon_Number": 230
+        },        
+        {
+            "name": "赤龍穿心箭‧火",
+            "Weapon_Number": 231
+        },        
+        {
+            "name": "赤龍穿心箭‧水",
+            "Weapon_Number": 232
+        },        
+        {
+            "name": "赤龍穿心箭‧冰",
+            "Weapon_Number": 233
+        },        
+        {
+            "name": "赤龍穿心箭‧雷",
+            "Weapon_Number": 234
+        },        
+        {
+            "name": "赤龍穿心箭‧龍",
+            "Weapon_Number": 235
+        },        
+        {
+            "name": "赤龍穿心箭‧爆破",
+            "Weapon_Number": 236
         }
     ]
 }

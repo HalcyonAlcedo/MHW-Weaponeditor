@@ -2,45 +2,62 @@
   <v-container>
   <v-row>
       <v-col v-for="item in datalist" :key="item.hexdata" :cols="item.col.default" :sm="item.col.sm" :md="item.col.md" :hidden="item.type == null">
-        <v-text-field
-          v-if="item.type == 'input'"
-          :label="item.label"
-          v-model="hexdata[item.hexdata].vul"
-          :readonly="item.readonly"
-          :suffix="item.suffix"
-          @change="item.change(hexdata[item.hexdata])"
-        ></v-text-field>
-        <v-select
-          v-if="item.type == 'select'"
-          :label="item.label"
-          v-model="hexdata[item.hexdata].vul"
-          :items="item.items"
-          @change="item.change(hexdata[item.hexdata])"
-          item-text="text"
-          item-value="value"
-          :readonly="item.readonly"
-          :suffix="item.suffix"
-          return-object
-        ></v-select>
-        <v-autocomplete
-          v-if="item.type == 'search_select'"
-          :label="item.label"
-          v-model="hexdata[item.hexdata].vul"
-          :items="item.items"
-          @change="item.change(hexdata[item.hexdata])"
-          item-text="text"
-          item-value="value"
-          persistent-hint
-          :no-data-text="$t('Interface.No_data')"
-        >
-        </v-autocomplete>
-        <v-text-field
-          v-if="item.sourcedata && sourcedata && (item.hexdata !== item.hexsourcedata)"
-          :label="$t('Interface.Original') + ' ' + $t(item.label)"
-          v-model="hexdata.wp_sourcedata[item.hexdata].vul"
-          prepend-icon="mdi-transfer-left"
-          readonly
-        ></v-text-field>
+        <v-tooltip bottom :disabled="(hexdata[item.hexdata] && hexdata[item.hexdata].note) ? false : true">
+          <template v-slot:activator="{ on }">
+            <div v-on="on">
+            <v-text-field
+              v-if="item.type == 'input'"
+              :label="item.label"
+              v-model="hexdata[item.hexdata].vul"
+              :readonly="item.readonly"
+              :suffix="item.suffix"
+              @change="item.change(hexdata[item.hexdata])"
+            ></v-text-field>
+            <v-select
+              v-if="item.type == 'select'"
+              :label="item.label"
+              v-model="hexdata[item.hexdata].vul"
+              :items="item.items"
+              @change="item.change(hexdata[item.hexdata])"
+              item-text="text"
+              item-value="value"
+              :readonly="item.readonly"
+              :suffix="item.suffix"
+              return-object
+            ></v-select>
+            <v-autocomplete
+              v-if="item.type == 'search_select'"
+              :label="item.label"
+              v-model="hexdata[item.hexdata].vul"
+              :items="item.items"
+              @change="item.change(hexdata[item.hexdata])"
+              item-text="text"
+              item-value="value"
+              :readonly="item.readonly"
+              persistent-hint
+              :no-data-text="$t('Interface.No_data')"
+            >
+            </v-autocomplete>
+            <v-checkbox
+              v-if="item.type == 'checkbox'"
+              :label="item.label"
+              v-model="hexdata[item.hexdata].vul"
+              @change="item.change(hexdata[item.hexdata])"
+              :readonly="item.readonly"
+            ></v-checkbox>
+            <v-text-field
+              v-if="item.sourcedata && sourcedata && (item.hexdata !== item.hexsourcedata)"
+              :label="$t('Interface.Original') + ' ' + $t(item.label)"
+              v-model="hexdata.wp_sourcedata[item.hexdata].vul"
+              prepend-icon="mdi-transfer-left"
+              readonly
+            ></v-text-field>
+            </div>
+          </template>
+          <span>{{hexdata[item.hexdata] ? hexdata[item.hexdata].note : ''}}</span>
+        </v-tooltip>
+
+        
       </v-col>
   </v-row>
   </v-container>
@@ -99,7 +116,7 @@
             }
             ret.items = tempItem
           }
-          if (_this.isEmptyObjec(item.type) && (item.type == 'input' || item.type == 'select' || item.type == 'search_select')) {
+          if (_this.isEmptyObjec(item.type) && (item.type == 'input' || item.type == 'select' || item.type == 'search_select' || item.type == 'checkbox')) {
             ret.type = item.type
           }
           if (_this.isEmptyObjec(item.col)) {
@@ -217,6 +234,15 @@
         valsave.float = true
         this.save(valsave, true)
         valsave.vul = hexHandler.HexToSingle(valsave.vul)
+      },
+      check_interchangeable (val) {
+        let valsave
+        if (val.vul === '') {
+          val.vul = 0
+        }
+        valsave = val
+        valsave.vul = valsave.vul ? 1 : 0
+        this.save(valsave, true)
       }
     }
   }

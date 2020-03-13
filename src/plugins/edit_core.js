@@ -10,9 +10,8 @@ if (isNotWeb) {
   var path = require('path')
   var fs = require('fs')
   var {dialog, app} = require('electron').remote
-} else {
-  var axios = require('axios')
 }
+var axios = require('axios')
 
 var AddedConfig = (callback, error, internal = false) => {
   if (isNotWeb && !internal) {
@@ -86,15 +85,20 @@ var ProcessData = (dataInfo) => {
 }
 
 //打开文件
-var openfile = ( file = null,callback, error ,isPath = false, dontEncrypted = false) => {
+var openfile = ( file = null,callback, error ,isPath = false, dontEncrypted = false, dir = false, _this, item) => {
+  console.log(dir)
   if (file === null) { //打开外部文件
     if (isNotWeb) {
       dialog.showOpenDialog({
-        properties: ['openFile']
+        properties: [dir ? 'openDirectory' : 'openFile']
       }).then(result => {
         let f = result.filePaths[0]
         if(f) {
-          openfile(f, callback, error, true, dontEncrypted)
+          if (dir) {
+            GetFileList(f, _this, item)
+          } else {
+            openfile(f, callback, error, true, dontEncrypted)
+          }
         } else {
           error('用户取消打开操作')
         }
@@ -230,6 +234,7 @@ var DecodedFile = (filepath, data) => {
 function CryptographicKey(filename) {
   let key = false
   if(filename.substr(filename.length - 2,2) == '_d') filename = filename.substring(0, filename.length - 2)
+  console.log(filename)
   switch (filename) {
     case '.rod_inse':
       key = 'SFghFQVFJycHnypExurPwut98ZZq1cwvm7lpDpASeP4biRhstQgULzlb'
@@ -342,7 +347,104 @@ var MultiLanguage = (callback) => {
 var load_environment = (callback) => {
   app.load_environment(callback)
 }
-
+//获取授权
+var GenerateLicense = (id, time, callback) => {
+  let filepath = path.join(__static, '../../license')
+  fs.access(filepath,fs.constants.F_OK, (err) => {
+    if (!err) {
+      fs.readFile(filepath, function (err, data) {
+        if (!err && data.length > 0) {
+          let lic = JSON5.parse(data)
+          let licdate = new Date(lic.time)
+          let date = new Date()
+          if ((lic.UUID === id && licdate > date) || lic.inside == 'developers:3honesty_sway_Grimm_hits5_jilt_culminate7_surrender_decent4_8Humid_permit4_feed5_Midst') {
+            callback(licdate.toLocaleDateString())
+          } else {
+            onlyLicense(id, callback)
+          }
+        } else {
+          onlyLicense(id, callback)
+        }
+      })
+    } else {
+      onlyLicense(id, callback)
+    }
+  })
+}
+//申请授权
+var onlyLicense = (id, callback) => {
+  axios({
+    method: 'post',
+    url: 'https://mhwee.com/authorization.php', // 请求地址
+    headers:{
+      'Content-type': 'application/x-www-form-urlencoded'
+    },
+    data: {
+      UUID: id
+    },
+    transformRequest: [function (data) {
+      let ret = ''
+      for (let it in data) {
+        ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+      }
+      return ret
+    }],
+    responseType: 'json' // 表明返回服务器返回的数据类型
+  }).then((res) => { // 处理返回的文件流
+    if (res.data.state) {
+      writeLocalLicense(res.data.UUID, res.data.time)
+      callback(res.data.time)
+    }
+  })
+}
+//写入本地授权
+function writeLocalLicense (id, time) {
+  let license = {
+    UUID: id,
+    time: time
+  }
+  let filepath = path.join(__static, '../../license')
+  fs.writeFile(filepath, JSON.stringify(license),  function(err) {
+    if (err) {
+      return console.error(err);
+    }
+  });
+}
+//获取目录下的文件
+var GetFileList = (filePath, _this, item) => {
+  //获取目录中文件列表
+  fs.readdir(filePath, (err,files) => {
+    if(err){
+        console.warn(err)
+    }else{
+      //遍历读取到的文件列表
+      files.forEach(function(filename){
+        //获取当前文件的绝对路径
+        let filedir = path.join(filePath,filename)
+        //根据文件路径获取文件信息，返回一个fs.Stats对象
+        fs.stat(filedir,function(eror,stats){
+            if(eror){
+                console.warn('获取文件stats失败')
+            }else{
+              let isFile = stats.isFile()//是文件
+              let isDir = stats.isDirectory()//是文件夹
+              if(isFile){
+                let filename = filedir.substring(filedir.lastIndexOf('\\') + 1)
+                _this[item].push({
+                  file: filedir,
+                  filename: filename,
+                  key: CryptographicKey(filename)
+                })
+              }
+              if(isDir){
+                GetFileList(filedir)//递归，如果是文件夹，就继续遍历该文件夹下面的文件
+              }
+            }
+        })
+      })
+    }
+  })
+}
 export default {
   notWeb: isNotWeb,
   openfile: openfile,
@@ -356,4 +458,6 @@ export default {
   decodedFile: DecodedFile,
   CryptographicKey: CryptographicKey,
   MultiLanguage: MultiLanguage,
+  GenerateLicense: GenerateLicense,
+  onlyLicense: onlyLicense
 }

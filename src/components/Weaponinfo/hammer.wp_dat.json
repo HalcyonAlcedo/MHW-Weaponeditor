@@ -840,6 +840,78 @@
         {
             "name": "宮廷十字鎚【鍛星】",
             "Weapon_Number": 237
+        },
+        {
+            "name": "赤龍攫獲鎚‧火",
+            "Weapon_Number": 241
+        },
+        {
+            "name": "赤龍攫獲鎚‧水",
+            "Weapon_Number": 242
+        },
+        {
+            "name": "赤龍攫獲鎚‧冰",
+            "Weapon_Number": 243
+        },
+        {
+            "name": "赤龍攫獲鎚‧雷",
+            "Weapon_Number": 244
+        },        
+        {
+            "name": "赤龍攫獲鎚‧龍",
+            "Weapon_Number": 245
+        },
+        {
+            "name": "赤龍攫獲鎚‧毒",
+            "Weapon_Number": 246
+        },
+        {
+            "name": "赤龍攫獲鎚‧麻痺",
+            "Weapon_Number": 247
+        },
+        {
+            "name": "赤龍攫獲鎚‧睡眠",
+            "Weapon_Number": 248
+        },
+        {
+            "name": "赤龍攫獲鎚‧爆破",
+            "Weapon_Number": 249
+        },
+        {
+            "name": "赤龍攫獲鎚‧火",
+            "Weapon_Number": 250
+        },
+        {
+            "name": "赤龍攫獲鎚‧水",
+            "Weapon_Number": 251
+        },
+        {
+            "name": "赤龍攫獲鎚‧冰",
+            "Weapon_Number": 252
+        },
+        {
+            "name": "赤龍攫獲鎚‧雷",
+            "Weapon_Number": 253
+        },
+        {
+            "name": "赤龍攫獲鎚‧龍",
+            "Weapon_Number": 254
+        },
+        {
+            "name": "赤龍攫獲鎚‧毒",
+            "Weapon_Number": 255
+        },
+        {
+            "name": "赤龍攫獲鎚‧麻痺",
+            "Weapon_Number": 256
+        },
+        {
+            "name": "赤龍攫獲鎚‧睡眠",
+            "Weapon_Number": 257
+        },
+        {
+            "name": "赤龍攫獲鎚‧爆破",
+            "Weapon_Number": 258
         }
     ]
 }

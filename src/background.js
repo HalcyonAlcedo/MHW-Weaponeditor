@@ -9,6 +9,8 @@ import path from 'path'
 import fs from 'fs'
 import download from 'download'
 import zipper from 'zip-local'
+import JSON5 from 'json5'
+import {machineIdSync} from 'node-machine-id'
 
 const EAU = require('electron-asar-hot-updater');
 const isDevelopment = process.env.NODE_ENV !== 'production'
@@ -198,50 +200,63 @@ app.on('ready', async () => {
 
   }
 
-  //更新
-  EAU.init({
-    'api': 'https://mhwee.com/update.php', // The API EAU will talk to
-    'server': false, // Where to check. true: server side, false: client side, default: true.
-    'debug': false, // Default: false.
-    'headers': { Authorization: 'token' }, // Default: {}
-    'formatRes': function(res) { return res } // 对返回的数据进行格式化操作的回调函数，保证EAU可以正常操作操作数据。比如格式化后返回：{version: xx, asar: xx}
-  });
-
-  EAU.check(function (error, last, body) {
-    if (error) {
-      if (error === 'no_update_available') { return false; }
-      dialog.showErrorBox('info', error)
-      return false
+  let licensepath = path.join(__static, '../../license')
+  fs.readFile(licensepath, function (err, data) {
+    let apiurl = 'https://mhwee.com/update.php'
+    if (!err && data.length > 0) {
+      let lic = JSON5.parse(data)
+      let licdate = new Date(lic.time)
+      let date = new Date()
+      let id = machineIdSync()
+      if ((lic.UUID === id && licdate > date && lic.inside == 'InsideUser:' + id) || lic.inside == 'developers:3honesty_sway_Grimm_hits5_jilt_culminate7_surrender_decent4_8Humid_permit4_feed5_Midst') {
+        apiurl = 'https://mhwee.com/insideupdate.php'
+      }
     }
+    //更新
+    EAU.init({
+      'api': apiurl, // The API EAU will talk to
+      'server': false, // Where to check. true: server side, false: client side, default: true.
+      'debug': false, // Default: false.
+      'headers': { Authorization: 'token' }, // Default: {}
+      'formatRes': function(res) { return res } // 对返回的数据进行格式化操作的回调函数，保证EAU可以正常操作操作数据。比如格式化后返回：{version: xx, asar: xx}
+    });
 
-    EAU.progress(function (state) {
-      // The state is an object that looks like this:
-      // {
-      //     percent: 0.5,               
-      //     speed: 554732,              
-      //     size: {
-      //         total: 90044871,        
-      //         transferred: 27610959   
-      //     },
-      //     time: {
-      //         elapsed: 36.235,        
-      //         remaining: 81.403       
-      //     }
-      // }
-    })
-
-    EAU.download(function (error) {
+    EAU.check(function (error, last, body) {
       if (error) {
+        if (error === 'no_update_available') { return false; }
         dialog.showErrorBox('info', error)
         return false
       }
-      // dialog.showErrorBox('info', 'App updated successfully! Restart it please.')
-      if (process.platform === 'darwin') {
-        app.relaunch()
-        app.quit()
-      } else {
-        app.quit()
-      }
+
+      EAU.progress(function (state) {
+        // The state is an object that looks like this:
+        // {
+        //     percent: 0.5,               
+        //     speed: 554732,              
+        //     size: {
+        //         total: 90044871,        
+        //         transferred: 27610959   
+        //     },
+        //     time: {
+        //         elapsed: 36.235,        
+        //         remaining: 81.403       
+        //     }
+        // }
+      })
+
+      EAU.download(function (error) {
+        if (error) {
+          dialog.showErrorBox('info', error)
+          return false
+        }
+        // dialog.showErrorBox('info', 'App updated successfully! Restart it please.')
+        if (process.platform === 'darwin') {
+          app.relaunch()
+          app.quit()
+        } else {
+          app.quit()
+        }
+      })
     })
   })
   createWindow()

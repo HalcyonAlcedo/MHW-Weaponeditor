@@ -12,22 +12,47 @@ var DataFormation = (data, dataInfo, dataFormation, resources, sourceData) => {
         //逐行处理
         let dataLine = 0
         for (let LineName in HexPointer) {
-          let Dataobj = {}
+          
           let Line = HexPointer[LineName]
-          Dataobj.Data_Hex = Line.StartAddress.toString(16)
-          for (let hp in Line.Pointer) { // 遍历所有属性
-            Dataobj[hp] = ProcessingRawData(ProcessingHex(data, Line.Pointer[hp], Line.StartAddress, 1))
+          //逐行处理中的循环处理
+          if(Line.cycle) {
+            for (let l = (Line.EndAddress - Line.StartAddress + Line.HexRuler) / Line.HexRuler, internalDataLine = 0; internalDataLine < l; internalDataLine++) {
+              let Dataobj = {}
+              Dataobj.Data_Hex = Line.StartAddress.toString(16)
+              Dataobj.Data_Hex = (Line.StartAddress + (Line.HexRuler * internalDataLine)).toString(16) // 目标地址
+              for (let hp in Line.Pointer) { // 遍历所有属性
+                Dataobj[hp] = ProcessingRawData(ProcessingHex(data, Line.Pointer[hp], Line.StartAddress + (Line.HexRuler * internalDataLine), 1))
+              }
+              let Resources = ProcessResources(dataFormation, resources)
+
+              for(let res = 0; res < Resources.length; res++) {
+                let resourcesId = ProcessingHex(
+                  data, Line.Pointer[Resources[res].requiredParameters], Line.StartAddress + (Line.HexRuler * internalDataLine), 1
+                )
+                Dataobj[Resources[res].name] = Resources[res].func(resourcesId ? resourcesId : LineName)
+              }
+
+              Dataobj.SourceData = sourceData[dataLine]
+              Datalist[dataLine] = Dataobj
+              dataLine ++
+            }
+          } else {
+            let Dataobj = {}
+            Dataobj.Data_Hex = Line.StartAddress.toString(16)
+            for (let hp in Line.Pointer) { // 遍历所有属性
+              Dataobj[hp] = ProcessingRawData(ProcessingHex(data, Line.Pointer[hp], Line.StartAddress, 1))
+            }
+            let Resources = ProcessResources(dataFormation, resources)
+            for(let res = 0; res < Resources.length; res++) {
+              let resourcesId = ProcessingHex(
+                data, Line[Resources[res].requiredParameters], HexRuler, dataLine
+              )
+              Dataobj[Resources[res].name] = Resources[res].func(resourcesId ? resourcesId : LineName, true)
+            }
+            Dataobj.SourceData = sourceData[dataLine]
+            Datalist[dataLine] = Dataobj
+            dataLine ++
           }
-          let Resources = ProcessResources(dataFormation, resources)
-          for(let res = 0; res < Resources.length; res++) {
-            let resourcesId = ProcessingHex(
-              data, Line[Resources[res].requiredParameters], HexRuler, dataLine
-            )
-            Dataobj[Resources[res].name] = Resources[res].func(resourcesId ? resourcesId : LineName, true)
-          }
-          Dataobj.SourceData = sourceData[dataLine]
-          Datalist[dataLine] = Dataobj
-          dataLine ++
         }
       }
     } else if (typeof(HexRuler) == "number") {
@@ -261,6 +286,7 @@ function ProcessingHex (data, Hexpointer, HexRuler, dataLine) {
         vul: parseInt(vulret, 16),
         hex: (HexRuler * dataLine) + Hexpointer[k][0],
         hexL: Hexpointer[k][1],
+        note: Hexpointer[k][3],
       }
     }
     return {data: vul}
@@ -276,7 +302,8 @@ function ProcessingHex (data, Hexpointer, HexRuler, dataLine) {
   return {
     vul: Hexpointer[2] == "Float" ? HexToSingle(ret) : parseInt(ret, 16),
     hex: (HexRuler * dataLine) + Hexpointer[0],
-    hexL: Hexpointer[1], resourceprocessing: Hexpointer.length > 2 ? Hexpointer[2] : false
+    hexL: Hexpointer[1], resourceprocessing: Hexpointer.length > 2 ? Hexpointer[2] : false,
+    note: Hexpointer[3],
   }
 }
 

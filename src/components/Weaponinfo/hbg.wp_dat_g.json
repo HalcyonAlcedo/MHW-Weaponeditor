@@ -748,6 +748,46 @@
         {
             "name": "宮廷儀仗【輝星】",
             "Weapon_Number": 214
+        },
+        {
+            "name": "赤龍打擊砲‧射擊",
+            "Weapon_Number": 218
+        },        
+        {
+            "name": "赤龍打擊砲‧迫擊",
+            "Weapon_Number": 219
+        },        
+        {
+            "name": "赤龍打擊砲‧狙擊",
+            "Weapon_Number": 220
+        },        
+        {
+            "name": "赤龍打擊砲‧熱擊",
+            "Weapon_Number": 221
+        },        
+        {
+            "name": "赤龍打擊砲‧冷擊",
+            "Weapon_Number": 222
+        },        
+        {
+            "name": "赤龍打擊砲‧射擊",
+            "Weapon_Number": 223
+        },        
+        {
+            "name": "赤龍打擊砲‧迫擊",
+            "Weapon_Number": 224
+        },        
+        {
+            "name": "赤龍打擊砲‧狙擊",
+            "Weapon_Number": 225
+        },        
+        {
+            "name": "赤龍打擊砲‧熱擊",
+            "Weapon_Number": 226
+        },        
+        {
+            "name": "赤龍打擊砲‧冷擊",
+            "Weapon_Number": 227
         }
     ]
 }

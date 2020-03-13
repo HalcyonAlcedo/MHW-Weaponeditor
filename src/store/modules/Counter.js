@@ -177,7 +177,7 @@ const mutations = {
         case '1-16-9-24-193-1-10':
           state.filename = 'wep_wsword.wep_wsd'
           break
-        case '1-16-9-24-95-0-220':
+        case '1-16-9-24-95-0-176':
           state.filename = 'armor.am_dat'
           break
         case '1-16-9-24-29-2-26':
@@ -195,7 +195,7 @@ const mutations = {
         case '1-16-9-24-88-0-153':
           state.filename = 'weapon.eq_cus'
           break
-        case '1-16-9-24-121-0-97':
+        case '1-16-9-24-121-0-100':
           state.filename = 'armor.eq_crt'
           break
         default:
@@ -346,7 +346,7 @@ const actions = {
   },
   addlanguagedata ({ commit }, LanguageData) {
     commit('ADD_LAMHIAHE_DATA', LanguageData)
-  }
+  } 
 }
 
 export default {

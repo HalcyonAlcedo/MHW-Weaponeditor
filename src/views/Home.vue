@@ -270,7 +270,7 @@
       class="white--text"
       style="-webkit-app-region: drag"
     >
-      <span>&nbsp;&nbsp;&nbsp;By Alcedo  &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | {{$t("Interface.Data_version")}} 11.50.00 | {{$t("Interface.Original_file_version")}} 11.50.01 （{{$t("Interface.Extract_from")}} 2020-02-20） | {{$t("Interface.Current_file")}} {{file}}（{{weaponfilename}}）|</span>
+      <span>&nbsp;&nbsp;&nbsp;By Alcedo  &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | {{$t("Interface.Data_version")}} 12.11.00 | {{$t("Interface.Original_file_version")}} 12.11.00 （{{$t("Interface.Extract_from")}} 2020-02-20） | {{$t("Interface.Current_file")}} {{file}}（{{weaponfilename}}）|</span>
     </v-footer>
 
     <!--弹窗-->
@@ -374,11 +374,34 @@
           <v-divider></v-divider>
           <v-container>
             <v-row>
-              <v-col cols="12" sm="6">
+              <v-col cols="12" sm="2">
+                <v-switch label="批量" v-model="batch" disabled></v-switch>
+              </v-col>
+              <v-col cols="12" sm="5" v-if="!batch">
                 <v-btn rounded color="primary" @click="EncryptionFile(true)" dark>{{$t("Interface.EncryptionFile")}}</v-btn>
               </v-col>
-              <v-col cols="12" sm="6">
+              <v-col cols="12" sm="5" v-if="!batch">
                 <v-btn rounded color="primary" @click="EncryptionFile(false)" dark>{{$t("Interface.DencryptionFile")}}</v-btn>
+              </v-col>
+              <v-col cols="12" v-else>
+                <v-data-table
+                  v-model="selectEncryptionFileList"
+                  :headers="[
+                    { text: '文件', align: 'start', sortable: false, value: 'filename' },
+                    { text: '密钥', value: 'key' },
+                    { text: '文件路径', value: 'file' }
+                  ]"
+                  :items="EncryptionFileList"
+                  item-key="file"
+                  show-select
+                  class="elevation-1"
+                >
+                <template v-slot:top>
+                  <v-btn rounded color="primary" @click="EncryptionFile()" dark>读取文件列表</v-btn>
+                  <v-btn rounded color="primary" @click="EncryptionFile(true)" dark>加密</v-btn>
+                  <v-btn rounded color="primary" @click="EncryptionFile(false)" dark>解密</v-btn>
+                </template>
+                </v-data-table>
               </v-col>
             </v-row>
           </v-container>
@@ -463,6 +486,9 @@ export default {
       loaddialog: false,
       loadenvironment: true,
       sound: false,
+      batch: false,
+      EncryptionFileList: [],
+      selectEncryptionFileList: [],
       file: '',
       snackbar: {
         snackbar: false,
@@ -704,26 +730,55 @@ export default {
         this.devtools = true
       }
     },
-    EncryptionFile(encoded = true) {
+    EncryptionFile(encoded) {
       let _this = this
-      edit_core.openfile(null, (_, filepath, data) => {
-        if (filepath !== null && data !== null) {
-          if (encoded) {
-            edit_core.encodedFile(filepath, data)
-          } else {
-            edit_core.decodedFile(filepath, data)
+      if (encoded == null) {
+        edit_core.openfile(null, null, null, false, true, this.batch, this, 'EncryptionFileList')
+      } else {
+        if (this.batch) {
+          for(let i =0; i < this.selectEncryptionFileList.length; i++) {
+            console.log(this.selectEncryptionFileList[i])
+            edit_core.openfile(null, (_, filepath, data) => {
+              if (filepath !== null && data !== null) {
+                if (encoded) {
+                  edit_core.encodedFile(filepath, data)
+                } else {
+                  edit_core.decodedFile(filepath, data)
+                }
+              } else {
+                if (encoded) {
+                  _this.$refs.encodedFilElem.dispatchEvent(new MouseEvent('click'))
+                } else {
+                  _this.$refs.dencodedFilElem.dispatchEvent(new MouseEvent('click'))
+                }
+              }
+              _this.dialogEncryptionwarning = false
+              _this.snackbar.text = _this.$t('Interface.Open_Success')
+                _this.snackbar.snackbar = true
+            }, null, false, true)
           }
         } else {
-          if (encoded) {
-            _this.$refs.encodedFilElem.dispatchEvent(new MouseEvent('click'))
-          } else {
-            _this.$refs.dencodedFilElem.dispatchEvent(new MouseEvent('click'))
-          }
+          edit_core.openfile(null, (_, filepath, data) => {
+            if (filepath !== null && data !== null) {
+              if (encoded) {
+                edit_core.encodedFile(filepath, data)
+              } else {
+                edit_core.decodedFile(filepath, data)
+              }
+            } else {
+              if (encoded) {
+                _this.$refs.encodedFilElem.dispatchEvent(new MouseEvent('click'))
+              } else {
+                _this.$refs.dencodedFilElem.dispatchEvent(new MouseEvent('click'))
+              }
+            }
+            _this.dialogEncryptionwarning = false
+            _this.snackbar.text = _this.$t('Interface.Open_Success')
+              _this.snackbar.snackbar = true
+          }, null, false, true)
         }
-        _this.dialogEncryptionwarning = false
-        _this.snackbar.text = _this.$t('Interface.Open_Success')
-          _this.snackbar.snackbar = true
-      }, null, false, true)
+        
+      }
     },
     EncryptionGetFile (event) {
       let _this = this

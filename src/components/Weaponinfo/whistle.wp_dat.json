@@ -811,6 +811,78 @@
         {
             "name": "宮廷奏琴【響星】",
             "Weapon_Number": 226
+        },
+        {
+            "name": "赤龍咒笛‧火",
+            "Weapon_Number": 230
+        },        
+        {
+            "name": "赤龍咒笛‧水",
+            "Weapon_Number": 231
+        },        
+        {
+            "name": "赤龍咒笛‧冰",
+            "Weapon_Number": 232
+        },        
+        {
+            "name": "赤龍咒笛‧雷",
+            "Weapon_Number": 233
+        },        
+        {
+            "name": "赤龍咒笛‧龍",
+            "Weapon_Number": 234
+        },        
+        {
+            "name": "赤龍咒笛‧毒",
+            "Weapon_Number": 235
+        },        
+        {
+            "name": "赤龍咒笛‧麻痺",
+            "Weapon_Number": 236
+        },        
+        {
+            "name": "赤龍咒笛‧睡眠",
+            "Weapon_Number": 237
+        },        
+        {
+            "name": "赤龍咒笛‧爆破",
+            "Weapon_Number": 238
+        },        
+        {
+            "name": "赤龍咒笛‧火",
+            "Weapon_Number": 239
+        },        
+        {
+            "name": "赤龍咒笛‧水",
+            "Weapon_Number": 240
+        },        
+        {
+            "name": "赤龍咒笛‧冰",
+            "Weapon_Number": 241
+        },        
+        {
+            "name": "赤龍咒笛‧雷",
+            "Weapon_Number": 242
+        },        
+        {
+            "name": "赤龍咒笛‧龍",
+            "Weapon_Number": 243
+        },        
+        {
+            "name": "赤龍咒笛‧毒",
+            "Weapon_Number": 244
+        },        
+        {
+            "name": "赤龍咒笛‧麻痺",
+            "Weapon_Number": 245
+        },        
+        {
+            "name": "赤龍咒笛‧睡眠",
+            "Weapon_Number": 246
+        },        
+        {
+            "name": "赤龍咒笛‧爆破",
+            "Weapon_Number": 247
         }
     ]
 }

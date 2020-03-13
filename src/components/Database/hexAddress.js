@@ -308,7 +308,7 @@ const hexAddress = (data) => {
         Speed: [111, 1],
       }
     }
-  } else if (data[4] === 29 && data[5] === 2 && data[6] === 26) {
+  } else if (data[4] === 29 && data[5] === 2 && data[6] === 28) {
     HexRuler = 6 // 弓瓶
     HexPointer = {
       'bt_Number': 'auto',
@@ -364,7 +364,7 @@ const hexAddress = (data) => {
       'wrt_item4quantity': [42, 1],
       'wrt_Unlock': [14, 2],
     }
-  } else if (data[10] === 0 && data[8374] === 3 && data[16492] === 1) {
+  } else if (data[10] === 0 && data[10206] === 1 && data[19867] === 2) {
     HexRuler = 41 // 武器派生
     HexPointer = {
       'wus_Number': [12, 2],
@@ -379,7 +379,7 @@ const hexAddress = (data) => {
       'wus_item4quantity': [38, 1],
       'wus_Unlock': [40, 2],
     }
-  } else if (data[10] === 5 && data[3821] === 0 && data[20508] === 1) {
+  } else if (data[10] === 5 && data[3821] === 0 && data[22099] === 1) {
     HexRuler = 37 // 裝備制造
     HexPointer = {
       'art_Number': [12, 2],
