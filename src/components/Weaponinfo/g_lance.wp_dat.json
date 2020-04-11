@@ -718,6 +718,10 @@
             "Weapon_Number": 191
         },
         {
+            "name": "碎光之銃槍",
+            "Weapon_Number": 192
+        },
+        {
             "name": "蠻顎龍之炎銃槍Ⅰ",
             "Weapon_Number": 193
         },
@@ -768,6 +772,10 @@
         {
             "name": "鬼銃槍",
             "Weapon_Number": 206
+        },
+        {
+            "name": "鬼神銃槍猛獅",
+            "Weapon_Number": 207
         },
         {
             "name": "魂焰銃槍‧炎妃",

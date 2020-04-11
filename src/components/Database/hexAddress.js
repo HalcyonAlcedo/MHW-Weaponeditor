@@ -133,7 +133,7 @@ const hexAddress = (data) => {
       'as_Slot_grade_1': [35, 1],
       'as_Slot_grade_2': [36, 1],
     }
-  } else if (data[4] === 29 && data[5] === 2 && data[6] === 188) {
+  } else if (data[4] === 29 && data[5] === 2 && data[6] === 192) {
     HexRuler = 111 // 弩弹
     HexPointer = {
       'sh_Number': 'auto',
@@ -308,7 +308,7 @@ const hexAddress = (data) => {
         Speed: [111, 1],
       }
     }
-  } else if (data[4] === 29 && data[5] === 2 && data[6] === 28) {
+  } else if (data[4] === 29 && data[5] === 2 && data[6] === 31) {
     HexRuler = 6 // 弓瓶
     HexPointer = {
       'bt_Number': 'auto',

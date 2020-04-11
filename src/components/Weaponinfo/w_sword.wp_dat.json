@@ -749,6 +749,10 @@
             "Weapon_Number": 201
         },
         {
+            "name": "碎光之雙閃",
+            "Weapon_Number": 202
+        },
+        {
             "name": "飛雷龍鍥刀Ⅰ",
             "Weapon_Number": 203
         },
@@ -823,6 +827,10 @@
         {
             "name": "鬥鬼【高丸】",
             "Weapon_Number": 222
+        },
+        {
+            "name": "鬼神鬥拳【獄殺】",
+            "Weapon_Number": 223
         },
         {
             "name": "魂焰雙刃‧炎妃",

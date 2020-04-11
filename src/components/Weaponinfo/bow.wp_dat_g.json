@@ -521,6 +521,10 @@
             "Weapon_Number": 145
         },
         {
+            "name": "碎光之閃箭",
+            "Weapon_Number": 146
+        },
+        {
             "name": "重弓巨靈勇士‧改",
             "Weapon_Number": 147
         },
@@ -723,6 +727,10 @@
         {
             "name": "雷弓【獸王】",
             "Weapon_Number": 199
+        },
+        {
+            "name": "雷公弓【大聖】",
+            "Weapon_Number": 200
         },
         {
             "name": "魂焰龍弓‧炎妃",

@@ -270,7 +270,7 @@
       class="white--text"
       style="-webkit-app-region: drag"
     >
-      <span>&nbsp;&nbsp;&nbsp;By Alcedo  &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | {{$t("Interface.Data_version")}} 12.11.00 | {{$t("Interface.Original_file_version")}} 12.11.00 （{{$t("Interface.Extract_from")}} 2020-03-13） | {{$t("Interface.Current_file")}} {{file}}（{{weaponfilename}}）|</span>
+      <span>&nbsp;&nbsp;&nbsp;By Alcedo  &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | {{$t("Interface.Data_version")}} 13.01.00 | {{$t("Interface.Original_file_version")}} 13.01.00 （{{$t("Interface.Extract_from")}} 2020-04-11） | {{$t("Interface.Current_file")}} {{file}}（{{weaponfilename}}）|</span>
     </v-footer>
 
     <!--弹窗-->
@@ -535,8 +535,8 @@ export default {
         { title: this.$t('Weaponsmiscellaneous.Skill') + ' (skill_data.skl_dat)', file: 'skill_data.skl_dat'},
         { title: this.$t('Weaponsmiscellaneous.Rod') + ' (rod_insect.rod_inse)', file: 'rod_insect.rod_inse'},
         { title: this.$t('Weaponsmiscellaneous.ASkill') + ' (a_skill.ask)', file: 'a_skill.ask'},
-        { title: this.$t('Weaponsmiscellaneous.WeaponMake') + ' (weapon.eq_crt)', file: 'weapon.eq_crt'},
-        { title: this.$t('Weaponsmiscellaneous.WeaponDerived') + ' (weapon.eq_cus)', file: 'weapon.eq_cus'}
+        //{ title: this.$t('Weaponsmiscellaneous.WeaponMake') + ' (weapon.eq_crt)', file: 'weapon.eq_crt'},
+        //{ title: this.$t('Weaponsmiscellaneous.WeaponDerived') + ' (weapon.eq_cus)', file: 'weapon.eq_cus'}
       ]
       let eq = [
         { title: this.$t('Armor.Armor') + ' (armor.am_dat)', file: 'armor.am_dat'},

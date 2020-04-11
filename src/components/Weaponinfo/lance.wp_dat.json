@@ -702,6 +702,10 @@
             "Weapon_Number": 186
         },
         {
+            "name": "碎光之噴槍",
+            "Weapon_Number": 187
+        },
+        {
             "name": "慘槍慘爪龍Ⅰ",
             "Weapon_Number": 188
         },
@@ -788,6 +792,10 @@
         {
             "name": "鬼槍金獅子",
             "Weapon_Number": 211
+        },
+        {
+            "name": "鬼神天槍金獅子",
+            "Weapon_Number": 212
         },
         {
             "name": "魂焰龍槍‧炎妃",

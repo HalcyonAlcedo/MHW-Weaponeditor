@@ -757,6 +757,10 @@
             "Weapon_Number": 208
         },
         {
+            "name": "碎光之曉刀",
+            "Weapon_Number": 209
+        },
+        {
             "name": "封龍古刀Ⅰ",
             "Weapon_Number": 210
         },
@@ -795,6 +799,10 @@
         {
             "name": "鬼薙刀",
             "Weapon_Number": 221
+        },
+        {
+            "name": "鬼神薙刀【阿修羅】",
+            "Weapon_Number": 222
         },
         {
             "name": "魂焰龍刀‧炎妃",

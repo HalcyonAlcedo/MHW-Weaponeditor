@@ -654,6 +654,10 @@
             "Weapon_Number": 179
         },
         {
+            "name": "碎光之極砲",
+            "Weapon_Number": 180
+        },
+        {
             "name": "岩賊龍大砲【青蛙】Ⅰ",
             "Weapon_Number": 181
         },
@@ -728,6 +732,10 @@
         {
             "name": "金獅子砲",
             "Weapon_Number": 201
+        },
+        {
+            "name": "鬼神雷砲【獸神】",
+            "Weapon_Number": 202
         },
         {
             "name": "魂焰龍砲‧炎妃",

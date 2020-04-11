@@ -662,6 +662,10 @@
             "Weapon_Number": 176
         },
         {
+            "name": "碎光之盾斧",
+            "Weapon_Number": 177
+        },
+        {
             "name": "死滅障屍盾斧",
             "Weapon_Number": 179
         },
@@ -732,6 +736,10 @@
         {
             "name": "金剛盾斧",
             "Weapon_Number": 197
+        },
+        {
+            "name": "鬼神充能斧【夜叉】",
+            "Weapon_Number": 198
         },
         {
             "name": "魂焰盾斧‧炎妃",

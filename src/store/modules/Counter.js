@@ -114,65 +114,67 @@ const mutations = {
       }
     } else {
       switch (file.join('-')) {
-        case '1-16-9-24-193-1-44':
+        case '1-16-9-24-193-1-64':
           state.filename = 'l_sword.wp_dat'
           break
         case '1-16-9-24-193-1-42':
           if (state.file.substring(state.file.lastIndexOf('\\') + 1) === 'wep_saxe.wep_saxe') {
             state.filename = 'wep_saxe.wep_saxe'
-          } else {
-            state.filename = 'sword.wp_dat'
           }
           break
-        case '1-16-9-24-193-1-37':
+        case '1-16-9-24-193-1-62':
+          state.filename = 'sword.wp_dat'
+          break
+        case '1-16-9-24-193-1-57':
           state.filename = 'hammer.wp_dat'
           break
-        case '1-16-9-24-193-1-36':
+        case '1-16-9-24-193-1-56':
           if (state.file.substring(state.file.lastIndexOf('\\') + 1) === 'lance.wp_dat') {
             state.filename = 'lance.wp_dat'
           } else {
             state.filename = 'whistle.wp_dat'
           }
           break
-        case '1-16-9-24-193-1-40':
+        case '1-16-9-24-193-1-60':
           if (state.file.substring(state.file.lastIndexOf('\\') + 1) === 'w_sword.wp_dat') {
             state.filename = 'w_sword.wp_dat'
           } else {
             state.filename = 'tachi.wp_dat'
           }
           break
-        case '1-16-9-24-193-1-31':
+        case '1-16-9-24-193-1-51':
           state.filename = 's_axe.wp_dat'
           break
-        case '1-16-9-24-193-1-33':
+        case '1-16-9-24-193-1-53':
           state.filename = 'rod.wp_dat'
           break
-        case '1-16-9-24-29-2-37':
+        case '1-16-9-24-29-2-57':
           state.filename = 'lbg.wp_dat_g'
           break
-        case '1-16-9-24-29-2-32':
+        case '1-16-9-24-29-2-52':
           state.filename = 'hbg.wp_dat_g'
           break
-        case '1-16-9-24-193-1-30':
-          state.filename = 'g_lance.wp_dat'
+        case '1-16-9-24-193-1-50':
+          if (state.file.substring(state.file.lastIndexOf('\\') + 1) === 'wep_whistle.wep_wsl') {
+            state.filename = 'wep_whistle.wep_wsl'
+          } else {
+            state.filename = 'g_lance.wp_dat'
+          }
           break
-        case '1-16-9-24-193-1-26':
+        case '1-16-9-24-193-1-46':
           state.filename = 'c_axe.wp_dat'
           break
-        case '1-16-9-24-29-2-28':
+        case '1-16-9-24-29-2-48':
           state.filename = 'bow.wp_dat_g'
           break
         case '1-16-9-24-193-1-0':
           state.filename = 'kireaji.kire'
           break
-        case '1-16-9-24-187-0-226':
+        case '1-16-9-24-187-0-239':
           state.filename = 'skill_data.skl_dat'
           break
         case '1-16-9-24-194-1-21':
           state.filename = 'wep_glan.wep_glan'
-          break
-        case '1-16-9-24-193-1-50':
-          state.filename = 'wep_whistle.wep_wsl'
           break
         case '1-16-9-24-193-1-10':
           state.filename = 'wep_wsword.wep_wsd'
@@ -180,16 +182,16 @@ const mutations = {
         case '1-16-9-24-95-0-176':
           state.filename = 'armor.am_dat'
           break
-        case '1-16-9-24-29-2-26':
+        case '1-16-9-24-29-2-31':
           state.filename = 'bottle_table.bbtbl'
           break
-        case '1-16-9-24-29-2-188':
+        case '1-16-9-24-29-2-192':
             state.filename = 'shell_table.shl_tbl'
             break
         case '1-16-9-24-104-0-20':
           state.filename = 'a_skill.ask'
           break
-        case '1-16-9-24-121-0-135':
+        case '1-16-9-24-121-0-149':
           state.filename = 'weapon.eq_crt'
           break
         case '1-16-9-24-88-0-153':

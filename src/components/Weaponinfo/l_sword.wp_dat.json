@@ -762,6 +762,10 @@
             "Weapon_Number": 207
         },
         {
+            "name": "碎光之擊劍",
+            "Weapon_Number": 208
+        },
+        {
             "name": "封龍大劍Ⅰ",
             "Weapon_Number": 209
         },
@@ -800,6 +804,10 @@
         {
             "name": "鬼金棒",
             "Weapon_Number": 219
+        },
+        {
+            "name": "鬼神金棒【猿魔王】",
+            "Weapon_Number": 220
         },
         {
             "name": "魂焰剛劍‧炎妃",
