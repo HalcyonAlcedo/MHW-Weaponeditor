@@ -4013,7 +4013,6 @@
             changeData.push(tempData)
           }
         }
-        console.log(changeData)
         this.$store.dispatch('setdatatoconfig', false)
       }
     }

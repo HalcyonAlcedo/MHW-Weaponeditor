@@ -562,6 +562,10 @@
             "Weapon_Number": 155
         },
         {
+            "name": "獄界斷罪斧",
+            "Weapon_Number": 156
+        },
+        {
             "name": "霜炎Ⅲ",
             "Weapon_Number": 157
         },
@@ -844,6 +848,10 @@
         {
             "name": "瞬間冷凍劍魚",
             "Weapon_Number": 234
+        },
+        {
+            "name": "獄界斷罪斧改",
+            "Weapon_Number": 235
         },
         {
             "name": "宮廷王劍【金星】",

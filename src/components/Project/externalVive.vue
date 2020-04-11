@@ -45,6 +45,33 @@
               @change="item.change(hexdata[item.hexdata])"
               :readonly="item.readonly"
             ></v-checkbox>
+            <v-card
+              v-if="item.type == 'address_trace'"
+              class="mx-auto"
+              max-width="344"
+              outlined
+            >
+              <v-subheader>{{item.label}}</v-subheader>
+              <v-list-item
+                v-for="(addressitem, i) in address_trace(hexdata[item.hexdata].vul, hexdata[item.hexdata].hexL, hexdata[item.hexdata].hex)"
+                :key="i"
+              >
+                <v-list-item-content>
+                  <v-list-item-title v-text="`当前地址${addressitem.hex}`"></v-list-item-title>
+                  <v-list-item-subtitle v-text="`指向地址（10进制）${addressitem.vul}`"></v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+            </v-card>
+            <v-textarea
+              v-if="item.type == 'source_data'"
+              outlined
+              height="500px"
+              :label="item.label"
+              :value="source_data(hexdata[item.hexdata].vul, hexdata[item.hexenddata].vul)"
+            ></v-textarea>
+            <v-btn v-if="item.type == 'source_data'" @click="editAffectedAddressData(hexdata, item.affectedaddress)">
+              {{item.label}}确认修改
+            </v-btn>
             <v-text-field
               v-if="item.sourcedata && sourcedata && (item.hexdata !== item.hexsourcedata)"
               :label="$t('Interface.Original') + ' ' + $t(item.label)"
@@ -65,12 +92,16 @@
 
 <script>
   import hexHandler from '../../plugins/edit/hexHandler'
+  import hexAddress from '../Database/hexAddress'
 
   export default {
     data: () => ({
     }),
     props: ['hexdata', 'sourcedata'],
     computed: {
+      data () {
+        return this.$store.getters.donefiledata
+      },
       weapon () {
         return this.$store.getters.donefilename
       },
@@ -116,8 +147,18 @@
             }
             ret.items = tempItem
           }
-          if (_this.isEmptyObjec(item.type) && (item.type == 'input' || item.type == 'select' || item.type == 'search_select' || item.type == 'checkbox')) {
+          if (_this.isEmptyObjec(item.type) && (
+            item.type == 'input' 
+            || item.type == 'select' 
+            || item.type == 'search_select' 
+            || item.type == 'checkbox' 
+            || item.type == 'address_trace'
+            || item.type == 'source_data'
+            )) {
             ret.type = item.type
+          }
+          if (_this.isEmptyObjec(item.hexenddata)) {
+            ret.hexenddata = item.hexenddata
           }
           if (_this.isEmptyObjec(item.col)) {
             ret.col = item.col
@@ -133,6 +174,9 @@
           }
           if (_this.isEmptyObjec(item.sourcedata)) {
             ret.sourcedata = item.sourcedata
+          }
+          if (_this.isEmptyObjec(item.affectedaddress)) {
+            ret.affectedaddress = item.affectedaddress
           }
           if (!item.hexdata) {
             ret.type = 'input'
@@ -243,7 +287,124 @@
         valsave = val
         valsave.vul = valsave.vul ? 1 : 0
         this.save(valsave, true)
-      }
+      },
+      address_trace (val, hexl, hex) {
+        let ret = []
+        if(val < this.data.length) {
+
+          if(hex) ret.push({
+            vul: val,
+            hex: this.str_pad(hex.toString(16), hexl)
+          })
+          let address = hexHandler.GetAddressData(this.data, val, hexl)
+          if(address.vul != 9 && address.vul > val && address.vul < this.data.length && address.hex > 1000){
+            if(ret.length == 0 || address.vul > ret[ret.length - 1].vul) {
+              ret.push(address)
+              let trace = this.address_trace(address.vul, hexl)
+              for (let i = 0; i < trace.length; i++) {
+                if(trace[i].vul > ret[ret.length - 1].vul){
+                  ret.push(trace[i])
+                }
+              }
+            }
+          }
+
+        }
+        return ret
+      },
+      source_data (startHex, endHex, hex) {
+        let ret = []
+        let datalength = endHex - startHex
+        for(let i = startHex; i < endHex; i++) {
+          ret.push(this.str_pad(this.data[i].toString(16), 2))
+        }
+        return ret.join('')
+      },
+      editAffectedAddressData (hexdata, affectedaddress) {
+        let modifiedAddress = []
+        let allhexs = this.allhexdata(this.data).filter(item=>parseInt(item.Data_Hex, 16) >= parseInt(hexdata.Data_Hex, 16))
+        
+        for(let allhex = 0; allhex < allhexs.length; allhex++) {
+          let demp_modifiedAddress = this.getAddress (affectedaddress, allhexs[allhex], parseInt(hexdata.Data_Hex, 16))
+          for(let l = 0; l < demp_modifiedAddress.length; l++) {
+            modifiedAddress.push(demp_modifiedAddress[l])
+          }
+        }
+        for(let s = 0; s < modifiedAddress.length; s++){
+          //modifiedAddress[s].vul += 230008
+          console.log(modifiedAddress[s])
+          this.save(modifiedAddress[s])
+        }
+        
+        
+      },
+      getAddress (affectedaddress, hex, minhex) {
+        let ret = []
+        for (let a = 0; a < affectedaddress.length; a++) {
+          let address = affectedaddress[a]
+          if(address.substr(0, 1) == '*') {
+            let trace = hex[address.substr(1)]
+            let retTrace = this.address_trace(trace.vul, trace.hexL, trace.hex)
+            for(let t = 0; t < retTrace.length; t++) {
+              ret.push({
+              vul: retTrace[t].vul,
+              hex:  parseInt(retTrace[t].hex, 16),
+              hexL: 4
+            })
+            }
+          } else if(hex[address].hex > minhex) {
+            ret.push({
+              vul: hex[address].vul,
+              hex: hex[address].hex,
+              hexL: 4
+            })
+          }
+        }
+        return ret
+      },
+      allhexdata (data) {
+        let _this = this
+        let config = this.config.filter(item=>item.type === _this.weapon.substring(_this.weapon.lastIndexOf('.') + 1, _this.weapon.length))
+        let confighex = []
+        if (config.length !== 0) {
+          config = config[0]
+          confighex = hexHandler.DataFormation(data, config.dataInfo, config.dataFormation, config.resources, false)
+        } else {
+          //原始版本数据
+          let gethexAddress = hexAddress(data)
+          let HexRuler = gethexAddress.HexRuler
+          let HexPointer = gethexAddress.HexPointer
+          for (let l = data.length / HexRuler, i = 0; i < l; i++) {
+            let wpobj = {}
+            wpobj.wp_Hex = (HexRuler * i).toString(16) // 目标地址
+            if (HexPointer.eq_Type != null) {
+              wpobj.wp_Name = _this.wpname(_this.HexFunction(data, HexPointer.eq_Number, HexRuler, i).vul, _this.HexFunction(data, HexPointer.eq_Type, HexRuler, i).vul)
+            } else if (HexPointer.sk_Number != null) {
+              wpobj.wp_Name = _this.skname(_this.HexFunction(data, HexPointer.sk_Number, HexRuler, i).vul)
+            } else if (HexPointer.ri_Number != null) {
+              wpobj.wp_Name = _this.riname(_this.HexFunction(data, HexPointer.ri_Number, HexRuler, i).vul)
+            } else if (HexPointer.as_Number != null) {
+              wpobj.wp_Name = _this.asname(_this.HexFunction(data, HexPointer.as_Number, HexRuler, i).vul)
+            } else if (HexPointer.wrt_Number != null) {
+              wpobj.wp_Name = _this.wrtname(_this.HexFunction(data, HexPointer.wrt_Number, HexRuler, i).vul, _this.HexFunction(data, HexPointer.wrt_Type, HexRuler, i).vul)
+            } else if (HexPointer.wus_Number != null) {
+              wpobj.wp_Name = _this.wrtname(_this.HexFunction(data, HexPointer.wus_Number, HexRuler, i).vul, _this.HexFunction(data, HexPointer.wus_Type, HexRuler, i).vul)
+            } else if (HexPointer.art_Number != null) {
+              wpobj.wp_Name = _this.wpname(_this.HexFunction(data, HexPointer.art_Number, HexRuler, i).vul, _this.HexFunction(data, HexPointer.art_Type, HexRuler, i).vul)
+            } else {
+              wpobj.wp_Name = _this.wpname(_this.HexFunction(data, HexPointer.wp_Number, HexRuler, i))
+            }
+            for (let n in HexPointer) { // 遍历所有属性
+              wpobj[n] = _this.Resourceprocessing(_this.HexFunction(data, HexPointer[n], HexRuler, i))
+            }
+            if (this.sourceitems) { // 加入原始数据
+              wpobj.wp_sourcedata = this.sourceitems[i]
+            }
+            confighex[i] = wpobj
+          }
+        }
+        return confighex
+      },
     }
   }
 </script>

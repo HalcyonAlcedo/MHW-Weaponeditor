@@ -23,3 +23,6 @@ dist_electronupdater-log.txt
 
 #Electron-builder output
 /dist_electron
+
+#扩展配置
+/扩展配置

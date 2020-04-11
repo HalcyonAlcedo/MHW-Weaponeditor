@@ -1,3 +1,4 @@
+var temp_data = []
 //将数据与配置匹配
 var DataFormation = (data, dataInfo, dataFormation, resources, sourceData) => {
     let gethexAddress = dataInfo
@@ -5,7 +6,7 @@ var DataFormation = (data, dataInfo, dataFormation, resources, sourceData) => {
     let HexPointer = gethexAddress.HexPointer
     let HexStartOffset = gethexAddress.StartOffset
     let Datalist = []
-
+    temp_data = data
     if (typeof(HexRuler) == "string") {
       //非标准行
       if (HexRuler == "Linebyline") {
@@ -18,20 +19,55 @@ var DataFormation = (data, dataInfo, dataFormation, resources, sourceData) => {
           if(Line.cycle) {
             for (let l = (Line.EndAddress - Line.StartAddress + Line.HexRuler) / Line.HexRuler, internalDataLine = 0; internalDataLine < l; internalDataLine++) {
               let Dataobj = {}
+              let datalen = 1
               Dataobj.Data_Hex = Line.StartAddress.toString(16)
               Dataobj.Data_Hex = (Line.StartAddress + (Line.HexRuler * internalDataLine)).toString(16) // 目标地址
               for (let hp in Line.Pointer) { // 遍历所有属性
-                Dataobj[hp] = ProcessingRawData(ProcessingHex(data, Line.Pointer[hp], Line.StartAddress + (Line.HexRuler * internalDataLine), 1))
+                if(Line.Pointer[hp][0] == 'subset') {
+                  let StartAddress = Line.StartAddress + (Line.HexRuler * internalDataLine)
+                  Dataobj = Dataobj_subset(Dataobj, Line.Pointer[hp], internalDataLine, StartAddress, datalen)
+                  
+                } else {
+                  if(Line.Pointer[hp] == 'auto') {
+                    datalen = internalDataLine
+                  }
+                  Dataobj[hp] = ProcessingRawData(ProcessingHex(data, Line.Pointer[hp], Line.StartAddress + (Line.HexRuler * internalDataLine), datalen))
+                }
               }
               let Resources = ProcessResources(dataFormation, resources)
-
               for(let res = 0; res < Resources.length; res++) {
                 let resourcesId = ProcessingHex(
-                  data, Line.Pointer[Resources[res].requiredParameters], Line.StartAddress + (Line.HexRuler * internalDataLine), 1
+                  data, Line.Pointer[Resources[res].requiredParameters], Line.StartAddress + (Line.HexRuler * internalDataLine), datalen
                 )
                 Dataobj[Resources[res].name] = Resources[res].func(resourcesId ? resourcesId : LineName)
               }
-
+              console.log(Dataobj)
+              Dataobj.SourceData = sourceData[dataLine]
+              Datalist[dataLine] = Dataobj
+              dataLine ++
+            }
+          } else if(Line.Select) {
+            //搜索循环长度，获取分段数据
+            let seldata = ScriptSelect(temp_data, Line.StartAddress, Line.EndAddress, Line.SelectString, Line.offset)
+            let datalen = 0
+            for (let SelectLineName in seldata) {
+              let SelectLine = seldata[SelectLineName]
+              let Dataobj = {}
+              Dataobj.Data_Hex = SelectLine.StartAddress.toString(16)
+              for (let hp in SelectLine.Pointer) { // 遍历所有属性
+               
+                Dataobj[hp] = ProcessingRawData(ProcessingHex(data, SelectLine.Pointer[hp], SelectLine.StartAddress, SelectLine.Pointer[hp] == 'auto' ? datalen : 1))
+                if(SelectLine.Pointer[hp] == 'auto') {
+                  datalen++
+                }
+              }
+              let Resources = ProcessResources(dataFormation, resources)
+              for(let res = 0; res < Resources.length; res++) {
+                let resourcesId = ProcessingHex(
+                  data, SelectLine[Resources[res].requiredParameters], HexRuler, dataLine
+                )
+                Dataobj[Resources[res].name] = Resources[res].func(resourcesId ? resourcesId : SelectLineName, true)
+              }
               Dataobj.SourceData = sourceData[dataLine]
               Datalist[dataLine] = Dataobj
               dataLine ++
@@ -73,7 +109,178 @@ var DataFormation = (data, dataInfo, dataFormation, resources, sourceData) => {
         Datalist[dataLine] = Dataobj
       }
     }
+    temp_data = []
     return Datalist
+}
+function Dataobj_subset (Dataobj, Pointer, internalDataLine, StartAddress, datalen) {
+  let Subset = Pointer[3]
+  let SubsetStartAddress = ProcessingRawData(ProcessingHex(temp_data, [Pointer[1],Pointer[2]], StartAddress, 1)).vul
+  let SubDataobj = {}
+  SubDataobj.Data_Hex = SubsetStartAddress.toString(16)
+  for (let sub in Subset) { // 遍历所有属性
+    if(Subset[sub][0] == 'subset') {
+      Dataobj = Dataobj_subset(Dataobj, Subset[sub], internalDataLine, SubsetStartAddress+Subset[sub][2], 1)
+    } else {
+      Dataobj[sub] = ProcessingRawData(ProcessingHex(temp_data, Subset[sub], SubsetStartAddress, 1))
+    }
+  }
+  return Dataobj
+}
+function ScriptSelect (selectData, head, end, select, offset) {
+  let tempSelectData = selectData.slice(head, end)
+  let SelectData = []
+  
+  let TargetStringIndex = [{
+    vul: 0,
+    hex: head
+  }]
+  for(let sd = 0; sd < tempSelectData.length; sd++) {
+    SelectData.push(tempSelectData[sd])
+  }
+  let SelectStrinfData = encodeUtf8(select[0]).map(item => str_pad(item.toString(16), 2)).join('')
+  let TargetStringData = SelectData.map(item => str_pad(item.toString(16), 2)).join('')
+
+  
+  for(let i = 0; i <TargetStringData.length; i++){
+    let SelectString = TargetStringData.indexOf(SelectStrinfData, i)
+    if (SelectString != -1) {
+      TargetStringIndex.push({
+        vul: SelectString,
+        hex: head + SelectString/2
+      })
+      i = SelectString
+    }
+  }
+  for(let t = 0; t < TargetStringIndex.length; t++){
+    let tempTargetString = t < TargetStringIndex.length - 1 ? TargetStringData.substring(TargetStringIndex[t].vul, TargetStringIndex[t + 1].vul) : ''
+    TargetStringIndex[t].subdata = Xreplace(tempTargetString,2,',').split(',')
+  }
+  /*
+  let retdata = []
+  for(let s = 0; s < TargetString.length; s++){
+    retdata.push(SubScriptSelect( TargetString[s],0,TargetString[s].length,select[1])) 
+  }
+
+  console.log(retdata)
+  */
+  let LinebylineConfig = []
+  for (let i = 0; i < TargetStringIndex.length; i++) {
+    let TargetString = TargetStringIndex[i].subdata
+    let subhex = SubScriptSelect(TargetString, 0, TargetString.length, select[1], offset)
+    let Pointer = {}
+    Pointer.autoid = 'auto'
+    for(let l = 1; l < subhex.length; l++) {
+      Pointer[l] = [subhex[l].hex, 4]
+    }
+    LinebylineConfig.push({
+        StartAddress: TargetStringIndex[i].hex,
+        Pointer: Pointer
+    })
+  }
+  return LinebylineConfig
+  
+  /*
+  let retdata = []
+  if(select.length > 1) {
+    for(let s = 0; s < TargetString.length; s++){
+      retdata.push({
+        StartAddress: offset,
+        Pointer: {
+          ID: [11, 1]
+        },
+        data: ScriptSelect( TargetString[s],0,TargetString[s].length,select[1],s)
+      }) 
+    }
+  }
+  return retdata
+  */
+  /*
+  let Subset = Pointer[3]"a"
+  let SubsetStartAddress = ProcessingRawData(ProcessingHex(temp_data, [Pointer[1],Pointer[2]], StartAddress, 1)).vul
+  let SubDataobj = {}
+  SubDataobj.Data_Hex = SubsetStartAddress.toString(16)
+  for (let sub in Subset) { // 遍历所有属性
+    if(Subset[sub][0] == 'subset') {
+      Dataobj = Dataobj_subset(Dataobj, Subset[sub], internalDataLine, SubsetStartAddress+Subset[sub][2], 1)
+    } else {
+      Dataobj[sub] = ProcessingRawData(ProcessingHex(temp_data, Subset[sub], SubsetStartAddress, 1))
+    }
+  }
+  return Dataobj
+  */
+}
+function SubScriptSelect (selectData, head, end, select, offset) {
+  let tempSelectData = selectData.slice(head, end)
+  let SelectData = []
+  
+  let TargetStringIndex = [{
+    vul: 0,
+    hex: head
+  }]
+  let TargetString = []
+
+  for(let sd = 0; sd < tempSelectData.length; sd++) {
+    SelectData.push(tempSelectData[sd])
+  }
+  let SelectStrinfData = encodeUtf8(select).map(item => str_pad(item.toString(16), 2)).join('')
+  let TargetStringData = SelectData.map(item => str_pad(item.toString(16), 2)).join('')
+
+  //console.log(SelectStrinfData,TargetStringData)
+  for(let i = 0; i <TargetStringData.length; i++){
+    let SelectString = TargetStringData.indexOf(SelectStrinfData, i)
+    if (SelectString != -1) {
+      TargetStringIndex.push({
+        vul: SelectString,
+        hex: head + SelectString/2 + offset
+      })
+      i = SelectString
+    }
+  }
+  
+
+  for(let t = 0; t < TargetStringIndex.length - 1; t++){
+    let tempTargetString = TargetStringData.substring(TargetStringIndex[t].vul, TargetStringIndex[t + 1].vul)
+    TargetString.push(Xreplace(tempTargetString,2,',').split(',')) 
+  }
+
+  return TargetStringIndex
+}
+function Xreplace(str,length,string)
+{
+  let re = ''
+  for(let i = 0; i < str.length; i += length) {
+    re += str.substr(i, length) + string
+  }
+  return re
+}
+function encodeUtf8(text) {
+  const code = encodeURIComponent(text);
+  const bytes = [];
+  for (var i = 0; i < code.length; i++) {
+      const c = code.charAt(i);
+      if (c === '%') {
+          const hex = code.charAt(i + 1) + code.charAt(i + 2);
+          const hexVal = parseInt(hex, 16);
+          bytes.push(hexVal);
+          i += 2;
+      } else bytes.push(c.charCodeAt(0));
+  }
+  return bytes;
+}
+var GetAddressData = (data, address, digits) => {
+  let ret = ''
+  for (let p = 0; p < digits; p++) {
+    let Hex16 = data[address + digits - p - 1]
+    if (Hex16 !== undefined) {
+      ret += str_pad(Hex16.toString(16), 2)
+    } else {
+      ret = '00'
+    }
+  }
+  return  {
+    vul: parseInt(ret, 16),
+    hex: ret
+  }
 }
 //十六进制转浮点
 var HexToSingle = (t) => {
@@ -391,4 +598,5 @@ export default {
   DataFormation: DataFormation,
   HexToSingle: HexToSingle,
   SingleToHex: SingleToHex,
+  GetAddressData: GetAddressData,
 }
