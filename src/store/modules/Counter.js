@@ -179,7 +179,7 @@ const mutations = {
         case '1-16-9-24-193-1-10':
           state.filename = 'wep_wsword.wep_wsd'
           break
-        case '1-16-9-24-95-0-176':
+        case '1-16-9-24-95-0-152':
           state.filename = 'armor.am_dat'
           break
         case '1-16-9-24-29-2-31':
@@ -197,7 +197,7 @@ const mutations = {
         case '1-16-9-24-88-0-153':
           state.filename = 'weapon.eq_cus'
           break
-        case '1-16-9-24-121-0-100':
+        case '1-16-9-24-121-0-203':
           state.filename = 'armor.eq_crt'
           break
         default:

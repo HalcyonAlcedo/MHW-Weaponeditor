@@ -270,7 +270,7 @@
       class="white--text"
       style="-webkit-app-region: drag"
     >
-      <span>&nbsp;&nbsp;&nbsp;By Alcedo  &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | {{$t("Interface.Data_version")}} 13.01.00 | {{$t("Interface.Original_file_version")}} 13.01.00 （{{$t("Interface.Extract_from")}} 2020-04-11） | {{$t("Interface.Current_file")}} {{file}}（{{weaponfilename}}）|</span>
+      <span>&nbsp;&nbsp;&nbsp;By Alcedo  &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; | {{$t("Interface.Data_version")}} 13.01.00 | {{$t("Interface.Original_file_version")}} 13.50.00 （{{$t("Interface.Extract_from")}} 2020-04-23） | {{$t("Interface.Current_file")}} {{file}}（{{weaponfilename}}）|</span>
     </v-footer>
 
     <!--弹窗-->

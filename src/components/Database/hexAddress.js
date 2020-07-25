@@ -379,7 +379,7 @@ const hexAddress = (data) => {
       'wus_item4quantity': [38, 1],
       'wus_Unlock': [40, 2],
     }
-  } else if (data[10] === 5 && data[3821] === 0 && data[22099] === 1) {
+  } else if (data[10] === 5 && data[3858] === 0 && data[26761] === 1) {
     HexRuler = 37 // 裝備制造
     HexPointer = {
       'art_Number': [12, 2],
