@@ -450,31 +450,31 @@
             "Weapon_Number": 117
         },
         {
-            "name": "帝王金銃槍·風漂",
+            "name": "帝王金銃槍‧風漂",
             "Weapon_Number": 118
         },
         {
-            "name": "帝王金銃槍·屍套",
+            "name": "帝王金銃槍‧屍套",
             "Weapon_Number": 119
         },
         {
-            "name": "帝王金銃槍·王",
+            "name": "帝王金銃槍‧王",
             "Weapon_Number": 120
         },
         {
-            "name": "帝王金銃槍·爆鱗",
+            "name": "帝王金銃槍‧爆鱗",
             "Weapon_Number": 121
         },
         {
-            "name": "帝王金銃槍·飛雷",
+            "name": "帝王金銃槍‧飛雷",
             "Weapon_Number": 122
         },
         {
-            "name": "帝王金銃槍·麻痺",
+            "name": "帝王金銃槍‧麻痺",
             "Weapon_Number": 123
         },
         {
-            "name": "帝王金銃槍·水",
+            "name": "帝王金銃槍‧水",
             "Weapon_Number": 124
         },
         {
@@ -766,6 +766,10 @@
             "Weapon_Number": 203
         },
         {
+            "name": "冥燈龍銃槍改",
+            "Weapon_Number": 204
+        },
+        {
             "name": "業銃槍暴食",
             "Weapon_Number": 205
         },
@@ -776,6 +780,14 @@
         {
             "name": "鬼神銃槍猛獅",
             "Weapon_Number": 207
+        },
+        {
+            "name": "煌黑破銃槍",
+            "Weapon_Number": 208
+        },
+        {
+            "name": "煌黑銃槍之滅",
+            "Weapon_Number": 209
         },
         {
             "name": "魂焰銃槍‧炎妃",
@@ -814,80 +826,220 @@
             "Weapon_Number": 218
         },
         {
+            "name": "白晝之夜",
+            "Weapon_Number": 222
+        },
+        {
             "name": "宮廷銃槍【護星】",
             "Weapon_Number": 225
         },
         {
             "name": "赤龍擊破槍‧火",
             "Weapon_Number": 229
-        },        
+        },
         {
             "name": "赤龍擊破槍‧水",
             "Weapon_Number": 230
-        },        
+        },
         {
             "name": "赤龍擊破槍‧冰",
             "Weapon_Number": 231
-        },        
+        },
         {
             "name": "赤龍擊破槍‧雷",
             "Weapon_Number": 232
-        },        
+        },
         {
             "name": "赤龍擊破槍‧龍",
             "Weapon_Number": 233
-        },        
+        },
         {
             "name": "赤龍擊破槍‧毒",
             "Weapon_Number": 234
-        },        
+        },
         {
             "name": "赤龍擊破槍‧麻痺",
             "Weapon_Number": 235
-        },        
+        },
         {
             "name": "赤龍擊破槍‧睡眠",
             "Weapon_Number": 236
-        },        
+        },
         {
             "name": "赤龍擊破槍‧爆破",
             "Weapon_Number": 237
-        },        
+        },
         {
             "name": "赤龍擊破槍‧火",
             "Weapon_Number": 238
-        },        
+        },
         {
             "name": "赤龍擊破槍‧水",
             "Weapon_Number": 239
-        },        
+        },
         {
             "name": "赤龍擊破槍‧冰",
             "Weapon_Number": 240
-        },        
+        },
         {
             "name": "赤龍擊破槍‧雷",
             "Weapon_Number": 241
-        },        
+        },
         {
             "name": "赤龍擊破槍‧龍",
             "Weapon_Number": 242
-        },        
+        },
         {
             "name": "赤龍擊破槍‧毒",
             "Weapon_Number": 243
-        },        
+        },
         {
             "name": "赤龍擊破槍‧麻痺",
             "Weapon_Number": 244
-        },        
+        },
         {
             "name": "赤龍擊破槍‧睡眠",
             "Weapon_Number": 245
-        },        
+        },
         {
             "name": "赤龍擊破槍‧爆破",
             "Weapon_Number": 246
+        },
+        {
+            "name": "金色的銃槍‧水",
+            "Weapon_Number": 247
+        },
+        {
+            "name": "金色的銃槍‧毒",
+            "Weapon_Number": 248
+        },
+        {
+            "name": "金色的銃槍‧睡眠",
+            "Weapon_Number": 249
+        },
+        {
+            "name": "金色的銃槍‧賊",
+            "Weapon_Number": 250
+        },
+        {
+            "name": "金色的銃槍‧泥魚",
+            "Weapon_Number": 251
+        },
+        {
+            "name": "金色的銃槍‧土砂",
+            "Weapon_Number": 252
+        },
+        {
+            "name": "金色的銃槍‧飛雷",
+            "Weapon_Number": 253
+        },
+        {
+            "name": "金色的銃槍‧蠻顎",
+            "Weapon_Number": 254
+        },
+        {
+            "name": "金色的銃槍‧痺賊",
+            "Weapon_Number": 255
+        },
+        {
+            "name": "金色的銃槍‧風漂",
+            "Weapon_Number": 256
+        },
+        {
+            "name": "金色的銃槍‧屍套",
+            "Weapon_Number": 257
+        },
+        {
+            "name": "金色的銃槍‧王",
+            "Weapon_Number": 258
+        },
+        {
+            "name": "金色的銃槍‧爆鱗",
+            "Weapon_Number": 259
+        },
+        {
+            "name": "鎧羅銃槍‧賊",
+            "Weapon_Number": 260
+        },
+        {
+            "name": "鎧羅銃槍‧泥魚",
+            "Weapon_Number": 261
+        },
+        {
+            "name": "鎧羅銃槍‧土砂",
+            "Weapon_Number": 262
+        },
+        {
+            "name": "鎧羅銃槍‧飛雷",
+            "Weapon_Number": 263
+        },
+        {
+            "name": "鎧羅銃槍‧蠻顎",
+            "Weapon_Number": 264
+        },
+        {
+            "name": "鎧羅銃槍‧痺賊",
+            "Weapon_Number": 265
+        },
+        {
+            "name": "鎧羅銃槍‧風漂",
+            "Weapon_Number": 266
+        },
+        {
+            "name": "鎧羅銃槍‧屍套",
+            "Weapon_Number": 267
+        },
+        {
+            "name": "鎧羅銃槍‧王",
+            "Weapon_Number": 268
+        },
+        {
+            "name": "鎧羅銃槍‧爆鱗",
+            "Weapon_Number": 269
+        },
+        {
+            "name": "鎧羅銃槍‧水",
+            "Weapon_Number": 270
+        },
+        {
+            "name": "鎧羅銃槍‧毒",
+            "Weapon_Number": 271
+        },
+        {
+            "name": "鎧羅銃槍‧睡眠",
+            "Weapon_Number": 272
+        },
+        {
+            "name": "鎧羅銃槍‧冰",
+            "Weapon_Number": 273
+        },
+        {
+            "name": "帝王金銃槍‧風漂",
+            "Weapon_Number": 274
+        },
+        {
+            "name": "帝王金銃槍‧屍套",
+            "Weapon_Number": 275
+        },
+        {
+            "name": "帝王金銃槍‧王",
+            "Weapon_Number": 276
+        },
+        {
+            "name": "帝王金銃槍‧爆鱗",
+            "Weapon_Number": 277
+        },
+        {
+            "name": "帝王金銃槍‧飛雷",
+            "Weapon_Number": 278
+        },
+        {
+            "name": "帝王金銃槍‧麻痺",
+            "Weapon_Number": 279
+        },
+        {
+            "name": "帝王金銃槍‧水",
+            "Weapon_Number": 280
         }
     ]
 }

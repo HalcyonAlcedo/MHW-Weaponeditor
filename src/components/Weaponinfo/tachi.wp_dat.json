@@ -1,6 +1,7 @@
 {
     "Weapon": "太刀",
-    "Data": [{
+    "Data": [
+        {
             "name": "鐵刀Ⅰ",
             "Weapon_Number": 6
         },
@@ -461,31 +462,31 @@
             "Weapon_Number": 120
         },
         {
-            "name": "帝王金太刀·飛雷",
+            "name": "帝王金太刀‧飛雷",
             "Weapon_Number": 121
         },
         {
-            "name": "帝王金太刀·風漂",
+            "name": "帝王金太刀‧風漂",
             "Weapon_Number": 122
         },
         {
-            "name": "帝王金太刀·屍套",
+            "name": "帝王金太刀‧屍套",
             "Weapon_Number": 123
         },
         {
-            "name": "帝王金太刀·熔山",
+            "name": "帝王金太刀‧熔山",
             "Weapon_Number": 124
         },
         {
-            "name": "帝王金太刀·水",
+            "name": "帝王金太刀‧水",
             "Weapon_Number": 125
         },
         {
-            "name": "帝王金太刀·火",
+            "name": "帝王金太刀‧火",
             "Weapon_Number": 126
         },
         {
-            "name": "帝王金太刀·麻痺",
+            "name": "帝王金太刀‧麻痺",
             "Weapon_Number": 127
         },
         {
@@ -789,6 +790,10 @@
             "Weapon_Number": 216
         },
         {
+            "name": "冥燈龍太刀改",
+            "Weapon_Number": 217
+        },
+        {
             "name": "天上天下天地無雙刀",
             "Weapon_Number": 218
         },
@@ -797,12 +802,24 @@
             "Weapon_Number": 219
         },
         {
+            "name": "HARDUMMY",
+            "Weapon_Number": 220
+        },
+        {
             "name": "鬼薙刀",
             "Weapon_Number": 221
         },
         {
             "name": "鬼神薙刀【阿修羅】",
             "Weapon_Number": 222
+        },
+        {
+            "name": "漆黑爪",
+            "Weapon_Number": 223
+        },
+        {
+            "name": "漆黑爪【終焉】",
+            "Weapon_Number": 224
         },
         {
             "name": "魂焰龍刀‧炎妃",
@@ -841,80 +858,220 @@
             "Weapon_Number": 233
         },
         {
+            "name": "亞鐸霜鋒",
+            "Weapon_Number": 234
+        },
+        {
             "name": "宮廷禮刀【將星】",
             "Weapon_Number": 238
         },
         {
             "name": "赤龍閃光刃‧火",
             "Weapon_Number": 242
-        },        
+        },
         {
             "name": "赤龍閃光刃‧水",
             "Weapon_Number": 243
-        },        
+        },
         {
             "name": "赤龍閃光刃‧冰",
             "Weapon_Number": 244
-        },        
+        },
         {
             "name": "赤龍閃光刃‧雷",
             "Weapon_Number": 245
-        },        
+        },
         {
             "name": "赤龍閃光刃‧龍",
             "Weapon_Number": 246
-        },        
+        },
         {
             "name": "赤龍閃光刃‧毒",
             "Weapon_Number": 247
-        },        
+        },
         {
             "name": "赤龍閃光刃‧麻痺",
             "Weapon_Number": 248
-        },        
+        },
         {
             "name": "赤龍閃光刃‧睡眠",
             "Weapon_Number": 249
-        },        
+        },
         {
             "name": "赤龍閃光刃‧爆破",
             "Weapon_Number": 250
-        },        
+        },
         {
             "name": "赤龍閃光刃‧火",
             "Weapon_Number": 251
-        },        
+        },
         {
             "name": "赤龍閃光刃‧水",
             "Weapon_Number": 252
-        },        
+        },
         {
             "name": "赤龍閃光刃‧冰",
             "Weapon_Number": 253
-        },        
+        },
         {
             "name": "赤龍閃光刃‧雷",
             "Weapon_Number": 254
-        },        
+        },
         {
             "name": "赤龍閃光刃‧龍",
             "Weapon_Number": 255
-        },        
+        },
         {
             "name": "赤龍閃光刃‧毒",
             "Weapon_Number": 256
-        },        
+        },
         {
             "name": "赤龍閃光刃‧麻痺",
             "Weapon_Number": 257
-        },        
+        },
         {
             "name": "赤龍閃光刃‧睡眠",
             "Weapon_Number": 258
-        },        
+        },
         {
             "name": "赤龍閃光刃‧爆破",
             "Weapon_Number": 259
+        },
+        {
+            "name": "金色的太刀‧水",
+            "Weapon_Number": 260
+        },
+        {
+            "name": "金色的太刀‧毒",
+            "Weapon_Number": 261
+        },
+        {
+            "name": "金色的太刀‧麻痺",
+            "Weapon_Number": 262
+        },
+        {
+            "name": "金色的太刀‧搔",
+            "Weapon_Number": 263
+        },
+        {
+            "name": "金色的太刀‧泥魚",
+            "Weapon_Number": 264
+        },
+        {
+            "name": "金色的太刀‧飛雷",
+            "Weapon_Number": 265
+        },
+        {
+            "name": "金色的太刀‧蠻顎",
+            "Weapon_Number": 266
+        },
+        {
+            "name": "金色的太刀‧黑甲",
+            "Weapon_Number": 267
+        },
+        {
+            "name": "金色的太刀‧眩",
+            "Weapon_Number": 268
+        },
+        {
+            "name": "金色的太刀‧風漂",
+            "Weapon_Number": 269
+        },
+        {
+            "name": "金色的太刀‧屍套",
+            "Weapon_Number": 270
+        },
+        {
+            "name": "金色的太刀‧爆鎚",
+            "Weapon_Number": 271
+        },
+        {
+            "name": "金色的太刀‧熔山",
+            "Weapon_Number": 272
+        },
+        {
+            "name": "鎧羅劍‧搔",
+            "Weapon_Number": 273
+        },
+        {
+            "name": "鎧羅劍‧泥魚",
+            "Weapon_Number": 274
+        },
+        {
+            "name": "鎧羅劍‧飛雷",
+            "Weapon_Number": 275
+        },
+        {
+            "name": "鎧羅劍‧蠻顎",
+            "Weapon_Number": 276
+        },
+        {
+            "name": "鎧羅劍‧黑甲",
+            "Weapon_Number": 277
+        },
+        {
+            "name": "鎧羅劍‧眩",
+            "Weapon_Number": 278
+        },
+        {
+            "name": "鎧羅劍‧風漂",
+            "Weapon_Number": 279
+        },
+        {
+            "name": "鎧羅劍‧屍套",
+            "Weapon_Number": 280
+        },
+        {
+            "name": "鎧羅劍‧爆鎚",
+            "Weapon_Number": 281
+        },
+        {
+            "name": "鎧羅劍‧熔山",
+            "Weapon_Number": 282
+        },
+        {
+            "name": "鎧羅劍‧水",
+            "Weapon_Number": 283
+        },
+        {
+            "name": "鎧羅劍‧毒",
+            "Weapon_Number": 284
+        },
+        {
+            "name": "鎧羅劍‧麻痺",
+            "Weapon_Number": 285
+        },
+        {
+            "name": "鎧羅劍‧火",
+            "Weapon_Number": 286
+        },
+        {
+            "name": "帝王金太刀‧飛雷",
+            "Weapon_Number": 287
+        },
+        {
+            "name": "帝王金太刀‧風漂",
+            "Weapon_Number": 288
+        },
+        {
+            "name": "帝王金太刀‧屍套",
+            "Weapon_Number": 289
+        },
+        {
+            "name": "帝王金太刀‧熔山",
+            "Weapon_Number": 290
+        },
+        {
+            "name": "帝王金太刀‧水",
+            "Weapon_Number": 291
+        },
+        {
+            "name": "帝王金太刀‧火",
+            "Weapon_Number": 292
+        },
+        {
+            "name": "帝王金太刀‧麻痺",
+            "Weapon_Number": 293
         }
     ]
 }

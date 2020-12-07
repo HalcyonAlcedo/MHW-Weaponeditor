@@ -430,31 +430,31 @@
             "Weapon_Number": 113
         },
         {
-            "name": "帝王金盾斧·飛雷",
+            "name": "帝王金盾斧‧飛雷",
             "Weapon_Number": 114
         },
         {
-            "name": "帝王金盾斧·痺賊",
+            "name": "帝王金盾斧‧痺賊",
             "Weapon_Number": 115
         },
         {
-            "name": "帝王金盾斧·屍套",
+            "name": "帝王金盾斧‧屍套",
             "Weapon_Number": 116
         },
         {
-            "name": "帝王金盾斧·王",
+            "name": "帝王金盾斧‧王",
             "Weapon_Number": 117
         },
         {
-            "name": "帝王金盾斧·冰",
+            "name": "帝王金盾斧‧冰",
             "Weapon_Number": 118
         },
         {
-            "name": "帝王金盾斧·岩賊",
+            "name": "帝王金盾斧‧岩賊",
             "Weapon_Number": 119
         },
         {
-            "name": "帝王金盾斧·水",
+            "name": "帝王金盾斧‧水",
             "Weapon_Number": 120
         },
         {
@@ -463,7 +463,7 @@
         },
         {
             "name": "防衛隊合體式盾斧Ⅱ",
-            "Weapon_Number": 212
+            "Weapon_Number": 122
         },
         {
             "name": "防衛隊合體式盾斧Ⅲ",
@@ -730,6 +730,10 @@
             "Weapon_Number": 194
         },
         {
+            "name": "冥燈龍盾斧改",
+            "Weapon_Number": 195
+        },
+        {
             "name": "業盾赤婪",
             "Weapon_Number": 196
         },
@@ -740,6 +744,14 @@
         {
             "name": "鬼神充能斧【夜叉】",
             "Weapon_Number": 198
+        },
+        {
+            "name": "煌黑之盾斧",
+            "Weapon_Number": 199
+        },
+        {
+            "name": "煌黑漆黑盾斧",
+            "Weapon_Number": 200
         },
         {
             "name": "魂焰盾斧‧炎妃",
@@ -766,6 +778,10 @@
             "Weapon_Number": 206
         },
         {
+            "name": "憤怒之狼",
+            "Weapon_Number": 210
+        },
+        {
             "name": "黑鷹",
             "Weapon_Number": 213
         },
@@ -780,71 +796,71 @@
         {
             "name": "赤龍守護盾斧‧火",
             "Weapon_Number": 219
-        },        
+        },
         {
             "name": "赤龍守護盾斧‧水",
             "Weapon_Number": 220
-        },        
+        },
         {
             "name": "赤龍守護盾斧‧冰",
             "Weapon_Number": 221
-        },        
+        },
         {
             "name": "赤龍守護盾斧‧雷",
             "Weapon_Number": 222
-        },        
+        },
         {
             "name": "赤龍守護盾斧‧龍",
             "Weapon_Number": 223
-        },        
+        },
         {
             "name": "赤龍守護盾斧‧毒",
             "Weapon_Number": 224
-        },        
+        },
         {
             "name": "赤龍守護盾斧‧麻痺",
             "Weapon_Number": 225
-        },        
+        },
         {
             "name": "赤龍守護盾斧‧睡眠",
             "Weapon_Number": 226
-        },        
+        },
         {
             "name": "赤龍守護盾斧‧爆破",
             "Weapon_Number": 227
-        },        
+        },
         {
             "name": "赤龍守護盾斧‧火",
             "Weapon_Number": 228
-        },        
+        },
         {
             "name": "赤龍守護盾斧‧水",
             "Weapon_Number": 229
-        },        
+        },
         {
             "name": "赤龍守護盾斧‧冰",
             "Weapon_Number": 230
-        },        
+        },
         {
             "name": "赤龍守護盾斧‧雷",
             "Weapon_Number": 231
-        },        
+        },
         {
             "name": "赤龍守護盾斧‧龍",
             "Weapon_Number": 232
-        },        
+        },
         {
             "name": "赤龍守護盾斧‧毒",
             "Weapon_Number": 233
-        },        
+        },
         {
             "name": "赤龍守護盾斧‧麻痺",
             "Weapon_Number": 234
-        },        
+        },
         {
             "name": "赤龍守護盾斧‧睡眠",
             "Weapon_Number": 235
-        },        
+        },
         {
             "name": "赤龍守護盾斧‧爆破",
             "Weapon_Number": 236
@@ -852,6 +868,134 @@
         {
             "name": "但丁的魔劍‧改",
             "Weapon_Number": 237
+        },
+        {
+            "name": "金色的盾斧‧冰",
+            "Weapon_Number": 238
+        },
+        {
+            "name": "金色的盾斧‧雷",
+            "Weapon_Number": 239
+        },
+        {
+            "name": "金色的盾斧‧睡眠",
+            "Weapon_Number": 240
+        },
+        {
+            "name": "金色的盾斧‧賊",
+            "Weapon_Number": 241
+        },
+        {
+            "name": "金色的盾斧‧泥魚",
+            "Weapon_Number": 242
+        },
+        {
+            "name": "金色的盾斧‧飛雷",
+            "Weapon_Number": 243
+        },
+        {
+            "name": "金色的盾斧‧痺賊",
+            "Weapon_Number": 244
+        },
+        {
+            "name": "金色的盾斧‧慘爪",
+            "Weapon_Number": 245
+        },
+        {
+            "name": "金色的盾斧‧屍套",
+            "Weapon_Number": 246
+        },
+        {
+            "name": "金色的盾斧‧王",
+            "Weapon_Number": 247
+        },
+        {
+            "name": "金色的盾斧‧角",
+            "Weapon_Number": 248
+        },
+        {
+            "name": "金色的盾斧‧岩賊",
+            "Weapon_Number": 249
+        },
+        {
+            "name": "鎧羅兵裝‧賊",
+            "Weapon_Number": 250
+        },
+        {
+            "name": "鎧羅兵裝‧泥魚",
+            "Weapon_Number": 251
+        },
+        {
+            "name": "鎧羅兵裝‧飛雷",
+            "Weapon_Number": 252
+        },
+        {
+            "name": "鎧羅兵裝‧痺賊",
+            "Weapon_Number": 253
+        },
+        {
+            "name": "鎧羅兵裝‧慘爪",
+            "Weapon_Number": 254
+        },
+        {
+            "name": "鎧羅兵裝‧屍套",
+            "Weapon_Number": 255
+        },
+        {
+            "name": "鎧羅兵裝‧王",
+            "Weapon_Number": 256
+        },
+        {
+            "name": "鎧羅兵裝‧角",
+            "Weapon_Number": 257
+        },
+        {
+            "name": "鎧羅兵裝‧岩賊",
+            "Weapon_Number": 258
+        },
+        {
+            "name": "鎧羅兵裝‧冰",
+            "Weapon_Number": 259
+        },
+        {
+            "name": "鎧羅兵裝‧雷",
+            "Weapon_Number": 260
+        },
+        {
+            "name": "鎧羅兵裝‧睡眠",
+            "Weapon_Number": 261
+        },
+        {
+            "name": "鎧羅兵裝‧水",
+            "Weapon_Number": 262
+        },
+        {
+            "name": "帝王金盾斧‧飛雷",
+            "Weapon_Number": 263
+        },
+        {
+            "name": "帝王金盾斧‧痺賊",
+            "Weapon_Number": 264
+        },
+        {
+            "name": "帝王金盾斧‧屍套",
+            "Weapon_Number": 265
+        },
+        {
+            "name": "帝王金盾斧‧王",
+            "Weapon_Number": 266
+        },
+        {
+            "name": "帝王金盾斧‧冰",
+            "Weapon_Number": 267
+        },
+        {
+            "name": "帝王金盾斧‧岩賊",
+            "Weapon_Number": 268
+        },
+        {
+            "name": "帝王金盾斧‧水",
+            "Weapon_Number": 269
         }
     ]
 }

@@ -486,31 +486,31 @@
             "Weapon_Number": 127
         },
         {
-            "name": "帝王金大劍·痺賊",
+            "name": "帝王金大劍‧痺賊",
             "Weapon_Number": 128
         },
         {
-            "name": "帝王金大劍·屍套",
+            "name": "帝王金大劍‧屍套",
             "Weapon_Number": 129
         },
         {
-            "name": "帝王金大劍·王",
+            "name": "帝王金大劍‧王",
             "Weapon_Number": 130
         },
         {
-            "name": "帝王金大劍·熔山",
+            "name": "帝王金大劍‧熔山",
             "Weapon_Number": 131
         },
         {
-            "name": "帝王金大劍·水",
+            "name": "帝王金大劍‧水",
             "Weapon_Number": 132
         },
         {
-            "name": "帝王金大劍·冰",
+            "name": "帝王金大劍‧冰",
             "Weapon_Number": 133
         },
         {
-            "name": "帝王金大劍·雷",
+            "name": "帝王金大劍‧雷",
             "Weapon_Number": 134
         },
         {
@@ -790,6 +790,10 @@
             "Weapon_Number": 214
         },
         {
+            "name": "冥燈龍大劍改",
+            "Weapon_Number": 215
+        },
+        {
             "name": "龍顎劍【絕牙】",
             "Weapon_Number": 216
         },
@@ -808,6 +812,14 @@
         {
             "name": "鬼神金棒【猿魔王】",
             "Weapon_Number": 220
+        },
+        {
+            "name": "煌黑之大劍",
+            "Weapon_Number": 221
+        },
+        {
+            "name": "煌黑大劍龍擊",
+            "Weapon_Number": 222
         },
         {
             "name": "魂焰剛劍‧炎妃",
@@ -862,99 +874,212 @@
             "Weapon_Number": 235
         },
         {
+            "name": "狂擊巨兇",
+            "Weapon_Number": 236
+        },
+        {
             "name": "宮廷王劍【金星】",
             "Weapon_Number": 239
-        }
-        ,
+        },
         {
             "name": "赤龍斷絕劍‧火",
             "Weapon_Number": 243
-        }
-        ,
+        },
         {
             "name": "赤龍斷絕劍‧水",
             "Weapon_Number": 244
-        }
-        ,
+        },
         {
             "name": "赤龍斷絕劍‧冰",
             "Weapon_Number": 245
-        }
-        ,
+        },
         {
             "name": "赤龍斷絕劍‧雷",
             "Weapon_Number": 246
-        }
-        ,
+        },
         {
             "name": "赤龍斷絕劍‧龍",
             "Weapon_Number": 247
-        }
-        ,
+        },
         {
             "name": "赤龍斷絕劍‧毒",
             "Weapon_Number": 248
-        }
-        ,
+        },
         {
             "name": "赤龍斷絕劍‧麻痺",
             "Weapon_Number": 249
-        }
-        ,
+        },
         {
             "name": "赤龍斷絕劍‧睡眠",
             "Weapon_Number": 250
-        }
-        ,
+        },
         {
             "name": "赤龍斷絕劍‧爆破",
             "Weapon_Number": 251
-        }
-        ,
+        },
         {
             "name": "赤龍斷絕劍‧火",
             "Weapon_Number": 252
-        }
-        ,
+        },
         {
             "name": "赤龍斷絕劍‧水",
             "Weapon_Number": 253
-        }
-        ,
+        },
         {
             "name": "赤龍斷絕劍‧冰",
             "Weapon_Number": 254
-        }
-        ,
+        },
         {
             "name": "赤龍斷絕劍‧雷",
             "Weapon_Number": 255
-        }
-        ,
+        },
         {
             "name": "赤龍斷絕劍‧龍",
             "Weapon_Number": 256
-        }
-        ,
+        },
         {
             "name": "赤龍斷絕劍‧毒",
             "Weapon_Number": 257
-        }
-        ,
+        },
         {
             "name": "赤龍斷絕劍‧麻痺",
             "Weapon_Number": 258
-        }
-        ,
+        },
         {
             "name": "赤龍斷絕劍‧睡眠",
             "Weapon_Number": 259
-        }
-        ,
+        },
         {
             "name": "赤龍斷絕劍‧爆破",
             "Weapon_Number": 260
+        },
+        {
+            "name": "金色的大劍‧水",
+            "Weapon_Number": 261
+        },
+        {
+            "name": "金色的大劍‧冰",
+            "Weapon_Number": 262
+        },
+        {
+            "name": "金色的大劍‧睡眠",
+            "Weapon_Number": 263
+        },
+        {
+            "name": "金色的大劍‧賊",
+            "Weapon_Number": 264
+        },
+        {
+            "name": "金色的大劍‧毒妖",
+            "Weapon_Number": 265
+        },
+        {
+            "name": "金色的大劍‧土砂",
+            "Weapon_Number": 266
+        },
+        {
+            "name": "金色的大劍‧痺賊",
+            "Weapon_Number": 267
+        },
+        {
+            "name": "金色的大劍‧骨鎚",
+            "Weapon_Number": 268
+        },
+        {
+            "name": "金色的大劍‧屍套",
+            "Weapon_Number": 269
+        },
+        {
+            "name": "金色的大劍‧王",
+            "Weapon_Number": 270
+        },
+        {
+            "name": "金色的大劍‧熔岩",
+            "Weapon_Number": 271
+        },
+        {
+            "name": "金色的大劍‧熔山",
+            "Weapon_Number": 272
+        },
+        {
+            "name": "鎧羅炎‧賊",
+            "Weapon_Number": 273
+        },
+        {
+            "name": "鎧羅炎‧毒妖",
+            "Weapon_Number": 274
+        },
+        {
+            "name": "鎧羅炎‧土砂",
+            "Weapon_Number": 275
+        },
+        {
+            "name": "鎧羅炎‧痺賊",
+            "Weapon_Number": 276
+        },
+        {
+            "name": "鎧羅炎‧骨鎚",
+            "Weapon_Number": 277
+        },
+        {
+            "name": "鎧羅炎‧屍套",
+            "Weapon_Number": 278
+        },
+        {
+            "name": "鎧羅炎‧王",
+            "Weapon_Number": 279
+        },
+        {
+            "name": "鎧羅炎‧熔岩",
+            "Weapon_Number": 280
+        },
+        {
+            "name": "鎧羅炎‧熔山",
+            "Weapon_Number": 281
+        },
+        {
+            "name": "鎧羅炎‧水",
+            "Weapon_Number": 282
+        },
+        {
+            "name": "鎧羅炎‧冰",
+            "Weapon_Number": 283
+        },
+        {
+            "name": "鎧羅炎‧睡眠",
+            "Weapon_Number": 284
+        },
+        {
+            "name": "鎧羅炎‧雷",
+            "Weapon_Number": 285
+        },
+        {
+            "name": "帝王金大劍‧痺賊",
+            "Weapon_Number": 286
+        },
+        {
+            "name": "帝王金大劍‧屍套",
+            "Weapon_Number": 287
+        },
+        {
+            "name": "帝王金大劍‧王",
+            "Weapon_Number": 288
+        },
+        {
+            "name": "帝王金大劍‧熔山",
+            "Weapon_Number": 289
+        },
+        {
+            "name": "帝王金大劍‧水",
+            "Weapon_Number": 290
+        },
+        {
+            "name": "帝王金大劍‧冰",
+            "Weapon_Number": 291
+        },
+        {
+            "name": "帝王金大劍‧雷",
+            "Weapon_Number": 292
         }
-
     ]
 }

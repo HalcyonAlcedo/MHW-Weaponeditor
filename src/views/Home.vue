@@ -539,8 +539,8 @@ export default {
         //{ title: this.$t('Weaponsmiscellaneous.WeaponDerived') + ' (weapon.eq_cus)', file: 'weapon.eq_cus'}
       ]
       let eq = [
-        { title: this.$t('Armor.Armor') + ' (armor.am_dat)', file: 'armor.am_dat'},
-        { title: this.$t('Armor.ArmorMake') + ' (armor.eq_crt)', file: 'armor.eq_crt'},
+        //{ title: this.$t('Armor.Armor') + ' (armor.am_dat)', file: 'armor.am_dat'},
+        //{ title: this.$t('Armor.ArmorMake') + ' (armor.eq_crt)', file: 'armor.eq_crt'},
       ]
       let ip = this.importConfig
       return [

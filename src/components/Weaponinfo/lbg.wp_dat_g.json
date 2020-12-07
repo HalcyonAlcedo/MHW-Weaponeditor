@@ -1,6 +1,7 @@
 {
     "Weapon": "轻弩",
-    "Data": [{
+    "Data": [
+        {
             "name": "迅擊鍊弩Ⅰ",
             "Weapon_Number": 8
         },
@@ -469,27 +470,27 @@
             "Weapon_Number": 124
         },
         {
-            "name": "帝王金弩·爆鱗",
+            "name": "帝王金弩‧爆鱗",
             "Weapon_Number": 125
         },
         {
-            "name": "帝王金弩·慘爪",
+            "name": "帝王金弩‧慘爪",
             "Weapon_Number": 126
         },
         {
-            "name": "帝王金弩·屍套",
+            "name": "帝王金弩‧屍套",
             "Weapon_Number": 127
         },
         {
-            "name": "帝王金弩·王",
+            "name": "帝王金弩‧王",
             "Weapon_Number": 128
         },
         {
-            "name": "帝王金弩·雷",
+            "name": "帝王金弩‧雷",
             "Weapon_Number": 129
         },
         {
-            "name": "帝王金弩·冰",
+            "name": "帝王金弩‧冰",
             "Weapon_Number": 130
         },
         {
@@ -533,11 +534,11 @@
             "Weapon_Number": 146
         },
         {
-            "name": "浮空龍颶風砲Ⅳ",
+            "name": "毀滅的契機【悲】",
             "Weapon_Number": 147
         },
         {
-            "name": "毀滅的契機【悲】",
+            "name": "浮空龍颶風砲Ⅳ",
             "Weapon_Number": 148
         },
         {
@@ -781,6 +782,10 @@
             "Weapon_Number": 211
         },
         {
+            "name": "冥燈龍輕弩槍改",
+            "Weapon_Number": 212
+        },
+        {
             "name": "新‧十字弩槍",
             "Weapon_Number": 213
         },
@@ -795,6 +800,14 @@
         {
             "name": "鬼神筒【雷天】",
             "Weapon_Number": 216
+        },
+        {
+            "name": "煌黑烈弩",
+            "Weapon_Number": 217
+        },
+        {
+            "name": "煌黑弩終結者",
+            "Weapon_Number": 218
         },
         {
             "name": "魂焰龍弩‧炎妃",
@@ -821,48 +834,184 @@
             "Weapon_Number": 224
         },
         {
+            "name": "暴風突擊",
+            "Weapon_Number": 227
+        },
+        {
             "name": "宮廷警弩【狙星】",
             "Weapon_Number": 232
         },
         {
             "name": "赤龍狙擊弩‧火",
             "Weapon_Number": 236
-        },        
+        },
         {
             "name": "赤龍狙擊弩‧冰",
             "Weapon_Number": 237
-        },        
+        },
         {
             "name": "赤龍狙擊弩‧雷",
             "Weapon_Number": 238
-        },        
+        },
         {
             "name": "赤龍狙擊弩‧水",
             "Weapon_Number": 239
-        },        
+        },
         {
             "name": "赤龍狙擊弩‧龍",
             "Weapon_Number": 240
-        },        
+        },
         {
             "name": "赤龍狙擊弩‧火",
             "Weapon_Number": 241
-        },        
+        },
         {
             "name": "赤龍狙擊弩‧冰",
             "Weapon_Number": 242
-        },        
+        },
         {
             "name": "赤龍狙擊弩‧雷",
             "Weapon_Number": 243
-        },        
+        },
         {
             "name": "赤龍狙擊弩‧水",
             "Weapon_Number": 244
-        },        
+        },
         {
             "name": "赤龍狙擊弩‧龍",
             "Weapon_Number": 245
+        },
+        {
+            "name": "金色的弩‧狙擊",
+            "Weapon_Number": 246
+        },
+        {
+            "name": "金色的弩‧迫擊",
+            "Weapon_Number": 247
+        },
+        {
+            "name": "金色的弩‧射擊",
+            "Weapon_Number": 248
+        },
+        {
+            "name": "金色的弩‧賊",
+            "Weapon_Number": 249
+        },
+        {
+            "name": "金色的弩‧泥魚",
+            "Weapon_Number": 250
+        },
+        {
+            "name": "金色的弩‧土砂",
+            "Weapon_Number": 251
+        },
+        {
+            "name": "金色的弩‧蠻顎",
+            "Weapon_Number": 252
+        },
+        {
+            "name": "金色的弩‧浮空",
+            "Weapon_Number": 253
+        },
+        {
+            "name": "金色的弩‧慘爪",
+            "Weapon_Number": 254
+        },
+        {
+            "name": "金色的弩‧屍套",
+            "Weapon_Number": 255
+        },
+        {
+            "name": "金色的弩‧王",
+            "Weapon_Number": 256
+        },
+        {
+            "name": "金色的弩‧熔岩",
+            "Weapon_Number": 257
+        },
+        {
+            "name": "金色的弩‧爆鱗",
+            "Weapon_Number": 258
+        },
+        {
+            "name": "鎧羅迅擊弩‧賊",
+            "Weapon_Number": 259
+        },
+        {
+            "name": "鎧羅迅擊弩‧泥魚",
+            "Weapon_Number": 260
+        },
+        {
+            "name": "鎧羅迅擊弩‧土砂",
+            "Weapon_Number": 261
+        },
+        {
+            "name": "鎧羅迅擊弩‧蠻顎",
+            "Weapon_Number": 262
+        },
+        {
+            "name": "鎧羅迅擊弩‧浮空",
+            "Weapon_Number": 263
+        },
+        {
+            "name": "鎧羅迅擊弩‧慘爪",
+            "Weapon_Number": 264
+        },
+        {
+            "name": "鎧羅迅擊弩‧屍套",
+            "Weapon_Number": 265
+        },
+        {
+            "name": "鎧羅迅擊弩‧王",
+            "Weapon_Number": 266
+        },
+        {
+            "name": "鎧羅迅擊弩‧熔岩",
+            "Weapon_Number": 267
+        },
+        {
+            "name": "鎧羅迅擊弩‧爆鱗",
+            "Weapon_Number": 268
+        },
+        {
+            "name": "鎧羅迅擊弩‧狙擊",
+            "Weapon_Number": 269
+        },
+        {
+            "name": "鎧羅迅擊弩‧迫擊",
+            "Weapon_Number": 270
+        },
+        {
+            "name": "鎧羅迅擊弩‧射擊",
+            "Weapon_Number": 271
+        },
+        {
+            "name": "鎧羅迅擊弩‧援擊",
+            "Weapon_Number": 272
+        },
+        {
+            "name": "帝王金弩‧爆鱗",
+            "Weapon_Number": 273
+        },
+        {
+            "name": "帝王金弩‧慘爪",
+            "Weapon_Number": 274
+        },
+        {
+            "name": "帝王金弩‧屍套",
+            "Weapon_Number": 275
+        },
+        {
+            "name": "帝王金弩‧王",
+            "Weapon_Number": 276
+        },
+        {
+            "name": "帝王金弩‧雷",
+            "Weapon_Number": 277
+        },
+        {
+            "name": "帝王金弩‧冰",
+            "Weapon_Number": 278
         }
     ]
 }

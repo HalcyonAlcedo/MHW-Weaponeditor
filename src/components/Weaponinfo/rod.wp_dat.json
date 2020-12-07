@@ -1,6 +1,7 @@
 {
     "Weapon": "虫棍",
-    "Data": [{
+    "Data": [
+        {
             "name": "鐵製長刀Ⅰ",
             "Weapon_Number": 7
         },
@@ -457,31 +458,31 @@
             "Weapon_Number": 120
         },
         {
-            "name": "帝王金長刀·飛雷",
+            "name": "帝王金長刀‧飛雷",
             "Weapon_Number": 121
         },
         {
-            "name": "帝王金長刀·屍套",
+            "name": "帝王金長刀‧屍套",
             "Weapon_Number": 122
         },
         {
-            "name": "帝王金長刀·王",
+            "name": "帝王金長刀‧王",
             "Weapon_Number": 123
         },
         {
-            "name": "帝王金長刀·岩賊",
+            "name": "帝王金長刀‧岩賊",
             "Weapon_Number": 124
         },
         {
-            "name": "帝王金長刀·水",
+            "name": "帝王金長刀‧水",
             "Weapon_Number": 125
         },
         {
-            "name": "帝王金長刀·冰",
+            "name": "帝王金長刀‧冰",
             "Weapon_Number": 126
         },
         {
-            "name": "帝王金長刀·麻痺",
+            "name": "帝王金長刀‧麻痺",
             "Weapon_Number": 127
         },
         {
@@ -777,6 +778,10 @@
             "Weapon_Number": 207
         },
         {
+            "name": "冥燈龍長刀改",
+            "Weapon_Number": 208
+        },
+        {
             "name": "業翼躁狂",
             "Weapon_Number": 209
         },
@@ -787,6 +792,14 @@
         {
             "name": "鬼神棍【猿王】",
             "Weapon_Number": 211
+        },
+        {
+            "name": "煌黑之龍棍",
+            "Weapon_Number": 212
+        },
+        {
+            "name": "煌黑龍棍殞命",
+            "Weapon_Number": 213
         },
         {
             "name": "魂焰龍戟‧炎妃",
@@ -827,71 +840,71 @@
         {
             "name": "赤龍降伏錨‧火",
             "Weapon_Number": 237
-        },        
+        },
         {
             "name": "赤龍降伏錨‧水",
             "Weapon_Number": 238
-        },        
+        },
         {
             "name": "赤龍降伏錨‧冰",
             "Weapon_Number": 239
-        },        
+        },
         {
             "name": "赤龍降伏錨‧雷",
             "Weapon_Number": 240
-        },        
+        },
         {
             "name": "赤龍降伏錨‧龍",
             "Weapon_Number": 241
-        },        
+        },
         {
             "name": "赤龍降伏錨‧毒",
             "Weapon_Number": 242
-        },        
+        },
         {
             "name": "赤龍降伏錨‧麻痺",
             "Weapon_Number": 243
-        },        
+        },
         {
             "name": "赤龍降伏錨‧睡眠",
             "Weapon_Number": 244
-        },        
+        },
         {
             "name": "赤龍降伏錨‧爆破",
             "Weapon_Number": 245
-        },        
+        },
         {
             "name": "赤龍降伏錨‧火",
             "Weapon_Number": 246
-        },        
+        },
         {
             "name": "赤龍降伏錨‧水",
             "Weapon_Number": 247
-        },        
+        },
         {
             "name": "赤龍降伏錨‧冰",
             "Weapon_Number": 248
-        },        
+        },
         {
             "name": "赤龍降伏錨‧雷",
             "Weapon_Number": 249
-        },        
+        },
         {
             "name": "赤龍降伏錨‧龍",
             "Weapon_Number": 250
-        },        
+        },
         {
             "name": "赤龍降伏錨‧毒",
             "Weapon_Number": 251
-        },        
+        },
         {
             "name": "赤龍降伏錨‧麻痺",
             "Weapon_Number": 252
-        },        
+        },
         {
             "name": "赤龍降伏錨‧睡眠",
             "Weapon_Number": 253
-        },        
+        },
         {
             "name": "赤龍降伏錨‧爆破",
             "Weapon_Number": 254
@@ -899,6 +912,134 @@
         {
             "name": "穿心槍蓋博爾格‧極",
             "Weapon_Number": 255
+        },
+        {
+            "name": "金色的長刀‧水",
+            "Weapon_Number": 256
+        },
+        {
+            "name": "金色的長刀‧冰",
+            "Weapon_Number": 257
+        },
+        {
+            "name": "金色的長刀‧麻痺",
+            "Weapon_Number": 258
+        },
+        {
+            "name": "金色的長刀‧搔",
+            "Weapon_Number": 259
+        },
+        {
+            "name": "金色的長刀‧毒妖",
+            "Weapon_Number": 260
+        },
+        {
+            "name": "金色的長刀‧飛雷",
+            "Weapon_Number": 261
+        },
+        {
+            "name": "金色的長刀‧眩",
+            "Weapon_Number": 262
+        },
+        {
+            "name": "金色的長刀‧慘爪",
+            "Weapon_Number": 263
+        },
+        {
+            "name": "金色的長刀‧屍套",
+            "Weapon_Number": 264
+        },
+        {
+            "name": "金色的長刀‧王",
+            "Weapon_Number": 265
+        },
+        {
+            "name": "金色的長刀‧角",
+            "Weapon_Number": 266
+        },
+        {
+            "name": "金色的長刀‧岩賊",
+            "Weapon_Number": 267
+        },
+        {
+            "name": "鎧羅長刀‧搔",
+            "Weapon_Number": 268
+        },
+        {
+            "name": "鎧羅長刀‧毒妖",
+            "Weapon_Number": 269
+        },
+        {
+            "name": "鎧羅長刀‧飛雷",
+            "Weapon_Number": 270
+        },
+        {
+            "name": "鎧羅長刀‧眩",
+            "Weapon_Number": 271
+        },
+        {
+            "name": "鎧羅長刀‧慘爪",
+            "Weapon_Number": 272
+        },
+        {
+            "name": "鎧羅長刀‧屍套",
+            "Weapon_Number": 273
+        },
+        {
+            "name": "鎧羅長刀‧王",
+            "Weapon_Number": 274
+        },
+        {
+            "name": "鎧羅長刀‧角",
+            "Weapon_Number": 275
+        },
+        {
+            "name": "鎧羅長刀‧岩賊",
+            "Weapon_Number": 276
+        },
+        {
+            "name": "鎧羅長刀‧水",
+            "Weapon_Number": 277
+        },
+        {
+            "name": "鎧羅長刀‧冰",
+            "Weapon_Number": 278
+        },
+        {
+            "name": "鎧羅長刀‧麻痺",
+            "Weapon_Number": 279
+        },
+        {
+            "name": "鎧羅長刀‧睡眠",
+            "Weapon_Number": 280
+        },
+        {
+            "name": "帝王金長刀‧飛雷",
+            "Weapon_Number": 281
+        },
+        {
+            "name": "帝王金長刀‧屍套",
+            "Weapon_Number": 282
+        },
+        {
+            "name": "帝王金長刀‧王",
+            "Weapon_Number": 283
+        },
+        {
+            "name": "帝王金長刀‧岩賊",
+            "Weapon_Number": 284
+        },
+        {
+            "name": "帝王金長刀‧水",
+            "Weapon_Number": 285
+        },
+        {
+            "name": "帝王金長刀‧冰",
+            "Weapon_Number": 286
+        },
+        {
+            "name": "帝王金長刀‧麻痺",
+            "Weapon_Number": 287
         }
     ]
 }

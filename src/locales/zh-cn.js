@@ -71,7 +71,7 @@ module.exports = {
     Binary_mode: '显示档案二进位数据的档案模式,二进位数据根据武器类型进行辅助显示',
     Dark_theme: '切换软件主色调至暗黑模式',
     About_content: '本软件可针对《怪物猎人世界》中武器数据魔改档案进行查看和修改,修改后档案放置在Monster Hunter World\\nativePC\\common\\equip\\下即可生效。修改后档案将影响游戏平衡性,请勿用于联机使用。',
-    About_edition: '软件版本：1.2.5',
+    About_edition: '软件版本：1.2.6',
     Instructions: '<h3>该工具可以读取解包后的武器数据,内置了当前版本的武器数据档案,可以直接新建mod档案。部分数值修改会根据固有系数自动修正,武器信息为手动录入,可能与现版本数据存在差异。修改后的档案请勿用于联机使用。</h3><br><h4>用法：</h4><br><span>&nbsp;&nbsp;1、打开解包后的mod档案或点击新建选择需要的武器档案</span><br><span>&nbsp;&nbsp;2、搜索或手动找到要修改的武器</span><br><span>&nbsp;&nbsp;3、将相应属性改成你希望的数值</span><br><span>&nbsp;&nbsp;4、点击保存将档案保存至游戏目录\\nativePC\\common\\equip\\</span><br><span>&nbsp;&nbsp;5、安装冰原装载Mod（https://www.nexusmods.com/monsterhunterworld/mods/1984）</span><br><br><h4>工具原始代码发布在Github上：https://github.com/HalcyonAlcedo/MHW-Weaponeditor</h4>',
     Old_version: '将以名称匹配方式打开数据档案,建议使用新版本数据档案进行魔改。',
     Old_version_open: '兼容模式已启动,请重新打开数据档案',

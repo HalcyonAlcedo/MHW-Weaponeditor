@@ -1,6 +1,7 @@
 {
     "Weapon": "双刀",
-    "Data": [{
+    "Data": [
+        {
             "name": "雙刀Ⅰ",
             "Weapon_Number": 8
         },
@@ -473,31 +474,31 @@
             "Weapon_Number": 125
         },
         {
-            "name": "帝王金雙劍·飛雷",
+            "name": "帝王金雙劍‧飛雷",
             "Weapon_Number": 126
         },
         {
-            "name": "帝王金雙劍·蠻顎",
+            "name": "帝王金雙劍‧蠻顎",
             "Weapon_Number": 127
         },
         {
-            "name": "帝王金雙劍·熔山",
+            "name": "帝王金雙劍‧熔山",
             "Weapon_Number": 128
         },
         {
-            "name": "帝王金雙劍·黑甲",
+            "name": "帝王金雙劍‧黑甲",
             "Weapon_Number": 129
         },
         {
-            "name": "帝王金雙劍·水",
+            "name": "帝王金雙劍‧水",
             "Weapon_Number": 130
         },
         {
-            "name": "帝王金雙劍·冰",
+            "name": "帝王金雙劍‧冰",
             "Weapon_Number": 131
         },
         {
-            "name": "帝王金雙劍·龍",
+            "name": "帝王金雙劍‧龍",
             "Weapon_Number": 132
         },
         {
@@ -817,6 +818,10 @@
             "Weapon_Number": 218
         },
         {
+            "name": "冥燈龍雙劍改",
+            "Weapon_Number": 219
+        },
+        {
             "name": "業雙刃衝動",
             "Weapon_Number": 220
         },
@@ -831,6 +836,14 @@
         {
             "name": "鬼神鬥拳【獄殺】",
             "Weapon_Number": 223
+        },
+        {
+            "name": "煌黑雙劍",
+            "Weapon_Number": 224
+        },
+        {
+            "name": "煌黑雙劍烈狂",
+            "Weapon_Number": 225
         },
         {
             "name": "魂焰雙刃‧炎妃",
@@ -849,12 +862,32 @@
             "Weapon_Number": 229
         },
         {
+            "name": "鋒利魚刃",
+            "Weapon_Number": 230
+        },
+        {
+            "name": "鋒利魚刃‧改",
+            "Weapon_Number": 231
+        },
+        {
             "name": "公會宮殿軍刀",
-            "Weapon_Number": 212
+            "Weapon_Number": 232
         },
         {
             "name": "鬥神鬼【大嶽丸】",
-            "Weapon_Number": 213
+            "Weapon_Number": 233
+        },
+        {
+            "name": "貝古特拉",
+            "Weapon_Number": 235
+        },
+        {
+            "name": "飄飄欲仙啤酒劍",
+            "Weapon_Number": 239
+        },
+        {
+            "name": "酩酊大醉啤酒劍",
+            "Weapon_Number": 240
         },
         {
             "name": "宮廷雙騎【救星】",
@@ -864,87 +897,70 @@
             "name": "赤龍舞爪‧火",
             "Weapon_Number": 246
         },
-        
         {
             "name": "赤龍舞爪‧水",
             "Weapon_Number": 247
         },
-        
         {
             "name": "赤龍舞爪‧冰",
             "Weapon_Number": 248
         },
-        
         {
             "name": "赤龍舞爪‧雷",
             "Weapon_Number": 249
         },
-        
         {
             "name": "赤龍舞爪‧龍",
             "Weapon_Number": 250
         },
-        
         {
             "name": "赤龍舞爪‧毒",
             "Weapon_Number": 251
         },
-        
         {
             "name": "赤龍舞爪‧麻痺",
             "Weapon_Number": 252
         },
-        
         {
             "name": "赤龍舞爪‧睡眠",
             "Weapon_Number": 253
         },
-        
         {
             "name": "赤龍舞爪‧爆破",
             "Weapon_Number": 254
         },
-        
         {
             "name": "赤龍舞爪‧火",
             "Weapon_Number": 255
         },
-        
         {
             "name": "赤龍舞爪‧水",
             "Weapon_Number": 256
         },
-        
         {
             "name": "赤龍舞爪‧冰",
             "Weapon_Number": 257
         },
-        
         {
             "name": "赤龍舞爪‧雷",
             "Weapon_Number": 258
         },
-        
         {
             "name": "赤龍舞爪‧龍",
             "Weapon_Number": 259
         },
-        
         {
             "name": "赤龍舞爪‧毒",
             "Weapon_Number": 260
         },
-        
         {
             "name": "赤龍舞爪‧麻痺",
             "Weapon_Number": 261
         },
-        
         {
             "name": "赤龍舞爪‧睡眠",
             "Weapon_Number": 262
         },
-        
         {
             "name": "赤龍舞爪‧爆破",
             "Weapon_Number": 263
@@ -952,6 +968,142 @@
         {
             "name": "吉薇艾兒＋",
             "Weapon_Number": 264
+        },
+        {
+            "name": "金色的雙劍‧水",
+            "Weapon_Number": 265
+        },
+        {
+            "name": "金色的雙劍‧冰",
+            "Weapon_Number": 266
+        },
+        {
+            "name": "金色的雙劍‧毒",
+            "Weapon_Number": 267
+        },
+        {
+            "name": "金色的雙劍‧搔",
+            "Weapon_Number": 268
+        },
+        {
+            "name": "金色的雙劍‧泥魚",
+            "Weapon_Number": 269
+        },
+        {
+            "name": "金色的雙劍‧飛雷",
+            "Weapon_Number": 270
+        },
+        {
+            "name": "金色的雙劍‧蠻顎",
+            "Weapon_Number": 271
+        },
+        {
+            "name": "金色的雙劍‧黑甲",
+            "Weapon_Number": 272
+        },
+        {
+            "name": "金色的雙劍‧眩",
+            "Weapon_Number": 273
+        },
+        {
+            "name": "金色的雙劍‧慘爪",
+            "Weapon_Number": 274
+        },
+        {
+            "name": "金色的雙劍‧角",
+            "Weapon_Number": 275
+        },
+        {
+            "name": "金色的雙劍‧熔岩",
+            "Weapon_Number": 276
+        },
+        {
+            "name": "金色的雙劍‧熔山",
+            "Weapon_Number": 277
+        },
+        {
+            "name": "鎧羅小刀‧搔",
+            "Weapon_Number": 278
+        },
+        {
+            "name": "鎧羅小刀‧泥魚",
+            "Weapon_Number": 279
+        },
+        {
+            "name": "鎧羅小刀‧飛雷",
+            "Weapon_Number": 280
+        },
+        {
+            "name": "鎧羅小刀‧蠻顎",
+            "Weapon_Number": 281
+        },
+        {
+            "name": "鎧羅小刀‧黑甲",
+            "Weapon_Number": 282
+        },
+        {
+            "name": "鎧羅小刀‧眩",
+            "Weapon_Number": 283
+        },
+        {
+            "name": "鎧羅小刀‧慘爪",
+            "Weapon_Number": 284
+        },
+        {
+            "name": "鎧羅小刀‧角",
+            "Weapon_Number": 285
+        },
+        {
+            "name": "鎧羅小刀‧熔岩",
+            "Weapon_Number": 286
+        },
+        {
+            "name": "鎧羅小刀‧熔山",
+            "Weapon_Number": 287
+        },
+        {
+            "name": "鎧羅小刀‧水",
+            "Weapon_Number": 288
+        },
+        {
+            "name": "鎧羅小刀‧冰",
+            "Weapon_Number": 289
+        },
+        {
+            "name": "鎧羅小刀‧毒",
+            "Weapon_Number": 290
+        },
+        {
+            "name": "鎧羅小刀‧火",
+            "Weapon_Number": 291
+        },
+        {
+            "name": "帝王金雙劍‧飛雷",
+            "Weapon_Number": 292
+        },
+        {
+            "name": "帝王金雙劍‧蠻顎",
+            "Weapon_Number": 293
+        },
+        {
+            "name": "帝王金雙劍‧熔山",
+            "Weapon_Number": 294
+        },
+        {
+            "name": "帝王金雙劍‧黑甲",
+            "Weapon_Number": 295
+        },
+        {
+            "name": "帝王金雙劍‧水",
+            "Weapon_Number": 296
+        },
+        {
+            "name": "帝王金雙劍‧冰",
+            "Weapon_Number": 297
+        },
+        {
+            "name": "帝王金雙劍‧龍",
+            "Weapon_Number": 298
         }
     ]
 }
