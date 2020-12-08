@@ -2,1136 +2,1088 @@
     "Weapon": "大锤",
     "Data": [
         {
-            "name": "鐵鎚Ⅰ",
-            "Weapon_Number": 8
-        },
-        {
-            "name": "鐵鎚Ⅱ",
-            "Weapon_Number": 9
-        },
-        {
-            "name": "鐵鎚Ⅲ",
+            "name": "铁锤1",
             "Weapon_Number": 10
         },
         {
-            "name": "鬼鐵",
+            "name": "铁锤2",
             "Weapon_Number": 11
         },
         {
-            "name": "鬼鐵Ⅱ",
+            "name": "铁锤3",
             "Weapon_Number": 12
         },
         {
-            "name": "鬼鐵Ⅲ",
+            "name": "鬼铁1",
             "Weapon_Number": 13
         },
         {
-            "name": "大鬼鐵Ⅰ",
+            "name": "鬼铁2",
             "Weapon_Number": 14
         },
         {
-            "name": "大鬼鐵Ⅱ",
+            "name": "鬼铁3",
             "Weapon_Number": 15
         },
         {
-            "name": "滅盡龍粉碎者",
+            "name": "大鬼铁1",
             "Weapon_Number": 16
         },
         {
-            "name": "潰滅一擊",
+            "name": "大鬼铁2",
             "Weapon_Number": 17
         },
         {
-            "name": "冰霜核心",
+            "name": "灭尽龙粉碎者",
             "Weapon_Number": 18
         },
         {
-            "name": "冰霜核心改",
+            "name": "溃灭一击",
             "Weapon_Number": 19
         },
         {
-            "name": "慟泣冰河",
+            "name": "冰霜核心",
             "Weapon_Number": 20
         },
         {
-            "name": "水流鎚Ⅰ",
+            "name": "冰霜核心改",
             "Weapon_Number": 21
         },
         {
-            "name": "水流鎚Ⅱ",
+            "name": "恸泣冰河",
             "Weapon_Number": 22
         },
         {
-            "name": "水流鎚Ⅲ",
+            "name": "水流锤1",
             "Weapon_Number": 23
         },
         {
-            "name": "激流強鎚Ⅰ",
+            "name": "水流锤2",
             "Weapon_Number": 24
         },
         {
-            "name": "激流強鎚Ⅱ",
+            "name": "水流锤3",
             "Weapon_Number": 25
         },
         {
-            "name": "激流強鎚Ⅲ",
+            "name": "激流强锤1",
             "Weapon_Number": 26
         },
         {
-            "name": "凶顎龍鎚Ⅰ",
+            "name": "激流强锤2",
             "Weapon_Number": 27
         },
         {
-            "name": "凶顎龍鎚Ⅱ",
+            "name": "激流强锤3",
             "Weapon_Number": 28
         },
         {
-            "name": "馬拉多戰鎚Ⅰ",
+            "name": "痹贼龙锤1",
             "Weapon_Number": 29
         },
         {
-            "name": "馬拉多戰鎚Ⅱ",
+            "name": "痹贼龙锤2",
             "Weapon_Number": 30
         },
         {
-            "name": "馬拉多戰鎚Ⅲ",
+            "name": "马拉多战锤1",
             "Weapon_Number": 31
         },
         {
-            "name": "花朵鎚Ⅰ",
+            "name": "马拉多战锤2",
             "Weapon_Number": 32
         },
         {
-            "name": "花朵鎚Ⅱ",
+            "name": "马拉多战锤3",
             "Weapon_Number": 33
         },
         {
-            "name": "花朵鎚Ⅲ",
+            "name": "花朵锤1",
             "Weapon_Number": 34
         },
         {
-            "name": "鮮豔花朵",
+            "name": "花朵锤2",
             "Weapon_Number": 35
         },
         {
-            "name": "花之女神",
+            "name": "花朵锤3",
             "Weapon_Number": 36
         },
         {
-            "name": "閃電鎚Ⅰ",
+            "name": "鲜艳花朵",
             "Weapon_Number": 37
         },
         {
-            "name": "閃電鎚Ⅱ",
+            "name": "花之女神",
             "Weapon_Number": 38
         },
         {
-            "name": "雷光強鎚Ⅰ",
-            "Weapon_Number": 39
-        },
-        {
-            "name": "雷光強鎚Ⅱ",
-            "Weapon_Number": 40
-        },
-        {
-            "name": "雷光強鎚Ⅲ",
-            "Weapon_Number": 41
-        },
-        {
-            "name": "岩骨鎚Ⅰ",
-            "Weapon_Number": 42
-        },
-        {
-            "name": "岩骨鎚Ⅱ",
-            "Weapon_Number": 43
-        },
-        {
-            "name": "岩骨鎚Ⅲ",
-            "Weapon_Number": 44
-        },
-        {
-            "name": "重岩骨鎚Ⅰ",
-            "Weapon_Number": 45
-        },
-        {
-            "name": "重岩骨鎚Ⅱ",
-            "Weapon_Number": 46
-        },
-        {
-            "name": "重岩骨鎚Ⅲ",
-            "Weapon_Number": 47
-        },
-        {
-            "name": "大地之岩Ⅰ",
-            "Weapon_Number": 48
-        },
-        {
-            "name": "大地之岩Ⅱ",
-            "Weapon_Number": 49
-        },
-        {
-            "name": "屍套龍大鎚",
-            "Weapon_Number": 50
-        },
-        {
-            "name": "惡靈禍根",
-            "Weapon_Number": 51
-        },
-        {
-            "name": "銳骨鎚Ⅰ",
-            "Weapon_Number": 52
-        },
-        {
-            "name": "銳骨鎚Ⅱ",
-            "Weapon_Number": 53
-        },
-        {
-            "name": "骨鎚龍擊鎚Ⅰ",
-            "Weapon_Number": 54
-        },
-        {
-            "name": "骨鎚龍擊鎚Ⅱ",
-            "Weapon_Number": 55
-        },
-        {
-            "name": "骨鎚龍擊鎚Ⅲ",
-            "Weapon_Number": 56
-        },
-        {
-            "name": "爆鎚粉碎者Ⅰ",
-            "Weapon_Number": 57
-        },
-        {
-            "name": "爆鎚粉碎者Ⅱ",
-            "Weapon_Number": 58
-        },
-        {
-            "name": "搔鳥釘鎚Ⅰ",
-            "Weapon_Number": 59
-        },
-        {
-            "name": "搔鳥釘鎚Ⅱ",
-            "Weapon_Number": 60
-        },
-        {
-            "name": "搔鳥釘鎚Ⅲ",
-            "Weapon_Number": 61
-        },
-        {
-            "name": "衝擊釘鎚Ⅰ",
-            "Weapon_Number": 62
-        },
-        {
-            "name": "衝擊釘鎚Ⅱ",
-            "Weapon_Number": 63
-        },
-        {
-            "name": "衝擊釘鎚Ⅲ",
-            "Weapon_Number": 64
-        },
-        {
-            "name": "銅頭鎚Ⅰ",
-            "Weapon_Number": 65
-        },
-        {
-            "name": "銅頭鎚Ⅱ",
-            "Weapon_Number": 66
-        },
-        {
-            "name": "爆鎚戰鎚Ⅰ",
-            "Weapon_Number": 67
-        },
-        {
-            "name": "爆鎚戰鎚Ⅱ",
-            "Weapon_Number": 68
-        },
-        {
-            "name": "土砂龍鏈枷Ⅰ",
-            "Weapon_Number": 69
-        },
-        {
-            "name": "土砂龍鏈枷Ⅱ",
-            "Weapon_Number": 70
-        },
-        {
-            "name": "土砂龍鏈枷Ⅲ",
-            "Weapon_Number": 71
-        },
-        {
-            "name": "土砂龍粉碎者Ⅰ",
-            "Weapon_Number": 72
-        },
-        {
-            "name": "土砂龍粉碎者Ⅱ",
-            "Weapon_Number": 73
-        },
-        {
-            "name": "土砂龍粉碎者Ⅲ",
-            "Weapon_Number": 74
-        },
-        {
-            "name": "火焰戰鎚Ⅰ",
-            "Weapon_Number": 75
-        },
-        {
-            "name": "火焰戰鎚Ⅱ",
-            "Weapon_Number": 76
-        },
-        {
-            "name": "蠻顎龍戰鎚Ⅰ",
-            "Weapon_Number": 77
-        },
-        {
-            "name": "蠻顎龍戰鎚Ⅱ",
-            "Weapon_Number": 78
-        },
-        {
-            "name": "蠻顎龍戰鎚Ⅲ",
-            "Weapon_Number": 79
-        },
-        {
-            "name": "龍骨大鎚Ⅰ",
-            "Weapon_Number": 80
-        },
-        {
-            "name": "龍骨大鎚Ⅱ",
-            "Weapon_Number": 81
-        },
-        {
-            "name": "龍骨大鎚Ⅲ",
-            "Weapon_Number": 82
-        },
-        {
-            "name": "熔山龍爆鎚",
-            "Weapon_Number": 83
-        },
-        {
-            "name": "活火激發熔山龍爆鎚",
-            "Weapon_Number": 84
-        },
-        {
-            "name": "黑鋼鎚Ⅰ",
-            "Weapon_Number": 85
-        },
-        {
-            "name": "黑鋼鎚Ⅱ",
-            "Weapon_Number": 86
-        },
-        {
-            "name": "鋼冰棍",
-            "Weapon_Number": 87
-        },
-        {
-            "name": "巨大鋼龍錘",
-            "Weapon_Number": 88
-        },
-        {
-            "name": "冥燈龍大鎚",
+            "name": "闪电锤1",
             "Weapon_Number": 89
         },
         {
-            "name": "牢獄錘",
+            "name": "闪电锤2",
             "Weapon_Number": 90
         },
         {
-            "name": "電擊錘",
+            "name": "雷光强锤1",
             "Weapon_Number": 91
         },
         {
-            "name": "混沌之鎚",
+            "name": "雷光强锤2",
             "Weapon_Number": 92
         },
         {
-            "name": "混沌猛擊",
+            "name": "雷光强锤3",
             "Weapon_Number": 93
         },
         {
-            "name": "金色的鎚子‧水",
+            "name": "岩骨锤1",
+            "Weapon_Number": 39
+        },
+        {
+            "name": "岩骨锤2",
+            "Weapon_Number": 40
+        },
+        {
+            "name": "岩骨锤3",
+            "Weapon_Number": 41
+        },
+        {
+            "name": "重岩骨锤1",
+            "Weapon_Number": 42
+        },
+        {
+            "name": "重岩骨锤2",
+            "Weapon_Number": 43
+        },
+        {
+            "name": "重岩骨锤3",
+            "Weapon_Number": 44
+        },
+        {
+            "name": "大地之岩1",
+            "Weapon_Number": 45
+        },
+        {
+            "name": "大地之岩2",
+            "Weapon_Number": 46
+        },
+        {
+            "name": "尸套龙大锤",
+            "Weapon_Number": 47
+        },
+        {
+            "name": "恶灵祸根",
+            "Weapon_Number": 48
+        },
+        {
+            "name": "锐骨锤1",
+            "Weapon_Number": 49
+        },
+        {
+            "name": "锐骨锤2",
+            "Weapon_Number": 50
+        },
+        {
+            "name": "骨锤龙击锤1",
+            "Weapon_Number": 51
+        },
+        {
+            "name": "骨锤龙击锤2",
+            "Weapon_Number": 52
+        },
+        {
+            "name": "骨锤龙击锤3",
+            "Weapon_Number": 53
+        },
+        {
+            "name": "爆锤破坏者1",
+            "Weapon_Number": 54
+        },
+        {
+            "name": "爆锤破坏者2",
+            "Weapon_Number": 55
+        },
+        {
+            "name": "搔鸟钉锤1",
+            "Weapon_Number": 56
+        },
+        {
+            "name": "搔鸟钉锤2",
+            "Weapon_Number": 57
+        },
+        {
+            "name": "搔鸟钉锤3",
+            "Weapon_Number": 58
+        },
+        {
+            "name": "冲击钉锤1",
+            "Weapon_Number": 59
+        },
+        {
+            "name": "冲击钉锤2",
+            "Weapon_Number": 60
+        },
+        {
+            "name": "冲击钉锤3",
+            "Weapon_Number": 61
+        },
+        {
+            "name": "铜头锤1",
+            "Weapon_Number": 62
+        },
+        {
+            "name": "铜头锤2",
+            "Weapon_Number": 63
+        },
+        {
+            "name": "爆锤战锤1",
+            "Weapon_Number": 64
+        },
+        {
+            "name": "爆锤战锤2",
+            "Weapon_Number": 65
+        },
+        {
+            "name": "土砂龙链枷1",
+            "Weapon_Number": 67
+        },
+        {
+            "name": "土砂龙链枷2",
+            "Weapon_Number": 68
+        },
+        {
+            "name": "土砂龙链枷3",
+            "Weapon_Number": 69
+        },
+        {
+            "name": "土砂龙破坏者1",
+            "Weapon_Number": 70
+        },
+        {
+            "name": "土砂龙破坏者2",
+            "Weapon_Number": 71
+        },
+        {
+            "name": "土砂龙破坏者3",
+            "Weapon_Number": 72
+        },
+        {
+            "name": "火炎战锤1",
+            "Weapon_Number": 73
+        },
+        {
+            "name": "火炎战锤2",
+            "Weapon_Number": 74
+        },
+        {
+            "name": "蛮颚龙战锤1",
+            "Weapon_Number": 75
+        },
+        {
+            "name": "蛮颚龙战锤2",
+            "Weapon_Number": 76
+        },
+        {
+            "name": "蛮颚龙战锤3",
+            "Weapon_Number": 77
+        },
+        {
+            "name": "龙骨大锤1",
+            "Weapon_Number": 78
+        },
+        {
+            "name": "龙骨大锤2",
+            "Weapon_Number": 79
+        },
+        {
+            "name": "龙骨大锤3",
+            "Weapon_Number": 80
+        },
+        {
+            "name": "熔山龙爆锤",
             "Weapon_Number": 94
         },
         {
-            "name": "金色的鎚子‧冰",
-            "Weapon_Number": 95
+            "name": "活火激发熔山龙爆锤",
+            "Weapon_Number": 81
         },
         {
-            "name": "金色的鎚子‧雷",
-            "Weapon_Number": 96
+            "name": "黑钢锤1",
+            "Weapon_Number": 82
         },
         {
-            "name": "金色的鎚子‧搔",
-            "Weapon_Number": 97
+            "name": "黑钢锤2",
+            "Weapon_Number": 83
         },
         {
-            "name": "金色的鎚子‧毒妖",
-            "Weapon_Number": 98
+            "name": "钢冰棍",
+            "Weapon_Number": 84
         },
         {
-            "name": "金色的鎚子‧土砂",
-            "Weapon_Number": 99
+            "name": "巨大钢龙锤",
+            "Weapon_Number": 85
         },
         {
-            "name": "金色的鎚子‧蠻顎",
+            "name": "冥灯龙大锤",
+            "Weapon_Number": 86
+        },
+        {
+            "name": "牢狱锤",
+            "Weapon_Number": 87
+        },
+        {
+            "name": "电击锤",
+            "Weapon_Number": 88
+        },
+        {
+            "name": "混沌之锤",
             "Weapon_Number": 100
         },
         {
-            "name": "金色的鎚子‧痺賊",
+            "name": "混沌猛击",
             "Weapon_Number": 101
         },
         {
-            "name": "金色的鎚子‧骨鎚",
+            "name": "金色的锤子·水",
             "Weapon_Number": 102
         },
         {
-            "name": "金色的鎚子‧屍套",
+            "name": "金色的锤子·冰",
             "Weapon_Number": 103
         },
         {
-            "name": "金色的鎚子‧角",
+            "name": "金色的锤子·雷",
             "Weapon_Number": 104
         },
         {
-            "name": "金色的鎚子‧爆鎚",
+            "name": "金色的锤子·搔",
             "Weapon_Number": 105
         },
         {
-            "name": "鎧羅大錘‧搔",
+            "name": "金色的锤子·毒妖",
             "Weapon_Number": 106
         },
         {
-            "name": "鎧羅大錘‧毒妖",
+            "name": "金色的锤子·土砂",
             "Weapon_Number": 107
         },
         {
-            "name": "鎧羅大錘‧土砂",
+            "name": "金色的锤子·蛮颚",
             "Weapon_Number": 108
         },
         {
-            "name": "鎧羅大錘‧蠻顎",
+            "name": "金色的锤子·痹贼",
             "Weapon_Number": 109
         },
         {
-            "name": "鎧羅大錘‧痺賊",
+            "name": "金色的锤子·骨锤",
             "Weapon_Number": 110
         },
         {
-            "name": "鎧羅大錘‧骨鎚",
+            "name": "金色的锤子·尸套",
             "Weapon_Number": 111
         },
         {
-            "name": "鎧羅大錘‧屍套",
+            "name": "金色的锤子·角",
             "Weapon_Number": 112
         },
         {
-            "name": "鎧羅大錘‧角",
+            "name": "金色的锤子·爆锤",
             "Weapon_Number": 113
         },
         {
-            "name": "鎧羅大錘‧爆鎚",
+            "name": "铠罗大锤·搔",
             "Weapon_Number": 114
         },
         {
-            "name": "鎧羅大錘‧水",
+            "name": "铠罗大锤·毒妖",
             "Weapon_Number": 115
         },
         {
-            "name": "鎧羅大錘‧冰",
+            "name": "铠罗大锤·土砂",
             "Weapon_Number": 116
         },
         {
-            "name": "鎧羅大錘‧雷",
+            "name": "铠罗大锤·蛮颚",
             "Weapon_Number": 117
         },
         {
-            "name": "皇后鏈錘",
+            "name": "铠罗大锤·痹贼",
             "Weapon_Number": 118
         },
         {
-            "name": "皇后鏈錘‧炎妃",
+            "name": "铠罗大锤·骨锤",
             "Weapon_Number": 119
         },
         {
-            "name": "皇后鏈錘‧滅盡",
+            "name": "铠罗大锤·尸套",
             "Weapon_Number": 120
         },
         {
-            "name": "皇后鏈錘‧冥燈",
+            "name": "铠罗大锤·角",
             "Weapon_Number": 121
         },
         {
-            "name": "硬梆梆的針山",
+            "name": "铠罗大锤·爆锤",
             "Weapon_Number": 122
         },
         {
-            "name": "硬梆梆的怨氣",
+            "name": "铠罗大锤·水",
             "Weapon_Number": 123
         },
         {
-            "name": "鎧羅大錘‧睡眠",
+            "name": "铠罗大锤·冰",
             "Weapon_Number": 124
         },
         {
-            "name": "帝王金鎚‧痺賊",
+            "name": "铠罗大锤·雷",
             "Weapon_Number": 125
         },
         {
-            "name": "帝王金鎚‧屍套",
+            "name": "皇后链锤",
             "Weapon_Number": 126
         },
         {
-            "name": "帝王金鎚‧爆鎚",
+            "name": "皇后链锤·炎妃",
             "Weapon_Number": 127
         },
         {
-            "name": "帝王金鎚‧水",
+            "name": "皇后链锤·灭尽",
             "Weapon_Number": 128
         },
         {
-            "name": "帝王金鎚‧冰",
+            "name": "皇后链锤·冥灯",
             "Weapon_Number": 129
         },
         {
-            "name": "帝王金鎚‧雷",
+            "name": "钢针锤",
             "Weapon_Number": 130
         },
         {
-            "name": "帝王金鎚‧爆破",
+            "name": "硬梆梆的怨气",
             "Weapon_Number": 131
         },
         {
-            "name": "防衛隊鋼鐵製戰鎚Ⅰ",
+            "name": "铠罗大锤·睡眠",
             "Weapon_Number": 132
         },
         {
-            "name": "防衛隊鋼鐵製戰鎚Ⅱ",
+            "name": "皇金锤·痹贼",
             "Weapon_Number": 133
         },
         {
-            "name": "防衛隊鋼鐵製戰鎚Ⅲ",
+            "name": "皇金锤·尸套",
             "Weapon_Number": 134
         },
         {
-            "name": "防衛隊鋼鐵製戰鎚Ⅳ",
+            "name": "皇金锤·爆锤",
             "Weapon_Number": 135
         },
         {
-            "name": "防衛隊鋼鐵製戰鎚Ⅴ",
+            "name": "皇金锤·水",
             "Weapon_Number": 136
         },
         {
-            "name": "Unavailable",
+            "name": "皇金锤·冰",
             "Weapon_Number": 137
         },
         {
-            "name": "Unavailable",
+            "name": "皇金锤·雷",
             "Weapon_Number": 138
         },
         {
-            "name": "Unavailable",
+            "name": "皇金锤·爆破",
             "Weapon_Number": 139
         },
         {
-            "name": "Unavailable",
+            "name": "防卫队钢铁制战锤1",
             "Weapon_Number": 140
         },
         {
-            "name": "Unavailable",
+            "name": "防卫队钢铁制战锤2",
             "Weapon_Number": 141
         },
         {
-            "name": "黑鐵Ⅰ",
+            "name": "防卫队钢铁制战锤3",
             "Weapon_Number": 142
         },
         {
-            "name": "黑鐵Ⅱ",
+            "name": "防卫队钢铁制战锤4",
             "Weapon_Number": 143
         },
         {
-            "name": "黑鐵Ⅲ",
+            "name": "防卫队钢铁制战锤5",
             "Weapon_Number": 144
         },
         {
-            "name": "紅色衝擊",
-            "Weapon_Number": 145
-        },
-        {
-            "name": "火龍碎弗拉岡",
-            "Weapon_Number": 146
-        },
-        {
-            "name": "星碎殞落",
-            "Weapon_Number": 147
-        },
-        {
-            "name": "潰滅一擊【壞】",
-            "Weapon_Number": 148
-        },
-        {
-            "name": "慟泣冰河‧改",
-            "Weapon_Number": 149
-        },
-        {
-            "name": "冰鐵毀壞",
+            "name": "黑铁1",
             "Weapon_Number": 150
         },
         {
-            "name": "激流強鎚Ⅳ",
+            "name": "黑铁2",
             "Weapon_Number": 151
         },
         {
-            "name": "水流花仙",
+            "name": "黑铁3",
             "Weapon_Number": 152
         },
         {
-            "name": "水流花仙‧改",
+            "name": "红色冲击",
             "Weapon_Number": 153
         },
         {
-            "name": "水流花神",
+            "name": "火龙碎弗拉冈",
             "Weapon_Number": 154
         },
         {
-            "name": "冰尖強鎚Ⅰ",
+            "name": "星碎陨落",
             "Weapon_Number": 155
         },
         {
-            "name": "冰尖強鎚Ⅱ",
+            "name": "溃灭一击【坏】",
             "Weapon_Number": 156
         },
         {
-            "name": "蛇神戰鎚Ⅰ",
+            "name": "恸泣冰河·改",
             "Weapon_Number": 157
         },
         {
-            "name": "蛇神戰鎚Ⅱ",
+            "name": "冰铁毁坏",
             "Weapon_Number": 158
         },
         {
-            "name": "夜神大錘Ⅰ",
+            "name": "激流强锤4",
             "Weapon_Number": 159
         },
         {
-            "name": "夜神大錘Ⅱ",
+            "name": "水流花仙",
             "Weapon_Number": 160
         },
         {
-            "name": "花之女神‧改",
+            "name": "水流花仙·改",
             "Weapon_Number": 161
         },
         {
-            "name": "聖地花神",
+            "name": "水流花神",
             "Weapon_Number": 162
         },
         {
-            "name": "隱密破擊者",
+            "name": "冰尖强锤1",
             "Weapon_Number": 163
         },
         {
-            "name": "隱密破擊者‧改",
+            "name": "冰尖强锤2",
             "Weapon_Number": 164
         },
         {
-            "name": "夜行錘【常闇】",
+            "name": "蛇神战锤1",
             "Weapon_Number": 165
         },
         {
-            "name": "雷光強鎚Ⅳ",
+            "name": "蛇神战锤2",
             "Weapon_Number": 166
         },
         {
-            "name": "王錘神雷",
+            "name": "夜神大锤1",
             "Weapon_Number": 167
         },
         {
-            "name": "王錘神雷‧改",
+            "name": "夜神大锤2",
             "Weapon_Number": 168
         },
         {
-            "name": "王牙錘【大雷】",
+            "name": "花之女神·改",
             "Weapon_Number": 169
         },
         {
-            "name": "獄錘龍額",
+            "name": "圣地花神",
             "Weapon_Number": 170
         },
         {
-            "name": "狼牙鎚【食獄】",
+            "name": "隐密破击者",
             "Weapon_Number": 171
         },
         {
-            "name": "蓋亞終結者 Ⅰ",
+            "name": "隐密破击者·改",
             "Weapon_Number": 172
         },
         {
-            "name": "蓋亞終結者 Ⅱ",
+            "name": "夜行锤【常暗】",
             "Weapon_Number": 173
         },
         {
-            "name": "蓋亞終結者 Ⅲ",
+            "name": "雷光强锤4",
             "Weapon_Number": 174
         },
         {
-            "name": "嚴冰風雲者",
+            "name": "王锤神雷",
             "Weapon_Number": 175
         },
         {
-            "name": "冰軍極地",
+            "name": "王锤神雷·改",
             "Weapon_Number": 176
         },
         {
-            "name": "惡靈的復仇",
+            "name": "王牙锤【大雷】",
             "Weapon_Number": 177
         },
         {
-            "name": "淵藪惡靈",
+            "name": "狱锤龙额",
             "Weapon_Number": 178
         },
         {
-            "name": "骨鎚龍終結者 Ⅰ",
+            "name": "狼牙锤【食狱】",
             "Weapon_Number": 179
         },
         {
-            "name": "骨鎚龍終結者 Ⅱ",
+            "name": "盖亚终结者 1",
             "Weapon_Number": 180
         },
         {
-            "name": "轟龍紋錘",
+            "name": "盖亚终结者 2",
             "Weapon_Number": 181
         },
         {
-            "name": "轟龍紋錘‧改",
+            "name": "盖亚终结者 3",
             "Weapon_Number": 182
         },
         {
-            "name": "轟錘【虎丸】",
+            "name": "严冰风云者",
             "Weapon_Number": 183
         },
         {
-            "name": "重甲鎚爆鎚龍Ⅰ",
+            "name": "冰军极地",
             "Weapon_Number": 184
         },
         {
-            "name": "重甲鎚爆鎚龍Ⅱ",
+            "name": "恶灵的复仇",
             "Weapon_Number": 185
         },
         {
-            "name": "灼炎之吞噬者",
+            "name": "渊薮恶灵",
             "Weapon_Number": 186
         },
         {
-            "name": "灼炎之吞噬者‧改",
+            "name": "骨锤龙终结者 1",
             "Weapon_Number": 187
         },
         {
-            "name": "斬龍錘能源",
+            "name": "骨锤龙终结者 2",
             "Weapon_Number": 188
         },
         {
-            "name": "巢穴鉤爪Ⅰ",
+            "name": "轰龙纹锤",
             "Weapon_Number": 189
         },
         {
-            "name": "巢穴鉤爪Ⅱ",
+            "name": "轰龙纹锤·改",
             "Weapon_Number": 190
         },
         {
-            "name": "巨牛大蹄Ⅰ",
+            "name": "轰锤【虎丸】",
             "Weapon_Number": 191
         },
         {
-            "name": "巨牛大蹄Ⅱ",
+            "name": "重甲锤爆锤龙1",
             "Weapon_Number": 192
         },
         {
-            "name": "Unavailable",
+            "name": "重甲锤爆锤龙2",
             "Weapon_Number": 193
         },
         {
-            "name": "爆鎚戰鎚Ⅲ",
+            "name": "灼炎之吞噬者",
             "Weapon_Number": 194
         },
         {
-            "name": "混沌戰鎚",
+            "name": "灼炎之吞噬者·改",
             "Weapon_Number": 195
         },
         {
-            "name": "硫鐵合交",
+            "name": "斩龙锤能源",
             "Weapon_Number": 196
         },
         {
-            "name": "暗穴硫斬鎚",
+            "name": "巢穴钩爪1",
             "Weapon_Number": 197
         },
         {
-            "name": "土砂龍衝擊Ⅰ",
+            "name": "巢穴钩爪2",
             "Weapon_Number": 198
         },
         {
-            "name": "土砂龍衝擊Ⅱ",
+            "name": "巨牛大蹄1",
             "Weapon_Number": 199
         },
         {
-            "name": "碎龍之尾",
+            "name": "巨牛大蹄2",
             "Weapon_Number": 200
         },
         {
-            "name": "爆錘月之尾",
-            "Weapon_Number": 201
-        },
-        {
-            "name": "碎光之滅錘",
+            "name": "爆锤战锤3",
             "Weapon_Number": 202
         },
         {
-            "name": "蠻顎龍之猛槌Ⅰ",
+            "name": "混沌战锤",
             "Weapon_Number": 203
         },
         {
-            "name": "蠻顎龍之猛槌Ⅱ",
+            "name": "硫铁合交",
             "Weapon_Number": 204
         },
         {
-            "name": "自由雷顎Ⅰ",
+            "name": "暗穴硫斩锤",
             "Weapon_Number": 205
         },
         {
-            "name": "自由雷顎Ⅱ",
+            "name": "土砂龙冲击1",
             "Weapon_Number": 206
         },
         {
-            "name": "封龍大槌Ⅰ",
+            "name": "土砂龙冲击2",
             "Weapon_Number": 207
         },
         {
-            "name": "封龍大槌Ⅱ",
+            "name": "碎龙之尾",
             "Weapon_Number": 208
         },
         {
-            "name": "明珠在掌－降魔－",
+            "name": "爆锤月之尾",
             "Weapon_Number": 209
         },
         {
-            "name": "真‧活火激發熔山龍爆鎚",
+            "name": "碎光之灭锤",
             "Weapon_Number": 210
         },
         {
-            "name": "超越鋼龍錘",
+            "name": "蛮颚龙之猛槌1",
             "Weapon_Number": 211
         },
         {
-            "name": "冥燈龍大鎚改",
+            "name": "蛮颚龙之猛槌2",
             "Weapon_Number": 212
         },
         {
-            "name": "拘束之棺",
+            "name": "自由雷颚1",
             "Weapon_Number": 213
         },
         {
-            "name": "業錘食慾",
+            "name": "自由雷颚2",
             "Weapon_Number": 214
         },
         {
-            "name": "硬梆梆地獄",
+            "name": "封龙大槌1",
             "Weapon_Number": 215
         },
         {
-            "name": "怒髮錘",
+            "name": "封龙大槌2",
             "Weapon_Number": 216
         },
         {
-            "name": "鬼神錘【金鬼】",
+            "name": "明珠在掌－降魔－",
             "Weapon_Number": 217
         },
         {
-            "name": "煌黑之堅錘",
+            "name": "真·活火激发熔山龙爆锤",
             "Weapon_Number": 218
         },
         {
-            "name": "煌黑堅錘破毀",
+            "name": "超越钢龙锤",
             "Weapon_Number": 219
         },
         {
-            "name": "魂焰剛鎚‧炎妃",
+            "name": "冥灯龙大锤改",
             "Weapon_Number": 220
         },
         {
-            "name": "魂焰剛鎚‧滅盡",
+            "name": "拘束之棺",
             "Weapon_Number": 221
         },
         {
-            "name": "魂焰剛鎚‧冥燈",
+            "name": "业锤食欲",
             "Weapon_Number": 222
         },
         {
-            "name": "全熟肉【特選】",
+            "name": "硬梆梆地狱",
             "Weapon_Number": 223
         },
         {
-            "name": "超全熟肉【頂級】",
+            "name": "怒发锤",
             "Weapon_Number": 224
         },
         {
-            "name": "宇宙征服！超級８！",
+            "name": "鬼神锤【金鬼】",
             "Weapon_Number": 225
         },
         {
-            "name": "Unavailable",
+            "name": "煌黑之坚锤",
             "Weapon_Number": 226
         },
         {
-            "name": "公會宮殿鏈錘",
+            "name": "煌黑坚锤破毁",
             "Weapon_Number": 227
         },
         {
-            "name": "Unavailable",
+            "name": "魂焰刚锤·炎妃",
             "Weapon_Number": 228
         },
         {
-            "name": "Unavailable",
+            "name": "魂焰刚锤·灭尽",
             "Weapon_Number": 229
         },
         {
-            "name": "怒髮豪大金獅",
+            "name": "魂焰刚锤·冥灯",
             "Weapon_Number": 230
         },
         {
-            "name": "黑羽凶槌Ⅰ",
+            "name": "全熟肉【特选】",
             "Weapon_Number": 231
         },
         {
-            "name": "黑羽凶槌Ⅱ",
+            "name": "超全熟肉【顶级】",
             "Weapon_Number": 232
         },
         {
-            "name": "北極星重擊",
+            "name": "宇宙征服！超级8！",
             "Weapon_Number": 233
         },
         {
-            "name": "Unavailable",
-            "Weapon_Number": 234
-        },
-        {
-            "name": "Unavailable",
+            "name": "公会宫殿链锤",
             "Weapon_Number": 235
         },
         {
-            "name": "Unavailable",
-            "Weapon_Number": 236
-        },
-        {
-            "name": "宮廷十字鎚【鍛星】",
-            "Weapon_Number": 237
-        },
-        {
-            "name": "Unavailable",
+            "name": "怒发豪大金狮",
             "Weapon_Number": 238
         },
         {
-            "name": "Unavailable",
+            "name": "黑羽凶槌1",
             "Weapon_Number": 239
         },
         {
-            "name": "Unavailable",
+            "name": "黑羽凶槌2",
             "Weapon_Number": 240
         },
         {
-            "name": "赤龍攫獲鎚‧火",
+            "name": "北极星重击",
             "Weapon_Number": 241
         },
         {
-            "name": "赤龍攫獲鎚‧水",
+            "name": "黑龙灭锤",
             "Weapon_Number": 242
         },
         {
-            "name": "赤龍攫獲鎚‧冰",
+            "name": "黑龙歼灭锤",
             "Weapon_Number": 243
         },
         {
-            "name": "赤龍攫獲鎚‧雷",
-            "Weapon_Number": 244
-        },
-        {
-            "name": "赤龍攫獲鎚‧龍",
+            "name": "宫廷十字锤【锻星】",
             "Weapon_Number": 245
         },
         {
-            "name": "赤龍攫獲鎚‧毒",
-            "Weapon_Number": 246
-        },
-        {
-            "name": "赤龍攫獲鎚‧麻痺",
-            "Weapon_Number": 247
-        },
-        {
-            "name": "赤龍攫獲鎚‧睡眠",
-            "Weapon_Number": 248
-        },
-        {
-            "name": "赤龍攫獲鎚‧爆破",
+            "name": "赤龙攫获锤·火",
             "Weapon_Number": 249
         },
         {
-            "name": "赤龍攫獲鎚‧火",
+            "name": "赤龙攫获锤·水",
             "Weapon_Number": 250
         },
         {
-            "name": "赤龍攫獲鎚‧水",
+            "name": "赤龙攫获锤·冰",
             "Weapon_Number": 251
         },
         {
-            "name": "赤龍攫獲鎚‧冰",
+            "name": "赤龙攫获锤·雷",
             "Weapon_Number": 252
         },
         {
-            "name": "赤龍攫獲鎚‧雷",
+            "name": "赤龙攫获锤·龙",
             "Weapon_Number": 253
         },
         {
-            "name": "赤龍攫獲鎚‧龍",
+            "name": "赤龙攫获锤·毒",
             "Weapon_Number": 254
         },
         {
-            "name": "赤龍攫獲鎚‧毒",
+            "name": "赤龙攫获锤·麻痹",
             "Weapon_Number": 255
         },
         {
-            "name": "赤龍攫獲鎚‧麻痺",
+            "name": "赤龙攫获锤·睡眠",
             "Weapon_Number": 256
         },
         {
-            "name": "赤龍攫獲鎚‧睡眠",
+            "name": "赤龙攫获锤·爆破",
             "Weapon_Number": 257
         },
         {
-            "name": "赤龍攫獲鎚‧爆破",
+            "name": "赤龙攫获锤·火",
             "Weapon_Number": 258
         },
         {
-            "name": "金色的鎚子‧水",
+            "name": "赤龙攫获锤·水",
             "Weapon_Number": 259
         },
         {
-            "name": "金色的鎚子‧冰",
+            "name": "赤龙攫获锤·冰",
             "Weapon_Number": 260
         },
         {
-            "name": "金色的鎚子‧雷",
+            "name": "赤龙攫获锤·雷",
             "Weapon_Number": 261
         },
         {
-            "name": "金色的鎚子‧搔",
+            "name": "赤龙攫获锤·龙",
             "Weapon_Number": 262
         },
         {
-            "name": "金色的鎚子‧毒妖",
+            "name": "赤龙攫获锤·毒",
             "Weapon_Number": 263
         },
         {
-            "name": "金色的鎚子‧土砂",
+            "name": "赤龙攫获锤·麻痹",
             "Weapon_Number": 264
         },
         {
-            "name": "金色的鎚子‧蠻顎",
+            "name": "赤龙攫获锤·睡眠",
             "Weapon_Number": 265
         },
         {
-            "name": "金色的鎚子‧痺賊",
+            "name": "赤龙攫获锤·爆破",
             "Weapon_Number": 266
         },
         {
-            "name": "金色的鎚子‧骨鎚",
+            "name": "金色的锤子·水",
             "Weapon_Number": 267
         },
         {
-            "name": "金色的鎚子‧屍套",
+            "name": "金色的锤子·冰",
             "Weapon_Number": 268
         },
         {
-            "name": "金色的鎚子‧角",
+            "name": "金色的锤子·雷",
             "Weapon_Number": 269
         },
         {
-            "name": "金色的鎚子‧爆鎚",
+            "name": "金色的锤子·搔",
             "Weapon_Number": 270
         },
         {
-            "name": "鎧羅大錘‧搔",
+            "name": "金色的锤子·毒妖",
             "Weapon_Number": 271
         },
         {
-            "name": "鎧羅大錘‧毒妖",
+            "name": "金色的锤子·土砂",
             "Weapon_Number": 272
         },
         {
-            "name": "鎧羅大錘‧土砂",
+            "name": "金色的锤子·蛮颚",
             "Weapon_Number": 273
         },
         {
-            "name": "鎧羅大錘‧蠻顎",
+            "name": "金色的锤子·痹贼",
             "Weapon_Number": 274
         },
         {
-            "name": "鎧羅大錘‧痺賊",
+            "name": "金色的锤子·骨锤",
             "Weapon_Number": 275
         },
         {
-            "name": "鎧羅大錘‧骨鎚",
+            "name": "金色的锤子·尸套",
             "Weapon_Number": 276
         },
         {
-            "name": "鎧羅大錘‧屍套",
+            "name": "金色的锤子·角",
             "Weapon_Number": 277
         },
         {
-            "name": "鎧羅大錘‧角",
+            "name": "金色的锤子·爆锤",
             "Weapon_Number": 278
         },
         {
-            "name": "鎧羅大錘‧爆鎚",
+            "name": "铠罗大锤·搔",
             "Weapon_Number": 279
         },
         {
-            "name": "鎧羅大錘‧水",
+            "name": "铠罗大锤·毒妖",
             "Weapon_Number": 280
         },
         {
-            "name": "鎧羅大錘‧冰",
+            "name": "铠罗大锤·土砂",
             "Weapon_Number": 281
         },
         {
-            "name": "鎧羅大錘‧雷",
+            "name": "铠罗大锤·蛮颚",
             "Weapon_Number": 282
         },
         {
-            "name": "鎧羅大錘‧睡眠",
+            "name": "铠罗大锤·痹贼",
             "Weapon_Number": 283
         },
         {
-            "name": "帝王金鎚‧痺賊",
+            "name": "铠罗大锤·骨锤",
             "Weapon_Number": 284
         },
         {
-            "name": "帝王金鎚‧屍套",
+            "name": "铠罗大锤·尸套",
             "Weapon_Number": 285
         },
         {
-            "name": "帝王金鎚‧爆鎚",
+            "name": "铠罗大锤·角",
             "Weapon_Number": 286
         },
         {
-            "name": "帝王金鎚‧水",
+            "name": "铠罗大锤·爆锤",
             "Weapon_Number": 287
         },
         {
-            "name": "帝王金鎚‧冰",
+            "name": "铠罗大锤·水",
             "Weapon_Number": 288
         },
         {
-            "name": "帝王金鎚‧雷",
+            "name": "铠罗大锤·冰",
             "Weapon_Number": 289
         },
         {
-            "name": "帝王金鎚‧爆破",
+            "name": "铠罗大锤·雷",
             "Weapon_Number": 290
+        },
+        {
+            "name": "铠罗大锤·睡眠",
+            "Weapon_Number": 291
+        },
+        {
+            "name": "皇金锤·痹贼",
+            "Weapon_Number": 292
+        },
+        {
+            "name": "皇金锤·尸套",
+            "Weapon_Number": 293
+        },
+        {
+            "name": "皇金锤·爆锤",
+            "Weapon_Number": 294
+        },
+        {
+            "name": "皇金锤·水",
+            "Weapon_Number": 295
+        },
+        {
+            "name": "皇金锤·冰",
+            "Weapon_Number": 296
+        },
+        {
+            "name": "皇金锤·雷",
+            "Weapon_Number": 297
+        },
+        {
+            "name": "皇金锤·爆破",
+            "Weapon_Number": 298
+        },
+        {
+            "name": "铁锤",
+            "Weapon_Number": 301
         }
     ]
 }

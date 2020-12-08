@@ -114,15 +114,15 @@ const hexAddress = (data) => {
       'gl_bombard_type': [15, 2], // 10~11
       'gl_bombard_level': [17, 2] // 12~13
     }
-  } else if (data[10] === 0 && data[37] === 1 && data[64] === 1 && data[91] === 1) {
-    HexRuler = 27 // 技能
+  } else if (data[10] === 0 && data[45] === 1 && data[80] === 1 && data[108] === 1) {
+    HexRuler = 35 // 技能
     HexPointer = {
       'sk_Number': [11, 2], // 6~9
       'sk_level': [12, 1], // 8
-      'sk_First_effect': [30, 2], // 9~10
-      'sk_Second_effect': [32, 2], // 11~12
-      'sk_Thirdly_effect': [24, 4], // 11~12
-      'sk_Fourthly_effect': [28, 4] // 11~12
+      'sk_First_effect': [38, 2], // 9~10
+      'sk_Second_effect': [40, 2], // 11~12
+      'sk_Thirdly_effect': [32, 4], // 11~12
+      'sk_Fourthly_effect': [36, 4] // 11~12
     } 
   } else if (data[26] === 1 && data[54] === 2 && data[82] === 3) {
     HexRuler = 28 // 衣装
@@ -133,7 +133,7 @@ const hexAddress = (data) => {
       'as_Slot_grade_1': [35, 1],
       'as_Slot_grade_2': [36, 1],
     }
-  } else if (data[4] === 29 && data[5] === 2 && data[6] === 192) {
+  } else if (data[4] === 29 && data[5] === 2 && data[6] === 198) {
     HexRuler = 111 // 弩弹
     HexPointer = {
       'sh_Number': 'auto',
@@ -308,7 +308,7 @@ const hexAddress = (data) => {
         Speed: [111, 1],
       }
     }
-  } else if (data[4] === 29 && data[5] === 2 && data[6] === 31) {
+  } else if (data[4] === 29 && data[5] === 2 && data[6] === 34) {
     HexRuler = 6 // 弓瓶
     HexPointer = {
       'bt_Number': 'auto',
