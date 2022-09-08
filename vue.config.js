@@ -21,13 +21,6 @@ module.exports = {
           {
             "from": "./node_modules/electron-asar-hot-updater/updater.exe",
             "to": "../updater.exe"
-          },
-          {
-            "from": "./node_modules/regedit/vbs",
-            "to": "../regedit/vbs",
-            "filter": [
-              "**/*"
-            ]
           }
         ]
       }

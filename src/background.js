@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, protocol, BrowserWindow, dialog } from 'electron'
+import { app, protocol, BrowserWindow, dialog, globalShortcut } from 'electron'
 import {
   createProtocol,
   installVueDevtools
@@ -108,7 +108,7 @@ app.on('ready', async () => {
     EAU.check(function (error, last, body) {
       if (error) {
         if (error === 'no_update_available') { return false; }
-        dialog.showErrorBox('info', error)
+        console.log(`检查更新失败：${error}`)
         return false
       }
 
@@ -130,7 +130,7 @@ app.on('ready', async () => {
 
       EAU.download(function (error) {
         if (error) {
-          dialog.showErrorBox('info', error)
+          console.log(`更新下载失败：${error}`)
           return false
         }
         // dialog.showErrorBox('info', 'App updated successfully! Restart it please.')
@@ -143,6 +143,11 @@ app.on('ready', async () => {
       })
     })
   })
+  //启动控制台
+  globalShortcut.register('CommandOrControl+Shift+F12', function () {
+    win.webContents.openDevTools()
+  })
+
   createWindow()
 })
 

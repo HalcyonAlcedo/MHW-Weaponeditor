@@ -80,7 +80,7 @@ module.exports = {
     Version_update_true: '版本数据更新完成,请勿忘记保存数据档案',
     Free_model: '如需修改模型请调整为修改数据,不懂勿动',
     Have_model: '如需关闭模型请改成65535',
-    Update_description: '<ul><li>更新数据</li></ul>',
+    Update_description: '<ul><li>去除VC验证，增加扩展组件额外功能，修复部分bug。</li></ul>',
     Toolsinfo: '开发者工具箱只针对MOD开发人员开放,工具箱内包含本工具内置的数据信息和一些实用工具,如需申请开发者认证许可,请在下方填写您曾经发布过的一个Mod地址并提交申请,申请后您将拥有1天的试用时间,审核通过后在有效期内可随意使用。',
     NewInterface: '尝试新的编辑界面',
     ResetChopping: '需要开启原始数据对比功能',

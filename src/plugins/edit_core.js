@@ -86,7 +86,6 @@ var ProcessData = (dataInfo) => {
 
 //打开文件
 var openfile = ( file = null,callback, error ,isPath = false, dontEncrypted = false, dir = false, _this, item) => {
-  console.log(dir)
   if (file === null) { //打开外部文件
     if (isNotWeb) {
       dialog.showOpenDialog({
@@ -232,7 +231,6 @@ var DecodedFile = (filepath, data) => {
 function CryptographicKey(filename) {
   let key = false
   if(filename.substr(filename.length - 2,2) == '_d') filename = filename.substring(0, filename.length - 2)
-  console.log(filename)
   switch (filename) {
     case '.rod_inse':
       key = 'SFghFQVFJycHnypExurPwut98ZZq1cwvm7lpDpASeP4biRhstQgULzlb'
@@ -385,7 +383,7 @@ var onlyLicense = (id, callback) => {
     }],
     responseType: 'json' // 表明返回服务器返回的数据类型
   }).then((res) => { // 处理返回的文件流
-    if (res.data.state) {
+    if (res.state) {
       writeLocalLicense(res.data.UUID, res.data.time)
       callback(res.data.time)
     }

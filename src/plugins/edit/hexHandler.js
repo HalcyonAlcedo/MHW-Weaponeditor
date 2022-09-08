@@ -41,7 +41,6 @@ var DataFormation = (data, dataInfo, dataFormation, resources, sourceData) => {
                 )
                 Dataobj[Resources[res].name] = Resources[res].func(resourcesId ? resourcesId : LineName)
               }
-              console.log(Dataobj)
               Dataobj.SourceData = sourceData[dataLine]
               Datalist[dataLine] = Dataobj
               dataLine ++
@@ -55,7 +54,6 @@ var DataFormation = (data, dataInfo, dataFormation, resources, sourceData) => {
               let Dataobj = {}
               Dataobj.Data_Hex = SelectLine.StartAddress.toString(16)
               for (let hp in SelectLine.Pointer) { // 遍历所有属性
-               
                 Dataobj[hp] = ProcessingRawData(ProcessingHex(data, SelectLine.Pointer[hp], SelectLine.StartAddress, SelectLine.Pointer[hp] == 'auto' ? datalen : 1))
                 if(SelectLine.Pointer[hp] == 'auto') {
                   datalen++
@@ -173,8 +171,8 @@ function ScriptSelect (selectData, head, end, select, offset) {
       Pointer[l] = [subhex[l].hex, 4]
     }
     LinebylineConfig.push({
-        StartAddress: TargetStringIndex[i].hex,
-        Pointer: Pointer
+      StartAddress: TargetStringIndex[i].hex,
+      Pointer: Pointer
     })
   }
   return LinebylineConfig
@@ -225,24 +223,41 @@ function SubScriptSelect (selectData, head, end, select, offset) {
   let SelectStrinfData = encodeUtf8(select).map(item => str_pad(item.toString(16), 2)).join('')
   let TargetStringData = SelectData.map(item => str_pad(item.toString(16), 2)).join('')
 
-  //console.log(SelectStrinfData,TargetStringData)
-  for(let i = 0; i <TargetStringData.length; i++){
-    let SelectString = TargetStringData.indexOf(SelectStrinfData, i)
-    if (SelectString != -1) {
-      TargetStringIndex.push({
-        vul: SelectString,
-        hex: head + SelectString/2 + offset
-      })
-      i = SelectString
+  if(Array.isArray(offset)) {
+    //多数据偏移循环获取
+    for(let _offset of offset) {
+      for(let i = 0; i <TargetStringData.length; i++){
+        let SelectString = TargetStringData.indexOf(SelectStrinfData, i)
+        if (SelectString != -1) {
+          TargetStringIndex.push({
+            vul: SelectString,
+            hex: head + SelectString/2 + _offset
+          })
+          i = SelectString
+        }
+      }
+      for(let t = 0; t < TargetStringIndex.length - 1; t++){
+        let tempTargetString = TargetStringData.substring(TargetStringIndex[t].vul, TargetStringIndex[t + 1].vul)
+        TargetString.push(Xreplace(tempTargetString,2,',').split(',')) 
+      }
+    }
+    TargetStringIndex.sort(function(a,b){ return a.vul - b.vul })
+  } else {
+    for(let i = 0; i <TargetStringData.length; i++){
+      let SelectString = TargetStringData.indexOf(SelectStrinfData, i)
+      if (SelectString != -1) {
+        TargetStringIndex.push({
+          vul: SelectString,
+          hex: head + SelectString/2 + offset
+        })
+        i = SelectString
+      }
+    }
+    for(let t = 0; t < TargetStringIndex.length - 1; t++){
+      let tempTargetString = TargetStringData.substring(TargetStringIndex[t].vul, TargetStringIndex[t + 1].vul)
+      TargetString.push(Xreplace(tempTargetString,2,',').split(',')) 
     }
   }
-  
-
-  for(let t = 0; t < TargetStringIndex.length - 1; t++){
-    let tempTargetString = TargetStringData.substring(TargetStringIndex[t].vul, TargetStringIndex[t + 1].vul)
-    TargetString.push(Xreplace(tempTargetString,2,',').split(',')) 
-  }
-
   return TargetStringIndex
 }
 function Xreplace(str,length,string)
