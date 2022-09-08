@@ -26,7 +26,7 @@
     "vue-router": "^3.1.5",
     "vuetify": "^2.2.11",
     "vuex": "^3.1.2",
-    "zip-local": "^0.3.4"
+    "zip-local": "^0.3.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.2.0",
