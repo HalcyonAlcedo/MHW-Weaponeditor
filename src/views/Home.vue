@@ -912,13 +912,6 @@ export default {
     },(err) => {
       console.log(err)
     })
-    edit_core.load_environment((check) => {
-      _this.loadenvironment = false
-      if (!check) {
-        _this.snackbar.text = _this.$t('Interface.VCLow_version')
-        _this.snackbar.snackbar = true
-      }
-    })
     
     edit_core.MultiLanguage((LanguageData, Language, file)=>{
       if (LanguageData && Language) {
@@ -944,6 +937,8 @@ export default {
         }
       }
     })
+
+    this.loadenvironment = false
   }
 }
 </script>

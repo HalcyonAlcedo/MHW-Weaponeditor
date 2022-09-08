@@ -123,9 +123,7 @@ var openfile = ( file = null,callback, error ,isPath = false, dontEncrypted = fa
           if (err) {
             //如果没有替换文件夹，设置为主文件夹路径
             filepath = path.join(__static, '/Sourceweapon/' + file)
-          }/* else {
-            Old_version = true
-          }*/
+          }
         }
         //读取文件并执行操作
         fs.readFile(filepath, function (err, data) {
@@ -343,10 +341,6 @@ var MultiLanguage = (callback) => {
     console.log('网页版不加载')
   }
 }
-//载入外部依赖
-var load_environment = (callback) => {
-  app.load_environment(callback)
-}
 //获取授权
 var GenerateLicense = (id, time, callback) => {
   let filepath = path.join(__static, '../../license')
@@ -450,7 +444,6 @@ export default {
   openfile: openfile,
   savefile: savefile,
   APPOperation: APPOperation,
-  load_environment: load_environment,
   AddedConfig: AddedConfig,
   encoded: encoded,
   decoded: decoded,

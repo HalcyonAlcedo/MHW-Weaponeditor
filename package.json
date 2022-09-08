@@ -1,6 +1,6 @@
 {
   "name": "mhw-equipedit",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -16,13 +16,11 @@
   "main": "background.js",
   "dependencies": {
     "core-js": "^3.6.4",
-    "download": "^7.1.0",
     "egoroof-blowfish": "^2.2.1",
     "electron-asar-hot-updater": "^0.1.2",
     "electron-edge-js": "^12.8.1",
     "json5": "^2.1.1",
     "node-machine-id": "^1.1.12",
-    "regedit": "^3.0.3",
     "vue": "^2.6.11",
     "vue-i18n": "^8.0.0",
     "vue-router": "^3.1.5",
@@ -77,5 +75,6 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "__npminstall_done": false
 }

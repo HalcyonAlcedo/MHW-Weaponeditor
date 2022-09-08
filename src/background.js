@@ -7,133 +7,17 @@ import {
 } from 'vue-cli-plugin-electron-builder/lib'
 import path from 'path'
 import fs from 'fs'
-import download from 'download'
-import zipper from 'zip-local'
 import JSON5 from 'json5'
 import {machineIdSync} from 'node-machine-id'
 
 const EAU = require('electron-asar-hot-updater');
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
-//模块依赖文件路径
-let edgepath = path.join(__static, isDevelopment ? '../' : '../../ecryption/');
-let regeditpath = path.join(__static, '../../regedit/');
-
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([{scheme: 'app', privileges: { secure: true, standard: true } }])
-/*
-let importDll = (event, check) => {
-  if (fsExistsSync(edgepath + 'dll/') && fsExistsSync(edgepath + 'electron-edge-js/') || isDevelopment) {
-    electronEdge_Dencryption()
-    event(check)
-  } else {
-    fs.mkdir(edgepath,function(){
-      download('https://mhwee.alcedo.top/download/ecryption.zip', edgepath).then(() => {
-        zipper.unzip(edgepath + 'ecryption.zip', function(error, unzipped) {
-          if(!error) {
-            unzipped.save(null, function() {
-              electronEdge_Dencryption()
-              event(check)
-            });
-          }
-        });
-      });
-    })
-  }
-}
-*/
-function importRegedit (event) {
-  let regedit = null
-  if (fsExistsSync(regeditpath + 'vbs/') || isDevelopment) {
-    regedit = require('regedit')
-    checkVC(regedit, event)
-  } else {
-    fs.mkdir(edgepath,function(){
-      download('https://mhwee.alcedo.top/download/regedit.zip', regeditpath).then(() => {
-        zipper.unzip(regeditpath + 'regedit.zip', function(error, unzipped) {
-          if(!error) {
-            unzipped.save(null, function() {
-              regedit = require('regedit')
-              checkVC(regedit, event)
-            });
-          }
-        });
-      });
-    })
-  }
-}
-
-function checkVC (regedit, event) {
-  let check = false
-  regedit.setExternalVBSLocation('regedit/vbs');
-  regedit.list(['HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{05360E8D-2964-400C-8C25-1921B7F5CA49}'], function(err, result) {
-    if (!err) {
-      let regdata = result['HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{05360E8D-2964-400C-8C25-1921B7F5CA49}'].values
-      let version = regdata.DisplayVersion.value.split(".")
-      if(version[0] != 14 || version[1] <= 23) {
-        check = true
-      } else (
-        console.log('本机vc++版本', version)
-      )
-    }
-    event(check)
-    //暂时不需要加载dll文件了
-    //importDll(event, check)
-  })
-}
-function fsExistsSync (path) {
-  try{
-      fs.accessSync(path,fs.F_OK);
-  }catch(e){
-      return false;
-  }
-  return true;
-}
-/*
-function electronEdge_Dencryption () {
-  let edge = __non_webpack_require__(isDevelopment ? 'electron-edge-js' : edgepath + 'electron-edge-js');
-
-  let DencryptionHelper = edge.func({
-    assemblyFile: path.join(edgepath, 'dll/EncryptionHelper.dll'),
-    typeName: 'EncryptionHelper.Startup',
-    methodName: 'nodeDecrypt'
-  });
-  let EncryptionHelper = edge.func({
-    assemblyFile: path.join(edgepath, 'dll/EncryptionHelper.dll'),
-    typeName: 'EncryptionHelper.Startup',
-    methodName: 'nodeEcrypt'
-  });
-
-  let Dencryption = (event, data) => {
-    //解密文件
-    let payload = {
-      filebyte: data.hex,
-      key: data.key,
-    };
-    DencryptionHelper(payload, function (error, result) {
-      event(data.Oldversion, data.filepath, result)
-    });
-  }
-
-  let Encryption = (event, data) => {
-    //加密文件
-    let payload = {
-      filebyte: data.hex,
-      key: data.key,
-    };
-    EncryptionHelper(payload, function (error, result) {
-      event(result)
-    });
-  }
-
-  console.log('Encryption Mode Init')
-  app.fileDencryption = Dencryption
-  app.fileEncryption = Encryption
-}
-*/
 
 function createWindow () {
   // Create the browser window.
@@ -266,9 +150,6 @@ app.hide_window = () => {
   win.minimize()
 }
 
-app.load_environment = (event) => {
-  importRegedit(event)
-}
 app.fileDencryption = () => {console.log('尚未完成初始化')}
 app.fileEncryption = () => {console.log('尚未完成初始化')}
 
