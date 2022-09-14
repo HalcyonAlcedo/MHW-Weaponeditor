@@ -5,6 +5,7 @@ import Home from './views/Home.vue'
 import Edit from './components/Editor.vue'
 import EditData from './components/Data.vue'
 import HEXEdit from './components/HexEdit.vue'
+import InsertData from './components/InsertData.vue'
 
 Vue.use(Router)
 
@@ -27,6 +28,11 @@ const routes = [
       {
         path: '/hexedit',
         component: HEXEdit,
+        meta: { requiresAuth: true }
+      },
+      {
+        path: '/insertdata',
+        component: InsertData,
         meta: { requiresAuth: true }
       }
     ]

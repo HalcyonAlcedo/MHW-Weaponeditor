@@ -238,6 +238,11 @@ const mutations = {
   DATA_EDIT (state, data) {
     state.filedata[data.address] = data.value
   },
+  DATA_INSERT (state, data) {
+    const _buffer1 = state.filedata.slice(0,data.target);
+    const _buffer2 = state.filedata.slice(data.target);
+    state.filedata = Buffer.concat([_buffer1,data.buffer,_buffer2]);
+  },
   CONFIG_ADD (state, data) {
     if(state.config.filter(item=> data[0] !== undefined && item.type === data[0].type).length == 0) {
       state.config.push(data)
@@ -321,6 +326,9 @@ const actions = {
   },
   editdata ({ commit }, data) {
     commit('DATA_EDIT', data)
+  },
+  insertdata ({ commit }, data) {
+    commit('DATA_INSERT', data)
   },
   setsourcedata ({ commit }, filedata) {
     commit('SOURCE_DATA_SET', filedata)

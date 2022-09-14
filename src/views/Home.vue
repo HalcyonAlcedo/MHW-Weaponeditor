@@ -114,6 +114,7 @@
       <v-divider></v-divider>
       <v-subheader>{{$t("Interface.Tools")}}</v-subheader>
       <v-list>
+        <!--
         <v-tooltip bottom>
           <template v-slot:activator="{ on }">
             <v-list-item v-on="on" @click="dataChangeToConfig">
@@ -140,7 +141,17 @@
             </template>
           <span>{{$t("Interface.Unopen")}}</span>
         </v-tooltip>
-        <!--
+        -->
+
+        <v-list-item @click="tools('insertdata')">
+          <v-list-item-action>
+            <v-icon>mdi-pencil-plus-outline</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>{{$t("Interface.Tools_insert")}}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
         <v-list-item @click="tools(sourcemod ? 'edit' : 'hexedit')">
           <v-list-item-action >
             <v-icon>{{sourcemod ? 'mdi-window-maximize' : 'mdi-code-tags'}}</v-icon>
@@ -149,7 +160,7 @@
             <v-list-item-title>{{sourcemod ? $t("Interface.Tools_View") : $t("Interface.Tools_Hex")}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        -->
+        
         <v-list-item @click="tools({target:'dialogEncryptionwarning'})">
           <v-list-item-action>
             <v-icon>mdi-folder-edit-outline</v-icon>
@@ -430,7 +441,7 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="green darken-1" text @click.native="devtools = false">{{$t("Interface.Read")}}</v-btn>
+          <v-btn color="green darken-1" text @click.native="devtools = false; $store.dispatch('setlicense', true)">{{$t("Interface.Read")}}</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -857,6 +868,7 @@ export default {
         this.snackbar.text = this.$t('Interface.Old_version_save')
         this.snackbar.snackbar = true
       } else if (this.file !== this.$t('Interface.No_file_opened')) {
+        console.log(this.filedata)
         edit_core.savefile(this.$t('Interface.Save_file'), this.weapon !== 'Unknown' ? this.weapon : this.file, this.filedata, () => {
           _this.snackbar.text = _this.$t('Interface.Save_Success')
           _this.snackbar.snackbar = true

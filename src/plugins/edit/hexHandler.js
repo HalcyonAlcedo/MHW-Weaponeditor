@@ -54,7 +54,7 @@ var DataFormation = (data, dataInfo, dataFormation, resources, sourceData) => {
               let Dataobj = {}
               Dataobj.Data_Hex = SelectLine.StartAddress.toString(16)
               for (let hp in SelectLine.Pointer) { // 遍历所有属性
-                Dataobj[hp] = ProcessingRawData(ProcessingHex(data, SelectLine.Pointer[hp], SelectLine.StartAddress, SelectLine.Pointer[hp] == 'auto' ? datalen : 1))
+                Dataobj[hp != 'autoid' ? LineName+hp : hp] = ProcessingRawData(ProcessingHex(data, SelectLine.Pointer[hp], SelectLine.StartAddress, SelectLine.Pointer[hp] == 'auto' ? datalen : 1))
                 if(SelectLine.Pointer[hp] == 'auto') {
                   datalen++
                 }
@@ -135,9 +135,8 @@ function ScriptSelect (selectData, head, end, select, offset) {
   for(let sd = 0; sd < tempSelectData.length; sd++) {
     SelectData.push(tempSelectData[sd])
   }
-  let SelectStrinfData = encodeUtf8(select[0]).map(item => str_pad(item.toString(16), 2)).join('')
+  let SelectStrinfData = typeof select[0] == 'string' ? encodeUtf8(select[0]).map(item => str_pad(item.toString(16), 2)).join('') : select[0].map(item => str_pad(item.toString(16), 2)).join('')
   let TargetStringData = SelectData.map(item => str_pad(item.toString(16), 2)).join('')
-
   
   for(let i = 0; i <TargetStringData.length; i++){
     let SelectString = TargetStringData.indexOf(SelectStrinfData, i)
@@ -153,14 +152,6 @@ function ScriptSelect (selectData, head, end, select, offset) {
     let tempTargetString = t < TargetStringIndex.length - 1 ? TargetStringData.substring(TargetStringIndex[t].vul, TargetStringIndex[t + 1].vul) : ''
     TargetStringIndex[t].subdata = Xreplace(tempTargetString,2,',').split(',')
   }
-  /*
-  let retdata = []
-  for(let s = 0; s < TargetString.length; s++){
-    retdata.push(SubScriptSelect( TargetString[s],0,TargetString[s].length,select[1])) 
-  }
-
-  console.log(retdata)
-  */
   let LinebylineConfig = []
   for (let i = 0; i < TargetStringIndex.length; i++) {
     let TargetString = TargetStringIndex[i].subdata
@@ -176,36 +167,6 @@ function ScriptSelect (selectData, head, end, select, offset) {
     })
   }
   return LinebylineConfig
-  
-  /*
-  let retdata = []
-  if(select.length > 1) {
-    for(let s = 0; s < TargetString.length; s++){
-      retdata.push({
-        StartAddress: offset,
-        Pointer: {
-          ID: [11, 1]
-        },
-        data: ScriptSelect( TargetString[s],0,TargetString[s].length,select[1],s)
-      }) 
-    }
-  }
-  return retdata
-  */
-  /*
-  let Subset = Pointer[3]"a"
-  let SubsetStartAddress = ProcessingRawData(ProcessingHex(temp_data, [Pointer[1],Pointer[2]], StartAddress, 1)).vul
-  let SubDataobj = {}
-  SubDataobj.Data_Hex = SubsetStartAddress.toString(16)
-  for (let sub in Subset) { // 遍历所有属性
-    if(Subset[sub][0] == 'subset') {
-      Dataobj = Dataobj_subset(Dataobj, Subset[sub], internalDataLine, SubsetStartAddress+Subset[sub][2], 1)
-    } else {
-      Dataobj[sub] = ProcessingRawData(ProcessingHex(temp_data, Subset[sub], SubsetStartAddress, 1))
-    }
-  }
-  return Dataobj
-  */
 }
 function SubScriptSelect (selectData, head, end, select, offset) {
   let tempSelectData = selectData.slice(head, end)
@@ -220,7 +181,7 @@ function SubScriptSelect (selectData, head, end, select, offset) {
   for(let sd = 0; sd < tempSelectData.length; sd++) {
     SelectData.push(tempSelectData[sd])
   }
-  let SelectStrinfData = encodeUtf8(select).map(item => str_pad(item.toString(16), 2)).join('')
+  let SelectStrinfData = typeof select == 'string' ? encodeUtf8(select).map(item => str_pad(item.toString(16), 2)).join('') : select.map(item => str_pad(item.toString(16), 2)).join('')
   let TargetStringData = SelectData.map(item => str_pad(item.toString(16), 2)).join('')
 
   if(Array.isArray(offset)) {
