@@ -51,7 +51,7 @@
                     type="info"
                     elevation="1"
                     >
-                    功能开发中！
+                    先定位招式地址，然后生成派生数据模板，最后插入派生数据。派生id和条件id可参考fsm配置文件获取到的数据，描述和招式名可能会有出入，以招式id为准。
                     </v-alert>
                     <v-row>
                         <v-col cols="12">
@@ -67,15 +67,15 @@
                             </v-text-field>
                         </v-col>
                         <v-col cols="12" sm="3">
-                            <v-text-field label="派生id" v-model="fsmStruc.destinationNodeld">
+                            <v-text-field label="派生id" v-model="fsmStruc.destinationNodeld" hint="指定派生目标id" persistent-hint>
                             </v-text-field>
                         </v-col>
                         <v-col cols="12" sm="3">
-                            <v-text-field label="条件id" v-model="fsmStruc.conditionId">
+                            <v-text-field label="条件id" v-model="fsmStruc.conditionId" hint="指定派生条件id" persistent-hint>
                             </v-text-field>
                         </v-col>
                         <v-col cols="12" sm="8">
-                            <v-text-field label="派生名称" v-model="fsmStruc.structName">
+                            <v-text-field label="派生名称" v-model="fsmStruc.structName" hint="插入派生的名称" persistent-hint>
                             </v-text-field>
                         </v-col>
                         <v-col cols="12" sm="4">
@@ -83,11 +83,22 @@
                         </v-col>
                         <v-divider></v-divider>
                         <v-col cols="12" sm="4">
-                            <v-text-field label="招式名称" v-model="fsmSelect.name">
-                            </v-text-field>
+                            <v-autocomplete
+                                v-model="fsmSelect"
+                                :items="entries"
+                                :loading="isLoading"
+                                :search-input.sync="search"
+                                hide-no-data
+                                hide-selected
+                                item-text="name"
+                                item-value="addr"
+                                label="招式名称"
+                                placeholder="输入招式名称进行检索"
+                                return-object
+                            ></v-autocomplete>
                         </v-col>
                         <v-col cols="12" sm="4">
-                            <v-text-field label="招式起始地址" v-model="fsmSelect.address">
+                            <v-text-field label="招式起始地址" v-model="fsmSelect.addr" hint="招式的起始地址，如不清楚请在招式名称中选择" persistent-hint>
                             </v-text-field>
                         </v-col>
                         <v-col cols="12" sm="4">
@@ -102,9 +113,13 @@
                             <v-text-field readonly label="招式Id" v-model="fsmStrucId">
                             </v-text-field>
                         </v-col>
+                        <v-col cols="12" sm="4">
+                            <v-btn depressed color="primary" @click="insertFsmStructure">插入派生数据</v-btn>
+                        </v-col>
                     </v-row>
                     </v-container>
                 </v-card>
+
             </v-tab-item>
             </v-tabs>
         </v-card>
@@ -134,6 +149,7 @@ export default {
             insertData: '',
             insertFsmData: '',
             insertAddress: '00',
+            insertFsmAddress: '00',
             snackbar: false,
             fsmStruc: {
                 structId: 0,
@@ -143,19 +159,29 @@ export default {
                 conditionId: 0
             },
             fsmSelect: {
+                addr: '',
+                id: 0,
                 name: '',
-                address: ''
+                size: 0
             },
             fsmStartAddr: 0,
             fsmStrucCountAddr: 0,
             fsmStrucCount: 0,
-            fsmStrucId: 0
+            fsmStrucId: 0,
+            isLoading: false,
+            search: null,
+            entries: []
         }
     },
     computed: {
         data () {
             return this.$store.getters.donefiledata
-        },
+        }
+    },
+    watch: {
+      search (val) {
+        this.parseStructure()
+      },
     },
     methods: {
         insertHex() {
@@ -170,16 +196,19 @@ export default {
         },
         fsmStructureGenerate() {
             const header = '07 00 ' //结构开始标记
-            let structId = (this.fsmStruc.structId.toString(16).length < 2 ? this.fsmStruc.structId.toString(16) + '0' : this.fsmStruc.structId.toString(16)) + ' 00 ' //结构序列id
+            let structId = this.int2hex(parseInt(this.fsmStruc.structId),4) //结构序列id
             let dataSize = '08 00 00 00 00 00 00 00 ' //结构数据区域大小
             const structNameHeader = '01 00 00 00 ' //结构名称开始标记
             let structName = this.fsmStruc.structName //结构名称
             const destinationNodeldHeader = '01 00 00 00 ' //派生ID开始标记
-            let destinationNodeld = (this.fsmStruc.destinationNodeld.toString(16).length < 2 ? this.fsmStruc.destinationNodeld.toString(16) + '0' : this.fsmStruc.destinationNodeld.toString(16)) + ' 00 00 00 ' //派生ID
+            let destinationNodeld = (parseInt(this.fsmStruc.destinationNodeld).toString(16).length < 2 ? '0' + parseInt(this.fsmStruc.destinationNodeld).toString(16) : parseInt(this.fsmStruc.destinationNodeld).toString(16)) + ' 00 00 00 ' //派生ID
             const existCondition = '01 00 00 00 01 ' //存在条件
             const conditionIdHeader = '01 00 00 00 ' //条件开始标记
-            let conditionId = (this.fsmStruc.conditionId.toString(16).length < 2 ? this.fsmStruc.conditionId.toString(16) + '0' : this.fsmStruc.conditionId.toString(16)) + ' 00 00 00' //条件ID
-            
+            let conditionId = (parseInt(this.fsmStruc.conditionId).toString(16).length < 2 ? '0' + parseInt(this.fsmStruc.conditionId).toString(16) : parseInt(this.fsmStruc.conditionId).toString(16)) + ' 00 00 00' //条件ID
+            if(structName.substr(-6,5) != '_t000') {
+                structName += '_t0001'
+                this.fsmStruc.structName = structName
+            }
             structName = this.strToUtf8Bytes(structName).map(function(hex) {return hex.toString(16)}).join(' ') + ' 00 '
             let struct = dataSize + structNameHeader + structName + destinationNodeldHeader + destinationNodeld + existCondition + conditionIdHeader + conditionId
             dataSize = struct.split(" ").length.toString(16) + ' 00 00 00 00 00 00 00 '
@@ -188,31 +217,102 @@ export default {
             this.insertFsmData = struct
         },
         selectFsmStructure() {
-            if(this.fsmSelect.address != '') {
-                this.fsmStartAddr = this.hex2int(this.fsmSelect.address)
+            if(this.entries.length == 0) {this.parseStructure()}
+            if(this.fsmSelect.addr != '') {
+                this.fsmStartAddr = this.hex2int(this.fsmSelect.addr)
                 const strucSizeHex = this.data.slice(this.fsmStartAddr + 4,this.fsmStartAddr + 12)
                 let array = []
                 for (let i = 0; i < strucSizeHex.length ; i++) {
                     array[i] = strucSizeHex[strucSizeHex.length - 1 - i];
                 }
-                let strucSize = this.hex2int(array.map(function(hex) {return hex.toString(16)}).join(''))
+                let strucSize = this.hex2int(array.map((hex) => hex.toString(16).length == 2 ? hex.toString(16) : '0' + hex.toString(16)).join(''))
                 for(let i = 0; i < strucSize; i++) {
                     if(this.data[this.fsmStartAddr + 16 + i] == 0) {
                         this.fsmStrucCountAddr = this.fsmStartAddr + 16 + i +33
                         this.fsmStrucCount = this.data[this.fsmStrucCountAddr]
                         this.fsmStrucId = this.data[this.fsmStartAddr + 16 + i + 5]
-                        this.fsmStruc.structId = this.fsmStrucCount + 1
+                        let _structId = []
+                        for (let s = 0; s < 4 ; s++) {
+                            _structId[s] = this.data[11 - s];
+                        }
+                        this.fsmStruc.structId = this.hex2int(_structId.map(function(hex) {return hex.toString(16)}).join('')) + 1
                         //获取派生名
                         let bytes = new Uint8Array(this.data.slice(this.fsmStartAddr + 16,this.fsmStartAddr + 16 + i))
                         this.fsmSelect.name = this.utf8BytesToStr(bytes)
                         //获取插入点
-                        bytes = new Uint8Array(this.data.slice(this.fsmStartAddr + 16 + i + 9,this.fsmStartAddr + strucSize))
-                        //const fsmDataStr = this.utf8BytesToStr(bytes)
-                        //console.log(fsmDataStr.indexOf('Action_W') - 20)
+                        let targetAddr = this.fsmStrucCountAddr + 4
+                        for(let f = 0; f < this.fsmStrucCount; f++) {
+                            let _structSize = 4 + this.data[targetAddr + 4]
+                            targetAddr = targetAddr + _structSize
+                        }
+                        this.insertFsmAddress = targetAddr
                         break;
                     }
                 }
             }
+        },
+        parseStructure() {
+            if (this.entries.length > 0) return
+            if (this.isLoading) return
+            this.isLoading = true
+            let dataStr = Array.from(this.data).map((hex) => hex.toString(16).length == 2 ? hex.toString(16) : '0' + hex.toString(16)).join('')
+            let targetStr = this.strToUtf8Bytes('mEnumNameCRC').map((hex) => hex.toString(16).length == 2 ? hex.toString(16) : '0' + hex.toString(16)).join('')
+            let startAddr = dataStr.indexOf(targetStr) / 2 + 91
+            let structCount = this.data[startAddr]
+            startAddr += 4
+            let struct = []
+            for(let s = 0; s < structCount; s++){
+                let structStartAdd = startAddr
+                //获取区域大小
+                const strucSizeHex = this.data.slice(structStartAdd + 4,structStartAdd + 12)
+                let array = []
+                for (let i = 0; i < strucSizeHex.length ; i++) {
+                    array[i] = strucSizeHex[strucSizeHex.length - 1 - i];
+                }
+                let structSize = this.hex2int(array.map((hex) => hex.toString(16).length == 2 ? hex.toString(16) : '0' + hex.toString(16)).join(''))
+                for(let i = 0; i < structSize; i++) {
+                    if(this.data[structStartAdd + 16 + i] == 0) {
+                        // startAddr = structStartAdd + 16 + i + 33
+                        let structId = this.data[structStartAdd + 16 + i + 5]
+                        //获取派生名
+                        let bytes = new Uint8Array(this.data.slice(structStartAdd + 16,structStartAdd + 16 + i))
+                        let structName = this.utf8BytesToStr(bytes)
+                        struct.push({
+                            id: structId,
+                            name: structName,
+                            addr: structStartAdd.toString(16),
+                            size: structSize
+                        })
+                        startAddr += 4 + structSize
+                        break;
+                    }
+                }
+            }
+            console.log(struct)
+            this.entries = struct
+            this.isLoading = false
+        },
+        insertFsmStructure() {
+            if(this.insertFsmAddress == '' || this.insertFsmData == '') return
+            const _this = this
+            //模板数据
+            let address = this.insertFsmAddress
+            let buffer = this.insertFsmData.split(" ").map(function(item) {return _this.hex2int(item)})
+            this.$store.dispatch('insertdata', {
+                buffer: new Buffer.from(buffer),
+                target: address
+            })
+            //扩容派生
+            this.$store.dispatch('editdata', {
+                address: this.fsmStrucCountAddr,
+                value: this.fsmStrucCount + 1
+            })
+            //扩容序号
+            this.$store.dispatch('editdata', {
+                address: 8,
+                value: this.fsmStruc.structId
+            })
+            this.snackbar = true
         },
         hex2int(hexStr) {
             let twoStr = parseInt(hexStr, 16).toString(2); // 将十六转十进制，再转2进制
@@ -240,6 +340,25 @@ export default {
                 return twoStr;
             }
         },
+        int2hex(dec, len) {
+            var hex = "";
+            while( dec ) {
+            var last = dec & 15;
+            hex = String.fromCharCode(((last>9)?55:48)+last) + hex;
+            dec >>= 4;
+            }
+            if(len) {
+            while(hex.length < len) hex = '0' + hex;
+            }
+            if(len > 2){
+                let _hex = ''
+                for(let i = 0;i < hex.length/2;i++) {
+                    _hex += hex.substring(hex.length-(i*2),hex.length-(i*2)-2) + ' '
+                }
+                hex = _hex
+            }
+            return hex + ' ';
+        },
         strToUtf8Bytes(text) {
             const code = encodeURIComponent(text)
             const bytes = []
@@ -265,5 +384,11 @@ export default {
         }
     }
 
+}
+
+function str_pad (hex, digits = 8) {
+  var zero = new Array(digits + 1).join('0')
+  var tmp = digits - hex.length
+  return zero.substr(0, tmp) + hex.toLocaleUpperCase()
 }
 </script>
