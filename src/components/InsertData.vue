@@ -116,6 +116,9 @@
                         <v-col cols="12" sm="4">
                             <v-btn depressed color="primary" @click="insertFsmStructure">插入派生数据</v-btn>
                         </v-col>
+                        <v-col cols="12" sm="4">
+                            <v-btn depressed color="primary" @click="parseFsm">解析文件</v-btn>
+                        </v-col>
                     </v-row>
                     </v-container>
                 </v-card>
@@ -228,7 +231,7 @@ export default {
                 let strucSize = this.hex2int(array.map((hex) => hex.toString(16).length == 2 ? hex.toString(16) : '0' + hex.toString(16)).join(''))
                 for(let i = 0; i < strucSize; i++) {
                     if(this.data[this.fsmStartAddr + 16 + i] == 0) {
-                        this.fsmStrucCountAddr = this.fsmStartAddr + 16 + i +33
+                        this.fsmStrucCountAddr = this.fsmStartAddr + 16 + i + 33
                         this.fsmStrucCount = this.data[this.fsmStrucCountAddr]
                         this.fsmStrucId = this.data[this.fsmStartAddr + 16 + i + 5]
                         let _structId = []
@@ -288,13 +291,154 @@ export default {
                     }
                 }
             }
-            console.log(struct)
             this.entries = struct
             this.isLoading = false
+        },
+        parseFsm() {
+            let _this = this
+            /**
+             * 插入新条目后需更新的内容
+             * header.count 总量+1 *
+             * data.size 数据区大小更新到文件尾 *
+             * data.derived.size 招式区大小更新到招式尾 *
+             * data.derived.struct[添加区的].size 派生区大小更新到派生尾*
+             * data.derived.struct[添加区的].link.count 派生列表总数+1
+             * 待续
+             */
+            //结构
+            let fsmStruct = {
+                header: {
+                    addrStart: 0,
+                    size: 24,
+                    struct: 0,
+                    count: 0,
+                    offset: 0,
+                },
+                data: {
+                    addrStart: 0,
+                    size: 0,
+                    derived: {
+                        addrStart: 0,
+                        size: 0,
+                        count: 0,
+                        struct: []
+                    },
+                    condition: {
+                        addrStart: 0,
+                        size: 0,
+                        count: 0,
+                        tree: []
+                    },
+                }
+            }
+            //临时方法
+            let dataGet = (offset, size = 4) => {
+                let _data = []
+                for (let s = 0; s < size ; s++) {
+                    _data[s] = _this.data[offset - s];
+                }
+                return _this.hex2int(_data.map(function(hex) {return hex.toString(16)}).join(''))
+            }
+            //数据获取
+            //头数据
+            fsmStruct.header.struct = dataGet(11)
+            fsmStruct.header.count = dataGet(19)
+            fsmStruct.header.offset = dataGet(23)
+            //内容数据
+            fsmStruct.data.addrStart = fsmStruct.header.size + fsmStruct.header.offset + 12
+            fsmStruct.data.size = dataGet(fsmStruct.header.size + fsmStruct.header.offset + 7)
+            //派生区块数据
+            fsmStruct.data.derived.addrStart = fsmStruct.data.addrStart + 23
+            fsmStruct.data.derived.size = dataGet(fsmStruct.data.derived.addrStart + 11)
+            fsmStruct.data.derived.count = dataGet(fsmStruct.data.derived.addrStart + 43)
+            //获取逐个招式数据
+            let fsmStructDerivedStartAddr = fsmStruct.data.derived.addrStart
+            for(let s = 0; s < fsmStruct.data.derived.count; s++) {
+                let structStartAdd = fsmStructDerivedStartAddr + 44
+                //获取区域大小
+                const strucSizeHex = this.data.slice(structStartAdd + 4,structStartAdd + 12)
+                let array = []
+                for (let i = 0; i < strucSizeHex.length ; i++) {
+                    array[i] = strucSizeHex[strucSizeHex.length - 1 - i];
+                }
+                let structSize = this.hex2int(array.map((hex) => hex.toString(16).length == 2 ? hex.toString(16) : '0' + hex.toString(16)).join(''))
+                for(let i = 0; i < structSize; i++) {
+                    if(this.data[structStartAdd + 16 + i] == 0) {
+                        let structId = this.data[structStartAdd + 16 + i + 5]
+                        //获取派生名
+                        let bytes = new Uint8Array(this.data.slice(structStartAdd + 16,structStartAdd + 16 + i))
+                        let structName = this.utf8BytesToStr(bytes)
+                        //获取派生项
+                        let linkCount = this.data[structStartAdd + 16 + i + 33]
+                        let link = []
+                        let linkStartAddr = structStartAdd + 16 + i + 37
+                        for(let l = 0; l < linkCount; l++) {
+                            let linkData = {
+                                addrStart: linkStartAddr,
+                                size: dataGet(linkStartAddr + 7),
+                                id: dataGet(linkStartAddr + 3, 2),
+                                name: '',
+                                destination: 0,
+                                condition: 0,
+                            }
+                            //获取派生项名
+                            for(let n = 0; n < linkData.size; n++) {
+                                if(this.data[linkData.addrStart + 16 + n] == 0) {
+                                    let nbytes = new Uint8Array(this.data.slice(linkData.addrStart + 16,linkData.addrStart + 16 + n))
+                                    
+                                    linkData.name = this.utf8BytesToStr(nbytes)
+                                    linkData.destination = dataGet(linkData.addrStart + 20 + n + 4)
+                                    linkData.condition = dataGet(linkData.addrStart + 20 + n + 17)
+                                    break;
+                                }
+                            }
+                            link.push(linkData)
+                            linkStartAddr += linkData.size + 4
+                        }
+                        fsmStruct.data.derived.struct.push({
+                            id: structId,
+                            name: structName,
+                            addrStart: structStartAdd,
+                            addr: structStartAdd.toString(16),
+                            size: structSize,
+                            link: {
+                                count: linkCount,
+                                data: link
+                            }
+                        })
+                        fsmStructDerivedStartAddr += 4 + structSize
+                        break;
+                    }
+                }
+            }
+            //条件区块数据
+            fsmStruct.data.condition.addrStart = fsmStruct.data.derived.addrStart + fsmStruct.data.derived.size + 8
+            fsmStruct.data.condition.size = dataGet(fsmStruct.data.condition.addrStart + 11)
+            fsmStruct.data.condition.count = dataGet(fsmStruct.data.condition.addrStart + 27)
+            //获取逐个条件数据
+            let fsmStructConditionStartAddr = fsmStruct.data.condition.addrStart
+            for(let s = 0; s < fsmStruct.data.condition.count; s++) {
+                let structStartAdd = fsmStructConditionStartAddr + 28
+                const strucSizeHex = this.data.slice(structStartAdd + 4,structStartAdd + 12)
+                let array = []
+                for (let i = 0; i < strucSizeHex.length ; i++) {
+                    array[i] = strucSizeHex[strucSizeHex.length - 1 - i];
+                }
+                let structSize = this.hex2int(array.map((hex) => hex.toString(16).length == 2 ? hex.toString(16) : '0' + hex.toString(16)).join(''))
+                fsmStruct.data.condition.tree.push({
+                    addrStart: structStartAdd,
+                    size: structSize,
+                    id: dataGet(structStartAdd + 3, 2),
+                })
+                fsmStructConditionStartAddr += 4 + structSize
+            }
+            console.log(fsmStruct)
+            return fsmStruct
         },
         insertFsmStructure() {
             if(this.insertFsmAddress == '' || this.insertFsmData == '') return
             const _this = this
+            const fsmStart = this.parseFsm()
             //模板数据
             let address = this.insertFsmAddress
             let buffer = this.insertFsmData.split(" ").map(function(item) {return _this.hex2int(item)})
@@ -302,16 +446,33 @@ export default {
                 buffer: new Buffer.from(buffer),
                 target: address
             })
-            //扩容派生
+            //扩容招式派生数量
             this.$store.dispatch('editdata', {
                 address: this.fsmStrucCountAddr,
                 value: this.fsmStrucCount + 1
             })
-            //扩容序号
+            //扩容全局序号
             this.$store.dispatch('editdata', {
                 address: 8,
                 value: this.fsmStruc.structId
             })
+            //扩容数据区域
+            this.$store.dispatch('editdata', {
+                address: fsmStart.data.addrStart - 8,
+                value: fsmStart.data.size + buffer.length
+            })
+            //扩容派生区块
+            this.$store.dispatch('editdata', {
+                address: fsmStart.data.derived.addrStart + 8,
+                value: fsmStart.data.derived.size + buffer.length
+            })
+            //扩容派生区域
+            let _struct = fsmStart.data.derived.struct.find(stru=> stru.id == this.fsmStrucId)
+            this.$store.dispatch('editdata', {
+                address: _struct.addrStart + 4,
+                value: _struct.size + buffer.length
+            })
+            this.parseFsm()
             this.snackbar = true
         },
         hex2int(hexStr) {

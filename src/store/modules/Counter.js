@@ -236,7 +236,15 @@ const mutations = {
     }
   },
   DATA_EDIT (state, data) {
-    state.filedata[data.address] = data.value
+    let hex = data.value.toString(16)
+    if(hex.length % 2 != 0) hex = '0' + hex
+    let val = []
+    for(let i = 0; i < hex.length / 2; i++) {
+      val.push(parseInt(hex.slice((hex.length / 2 - i) * 2 - 2,(hex.length / 2 - i) * 2), 16))
+    }
+    for(let i = 0; i < val.length; i++) {
+      state.filedata[data.address + i] = val[i]
+    }
   },
   DATA_INSERT (state, data) {
     const _buffer1 = state.filedata.slice(0,data.target);
