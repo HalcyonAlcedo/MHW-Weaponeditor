@@ -868,7 +868,6 @@ export default {
         this.snackbar.text = this.$t('Interface.Old_version_save')
         this.snackbar.snackbar = true
       } else if (this.file !== this.$t('Interface.No_file_opened')) {
-        console.log(this.filedata)
         edit_core.savefile(this.$t('Interface.Save_file'), this.weapon !== 'Unknown' ? this.weapon : this.file, this.filedata, () => {
           _this.snackbar.text = _this.$t('Interface.Save_Success')
           _this.snackbar.snackbar = true

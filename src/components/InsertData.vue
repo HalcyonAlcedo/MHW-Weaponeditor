@@ -59,7 +59,7 @@
                                 @input="insertData = insertData.replace(/[^0-9a-fA-F]/g, '').replace(/(\S{2})/g, '$1 ').replace(/^\s|\s$/g, '').toUpperCase()" />
                         </v-col>
                         <v-col cols="12" sm="3">
-                            <v-text-field readonly label="派生序列" v-model="fsmStruc.structId">
+                            <v-text-field label="派生序列" v-model="fsmStruc.structId" hint="如遇到闪退可尝试手动改大一些" persistent-hint>
                             </v-text-field>
                         </v-col>
                         <v-col cols="12" sm="3">
@@ -116,9 +116,6 @@
                         <v-col cols="12" sm="4">
                             <v-btn depressed color="primary" @click="insertFsmStructure">插入派生数据</v-btn>
                         </v-col>
-                        <v-col cols="12" sm="4">
-                            <v-btn depressed color="primary" @click="parseFsm">解析文件</v-btn>
-                        </v-col>
                     </v-row>
                     </v-container>
                 </v-card>
@@ -144,7 +141,6 @@
 </template>
 
 <script>
-import { black } from 'color-name'
 
 export default {
     data() {
@@ -238,7 +234,7 @@ export default {
                         for (let s = 0; s < 4 ; s++) {
                             _structId[s] = this.data[11 - s];
                         }
-                        this.fsmStruc.structId = this.hex2int(_structId.map(function(hex) {return hex.toString(16)}).join('')) + 1
+                        this.fsmStruc.structId = this.hex2int(_structId.map(function(hex) {return hex.toString(16)}).join('')) + 1000
                         //获取派生名
                         let bytes = new Uint8Array(this.data.slice(this.fsmStartAddr + 16,this.fsmStartAddr + 16 + i))
                         this.fsmSelect.name = this.utf8BytesToStr(bytes)
@@ -432,7 +428,6 @@ export default {
                 })
                 fsmStructConditionStartAddr += 4 + structSize
             }
-            console.log(fsmStruct)
             return fsmStruct
         },
         insertFsmStructure() {
@@ -472,7 +467,6 @@ export default {
                 address: _struct.addrStart + 4,
                 value: _struct.size + buffer.length
             })
-            this.parseFsm()
             this.snackbar = true
         },
         hex2int(hexStr) {
@@ -518,7 +512,7 @@ export default {
                 }
                 hex = _hex
             }
-            return hex + ' ';
+            return hex;
         },
         strToUtf8Bytes(text) {
             const code = encodeURIComponent(text)
