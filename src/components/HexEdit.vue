@@ -73,6 +73,41 @@
     >
       二进制编辑暂不支持<v-chip>弓瓶</v-chip><v-chip>弩弹</v-chip><v-chip>装备</v-chip>的智能地址分析功能，编辑时请谨慎修改。
     </v-snackbar>
+    <v-dialog
+      v-model="sizecheck"
+      width="500"
+    >
+      <v-card>
+        <v-card-title class="text-h5 error lighten-2">
+          {{$t('Interface.Warning')}}
+        </v-card-title>
+
+        <v-card-text>
+          {{data.length > 100000 ? $t('Explanatory.SizeCheckMax') : $t('Explanatory.SizeCheck')}}
+        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="primary"
+            text
+            @click="sizecheck = false"
+          >
+            {{$t('Interface.Cancel')}}
+          </v-btn>
+          <v-btn
+            color="primary"
+            text
+            :disabled="data.length > 100000"
+            @click="hexdata(data)"
+          >
+            {{$t('Interface.Continue')}}
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-container>
 </template>
 
@@ -93,6 +128,7 @@ export default {
       }
     ],
     hexerr: false,
+    sizecheck: false,
     hexrules: (v) => /^[0-9a-fA-F]{1,2}$/.test(v)
   }),
   computed: {
@@ -417,6 +453,7 @@ export default {
       }
     },
     hexdata (data) {
+      this.sizecheck = false
       let _this = this
       let gethexAddress = hexAddress(data)
       let HexRuler = gethexAddress.HexRuler
@@ -474,7 +511,11 @@ export default {
     }
   },
   mounted () {
-    this.hexdata(this.data)
+    if(this.data.length < 30000) {
+      this.hexdata(this.data)
+    } else {
+      this.sizecheck = true
+    }
   }
 }
 </script>

@@ -35,6 +35,7 @@ module.exports = {
     Read: '已讀',
     Refuse: '拒絕',
     Cancel: '取消',
+    Continue: '繼續',
     Loading: '加載中,請稍等',
     Loading_Environment: '正在加載環境，請稍後',
     Loading_Environment_info: '如果長時間無法完成加載，可點擊下方已讀按鈕繼續使用，未完成加載部分功能無法正常使用',
@@ -76,7 +77,7 @@ module.exports = {
     Binary_mode: '顯示檔案二進位數據的檔案模式,二進位數據根據武器類型進行輔助顯示',
     Dark_theme: '切換軟件主色調至暗黑模式',
     About_content: '本軟件可針對《怪物獵人世界》中武器數據魔改檔案進行查看和修改,修改後檔案放置在Monster Hunter World\\nativePC\\common\\equip\\下即可生效。修改後檔案將影響遊戲平衡性,請勿用於聯機使用。',
-    About_edition: '軟體版本：1.2.9',
+    About_edition: '軟體版本：1.3.0',
     Instructions: '<h3>該工具可以讀取解包後的武器數據,內寘了當前版本的武器資料檔案,可以直接新建mod檔案。部分數值修改會根據固有係數自動修正,武器資訊為手動錄入,可能與現版本數據存在差异。修改後的檔案請勿用於聯機使用。</h3><br><h4>用法：</h4><br><span>&nbsp;&nbsp;1、打開解包後的mod檔案或點擊新建選擇需要的武器檔案</span><br><span>&nbsp;&nbsp;2、蒐索或手動找到要修改的武器</span><br><span>&nbsp;&nbsp;3、將相應内容改成你希望的數值</span><br><span>&nbsp;&nbsp;4、點擊保存將檔案保存至遊戲目錄\\nativePC\\common\\equip\\</span><br><span>&nbsp;&nbsp;5、安裝冰原裝載Mod（https://www.nexusmods.com/monsterhunterworld/mods/1984）</span><br><br><h4>工具原始程式碼發佈在Github上：https://github.com/HalcyonAlcedo/MHW-Weaponeditor</h4>',
     Old_version: '將以名稱匹配方式打開資料檔案,建議使用新版本資料檔案進行魔改。',
     Old_version_open: '相容模式已啟動,請重新打開資料檔案',
@@ -85,7 +86,7 @@ module.exports = {
     Version_update_true: '版本數據更新完成,請勿忘記保存資料檔案',
     Free_model: '如需修改模型請調整為修改數據，不懂勿動',
     Have_model: '如需關閉模型請改成65535',
-    Update_description: '<ul><li>新增數據插入功能，修改擴展檔案規則。</li><li>變更注意：非常規迴圈行蒐索模式下自動編碼將添加額外的數據名作為首碼，分配視圖資源時需額外添加首碼才能生效！</li></ul>',
+    Update_description: '<ul><li>新增數據插入功能，修改擴展檔案規則。</ li><li>恢復二進位檔案編輯功能</li><li>更新Electron版本</li><li>變更注意：非常規迴圈行蒐索模式下自動編碼將添加額外的數據名作為首碼，分配視圖資源時需額外添加首碼才能生效！</ li></ul>',
     Toolsinfo: '開發者工具箱只針對MOD開發人員開放，工具箱内包含本工具内置的數據信息和一些實用工具，如需申請開發者認證許可，請在下方填寫您曾經發佈過的一個Mod地址並提交申請，審核通過后在有效期内可隨意使用，點擊已讀可臨時試用該功能。',
     NewInterface: '嘗試新的編輯界面',
     ResetChopping: '需要開啓原始數據對比功能',
@@ -97,7 +98,13 @@ module.exports = {
     此工具用於解密被加密的數據文件和將解密的文件加密回程序識別的加密文件</br>
     當前内置了 cus_pa、cus_par、msk、owp_dat、dtt_eda、dtt_epg、plp、plsp、plip、asp、shlp 類型的文件密鑰，如果你有其他類型的加密文件和密鑰可以在Github上告訴我，確認后會補充進系統
     `,
-    ConfigAuthor: '當前配置文件作者：'
+    ConfigAuthor: '當前配置文件作者：',
+    SizeCheck: '當前檔案數據量過大，不建議使用二進位編輯模式',
+    SizeCheckMax: '當前檔案數據量過大，無法使用二進位模式編輯',
+    InsertDataWarning: '數據插入可能會對數據造成不可逆損毀，建議確認插入時檢查插入數據和地址是否正確，保存檔案之前對檔案先行備份。',
+    InsertToAddress: '指定地址插入數據',
+    InsertToFSM: 'FSM派生數據插入',
+    FSMInsertInfo: '先定位招式地址，然後生成派生數據範本，最後插入派生數據。 派生id和條件id可參攷fsm設定檔獲取到的數據，描述和招式名可能會有出入，以招式id為准。'
   },
   Weaponsmiscellaneous: {
     Sharpness: '斬味',

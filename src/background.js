@@ -29,7 +29,9 @@ function createWindow () {
     icon: path.join(__static, 'icon.png'),
     webPreferences: {
       webSecurity: false,
-      nodeIntegration: true
+      nodeIntegration: true,
+      enableRemoteModule: true,
+      contextIsolation: false
     } 
   })
 
