@@ -496,15 +496,6 @@ function str_pad (hex, digits = 8) {
   var tmp = digits - hex.length
   return zero.substr(0, tmp) + hex.toLocaleUpperCase()
 }
-/*
-function InsertString(t, c, n) {
-  var r = new Array();
-  for (var i = 0; i * 2 < t.length; i++) {
-    r.push(t.substr(i * 2, n));
-  }
-  return r.join(c);
-}
-*/
 function FillString(t, c, n, b) {
   if ((t == "") || (c.length != 1) || (n <= t.length)) {
     return t;
@@ -575,4 +566,5 @@ export default {
   HexToSingle: HexToSingle,
   SingleToHex: SingleToHex,
   GetAddressData: GetAddressData,
+  str_pad: str_pad,
 }

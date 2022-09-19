@@ -295,12 +295,17 @@
               }
           }
           //临时方法
+          const str_pad = (hex, digits = 4) => {
+            var zero = new Array(digits + 1).join('0')
+            var tmp = digits - hex.length
+            return zero.substr(0, tmp) + hex.toLocaleUpperCase()
+          }
           let dataGet = (offset, size = 4) => {
               let _data = []
               for (let s = 0; s < size ; s++) {
                   _data[s] = _this.data[offset - s];
               }
-              return _this.hex2int(_data.map(function(hex) {return hex.toString(16)}).join(''))
+              return parseInt(_data.map((_hex) => str_pad(_hex.toString(16), 2)).join(''), 16)
           }
           //数据获取
           //头数据
