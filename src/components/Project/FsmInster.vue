@@ -88,15 +88,34 @@
         <v-card
             class="mx-auto"
         >
-            <v-sheet class="pa-4 primary lighten-2">
-            文件结构
-            </v-sheet>
+            <v-toolbar
+            color="primary"
+            dark
+            flat
+            >
+            <v-icon>mdi-cube-scan</v-icon>
+            <v-toolbar-title>文件结构</v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-text-field
+                v-model="treeSearch"
+                label="检索结构数据"
+                dark
+                flat
+                solo-inverted
+                hide-details
+                clearable
+                clear-icon="mdi-close-circle-outline"
+            ></v-text-field>
+            <v-btn icon color="green" @click="$copyText(JSON.stringify(FSMTree))">
+              <v-icon>mdi-content-paste</v-icon>
+            </v-btn>
+            </v-toolbar>
             <v-card-text>
             <v-treeview
                 dense
                 :items="FSMTreeItem"
-            >
-            </v-treeview>
+                :search="treeSearch"
+            ></v-treeview>
             </v-card-text>
         </v-card>
       </v-col>
@@ -148,6 +167,7 @@
         structIdMax: value => value < 65535 || '可能超过最大结构上限',
       },
       snackbar: false,
+      treeSearch: null,
     }),
     computed: {
       file () {
@@ -158,35 +178,69 @@
       },
       FSMTreeItem () {
         let id = 1
-        let item = []
+        let formatName = (name) => {
+            switch (name) {
+                case 'header':
+                    return '文件头';
+                case 'data':
+                    return '数据区';
+                case 'derived':
+                    return '派生';
+                case 'condition':
+                    return '条件';
+                case 'addrStart':
+                    return '结构起始地址';
+                case 'size':
+                    return '结构大小';
+                case 'count':
+                    return '结构数量';
+                case 'struct':
+                    return '结构体';
+                case 'tree':
+                    return '条件树';
+                case 'offset':
+                    return '偏移量';
+                case 'name':
+                    return '名称';
+                case 'destination':
+                    return '派生';
+                case 'link':
+                    return '派生链接';
+                case 'number':
+                    return '条件编号';
+                case 'node':
+                    return '节点';
+                case 'child':
+                    return '子项';
+                case 'list':
+                    return '列表';
+                case 'conditionName':
+                    return '条件名';
+                default:
+                    return name;
+            }
+        }
         let obj = (o) => {
             id += 1
             let it = []
             Object.keys(o).forEach((key) => {
+                id += 1
                 if(typeof(o[key])=="object") {
                     it.push({
                         id: id,
-                        name: key,
+                        name: formatName(key),
                         children: obj(o[key])
                     })
                 } else {
                     it.push({
                         id: id,
-                        name: `${key}: ${o[key]}`,
+                        name: `${formatName(key)}: ${o[key]}`,
                     })
                 }
             })
             return it
         }
-        Object.keys(this.FSMTree).forEach((key) => {
-            item.push({
-                id: id,
-                name: key,
-                children: obj(this.FSMTree[key])
-            })
-            id += 1
-        })
-        return item
+        return obj(this.FSMTree)
       }
     },
     mounted () {
@@ -393,10 +447,70 @@
                   array[i] = strucSizeHex[strucSizeHex.length - 1 - i];
               }
               let structSize = this.hex2int(array.map((hex) => hex.toString(16).length == 2 ? hex.toString(16) : '0' + hex.toString(16)).join(''))
+              //条件序号区块
+              let numberStruct = {
+                addrStart: structStartAdd + 16,
+                size: dataGet(structStartAdd + 23),
+                id: dataGet(structStartAdd + 35),
+              }
+              let node = {
+                addrStart: numberStruct.addrStart + numberStruct.size + 4,
+                size: dataGet(numberStruct.addrStart + numberStruct.size + 15),
+                child: {}
+              }
+              let childList = {
+                count: dataGet(node.addrStart + 19),
+                addrStart: node.addrStart + 20,
+                list: []
+              }
+              let childAddr = childList.addrStart
+              for(let c = 0; c < childList.count; c++) {
+                let listData = {
+                    addrStart: childAddr,
+                    size: 0,
+                    condition: {}
+                }
+                //异常数据处理
+                if(dataGet(childAddr + 1, 2) != 25) {
+                    //尝试计算出错误结构大小，并跳过其他数据计算
+                    for(let estuAddr = 0; estuAddr < node.size; estuAddr++) {
+                        if(this.data[childAddr + estuAddr] == 25) {
+                            listData.size = estuAddr - 4
+                            listData.note = `数据地址 ${childAddr}:此处发现异常数据，已尝试跳过`
+                            break;
+                        }
+                    }
+                    if(listData.size == 0) {
+                        listData.note = `数据地址 ${childAddr}:此处发现异常数据，无法处理，当前节点可能存在数据损坏`
+                        console.log(`数据地址 ${childAddr}: 错误的数据结构，无法解析`)
+                    }
+                } else {
+                    listData.size = dataGet(childAddr + 7)
+                    //获取条件数据
+                    let conditionSize = dataGet(childAddr + 27)
+                    //检索条件字符串
+                    for(let n = 0; n < conditionSize; n++) {
+                        if(this.data[childAddr + 36 + n] == 0) {
+                            let nbytes = new Uint8Array(this.data.slice(childAddr + 36,childAddr + 36 + n))
+                            listData.condition = {
+                                addrStart: childAddr + 16,
+                                size: conditionSize,
+                                conditionName: this.utf8BytesToStr(nbytes)
+                            }
+                            break;
+                        }
+                    }
+                }
+                childList.list.push(listData)
+                childAddr += (4 + listData.size)
+              }
+              node.child = childList
               fsmStruct.data.condition.tree.push({
                   addrStart: structStartAdd,
                   size: structSize,
                   id: dataGet(structStartAdd + 3, 2),
+                  number: numberStruct,
+                  node: node,
               })
               fsmStructConditionStartAddr += 4 + structSize
           }
