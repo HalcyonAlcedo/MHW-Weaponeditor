@@ -32,6 +32,7 @@ module.exports = {
     Original_file_version: '原始档案版本',
     Extract_from: '提取自',
     Current_file: '当前档案',
+    AddConfig: '加载数据模板',
     Read: '已读',
     Refuse: '拒绝',
     Cancel: '取消',
@@ -77,7 +78,7 @@ module.exports = {
     Binary_mode: '显示档案二进位数据的档案模式,二进位数据根据武器类型进行辅助显示',
     Dark_theme: '切换软件主色调至暗黑模式',
     About_content: '本软件可针对《怪物猎人世界》中武器数据魔改档案进行查看和修改,修改后档案放置在Monster Hunter World\\nativePC\\common\\equip\\下即可生效。修改后档案将影响游戏平衡性,请勿用于联机使用。',
-    About_edition: '软件版本：1.3.1 Alpha',
+    About_edition: '软件版本：1.3.1',
     Instructions: '<h3>该工具可以读取解包后的武器数据,内置了当前版本的武器数据档案,可以直接新建mod档案。部分数值修改会根据固有系数自动修正,武器信息为手动录入,可能与现版本数据存在差异。修改后的档案请勿用于联机使用。</h3><br><h4>用法：</h4><br><span>&nbsp;&nbsp;1、打开解包后的mod档案或点击新建选择需要的武器档案</span><br><span>&nbsp;&nbsp;2、搜索或手动找到要修改的武器</span><br><span>&nbsp;&nbsp;3、将相应属性改成你希望的数值</span><br><span>&nbsp;&nbsp;4、点击保存将档案保存至游戏目录\\nativePC\\common\\equip\\</span><br><span>&nbsp;&nbsp;5、安装冰原装载Mod（https://www.nexusmods.com/monsterhunterworld/mods/1984）</span><br><br><h4>工具原始代码发布在Github上：https://github.com/HalcyonAlcedo/MHW-Weaponeditor</h4>',
     Old_version: '将以名称匹配方式打开数据档案,建议使用新版本数据档案进行魔改。',
     Old_version_open: '兼容模式已启动,请重新打开数据档案',
@@ -86,7 +87,7 @@ module.exports = {
     Version_update_true: '版本数据更新完成,请勿忘记保存数据档案',
     Free_model: '如需修改模型请调整为修改数据,不懂勿动',
     Have_model: '如需关闭模型请改成65535',
-    Update_description: '<ul><li>增加数据插入功能，修改扩展文件规则。</li><li>恢复二进制文件编辑功能</li><li>更新Electron版本</li><li>变更注意：非常规循环行搜索模式下自动编码将添加额外的数据名作为前缀，分配视图资源时需额外添加前缀才能生效！</li></ul>',
+    Update_description: '<ul><li>优化Fsm数据插入功能</li><li>新增数据模板手动载入功能</li><li>修复异常数据</li></ul>',
     Toolsinfo: '开发者工具箱只针对MOD开发人员开放,工具箱内包含本工具内置的数据信息和一些实用工具,如需申请开发者认证许可,请在下方填写您曾经发布过的一个Mod地址并提交申请,审核通过后在有效期内可随意使用,点击已读可临时试用该功能。',
     NewInterface: '尝试新的编辑界面',
     ResetChopping: '需要开启原始数据对比功能',
@@ -104,7 +105,7 @@ module.exports = {
     InsertDataWarning: '数据插入可能会对数据造成不可逆损毁，建议确认插入时检查插入数据和地址是否正确，保存文件之前对文件先行备份。',
     InsertToAddress: '指定地址插入数据',
     InsertToFSM: 'FSM派生数据插入',
-    FSMInsertInfo: '目前只支持近战武器，先定位招式地址，然后生成派生数据模板，最后插入派生数据。派生id和条件id可参考fsm配置文件获取到的数据，描述和招式名可能会有出入，以招式id为准。'
+    FSMInsertInfo: '先定位招式地址，然后生成派生数据模板，最后插入派生数据。派生id和条件id可参考fsm配置文件获取到的数据，描述和招式名可能会有出入，以招式id为准。'
   },
   Weaponsmiscellaneous: {
     Sharpness: '斩味',

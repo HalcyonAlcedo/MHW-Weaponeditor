@@ -127,7 +127,7 @@ var openfile = ( file = null,callback, error ,isPath = false, dontEncrypted = fa
         //读取文件并执行操作
         fs.readFile(filepath, function (err, data) {
           if (err) {
-            console.err('openfile err:', err)
+            console.log('openfile err:', err)
             error(err)
           } else {
             //判断是否为加密文件
@@ -150,7 +150,7 @@ var openfile = ( file = null,callback, error ,isPath = false, dontEncrypted = fa
         if(key && !dontEncrypted) data = decoded(key, data)
         callback(null, file, data)
       }).catch(function(err){
-        console.err('openfile err:', err)
+        console.log('openfile err:', err)
         error(err)
       })
     }
@@ -166,14 +166,14 @@ var savefile = ( title, file, data, callback, error , dontEncrypted = false) => 
     dialog.showSaveDialog({ title: title, defaultPath: file }).then(result => {
       fs.writeFile(result.filePath, data, { flag: 'w' }, function (err) {
         if (err) {
-          console.err('savefile err:', err)
+          console.log('savefile err:', err)
           error(err)
         } else {
           callback()
         }
       })
     }).catch(err => {
-      console.err('savefile err:', err)
+      console.log('savefile err:', err)
       error(err)
     })
   } else {
@@ -450,5 +450,6 @@ export default {
   CryptographicKey: CryptographicKey,
   MultiLanguage: MultiLanguage,
   GenerateLicense: GenerateLicense,
-  onlyLicense: onlyLicense
+  onlyLicense: onlyLicense,
+  ProcessData: ProcessData
 }

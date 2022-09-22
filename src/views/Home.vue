@@ -272,6 +272,9 @@
           </v-list-item>
         </v-list-group>
         <v-divider></v-divider>
+        <v-list-item @click="addConfig(),left = false">
+          <v-list-item-title>{{$t("Interface.AddConfig")}}</v-list-item-title>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
@@ -471,6 +474,7 @@
 
 <script>
 import axios from 'axios'
+import JSZip from 'jszip'
 import edit_core from '../plugins/edit_core'
 
 export default {
@@ -700,9 +704,21 @@ export default {
           _this.$refs.filElem.dispatchEvent(new MouseEvent('click'))
         }
       }, () => {
-        _this.snackbar.text = _this.$t('Interface.Open_Failure')
-        _this.snackbar.snackbar = true
-        _this.loaddialog = false
+        //判断是否是config载入的文件
+        let configData = this.config.find(item => item.modeFile === file)
+        if(configData != undefined) {
+          _this.file = configData.modeFile.substring(configData.modeFile.lastIndexOf('\\') + 1)
+          _this.$store.dispatch('setfile', configData.modeFile)
+          _this.$store.dispatch('setdata', configData.inputData)
+          _this.$router.push('/edit')
+          _this.snackbar.text = _this.$t('Interface.Open_Success')
+          _this.snackbar.snackbar = true
+          _this.loaddialog = false
+        } else {
+          _this.snackbar.text = _this.$t('Interface.Open_Failure')
+          _this.snackbar.snackbar = true
+          _this.loaddialog = false
+        }
       })
     },
     request () {
@@ -902,6 +918,48 @@ export default {
       this.Old_version = false
       this.snackbar.text = this.$t('Explanatory.Version_update_true')
       this.snackbar.snackbar = true
+    },
+    addConfig () {
+      var Zip = new JSZip()
+      let _this = this
+      edit_core.openfile(null, (setOld_version, filepath, data) => {
+        if (filepath !== null && data !== null) {
+          JSZip.loadAsync(data).then(function (zip) {
+            //获取配置文件
+            zip.forEach(function (relativePath, zipEntry) {
+              let fileName = zipEntry.name
+              let suffix = fileName.substring(fileName.lastIndexOf(".") + 1)
+              if (zipEntry.name.slice(zipEntry.name.length - 1) !== '/' && suffix == 'json') {
+                zip.file(zipEntry.name).async('string').then(function success (text) {
+                  let fileConfig = JSON.parse(text)
+                  zip.forEach(function (relativePath, _zipEntry) {
+                    if (_zipEntry.name.slice(_zipEntry.name.length - 1) !== '/' && fileConfig.modeFile == _zipEntry.name) {
+                      zip.file(_zipEntry.name).async('nodebuffer').then(function success (data) {
+                        fileConfig.inputData = data
+                        fileConfig.dataInfo = edit_core.ProcessData(fileConfig.dataInfo)
+                        if(fileConfig.type == undefined) {
+                          fileConfig.type = fileConfig.modeFile.substring(fileConfig.modeFile.lastIndexOf('.') + 1)
+                        }
+                        _this.importConfig.push({ title: `${fileConfig.name} (${fileConfig.modeFile})`, file: fileConfig.modeFile})
+                        _this.$store.dispatch('setconfig', fileConfig)
+                        _this.snackbar.text = _this.$t('Interface.Open_Success')
+                        _this.snackbar.snackbar = true
+                        _this.loaddialog = false
+                      })
+                    }
+                  })
+                })
+              }
+            })
+          })
+        } else {
+          _this.$refs.filElem.dispatchEvent(new MouseEvent('click'))
+        }
+      }, () => {
+        _this.snackbar.text = _this.$t('Interface.Open_Failure')
+        _this.snackbar.snackbar = true
+        _this.loaddialog = false
+      })
     }
   },
   mounted () {

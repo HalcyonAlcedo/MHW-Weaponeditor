@@ -41,8 +41,12 @@
           <v-text-field label="条件id" v-model="fsmStruc.conditionId" hint="指定派生条件id" persistent-hint type="number">
           </v-text-field>
       </v-col>
-      <v-col cols="12" sm="8">
+      <v-col cols="12" sm="6">
           <v-text-field label="派生名称" v-model="fsmStruc.structName" hint="插入派生的名称" persistent-hint>
+          </v-text-field>
+      </v-col>
+      <v-col cols="12" sm="2">
+          <v-text-field label="插值大小" v-model="interpolation" hint="扩充派生序列的大小" persistent-hint type="number">
           </v-text-field>
       </v-col>
       <v-col cols="12" sm="4">
@@ -159,6 +163,7 @@
       fsmStrucCountAddr: 0,
       fsmStrucCount: 0,
       fsmStrucId: 0,
+      interpolation: 100,
       entries: [],
       structEntries: [],
       nameMode: true,
@@ -295,7 +300,7 @@
                       for (let s = 0; s < 4 ; s++) {
                           _structId[s] = this.data[11 - s];
                       }
-                      this.fsmStruc.structId = this.hex2int(_structId.map(function(hex) {return hex.toString(16)}).join('')) + 500
+                      this.fsmStruc.structId = this.hex2int(_structId.map(function(hex) {return hex.toString(16)}).join('')) + this.interpolation
                       //获取派生名
                       let bytes = new Uint8Array(this.data.slice(this.fsmStartAddr + 16,this.fsmStartAddr + 16 + i))
                       this.fsmSelect.name = this.utf8BytesToStr(bytes)
@@ -456,7 +461,8 @@
               let node = {
                 addrStart: numberStruct.addrStart + numberStruct.size + 4,
                 size: dataGet(numberStruct.addrStart + numberStruct.size + 15),
-                child: {}
+                child: {},
+                operator: dataGet(numberStruct.addrStart + numberStruct.size + 11 + dataGet(numberStruct.addrStart + numberStruct.size + 15))
               }
               let childList = {
                 count: dataGet(node.addrStart + 19),
@@ -471,10 +477,10 @@
                     condition: {}
                 }
                 //异常数据处理
-                if(dataGet(childAddr + 1, 2) != 25) {
+                if(dataGet(childAddr + 1, 2) != 25 && dataGet(childAddr + 1, 2) != 23) {
                     //尝试计算出错误结构大小，并跳过其他数据计算
                     for(let estuAddr = 0; estuAddr < node.size; estuAddr++) {
-                        if(this.data[childAddr + estuAddr] == 25) {
+                        if(this.data[childAddr + estuAddr] == 25 || this.data[childAddr + estuAddr] == 23) {
                             listData.size = estuAddr - 4
                             listData.note = `数据地址 ${childAddr}:此处发现异常数据，已尝试跳过`
                             break;
