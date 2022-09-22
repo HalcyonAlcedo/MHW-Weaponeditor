@@ -854,6 +854,7 @@ export default {
         }
         if(file[0].name.substring(file[0].name.lastIndexOf(".") + 1) == 'zip') {
           _this.addConfig(data)
+          _this.$router.push('/edit')
           _this.snackbar.text = _this.$t('Interface.Open_Success')
           _this.snackbar.snackbar = true
           _this.loaddialog = false
