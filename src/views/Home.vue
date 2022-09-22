@@ -272,7 +272,7 @@
           </v-list-item>
         </v-list-group>
         <v-divider></v-divider>
-        <v-list-item @click="addConfig(),left = false">
+        <v-list-item @click="openConfig(),left = false">
           <v-list-item-title>{{$t("Interface.AddConfig")}}</v-list-item-title>
         </v-list-item>
       </v-list>
@@ -764,7 +764,6 @@ export default {
       } else {
         if (this.batch) {
           for(let i =0; i < this.selectEncryptionFileList.length; i++) {
-            console.log(this.selectEncryptionFileList[i])
             edit_core.openfile(null, (_, filepath, data) => {
               if (filepath !== null && data !== null) {
                 if (encoded) {
@@ -853,6 +852,13 @@ export default {
         for (var i = 0; i < temp_data.length; ++i) {
           data[i] = temp_data[i];
         }
+        if(file[0].name.substring(file[0].name.lastIndexOf(".") + 1) == 'zip') {
+          _this.addConfig(data)
+          _this.snackbar.text = _this.$t('Interface.Open_Success')
+          _this.snackbar.snackbar = true
+          _this.loaddialog = false
+          return
+        }
         _this.loaddialog = false
         let key = edit_core.CryptographicKey(file[0].name.substring(file[0].name.lastIndexOf('.')))
         if (key) {
@@ -919,39 +925,11 @@ export default {
       this.snackbar.text = this.$t('Explanatory.Version_update_true')
       this.snackbar.snackbar = true
     },
-    addConfig () {
-      var Zip = new JSZip()
+    openConfig () {
       let _this = this
       edit_core.openfile(null, (setOld_version, filepath, data) => {
         if (filepath !== null && data !== null) {
-          JSZip.loadAsync(data).then(function (zip) {
-            //获取配置文件
-            zip.forEach(function (relativePath, zipEntry) {
-              let fileName = zipEntry.name
-              let suffix = fileName.substring(fileName.lastIndexOf(".") + 1)
-              if (zipEntry.name.slice(zipEntry.name.length - 1) !== '/' && suffix == 'json') {
-                zip.file(zipEntry.name).async('string').then(function success (text) {
-                  let fileConfig = JSON.parse(text)
-                  zip.forEach(function (relativePath, _zipEntry) {
-                    if (_zipEntry.name.slice(_zipEntry.name.length - 1) !== '/' && fileConfig.modeFile == _zipEntry.name) {
-                      zip.file(_zipEntry.name).async('nodebuffer').then(function success (data) {
-                        fileConfig.inputData = data
-                        fileConfig.dataInfo = edit_core.ProcessData(fileConfig.dataInfo)
-                        if(fileConfig.type == undefined) {
-                          fileConfig.type = fileConfig.modeFile.substring(fileConfig.modeFile.lastIndexOf('.') + 1)
-                        }
-                        _this.importConfig.push({ title: `${fileConfig.name} (${fileConfig.modeFile})`, file: fileConfig.modeFile})
-                        _this.$store.dispatch('setconfig', fileConfig)
-                        _this.snackbar.text = _this.$t('Interface.Open_Success')
-                        _this.snackbar.snackbar = true
-                        _this.loaddialog = false
-                      })
-                    }
-                  })
-                })
-              }
-            })
-          })
+          _this.addConfig(data)
         } else {
           _this.$refs.filElem.dispatchEvent(new MouseEvent('click'))
         }
@@ -959,6 +937,38 @@ export default {
         _this.snackbar.text = _this.$t('Interface.Open_Failure')
         _this.snackbar.snackbar = true
         _this.loaddialog = false
+      })
+    },
+    addConfig (data) {
+      var Zip = new JSZip()
+      let _this = this
+      JSZip.loadAsync(data).then(function (zip) {
+        //获取配置文件
+        zip.forEach(function (relativePath, zipEntry) {
+          let fileName = zipEntry.name
+          let suffix = fileName.substring(fileName.lastIndexOf(".") + 1)
+          if (zipEntry.name.slice(zipEntry.name.length - 1) !== '/' && suffix == 'json') {
+            zip.file(zipEntry.name).async('string').then(function success (text) {
+              let fileConfig = JSON.parse(text)
+              zip.forEach(function (relativePath, _zipEntry) {
+                if (_zipEntry.name.slice(_zipEntry.name.length - 1) !== '/' && fileConfig.modeFile == _zipEntry.name) {
+                  zip.file(_zipEntry.name).async('nodebuffer').then(function success (data) {
+                    fileConfig.inputData = data
+                    fileConfig.dataInfo = edit_core.ProcessData(fileConfig.dataInfo)
+                    if(fileConfig.type == undefined) {
+                      fileConfig.type = fileConfig.modeFile.substring(fileConfig.modeFile.lastIndexOf('.') + 1)
+                    }
+                    _this.importConfig.push({ title: `${fileConfig.name} (${fileConfig.modeFile})`, file: fileConfig.modeFile})
+                    _this.$store.dispatch('setconfig', fileConfig)
+                    _this.snackbar.text = _this.$t('Interface.Open_Success')
+                    _this.snackbar.snackbar = true
+                    _this.loaddialog = false
+                  })
+                }
+              })
+            })
+          }
+        })
       })
     }
   },
@@ -984,7 +994,6 @@ export default {
     
     edit_core.MultiLanguage((LanguageData, Language, file)=>{
       if (LanguageData && Language) {
-        console.log(file)
         if (file == 'view') {
           _this.$i18n.setLocaleMessage(Language,LanguageData)
           for(let LanguageList in _this.$i18n.messages) {
