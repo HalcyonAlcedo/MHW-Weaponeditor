@@ -15,7 +15,7 @@ module.exports = {
         productName: 'MHW Equipment Editor',
         copyright: 'Copyright © 2022 Alcedo',
         win: {
-          target: ['zip','nsis']
+          target: ['zip','nsis','portable']
         },
         extraResources:  [
           {
