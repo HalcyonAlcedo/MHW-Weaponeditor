@@ -265,7 +265,7 @@
             var tmp = digits - hex.length
             return zero.substr(0, tmp) + hex.toLocaleUpperCase()
           }
-          let dataGet = (offset, size = 4) => {
+          const dataGet = (offset, size = 4) => {
               let _data = []
               for (let s = 0; s < size ; s++) {
                   _data[s] = _this.data[offset - s];

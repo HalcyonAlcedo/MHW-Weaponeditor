@@ -4,7 +4,7 @@
         border="top"
         colored-border
         type="warning"
-        elevation="2"
+        elevation="3"
         >
         {{$t('Explanatory.InsertDataWarning')}}
         </v-alert>
@@ -21,6 +21,10 @@
                 <v-icon left>mdi-file-sign</v-icon>
                 {{$t('Explanatory.InsertToFSM')}}
             </v-tab>
+            <v-tab>
+                <v-icon left>mdi-file-sign</v-icon>
+                {{$t('Explanatory.InsertToLMT')}}
+            </v-tab>
 
             <v-tab-item>
                 <v-card flat>
@@ -31,7 +35,11 @@
                 <v-card flat>
                     <FsmInster />
                 </v-card>
-
+            </v-tab-item>
+            <v-tab-item>
+                <v-card flat>
+                    <LmtInsert />
+                </v-card>
             </v-tab-item>
             </v-tabs>
         </v-card>
@@ -41,11 +49,13 @@
 <script>
 import DefaultInsert from './Project/DefaultInsert'
 import FsmInster from './Project/FsmInster'
+import LmtInsert from './Project/LmtInsert'
 
 export default {
     components: {
       DefaultInsert,
-      FsmInster
+      FsmInster,
+      LmtInsert
     }
 }
 </script>

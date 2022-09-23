@@ -2747,7 +2747,7 @@
   export default {
     data () {
       return {
-        itemsPerPageArray: [2, 4],
+        itemsPerPageArray: [2, 4, 8],
         search: '',
         filter: {},
         sortDesc: false,
@@ -3201,7 +3201,7 @@
         this.itemsPerPageArray = [12, 24]
         this.itemsPerPage = 12
         } else {
-        this.itemsPerPageArray = [2, 4]
+        this.itemsPerPageArray = [2, 4, 8]
         this.itemsPerPage = 2
         }
       }
