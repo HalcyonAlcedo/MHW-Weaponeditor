@@ -1,11 +1,20 @@
 <template>
   <v-container>
+    <v-alert
+    border="left"
+    colored-border
+    type="info"
+    elevation="1"
+    >
+    开发中，目前只支持结构查看
+    </v-alert>
     <ObjView :Tree="LMTTree" />
   </v-container>
 </template>
 
 <script>
   import ObjView from './module/objectView'
+  import hexHandler from '../../plugins/edit/hexHandler'
 
   export default {
     data: () => ({
@@ -43,17 +52,12 @@
               frame: []
           }
           //临时方法
-          const str_pad = (hex, digits = 4) => {
-            var zero = new Array(digits + 1).join('0')
-            var tmp = digits - hex.length
-            return zero.substr(0, tmp) + hex.toLocaleUpperCase()
-          }
           const dataGet = (offset, size = 4) => {
               let _data = []
               for (let s = 0; s < size ; s++) {
                   _data[s] = _this.data[offset - s];
               }
-              return parseInt(_data.map((_hex) => str_pad(_hex.toString(16), 2)).join(''), 16)
+              return parseInt(_data.map((_hex) => hexHandler.str_pad(_hex.toString(16), 2)).join(''), 16)
           }
           //数据获取
           lmtStruct.header.count = dataGet(7,2)
@@ -61,42 +65,42 @@
           for(let b = 0;b < lmtStruct.header.count; b++){
             let block = {
                 id: b,
-                addr: dataGet(blockStartAddr + 7,8)
+                addrStart: dataGet(blockStartAddr + 7,8)
             }
             if(b != 0) {
                 let point = {
-                    actionPoint: dataGet(block.addr + 7,8),
-                    bonesNumber: dataGet(block.addr + 7 + 4),
-                    frameNumber: dataGet(block.addr + 7 + 4 + 4),
-                    loopFrame: dataGet(block.addr + 7 + 4 + 4 + 4),
-                    decisionPoint: dataGet(block.addr + 7 + 4 + 4 + 4 + 68 + 8, 8),
+                    actionPoint: dataGet(block.addrStart + 7,8),
+                    bonesNumber: dataGet(block.addrStart + 7 + 4),
+                    frameNumber: dataGet(block.addrStart + 7 + 4 + 4),
+                    loopFrame: dataGet(block.addrStart + 7 + 4 + 4 + 4),
+                    decisionPoint: dataGet(block.addrStart + 7 + 4 + 4 + 4 + 68 + 8, 8),
                 }
                 block.pointBlock = point
                 //处理动作帧数据
-                if(lmtStruct.frame.findIndex((f) => f.addr == block.pointBlock.actionPoint) == -1) {
+                if(lmtStruct.frame.findIndex((f) => f.addrStart == block.pointBlock.actionPoint) == -1) {
                     let frame = {
-                        addr: block.pointBlock.actionPoint,
+                        addrStart: block.pointBlock.actionPoint,
                         count: block.pointBlock.frameNumber,
                         data: []
                     }
-                    let frameStartAddr = frame.addr
+                    let frameStartAddr = frame.addrStart
                     for(let f = 0; f < frame.count; f++) {
                         frame.data.push({
                             actionType: dataGet(frameStartAddr, 1),
                             apply: dataGet(frameStartAddr + 1, 1),
                             jointType: dataGet(frameStartAddr + 2, 1),
                             bonesId: dataGet(frameStartAddr + 3, 1),
-                            cushionSize: dataGet(frameStartAddr + 3 + 4),
-                            weight: dataGet(frameStartAddr + 3 + 4 + 4),
+                            cushionSize: dataGet(frameStartAddr + 3 + 4) << 0,
+                            weight: hexHandler.HexToSingle(hexHandler.str_pad(dataGet(frameStartAddr + 3 + 4 + 4).toString(16), 8)),
                             actionOffsetLength: dataGet(frameStartAddr + 3 + 4 + 4 + 4),
                             actionOffset: dataGet(frameStartAddr + 3 + 4 + 4 + 4 + 8, 8),
                             referenceFrame: [
-                                dataGet(frameStartAddr + 3 + 4 + 4 + 4 + 8 + 4, 4),
-                                dataGet(frameStartAddr + 3 + 4 + 4 + 4 + 8 + 8, 4),
-                                dataGet(frameStartAddr + 3 + 4 + 4 + 4 + 8 + 12, 4),
-                                dataGet(frameStartAddr + 3 + 4 + 4 + 4 + 8 + 16, 4),
+                              hexHandler.HexToSingle(hexHandler.str_pad(dataGet(frameStartAddr + 3 + 4 + 4 + 4 + 8 + 4).toString(16), 8)),
+                              hexHandler.HexToSingle(hexHandler.str_pad(dataGet(frameStartAddr + 3 + 4 + 4 + 4 + 8 + 8).toString(16), 8)),
+                              hexHandler.HexToSingle(hexHandler.str_pad(dataGet(frameStartAddr + 3 + 4 + 4 + 4 + 8 + 12).toString(16), 8)),
+                              hexHandler.HexToSingle(hexHandler.str_pad(dataGet(frameStartAddr + 3 + 4 + 4 + 4 + 8 + 16).toString(16), 8)),
                             ],
-                            limitOffset: dataGet(frameStartAddr + 3 + 4 + 4 + 4 + 8 + 16, 8),
+                            limitOffset: dataGet(frameStartAddr + 3 + 4 + 4 + 4 + 8 + 16 + 8, 8),
                         })
                         frameStartAddr += 48
                     }

@@ -30,43 +30,79 @@ export default {
             let formatName = (name) => {
                 switch (name) {
                     case 'header':
-                        return '文件头';
+                        return '文件头'
                     case 'data':
-                        return '数据区';
+                        return '数据区'
                     case 'derived':
-                        return '派生';
+                        return '派生'
                     case 'condition':
-                        return '条件';
+                        return '条件'
                     case 'addrStart':
-                        return '结构起始地址';
+                        return '结构起始地址'
                     case 'size':
-                        return '结构大小';
+                        return '结构大小'
                     case 'count':
-                        return '结构数量';
+                        return '结构数量'
                     case 'struct':
-                        return '结构体';
+                        return '结构体'
                     case 'tree':
-                        return '条件树';
+                        return '条件树'
                     case 'offset':
-                        return '偏移量';
+                        return '偏移量'
                     case 'name':
-                        return '名称';
+                        return '名称'
                     case 'destination':
-                        return '派生';
+                        return '派生'
                     case 'link':
-                        return '派生链接';
+                        return '派生链接'
                     case 'number':
-                        return '条件编号';
+                        return '条件编号'
                     case 'node':
-                        return '节点';
+                        return '节点'
                     case 'child':
-                        return '子项';
+                        return '子项'
                     case 'list':
-                        return '列表';
+                        return '列表'
                     case 'conditionName':
-                        return '条件名';
+                        return '条件名'
+                    case 'block':
+                        return '数据块'
+                    case 'pointBlock':
+                        return '下级数据块'
+                    case 'actionPoint':
+                        return '动作偏移'
+                    case 'bonesNumber':
+                        return '骨骼数量'
+                    case 'frameNumber':
+                        return '帧数量'
+                    case 'loopFrame':
+                        return '循环帧'
+                    case 'decisionPoint':
+                        return '判定偏移'
+                    case 'frame':
+                        return '关键帧'
+                    case 'actionType':
+                        return '动作类型'
+                    case 'apply':
+                        return '使用'
+                    case 'jointType':
+                        return '关节类型'
+                    case 'bonesId':
+                        return '骨骼id'
+                    case 'cushionSize':
+                        return '缓存大小'
+                    case 'weight':
+                        return '权重'
+                    case 'actionOffsetLength':
+                        return '动作偏移长度'
+                    case 'actionOffset':
+                        return '动作偏移'
+                    case 'referenceFrame':
+                        return '参考系'
+                    case 'limitOffset':
+                        return '限制偏移'
                     default:
-                        return name;
+                        return name
                 }
             }
             let obj = (o) => {
