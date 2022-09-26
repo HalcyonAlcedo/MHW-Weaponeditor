@@ -948,11 +948,12 @@ export default {
         zip.forEach(function (relativePath, zipEntry) {
           let fileName = zipEntry.name
           let suffix = fileName.substring(fileName.lastIndexOf(".") + 1)
+          
           if (zipEntry.name.slice(zipEntry.name.length - 1) !== '/' && suffix == 'json') {
             zip.file(zipEntry.name).async('string').then(function success (text) {
               let fileConfig = JSON.parse(text)
               zip.forEach(function (relativePath, _zipEntry) {
-                if (_zipEntry.name.slice(_zipEntry.name.length - 1) !== '/' && fileConfig.modeFile == _zipEntry.name) {
+                if (_zipEntry.name.slice(_zipEntry.name.length - 1) !== '/' && fileConfig.modeFile == _zipEntry.name.substr(_zipEntry.name.lastIndexOf("/")+1)) {
                   zip.file(_zipEntry.name).async('nodebuffer').then(function success (data) {
                     fileConfig.inputData = data
                     fileConfig.dataInfo = edit_core.ProcessData(fileConfig.dataInfo)
