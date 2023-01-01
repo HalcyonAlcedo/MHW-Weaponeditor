@@ -19,7 +19,7 @@
     "egoroof-blowfish": "^2.2.1",
     "electron-asar-hot-updater": "^0.1.2",
     "electron-edge-js": "^12.8.1",
-    "json5": "^2.1.1",
+    "json5": "^2.2.2",
     "jszip": "^3.10.1",
     "node-machine-id": "^1.1.12",
     "vue": "^2.6.11",
